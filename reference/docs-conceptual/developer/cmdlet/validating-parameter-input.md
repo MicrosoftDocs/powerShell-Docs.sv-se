@@ -1,16 +1,14 @@
 ---
-title: Verifierar parameter Indatatyp | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- parameters, validation rules
-- validation, examples
-- validation
-ms.openlocfilehash: e12c715cfa24edfff958b12be1f3517b2f545256
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Verifiera parameterindata
+description: Verifiera parameterindata
+ms.openlocfilehash: a97b5c670e8c36463a85bbef1506f6311bdd5ec3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784001"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660396"
 ---
 # <a name="validating-parameter-input"></a>Verifiera parameterindata
 

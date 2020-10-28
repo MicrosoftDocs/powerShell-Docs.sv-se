@@ -1,12 +1,14 @@
 ---
-title: Script block-element för SelectionCondition för EntrySelectedBy för ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 56bd04c9af74bdaa7a186a208fc15a67cb08b004
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för SelectionCondition för EntrySelectedBy för ListControl (format)
+description: ScriptBlock-element för SelectionCondition för EntrySelectedBy för ListControl (format)
+ms.openlocfilehash: ec7691358d0ff3758411317a349221e1704a1895
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772866"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659905"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ScriptBlock-element för SelectionCondition för EntrySelectedBy för ListControl (format)
 

@@ -1,12 +1,14 @@
 ---
-title: Figursatta element för TableRowEntry för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ef1f6133f9e5e7da685933cfe90d39a0519ff44
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Wrap-element för TableRowEntry för TableControl (format)
+description: Wrap-element för TableRowEntry för TableControl (format)
+ms.openlocfilehash: 1937427c9869c3d301faef0bc8ccea42eb0e7365
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779887"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659556"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>Wrap-element för TableRowEntry för TableControl (format)
 

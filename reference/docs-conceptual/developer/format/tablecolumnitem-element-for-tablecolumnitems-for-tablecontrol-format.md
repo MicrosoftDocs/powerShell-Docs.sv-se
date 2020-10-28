@@ -1,12 +1,14 @@
 ---
-title: TableColumnItem-element för TableColumnItems för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: beadf771f02519394d799a03db374050e3302321
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableColumnItem-element för TableColumnItems för TableControl (format)
+description: TableColumnItem-element för TableColumnItems för TableControl (format)
+ms.openlocfilehash: 8ef5158c9bb9f074d5c58190d4d3b20c10c83744
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785174"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659849"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableColumnItem-element för TableColumnItems för TableControl (format)
 

@@ -1,12 +1,14 @@
 ---
-title: Kod exempel för Runspace01 (C#) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 418162731b4a98989642e1c61c655fdb0f002698
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 (C#) – kodexempel
+description: Runspace01 (C#) – kodexempel
+ms.openlocfilehash: e6121c144e1a4c1a1d9460d01119f44ee5835821
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787072"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657149"
 ---
 # <a name="runspace01-c-code-sample"></a>Runspace01 (C#) – kodexempel
 

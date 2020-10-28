@@ -1,12 +1,14 @@
 ---
-title: LeftIndent-element för Frame för CustomControl för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c11002f92a35ca34a7d2c6aa26924d846076b001
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: LeftIndent-element för Frame för CustomControl för View (format)
+description: LeftIndent-element för Frame för CustomControl för View (format)
+ms.openlocfilehash: d3253544c3b4c7f9214222010bfab519564b64fd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783576"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660037"
 ---
 # <a name="leftindent-element-for-frame-for-customcontrol-for-view-format"></a>LeftIndent-element för Frame för CustomControl för View (format)
 

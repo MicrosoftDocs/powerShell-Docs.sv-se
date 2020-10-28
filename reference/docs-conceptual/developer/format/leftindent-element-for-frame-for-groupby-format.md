@@ -1,12 +1,14 @@
 ---
-title: LeftIndent-element för inramad GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4bf848047a01ff61183fb6b3ec5d540ab22b50c9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: LeftIndent-element för Frame för GroupBy (format)
+description: LeftIndent-element för Frame för GroupBy (format)
+ms.openlocfilehash: e662a59311bbc8bd66d35087d857067db1c9b2d9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781162"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659996"
 ---
 # <a name="leftindent-element-for-frame-for-groupby-format"></a>LeftIndent-element för Frame för GroupBy (format)
 

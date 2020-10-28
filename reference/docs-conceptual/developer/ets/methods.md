@@ -1,12 +1,14 @@
 ---
-title: System klass metoder för utökad typ
 ms.date: 07/09/2020
-ms.openlocfilehash: bd03b873893f8aa9cb92eda33538c1703ead9773
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: System klass metoder för utökad typ
+description: System klass metoder för utökad typ
+ms.openlocfilehash: b53604a36e0a0c3587f345262e8f274e3a2c4859
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786245"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660389"
 ---
 # <a name="ets-class-methods"></a>ETS klass metoder
 

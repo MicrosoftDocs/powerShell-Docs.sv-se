@@ -1,14 +1,14 @@
 ---
-title: Skriva en Windows PowerShell-snapin-modul | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], PSSnapin example
-ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en Windows PowerShell-snapin-modul
+description: Skriva en Windows PowerShell-snapin-modul
+ms.openlocfilehash: f658c2fa1211bfb77d2e8edd3999ce7f92df13bb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779102"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659448"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Skriva en Windows PowerShell-snapin-modul
 
@@ -46,7 +46,7 @@ Med den här typen av snapin-modul väljer du inte vilka cmdletar och leverantö
 
 ## <a name="example"></a>Exempel
 
-Det här exemplet visar hur du skriver en Windows PowerShell-snapin-modul som kan användas för att registrera cmdleten Get-proc i Windows PowerShell-gränssnittet. Tänk på att i det här exemplet skulle den kompletta sammansättningen endast innehålla snapin-GetProcPSSnapIn01 och `Get-Proc` cmdlet-klassen.
+Det här exemplet visar hur du skriver en Windows PowerShell-snapin-modul som kan användas för att registrera Get-Proc-cmdleten i Windows PowerShell-gränssnittet. Tänk på att i det här exemplet skulle den kompletta sammansättningen endast innehålla snapin-GetProcPSSnapIn01 och `Get-Proc` cmdlet-klassen.
 
 ```csharp
 [RunInstaller(true)]

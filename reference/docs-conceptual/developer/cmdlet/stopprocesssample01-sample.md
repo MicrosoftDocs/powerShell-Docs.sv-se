@@ -1,12 +1,14 @@
 ---
-title: StopProcessSample01-exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6d4737d0526a7d142b4a986986974bcbdc12ec7e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample01 – exempel
+description: StopProcessSample01 – exempel
+ms.openlocfilehash: 9024f5c66330f3a1748c28b82e91b3915e956207
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786466"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660542"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 – exempel
 
@@ -18,7 +20,7 @@ Det här exemplet visar hur du skriver en cmdlet som begär feedback från anvä
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning**.
+3. I menyn **build** väljer du **build-lösning** .
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 

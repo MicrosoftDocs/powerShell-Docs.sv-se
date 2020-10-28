@@ -1,14 +1,14 @@
 ---
-title: Typer av cmdlet-utdata | Microsoft Docs
 ms.date: 01/18/2019
-helpviewer_keywords:
-- cmdlets [PowerShell SDK], output
-ms.openlocfilehash: 8f761fdddd264b7c580c4a860081fdc5d2776ee7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Typer av cmdlet-utdata
+description: Typer av cmdlet-utdata
+ms.openlocfilehash: 591b7699e951db9016e48d5ef623265e23791e11
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786364"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660507"
 ---
 # <a name="types-of-cmdlet-output"></a>Typer av cmdlet-utdata
 

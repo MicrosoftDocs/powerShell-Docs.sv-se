@@ -1,12 +1,14 @@
 ---
-title: Skriva en Windows PowerShell-modul | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d2398a8111a9832af2465d045be0bdefc3cf927a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en Windows PowerShell-modul
+description: Skriva en Windows PowerShell-modul
+ms.openlocfilehash: 307241f0fb4d12c1a5cbd651a0ae4d5303098b27
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779156"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659430"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Skriva en Windows PowerShell-modul
 

@@ -1,12 +1,14 @@
 ---
-title: Script block-element för WideItem för WideControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: be649d6de0d2dfa6bad14f2d7476cced9cd6cb6d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock-element för WideItem för WideControl (format)
+description: ScriptBlock-element för WideItem för WideControl (format)
+ms.openlocfilehash: 68e47926e5e6b846c8a0a3dbc16d1f0d59f11dee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787605"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659874"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>ScriptBlock-element för WideItem för WideControl (format)
 

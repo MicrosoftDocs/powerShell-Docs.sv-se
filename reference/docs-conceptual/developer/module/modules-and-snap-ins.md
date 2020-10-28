@@ -1,12 +1,14 @@
 ---
-title: Moduler och snapin-moduler | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 07cdc55fd6d1462130f1a81deb30056623a525e6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Moduler och snapin-moduler
+description: Moduler och snapin-moduler
+ms.openlocfilehash: de4ff1de9a29b78d7783fe7ed0265f5516db1fb4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787316"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658684"
 ---
 # <a name="modules-and-snap-ins"></a>Moduler och snapin-moduler
 

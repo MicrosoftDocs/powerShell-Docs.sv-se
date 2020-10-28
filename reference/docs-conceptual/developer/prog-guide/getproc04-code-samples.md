@@ -1,19 +1,21 @@
 ---
-title: GetProc04-kod exempel | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b90b7e96c1454e57df93863b526758f25d9be690
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc04 – kodexempel
+description: GetProc04 – kodexempel
+ms.openlocfilehash: db94eda2b3aa5fc88a3054df66f54628e1482f56
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771965"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659241"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 – kodexempel
 
 Här är kod exemplen för GetProc04-exempel-cmdleten. Detta är det `Get-Process` cmdlet-exempel som beskrivs i [lägga till fel rapportering som inte avslutas till din cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Den här `Get-Process` cmdleten anropar metoden [system. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) när ett ogiltigt åtgärds undantag genereras vid hämtning av process information.
 
 > [!NOTE]
-> Du kan hämta C#-källfilen (getprov04.cs) för den här get-proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0 Runtime-komponenter. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Du kan hämta C#-källfilen (getprov04.cs) för den här Get-Proc-cmdleten med hjälp av Microsoft Windows Software Development Kit för Windows Vista och .NET Framework 3,0-komponenter för körning. Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
 > De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen.
 

@@ -1,12 +1,14 @@
 ---
-title: Text element för CustomItem för CustomView för vy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 94294665b481edabdb8ed920d1a209a609b18fd8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Text-element för CustomItem för CustomView för View (format)
+description: Text-element för CustomItem för CustomView för View (format)
+ms.openlocfilehash: b1bbb53473774be56e8422b79db8745fb9700b9b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783389"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659731"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>Text-element för CustomItem för CustomView för View (format)
 

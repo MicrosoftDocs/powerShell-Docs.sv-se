@@ -1,15 +1,14 @@
 ---
-title: Skriva en anpassad Windows PowerShell-snapin-modul | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], custom PSSnapin example
-- cmdlets [PowerShell SDK], specified in snap-ins
-ms.openlocfilehash: 3672dcc2e962b6795888ab5be3d461380e379315
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skriva en anpassad Windows PowerShell-snapin-modul
+description: Skriva en anpassad Windows PowerShell-snapin-modul
+ms.openlocfilehash: e79c0c3db583fa0add9287745e97958a71360592
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779224"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659534"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Skriva en anpassad Windows PowerShell-snapin-modul
 
@@ -44,11 +43,11 @@ Med den här typen av snapin-modul kan du ange vilka cmdlets, providers, typer e
 
    I det här exemplet är leverantörs resursen:
 
-   > CustomPSSnapInTest är det här en anpassad Windows PowerShell-snapin-modul som innehåller cmdletarna test-HelloWorld och test-CustomSnapinTest.
+   > CustomPSSnapInTest, det här är en anpassad Windows PowerShell-snapin-modul som innehåller Test-HelloWorld-och Test-CustomSnapinTest-cmdletar ".
 
 8. Ange de cmdlet: ar som tillhör den anpassade snapin-modulen (valfritt) med hjälp av klassen [system. Management. Automation. körnings utrymmen. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Den information som läggs till här inkluderar namnet på cmdleten, dess .NET-typ och cmdlet-hjälpens fil namn (formatet för cmdletens hjälp fil namn ska vara `name.dll-help.xml` ).
 
-   I det här exemplet läggs cmdletarna test-HelloWorld och TestCustomSnapinTest till.
+   I det här exemplet läggs Test-HelloWorld-och TestCustomSnapinTest-cmdletarna till.
 
 9. Ange de providers som tillhör den anpassade snapin-modulen (valfritt).
 

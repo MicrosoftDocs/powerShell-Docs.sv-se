@@ -1,12 +1,14 @@
 ---
-title: Skapa en tabellvy | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: cbe81962a0f68d64506062898a8f21a1596cc29a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en tabellvy
+description: Skapa en tabellvy
+ms.openlocfilehash: 035d42f7968a9e8babec692a7a5873e24b36cd97
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786160"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660303"
 ---
 # <a name="creating-a-table-view"></a>Skapa en tabellvy
 

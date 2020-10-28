@@ -1,12 +1,14 @@
 ---
-title: Definiera villkor för att visa data | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 13de078e681708b02e378b2c7d531032b2ffdc05
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Definiera villkor för datavisning
+description: Definiera villkor för datavisning
+ms.openlocfilehash: 9a8b7a618da8c64de978c13b527435a2d7793677
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774345"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660317"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>Definiera villkor för datavisning
 

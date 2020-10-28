@@ -1,12 +1,14 @@
 ---
-title: TableRowEntry-element för TableRowEntries för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 83076ae5b2c48992ce5e621c65fc9937efb68b87
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableRowEntry-element för TableRowEntries för TableControl (format)
+description: TableRowEntry-element för TableRowEntries för TableControl (format)
+ms.openlocfilehash: 60d64b7c14b40e87825ada36e19f52a66fe8b6cb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787418"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659777"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableRowEntry-element för TableRowEntries för TableControl (format)
 

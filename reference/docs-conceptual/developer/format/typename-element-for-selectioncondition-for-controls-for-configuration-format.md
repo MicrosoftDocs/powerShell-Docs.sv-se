@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för SelectionCondition för kontroller för konfiguration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2db856d1b84dded315204d8c8574ae86acb63515
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för SelectionCondition för Controls för Configuration (format)
+description: TypeName-element för SelectionCondition för Controls för Configuration (format)
+ms.openlocfilehash: fddb8ddbac7c9292a05cadfa31f98db6439a557d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780074"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659666"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-configuration-format"></a>TypeName-element för SelectionCondition för Controls för Configuration (format)
 

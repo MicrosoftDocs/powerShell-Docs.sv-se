@@ -1,12 +1,14 @@
 ---
-title: Skapa en Windows PowerShell-navigeringsprovider
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c9714c396a023516cd1c409e598d61bb6cda3ce
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa en Windows PowerShell-navigeringsprovider
+description: Skapa en Windows PowerShell-navigeringsprovider
+ms.openlocfilehash: 73d4971fb91acaef9e1f20226e7b9b883730e394
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778972"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658662"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Skapa en Windows PowerShell-navigeringsprovider
 
@@ -43,7 +45,7 @@ För att komma till underordnade objekt, eller deras namn, för data lagret, sam
 
 ## <a name="creating-a-windows-powershell-path"></a>Skapa en Windows PowerShell-sökväg
 
-Windows PowerShell-navigerings leverantör använder en provider-intern Windows PowerShell-sökväg för att navigera i objekt i data lagret. För att skapa en provider – intern sökväg måste providern implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) för att stödja anrop från cmdlet: en kombinations Sök väg. Den här metoden kombinerar en överordnad och underordnad sökväg till en provider – intern sökväg med en providerspecifika Sök vägs avgränsare mellan de överordnade och underordnade Sök vägarna.
+Windows PowerShell-navigerings leverantör använder en provider-intern Windows PowerShell-sökväg för att navigera i objekt i data lagret. För att skapa en provider – intern sökväg måste providern implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) för att stödja anrop från Combine-Path-cmdleten. Den här metoden kombinerar en överordnad och underordnad sökväg till en provider – intern sökväg med en providerspecifika Sök vägs avgränsare mellan de överordnade och underordnade Sök vägarna.
 
 Standard implementeringen tar sökvägar med "/" eller " \\ " som väg avgränsare, normaliserar Sök vägs avgränsaren till " \\ ", kombinerar de överordnade och underordnade Sök vägs delarna med avgränsaren och returnerar sedan en sträng som innehåller de kombinerade Sök vägarna.
 
@@ -119,7 +121,7 @@ Din implementering av metoden [system. Management. Automation. Provider. Navigat
 
 Efter att anropet till [system. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returnerar `true` , ska metoden system [. Management. Automation. Provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) anropa metoden [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Den här metoden skickar ett meddelande till användaren för att ge feedback till att säga om åtgärden bör fortsätta. Leverantören bör anropa [system. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) som en ytterligare kontroll för potentiellt skadliga system ändringar.
 
-## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Bifoga dynamiska parametrar till flytt-item-cmdleten
+## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Bifoga dynamiska parametrar till Move-Item-cmdleten
 
 Ibland `Move-Item` kräver cmdleten ytterligare parametrar som anges dynamiskt vid körning. För att tillhandahålla dessa dynamiska parametrar, måste navigerings leverantören implementera metoden [system. Management. Automation. Provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) för att hämta de parameter värden som krävs från objektet vid den angivna sökvägen och returnera ett objekt som har egenskaper och fält med parsande attribut som liknar en cmdlet-klass eller ett [system. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -objekt.
 

@@ -1,12 +1,14 @@
 ---
-title: Elementet TypeName för SelectionCondition för EntrySelectedBy för TableControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b9367f0ea659b9dce8fe200a5a08873d53bc03a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName-element för SelectionCondition för EntrySelectedBy för TableControl (format)
+description: TypeName-element för SelectionCondition för EntrySelectedBy för TableControl (format)
+ms.openlocfilehash: 66e90ab33775cf35d5e98e45266996d2d1a622d7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772594"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659634"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>TypeName-element för SelectionCondition för EntrySelectedBy för TableControl (format)
 

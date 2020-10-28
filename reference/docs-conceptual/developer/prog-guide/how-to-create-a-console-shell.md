@@ -1,39 +1,39 @@
 ---
-title: Så här skapar du ett konsol gränssnitt | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Make-Shell [PowerShell Programmer's Guide]
-ms.openlocfilehash: 5d8231363ab804bfd7113ef69f0bdede445149a2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Skapa ett konsolgränssnitt
+description: Skapa ett konsolgränssnitt
+ms.openlocfilehash: 9ea67c43b1ee35b1fbfc553b22a1423419317ca2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771625"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657220"
 ---
 # <a name="how-to-create-a-console-shell"></a>Skapa ett konsolgränssnitt
 
-Windows PowerShell tillhandahåller ett verktyg för att ge ett skal, även kallat "make-kit", som används för att skapa ett konsol gränssnitt som inte är utöknings Bart. Gränssnitt som skapats med det här nya verktyget kan inte utökas senare via en Windows PowerShell-snapin-modul.
+Windows PowerShell innehåller ett Make-Shell verktyg, även kallat "make-kit", som används för att skapa ett konsol gränssnitt som inte är utöknings Bart. Gränssnitt som skapats med det här nya verktyget kan inte utökas senare via en Windows PowerShell-snapin-modul.
 
 ## <a name="syntax"></a>Syntax
 
-Här är syntaxen som används för att köra kommandot-Shell i en-fil.
+Här är den syntax som används för att köra Make-Shell inifrån en-fil.
 
 ```
 make-shell
-  -out n.exe
-  -namespace ns
-  [ -lib libdirectory1[,libdirectory2,..] ]
-  [ -reference ca1.dll[,ca2.dll,...] ]
-  [ -formatdata fd1.format.ps1xml[,fd2.format.ps1xml,...] ]
-  [ -typedata td1.type.ps1xml[,td2.type.ps1xml,...] ]
-  [ -source c1.cs [,c2.cs,...] ]
-  [ -authorizationmanager authorizationManagerType ]
-  [ -win32icon i.ico ]
-  [ -initscript p.ps1 ]
-  [ -builtinscript s1.ps1[,s2.ps1,...] ]
-  [ -resource resourcefile.txt ]
-  [ -cscflags cscFlags ]
-  [ -? | -help ]
+  -out n.exe
+  -namespace ns
+  [ -lib libdirectory1[,libdirectory2,..] ]
+  [ -reference ca1.dll[,ca2.dll,...] ]
+  [ -formatdata fd1.format.ps1xml[,fd2.format.ps1xml,...] ]
+  [ -typedata td1.type.ps1xml[,td2.type.ps1xml,...] ]
+  [ -source c1.cs [,c2.cs,...] ]
+  [ -authorizationmanager authorizationManagerType ]
+  [ -win32icon i.ico ]
+  [ -initscript p.ps1 ]
+  [ -builtinscript s1.ps1[,s2.ps1,...] ]
+  [ -resource resourcefile.txt ]
+  [ -cscflags cscFlags ]
+  [ -? | -help ]
 ```
 
 ## <a name="parameters"></a>Parametrar
@@ -45,7 +45,7 @@ Här är en kort beskrivning av parametrarna för märke-Shell.
 
 |Parameter|Beskrivning|
 |---------------|-----------------|
-|n.exe|Krävs. Namnet på det gränssnitt som ska skapas. Sökvägen anges som en del av den här parametern.<br /><br /> Med-Shell läggs ". exe" till i det här värdet om det inte anges. **Varning:**  Skapa inte en utdatafil med samma namn som den refererade DLL-filen. Om du gör det skapas en. CS-fil med samma namn, vilket kommer att skriva över. cs-filen som innehåller käll koden för cmdleten.|
+|n.exe|Krävs. Namnet på det gränssnitt som ska skapas. Sökvägen anges som en del av den här parametern.<br /><br /> Med-Shell läggs ". exe" till i det här värdet om det inte anges. **Varning:**  Skapa inte en utdatafil med samma namn som den refererade DLL-filen. Om du gör det skapar Make-Shell-verktyget en. CS-fil med samma namn, vilket skriver över. cs-filen som innehåller käll koden för cmdleten.|
 |-namnrymd ns|Krävs. Namn området som ska användas för den härledda [system. Management. Automation. körnings utrymmen. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) -klassen som gör-satsen genererar och kompilerar.|
 |-lib-libdirectory1 [, libdirectory2,..]|De kataloger som genomsöks för .NET-sammansättningar, inklusive Windows PowerShell-sammansättningar, sammansättningar som anges av `reference` parametern, sammansättningar som indirekt refereras till av en annan sammansättning och .net-systemets sammansättningar.|
 |-referens ca1.dll [, ca2.dll,...]|En kommaavgränsad lista över de sammansättningar som ska ingå i gränssnittet. Dessa sammansättningar innehåller alla cmdlet-och Provider-sammansättningar, samt resurs sammansättningar som ska läsas in. Om den här parametern inte anges skapas ett gränssnitt som bara innehåller de kärn-cmdlets och providers som tillhandahålls av Windows PowerShell.<br /><br /> Sammansättningarna kan anges med hjälp av sin fullständiga sökväg, annars söks de igenom med den sökväg som anges av `lib` parametern.|
@@ -58,7 +58,7 @@ Här är en kort beskrivning av parametrarna för märke-Shell.
 |-builtinscript s1.ps1 [, s2.ps1,...]|En lista med inbyggda skript för gränssnittet. Dessa skript identifieras före skript i sökvägen och deras innehåll kan inte ändras när gränssnittet har skapats.<br /><br /> Filerna ingår "i befintligt skick"; ingen giltighets kontroll utförs med ett märke.|
 |– resurs resourcefile.txt|Txt-filen som innehåller hjälp-och informations resurser för gränssnittet. Den första resursen heter ShellHelp och innehåller den text som visas om gränssnittet anropas med `help` parametern. Den andra resursen heter ShellBanner och innehåller texten och copyrightinformation som visas när gränssnittet startas i interaktivt läge.<br /><br /> Om den här parametern inte anges eller om dessa resurser inte finns, används en generisk hjälp och banderoll.|
 |-cscflags cscFlags|Flaggor som ska skickas till C#-kompilatorn (csc.exe). Dessa skickas genom oförändrade. Om den här parametern innehåller blank steg ska den omges av dubbla citat tecken.|
-|-?<br /><br /> – hjälp|Visar Copyright-meddelandet och kommando rads alternativen för Shell.|
+|-?<br /><br /> – hjälp|Visar Copyright-meddelandet och Make-Shell kommando rads alternativ.|
 |– utförlig|Visar detaljerad information medan gränssnittet skapas.|
 
 ## <a name="see-also"></a>Se även

@@ -1,16 +1,14 @@
 ---
-title: ValidateSet-Attribute-deklaration | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidateSet
-- ValidateSet attribute, described
-- ValidateSet attribute
-ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Deklaration av attributet ValidateSet
+description: Deklaration av attributet ValidateSet
+ms.openlocfilehash: 7894d00561366ada492911e8147acbd8d3454a55
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787775"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660465"
 ---
 # <a name="validateset-attribute-declaration"></a>Deklaration av attributet ValidateSet
 
