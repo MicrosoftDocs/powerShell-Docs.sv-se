@@ -1,46 +1,48 @@
 ---
-title: AccessDBProviderSample01 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 50ec218e8d0fe6b2be5c8ac00956f72c6723f84a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDBProviderSample01
+description: AccessDBProviderSample01
+ms.openlocfilehash: 8bdfa3ad492935a22ce06846294c02961cab2c65
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786925"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653750"
 ---
-# <a name="accessdbprovidersample01"></a><span data-ttu-id="4d948-102">AccessDBProviderSample01</span><span class="sxs-lookup"><span data-stu-id="4d948-102">AccessDBProviderSample01</span></span>
+# <a name="accessdbprovidersample01"></a><span data-ttu-id="e456a-103">AccessDBProviderSample01</span><span class="sxs-lookup"><span data-stu-id="e456a-103">AccessDBProviderSample01</span></span>
 
-<span data-ttu-id="4d948-103">Det här exemplet visar hur du deklarerar en leverantörs klass som härleds direkt från klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="4d948-103">This sample shows how to declare a provider class that derives directly from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) class.</span></span> <span data-ttu-id="4d948-104">Den ingår bara här för fullständighet.</span><span class="sxs-lookup"><span data-stu-id="4d948-104">It is included here only for completeness.</span></span>
+<span data-ttu-id="e456a-104">Det här exemplet visar hur du deklarerar en leverantörs klass som härleds direkt från klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="e456a-104">This sample shows how to declare a provider class that derives directly from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) class.</span></span> <span data-ttu-id="e456a-105">Den ingår bara här för fullständighet.</span><span class="sxs-lookup"><span data-stu-id="e456a-105">It is included here only for completeness.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="4d948-105">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="4d948-105">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="e456a-106">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="e456a-106">Demonstrates</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="4d948-106">Din leverantörs klass kommer förmodligen att härledas från någon av följande klasser och kan eventuellt implementera andra Provider-gränssnitt:</span><span class="sxs-lookup"><span data-stu-id="4d948-106">Your provider class will most likely derive from one of the following classes and possibly implement other provider interfaces:</span></span>
+> <span data-ttu-id="e456a-107">Din leverantörs klass kommer förmodligen att härledas från någon av följande klasser och kan eventuellt implementera andra Provider-gränssnitt:</span><span class="sxs-lookup"><span data-stu-id="e456a-107">Your provider class will most likely derive from one of the following classes and possibly implement other provider interfaces:</span></span>
 >
-> - <span data-ttu-id="4d948-107">Klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="4d948-107">[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class.</span></span> <span data-ttu-id="4d948-108">Se [AccessDBProviderSample03](./accessdbprovidersample03.md).</span><span class="sxs-lookup"><span data-stu-id="4d948-108">See [AccessDBProviderSample03](./accessdbprovidersample03.md).</span></span>
-> - <span data-ttu-id="4d948-109">Klassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="4d948-109">[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class.</span></span> <span data-ttu-id="4d948-110">Se [AccessDBProviderSample04](./accessdbprovidersample04.md).</span><span class="sxs-lookup"><span data-stu-id="4d948-110">See [AccessDBProviderSample04](./accessdbprovidersample04.md).</span></span>
-> - <span data-ttu-id="4d948-111">Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="4d948-111">[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class.</span></span> <span data-ttu-id="4d948-112">Se [AccessDBProviderSample05](./accessdbprovidersample05.md).</span><span class="sxs-lookup"><span data-stu-id="4d948-112">See [AccessDBProviderSample05](./accessdbprovidersample05.md).</span></span>
+> - <span data-ttu-id="e456a-108">Klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="e456a-108">[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) class.</span></span> <span data-ttu-id="e456a-109">Se [AccessDBProviderSample03](./accessdbprovidersample03.md).</span><span class="sxs-lookup"><span data-stu-id="e456a-109">See [AccessDBProviderSample03](./accessdbprovidersample03.md).</span></span>
+> - <span data-ttu-id="e456a-110">Klassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="e456a-110">[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) class.</span></span> <span data-ttu-id="e456a-111">Se [AccessDBProviderSample04](./accessdbprovidersample04.md).</span><span class="sxs-lookup"><span data-stu-id="e456a-111">See [AccessDBProviderSample04](./accessdbprovidersample04.md).</span></span>
+> - <span data-ttu-id="e456a-112">Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="e456a-112">[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class.</span></span> <span data-ttu-id="e456a-113">Se [AccessDBProviderSample05](./accessdbprovidersample05.md).</span><span class="sxs-lookup"><span data-stu-id="e456a-113">See [AccessDBProviderSample05](./accessdbprovidersample05.md).</span></span>
 >
-> <span data-ttu-id="4d948-113">Mer information om hur du väljer vilken leverantörs klass som ska härledas från baserat på funktioner i providern finns i [utforma din Windows PowerShell-Provider](./provider-types.md).</span><span class="sxs-lookup"><span data-stu-id="4d948-113">For more information about choosing which provider class to derive from based on provider features, see [Designing Your Windows PowerShell Provider](./provider-types.md).</span></span>
+> <span data-ttu-id="e456a-114">Mer information om hur du väljer vilken leverantörs klass som ska härledas från baserat på funktioner i providern finns i [utforma din Windows PowerShell-Provider](./provider-types.md).</span><span class="sxs-lookup"><span data-stu-id="e456a-114">For more information about choosing which provider class to derive from based on provider features, see [Designing Your Windows PowerShell Provider](./provider-types.md).</span></span>
 
-<span data-ttu-id="4d948-114">Det här exemplet demonstrerar följande:</span><span class="sxs-lookup"><span data-stu-id="4d948-114">This sample demonstrates the following:</span></span>
+<span data-ttu-id="e456a-115">Det här exemplet demonstrerar följande:</span><span class="sxs-lookup"><span data-stu-id="e456a-115">This sample demonstrates the following:</span></span>
 
-- <span data-ttu-id="4d948-115">Attributet deklareras `CmdletProvider` .</span><span class="sxs-lookup"><span data-stu-id="4d948-115">Declaring the `CmdletProvider` attribute.</span></span>
+- <span data-ttu-id="e456a-116">Attributet deklareras `CmdletProvider` .</span><span class="sxs-lookup"><span data-stu-id="e456a-116">Declaring the `CmdletProvider` attribute.</span></span>
 
-- <span data-ttu-id="4d948-116">Definiera en leverantörs klass som härleds direkt från klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="4d948-116">Defining a provider class that derives directly from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) class.</span></span>
+- <span data-ttu-id="e456a-117">Definiera en leverantörs klass som härleds direkt från klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .</span><span class="sxs-lookup"><span data-stu-id="e456a-117">Defining a provider class that derives directly from the [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) class.</span></span>
 
-## <a name="example"></a><span data-ttu-id="4d948-117">Exempel</span><span class="sxs-lookup"><span data-stu-id="4d948-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e456a-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="e456a-118">Example</span></span>
 
-<span data-ttu-id="4d948-118">Det här exemplet visar hur du definierar en provider-klass och hur du deklarerar `CmdletProvider` attributet.</span><span class="sxs-lookup"><span data-stu-id="4d948-118">This sample shows how to define a provider class and how to declare the `CmdletProvider` attribute.</span></span>
+<span data-ttu-id="e456a-119">Det här exemplet visar hur du definierar en provider-klass och hur du deklarerar `CmdletProvider` attributet.</span><span class="sxs-lookup"><span data-stu-id="e456a-119">This sample shows how to define a provider class and how to declare the `CmdletProvider` attribute.</span></span>
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="11-30":::
 
-## <a name="see-also"></a><span data-ttu-id="4d948-119">Se även</span><span class="sxs-lookup"><span data-stu-id="4d948-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e456a-120">Se även</span><span class="sxs-lookup"><span data-stu-id="e456a-120">See Also</span></span>
 
-[<span data-ttu-id="4d948-120">System. Management. Automation. Provider. Itemcmdletprovider</span><span class="sxs-lookup"><span data-stu-id="4d948-120">System.Management.Automation.Provider.Itemcmdletprovider</span></span>](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
+[<span data-ttu-id="e456a-121">System. Management. Automation. Provider. Itemcmdletprovider</span><span class="sxs-lookup"><span data-stu-id="e456a-121">System.Management.Automation.Provider.Itemcmdletprovider</span></span>](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 
-[<span data-ttu-id="4d948-121">System. Management. Automation. Provider. Containercmdletprovider</span><span class="sxs-lookup"><span data-stu-id="4d948-121">System.Management.Automation.Provider.Containercmdletprovider</span></span>](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[<span data-ttu-id="e456a-122">System. Management. Automation. Provider. Containercmdletprovider</span><span class="sxs-lookup"><span data-stu-id="e456a-122">System.Management.Automation.Provider.Containercmdletprovider</span></span>](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 
-[<span data-ttu-id="4d948-122">System. Management. Automation. Provider. Navigationcmdletprovider</span><span class="sxs-lookup"><span data-stu-id="4d948-122">System.Management.Automation.Provider.Navigationcmdletprovider</span></span>](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
+[<span data-ttu-id="e456a-123">System. Management. Automation. Provider. Navigationcmdletprovider</span><span class="sxs-lookup"><span data-stu-id="e456a-123">System.Management.Automation.Provider.Navigationcmdletprovider</span></span>](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 
-[<span data-ttu-id="4d948-123">Designa en Windows PowerShell-provider</span><span class="sxs-lookup"><span data-stu-id="4d948-123">Designing Your Windows PowerShell Provider</span></span>](./provider-types.md)
+[<span data-ttu-id="e456a-124">Designa en Windows PowerShell-provider</span><span class="sxs-lookup"><span data-stu-id="e456a-124">Designing Your Windows PowerShell Provider</span></span>](./provider-types.md)
