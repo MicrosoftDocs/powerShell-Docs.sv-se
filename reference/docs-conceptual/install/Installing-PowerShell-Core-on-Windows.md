@@ -2,12 +2,12 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 09/14/2020
-ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.openlocfilehash: 17d9326503434ec67ba3c96d9f41ce987ccf4aeb
+ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574461"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92909172"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -28,7 +28,7 @@ Installera PowerShell på Windows genom att ladda ned installations paketet frå
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Installera MSI-paketet
 
-MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Exempel:
+MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Till exempel:
 
 - `PowerShell-7.0.3-win-x64.msi`
 - `PowerShell-7.0.3-win-x86.msi`
@@ -132,26 +132,25 @@ Windows 10 IoT Enterprise levereras med Windows PowerShell, som vi kan använda 
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   # You'll get an error message and will be disconnected from the device because
+   # it has to restart WinRM
    ```
 
 1. Anslut till PowerShell 7-slutpunkt på enhet
 
    ```powershell
-   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-windows-10-iot-core"></a>Distribuera på Windows 10 IoT Core
 
-Windows 10 IoT Core lägger till Windows PowerShell när du inkluderar *IOT_POWERSHELL* funktion som vi kan använda för att distribuera PowerShell 7.
-Stegen som definieras ovan för Windows 10 IoT Enterprise kan också följas av IoT Core.
+Windows 10 IoT Core lägger till Windows PowerShell när du inkluderar _IOT_POWERSHELL_ funktion som vi kan använda för att distribuera PowerShell 7. Stegen som definieras ovan för Windows 10 IoT Enterprise kan också följas av IoT Core.
 
-För att lägga till den senaste PowerShell-versionen i leverans avbildningen använder du kommandot [import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) för att inkludera paketet i workarea och lägga till *OPENSRC_POWERSHELL* funktion i avbildningen.
+För att lägga till den senaste PowerShell-versionen i leverans avbildningen använder du kommandot [import-PSCoreRelease][] för att inkludera paketet i workarea och lägga till _OPENSRC_POWERSHELL_ funktion i avbildningen.
 
 > [!NOTE]
-> Windows PowerShell läggs inte till i ARM64-arkitekturen när du tar med *IOT_POWERSHELL*. Det innebär att zip-baserad installation inte fungerar.
-> Du måste använda kommandot Import-PSCoreRelease för att lägga till det i avbildningen.
+> Windows PowerShell läggs inte till i ARM64-arkitekturen när du tar med _IOT_POWERSHELL_ . Det innebär att zip-baserad installation inte fungerar. Du måste använda `Import-PSCoreRelease` kommandot för att lägga till det i avbildningen.
 
 ## <a name="deploying-on-nano-server"></a>Distribuera på Nano Server
 
@@ -169,7 +168,7 @@ I båda fallen behöver du paketet Windows 10 x64 ZIP release. Kör kommandona i
 1. Använd ditt favorit-zip-verktyg för att packa upp paketet till en katalog i den monterade Nano Server-avbildningen.
 1. Demontera avbildningen och starta den.
 1. Anslut till den inbyggda instansen av Windows PowerShell.
-1. Följ instruktionerna för att skapa en fjärran sluten slut punkt med hjälp av ["en annan instans teknik"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Följ instruktionerna för att skapa en fjärran sluten slut punkt med hjälp av ["en annan instans teknik"][].
 
 ### <a name="online-deployment-of-powershell"></a>Online-distribution av PowerShell
 
@@ -200,7 +199,7 @@ Distribuera PowerShell till Nano Server med hjälp av följande steg.
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
-- Om du vill använda WSMan-baserad fjärr kommunikation följer du anvisningarna för att skapa en slut punkt för fjärr kommunikation med hjälp av ["en annan instans teknik"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- Om du vill använda WSMan-baserad fjärr kommunikation följer du anvisningarna för att skapa en slut punkt för fjärr kommunikation med hjälp av ["en annan instans teknik"][].
 
 ## <a name="install-as-a-net-global-tool"></a>Installera som ett globalt .NET-verktyg
 
@@ -218,7 +217,7 @@ Med `winget` kommando rads verktyget kan utvecklare identifiera, installera, upp
 
 > [!NOTE]
 > `winget`Verktyget är för närvarande en för hands version. Alla planerade funktioner är inte tillgängliga för tillfället.
-> Verktygets alternativ och funktioner kan komma att ändras. Du bör inte använda den här metoden i ett scenario för produktions distribution. I [Winget] -dokumentationen finns en lista över system krav och installations anvisningar.
+> Du bör inte använda den här metoden i ett scenario för produktions distribution. I [Winget] -dokumentationen finns en lista över system krav och installations anvisningar.
 
 Följande kommandon kan användas för att installera PowerShell med de publicerade `winget` paketen:
 
@@ -249,6 +248,10 @@ PowerShell stöder PowerShell Remoting-protokollet (PSRP) via både WSMan och SS
 - [SSH-fjärrkommunikation i PowerShell Core][ssh-remoting]
 - [WSMan-fjärrkommunikation i PowerShell Core][wsman-remoting]
 
+## <a name="upgrading-an-existing-installation"></a>Uppgradera en befintlig installation
+
+För bästa resultat vid uppgraderingen bör du använda samma installations metod som du använde när du först installerade PowerShell. Varje installations metod installerar PowerShell på en annan plats. Om du inte är säker på hur PowerShell installerades kan du jämföra den installerade platsen med paket informationen i den här artikeln. Om du har installerat via MSI-paketet visas den informationen i **program och funktioner** på kontroll panelen.
+
 ## <a name="installation-support"></a>Installations stöd
 
 Microsoft stöder installations metoderna i det här dokumentet. Det kan finnas andra installations metoder som är tillgängliga från andra källor. Dessa verktyg och metoder kan fungera, men Microsoft stöder inte dessa metoder.
@@ -260,3 +263,5 @@ Microsoft stöder installations metoderna i det här dokumentet. Det kan finnas 
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
+["en annan instans teknik"]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+[Importera – PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
