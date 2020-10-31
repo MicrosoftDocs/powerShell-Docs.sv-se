@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-användar resurs
 description: DSC-användar resurs
-ms.openlocfilehash: 97e68addab7c6048b33a158473f7292f2abadb78
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b14f8d434ef3e1eb220fe7b0b18a011014c9ae6c
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661545"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142608"
 ---
 # <a name="dsc-user-resource"></a>DSC-användar resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Användar** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera lokala användar konton på målnoden.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

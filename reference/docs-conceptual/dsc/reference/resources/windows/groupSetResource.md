@@ -3,12 +3,12 @@ ms.date: 09/20/2019
 ms.topic: reference
 title: DSC GroupSet-resurs
 description: DSC GroupSet-resurs
-ms.openlocfilehash: f0e10409b0c80658ee05358c506b32da4b9deca7
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a9d1803aca40ac3571d42a5fd762489c03ed274e
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92650474"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142896"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet-resurs
 
@@ -18,10 +18,12 @@ ms.locfileid: "92650474"
 
 Använd den här resursen när du vill lägga till och/eller ta bort samma lista med medlemmar till mer än en grupp, ta bort mer än en grupp eller lägga till mer än en grupp med samma lista med medlemmar.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## <a name="syntax"></a>Syntax
 
 ```Syntax
-Group [string] #ResourceName
+GroupSet [string] #ResourceName
 {
     GroupName = [string[]]
     [ MembersToInclude = [string[]] ]

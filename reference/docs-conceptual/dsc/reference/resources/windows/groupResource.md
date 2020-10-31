@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-gruppresurs
 description: DSC-gruppresurs
-ms.openlocfilehash: 9e8931fe1227f3ac258c46fb1aecf4586958de66
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 8e2d1139c9573d7e310fec2410b14df04b79e1b2
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92650515"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142454"
 ---
 # <a name="dsc-group-resource"></a>DSC-gruppresurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Grupp** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera lokala grupper på målnoden.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsPackageCab-resurs
 description: DSC WindowsPackageCab-resurs
-ms.openlocfilehash: cf6de322bd625b5413dca68cc526500d3271c621
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 3ac10eb2a7da502b8cac23ab8bfee869a4e26fd3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656478"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143032"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab-resurs
 
@@ -17,6 +17,8 @@ ms.locfileid: "92656478"
 **WindowsPackageCab** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera Windows kabinett paket (. cab) på en målnod.
 
 Målnod måste ha DISM PowerShell-modulen installerad. Mer information finns i [använda DISM i Windows PowerShell](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14).
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

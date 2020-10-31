@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-filresurs
 description: DSC-filresurs
-ms.openlocfilehash: 66b81f28060c209e15b2a1817e9b794c081386e1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b62b9b80beb1f433715b32b41445dd0a8bb19d84
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92667342"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142947"
 ---
 # <a name="dsc-file-resource"></a>DSC-filresurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Fil** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera filer och mappar på målnoden. **DestinationPath** och **SourcePath** måste båda vara tillgängliga för målnoden.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

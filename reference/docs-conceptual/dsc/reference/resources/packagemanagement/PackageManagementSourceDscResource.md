@@ -3,12 +3,12 @@ ms.date: 07/15/2020
 ms.topic: reference
 title: DSC PackageManagementSource-resurs
 description: DSC PackageManagementSource-resurs
-ms.openlocfilehash: 4842a13dbf06073080c0dd02be986b0d7ba051d0
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 495b6548ef86f639e93b914ec8bd8ea7818ff8dd
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92667359"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142862"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resurs
 
@@ -19,6 +19,8 @@ ms.locfileid: "92667359"
 
 > [!IMPORTANT]
 > **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: Resurs för DSC-paket
 description: Resurs för DSC-paket
-ms.openlocfilehash: 44a975f33012ca9d49bf69aaafc0b23f625d1424
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 4bcc6dc68a37ebe434e30339452cd7269f984ae9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662731"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142879"
 ---
 # <a name="dsc-package-resource"></a>Resurs för DSC-paket
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Paket** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att installera eller avinstallera paket, till exempel Windows Installer och setup.exe paket, på en målnod.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

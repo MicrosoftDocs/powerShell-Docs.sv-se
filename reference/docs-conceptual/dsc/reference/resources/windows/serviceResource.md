@@ -3,18 +3,20 @@ ms.date: 09/20/2019
 ms.topic: reference
 title: DSC-tjänst resurs
 description: DSC-tjänst resurs
-ms.openlocfilehash: 68055983a8d2880b4d556fe990310f439afffe41
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664184"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142632"
 ---
 # <a name="dsc-service-resource"></a>DSC-tjänst resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Tjänst** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera tjänster på målnoden.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,18 +26,15 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
-    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Ignore | Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
-    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
-    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -46,13 +45,10 @@ Service [string] #ResourceName
 |Namn |Anger tjänstens namn. Observera att ibland skiljer det sig från visnings namnet. Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten. |
 |BuiltInAccount |Anger det inloggnings konto som ska användas för tjänsten. De värden som tillåts för den här egenskapen är: **LocalService** , **LocalSystem** och **NetworkService** . |
 |Autentiseringsuppgift |Anger autentiseringsuppgifter för det konto som tjänsten ska köras under. Den här egenskapen och egenskapen **BuiltinAccount** kan inte användas tillsammans. |
-|StartupTimeout | Vänte tiden innan tjänsten körs i millisekunder.|
 |Startuptype tjänst |Anger tjänstens starttyp. De värden som tillåts för den här egenskapen är: **Automatisk** , **inaktive rad** och **manuell** . |
 |Tillstånd |Anger det tillstånd som du vill säkerställa för tjänsten. Värdena är: **körs** eller **stoppas** . |
-|TerminateTimeout |Vänte tiden innan tjänsten stoppas i millisekunder.|
 |Beroenden | En matris med namnen på de beroenden som tjänsten ska ha. |
 |Beskrivning |Anger beskrivningen av mål tjänsten. |
-|DesktopInteract | Anger om tjänsten ska kunna kommunicera med ett fönster på Skriv bordet. Måste vara false för tjänster som inte körs som LocalSystem.|
 |DisplayName |Anger visnings namnet för mål tjänsten. |
 |Sökväg |Anger sökvägen till den binära filen för en ny tjänst. |
 

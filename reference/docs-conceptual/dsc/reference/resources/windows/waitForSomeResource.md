@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WaitForSome-resurs
 description: DSC WaitForSome-resurs
-ms.openlocfilehash: fda7ab804854d82d6e715b482e17c2761aa10029
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: bc9c3df2b476e7046ccfe6257acc1d1641e7594b
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656661"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143100"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome-resurs
 
 > Gäller för: Windows PowerShell 5. x
 
 Du kan använda den **WAITFORSOME** DSC-resursen (Desired State Configuration) i ett Node-block i en [DSC-konfiguration](../../../configurations/configurations.md) för att ange beroenden för konfigurationer på andra noder.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 Den här resursen slutförs om resursen som anges av egenskapen **resourceName** har önskat tillstånd på ett minsta antal noder (anges av **NodeCount** ) som definieras av egenskapen **nodnamn** .
 

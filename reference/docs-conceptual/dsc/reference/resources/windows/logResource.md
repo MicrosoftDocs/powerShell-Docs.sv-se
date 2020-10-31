@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-logg resurs
 description: DSC-logg resurs
-ms.openlocfilehash: c5d965924ac8cc9bb68cf7b4e17c4e521a20548f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 281d1f8aeeb4d075f073419ac02a0f81888ed2b5
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92650436"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142471"
 ---
 # <a name="dsc-log-resource"></a>DSC-logg resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Logg** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att skriva meddelanden till Microsoft-Windows-önskad tillstånds konfiguration/analytisk händelse logg.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

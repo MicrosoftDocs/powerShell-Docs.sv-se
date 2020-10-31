@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-skript resurs
 description: DSC-skript resurs
-ms.openlocfilehash: f0df91032cdf4f28b0a2d97e864a66f830531f39
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f404bf3137caa9f57ad56034895cb15c8944ec07
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662695"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142981"
 ---
 # <a name="dsc-script-resource"></a>DSC-skript resurs
 
@@ -16,6 +16,8 @@ ms.locfileid: "92662695"
 
 `Script`Resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att köra Windows PowerShell-skript block på målnoden. `Script`Resursen använder `GetScript` 
  `SetScript` och `TestScript` egenskaper som innehåller skript block som du definierar för att utföra motsvarande DSC-tillstånds åtgärder.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC register resurs
 description: DSC register resurs
-ms.openlocfilehash: d2b88a4aefe704aa4d337ec53202669b43412802
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 075f64abffb429b83958d859b0328b4eeec4cee6
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661558"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142505"
 ---
 # <a name="dsc-registry-resource"></a>DSC register resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **Register** resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera register nycklar och värden på en målnod.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

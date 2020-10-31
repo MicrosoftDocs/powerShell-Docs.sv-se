@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-Arkiv resurs
 description: DSC-Arkiv resurs
-ms.openlocfilehash: 1116ed068fab09b61daaeb7cdeba7bdbd27da6d8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 28e2436683d7cb3b69f894ac75bb1a58b8eb1e8a
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92648687"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142414"
 ---
 # <a name="dsc-archive-resource"></a>DSC-Arkiv resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 Arkiv resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att packa upp arkiv (zip-filer) vid en angiven sökväg.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

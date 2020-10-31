@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
-ms.date: 09/14/2020
-ms.openlocfilehash: 17d9326503434ec67ba3c96d9f41ce987ccf4aeb
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.date: 10/30/2020
+ms.openlocfilehash: 1b341b496cef34a2a98afeac9d24f0a51e8dbda0
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909172"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142794"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -28,7 +28,7 @@ Installera PowerShell på Windows genom att ladda ned installations paketet frå
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Installera MSI-paketet
 
-MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Till exempel:
+MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Exempel:
 
 - `PowerShell-7.0.3-win-x64.msi`
 - `PowerShell-7.0.3-win-x86.msi`
@@ -95,7 +95,16 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installera ZIP-paketet
 
-Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Installation av ZIP-arkivet kontrollerar inte kraven som MSI-paketen gör. Hämta ZIP-arkivet från sidan [versioner][releases] . Beroende på hur du laddar ned filen kan du behöva avblockera filen med hjälp av `Unblock-File` cmdleten. Zippa upp innehållet till valfri plats och kör `pwsh.exe` därifrån. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
+Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Ladda ned något av följande ZIP-arkiv från sidan [versioner][releases] .
+
+- PowerShell-7.0.3-win-x64.zip
+- PowerShell-7.0.3-win-x86.zip
+- PowerShell-7.0.3-win-arm64.zip
+- PowerShell-7.0.3-win-arm32.zip
+
+Beroende på hur du laddar ned filen kan du behöva avblockera filen med hjälp av `Unblock-File` cmdleten. Zippa upp innehållet till valfri plats och kör `pwsh.exe` därifrån. Till skillnad från när du installerar MSI-paketen söker inte du efter krav i ZIP-arkivet. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
+
+Använd den här metoden för att installera den ARM-baserade versionen av PowerShell på datorer som Microsoft Surface Pro X. För bästa resultat bör du installera PowerShell i till- `$env:ProgramFiles\PowerShell\7` mappen.
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>Distribuera i Windows 10 IoT Enterprise
 

@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsProcess-resurs
 description: DSC WindowsProcess-resurs
-ms.openlocfilehash: 3958d1cf90f0ce19b28b5b26cc1fbb8da03626a3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 3076e9cb857b78953c164253351b23e7da9b40c6
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656433"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143015"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **WindowsProcess** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism som konfigurerar processer på en målnod.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

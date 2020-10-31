@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WaitForAll-resurs
 description: DSC WaitForAll-resurs
-ms.openlocfilehash: 8e052010753dbe6e82e4adde2ff5f8851253278a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a477584cf97a56815bda9973cb2befc9b71d14d1
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656772"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143117"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll-resurs
 
 > Gäller för: Windows PowerShell 5. x
 
 Du kan använda den **WAITFORALL** DSC-resursen (Desired State Configuration) i ett Node-block i en [DSC-konfiguration](../../../configurations/configurations.md) för att ange beroenden för konfigurationer på andra noder.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 Den här resursen slutförs om resursen som anges av egenskapen **resourceName** har önskat tillstånd på alla målnod som definierats i egenskapen **nodnamn** .
 

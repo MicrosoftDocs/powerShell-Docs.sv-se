@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsFeature-resurs
 description: DSC WindowsFeature-resurs
-ms.openlocfilehash: b47febd201a9f7aff3b9ff712bd033ee30f974f9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 0089e1d2a045e9398aa53a3cedc3f64285c7cd58
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656394"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142998"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature-resurs
 
 > Gäller för: Windows PowerShell 4,0, Windows PowerShell 5. x
 
 **WindowsFeature** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att se till att roller och funktioner läggs till eller tas bort på en målnod.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

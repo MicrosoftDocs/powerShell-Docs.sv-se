@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsFeatureSet-resurs
 description: DSC WindowsFeatureSet-resurs
-ms.openlocfilehash: f7706679e3dfe85a8cf5a6795bc100657b018678
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 327c5e907e9b100f42b6a15684f8b131c1f20a41
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656639"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143083"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet-resurs
 
@@ -17,6 +17,8 @@ ms.locfileid: "92656639"
 **WindowsFeatureSet** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att se till att roller och funktioner läggs till eller tas bort på en målnod. Den här resursen är en [sammansatt resurs](../../../resources/authoringResourceComposite.md) som anropar [WindowsFeature-resursen](windowsfeatureResource.md) för varje funktion som anges i egenskapen **Name** .
 
 Använd den här resursen när du vill konfigurera ett antal Windows-funktioner till samma tillstånd.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

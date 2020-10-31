@@ -3,12 +3,12 @@ ms.date: 07/15/2020
 ms.topic: reference
 title: DSC PackageManagement-resurs
 description: DSC PackageManagement-resurs
-ms.openlocfilehash: b6676860acea094e04479e38f29ee7c72430851b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 83839adbef8bd8d3265a06b44a3101108b2a4486
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92667376"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142913"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement-resurs
 
@@ -18,6 +18,8 @@ Gäller för: Windows PowerShell 4,0, Windows PowerShell 5,0, Windows PowerShell
 
 > [!IMPORTANT]
 > **PackageManagement** -modulen måste vara minst version 1.1.7.0 för att följande egenskaps information ska vara korrekt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

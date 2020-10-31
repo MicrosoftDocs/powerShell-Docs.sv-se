@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC WindowsOptionalFeatureSet-resurs
 description: DSC WindowsOptionalFeatureSet-resurs
-ms.openlocfilehash: 7357df5289ded797ffc09b7d457749452d5a9e1a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f72cc27bfc8847d2c87cfb289f3e2c729a21d1f4
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656525"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143049"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-resurs
 
@@ -17,6 +17,8 @@ ms.locfileid: "92656525"
 **WindowsOptionalFeatureSet** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att säkerställa att valfria funktioner aktive ras på en målnod. Den här resursen är en [sammansatt resurs](../../../resources/authoringResourceComposite.md) som anropar [WindowsOptionalFeature-resursen](windowsOptionalFeatureResource.md) för varje funktion som anges i egenskapen **Name** .
 
 Använd den här resursen när du vill konfigurera ett antal Windows-valfria funktioner till samma tillstånd.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

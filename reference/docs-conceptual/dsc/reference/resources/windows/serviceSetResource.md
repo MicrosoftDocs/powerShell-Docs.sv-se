@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC ServiceSet-resurs
 description: DSC ServiceSet-resurs
-ms.openlocfilehash: 4115dd3e19121656c7448b4088346e5a1abf6af1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: bcb8382440d80c37179cdc1d1e17376b2511c3f3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664152"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142964"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet-resurs
 
@@ -17,6 +17,8 @@ ms.locfileid: "92664152"
 **ServiceSet** -resursen i Windows PowerShell Desired State Configuration (DSC) tillhandahåller en mekanism för att hantera tjänster på målnoden. Den här resursen är en [sammansatt resurs](../../../resources/authoringResourceComposite.md) som anropar [tjänst resursen](serviceResource.md) för varje tjänst som anges i egenskapen **Name** .
 
 Använd den här resursen när du vill konfigurera ett antal tjänster till samma tillstånd.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 
