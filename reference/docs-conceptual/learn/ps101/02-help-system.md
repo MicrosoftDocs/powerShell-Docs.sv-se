@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
-ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
+ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
+ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493665"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93143322"
 ---
 # <a name="chapter-2---the-help-system"></a>Kapitel 2 – hjälp systemet
 
@@ -38,7 +38,7 @@ Kompilerade kommandon i PowerShell kallas cmdlets. Cmdleten är uttalad "kommand
 
 En fråga jag är ofta ombedd Hur tar du reda på vad kommandona är i PowerShell? Både `Get-Command` och `Get-Help` kan användas för att fastställa kommandon.
 
-## <a name="get-help"></a>Get – hjälp
+## <a name="get-help"></a>Get-Help
 
 `Get-Help` är ett kommando för flera syften. `Get-Help` hjälper dig att lära dig hur du använder kommandon när du har hittat dem. `Get-Help` kan också användas för att hitta kommandon, men på ett annat och mer indirekt sätt jämfört med `Get-Command` .
 
@@ -94,7 +94,7 @@ Var och en av följande parametrar finns i olika parameter uppsättningar:
 - Parameter
 - ShowWindow
 
-All den encryptiska syntaxen, till exempel fyrkantiga hakparenteser och vinkelparenteser i avsnittet syntax betyder något men kommer att tas med i bilaga A till denna bok. Det är viktigt att lära sig vad den krypterade syntaxen ofta är svår att behålla för någon som är ny för PowerShell och som kanske inte använder den varje dag.
+All den encryptiska syntaxen, till exempel fyrkantiga hakparenteser och vinkelparenteser i avsnittet syntax betyder något men kommer att tas med i bilaga A till denna bok. Det är viktigt att lära sig att lära sig den krypterade syntaxen ofta är svår att bevaras för någon som är ny för PowerShell och som inte kan använda den varje dag.
 
 Mer information för att bättre förstå den krypterade syntaxen finns i [bilaga A][].
 
@@ -121,7 +121,7 @@ Ta en stund att köra det exemplet på datorn, granska utdata och anteckna hur i
 
 Observera att om du använder den **fullständiga** parametern returnerade flera ytterligare avsnitt, varav en är avsnittet parametrar som innehåller mer information än i avsnittet om syntax för kryptering.
 
-Den **fullständiga** parametern är en switch-parameter. En parameter som inte kräver ett värde kallas för en växel parameter. När en växel parameter anges är värdet sant och när det inte är det är värdet FALSKT.
+Den **fullständiga** parametern är en switch-parameter. En parameter som inte kräver ett värde kallas för en växel parameter. När en växel parameter anges är värdet true och när det inte är det är värdet false.
 
 Om du har arbetat genom det här kapitlet i PowerShell-konsolen har du märkt att föregående kommando visar det fullständiga hjälp avsnittet för `Get-Help` reste på skärmen utan att ge dig möjlighet att läsa det. Det finns ett bättre sätt.
 
@@ -434,7 +434,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 Observera i föregående exempel där kördes `Get-Command` , parametern **Substantiv** används och `Process` anges som värde för parametern **Substantiv** . Vad händer om du inte vet hur du använder `Get-Command` cmdleten? Du kan använda `Get-Help` för att visa hjälp avsnittet för `Get-Command` .
 
-Parametrarna **Name**, **Substantiv**och **verb** accepterar jokertecken. I följande exempel visas jokertecken som används med parametern **Name** :
+Parametrarna **Name** , **Substantiv** och **verb** accepterar jokertecken. I följande exempel visas jokertecken som används med parametern **Name** :
 
 ```Output
 Get-Command -Name *service*
