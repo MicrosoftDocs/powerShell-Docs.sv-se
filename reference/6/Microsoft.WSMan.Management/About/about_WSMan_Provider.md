@@ -1,0 +1,477 @@
+---
+description: WSMan
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 10/18/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: WSMan-Provider
+ms.openlocfilehash: 011383112d453a4fa88745c69b52e432709aa9d3
+ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "93270296"
+---
+# <a name="wsman-provider"></a><span data-ttu-id="67df9-104">WSMan-Provider</span><span class="sxs-lookup"><span data-stu-id="67df9-104">WSMan Provider</span></span>
+
+## <a name="provider-name"></a><span data-ttu-id="67df9-105">Providernamn</span><span class="sxs-lookup"><span data-stu-id="67df9-105">Provider name</span></span>
+
+<span data-ttu-id="67df9-106">WSMan</span><span class="sxs-lookup"><span data-stu-id="67df9-106">WSMan</span></span>
+
+## <a name="drives"></a><span data-ttu-id="67df9-107">Enheter</span><span class="sxs-lookup"><span data-stu-id="67df9-107">Drives</span></span>
+
+`WSMan:`
+
+## <a name="short-description"></a><span data-ttu-id="67df9-108">Kort beskrivning</span><span class="sxs-lookup"><span data-stu-id="67df9-108">Short description</span></span>
+
+<span data-ttu-id="67df9-109">Ger åtkomst till konfigurations information för hantering av webb tjänster (WS-Management).</span><span class="sxs-lookup"><span data-stu-id="67df9-109">Provides access to Web Services for Management (WS-Management) configuration information.</span></span>
+
+## <a name="detailed-description"></a><span data-ttu-id="67df9-110">Detaljerad beskrivning</span><span class="sxs-lookup"><span data-stu-id="67df9-110">Detailed description</span></span>
+
+<span data-ttu-id="67df9-111">Med **WSMan** -providern för PowerShell kan du lägga till, ändra, rensa och ta bort WS-Management konfigurations data på lokala eller fjärranslutna datorer.</span><span class="sxs-lookup"><span data-stu-id="67df9-111">The **WSMan** provider for PowerShell lets you add, change, clear, and delete WS-Management configuration data on local or remote computers.</span></span>
+
+<span data-ttu-id="67df9-112">**WSMan** -providern exponerar en PowerShell-enhet med en katalog struktur som motsvarar en logisk gruppering av WS-Management konfigurations inställningar.</span><span class="sxs-lookup"><span data-stu-id="67df9-112">The **WSMan** provider exposes a PowerShell drive with a directory structure that corresponds to a logical grouping of WS-Management configuration settings.</span></span> <span data-ttu-id="67df9-113">Dessa grupperingar kallas behållare.</span><span class="sxs-lookup"><span data-stu-id="67df9-113">These groupings are known as containers.</span></span>
+
+<span data-ttu-id="67df9-114">Från och med Windows PowerShell 3,0 har **WSMan** -providern uppdaterats för att stödja nya egenskaper för sessionsinställningar, till exempel **OutputBufferingMode**.</span><span class="sxs-lookup"><span data-stu-id="67df9-114">Beginning in Windows PowerShell 3.0, the **WSMan** provider has been updated to support new properties for session configurations, such as **OutputBufferingMode**.</span></span> <span data-ttu-id="67df9-115">Sessionens konfigurationer visas som objekt i katalogen plugin-program för `WSMan:` enheten och egenskaperna visas som objekt i varje konfiguration av sessionen.</span><span class="sxs-lookup"><span data-stu-id="67df9-115">The session configurations appear as items in the Plugin directory of the `WSMan:` drive and the properties appear as items in each session configuration.</span></span>
+
+<span data-ttu-id="67df9-116">**WSMan** -providern stöder följande cmdletar, som beskrivs i den här artikeln.</span><span class="sxs-lookup"><span data-stu-id="67df9-116">The **WSMan** provider supports the following cmdlets, which are covered in this article.</span></span>
+
+- [<span data-ttu-id="67df9-117">Get-location</span><span class="sxs-lookup"><span data-stu-id="67df9-117">Get-Location</span></span>](xref:Microsoft.PowerShell.Management.Get-Location)
+- [<span data-ttu-id="67df9-118">Ange plats</span><span class="sxs-lookup"><span data-stu-id="67df9-118">Set-Location</span></span>](xref:Microsoft.PowerShell.Management.Set-Location)
+- [<span data-ttu-id="67df9-119">Hämta objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-119">Get-Item</span></span>](xref:Microsoft.PowerShell.Management.Get-Item)
+- [<span data-ttu-id="67df9-120">Get-ChildItem</span><span class="sxs-lookup"><span data-stu-id="67df9-120">Get-ChildItem</span></span>](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [<span data-ttu-id="67df9-121">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-121">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+- [<span data-ttu-id="67df9-122">Ta bort objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-122">Remove-Item</span></span>](xref:Microsoft.PowerShell.Management.Remove-Item)
+
+> [!NOTE]
+> <span data-ttu-id="67df9-123">Du kan använda kommandon i `WSMan:` enheten för att ändra värdena för de nya egenskaperna.</span><span class="sxs-lookup"><span data-stu-id="67df9-123">You can use commands in the `WSMan:` drive to change the values of the new properties.</span></span> <span data-ttu-id="67df9-124">Du kan dock inte använda `WSMan:` enheten i PowerShell 2,0 för att ändra egenskaper som introduceras i Windows PowerShell 3,0.</span><span class="sxs-lookup"><span data-stu-id="67df9-124">However, you cannot use the `WSMan:` drive in PowerShell 2.0 to change properties that are introduced in Windows PowerShell 3.0.</span></span>
+> <span data-ttu-id="67df9-125">Även om inget fel genereras är kommandona inte effektiva att ändra inställningarna, använda **WSMan** -enheten i Windows PowerShell 3,0.</span><span class="sxs-lookup"><span data-stu-id="67df9-125">Although no error is generated, the commands are not effective To change these settings, use the **WSMan** drive in Windows PowerShell 3.0.</span></span>
+
+### <a name="organization-of-the-wsman-drive"></a><span data-ttu-id="67df9-126">Organisation för WSMan: Drive</span><span class="sxs-lookup"><span data-stu-id="67df9-126">Organization of the WSMan: Drive</span></span>
+
+- <span data-ttu-id="67df9-127">**Klient** : du kan konfigurera olika aspekter av WS-Management-klienten.</span><span class="sxs-lookup"><span data-stu-id="67df9-127">**Client** : You can configure various aspects of the WS-Management client.</span></span> <span data-ttu-id="67df9-128">Konfigurations informationen lagras i registret.</span><span class="sxs-lookup"><span data-stu-id="67df9-128">The configuration information is stored in the registry.</span></span>
+
+- <span data-ttu-id="67df9-129">**Tjänst** : du kan konfigurera olika aspekter av tjänsten WS-Management.</span><span class="sxs-lookup"><span data-stu-id="67df9-129">**Service** : You can configure various aspects of the WS-Management service.</span></span>
+  <span data-ttu-id="67df9-130">Konfigurations informationen lagras i registret.</span><span class="sxs-lookup"><span data-stu-id="67df9-130">The configuration information is stored in the registry.</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-131">Tjänst konfigurationen kallas ibland för Server konfiguration.</span><span class="sxs-lookup"><span data-stu-id="67df9-131">Service configuration is sometimes referred to as Server configuration.</span></span>
+
+- <span data-ttu-id="67df9-132">**Shell** : du kan konfigurera olika aspekter av WS-Management Shell, till exempel inställningen att tillåta fjärråtkomst ( **AllowRemoteShellAccess** ) och det maximala antalet samtidiga användare som tillåts ( **MaxConcurrentUsers** ).</span><span class="sxs-lookup"><span data-stu-id="67df9-132">**Shell** : You can configure various aspects of the WS-Management shell, such as the setting to allow remote shell access ( **AllowRemoteShellAccess** ) and the maximum number of concurrent users allowed ( **MaxConcurrentUsers** ).</span></span>
+
+- <span data-ttu-id="67df9-133">**Lyssnare** : du kan skapa och konfigurera en lyssnare.</span><span class="sxs-lookup"><span data-stu-id="67df9-133">**Listener** : You can create and configure a listener.</span></span> <span data-ttu-id="67df9-134">En lyssnare är en hanterings tjänst som implementerar WS-Management protokoll för att skicka och ta emot meddelanden.</span><span class="sxs-lookup"><span data-stu-id="67df9-134">A listener is a management service that implements the WS-Management protocol to send and to receive messages.</span></span>
+
+- <span data-ttu-id="67df9-135">**Plugin** : plugin-program läses in och används av WS-Managements tjänsten för att tillhandahålla olika funktioner.</span><span class="sxs-lookup"><span data-stu-id="67df9-135">**Plugin** : Plug-ins are loaded and used by the WS-Management service to provide various functions.</span></span> <span data-ttu-id="67df9-136">Som standard tillhandahåller PowerShell tre plugin-program:</span><span class="sxs-lookup"><span data-stu-id="67df9-136">By default, PowerShell provides three plug-ins:</span></span>
+  - <span data-ttu-id="67df9-137">Plugin-programmet för Event Forwarding.</span><span class="sxs-lookup"><span data-stu-id="67df9-137">The Event Forwarding plug-in.</span></span>
+  - <span data-ttu-id="67df9-138">Microsoft. PowerShell-plugin-programmet.</span><span class="sxs-lookup"><span data-stu-id="67df9-138">The Microsoft.PowerShell plug-in.</span></span>
+  - <span data-ttu-id="67df9-139">Plugin-programmet för Windows Management Instrumentation (WMI) providern.</span><span class="sxs-lookup"><span data-stu-id="67df9-139">The Windows Management Instrumentation (WMI) Provider plug-in.</span></span>
+  <span data-ttu-id="67df9-140">Dessa tre plugin-program stöder vidarebefordran av händelser, konfiguration och WMI-åtkomst.</span><span class="sxs-lookup"><span data-stu-id="67df9-140">These three plug-ins support event forwarding, configuration, and WMI access.</span></span>
+
+- <span data-ttu-id="67df9-141">**ClientCertificate** : du kan skapa och konfigurera ett klient certifikat.</span><span class="sxs-lookup"><span data-stu-id="67df9-141">**ClientCertificate** : You can create and configure a client certificate.</span></span>
+  <span data-ttu-id="67df9-142">Ett klient certifikat används när den WS-Management klienten är konfigurerad för att använda certifikatautentisering.</span><span class="sxs-lookup"><span data-stu-id="67df9-142">A client certificate is used when the WS-Management client is configured to use certificate authentication.</span></span>
+
+### <a name="directory-hierarchy-of-the-wsman-provider"></a><span data-ttu-id="67df9-143">Katalog-hierarki för WSMan-providern</span><span class="sxs-lookup"><span data-stu-id="67df9-143">Directory Hierarchy of the WSMan Provider</span></span>
+
+<span data-ttu-id="67df9-144">Katalog-hierarkin för WSMan-providern för den lokala datorn är följande.</span><span class="sxs-lookup"><span data-stu-id="67df9-144">The directory hierarchy of the WSMan provider for the local computer is as follows.</span></span>
+
+```
+WSMan:\localhost
+--- Client
+--- Service
+--- Shell
+--- Listener
+------ <Specific_Listener>
+--- Plugin
+------ Event Forwarding Plugin
+--------- InitializationParameters
+--------- Resources
+------------ Security
+------ Microsoft.Powershell
+--------- InitializationParameters
+--------- Resources
+------------ Security
+------ WMI Provider
+--------- InitializationParameters
+--------- Resources
+------------ Security
+--- ClientCertificate
+```
+
+<span data-ttu-id="67df9-145">Hierarkin för WSMan-providern för en fjärrdator är samma som en lokal dator.</span><span class="sxs-lookup"><span data-stu-id="67df9-145">The directory hierarchy of the WSMan provider for a remote computer is the same as a local computer.</span></span> <span data-ttu-id="67df9-146">Men för att få åtkomst till konfigurations inställningarna för en fjärrdator måste du upprätta en anslutning till fjärrdatorn med hjälp av [Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan).</span><span class="sxs-lookup"><span data-stu-id="67df9-146">However, in order to access the configuration settings of a remote computer, you need to make a connection to the remote computer using [Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan).</span></span> <span data-ttu-id="67df9-147">När en anslutning har gjorts till en fjärrdator visas namnet på fjärrdatorn i providern.</span><span class="sxs-lookup"><span data-stu-id="67df9-147">Once a connection is made to a remote computer, the name of the remote computer shows up in the provider.</span></span>
+
+```
+WSMan:\<Remote_Computer_Name>
+```
+
+## <a name="navigating-the-wsman-drive"></a><span data-ttu-id="67df9-148">Navigera i filen WSMan: Drive</span><span class="sxs-lookup"><span data-stu-id="67df9-148">Navigating the WSMan: Drive</span></span>
+
+<span data-ttu-id="67df9-149">Detta kommando använder `Set-Location` cmdleten för att ändra den aktuella platsen till `WSMan:` enheten.</span><span class="sxs-lookup"><span data-stu-id="67df9-149">This command uses the `Set-Location` cmdlet to change the current location to the `WSMan:` drive.</span></span>
+
+```powershell
+Set-Location WSMan:
+```
+
+<span data-ttu-id="67df9-150">Om du vill återgå till en fil systemen het skriver du enhetens namn.</span><span class="sxs-lookup"><span data-stu-id="67df9-150">To return to a file system drive, type the drive name.</span></span> <span data-ttu-id="67df9-151">Skriv till exempel.</span><span class="sxs-lookup"><span data-stu-id="67df9-151">For example, type.</span></span>
+
+```powershell
+Set-Location C:
+```
+
+### <a name="navigating-to-a-remote-system-store-location"></a><span data-ttu-id="67df9-152">Navigera till en lagrings plats för fjärrsystem</span><span class="sxs-lookup"><span data-stu-id="67df9-152">Navigating to a remote system store location</span></span>
+
+<span data-ttu-id="67df9-153">Det här kommandot använder `Set-Location` kommandot för att ändra den aktuella platsen till rot platsen på den fjärranslutna system lagrings platsen.</span><span class="sxs-lookup"><span data-stu-id="67df9-153">This command uses the `Set-Location` command to change the current location to the root location in the remote system store location.</span></span> <span data-ttu-id="67df9-154">Använd ett omvänt snedstreck eller ett snedstreck `\` `/` för att ange `WSMan:` enhetens nivå.</span><span class="sxs-lookup"><span data-stu-id="67df9-154">Use a backslash `\` or forward slash `/` to indicate a level of the `WSMan:` drive.</span></span>
+
+```powershell
+Set-Location -Path  WSMan:\SERVER01
+```
+
+> [!NOTE]
+> <span data-ttu-id="67df9-155">Kommandot ovan förutsätter att det redan finns en anslutning till fjärrdatorn.</span><span class="sxs-lookup"><span data-stu-id="67df9-155">The above command assume that a connection to the remote system already exists.</span></span>
+
+## <a name="displaying-the-contents-of-the-wsman-drive"></a><span data-ttu-id="67df9-156">Visar innehållet i filen WSMan: Drive</span><span class="sxs-lookup"><span data-stu-id="67df9-156">Displaying the Contents of the WSMan: Drive</span></span>
+
+<span data-ttu-id="67df9-157">Det här kommandot använder `Get-Childitem` cmdlet: en för att visa WS-Management butikerna på localhost-lagringsplatsen.</span><span class="sxs-lookup"><span data-stu-id="67df9-157">This command uses the `Get-Childitem` cmdlet to display the WS-Management stores in the Localhost store location.</span></span>
+
+```powershell
+Get-ChildItem -path WSMan:\Localhost
+```
+
+<span data-ttu-id="67df9-158">Om du är i `WSMan:` enheten kan du utelämna enhets namnet.</span><span class="sxs-lookup"><span data-stu-id="67df9-158">If you are in the `WSMan:` drive, you can omit the drive name.</span></span>
+
+<span data-ttu-id="67df9-159">Det här kommandot använder `Get-Childitem` cmdleten för att visa WS-Management butiker på fjärrdatorn "SERVER01".</span><span class="sxs-lookup"><span data-stu-id="67df9-159">This command uses the `Get-Childitem` cmdlet to display the WS-Management stores in the remote computer "SERVER01" store location.</span></span>
+
+```powershell
+Get-ChildItem -path WSMan:\SERVER01
+```
+
+> [!NOTE]
+> <span data-ttu-id="67df9-160">Kommandot ovan förutsätter att det redan finns en anslutning till fjärrdatorn.</span><span class="sxs-lookup"><span data-stu-id="67df9-160">The above command assume that a connection to the remote system already exists.</span></span>
+
+## <a name="setting-the-value-of-items-in-the--wsman-drive"></a><span data-ttu-id="67df9-161">Ange värdet för objekt i WSMAN: Drive</span><span class="sxs-lookup"><span data-stu-id="67df9-161">Setting the value of items in the  WSMAN: drive</span></span>
+
+<span data-ttu-id="67df9-162">Du kan använda `Set-Item` cmdleten för att ändra konfigurations inställningarna i `WSMAN` enheten.</span><span class="sxs-lookup"><span data-stu-id="67df9-162">You can use the `Set-Item` cmdlet to change configuration settings in the `WSMAN` drive.</span></span> <span data-ttu-id="67df9-163">I följande exempel anges värdet **TrustedHosts** för att acceptera alla värdar med suffixet "contoso.com".</span><span class="sxs-lookup"><span data-stu-id="67df9-163">The following example sets the **TrustedHosts** value to accept all hosts with the suffix "contoso.com".</span></span>
+
+```powershell
+# You do not need to specify the -Path parameter name when using Set-Item.
+PS WSMAN:\localhost\Client> Set-Item .\TrustedHosts -Value "*.contoso.com"
+```
+
+<span data-ttu-id="67df9-164">`Set-Item`Cmdleten stöder ytterligare en parameter `-Concatenate` som lägger till ett värde i stället för att ändra det.</span><span class="sxs-lookup"><span data-stu-id="67df9-164">The `Set-Item` cmdlet supports an additional parameter `-Concatenate` that appends a value instead of changing it.</span></span> <span data-ttu-id="67df9-165">I följande exempel läggs ett nytt värde "\*. domain2.com" till i det gamla värdet som är lagrat i `TrustedHost:`</span><span class="sxs-lookup"><span data-stu-id="67df9-165">The following example will append a new value "\*.domain2.com" to the old value stored in `TrustedHost:`</span></span>
+
+```powershell
+Set-Item WSMAN:\localhost\Client\TrustedHosts *.domain2.com -Concatenate
+```
+
+## <a name="creating-items-in-the-wsman-drive"></a><span data-ttu-id="67df9-166">Skapa objekt i WSMAN: Drive</span><span class="sxs-lookup"><span data-stu-id="67df9-166">Creating items in the WSMAN: drive</span></span>
+
+### <a name="creating-a-new-listener"></a><span data-ttu-id="67df9-167">Skapa en ny lyssnare</span><span class="sxs-lookup"><span data-stu-id="67df9-167">Creating a new listener</span></span>
+
+<span data-ttu-id="67df9-168">`New-Item`Cmdleten skapar objekt i en provider.</span><span class="sxs-lookup"><span data-stu-id="67df9-168">The `New-Item` cmdlet creates items within a provider drive.</span></span> <span data-ttu-id="67df9-169">Varje provider har olika objekt typer som du kan skapa.</span><span class="sxs-lookup"><span data-stu-id="67df9-169">Each provider has different item types that you can create.</span></span> <span data-ttu-id="67df9-170">I `WSMAN:` enheten kan du skapa *lyssnare* som du konfigurerar för att ta emot och svara på fjärrbegäranden.</span><span class="sxs-lookup"><span data-stu-id="67df9-170">In the `WSMAN:` drive, you can create *Listeners* which you configure to receive and respond to remote requests.</span></span> <span data-ttu-id="67df9-171">Följande kommando skapar en ny HTTP-lyssnare med hjälp av `New-Item` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="67df9-171">The following command creates a new HTTP listener using the `New-Item` cmdlet.</span></span>
+
+```powershell
+New-Item -Path WSMan:\localhost\Listener -Address * -Transport HTTP -force
+```
+
+### <a name="creating-a-new-plug-in"></a><span data-ttu-id="67df9-172">Skapa ett nytt plugin-program</span><span class="sxs-lookup"><span data-stu-id="67df9-172">Creating a new plug-in</span></span>
+
+<span data-ttu-id="67df9-173">Det här kommandot skapar (registrerar) ett plugin-program för tjänsten WS-Management.</span><span class="sxs-lookup"><span data-stu-id="67df9-173">This command creates (registers) a plug-in for the WS-Management service.</span></span>
+
+```powershell
+New-Item -Path WSMan:\localhost\Plugin `
+         -Plugin TestPlugin `
+         -FileName %systemroot%\system32\WsmWmiPl.dll `
+         -Resource http://schemas.dmtf.org/wbem/wscim/2/cim-schema `
+         -SDKVersion 1 `
+         -Capability "Get","Put","Invoke","Enumerate" `
+         -XMLRenderingType text
+```
+
+### <a name="creating-a-new-resource-entry"></a><span data-ttu-id="67df9-174">Skapa en ny resurs post</span><span class="sxs-lookup"><span data-stu-id="67df9-174">Creating a new resource entry</span></span>
+
+<span data-ttu-id="67df9-175">Det här kommandot skapar en resurs post i resurs katalogen i en TestPlugin.</span><span class="sxs-lookup"><span data-stu-id="67df9-175">This command creates a resource entry in the Resources directory of a TestPlugin.</span></span> <span data-ttu-id="67df9-176">Det här kommandot förutsätter att en TestPlugin har skapats med ett separat kommando.</span><span class="sxs-lookup"><span data-stu-id="67df9-176">This command assumes that a TestPlugin has been created using a separate command.</span></span>
+
+```powershell
+New-Item -Path WSMan:\localhost\Plugin\TestPlugin\Resources `
+         -ResourceUri http://schemas.dmtf.org/wbem/wscim/3/cim-schema `
+         -Capability "Enumerate"
+
+```
+
+### <a name="creating-a-new-security-entry-for-a-resource"></a><span data-ttu-id="67df9-177">Skapa en ny säkerhets post för en resurs</span><span class="sxs-lookup"><span data-stu-id="67df9-177">Creating a new security entry for a resource</span></span>
+
+<span data-ttu-id="67df9-178">Det här kommandot skapar en säkerhets post i säkerhets katalogen för Resource_5967683 (en angiven resurs).</span><span class="sxs-lookup"><span data-stu-id="67df9-178">This command creates a security entry in the Security directory of Resource_5967683 (a specific resource).</span></span> <span data-ttu-id="67df9-179">Det här kommandot förutsätter att resurs posten har skapats med ett separat kommando.</span><span class="sxs-lookup"><span data-stu-id="67df9-179">This command assumes that the resource entry has been created using a separate command.</span></span>
+
+```powershell
+$path = "WSMan:\localhost\Plugin\TestPlugin\Resources\Resource_5967683"
+New-Item -Path $path\Security `
+         -Sddl "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;SA;GWGX;;;WD)"
+```
+
+### <a name="creating-a-new-client-certificate"></a><span data-ttu-id="67df9-180">Skapa ett nytt klient certifikat</span><span class="sxs-lookup"><span data-stu-id="67df9-180">Creating a new Client Certificate</span></span>
+
+<span data-ttu-id="67df9-181">Det här kommandot skapar **ClientCertificate** -poster som kan användas av den WS-Management klienten.</span><span class="sxs-lookup"><span data-stu-id="67df9-181">This command creates **ClientCertificate** entry that can be used by the WS-Management client.</span></span> <span data-ttu-id="67df9-182">Den nya **ClientCertificate** visas under katalogen **ClientCertificate** som "ClientCertificate_1234567890".</span><span class="sxs-lookup"><span data-stu-id="67df9-182">The new **ClientCertificate** will show up under the **ClientCertificate** directory as "ClientCertificate_1234567890".</span></span> <span data-ttu-id="67df9-183">Alla parametrar är obligatoriska.</span><span class="sxs-lookup"><span data-stu-id="67df9-183">All of the parameters are mandatory.</span></span> <span data-ttu-id="67df9-184">**Utfärdaren** måste vara tumavtryck för utfärdarcertifikatet.</span><span class="sxs-lookup"><span data-stu-id="67df9-184">The **Issuer** needs to be thumbprint of the issuers certificate.</span></span>
+
+```powershell
+$cred = Get-Credential
+New-Item -Path WSMan:\localhost\ClientCertificate `
+         -Issuer 1b3fd224d66c6413fe20d21e38b304226d192dfe `
+         -URI wmicimv2/* `
+         -Credential $cred;
+```
+
+### <a name="creating-a-new-initialization-parameter"></a><span data-ttu-id="67df9-185">Skapa en ny initierings parameter</span><span class="sxs-lookup"><span data-stu-id="67df9-185">Creating a new Initialization Parameter</span></span>
+
+<span data-ttu-id="67df9-186">Det här kommandot skapar en initierings parameter med namnet "testparametername" i katalogen "InitializationParameters".</span><span class="sxs-lookup"><span data-stu-id="67df9-186">This command creates an Initialization parameter named "testparametername" in the "InitializationParameters" directory.</span></span> <span data-ttu-id="67df9-187">Det här kommandot förutsätter att "TestPlugin" har skapats med ett separat kommando.</span><span class="sxs-lookup"><span data-stu-id="67df9-187">This command assumes that the "TestPlugin" has been created using a separate command.</span></span>
+
+```powershell
+New-Item -Path WSMan:\localhost\Plugin\TestPlugin\InitializationParameters `
+         -ParamName testparametername `
+         -ParamValue testparametervalue
+```
+
+## <a name="dynamic-parameters"></a><span data-ttu-id="67df9-188">Dynamiska parametrar</span><span class="sxs-lookup"><span data-stu-id="67df9-188">Dynamic parameters</span></span>
+
+<span data-ttu-id="67df9-189">Dynamiska parametrar är cmdlet-parametrar som läggs till av en PowerShell-Provider och är bara tillgängliga när cmdleten används i den provider-aktiverade enheten.</span><span class="sxs-lookup"><span data-stu-id="67df9-189">Dynamic parameters are cmdlet parameters that are added by a PowerShell provider and are available only when the cmdlet is being used in the provider-enabled drive.</span></span>
+
+### <a name="address-string"></a><span data-ttu-id="67df9-190">Adresspool \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-190">Address \<String\></span></span>
+
+<span data-ttu-id="67df9-191">Anger adressen som den här lyssnaren skapades för.</span><span class="sxs-lookup"><span data-stu-id="67df9-191">Specifies the address for which this listener was created.</span></span> <span data-ttu-id="67df9-192">Värdet kan vara något av följande:</span><span class="sxs-lookup"><span data-stu-id="67df9-192">The value can be one of the following:</span></span>
+
+- <span data-ttu-id="67df9-193">Den litterala strängen "\*".</span><span class="sxs-lookup"><span data-stu-id="67df9-193">The literal string "\*".</span></span> <span data-ttu-id="67df9-194">(Jokertecknet ( `*` ) gör att kommandot binder alla IP-adresser på alla nätverkskort.)</span><span class="sxs-lookup"><span data-stu-id="67df9-194">(The wildcard character (`*`) makes the command bind all the IP addresses on all the network adapters.)</span></span>
+- <span data-ttu-id="67df9-195">Den litterala strängen "IP:" följt av en giltig IP-adress i antingen IPv4 punktavgränsat decimal format eller i IPv6-klonat-hexadecimalt format.</span><span class="sxs-lookup"><span data-stu-id="67df9-195">The literal string "IP:" followed by a valid IP address in either IPv4 dotted-decimal format or in IPv6 cloned-hexadecimal format.</span></span>
+- <span data-ttu-id="67df9-196">Den litterala strängen "MAC:" följt av MAC-adressen för ett kort.</span><span class="sxs-lookup"><span data-stu-id="67df9-196">The literal string "MAC:" followed by the MAC address of an adapter.</span></span>
+  <span data-ttu-id="67df9-197">Till exempel: MAC: 32-a3-58 -90-CC.</span><span class="sxs-lookup"><span data-stu-id="67df9-197">For example: MAC:32-a3-58-90-be-cc.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="67df9-198">Värdet Address anges när du skapar en lyssnare.</span><span class="sxs-lookup"><span data-stu-id="67df9-198">The Address value is set when creating a Listener.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-199">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-199">Cmdlets supported</span></span>
+
+- [<span data-ttu-id="67df9-200">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-200">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="capability-enumeration"></a><span data-ttu-id="67df9-201">Funktionen \<Enumeration\></span><span class="sxs-lookup"><span data-stu-id="67df9-201">Capability \<Enumeration\></span></span>
+
+<span data-ttu-id="67df9-202">När du arbetar med *plugin-program,* anger den här parametern en åtgärd som stöds på den här Uniform Resource Identifier (URI).</span><span class="sxs-lookup"><span data-stu-id="67df9-202">When working with *Plug-ins* this parameter specifies an operation that is supported on this Uniform Resource Identifier (URI).</span></span> <span data-ttu-id="67df9-203">Du måste skapa en post för varje typ av åtgärd som URI: n stöder.</span><span class="sxs-lookup"><span data-stu-id="67df9-203">You have to create one entry for each type of operation that the URI supports.</span></span> <span data-ttu-id="67df9-204">Du kan ange giltiga attribut för en specifik åtgärd, om åtgärden stöder det.</span><span class="sxs-lookup"><span data-stu-id="67df9-204">You can specify any valid attributes for a given operation, if the operation supports it.</span></span>
+
+<span data-ttu-id="67df9-205">Dessa attribut är **SupportsFiltering** och **SupportsFragment**.</span><span class="sxs-lookup"><span data-stu-id="67df9-205">These attributes include **SupportsFiltering** and **SupportsFragment**.</span></span>
+
+- <span data-ttu-id="67df9-206">**Skapa** : skapa-åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-206">**Create** : Create operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-207">Attributet **SupportFragment**  används om Create-åtgärden stöder konceptet.</span><span class="sxs-lookup"><span data-stu-id="67df9-207">The **SupportFragment**  attribute is used if the Create operation supports the concept.</span></span>
+  - <span data-ttu-id="67df9-208">Attributet **SupportFiltering** är inte giltigt för Create-åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-208">The **SupportFiltering** attribute is NOT valid for Create operations and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-209">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-209">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-210">**Ta bort** : borttagnings åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-210">**Delete** : Delete operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-211">Attributet **SupportFragment** används om borttagnings åtgärden stöder konceptet.</span><span class="sxs-lookup"><span data-stu-id="67df9-211">The **SupportFragment** attribute is used if the Delete operation supports the concept.</span></span>
+  - <span data-ttu-id="67df9-212">Attributet **SupportFiltering** är inte giltigt för Delete-åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-212">The **SupportFiltering** attribute is NOT valid for Delete operations and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-213">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-213">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-214">**Uppräkning** : uppräknings åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-214">**Enumerate** : Enumerate operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-215">Attributet **SupportFragment** stöds inte för uppräknings åtgärder och ska vara inställt på false.</span><span class="sxs-lookup"><span data-stu-id="67df9-215">The **SupportFragment** attribute is NOT supported for Enumerate operations and should be set to False.</span></span>
+  - <span data-ttu-id="67df9-216">Attributet **SupportFiltering** är giltigt och om plugin-programmet stöder filtrering ska det här attributet anges till "true".</span><span class="sxs-lookup"><span data-stu-id="67df9-216">The **SupportFiltering** attribute is valid, and if the plug-in supports filtering, this attribute should be set to "True".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-217">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-217">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-218">**Get** : get-åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-218">**Get** : Get operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-219">Attributet **SupportFragment** används om Get-åtgärden stöder konceptet.</span><span class="sxs-lookup"><span data-stu-id="67df9-219">The **SupportFragment** attribute is used if the Get operation supports the concept.</span></span>
+  - <span data-ttu-id="67df9-220">Attributet **SupportFiltering** är inte giltigt för Get-åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-220">The **SupportFiltering** attribute is NOT valid for Get operations and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-221">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-221">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-222">**Invoke** : Invoke-åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-222">**Invoke** : Invoke operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-223">Attributet **SupportFragment** stöds inte för Invoke-åtgärder och ska vara inställt på false.</span><span class="sxs-lookup"><span data-stu-id="67df9-223">The **SupportFragment** attribute is not supported for Invoke operations and should be set to False.</span></span>
+  - <span data-ttu-id="67df9-224">Attributet **SupportFiltering** är inte giltigt och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-224">The **SupportFiltering** attribute is not valid and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-225">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-225">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-226">**Lägg** till: placerings åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-226">**Put** : Put operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-227">Attributet **SupportFragment** används om åtgärden Lägg till stöder konceptet.</span><span class="sxs-lookup"><span data-stu-id="67df9-227">The **SupportFragment** attribute is used if the Put operation supports the concept.</span></span>
+  - <span data-ttu-id="67df9-228">Attributet **SupportFiltering** är inte giltigt för att införa åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-228">The **SupportFiltering** attribute is not valid for Put operations and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-229">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-229">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-230">**Prenumerera** : prenumerations åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-230">**Subscribe** : Subscribe operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-231">Attributet **SupportFragment** stöds inte för prenumerations åtgärder och ska vara inställt på false.</span><span class="sxs-lookup"><span data-stu-id="67df9-231">The **SupportFragment** attribute is not supported for Subscribe operations and should be set to False.</span></span>
+  - <span data-ttu-id="67df9-232">Attributet **SupportFiltering** är inte giltigt för prenumerations åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-232">The **SupportFiltering** attribute is not valid for Subscribe operations and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-233">Den här åtgärden är inte giltig för en URI om Shell-åtgärder också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-233">This operation is not valid for a URI if Shell operations are also supported.</span></span>
+- <span data-ttu-id="67df9-234">**Shell** : Shell-åtgärder stöds på URI: n.</span><span class="sxs-lookup"><span data-stu-id="67df9-234">**Shell** : Shell operations are supported on the URI.</span></span>
+  - <span data-ttu-id="67df9-235">Attributet **SupportFragment** stöds inte för Shell-åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-235">The **SupportFragment** attribute is not supported for Shell operations and should be set to "False".</span></span>
+  - <span data-ttu-id="67df9-236">Attributet **SupportFiltering** är inte giltigt för Shell-åtgärder och ska vara inställt på "false".</span><span class="sxs-lookup"><span data-stu-id="67df9-236">The **SupportFiltering** attribute is not valid for Shell operations and should be set to "False".</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-237">Den här åtgärden är inte giltig för en URI om en annan åtgärd också stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-237">This operation is not valid for a URI if ANY other operation is also supported.</span></span>
+  > [!NOTE]
+  > <span data-ttu-id="67df9-238">Om en gränssnitts åtgärd har kon figurer ATS för en URI, get-, get-, Create-, DELETE-, Invoke-och Enumeration-åtgärder bearbetas internt i WS-Management (WinRM)-tjänsten för att hantera gränssnitt.</span><span class="sxs-lookup"><span data-stu-id="67df9-238">If a Shell operation is configured for a URI, Get, Put, Create, Delete, Invoke, and Enumerate operations are processed internally within the WS-Management (WinRM) service to manage shells.</span></span> <span data-ttu-id="67df9-239">Därför kan plugin-programmet inte hantera åtgärderna.</span><span class="sxs-lookup"><span data-stu-id="67df9-239">As a result, the plug-in cannot handle the operations.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-240">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-240">Cmdlets supported</span></span>
+
+- [<span data-ttu-id="67df9-241">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-241">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="certificatethumbprint-string"></a><span data-ttu-id="67df9-242">CertificateThumbprint \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-242">CertificateThumbprint \<String\></span></span>
+
+<span data-ttu-id="67df9-243">Anger tumavtrycket för tjänst certifikatet.</span><span class="sxs-lookup"><span data-stu-id="67df9-243">Specifies the thumbprint of the service certificate.</span></span>
+
+<span data-ttu-id="67df9-244">Det här värdet representerar strängen med tvåsiffriga hexadecimala värden i certifikatets tumavtryck-fält.</span><span class="sxs-lookup"><span data-stu-id="67df9-244">This value represents the string of two-digit hexadecimal values in the Thumbprint field of the certificate.</span></span> <span data-ttu-id="67df9-245">Den anger X509 (Digital Public Key Certificate) för ett användar konto som har behörighet att utföra den här åtgärden.</span><span class="sxs-lookup"><span data-stu-id="67df9-245">It specifies the digital public key certificate (X509) of a user account that has permission to perform this action.</span></span> <span data-ttu-id="67df9-246">Certifikat används i klient certifikat-baserad autentisering.</span><span class="sxs-lookup"><span data-stu-id="67df9-246">Certificates are used in client certificate-based authentication.</span></span> <span data-ttu-id="67df9-247">De kan endast mappas till lokala användar konton och de fungerar inte med domän konton.</span><span class="sxs-lookup"><span data-stu-id="67df9-247">They can be mapped only to local user accounts, and they do not work with domain accounts.</span></span> <span data-ttu-id="67df9-248">Använd `Get-Item` `Get-ChildItem` cmdletarna eller i PowerShell-enheten för att hämta ett tumavtryck för certifikatet `Cert:` .</span><span class="sxs-lookup"><span data-stu-id="67df9-248">To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` cmdlets in the PowerShell `Cert:` drive.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-249">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-249">Cmdlets supported</span></span>
+
+- [<span data-ttu-id="67df9-250">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-250">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="enabled-boolean"></a><span data-ttu-id="67df9-251">Aktiva \<Boolean\></span><span class="sxs-lookup"><span data-stu-id="67df9-251">Enabled \<Boolean\></span></span>
+
+<span data-ttu-id="67df9-252">Anger om lyssnaren är aktive rad eller inaktive rad.</span><span class="sxs-lookup"><span data-stu-id="67df9-252">Specifies whether the listener is enabled or disabled.</span></span> <span data-ttu-id="67df9-253">Standardvärdet är true.</span><span class="sxs-lookup"><span data-stu-id="67df9-253">The default is True.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-254">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-254">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-255">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-255">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="filename-plugin-string"></a><span data-ttu-id="67df9-256">Fil namn (plugin-program) \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-256">FileName (Plugin) \<String\></span></span>
+
+<span data-ttu-id="67df9-257">Anger fil namnet för åtgärds-plugin-programmet.</span><span class="sxs-lookup"><span data-stu-id="67df9-257">Specifies the file name of the operations plug-in.</span></span> <span data-ttu-id="67df9-258">Alla miljövariabler som placeras i den här posten kommer att expanderas i användarnas kontext när en begäran tas emot.</span><span class="sxs-lookup"><span data-stu-id="67df9-258">Any environment variables that are put in this entry will be expanded in the users' context when a request is received.</span></span> <span data-ttu-id="67df9-259">Eftersom varje användare kan ha en annan version av samma miljö variabel kan varje användare ha olika plugin-program.</span><span class="sxs-lookup"><span data-stu-id="67df9-259">Because each user could have a different version of the same environment variable, each user could have a different plug-in.</span></span> <span data-ttu-id="67df9-260">Den här posten får inte vara tom och måste peka på ett giltigt plugin-program.</span><span class="sxs-lookup"><span data-stu-id="67df9-260">This entry cannot be blank and must point to a valid plug-in.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-261">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-261">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-262">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-262">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="hostname-string"></a><span data-ttu-id="67df9-263">Värdnamn \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-263">HostName \<String\></span></span>
+
+<span data-ttu-id="67df9-264">Anger värd namnet för den dator där tjänsten WS-Management (WinRM) körs.</span><span class="sxs-lookup"><span data-stu-id="67df9-264">Specifies the host name of the computer on which the WS-Management (WinRM) service is running.</span></span>
+
+<span data-ttu-id="67df9-265">Värdet måste vara ett fullständigt kvalificerat domän namn, en IPv4-eller IPv6 literal sträng eller ett jokertecken.</span><span class="sxs-lookup"><span data-stu-id="67df9-265">The value must be a fully qualified domain name, an IPv4 or IPv6 literal string, or a wildcard character.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-266">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-266">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-267">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-267">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="issuer-string"></a><span data-ttu-id="67df9-268">Utfärdare \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-268">Issuer \<String\></span></span>
+
+<span data-ttu-id="67df9-269">Anger namnet på den certifikat utfärdare som utfärdade certifikatet.</span><span class="sxs-lookup"><span data-stu-id="67df9-269">Specifies the name of the certification authority that issued the certificate.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-270">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-270">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-271">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-271">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="plugin--ws-management-plug-ins-are-native-dynamic-link-libraries-dlls"></a><span data-ttu-id="67df9-272">Plugin \<\> -program för WS-Management plugin-program är interna DLL-bibliotek (Dynamic Link Libraries)</span><span class="sxs-lookup"><span data-stu-id="67df9-272">Plugin \<\> WS-Management plug-ins are native dynamic link libraries (DLLs)</span></span>
+
+<span data-ttu-id="67df9-273">den ansluter till och utökar funktionerna i WS-Management.</span><span class="sxs-lookup"><span data-stu-id="67df9-273">that plug in to and extend the functionality of WS-Management .</span></span> <span data-ttu-id="67df9-274">API: et för WSW-Management-plugin innehåller funktioner som gör att en användare kan skriva plugin-program genom att implementera vissa API: er för resurs-URI: er och åtgärder som stöds.</span><span class="sxs-lookup"><span data-stu-id="67df9-274">The WSW-Management Plug-in API provides functionality that enables a user to write plug-ins by implementing certain APIs for supported resource URIs and operations.</span></span> <span data-ttu-id="67df9-275">När plugin-programmen har kon figurer ATS för antingen tjänsten WS-Management (WinRM) eller för Internet Information Services (IIS), läses plugin-programmen in i WS-Management-värden eller IIS-värden.</span><span class="sxs-lookup"><span data-stu-id="67df9-275">After the plug-ins are configured for either the WS-Management (WinRM) service or for Internet Information Services (IIS), the plug-ins are loaded in the WS-Management host or in the IIS host, respectively.</span></span> <span data-ttu-id="67df9-276">Fjärrbegäranden dirigeras till dessa plugin-ingångs punkter för att utföra åtgärder.</span><span class="sxs-lookup"><span data-stu-id="67df9-276">Remote requests are routed to these plug-in entry points to perform operations.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-277">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-277">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-278">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-278">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="port-unsigned-short-integer"></a><span data-ttu-id="67df9-279">Lastning \<Unsigned Short Integer\></span><span class="sxs-lookup"><span data-stu-id="67df9-279">Port \<Unsigned Short Integer\></span></span>
+
+<span data-ttu-id="67df9-280">Anger den TCP-port som den här lyssnaren har skapats för.</span><span class="sxs-lookup"><span data-stu-id="67df9-280">Specifies the TCP port for which this listener is created.</span></span> <span data-ttu-id="67df9-281">Du kan ange ett värde mellan 1 och 65535.</span><span class="sxs-lookup"><span data-stu-id="67df9-281">You can specify any value from 1 through 65535.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-282">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-282">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-283">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-283">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="resource-string"></a><span data-ttu-id="67df9-284">Klusterresursen \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-284">Resource \<String\></span></span>
+
+<span data-ttu-id="67df9-285">Anger en slut punkt som representerar en distinkt typ av hanterings åtgärd eller värde.</span><span class="sxs-lookup"><span data-stu-id="67df9-285">Specifies an endpoint that represents a distinct type of management operation or value.</span></span> <span data-ttu-id="67df9-286">En tjänst exponerar en eller flera resurser och vissa resurser kan ha mer än en instans.</span><span class="sxs-lookup"><span data-stu-id="67df9-286">A service exposes one or more resources, and some resources can have more than one instance.</span></span> <span data-ttu-id="67df9-287">En hanterings resurs liknar en WMI-klass eller en databas tabell, och en instans liknar en instans av klassen eller en rad i tabellen.</span><span class="sxs-lookup"><span data-stu-id="67df9-287">A management resource is similar to a WMI class or to a database table, and an instance is similar to an instance of the class or to a row in the table.</span></span> <span data-ttu-id="67df9-288">**Win32_LogicalDisk** -klassen representerar till exempel en resurs.</span><span class="sxs-lookup"><span data-stu-id="67df9-288">For example, the **Win32_LogicalDisk** class represents a resource.</span></span> <span data-ttu-id="67df9-289">`Win32_LogicalDisk="C:\\"` är en angiven instans av resursen.</span><span class="sxs-lookup"><span data-stu-id="67df9-289">`Win32_LogicalDisk="C:\\"` is a specific instance of the resource.</span></span>
+
+<span data-ttu-id="67df9-290">En Uniform Resource Identifier (URI) innehåller ett prefix och en sökväg till en resurs.</span><span class="sxs-lookup"><span data-stu-id="67df9-290">A Uniform Resource Identifier (URI) contains a prefix and a path to a resource.</span></span>
+<span data-ttu-id="67df9-291">Ett exempel:</span><span class="sxs-lookup"><span data-stu-id="67df9-291">For example:</span></span>
+
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-292">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-292">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-293">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-293">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="resource-string"></a><span data-ttu-id="67df9-294">Klusterresursen \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-294">Resource \<String\></span></span>
+
+<span data-ttu-id="67df9-295">Anger Uniform Resource Identifier (URI) som identifierar en speciell typ av resurs, till exempel en disk eller en process, på en dator.</span><span class="sxs-lookup"><span data-stu-id="67df9-295">Specifies the Uniform Resource Identifier (URI) that identifies a specific type of resource, such as a disk or a process, on a computer.</span></span>
+
+<span data-ttu-id="67df9-296">En URI består av ett prefix och en sökväg till en resurs.</span><span class="sxs-lookup"><span data-stu-id="67df9-296">A URI consists of a prefix and a path to a resource.</span></span> <span data-ttu-id="67df9-297">Ett exempel:</span><span class="sxs-lookup"><span data-stu-id="67df9-297">For example:</span></span>
+
+`http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+`http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_NumericSensor`
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-298">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-298">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-299">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-299">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="sdkversion-string"></a><span data-ttu-id="67df9-300">SDKVersion \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-300">SDKVersion \<String\></span></span>
+
+<span data-ttu-id="67df9-301">Anger versionen för WS-Management plugin-programmet SDK.</span><span class="sxs-lookup"><span data-stu-id="67df9-301">Specifies the version of the WS-Management plug-in SDK.</span></span> <span data-ttu-id="67df9-302">Det enda giltiga värdet är</span><span class="sxs-lookup"><span data-stu-id="67df9-302">The only valid value is</span></span>
+1.
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-303">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-303">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-304">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-304">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="subject-string"></a><span data-ttu-id="67df9-305">Motiv \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-305">Subject \<String\></span></span>
+
+<span data-ttu-id="67df9-306">Anger den entitet som identifieras av certifikatet.</span><span class="sxs-lookup"><span data-stu-id="67df9-306">Specifies the entity that is identified by the certificate.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-307">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-307">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-308">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-308">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="transport-string"></a><span data-ttu-id="67df9-309">Källtransportadr \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-309">Transport \<String\></span></span>
+
+<span data-ttu-id="67df9-310">Anger vilken transport som ska användas för att skicka och ta emot WS-Management protokoll förfrågningar och svar.</span><span class="sxs-lookup"><span data-stu-id="67df9-310">Specifies the transport to use to send and receive WS-Management protocol requests and responses.</span></span> <span data-ttu-id="67df9-311">Värdet måste vara antingen HTTP eller HTTPS.</span><span class="sxs-lookup"><span data-stu-id="67df9-311">The value must be either HTTP or HTTPS.</span></span>
+
+<span data-ttu-id="67df9-312">Obs: transport svärdet anges när du skapar en lyssnare.</span><span class="sxs-lookup"><span data-stu-id="67df9-312">Note: The Transport value is set when creating a Listener.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-313">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-313">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-314">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-314">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="uri-string"></a><span data-ttu-id="67df9-315">URI \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-315">URI \<String\></span></span>
+
+<span data-ttu-id="67df9-316">Identifierar den URI för vilken åtkomst är tillåten baserat på värdet för SDDL-parametern.</span><span class="sxs-lookup"><span data-stu-id="67df9-316">Identifies the URI for which access is authorized based on the value of the Sddl parameter.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-317">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-317">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-318">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-318">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="urlprefix-string"></a><span data-ttu-id="67df9-319">URLPrefix \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-319">URLPrefix \<String\></span></span>
+
+<span data-ttu-id="67df9-320">Ett URL-prefix som accepterar HTTP-eller HTTPS-begäranden.</span><span class="sxs-lookup"><span data-stu-id="67df9-320">A URL prefix on which to accept HTTP or HTTPS requests.</span></span> <span data-ttu-id="67df9-321">Detta är en sträng som endast innehåller tecknen `[a-z]` , `[A-Z]` , `[9-0]` , under streck ( `_` ) och omvänt snedstreck ( `/` ).</span><span class="sxs-lookup"><span data-stu-id="67df9-321">This is a string containing only the characters `[a-z]`, `[A-Z]`, `[9-0]`, underscore (`_`) and backslash (`/`).</span></span> <span data-ttu-id="67df9-322">Strängen får inte börja med eller sluta med ett omvänt snedstreck ( `/` ).</span><span class="sxs-lookup"><span data-stu-id="67df9-322">The string must not start with or end with a backslash (`/`).</span></span> <span data-ttu-id="67df9-323">Om dator namnet till exempel är "SampleComputer" anger WS-Management klienten `http://SampleMachine/URLPrefix` i mål adressen.</span><span class="sxs-lookup"><span data-stu-id="67df9-323">For example, if the computer name is "SampleComputer", the WS-Management client would specify `http://SampleMachine/URLPrefix` in the destination address.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-324">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-324">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-325">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-325">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="value-string"></a><span data-ttu-id="67df9-326">Värde \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-326">Value \<String\></span></span>
+
+<span data-ttu-id="67df9-327">Anger värdet för en initierings parameter, vilket är ett plugin-/regionsspecifika värde som används för att ange konfigurations alternativ.</span><span class="sxs-lookup"><span data-stu-id="67df9-327">Specifies the value of an initialization parameter, which is a plug-in-specific value that is used to specify configuration options.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-328">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-328">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-329">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-329">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+### <a name="xmlrenderingtype-string"></a><span data-ttu-id="67df9-330">XMLRenderingType \<String\></span><span class="sxs-lookup"><span data-stu-id="67df9-330">XMLRenderingType \<String\></span></span>
+
+<span data-ttu-id="67df9-331">Anger det format i vilket XML skickas till plugin-program via **WSMAN_DATA** -objektet.</span><span class="sxs-lookup"><span data-stu-id="67df9-331">Specifies the format in which XML is passed to plug-ins through the **WSMAN_DATA** object.</span></span> <span data-ttu-id="67df9-332">Följande är giltiga värden:</span><span class="sxs-lookup"><span data-stu-id="67df9-332">The following are valid values:</span></span>
+
+- <span data-ttu-id="67df9-333">Text: inkommande XML-data finns i en **WSMAN_DATA_TYPE_TEXT** -struktur som representerar XML-filen som **PCWSTR** -minnesbuffert.</span><span class="sxs-lookup"><span data-stu-id="67df9-333">Text: Incoming XML data is contained in a **WSMAN_DATA_TYPE_TEXT** structure, which represents the XML as a **PCWSTR** memory buffer.</span></span>
+- <span data-ttu-id="67df9-334">XMLReader: inkommande XML-data finns i en **WSMAN_DATA_TYPE_WS_XML_READER** -struktur som representerar XML som ett **XmlReader** -objekt, som definieras i huvud filen "WebServices. h".</span><span class="sxs-lookup"><span data-stu-id="67df9-334">XMLReader: Incoming XML data is contained in a **WSMAN_DATA_TYPE_WS_XML_READER** structure, which represents the XML as an **XmlReader** object, which is defined in the "WebServices.h" header file.</span></span>
+
+#### <a name="cmdlets-supported"></a><span data-ttu-id="67df9-335">Cmdlets som stöds</span><span class="sxs-lookup"><span data-stu-id="67df9-335">Cmdlets Supported</span></span>
+
+- [<span data-ttu-id="67df9-336">Nytt objekt</span><span class="sxs-lookup"><span data-stu-id="67df9-336">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+
+## <a name="using-the-pipeline"></a><span data-ttu-id="67df9-337">Använda pipelinen</span><span class="sxs-lookup"><span data-stu-id="67df9-337">Using the pipeline</span></span>
+
+<span data-ttu-id="67df9-338">Provider-cmdletar accepterar pipeline-ininformation.</span><span class="sxs-lookup"><span data-stu-id="67df9-338">Provider cmdlets accept pipeline input.</span></span> <span data-ttu-id="67df9-339">Du kan använda pipelinen för att förenkla uppgiften genom att skicka leverantörs data från en cmdlet till en annan provider-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="67df9-339">You can use the pipeline to simplify task by sending provider data from one cmdlet to another provider cmdlet.</span></span>
+<span data-ttu-id="67df9-340">Mer information om hur du använder pipelinen med Provider-cmdletar finns i cmdlet-referenser som finns i den här artikeln.</span><span class="sxs-lookup"><span data-stu-id="67df9-340">To read more about how to use the pipeline with provider cmdlets, see the cmdlet references provided throughout this article.</span></span>
+
+## <a name="getting-help"></a><span data-ttu-id="67df9-341">Få hjälp</span><span class="sxs-lookup"><span data-stu-id="67df9-341">Getting help</span></span>
+
+<span data-ttu-id="67df9-342">Från och med Windows PowerShell 3,0 kan du hämta anpassade hjälp avsnitt för provider-cmdletar som förklarar hur dessa cmdletar fungerar i en fil systemen het.</span><span class="sxs-lookup"><span data-stu-id="67df9-342">Beginning in Windows PowerShell 3.0, you can get customized help topics for provider cmdlets that explain how those cmdlets behave in a file system drive.</span></span>
+
+<span data-ttu-id="67df9-343">Om du vill få hjälp avsnitten som är anpassade för fil system enheten kör du ett [Get-Help-](xref:Microsoft.PowerShell.Core.Get-Help) kommando i en fil system enhet eller använder `-Path` parametern för [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) för att ange en fil systemen het.</span><span class="sxs-lookup"><span data-stu-id="67df9-343">To get the help topics that are customized for the file system drive, run a [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the `-Path` parameter of [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system drive.</span></span>
+
+```powershell
+Get-Help Get-ChildItem
+```
+
+```powershell
+Get-Help Get-ChildItem -Path wsman:
+```
+
+## <a name="see-also"></a><span data-ttu-id="67df9-344">Se även</span><span class="sxs-lookup"><span data-stu-id="67df9-344">See also</span></span>
+
+[<span data-ttu-id="67df9-345">about_Providers</span><span class="sxs-lookup"><span data-stu-id="67df9-345">about_Providers</span></span>](../../Microsoft.PowerShell.Core/About/about_Providers.md)

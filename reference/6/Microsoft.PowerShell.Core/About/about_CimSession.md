@@ -1,0 +1,50 @@
+---
+description: Beskriver ett **CimSession** -objekt och skillnaden mellan CIM-sessioner och PowerShell-sessioner.
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 05/13/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_cimsession?view=powershell-6&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_CimSession
+ms.openlocfilehash: f5080b593295343a812b68e1bc993048c0ce28ca
+ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "93270854"
+---
+# <a name="about-cimsession"></a><span data-ttu-id="d71a9-104">Om CimSession</span><span class="sxs-lookup"><span data-stu-id="d71a9-104">About CimSession</span></span>
+
+## <a name="short-description"></a><span data-ttu-id="d71a9-105">Kort beskrivning</span><span class="sxs-lookup"><span data-stu-id="d71a9-105">Short description</span></span>
+<span data-ttu-id="d71a9-106">Beskriver ett **CimSession** -objekt och skillnaden mellan CIM-sessioner och PowerShell-sessioner.</span><span class="sxs-lookup"><span data-stu-id="d71a9-106">Describes a **CimSession** object and the difference between CIM sessions and PowerShell sessions.</span></span>
+
+## <a name="long-description"></a><span data-ttu-id="d71a9-107">Lång beskrivning</span><span class="sxs-lookup"><span data-stu-id="d71a9-107">Long description</span></span>
+
+<span data-ttu-id="d71a9-108">En Common Information Model-session (CIM) är ett objekt på klient sidan som representerar en anslutning till en lokal dator eller en fjärran sluten dator.</span><span class="sxs-lookup"><span data-stu-id="d71a9-108">A Common Information Model (CIM) session is a client-side object that represents a connection to a local computer or a remote computer.</span></span> <span data-ttu-id="d71a9-109">Du kan använda CIM-sessioner som ett alternativ till PowerShell-sessioner (PSSessions).</span><span class="sxs-lookup"><span data-stu-id="d71a9-109">You can use CIM sessions as an alternative to PowerShell sessions (PSSessions).</span></span> <span data-ttu-id="d71a9-110">Båda metoderna har fördelar.</span><span class="sxs-lookup"><span data-stu-id="d71a9-110">Both approaches have advantages.</span></span>
+
+<span data-ttu-id="d71a9-111">Du kan använda `New-CimSession` cmdleten för att skapa en CIM-session som innehåller information om en anslutning, till exempel dator namn, det protokoll som används för anslutningen, sessions-ID och instans-ID.</span><span class="sxs-lookup"><span data-stu-id="d71a9-111">You can use the `New-CimSession` cmdlet to create a CIM session that contains information about a connection, such as computer name, the protocol used for the connection, session ID, and instance ID.</span></span>
+
+<span data-ttu-id="d71a9-112">När du har skapat ett **CimSession** -objekt som anger information som krävs för att upprätta en anslutning upprättas inte anslutningen direkt av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d71a9-112">After you create a **CimSession** object that specifies information required to establish a connection, PowerShell does not establish the connection immediately.</span></span> <span data-ttu-id="d71a9-113">När en cmdlet använder CIM-sessionen ansluter PowerShell till den angivna datorn och sedan avslutar PowerShell anslutningen när cmdleten har slutförts.</span><span class="sxs-lookup"><span data-stu-id="d71a9-113">When a cmdlet uses the CIM session, PowerShell connects to the specified computer, and then, when the cmdlet finishes, PowerShell terminates the connection.</span></span>
+
+<span data-ttu-id="d71a9-114">Om du skapar en **PSSession** i stället för att använda en CIM-session, verifierar PowerShell anslutnings inställningarna och upprättar och underhåller sedan anslutningen.</span><span class="sxs-lookup"><span data-stu-id="d71a9-114">If you create a **PSSession** instead of using a CIM session, PowerShell validates connection settings, and then establishes and maintains the connection.</span></span> <span data-ttu-id="d71a9-115">Om du använder CIM-sessioner öppnar inte PowerShell en nätverks anslutning förrän det behövs.</span><span class="sxs-lookup"><span data-stu-id="d71a9-115">If you use CIM sessions, PowerShell does not open a network connection until needed.</span></span> <span data-ttu-id="d71a9-116">Mer information om PowerShell-sessioner finns [about_PSSessions](about_PSSessions.md).</span><span class="sxs-lookup"><span data-stu-id="d71a9-116">For more information about PowerShell sessions, see [about_PSSessions](about_PSSessions.md).</span></span>
+
+## <a name="when-to-use-a-cim-session"></a><span data-ttu-id="d71a9-117">När du ska använda en CIM-session</span><span class="sxs-lookup"><span data-stu-id="d71a9-117">When to use a CIM session</span></span>
+
+<span data-ttu-id="d71a9-118">Endast cmdletar som fungerar med en Windows Management Instrumentation (WMI)-provider eller CIM-WS-Man accepterar CIM-sessioner.</span><span class="sxs-lookup"><span data-stu-id="d71a9-118">Only cmdlets that work with a Windows Management Instrumentation (WMI) provider or CIM over WS-Man accept CIM sessions.</span></span> <span data-ttu-id="d71a9-119">Använd **PSSessions** för andra cmdletar.</span><span class="sxs-lookup"><span data-stu-id="d71a9-119">For other cmdlets, use **PSSessions**.</span></span>
+
+<span data-ttu-id="d71a9-120">När du använder en CIM-session kör PowerShell cmdleten på den lokala klienten.</span><span class="sxs-lookup"><span data-stu-id="d71a9-120">When you use a CIM session, PowerShell runs the cmdlet on the local client.</span></span> <span data-ttu-id="d71a9-121">Den ansluter till WMI-providern med hjälp av CIM-sessionen.</span><span class="sxs-lookup"><span data-stu-id="d71a9-121">It connects to the WMI provider using the CIM session.</span></span> <span data-ttu-id="d71a9-122">Mål datorn kräver inte PowerShell eller ens någon version av Windows-operativsystemet.</span><span class="sxs-lookup"><span data-stu-id="d71a9-122">The target computer does not require PowerShell, or even any version of the Windows operating system.</span></span>
+
+<span data-ttu-id="d71a9-123">En cmdlet kan däremot köras med hjälp av en **PSSession** som körs på mål datorn.</span><span class="sxs-lookup"><span data-stu-id="d71a9-123">In contrast, a cmdlet run using a **PSSession** runs on the target computer.</span></span>
+<span data-ttu-id="d71a9-124">Det kräver PowerShell på mål systemet.</span><span class="sxs-lookup"><span data-stu-id="d71a9-124">It requires PowerShell on the target system.</span></span> <span data-ttu-id="d71a9-125">Dessutom skickar cmdleten data tillbaka till den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="d71a9-125">Furthermore, the cmdlet sends data back to the local computer.</span></span> <span data-ttu-id="d71a9-126">PowerShell hanterar de data som skickas via anslutningen och behåller storleken inom de gränser som anges av Windows Remote Management (WinRM).</span><span class="sxs-lookup"><span data-stu-id="d71a9-126">PowerShell manages the data sent over the connection, and keeps the size within the limits set by Windows Remote Management (WinRM).</span></span> <span data-ttu-id="d71a9-127">CIM-sessioner tillämpar inte WinRM-gränser.</span><span class="sxs-lookup"><span data-stu-id="d71a9-127">CIM sessions do not impose the WinRM limits.</span></span>
+
+## <a name="using-cdxml-cmdlets"></a><span data-ttu-id="d71a9-128">Använda CDXLM-cmdletar</span><span class="sxs-lookup"><span data-stu-id="d71a9-128">Using CDXML cmdlets</span></span>
+
+<span data-ttu-id="d71a9-129">CIM-baserade cmdlet definition XML (CDXLM)-cmdletar kan skrivas för att använda WMI-providern.</span><span class="sxs-lookup"><span data-stu-id="d71a9-129">CIM-based Cmdlet Definition XML (CDXML) cmdlets can be written to use any WMI Provider.</span></span> <span data-ttu-id="d71a9-130">Alla WMI-providers använder **CimSession** -objekt.</span><span class="sxs-lookup"><span data-stu-id="d71a9-130">All WMI providers use **CimSession** objects.</span></span> <span data-ttu-id="d71a9-131">Mer information om CDXLM finns i [definition och villkor för cdxlm](/previous-versions/windows/desktop/wmi_v2/cdxml-overview).</span><span class="sxs-lookup"><span data-stu-id="d71a9-131">For more information about CDXML, see [CDXML definition and terms](/previous-versions/windows/desktop/wmi_v2/cdxml-overview).</span></span>
+
+<span data-ttu-id="d71a9-132">CDXLM-cmdletar har en automatisk **CimSession** -parameter som kan ta en matris med **CimSession** -objekt.</span><span class="sxs-lookup"><span data-stu-id="d71a9-132">CDXML cmdlets have an automatic **CimSession** parameter that can take an array of **CimSession** objects.</span></span> <span data-ttu-id="d71a9-133">Som standard begränsar PowerShell antalet samtidiga CIM-anslutningar till 15.</span><span class="sxs-lookup"><span data-stu-id="d71a9-133">By default, PowerShell limits number of concurrent CIM Connections to 15.</span></span> <span data-ttu-id="d71a9-134">Den här gränsen kan åsidosättas av CDXLM-cmdletar som implementerar **ThrottleLimit**.</span><span class="sxs-lookup"><span data-stu-id="d71a9-134">This limit can be overridden by CDXML cmdlets that implement the **ThrottleLimit**.</span></span> <span data-ttu-id="d71a9-135">Se den individuella cmdlet-dokumentationen för att förstå **ThrottleLimit**.</span><span class="sxs-lookup"><span data-stu-id="d71a9-135">See the individual cmdlet documentation to understand the **ThrottleLimit**.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="d71a9-136">SE ÄVEN</span><span class="sxs-lookup"><span data-stu-id="d71a9-136">SEE ALSO</span></span>
+
+[<span data-ttu-id="d71a9-137">New-CimSession</span><span class="sxs-lookup"><span data-stu-id="d71a9-137">New-CimSession</span></span>](xref:CimCmdlets.New-CimSession)
+
+[<span data-ttu-id="d71a9-138">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="d71a9-138">about_PSSessions</span></span>](about_PSSessions.md)
