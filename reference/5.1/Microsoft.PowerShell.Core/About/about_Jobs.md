@@ -1,0 +1,290 @@
+---
+description: Ger information om hur PowerShell-arbetsjobb kör ett kommando eller uttryck i bakgrunden utan att interagera med den aktuella sessionen.
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 10/16/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Jobs
+ms.openlocfilehash: a2fba9024f9b365c79ea5d59d6840a72ba1f8b21
+ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "93272949"
+---
+# <a name="about-jobs"></a><span data-ttu-id="d311d-104">Om jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-104">About Jobs</span></span>
+
+## <a name="short-description"></a><span data-ttu-id="d311d-105">Kort beskrivning</span><span class="sxs-lookup"><span data-stu-id="d311d-105">Short description</span></span>
+<span data-ttu-id="d311d-106">Ger information om hur PowerShell-arbetsjobb kör ett kommando eller uttryck i bakgrunden utan att interagera med den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="d311d-106">Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.</span></span>
+
+## <a name="long-description"></a><span data-ttu-id="d311d-107">Lång beskrivning</span><span class="sxs-lookup"><span data-stu-id="d311d-107">Long description</span></span>
+
+<span data-ttu-id="d311d-108">PowerShell kör kommandon och skript via jobb samtidigt.</span><span class="sxs-lookup"><span data-stu-id="d311d-108">PowerShell concurrently runs commands and script through jobs.</span></span> <span data-ttu-id="d311d-109">Det finns tre jobbbaserade lösningar som tillhandahålls av PowerShell för att stödja samtidighet.</span><span class="sxs-lookup"><span data-stu-id="d311d-109">There are three jobs-based solutions provided by PowerShell to support concurrency.</span></span>
+
+|<span data-ttu-id="d311d-110">Jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-110">Job</span></span>            |<span data-ttu-id="d311d-111">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="d311d-111">Description</span></span>                                                  |
+|---------------|-------------------------------------------------------------|
+|`RemoteJob`    |<span data-ttu-id="d311d-112">Kommando och skript körs på en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="d311d-112">Command and script run on a remote computer.</span></span>                 |
+|`BackgroundJob`|<span data-ttu-id="d311d-113">Kommando och skript körs i en separat process på den lokala</span><span class="sxs-lookup"><span data-stu-id="d311d-113">Command and script run in a separate process on the local</span></span>    |
+|               |<span data-ttu-id="d311d-114">datorspecifika.</span><span class="sxs-lookup"><span data-stu-id="d311d-114">machine.</span></span>                                                     |
+|`ThreadJob`    |<span data-ttu-id="d311d-115">Kommando och skript körs i en separat tråd inom samma</span><span class="sxs-lookup"><span data-stu-id="d311d-115">Command and script run in a separate thread within the same</span></span>  |
+|               |<span data-ttu-id="d311d-116">processen på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="d311d-116">process on the local machine.</span></span>                                |
+
+<span data-ttu-id="d311d-117">Varje typ av jobb har fördelar och nack delar.</span><span class="sxs-lookup"><span data-stu-id="d311d-117">Each type of job has benefits and drawbacks.</span></span> <span data-ttu-id="d311d-118">Att köra skript på en annan dator eller i en separat process har en bra isolering.</span><span class="sxs-lookup"><span data-stu-id="d311d-118">Running script remotely on a separate machine or in a separate process has great isolation.</span></span> <span data-ttu-id="d311d-119">Eventuella fel påverkar inte andra jobb som körs eller klienten som startade jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-119">Any errors won't affect other running jobs or the client that started the job.</span></span> <span data-ttu-id="d311d-120">Men Remoting-lagret lägger till overhead, inklusive objekt serialisering.</span><span class="sxs-lookup"><span data-stu-id="d311d-120">But the remoting layer adds overhead, including object serialization.</span></span> <span data-ttu-id="d311d-121">Alla objekt som skickas till och från fjärrsessionen måste serialiseras och sedan avserialiseras i takt med att den passerar mellan klienten och mål sessionen.</span><span class="sxs-lookup"><span data-stu-id="d311d-121">All objects passed to and from the remote session must be serialized and then deserialized as it passes between the client and the target session.</span></span> <span data-ttu-id="d311d-122">Serialiserings åtgärden kan använda många beräknings-och minnes resurser för stora komplexa data objekt.</span><span class="sxs-lookup"><span data-stu-id="d311d-122">The serialization operation can use many compute and memory resources for large complex data objects.</span></span>
+
+<span data-ttu-id="d311d-123">I det här avsnittet beskrivs hur du kör bakgrunds jobb i PowerShell på en lokal dator.</span><span class="sxs-lookup"><span data-stu-id="d311d-123">This topic explains how to run background jobs in PowerShell on a local computer.</span></span> <span data-ttu-id="d311d-124">Information om hur du kör bakgrunds jobb på fjärrdatorer finns [about_Remote_Jobs](about_Remote_Jobs.md).</span><span class="sxs-lookup"><span data-stu-id="d311d-124">For information about running background jobs on remote computers, see [about_Remote_Jobs](about_Remote_Jobs.md).</span></span> <span data-ttu-id="d311d-125">Mer information om tråd jobb finns i [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs).</span><span class="sxs-lookup"><span data-stu-id="d311d-125">For more information about thread jobs, see [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs).</span></span>
+
+<span data-ttu-id="d311d-126">När du startar ett bakgrunds jobb returnerar kommando tolken omedelbart, även om jobbet tar en längre tid att slutföra.</span><span class="sxs-lookup"><span data-stu-id="d311d-126">When you start a background job, the command prompt returns immediately, even if the job takes an extended time to complete.</span></span> <span data-ttu-id="d311d-127">Du kan fortsätta att arbeta i sessionen utan avbrott medan jobbet körs.</span><span class="sxs-lookup"><span data-stu-id="d311d-127">You can continue to work in the session without interruption while the job runs.</span></span>
+
+## <a name="the-job-cmdlets"></a><span data-ttu-id="d311d-128">Jobb-cmdletar</span><span class="sxs-lookup"><span data-stu-id="d311d-128">The job cmdlets</span></span>
+
+|<span data-ttu-id="d311d-129">Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d311d-129">Cmdlet</span></span>          |<span data-ttu-id="d311d-130">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="d311d-130">Description</span></span>                                            |
+|----------------|-------------------------------------------------------|
+|`Start-Job`     |<span data-ttu-id="d311d-131">Startar ett bakgrunds jobb på en lokal dator.</span><span class="sxs-lookup"><span data-stu-id="d311d-131">Starts a background job on a local computer.</span></span>           |
+|`Get-Job`       |<span data-ttu-id="d311d-132">Hämtar bakgrunds jobben som startades i</span><span class="sxs-lookup"><span data-stu-id="d311d-132">Gets the background jobs that were started in the</span></span>      |
+|                |<span data-ttu-id="d311d-133">aktuell session.</span><span class="sxs-lookup"><span data-stu-id="d311d-133">current session.</span></span>                                       |
+|`Receive-Job`   |<span data-ttu-id="d311d-134">Hämtar resultatet av bakgrunds jobb.</span><span class="sxs-lookup"><span data-stu-id="d311d-134">Gets the results of background jobs.</span></span>                   |
+|`Stop-Job`      |<span data-ttu-id="d311d-135">Stoppar ett bakgrunds jobb.</span><span class="sxs-lookup"><span data-stu-id="d311d-135">Stops a background job.</span></span>                                |
+|`Wait-Job`      |<span data-ttu-id="d311d-136">Ignorerar kommando tolken tills ett eller flera jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-136">Suppresses the command prompt until one or all jobs are</span></span>|
+|                |<span data-ttu-id="d311d-137">full.</span><span class="sxs-lookup"><span data-stu-id="d311d-137">complete.</span></span>                                              |
+|`Remove-Job`    |<span data-ttu-id="d311d-138">Tar bort ett bakgrunds jobb.</span><span class="sxs-lookup"><span data-stu-id="d311d-138">Deletes a background job.</span></span>                              |
+|`Invoke-Command`|<span data-ttu-id="d311d-139">Parametern **AsJob** skapar ett bakgrunds jobb på en</span><span class="sxs-lookup"><span data-stu-id="d311d-139">The **AsJob** parameter creates a background job on a</span></span>  |
+|                |<span data-ttu-id="d311d-140">Fjärran sluten dator.</span><span class="sxs-lookup"><span data-stu-id="d311d-140">remote computer.</span></span> <span data-ttu-id="d311d-141">Du kan använda `Invoke-Command` för att köra</span><span class="sxs-lookup"><span data-stu-id="d311d-141">You can use `Invoke-Command` to run</span></span>   |
+|                |<span data-ttu-id="d311d-142">valfritt jobb kommando, inklusive `Start-Job` .</span><span class="sxs-lookup"><span data-stu-id="d311d-142">any job command remotely, including `Start-Job`.</span></span>       |
+
+## <a name="how-to-start-a-job-on-the-local-computer"></a><span data-ttu-id="d311d-143">Starta ett jobb på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="d311d-143">How to start a job on the local computer</span></span>
+
+<span data-ttu-id="d311d-144">Om du vill starta ett bakgrunds jobb på den lokala datorn använder du `Start-Job` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="d311d-144">To start a background job on the local computer, use the `Start-Job` cmdlet.</span></span>
+
+<span data-ttu-id="d311d-145">Om du vill skriva ett `Start-Job` kommando omger du kommandot som jobbet kör inom klammerparenteser ( `{}` ).</span><span class="sxs-lookup"><span data-stu-id="d311d-145">To write a `Start-Job` command, enclose the command that the job runs in curly braces (`{}`).</span></span> <span data-ttu-id="d311d-146">Använd parametern **script block** för att ange kommandot.</span><span class="sxs-lookup"><span data-stu-id="d311d-146">Use the **ScriptBlock** parameter to specify the command.</span></span>
+
+<span data-ttu-id="d311d-147">Följande kommando startar ett bakgrunds jobb som kör ett `Get-Process` kommando på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="d311d-147">The following command starts a background job that runs a `Get-Process` command on the local computer.</span></span>
+
+```powershell
+Start-Job -ScriptBlock {Get-Process}
+```
+
+<span data-ttu-id="d311d-148">`Start-Job`Kommandot returnerar ett objekt som representerar jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-148">The `Start-Job` command returns an object that represents the job.</span></span> <span data-ttu-id="d311d-149">Jobbobjektet innehåller användbar information om jobbet, men det innehåller inte jobb resultatet.</span><span class="sxs-lookup"><span data-stu-id="d311d-149">The job object contains useful information about the job, but it does not contain the job results.</span></span>
+
+<span data-ttu-id="d311d-150">Spara jobbobjektet i en variabel och Använd sedan det med andra jobb-cmdletar för att hantera bakgrunds jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-150">Save the job object in a variable, and then use it with the other Job cmdlets to manage the background job.</span></span> <span data-ttu-id="d311d-151">Följande kommando startar ett jobb objekt och sparar det resulterande jobbobjektet i `$job` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d311d-151">The following command starts a job object and saves the resulting job object in the `$job` variable.</span></span>
+
+```powershell
+$job = Start-Job -ScriptBlock {Get-Process}
+```
+
+<span data-ttu-id="d311d-152">Du kan också använda `Get-Job` cmdleten för att hämta objekt som representerar de jobb som startats i den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="d311d-152">You can also use the `Get-Job` cmdlet to get objects that represent the jobs started in the current session.</span></span> <span data-ttu-id="d311d-153">`Get-Job` returnerar samma jobb objekt som `Start-Job` returnerar.</span><span class="sxs-lookup"><span data-stu-id="d311d-153">`Get-Job` returns the same job object that `Start-Job` returns.</span></span>
+
+## <a name="getting-job-objects"></a><span data-ttu-id="d311d-154">Hämtar jobb objekt</span><span class="sxs-lookup"><span data-stu-id="d311d-154">Getting job objects</span></span>
+
+<span data-ttu-id="d311d-155">Använd cmdleten för att hämta objektet som representerar bakgrunds jobben som startades i den aktuella sessionen `Get-Job` .</span><span class="sxs-lookup"><span data-stu-id="d311d-155">To get object that represent the background jobs that were started in the current session, use the `Get-Job` cmdlet.</span></span> <span data-ttu-id="d311d-156">Utan parametrar `Get-Job` returnerar alla jobb som startades i den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="d311d-156">Without parameters, `Get-Job` returns all of the jobs that were started in the current session.</span></span>
+
+<span data-ttu-id="d311d-157">Följande kommando hämtar till exempel jobben i den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="d311d-157">For example, the following command gets the jobs in the current session.</span></span>
+
+```powershell
+PS C:> Get-Job
+
+Id  Name  PSJobTypeName State      HasMoreData  Location   Command
+--  ----  ------------- -----      -----------  --------   -------
+1   Job1  BackgroundJob Running    True         localhost  Get-Process
+```
+
+<span data-ttu-id="d311d-158">Du kan också spara jobbobjektet i en variabel och använda det för att representera jobbet i ett senare kommando.</span><span class="sxs-lookup"><span data-stu-id="d311d-158">You can also save the job object in a variable and use it to represent the job in a later command.</span></span> <span data-ttu-id="d311d-159">Följande kommando hämtar jobbet med ID 1 och sparar det i `$job` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d311d-159">The following command gets the job with ID 1 and saves it in the `$job` variable.</span></span>
+
+```powershell
+$job = Get-Job -Id 1
+```
+
+<span data-ttu-id="d311d-160">Jobbobjektet innehåller jobbets tillstånd, vilket indikerar om jobbet har avslut ATS.</span><span class="sxs-lookup"><span data-stu-id="d311d-160">The job object contains the state of the job, which indicates whether the job has finished.</span></span> <span data-ttu-id="d311d-161">Ett slutfört jobb har statusen **slutförd** eller **misslyckad**.</span><span class="sxs-lookup"><span data-stu-id="d311d-161">A finished job has a state of **Complete** or **Failed**.</span></span> <span data-ttu-id="d311d-162">Ett jobb kan också **blockeras** eller **köras**.</span><span class="sxs-lookup"><span data-stu-id="d311d-162">A job might also be **blocked** or **running**.</span></span>
+
+```powershell
+Get-Job
+
+Id  Name  PSJobTypeName State      HasMoreData  Location   Command
+--  ----  ------------- -----      -----------  --------   -------
+1   Job1  BackgroundJob Complete   True         localhost  Get-Process
+```
+
+## <a name="getting-the-results-of-a-job"></a><span data-ttu-id="d311d-163">Hämta resultatet av ett jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-163">Getting the results of a job</span></span>
+
+<span data-ttu-id="d311d-164">När du kör ett bakgrunds jobb visas inte resultaten direkt.</span><span class="sxs-lookup"><span data-stu-id="d311d-164">When you run a background job, the results do not appear immediately.</span></span> <span data-ttu-id="d311d-165">I stället `Start-Job` returnerar cmdleten ett jobb objekt som representerar jobbet, men det innehåller inte resultatet.</span><span class="sxs-lookup"><span data-stu-id="d311d-165">Instead, the `Start-Job` cmdlet returns a job object that represents the job, but it does not contain the results.</span></span> <span data-ttu-id="d311d-166">Använd cmdleten för att hämta resultatet av ett bakgrunds jobb `Receive-Job` .</span><span class="sxs-lookup"><span data-stu-id="d311d-166">To get the results of a background job, use the `Receive-Job` cmdlet.</span></span>
+
+<span data-ttu-id="d311d-167">Följande kommando använder `Receive-Job` cmdleten för att hämta resultatet av jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-167">The following command uses the `Receive-Job` cmdlet to get the results of the job.</span></span> <span data-ttu-id="d311d-168">Det använder ett jobb objekt som sparats i `$job` variabeln för att identifiera jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-168">It uses a job object saved in the `$job` variable to identify the job.</span></span>
+
+```powershell
+Receive-Job -Job $job
+```
+
+<span data-ttu-id="d311d-169">`Receive-Job`Cmdleten returnerar resultatet från jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-169">The `Receive-Job` cmdlet returns the results of the job.</span></span>
+
+```
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
+-------  ------    -----      ----- -----   ------    -- -----------
+    103       4    11328       9692    56           1176 audiodg
+    804      14    12228      14108   100   101.74  1740 CcmExec
+    668       7     2672       6168   104    32.26   488 csrss
+# ...
+```
+
+<span data-ttu-id="d311d-170">Du kan också spara resultatet av ett jobb i en variabel.</span><span class="sxs-lookup"><span data-stu-id="d311d-170">You can also save the results of a job in a variable.</span></span> <span data-ttu-id="d311d-171">Följande kommando sparar resultatet av jobbet i `$job` variabeln till `$results` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d311d-171">The following command saves the results of the job in the `$job` variable to the `$results` variable.</span></span>
+
+```powershell
+$results = Receive-Job -Job $job
+```
+
+<span data-ttu-id="d311d-172">Du kan också spara resultatet av jobbet i en fil med hjälp av omdirigerings operatorn ( `>` ) eller `Out-File` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="d311d-172">And, you can save the results of the job in a file by using the redirection operator (`>`) or the `Out-File` cmdlet.</span></span> <span data-ttu-id="d311d-173">Följande kommando använder operatorn för omdirigering för att spara resultatet av jobbet i `$job` variabeln i `Results.txt` filen.</span><span class="sxs-lookup"><span data-stu-id="d311d-173">The following command uses the redirection operator to save the results of the job in the `$job` variable in the `Results.txt` file.</span></span>
+
+```powershell
+Receive-Job -Job $job > results.txt
+```
+
+## <a name="getting-and-keeping-partial-job-results"></a><span data-ttu-id="d311d-174">Hämta och behålla del jobbs resultat</span><span class="sxs-lookup"><span data-stu-id="d311d-174">Getting and keeping partial job results</span></span>
+
+<span data-ttu-id="d311d-175">`Receive-Job`Cmdlet: en hämtar resultatet av ett bakgrunds jobb.</span><span class="sxs-lookup"><span data-stu-id="d311d-175">The `Receive-Job` cmdlet gets the results of a background job.</span></span> <span data-ttu-id="d311d-176">Om jobbet har slutförts, `Receive-Job` hämtas alla jobb resultat.</span><span class="sxs-lookup"><span data-stu-id="d311d-176">If the job is complete, `Receive-Job` gets all job results.</span></span> <span data-ttu-id="d311d-177">Om jobbet fortfarande körs `Receive-Job` hämtar de resultat som har genererats hittills.</span><span class="sxs-lookup"><span data-stu-id="d311d-177">If the job is still running, `Receive-Job` gets the results that have been generated thus far.</span></span> <span data-ttu-id="d311d-178">Du kan köra `Receive-Job` kommandon igen för att få återstående resultat.</span><span class="sxs-lookup"><span data-stu-id="d311d-178">You can run `Receive-Job` commands again to get the remaining results.</span></span>
+
+<span data-ttu-id="d311d-179">När `Receive-Job` returnerar resultat tas dessa resultat som standard bort från cachen där jobb resultat lagras.</span><span class="sxs-lookup"><span data-stu-id="d311d-179">When `Receive-Job` returns results, by default, it deletes those results from the cache where job results are stored.</span></span> <span data-ttu-id="d311d-180">Om du kör ett annat `Receive-Job` kommando får du bara de resultat som ännu inte har tagits emot.</span><span class="sxs-lookup"><span data-stu-id="d311d-180">If you run another `Receive-Job` command, you get only the results that are not yet received.</span></span>
+
+<span data-ttu-id="d311d-181">Följande kommandon visar resultatet av kommandon som `Receive-Job` körs innan jobbet har slutförts.</span><span class="sxs-lookup"><span data-stu-id="d311d-181">The following commands show the results of `Receive-Job` commands run before the job is complete.</span></span>
+
+```powershell
+C:\PS> Receive-Job -Job $job
+
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----      ----- -----   ------     -- -----------
+    103       4    11328       9692    56            1176 audiodg
+    804      14    12228      14108   100   101.74   1740 CcmExec
+
+C:\PS> Receive-Job -Job $job
+
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----      ----- -----   ------     -- -----------
+    68       3     2632        664    29     0.36   1388 ccmsetup
+   749      22    21468      19940   203   122.13   3644 communicator
+   905       7     2980       2628    34   197.97    424 csrss
+  1121      25    28408      32940   174   430.14   3048 explorer
+```
+
+<span data-ttu-id="d311d-182">Om du inte vill `Receive-Job` ta bort jobb resultatet som det har returnerat använder du parametern **Keep** .</span><span class="sxs-lookup"><span data-stu-id="d311d-182">To prevent `Receive-Job` from deleting the job results that it has returned, use the **Keep** parameter.</span></span> <span data-ttu-id="d311d-183">Därför `Receive-Job` returneras alla resultat som har genererats fram till den tiden.</span><span class="sxs-lookup"><span data-stu-id="d311d-183">As a result, `Receive-Job` returns all of the results that have been generated until that time.</span></span>
+
+<span data-ttu-id="d311d-184">Följande kommandon visar effekterna av att använda parametern **Keep** i ett jobb som inte har slutförts än.</span><span class="sxs-lookup"><span data-stu-id="d311d-184">The following commands show the effect of using the **Keep** parameter on a job that is not yet complete.</span></span>
+
+```powershell
+C:\PS> Receive-Job -Job $job -Keep
+
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----      ----- -----   ------     -- -----------
+    103       4    11328       9692    56            1176 audiodg
+    804      14    12228      14108   100   101.74   1740 CcmExec
+
+C:\PS> Receive-Job -Job $job -Keep
+
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----      ----- -----   ------     -- -----------
+    103       4    11328       9692    56            1176 audiodg
+    804      14    12228      14108   100   101.74   1740 CcmExec
+     68       3     2632        664    29     0.36   1388 ccmsetup
+    749      22    21468      19940   203   122.13   3644 communicator
+    905       7     2980       2628    34   197.97    424 csrss
+   1121      25    28408      32940   174   430.14   3048 explorer
+```
+
+## <a name="waiting-for-the-results"></a><span data-ttu-id="d311d-185">Väntar på resultaten</span><span class="sxs-lookup"><span data-stu-id="d311d-185">Waiting for the results</span></span>
+
+<span data-ttu-id="d311d-186">Om du kör ett kommando som tar lång tid att slutföra kan du använda egenskaperna för jobbobjektet för att fastställa när jobbet har slutförts.</span><span class="sxs-lookup"><span data-stu-id="d311d-186">If you run a command that takes a long time to complete, you can use the properties of the job object to determine when the job is complete.</span></span> <span data-ttu-id="d311d-187">Följande kommando använder `Get-Job` objektet för att hämta alla bakgrunds jobb i den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="d311d-187">The following command uses the `Get-Job` object to get all of the background jobs in the current session.</span></span>
+
+```powershell
+Get-Job
+```
+
+<span data-ttu-id="d311d-188">Resultaten visas i en tabell.</span><span class="sxs-lookup"><span data-stu-id="d311d-188">The results appear in a table.</span></span> <span data-ttu-id="d311d-189">Jobbets status visas i kolumnen **status** .</span><span class="sxs-lookup"><span data-stu-id="d311d-189">The status of the job appears in the **State** column.</span></span>
+
+```
+Id Name  PSJobTypeName State    HasMoreData Location  Command
+-- ----  ------------- -----    ----------- --------  -------
+1  Job1  BackgroundJob Complete True        localhost Get-Process
+2  Job2  BackgroundJob Running  True        localhost Get-EventLog -Log ...
+3  Job3  BackgroundJob Complete True        localhost dir -Path C:\* -Re...
+```
+
+<span data-ttu-id="d311d-190">I det här fallet visar egenskapen State att jobb 2 fortfarande körs.</span><span class="sxs-lookup"><span data-stu-id="d311d-190">In this case, the State property reveals that Job 2 is still running.</span></span> <span data-ttu-id="d311d-191">Om du vill använda `Receive-Job` cmdleten för att hämta jobb resultaten nu skulle resultaten vara ofullständiga.</span><span class="sxs-lookup"><span data-stu-id="d311d-191">If you were to use the `Receive-Job` cmdlet to get the job results now, the results would be incomplete.</span></span> <span data-ttu-id="d311d-192">Du kan använda `Receive-Job` cmdleten upprepade gånger för att hämta alla resultat.</span><span class="sxs-lookup"><span data-stu-id="d311d-192">You can use the `Receive-Job` cmdlet repeatedly to get all of the results.</span></span> <span data-ttu-id="d311d-193">Som standard får du bara de resultat som inte redan tagits emot, varje gång du använder den, men du kan använda parametern **Keep** för `Receive-Job` cmdlet: en för att behålla resultaten, även om de redan har tagits emot.</span><span class="sxs-lookup"><span data-stu-id="d311d-193">By default, each time you use it, you get only the results that were not already received, but you can use the **Keep** parameter of the `Receive-Job` cmdlet to retain the results, even though they were already received.</span></span>
+
+<span data-ttu-id="d311d-194">Du kan skriva de partiella resultaten till en fil och sedan lägga till nya resultat när de tas emot eller vänta och kontrol lera jobbets tillstånd senare.</span><span class="sxs-lookup"><span data-stu-id="d311d-194">You can write the partial results to a file and then append newer results as they arrive or you can wait and check the state of the job later.</span></span>
+
+<span data-ttu-id="d311d-195">Du kan använda parametern **wait** för `Receive-Job` cmdleten, som inte returnerar kommando tolken förrän jobbet har slutförts och alla resultat är tillgängliga.</span><span class="sxs-lookup"><span data-stu-id="d311d-195">You can use the **Wait** parameter of the `Receive-Job` cmdlet, which does not return the command prompt until the job is complete and all results are available.</span></span>
+
+<span data-ttu-id="d311d-196">Du kan också använda `Wait-Job` cmdleten för att vänta på ett eller alla resultat av jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-196">You can also use the `Wait-Job` cmdlet to wait for any or all of the results of the job.</span></span> <span data-ttu-id="d311d-197">`Wait-Job` Du kan vänta på ett visst jobb, för alla jobb eller för att utföra slutförda jobb.</span><span class="sxs-lookup"><span data-stu-id="d311d-197">`Wait-Job` lets you wait for a particular job, for all jobs, or for any of the jobs to be completed.</span></span>
+
+<span data-ttu-id="d311d-198">Följande kommando använder `Wait-Job` cmdleten för att vänta på ett jobb med **ID**</span><span class="sxs-lookup"><span data-stu-id="d311d-198">The following command uses the `Wait-Job` cmdlet to wait for a job with **ID**</span></span>
+10.
+
+```powershell
+Wait-Job -ID 10
+```
+
+<span data-ttu-id="d311d-199">Därför ignoreras PowerShell-prompten tills jobbet har slutförts.</span><span class="sxs-lookup"><span data-stu-id="d311d-199">As a result, the PowerShell prompt is suppressed until the job is completed.</span></span>
+
+<span data-ttu-id="d311d-200">Du kan också vänta en fördefinierad tids period.</span><span class="sxs-lookup"><span data-stu-id="d311d-200">You can also wait for a predetermined period of time.</span></span> <span data-ttu-id="d311d-201">Det här kommandot använder **timeout** -parametern för att begränsa vänte tiden till 120 sekunder.</span><span class="sxs-lookup"><span data-stu-id="d311d-201">This command uses the **Timeout** parameter to limit the wait to 120 seconds.</span></span> <span data-ttu-id="d311d-202">När tiden går ut returneras kommando tolken, men jobbet fortsätter att köras i bakgrunden.</span><span class="sxs-lookup"><span data-stu-id="d311d-202">When the time expires, the command prompt returns, but the job continues to run in the background.</span></span>
+
+```powershell
+Wait-Job -ID 10 -Timeout 120
+```
+
+## <a name="stopping-a-job"></a><span data-ttu-id="d311d-203">Stoppa ett jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-203">Stopping a job</span></span>
+
+<span data-ttu-id="d311d-204">Om du vill stoppa ett bakgrunds jobb använder du `Stop-Job` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="d311d-204">To stop a background job, use the `Stop-Job` cmdlet.</span></span> <span data-ttu-id="d311d-205">Följande kommando startar ett jobb för att hämta varje post i system händelse loggen.</span><span class="sxs-lookup"><span data-stu-id="d311d-205">The following command starts a job to get every entry in the System event log.</span></span> <span data-ttu-id="d311d-206">Objektet sparas i `$job` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d311d-206">It saves the job object in the `$job` variable.</span></span>
+
+```powershell
+$job = Start-Job -ScriptBlock {Get-EventLog -Log System}
+```
+
+<span data-ttu-id="d311d-207">Följande kommando stoppar jobbet.</span><span class="sxs-lookup"><span data-stu-id="d311d-207">The following command stops the job.</span></span> <span data-ttu-id="d311d-208">En pipeline-operator () används `|` för att skicka jobbet i `$job` variabeln till `Stop-Job` .</span><span class="sxs-lookup"><span data-stu-id="d311d-208">It uses a pipeline operator (`|`) to send the job in the `$job` variable to `Stop-Job`.</span></span>
+
+```powershell
+$job | Stop-Job
+```
+
+## <a name="deleting-a-job"></a><span data-ttu-id="d311d-209">Ta bort ett jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-209">Deleting a job</span></span>
+
+<span data-ttu-id="d311d-210">Om du vill ta bort ett bakgrunds jobb använder du `Remove-Job` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="d311d-210">To delete a background job, use the `Remove-Job` cmdlet.</span></span> <span data-ttu-id="d311d-211">Följande kommando tar bort jobbet i `$job` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d311d-211">The following command deletes the job in the `$job` variable.</span></span>
+
+```powershell
+Remove-Job -Job $job
+```
+
+## <a name="investigating-a-failed-job"></a><span data-ttu-id="d311d-212">Undersöka ett misslyckat jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-212">Investigating a failed job</span></span>
+
+<span data-ttu-id="d311d-213">Om du vill ta reda på varför ett jobb misslyckades, Använd egenskapen **orsak** för jobbobjektet.</span><span class="sxs-lookup"><span data-stu-id="d311d-213">To find out why a job failed, use the **Reason** property of the job object.</span></span>
+
+<span data-ttu-id="d311d-214">Följande kommando startar ett jobb utan de autentiseringsuppgifter som krävs.</span><span class="sxs-lookup"><span data-stu-id="d311d-214">The following command starts a job without the required credentials.</span></span> <span data-ttu-id="d311d-215">Objektet sparas i `$job` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d311d-215">It saves the job object in the `$job` variable.</span></span>
+
+```powershell
+$job = Start-Job -ScriptBlock {New-Item -Path HKLM:\Software\MyCompany}
+
+Id Name  PSJobTypeName State  HasMoreData  Location  Command
+-- ----  ------------- -----  -----------  --------  -------
+1  Job1  BackgroundJob Failed False        localhost New-Item -Path HKLM:...
+```
+
+<span data-ttu-id="d311d-216">Följande kommando använder egenskapen orsak för att hitta felet som gjorde att jobbet inte kunde köras.</span><span class="sxs-lookup"><span data-stu-id="d311d-216">The following command uses the Reason property to find the error that caused the job to fail.</span></span>
+
+```powershell
+$job.ChildJobs[0].JobStateInfo.Reason
+```
+
+<span data-ttu-id="d311d-217">I det här fallet misslyckades jobbet eftersom fjärrdatorn krävde explicita autentiseringsuppgifter för att köra kommandot.</span><span class="sxs-lookup"><span data-stu-id="d311d-217">In this case, the job failed because the remote computer required explicit credentials to run the command.</span></span> <span data-ttu-id="d311d-218">Värdet för egenskapen **orsak** är:</span><span class="sxs-lookup"><span data-stu-id="d311d-218">The value of the **Reason** property is:</span></span>
+
+<span data-ttu-id="d311d-219">Det gick inte att ansluta till fjärrservern. följande fel meddelande visas: "åtkomst nekad".</span><span class="sxs-lookup"><span data-stu-id="d311d-219">Connecting to remote server failed with the following error message: "Access is denied".</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="d311d-220">Se även</span><span class="sxs-lookup"><span data-stu-id="d311d-220">See also</span></span>
+
+- [<span data-ttu-id="d311d-221">about_Remote_Jobs</span><span class="sxs-lookup"><span data-stu-id="d311d-221">about_Remote_Jobs</span></span>](about_Remote_Jobs.md)
+- [<span data-ttu-id="d311d-222">about_Thread_Jobs</span><span class="sxs-lookup"><span data-stu-id="d311d-222">about_Thread_Jobs</span></span>](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs)
+- [<span data-ttu-id="d311d-223">about_Job_Details</span><span class="sxs-lookup"><span data-stu-id="d311d-223">about_Job_Details</span></span>](about_Job_Details.md)
+- [<span data-ttu-id="d311d-224">about_Remote</span><span class="sxs-lookup"><span data-stu-id="d311d-224">about_Remote</span></span>](about_Remote.md)
+- [<span data-ttu-id="d311d-225">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="d311d-225">about_PSSessions</span></span>](about_PSSessions.md)
+- [<span data-ttu-id="d311d-226">Start – jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-226">Start-Job</span></span>](xref:Microsoft.PowerShell.Core.Start-Job)
+- [<span data-ttu-id="d311d-227">Hämta jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-227">Get-Job</span></span>](xref:Microsoft.PowerShell.Core.Get-Job)
+- [<span data-ttu-id="d311d-228">Mottagning – jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-228">Receive-Job</span></span>](xref:Microsoft.PowerShell.Core.Receive-Job)
+- [<span data-ttu-id="d311d-229">Stoppa – jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-229">Stop-Job</span></span>](xref:Microsoft.PowerShell.Core.Stop-Job)
+- [<span data-ttu-id="d311d-230">Wait-Job</span><span class="sxs-lookup"><span data-stu-id="d311d-230">Wait-Job</span></span>](xref:Microsoft.PowerShell.Core.Wait-Job)
+- [<span data-ttu-id="d311d-231">Ta bort – jobb</span><span class="sxs-lookup"><span data-stu-id="d311d-231">Remove-Job</span></span>](xref:Microsoft.PowerShell.Core.Remove-Job)
+- [<span data-ttu-id="d311d-232">Invoke-kommando</span><span class="sxs-lookup"><span data-stu-id="d311d-232">Invoke-Command</span></span>](xref:Microsoft.PowerShell.Core.Invoke-Command)
