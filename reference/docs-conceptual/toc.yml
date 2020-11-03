@@ -75,6 +75,8 @@
           href: learn/deep-dives/everything-about-shouldprocess.md
         - name: Skrivförlopp vid flertrådskörning
           href: learn/deep-dives/write-progress-across-multiple-threads.md
+        - name: Lägg till support för autentiseringsuppgifter in PowerShell-funktioner
+          href: learn/deep-dives/add-credentials-to-powershell-functions.md
     - name: PowerShell-fjärranvändning
       items:
         - name: JEA (Just Enough Administration)
@@ -564,6 +566,8 @@
       href: community/hall-of-fame.md
     - name: Nyheter i dokument
       items:
+        - name: Kvartal 4 2020
+          href: community/2020-Q4.md
         - name: Kvartal 3 2020
           href: community/2020-Q3.md
         - name: 2020-Kv2
