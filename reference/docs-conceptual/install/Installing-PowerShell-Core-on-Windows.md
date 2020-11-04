@@ -2,18 +2,18 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 10/30/2020
-ms.openlocfilehash: 1b341b496cef34a2a98afeac9d24f0a51e8dbda0
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 825c9066d0a4e4734b9255514520b32f0876ecea
+ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142794"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93296375"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
 Det finns flera sätt att installera PowerShell i Windows.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Den senaste versionen av PowerShell stöds på Windows 7 SP1, Server 2008 R2 och senare versioner.
 
@@ -24,7 +24,7 @@ Om du vill aktivera PowerShell-fjärrkommunikation över WSMan måste följande 
 
 ## <a name="download-the-installer-package"></a>Ladda ned installations paketet
 
-Installera PowerShell på Windows genom att ladda ned installations paketet från vår GitHub- [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet på sidan version. Avsnittet **till gångar** kan vara minimerat, så du kan behöva klicka för att expandera det.
+Om du vill installera PowerShell på Windows laddar du ned det [senaste][] installations paketet från GitHub. Du kan också hitta den senaste för hands versionen på sidan [versioner][] . Rulla ned till **till gångar** -avsnittet på sidan version. Avsnittet **till gångar** kan vara minimerat, så du kan behöva klicka för att expandera det.
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Installera MSI-paketet
 
@@ -83,7 +83,7 @@ Detta kan användas av administratörer och utvecklare för att hitta sökvägen
 > [!NOTE]
 > MSIX-paketet stöds inte officiellt för tillfället. Vi fortsätter att bygga paketet enbart för internt test ändamål.
 
-Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår GitHub [releases][releases] -sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
+Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår versions[sida för] GitHub- [versioner]. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
 MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -95,7 +95,7 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installera ZIP-paketet
 
-Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Ladda ned något av följande ZIP-arkiv från sidan [versioner][releases] .
+Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Hämta något av följande ZIP-arkiv från sidan [release][releases] .
 
 - PowerShell-7.0.3-win-x64.zip
 - PowerShell-7.0.3-win-x86.zip
@@ -159,7 +159,7 @@ Windows 10 IoT Core lägger till Windows PowerShell när du inkluderar _IOT_POWE
 För att lägga till den senaste PowerShell-versionen i leverans avbildningen använder du kommandot [import-PSCoreRelease][] för att inkludera paketet i workarea och lägga till _OPENSRC_POWERSHELL_ funktion i avbildningen.
 
 > [!NOTE]
-> Windows PowerShell läggs inte till i ARM64-arkitekturen när du tar med _IOT_POWERSHELL_ . Det innebär att zip-baserad installation inte fungerar. Du måste använda `Import-PSCoreRelease` kommandot för att lägga till det i avbildningen.
+> Windows PowerShell läggs inte till i ARM64-arkitekturen när du tar med _IOT_POWERSHELL_. Det innebär att zip-baserad installation inte fungerar. Du måste använda `Import-PSCoreRelease` kommandot för att lägga till det i avbildningen.
 
 ## <a name="deploying-on-nano-server"></a>Distribuera på Nano Server
 
@@ -267,7 +267,8 @@ Microsoft stöder installations metoderna i det här dokumentet. Det kan finnas 
 
 <!-- link references -->
 
-[releases]: https://github.com/PowerShell/PowerShell/releases
+[exekutiv]: https://github.com/PowerShell/PowerShell/releases
+[senaste]: https://github.com/PowerShell/PowerShell/releases/latest
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
