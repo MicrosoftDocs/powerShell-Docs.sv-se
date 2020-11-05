@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Skapa en cmdlet som ändrar systemet
 description: Skapa en cmdlet som ändrar systemet
-ms.openlocfilehash: d4e941632f4692424009f805178e3fc5275e72b1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 757f2c97bb4b5dcf2fb633cd35fe52bc5f6c5cf9
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92650388"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355552"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
 
@@ -24,7 +24,8 @@ Genom att få en bekräftelse visar en cmdlet de `Confirm` och de `WhatIf` param
 
 ## <a name="changing-the-system"></a>Ändra systemet
 
-Syftet med att ändra systemet syftar på alla cmdletar som kan ändra systemets tillstånd utanför Windows PowerShell. Att till exempel stoppa en process, aktivera eller inaktivera ett användar konto eller lägga till en rad i en databas tabell är alla ändringar i systemet som bör bekräftas. Åtgärder som läser data eller upprättar tillfälliga anslutningar ändrar däremot inte systemet och behöver inte heller bekräfta. Bekräftelse behövs inte heller för åtgärder vars inverkan är begränsad till i Windows PowerShell-körningsmiljön, till exempel `set-variable` . Cmdletar som kan eller inte kan göra en beständig ändring bör deklarera `SupportsShouldProcess` och anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) endast om de ska göra en beständig ändring.
+Syftet med att ändra systemet syftar på alla cmdletar som kan ändra systemets tillstånd utanför Windows PowerShell. Att till exempel stoppa en process, aktivera eller inaktivera ett användar konto eller lägga till en rad i en databas tabell är alla ändringar i systemet som bör bekräftas.
+Åtgärder som läser data eller upprättar tillfälliga anslutningar ändrar däremot inte systemet och behöver inte heller bekräfta. Bekräftelse behövs inte heller för åtgärder vars inverkan är begränsad till i Windows PowerShell-körningsmiljön, till exempel `set-variable` . Cmdletar som kan eller inte kan göra en beständig ändring bör deklarera `SupportsShouldProcess` och anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) endast om de ska göra en beständig ändring.
 
 > [!NOTE]
 > ShouldProcess-bekräftelse gäller endast för cmdletar. Om ett kommando eller skript ändrar körnings statusen för ett system genom att anropa .NET-metoder eller-egenskaper direkt, eller genom att anropa program utanför Windows PowerShell, kommer den här bekräftelse formen inte att vara tillgänglig.
@@ -45,13 +46,16 @@ Följande är klass definitionen för denna Stop-Proc-cmdlet.
 public class StopProcCommand : Cmdlet
 ```
 
-Observera att [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) `SupportsShouldProcess` nyckelordet Attribute är inställt på `true` att aktivera cmdleten för att anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)i system. Management. Automation. CmdletAttribute-deklarationen. Utan det här nyckelordet är `Confirm` `WhatIf` parametrarna och inte tillgängliga för användaren.
+Observera att [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) `SupportsShouldProcess` nyckelordet Attribute är inställt på `true` att aktivera cmdleten för att anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)i system. Management. Automation. CmdletAttribute-deklarationen.
+Utan det här nyckelordet är `Confirm` `WhatIf` parametrarna och inte tillgängliga för användaren.
 
 ### <a name="extremely-destructive-actions"></a>Extremt destruktiva åtgärder
 
-Vissa åtgärder är extremt destruktiva, t. ex. att omformatera en aktiv hård disk partition. I dessa fall bör cmdleten anges `ConfirmImpact`  =  `ConfirmImpact.High` när du deklarerar attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Med den här inställningen tvingas cmdleten att begära användar bekräftelse även om användaren inte har angett `Confirm` parametern. Cmdlet-utvecklare bör dock undvika att använda `ConfirmImpact` för åtgärder som är bara potentiellt destruktiva, t. ex. borttagning av ett användar konto. Kom ihåg att om `ConfirmImpact` anges till [system. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High** .
+Vissa åtgärder är extremt destruktiva, t. ex. att omformatera en aktiv hård disk partition. I dessa fall bör cmdleten anges `ConfirmImpact`  =  `ConfirmImpact.High` när du deklarerar attributet [system. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Med den här inställningen tvingas cmdleten att begära användar bekräftelse även om användaren inte har angett `Confirm` parametern. Cmdlet-utvecklare bör dock undvika att använda `ConfirmImpact` för åtgärder som är bara potentiellt destruktiva, t. ex. borttagning av ett användar konto. Kom ihåg att om `ConfirmImpact` anges till [system. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) 
+ **High**.
 
-På samma sätt är vissa åtgärder troligen inte destruktiva, men de gör i teorin att ändra körnings läget för ett system utanför Windows PowerShell. Sådana cmdletar kan anges `ConfirmImpact` till [system. Management. Automation. Confirmimpact. Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Detta kommer att kringgå bekräftelse begär Anden där användaren har bett att bekräfta endast medels Tor och hög påverkan.
+På samma sätt är vissa åtgärder troligen inte destruktiva, men de gör i teorin att ändra körnings läget för ett system utanför Windows PowerShell. Sådana cmdletar kan anges `ConfirmImpact` till [system. Management. Automation. Confirmimpact. Low](/dotnet/api/system.management.automation.confirmimpact).
+Detta kommer att kringgå bekräftelse begär Anden där användaren har bett att bekräfta endast medels Tor och hög påverkan.
 
 ## <a name="defining-parameters-for-system-modification"></a>Definiera parametrar för system ändring
 
@@ -61,7 +65,8 @@ Stop-Proc cmdleten definierar tre parametrar: `Name` , `Force` , och `PassThru` 
 
 `Name`Parametern motsvarar `Name` egenskapen för objektet bearbeta inobjekt. Tänk på att `Name` parametern i det här exemplet är obligatorisk, eftersom cmdleten Miss kan köras om den inte har en namngiven process att stoppa.
 
-`Force`Parametern gör att användaren kan åsidosätta anrop till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). I själva verket ska alla cmdlets som anropar [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ha en `Force` parameter så att när anges `Force` , hoppar cmdleten anropet till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) och fortsätter med åtgärden. Tänk på att detta inte påverkar anrop till [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
+`Force`Parametern gör att användaren kan åsidosätta anrop till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
+I själva verket ska alla cmdlets som anropar [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ha en `Force` parameter så att när anges `Force` , hoppar cmdleten anropet till [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) och fortsätter med åtgärden. Tänk på att detta inte påverkar anrop till [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
 
 `PassThru`Parametern gör det möjligt för användaren att ange om cmdleten skickar ett utgående objekt genom pipelinen, i det här fallet när en process har stoppats. Tänk på att den här parametern är kopplad till själva cmdleten i stället för till en egenskap i objektet.
 
@@ -315,7 +320,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
 
     Följande utdata visas.
 
-    ```output
+    ```Output
     Confirm
     Are you sure you want to perform this action?
     Performing operation "stop-proc" on Target "winlogon (656)".
@@ -333,7 +338,7 @@ När din cmdlet har registrerats med Windows PowerShell kan du testa den genom a
 
     Följande utdata visas.
 
-    ```output
+    ```Output
     Confirm
     Are you sure you want to perform this action?
     Performing operation "stop-proc" on Target "winlogon (656)".

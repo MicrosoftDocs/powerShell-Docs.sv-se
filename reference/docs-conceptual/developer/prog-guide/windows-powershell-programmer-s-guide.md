@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Guide för Windows PowerShell-programmerare&#39;s
 description: Guide för Windows PowerShell-programmerare&#39;s
-ms.openlocfilehash: d390b15e49f7558fb7dfd766d50d5be68ef347d2
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 446be2241bb7b05b4bd7ffe8b7797214a7564944
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661778"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355297"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Guide för Windows PowerShell-programmerare&#39;s
 
@@ -62,7 +62,8 @@ Windows PowerShell-språket tillhandahåller skript funktioner och-mekanismer f�
 
 ### <a name="extended-type-system-ets"></a>ETS (Extended Type System)
 
-Windows PowerShell ger till gång till en rad olika objekt, till exempel .NET-och XML-objekt. Till följd av detta, för att presentera en gemensam abstraktion för alla objekt typer, använder gränssnittet dess utökat typ system (ETS). De flesta ETS-funktionerna är transparenta för användaren, men skriptet eller .NET-utvecklare använder det i följande syfte:
+Windows PowerShell ger till gång till en rad olika objekt, till exempel .NET-och XML-objekt.
+Till följd av detta, för att presentera en gemensam abstraktion för alla objekt typer, använder gränssnittet dess utökat typ system (ETS). De flesta ETS-funktionerna är transparenta för användaren, men skriptet eller .NET-utvecklare använder det i följande syfte:
 
 - Visa en delmängd av medlemmarna i vissa objekt. Windows PowerShell innehåller en "anpassad" vy över flera olika objekt typer.
 
@@ -74,7 +75,7 @@ Windows PowerShell ger till gång till en rad olika objekt, till exempel .NET-oc
 
   Med hjälp av ETS kan du skapa flexibla nya "typer" som är kompatibla med Windows PowerShell-språket. Om du är .NET-utvecklare kan du arbeta med objekt med samma semantik som Windows PowerShell-språket gäller för skript, till exempel för att avgöra om ett objekt utvärderas till `true` .
 
-  Mer information om ETS och hur Windows PowerShell använder objekt finns i [begrepp för Windows PowerShell-objekt](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
+  Mer information om ETS och hur Windows PowerShell använder objekt finns i [begrepp för Windows PowerShell-objekt](/powershell/scripting/learn/understanding-important-powershell-concepts).
 
 ## <a name="programming-for-windows-powershell"></a>Programmering för Windows PowerShell
 

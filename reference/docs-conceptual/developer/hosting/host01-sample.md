@@ -3,22 +3,22 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Host01 – exempel
 description: Host01 – exempel
-ms.openlocfilehash: 535d9ea6b2519023ad2ac4429d383e61b12db005
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b4f1a81044a51855ad7decc25e1f5b1215ab0d62
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92649254"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355484"
 ---
 # <a name="host01-sample"></a>Host01 – exempel
 
 Det här exemplet visar hur du implementerar ett värd program som använder en anpassad värd. I det här exemplet skapas en körnings utrymme som använder den anpassade värden och sedan används [system. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) API för att köra ett skript som anropar "Exit". Värd programmet tittar sedan på utdata från skriptet och skriver ut resultaten.
 
- I det här exemplet används de standard GRÄNSSNITTs funktioner som finns i Windows PowerShell. Mer information om hur du implementerar UI-funktionerna i en anpassad värd finns i [Host02-exempel](./host02-sample.md).
+I det här exemplet används de standard GRÄNSSNITTs funktioner som finns i Windows PowerShell. Mer information om hur du implementerar UI-funktionerna i en anpassad värd finns i [Host02-exempel](./host02-sample.md).
 
 ## <a name="requirements"></a>Krav
 
- Det här exemplet kräver Windows PowerShell 2,0.
+Det här exemplet kräver Windows PowerShell 2,0.
 
 ## <a name="demonstrates"></a>Demonstrationer
 
@@ -30,9 +30,9 @@ Det här exemplet visar hur du implementerar ett värd program som använder en 
 
 - Verifierar att rätt slutkod användes i avslutnings processen.
 
-## <a name="example"></a>Exempel
+## <a name="example-1"></a>Exempel 1
 
- Följande kod visar en implementering av ett värd program som använder ett enkelt anpassat värd gränssnitt.
+Följande kod visar en implementering av ett värd program som använder ett enkelt anpassat värd gränssnitt.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-2"></a>Exempel 2
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Skriva en objektprovider
 description: Skriva en objektprovider
-ms.openlocfilehash: ca25809178a4b812cff8b46ea456702d142f6fd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f70c6ee50277988c4e3b7c255dc4548bc30319dd
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647209"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355212"
 ---
 # <a name="writing-an-item-provider"></a>Skriva en objektprovider
 
@@ -20,7 +20,13 @@ Mer information om Windows PowerShell-leverantörer finns i [Översikt över Win
 
 ## <a name="implementing-item-methods"></a>Implementera objekt metoder
 
-Klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) visar flera metoder som kan användas för att få åtkomst till och manipulera objekt i ett data lager. En fullständig lista över dessa metoder finns i [ItemCmdletProvider-metoder](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods). I det här exemplet ska vi implementera fyra av dessa metoder. [System. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) hämtar ett objekt vid en angiven sökväg. [System. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) anger värdet för det angivna objektet. [System. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) kontrollerar om ett objekt finns på den angivna sökvägen. [System. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) kontrollerar en sökväg för att se om den mappas till en plats i data lagret.
+Klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) visar flera metoder som kan användas för att få åtkomst till och manipulera objekt i ett data lager.
+En fullständig lista över dessa metoder finns i [ItemCmdletProvider-metoder](/dotnet/api/system.management.automation.provider.itemcmdletprovider#methods).
+I det här exemplet ska vi implementera fyra av dessa metoder.
+[System. Management. Automation. Provider. Itemcmdletprovider. getItem, *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) hämtar ett objekt vid en angiven sökväg.
+[System. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) anger värdet för det angivna objektet.
+[System. Management. Automation. Provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) kontrollerar om ett objekt finns på den angivna sökvägen.
+[System. Management. Automation. Provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) kontrollerar en sökväg för att se om den mappas till en plats i data lagret.
 
 > [!NOTE]
 > Det här avsnittet bygger på informationen i [snabb starten för Windows PowerShell-providern](./windows-powershell-provider-quickstart.md). Det här avsnittet beskriver inte grunderna för hur du konfigurerar ett Provider-projekt eller hur du implementerar de metoder som ärvts från klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) som skapar och tar bort enheter.
@@ -82,7 +88,7 @@ protected override void GetItem(string path)
 
 Metoden [system. Management. Automation. Provider. Itemcmdletprovider. setItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) anropas av PowerShell-motorn anrop när en användare anropar cmdleten [Microsoft. PowerShell. commands. SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) . Värdet för objektet anges på den angivna sökvägen.
 
-I Access Database-exemplet är det klokt att ange värdet för ett objekt endast om objektet är en rad, så att metoden returnerar [NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) när objektet inte är en rad.
+I Access Database-exemplet är det klokt att ange värdet för ett objekt endast om objektet är en rad, så att metoden returnerar [NotSupportedException](/dotnet/api/system.notsupportedexception) när objektet inte är en rad.
 
 ```csharp
 protected override void SetItem(string path, object values)

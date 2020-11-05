@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Host04 – exempel
 description: Host04 – exempel
-ms.openlocfilehash: 27e3aa18046a82058b11593a3b34650d2c164cbc
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a768258d58d39d0067c5a2a9c40d74e32bf64943
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92667580"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355433"
 ---
 # <a name="host04-sample"></a>Host04 – exempel
 
@@ -16,29 +16,26 @@ Det här exemplet visar hur du skapar ett interaktivt konsolbaserade värd progr
 
 ## <a name="requirements"></a>Krav
 
- Det här exemplet kräver Windows PowerShell 2,0.
+Det här exemplet kräver Windows PowerShell 2,0.
 
 ## <a name="demonstrates"></a>Demonstrationer
 
-- Skapa en anpassad värd vars klasser härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) och klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
+- Skapa en anpassad värd vars klasser härleds från klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , klassen [system. Management. Automation. Host. PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) och klassen [system. Management. Automation. Host. PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
 
 - Skapa ett konsol program som använder dessa värd klasser för att skapa ett interaktivt Windows PowerShell-gränssnitt.
 
 - Skapa en `$profile` variabel och läsa in följande profiler.
 
   - aktuell användare, aktuell värd
-
   - aktuell användare, alla värdar
-
   - alla användare, aktuell värd
-
   - alla användare, alla värdar
 
-- Implementera gränssnittet [system. Management. Automation. Host. Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
+- Implementera gränssnittet [system. Management. Automation. Host. IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
 
-## <a name="example"></a>Exempel
+## <a name="example-1"></a>Exempel 1
 
- Det här exemplet gör att användaren kan ange kommandon på en kommando rad, bearbetar dessa kommandon och sedan skriva ut resultaten.
+Det här exemplet gör att användaren kan ange kommandon på en kommando rad, bearbetar dessa kommandon och sedan skriva ut resultaten.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -375,9 +372,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-2"></a>Exempel 2
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -557,9 +554,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-3"></a>Exempel 3
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) som används av det här värd programmet.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) som används av det här värd programmet.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1075,9 +1072,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-4"></a>Exempel 4
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

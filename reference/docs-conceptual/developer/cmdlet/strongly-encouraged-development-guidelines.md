@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Starkt rekommenderade riktlinjer för utveckling
 description: Starkt rekommenderade riktlinjer för utveckling
-ms.openlocfilehash: 786ce66ed6289e91b532b0c31ed797afad4574b3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: e12fa0d1adc0d7a0dad938457bdcd289736df97c
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92646430"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355246"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Starkt rekommenderade riktlinjer för utveckling
 
@@ -16,35 +16,14 @@ I det här avsnittet beskrivs rikt linjer som du bör följa när du skriver din
 
 ## <a name="design-guidelines"></a>Designriktlinjer
 
-- [Använd ett angivet Substantiv för ett cmdlet-namn (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
-
-- [Använd Pascal-fall för cmdlet-namn (SD02)](./strongly-encouraged-development-guidelines.md#use-pascal-case-for-cmdlet-names-sd02)
-
-- [Rikt linjer för parameter design (SD03)](./strongly-encouraged-development-guidelines.md#parameter-design-guidelines-sd03)
-
-- [Ge feedback till användaren (SD04)](./strongly-encouraged-development-guidelines.md#provide-feedback-to-the-user-sd04)
-
-- [Skapa en hjälp fil för cmdlet (SD05)](./strongly-encouraged-development-guidelines.md#create-a-cmdlet-help-file-sd05)
-
-## <a name="code-guidelines"></a>Kod rikt linjer
-
-- [Kodnings parametrar (SC01)](./strongly-encouraged-development-guidelines.md#coding-parameters-sc01)
-
-- [Support bra definierade pipeline-inmatare (SC02)](./strongly-encouraged-development-guidelines.md#support-well-defined-pipeline-input-sc02)
-
-- [Skriv enskilda poster till pipelinen (SC03)](./strongly-encouraged-development-guidelines.md#write-single-records-to-the-pipeline-sc03)
-
-- [Skapa cmdlets Case-Insensitive och Case-Preserving (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
-
-## <a name="design-guidelines"></a>Designriktlinjer
-
 Följande rikt linjer bör följas när du utformar cmdlets för att säkerställa en konsekvent användar upplevelse mellan att använda dina cmdletar och andra cmdletar. När du hittar en design rikt linje som gäller din situation bör du titta närmare på kod rikt linjerna för liknande rikt linjer.
 
 ### <a name="use-a-specific-noun-for-a-cmdlet-name-sd01"></a>Använd ett angivet Substantiv för ett cmdlet-namn (SD01)
 
-Substantiv som används i cmdlet-namn måste vara särskilt så att användaren kan identifiera dina cmdletar. Prefix för generiska substantiv som "Server" med en förkortad version av produkt namnet. Om t. ex. ett substantiv refererar till en server som kör en instans av Microsoft SQL Server, använder du ett substantiv som "SQLServer". Kombinationen av vissa Substantiv och den korta listan över godkända verb gör det möjligt för användaren att snabbt upptäcka och förutse funktioner samtidigt som du undviker duplicering mellan cmdlet-namn.
+Substantiv som används i cmdlet-namn måste vara särskilt så att användaren kan identifiera dina cmdletar.
+Prefix för generiska substantiv som "Server" med en förkortad version av produkt namnet. Om t. ex. ett substantiv refererar till en server som kör en instans av Microsoft SQL Server, använder du ett substantiv som "SQLServer". Kombinationen av vissa Substantiv och den korta listan över godkända verb gör det möjligt för användaren att snabbt upptäcka och förutse funktioner samtidigt som du undviker duplicering mellan cmdlet-namn.
 
-För att förbättra användar upplevelsen ska det substantiv som du väljer för ett cmdlet-namn vara singular. Använd till exempel namnet `Get-Process` i stället för **Get-processs** . Det är bäst att följa den här regeln för alla cmdlet-namn, även om en cmdlet förmodligen fungerar på mer än ett objekt.
+För att förbättra användar upplevelsen ska det substantiv som du väljer för ett cmdlet-namn vara singular. Använd till exempel namnet `Get-Process` i stället för **Get-processs**. Det är bäst att följa den här regeln för alla cmdlet-namn, även om en cmdlet förmodligen fungerar på mer än ett objekt.
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Använd Pascal-fall för cmdlet-namn (SD02)
 
@@ -71,14 +50,14 @@ Plural-parameter namn ska endast användas i de fall där parameterns värde all
 Använd Pascal-fall för parameter namn. Med andra ord skriver du in den första bokstaven i varje ord i parameter namnet, inklusive den första bokstaven i namnet. Parameter namnet använder till exempel `ErrorAction` rätt Skift läge. Följande parameter namn använder felaktig kapitalisering:
 
 - `errorAction`
-
 - `erroraction`
 
 #### <a name="parameters-that-take-a-list-of-options"></a>Parametrar som tar en lista med alternativ
 
 Det finns två sätt att skapa en parameter vars värde kan väljas från en uppsättning alternativ.
 
-- Definiera en uppräknings typ (eller Använd en befintlig uppräknings typ) som anger giltiga värden. Använd sedan uppräknings typen för att skapa en parameter av den typen.
+- Definiera en uppräknings typ (eller Använd en befintlig uppräknings typ) som anger giltiga värden.
+  Använd sedan uppräknings typen för att skapa en parameter av den typen.
 
 - Lägg till attributet **ValidateSet** i parameter deklarationen. Mer information om det här attributet finns i [ValidateSet Attribute-deklaration](./validateset-attribute-declaration.md).
 
@@ -92,13 +71,14 @@ Parametrar ska definieras som .NET Framework typer för att ge bättre parameter
 
 #### <a name="use-consistent-parameter-types"></a>Använd konsekventa parameter typer
 
-Använd alltid samma parameter typ när samma parameter används av flera cmdletar.  Om parametern till exempel `Process` är en [system. Int16](/dotnet/api/System.Int16) -typ för en cmdlet ska du inte göra `Process` parametern för en annan cmdlet: en [system. Uint16](/dotnet/api/System.UInt16) -typ.
+Använd alltid samma parameter typ när samma parameter används av flera cmdletar. Om parametern till exempel `Process` är en [system. Int16](/dotnet/api/System.Int16) -typ för en cmdlet ska du inte göra `Process` parametern för en annan cmdlet: en [system. Uint16](/dotnet/api/System.UInt16) -typ.
 
 #### <a name="parameters-that-take-true-and-false"></a>Parametrar som tar sant och falskt
 
-Om parametern bara tar `true` och `false` definierar du parametern som Type [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). En växel parameter behandlas som `true` när den anges i ett kommando. Om parametern inte ingår i ett kommando, anses värdet för parametern vara i Windows PowerShell `false` . Definiera inte booleska parametrar.
+Om parametern bara tar `true` och `false` definierar du parametern som Type [system. Management. Automation. SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter).
+En växel parameter behandlas som `true` när den anges i ett kommando. Om parametern inte ingår i ett kommando, anses värdet för parametern vara i Windows PowerShell `false` . Definiera inte booleska parametrar.
 
-Om parametern behöver särskilja mellan tre värden: $true, $false och "ospecificerad", definierar du en parameter av typen Nullable \<bool> .  Behovet av ett tredje, "Ospecificerat" värde inträffar vanligt vis när cmdleten kan ändra en Boolean-egenskap för ett objekt. I det här fallet "Ospecificerat" innebär att egenskapens aktuella värde inte ändras.
+Om parametern behöver särskilja mellan tre värden: $true, $false och "ospecificerad", definierar du en parameter av typen Nullable \<bool> . Behovet av ett tredje, "Ospecificerat" värde inträffar vanligt vis när cmdleten kan ändra en Boolean-egenskap för ett objekt. I det här fallet "Ospecificerat" innebär att egenskapens aktuella värde inte ändras.
 
 #### <a name="support-arrays-for-parameters"></a>Stöd mat ris för parametrar
 
@@ -165,16 +145,14 @@ Definiera en parameter genom att deklarera en offentlig egenskap för cmdlet-kla
 
 Windows PowerShell-sökvägen är mekanismen för att normalisera åtkomst till namn områden. När du tilldelar en Windows PowerShell-sökväg till en parameter i cmdleten kan användaren definiera en anpassad "enhet" som fungerar som en genväg till en angiven sökväg. När en användare anger en sådan enhet, kan lagrade data, till exempel data i registret, användas på ett konsekvent sätt.
 
-Om din cmdlet gör det möjligt för användaren att ange en fil eller en data källa, bör den definiera en parameter av typen [system. String](/dotnet/api/System.String). Om mer än en enhet stöds måste typen vara en matris. Namnet på parametern ska vara `Path` , med ett alias för `PSPath` . Dessutom `Path` ska parametern ha stöd för jokertecken. Om det inte krävs stöd för jokertecken definierar du en `LiteralPath` parameter.
+Om din cmdlet gör det möjligt för användaren att ange en fil eller en data källa, bör den definiera en parameter av typen [system. String](/dotnet/api/System.String). Om mer än en enhet stöds måste typen vara en matris. Namnet på parametern ska vara `Path` , med ett alias för `PSPath` .
+Dessutom `Path` ska parametern ha stöd för jokertecken. Om det inte krävs stöd för jokertecken definierar du en `LiteralPath` parameter.
 
 Om data som cmdleten läser eller skriver måste vara en fil, ska cmdleten acceptera Windows PowerShell Path-indata och cmdleten ska använda egenskapen [system. Management. Automation. sessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) för att översätta Windows PowerShell-sökvägar till sökvägar som fil systemet känner igen. De olika mekanismerna omfattar följande metoder:
 
 - [System. Management. Automation. PSCmdlet. GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
-
 - [System. Management. Automation. PSCmdlet. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
-
 - [System. Management. Automation. PathIntrinsics. GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
-
 - [System. Management. Automation. PathIntrinsics. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
 Om data som-cmdlet: en läser eller skriver bara är en uppsättning strängar i stället för en fil, ska cmdleten använda providerns innehålls information ( `Content` medlem) för att läsa och skriva. Den här informationen hämtas från egenskapen [system. Management. Automation. Provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Dessa metoder gör det möjligt för andra data lager att delta i läsning och skrivning av data.
@@ -183,7 +161,8 @@ Om data som-cmdlet: en läser eller skriver bara är en uppsättning strängar i
 
 En cmdlet måste ha stöd för jokertecken om det är möjligt. Stöd för jokertecken förekommer på många platser i en cmdlet (särskilt när en parameter tar en sträng för att identifiera ett objekt från en uppsättning objekt). Exempel: **Stop-proc-** cmdleten från StopProc- [självstudien](./stopproc-tutorial.md) definierar till exempel en `Name` parameter för att hantera strängar som representerar process namn. Den här parametern stöder jokertecken så att användaren enkelt kan ange vilka processer som ska stoppas.
 
-När stöd för jokertecken är tillgängligt skapar en cmdlet-åtgärd vanligt vis en matris. Ibland är det inte meningsfullt att stödja en matris eftersom användaren bara kan använda ett enda objekt i taget. Till exempel behöver cmdleten [set-location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) inte stöd för en matris eftersom användaren bara anger en enda plats. I den här instansen stöder cmdlet: en fortfarande jokertecken, men den framtvingar matchning till en enda plats.
+När stöd för jokertecken är tillgängligt skapar en cmdlet-åtgärd vanligt vis en matris.
+Ibland är det inte meningsfullt att stödja en matris eftersom användaren bara kan använda ett enda objekt i taget. Till exempel behöver cmdleten [set-location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) inte stöd för en matris eftersom användaren bara anger en enda plats. I den här instansen stöder cmdlet: en fortfarande jokertecken, men den framtvingar matchning till en enda plats.
 
 Mer information om mönster med jokertecken finns i [stödjande jokertecken i cmdlet-parametrar](./supporting-wildcard-characters-in-cmdlet-parameters.md).
 
@@ -199,23 +178,25 @@ Definiera standard medlemmar för att utöka en objekt typ i en anpassad Types.p
 
 Om du skapar ett objekt för en cmdlet bör du se till att dess medlemmar mappar direkt till parametrarna för de cmdletar som ska använda den. Med den här mappningen kan objektet enkelt skickas till pipelinen och skickas från en-cmdlet till en annan.
 
-Befintliga .NET Framework objekt som returneras av cmdlets ofta saknar vissa viktiga eller praktiska medlemmar som krävs av skript utvecklaren eller användaren. De medlemmar som saknas kan vara särskilt viktiga för att visa och för att skapa rätt medlems namn så att objektet kan skickas korrekt till pipelinen. Skapa en anpassad Types.ps1XML-fil för att dokumentera de nödvändiga medlemmarna. När du skapar den här filen rekommenderar vi följande namngivnings konvention: *<Your_Product_Name>* .Types.ps1XML.
+Befintliga .NET Framework objekt som returneras av cmdlets ofta saknar vissa viktiga eller praktiska medlemmar som krävs av skript utvecklaren eller användaren. De medlemmar som saknas kan vara särskilt viktiga för att visa och för att skapa rätt medlems namn så att objektet kan skickas korrekt till pipelinen. Skapa en anpassad Types.ps1XML-fil för att dokumentera de nödvändiga medlemmarna. När du skapar den här filen rekommenderar vi följande namngivnings konvention: *<Your_Product_Name>*.Types.ps1XML.
 
 Du kan till exempel lägga till en `Mode` skript egenskap i typen [system. io. fileinfo](/dotnet/api/System.IO.FileInfo) för att visa attributen för en fil tydligare. Dessutom kan du lägga till en `Count` aliasresurspost till [system. mat ris](/dotnet/api/System.Array) typen för att tillåta konsekvent användning av egenskaps namnet (i stället för `Length` ).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementera IComparable-gränssnittet
 
-Implementera ett [system. IComparable](/dotnet/api/System.IComparable) -gränssnitt på alla utgående objekt. Detta gör att utmatnings objekt enkelt kan skickas till olika sorterings-och analys-cmdletar.
+Implementera ett [system. IComparable](/dotnet/api/System.IComparable) -gränssnitt på alla utgående objekt.
+Detta gör att utmatnings objekt enkelt kan skickas till olika sorterings-och analys-cmdletar.
 
 ##### <a name="update-display-information"></a>Uppdatera visnings information
 
-Om visningen för ett objekt inte ger det förväntade resultatet skapar du en anpassad *\<YourProductName>* .Format.ps1XML-fil för objektet.
+Om visningen för ett objekt inte ger det förväntade resultatet skapar du en anpassad *\<YourProductName>*.Format.ps1XML-fil för objektet.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Support bra definierade pipeline-inmatare (SC02)
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>Implementera mitt i en pipeline
 
-Implementera en cmdlet förutsatt att den kommer att anropas från mitten av en pipeline (det vill säga andra cmdlets skapar indata eller förbrukar utdata). Du kan till exempel anta att `Get-Process` cmdleten, eftersom den genererar data, endast används som första cmdlet i en pipeline. Men eftersom den här cmdleten är avsedd för mitten av en pipeline, tillåter den här cmdleten tidigare cmdletar eller data i pipelinen att ange vilka processer som ska hämtas.
+Implementera en cmdlet förutsatt att den kommer att anropas från mitten av en pipeline (det vill säga andra cmdlets skapar indata eller förbrukar utdata). Du kan till exempel anta att `Get-Process` cmdleten, eftersom den genererar data, endast används som första cmdlet i en pipeline.
+Men eftersom den här cmdleten är avsedd för mitten av en pipeline, tillåter den här cmdleten tidigare cmdletar eller data i pipelinen att ange vilka processer som ska hämtas.
 
 #### <a name="support-input-from-the-pipeline"></a>Stöd för ininformation från pipelinen
 
@@ -233,7 +214,8 @@ När en cmdlet returnerar objekt ska cmdleten skriva objekten direkt när de gen
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Skapa cmdlets Case-Insensitive och Case-Preserving (SC04)
 
-Som standard är Windows PowerShell inte Skift läges känsligt. Men eftersom det behandlar flera befintliga system, bevarar Windows PowerShell Skift läge för enkel drift och kompatibilitet. Om ett tecken i versaler anges med versaler, så behåller Windows PowerShell det med versala bokstäver. För att system ska fungera bra måste en cmdlet följa denna konvention. Om möjligt bör det köras på ett skift läges okänsligt sätt. Det bör dock behålla det ursprungliga fallet för cmdletar som sker senare i ett kommando eller i pipelinen.
+Som standard är Windows PowerShell inte Skift läges känsligt. Men eftersom det behandlar flera befintliga system, bevarar Windows PowerShell Skift läge för enkel drift och kompatibilitet.
+Om ett tecken i versaler anges med versaler, så behåller Windows PowerShell det med versala bokstäver. För att system ska fungera bra måste en cmdlet följa denna konvention. Om möjligt bör det köras på ett skift läges okänsligt sätt. Det bör dock behålla det ursprungliga fallet för cmdletar som sker senare i ett kommando eller i pipelinen.
 
 ## <a name="see-also"></a>Se även
 

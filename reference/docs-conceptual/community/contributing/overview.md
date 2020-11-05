@@ -1,14 +1,14 @@
 ---
 title: Bidra till PowerShell-dokumentation
-description: Den här artikeln är en översikt över hur du kommer igång med att bidra till PowerShell-dokumentationen.
+description: Den här artikeln beskriver de steg som krävs för att bidra till PowerShell-dokumentationen.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158164"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354413"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bidra till PowerShell-dokumentation
 

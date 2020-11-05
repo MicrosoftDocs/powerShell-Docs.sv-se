@@ -3,12 +3,12 @@ ms.date: 09/07/2018
 ms.topic: reference
 title: Godkända verb för PowerShell-kommandon
 description: Godkända verb för PowerShell-kommandon
-ms.openlocfilehash: 237355ba9729cfe16c335b39f19ab20e40999457
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92655822"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355110"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Godkända verb för PowerShell-kommandon
 
@@ -18,13 +18,7 @@ Verbets del av namnet identifierar den åtgärd som cmdleten utför. Substantiv 
 > [!NOTE]
 > PowerShell använder termen _verb_ för att beskriva ett ord som förutsätter en åtgärd även om ordet inte är ett standard-verb på det engelska språket. Termen _nytt_ är till exempel ett giltigt PowerShell-verb eftersom det innebär en åtgärd trots att det inte är ett verb på det engelska språket.
 
-<!--
-01234567890123456789012345678901234567890123456789012345678901234567890123456789
--->
-
-Varje godkänt verb har ett motsvarande _alias_ definierat.
-Vi använder det här aliaset i alias för kommandon som använder verbet.
-Till exempel aliaset prefix för `Import` är `ip` och, och därför aliaset för `Import-Module` är `ipmo` .  Detta är en rekommendation men inte en regel. i synnerhet behöver den inte respekteras för kommando Ali Aset mimicking välkända kommandon från andra miljöer.
+Varje godkänt verb har ett motsvarande _alias_ definierat. Vi använder det här aliaset i alias för kommandon som använder verbet. Till exempel aliaset prefix för `Import` är `ip` och, och därför aliaset för `Import-Module` är `ipmo` . Detta är en rekommendation men inte en regel. i synnerhet behöver den inte respekteras för kommando Ali Aset mimicking välkända kommandon från andra miljöer.
 
 ## <a name="verb-naming-recommendations"></a>Rekommendationer för namngivning av verb
 
@@ -35,13 +29,13 @@ Följande rekommendationer hjälper dig att välja ett lämpligt verb för cmdle
 - Använd inte en synonym till ett godkänt verb. Till exempel Använd alltid `Remove` , aldrig användning `Delete` eller `Eliminate` .
 - Använd endast formuläret för varje verb som anges i det här avsnittet. Använd till exempel `Get` , men Använd inte `Getting` eller `Gets` .
 - Använd inte följande reserverade verb eller alias. PowerShell-språket eller en sällsynt del av dess cmdlet använder dessa verb under exceptionella omständigheter.
-    - ()
-    - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f): ordna objekt i ett angivet formulär eller en viss layout
-    - [Grupp](/dotnet/api/System.Management.Automation.VerbsData.Group) (GP): ordnar eller kopplar samman en eller flera resurser
-    - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (PI)
-    - Sortera (SR)
-    - Tee (te)
-    - Var (vad än är)
+  - ()
+  - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f): ordna objekt i ett angivet formulär eller en viss layout
+  - [Grupp](/dotnet/api/System.Management.Automation.VerbsData.Group) (GP): ordnar eller kopplar samman en eller flera resurser
+  - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (PI)
+  - Sortera (SR)
+  - Tee (te)
+  - Var (vad än är)
 
 Du kan få en fullständig lista över verb som använder `Get-Verb` cmdleten.
 
@@ -174,13 +168,13 @@ PowerShell använder klassen [system. Management. Automation. VerbsLifeCycle](/d
 |[Godkänn](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (AP)|Bekräftar eller accepterar status för en resurs eller process.||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|Bekräftar statusen för en resurs.|Certify|
 |[Bygge](/dotnet/api/System.Management.Automation.VerbsLifecycle.Build) (BD)|Skapar en artefakt (vanligt vis ett binärt eller dokument) av en uppsättning indatafiler (vanligt vis käll kod eller deklarativ dokument). Det här verbet lades till i PowerShell 6.||
-|[Slutför](/dotnet/api/system.management.automation.host.buffercelltype?view=powershellsdk-1.1.0) (CP)|Avslutar en åtgärd.||
+|[Slutför](/dotnet/api/system.management.automation.host.buffercelltype) (CP)|Avslutar en åtgärd.||
 |[Bekräfta](/dotnet/api/System.Management.Automation.VerbsLifecycle.Confirm) (CN)|Bekräftar, verifierar eller verifierar status för en resurs eller process.|Bekräfta, Godkänn, certifiera, verifiera, verifiera|
 |[Neka](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deny) (DN)|Nekar, objekt, blockerar eller motsätter sig statusen för en resurs eller process.|Blockera, objekt, neka, avvisa|
 |[Distribuera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deploy) (DP)|Skickar ett program, en webbplats eller en lösning till ett fjärrmål [s] på ett sådant sätt att en konsument av lösningen kan komma åt den när distributionen har slutförts. Det här verbet lades till i PowerShell 6.||
 |[Inaktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Disable) (d)|Konfigurerar en resurs till ett otillgängligt eller inaktivt tillstånd. Till exempel `Disable-PSBreakpoint` gör cmdleten en inaktiv Bryt punkt. Verbet är länkat till `Enable` .|Stoppa, Dölj|
 |[Aktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Enable) (e)|Konfigurerar en resurs till ett tillgängligt eller aktivt tillstånd. Till exempel `Enable-PSBreakpoint` gör cmdleten en aktiv Bryt punkt. Verbet är länkat till `Disable` .|Starta, börja|
-|[Installera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Install) (är)|Placerar en resurs på en plats och eventuellt initierar den. Verbet är länkat till `Uninstall` .|Installation|
+|[Installera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Install) (är)|Placerar en resurs på en plats och eventuellt initierar den. Verbet är länkat till `Uninstall` .|Konfiguration|
 |[Anropa](/dotnet/api/System.Management.Automation.VerbsLifecycle.Invoke) (i)|Utför en åtgärd, till exempel köra ett kommando eller en metod.|Kör, starta|
 |[Registrera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Register) (RG)|Skapar en post för en resurs i en lagrings plats, till exempel en databas. Verbet är länkat till `Unregister` .||
 |[Begäran](/dotnet/api/System.Management.Automation.VerbsLifecycle.Request) (RQ)|Frågar efter en resurs eller ber om behörighet.||

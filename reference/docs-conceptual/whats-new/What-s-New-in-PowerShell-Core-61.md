@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6,1
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 4ff70be239197c7a4f64019d2aab42433f82f36c
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846923"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354668"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nyheter i PowerShell Core 6,1
 
@@ -19,16 +19,16 @@ Och vi kallar några namn nedan och tackar dig till [alla deltagare i communityn
 
 ## <a name="net-core-21"></a>.NET Core 2.1
 
-PowerShell Core 6,1 flyttades till .NET Core 2,1 efter att den [släpptes i kan](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), vilket resulterar i ett antal förbättringar av PowerShell, inklusive:
+PowerShell Core 6,1 flyttades till .NET Core 2,1 efter att den [släpptes i kan](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/), vilket resulterar i ett antal förbättringar av PowerShell, inklusive:
 
 - prestanda förbättringar (se [nedan](#performance-improvements))
 - Stöd för Alpine Linux (för hands version)
 - [Stöd för globalt .net-verktyg](/dotnet/core/tools/global-tools) – kommer snart till PowerShell
-- [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
+- [`Span<T>`](/dotnet/api/system.span-1)
 
 ## <a name="windows-compatibility-pack-for-net-core"></a>Windows Compatibility Pack för .NET Core
 
-I Windows levererade .NET-teamet [Windows Compatibility Pack för .net Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), en uppsättning sammansättningar som lägger till ett antal borttagna API: er tillbaka till .net core i Windows.
+I Windows levererade .NET-teamet [Windows Compatibility Pack för .net Core](https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/), en uppsättning sammansättningar som lägger till ett antal borttagna API: er tillbaka till .net core i Windows.
 
 Vi har lagt till Windows-kompatibilitetspaketet till PowerShell Core 6,1-versionen så att moduler eller skript som använder dessa API: er kan vara beroende av att de är tillgängliga.
 
@@ -36,7 +36,7 @@ Windows-kompatibilitetspaketet gör det möjligt för PowerShell Core att använ
 
 ## <a name="support-for-application-allow-lists"></a>Stöd för listor över tillåtna program
 
-PowerShell Core 6,1 har paritet med Windows PowerShell 5,1 som stöder [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) -och [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -program för att tillåta listor. Med listan över tillåtna program kan du få detaljerad kontroll över vilka binärfiler som kan användas för att köra dem med PowerShell- [begränsat språk läge](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+PowerShell Core 6,1 har paritet med Windows PowerShell 5,1 som stöder [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) -och [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -program för att tillåta listor. Med listan över tillåtna program kan du få detaljerad kontroll över vilka binärfiler som kan användas för att köra dem med PowerShell- [begränsat språk läge](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestandaförbättringar
 
@@ -51,7 +51,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
 | ------------ | ---------------------- | ------------------- | ------------------- |
 | Tid (SEK)   | 25,178                 | 19,653              | 6,641               |
-| Hastighets anslutning (%) | Saknas                    | 21,9%               | 66,2%               |
+| Hastighets anslutning (%) | E.t.                    | 21,9%               | 66,2%               |
 
 På samma sätt har sorterings scenarier som det här förbättrats med mer än 15%:
 
@@ -62,7 +62,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 | PowerShell Core 6,1 |
 | ------------ | ---------------------- | ------------------- | ------------------- |
 | Tid (SEK)   | 12,170                 | 8,493               | 7,08                |
-| Hastighets anslutning (%) | Saknas                    | 30,2%               | 16,6%               |
+| Hastighets anslutning (%) | E.t.                    | 30,2%               | 16,6%               |
 
 `Import-Csv` har också sped varit märkbart efter en regression från Windows PowerShell.
 I följande exempel används en test-CSV med 26 616 rader och sex kolumner:
@@ -74,7 +74,7 @@ Measure-Command {$a = Import-Csv foo.csv}
 |    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 |  PowerShell Core 6,1   |
 | ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tid (SEK)   | 0,441                  | 1,069               | 0,268                  |
-| Hastighets anslutning (%) | Saknas                    | – 142,4%             | 74,9% (39,2% från WPS) |
+| Hastighets anslutning (%) | E.t.                    | – 142,4%             | 74,9% (39,2% från WPS) |
 
 Till sist har konverteringen från JSON till `PSObject` sped upp med mer än 50% sedan Windows PowerShell.
 I följande exempel används ~ 2 MB test-JSON-fil:
@@ -85,8 +85,8 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 |    Mått    | Windows PowerShell 5.1 | PowerShell Core 6,0 |  PowerShell Core 6,1   |
 | ------------ | ---------------------- | ------------------- | ---------------------- |
-| Tid (SEK)   | 0,259                  | 0,577               | 0,125                  |
-| Hastighets anslutning (%) | Saknas                    | – 122,8%             | 78,3% (51,7% från WPS) |
+| Tid (SEK)   | 0,259                  | 0,577               | 0.125                  |
+| Hastighets anslutning (%) | E.t.                    | – 122,8%             | 78,3% (51,7% från WPS) |
 
 ## <a name="check-system32-for-compatible-built-in-modules-on-windows"></a>Sök `system32` efter kompatibla inbyggda moduler i Windows
 
@@ -168,7 +168,7 @@ Vi har lagt till några cmdletar i 6,1 som gör det möjligt att konvertera och 
 
 Återge till exempel `Show-Markdown` en MARKDOWN-fil i-konsolen:
 
-![Visa markdown-exempel](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
+![Show-Markdown exempel](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 Mer information om hur dessa cmdlets fungerar finns i [denna RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
 
@@ -203,7 +203,7 @@ Tidigare anslöt PowerShell Direct till med den inbyggda Windows PowerShell-inst
 
 `Enable-PSRemoting` nu skapas två konfigurationer för fjärrsessioner:
 
-- En för den högre versionen av PowerShell. Till exempel `PowerShell.6`. Den här slut punkten som kan förlita sig på en del versions uppdateringar som "system-bred" PowerShell 6-session konfiguration
+- En för den högre versionen av PowerShell. Exempelvis `PowerShell.6`. Den här slut punkten som kan förlita sig på en del versions uppdateringar som "system-bred" PowerShell 6-session konfiguration
 - En version – en konfiguration av en speciell session, till exempel: `PowerShell.6.1.0`
 
 Det här beteendet är användbart om du vill ha flera PowerShell 6-versioner installerade och tillgängliga på samma dator.
@@ -496,7 +496,7 @@ För att förhindra användning av okrypterad trafik, kräver PowerShell-fjärrk
 
 Mer information om dessa ändringar finns i [problem #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
-### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Borttaget `VisualBasic` som ett språk som stöds i tilläggs typen
+### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Borttaget `VisualBasic` som ett språk som stöds i Add-Type
 
 Tidigare kunde du kompilera Visual Basic kod med hjälp av `Add-Type` cmdleten. Visual Basic användes sällan med `Add-Type` . Vi har tagit bort den här funktionen för att minska storleken på PowerShell.
 
@@ -504,7 +504,7 @@ Tidigare kunde du kompilera Visual Basic kod med hjälp av `Add-Type` cmdleten. 
 
 Mer information om dessa ändringar finns i [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
 
-### <a name="group-object-now-sorts-the-groups"></a>Gruppera objekt sorterar nu grupperna
+### <a name="group-object-now-sorts-the-groups"></a>Nu sorterar Group-Object grupperna
 
 Som en del av prestanda förbättringen `Group-Object` returnerar nu en sorterad lista över grupperna.
 Även om du inte bör förlita dig på ordern, kan du bryta den här ändringen om du ville ha den första gruppen. Vi beslutade att den här prestanda förbättringen var värt förändringen eftersom effekten av att vara beroende av tidigare beteende är låg.

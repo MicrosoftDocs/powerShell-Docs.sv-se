@@ -6,17 +6,16 @@ ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
-ms.openlocfilehash: 5face386a479a0264f5ff2ba3f6665cb1e218a4a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f70e2cb2c04287e36ecdf21a97dd099fcfd23d65
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93269870"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355501"
 ---
 # <a name="about-logging-non-windows"></a>Om loggning av icke-Windows
 
 ## <a name="short-description"></a>Kort beskrivning
-
 PowerShell loggar interna åtgärder från motorn, providers och cmdlets.
 
 ## <a name="long-description"></a>Lång beskrivning
@@ -242,4 +241,3 @@ För macOS **os_log** information, se [os_log Developer-dokumentation](https://d
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

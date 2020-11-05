@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Skriva en containerprovider
 description: Skriva en containerprovider
-ms.openlocfilehash: e7e0eb00dd37eb847b2533152de339aedffe3736
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 17ec3e11258ee77a8e569df1af3a0e9bcd9798b6
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92645154"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354940"
 ---
 # <a name="writing-a-container-provider"></a>Skriva en containerprovider
 
@@ -20,7 +20,7 @@ Mer information om Windows PowerShell-leverantörer finns i [Översikt över Win
 
 ## <a name="implementing-container-methods"></a>Implementera container metoder
 
-Klassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) implementerar metoder som stöder behållare och skapar, kopierar och tar bort objekt. En fullständig lista över dessa metoder finns i [system. Management. Automation. Provider. ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods).
+Klassen [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) implementerar metoder som stöder behållare och skapar, kopierar och tar bort objekt. En fullständig lista över dessa metoder finns i [system. Management. Automation. Provider. ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider#methods).
 
 > [!NOTE]
 > Det här avsnittet bygger på informationen i [snabb starten för Windows PowerShell-providern](./windows-powershell-provider-quickstart.md). Det här avsnittet beskriver inte grunderna för hur du konfigurerar ett Provider-projekt eller hur du implementerar de metoder som ärvts från klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) som skapar och tar bort enheter. Det här avsnittet beskriver inte heller hur du implementerar metoder som exponeras av klassen [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Ett exempel som visar hur du implementerar objekt-cmdlets finns i [skriva en objekt leverantör](./writing-an-item-provider.md).
@@ -533,7 +533,8 @@ protected override void RemoveItem(string path, bool recurse)
 
 ## <a name="next-steps"></a>Nästa steg
 
-En typisk verklig Provider kan flytta objekt från en sökväg till en annan inom enheten. Ett exempel på en provider som stöder flytta objekt finns i [skriva en navigerings leverantör](./writing-a-navigation-provider.md).
+En typisk verklig Provider kan flytta objekt från en sökväg till en annan inom enheten.
+Ett exempel på en provider som stöder flytta objekt finns i [skriva en navigerings leverantör](./writing-a-navigation-provider.md).
 
 ## <a name="see-also"></a>Se även
 

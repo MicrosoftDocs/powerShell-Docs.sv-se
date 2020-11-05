@@ -1,16 +1,16 @@
 ---
-title: Lägga till stöd för autentiseringsuppgifter i PowerShell-funktioner
+title: Lägg till support för autentiseringsuppgifter in PowerShell-funktioner
 description: Hur du lägger till parametrar för autentiseringsuppgifter i dina PowerShell-skript,-funktioner och-cmdletar.
 ms.date: 10/29/2020
 ms.custom: contributor-JoshDuffney
-ms.openlocfilehash: fb85d47121dc106ae04742254f418e2c727f6157
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 3e4a3f41ccbca1cf97f2e96fd60f22d89be7bc5a
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93143194"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354634"
 ---
-# <a name="add-credential-support-to-powershell-functions"></a>Lägga till stöd för autentiseringsuppgifter i PowerShell-funktioner
+# <a name="add-credential-support-to-powershell-functions"></a>Lägg till support för autentiseringsuppgifter in PowerShell-funktioner
 
 > [!NOTE]
 > Den [ursprungliga versionen][] av den här artikeln visas på bloggen som skrivits av [@joshduffney][] . Den här artikeln har redigerats för inkludering på den här webbplatsen. PowerShell-teamet tack Josh för att dela det här innehållet med oss. Ta en titt på hans blogg på [duffney.io][].
@@ -65,7 +65,7 @@ function Get-Something {
 
 Koden i det här exemplet räcker för att ha en fungerande Credential-parameter, men det finns några saker som du kan lägga till för att göra den mer robust.
 
-- Lägg till `[ValidateNotNull()]` attributet verifiering för att kontrol lera att värdet skickas till **autentiseringsuppgiften** . Om parametervärdet är null förhindrar det här attributet funktionen från att köras med ogiltiga autentiseringsuppgifter.
+- Lägg till `[ValidateNotNull()]` attributet verifiering för att kontrol lera att värdet skickas till **autentiseringsuppgiften**. Om parametervärdet är null förhindrar det här attributet funktionen från att köras med ogiltiga autentiseringsuppgifter.
 
 - Lägg till `[System.Management.Automation.Credential()]` . På så sätt kan du skicka in ett användar namn som en sträng och ha en interaktiv prompt för lösen ordet.
 
@@ -292,7 +292,7 @@ Det kan vara svårt att skapa och lagra Credential-objekt på ett säkert sätt.
 [BetterCredentials]: https://www.powershellgallery.com/packages/BetterCredentials/
 [Azure Key Vault]: https://azure.microsoft.com/services/key-vault/
 [Valv projekt]: https://www.vaultproject.io/
-[Ihopbuntning-parametrar inuti avancerade funktioner]: http://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
+[Ihopbuntning-parametrar inuti avancerade funktioner]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
 [Automatisera med Jenkins och PowerShell i Windows-del 2]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
 [PSCredential]: /dotnet/api/system.management.automation.pscredential
 [Pester-boken]: https://leanpub.com/the-pester-book

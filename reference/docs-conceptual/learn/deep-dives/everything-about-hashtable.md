@@ -3,12 +3,12 @@ title: Allt du ville veta om hash
 description: Hash är verkligen viktiga i PowerShell så det är bra att ha en solid förståelse för dem.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85353829"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354430"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Allt du ville veta om hash
 
@@ -854,7 +854,7 @@ if($message -match 'My Name is (?<Name>.+) and my SSN is (?<SSN>.+)\.')
 
 I exemplet ovan `(?<Name>.*)` är ett namngivet under uttryck. Värdet placeras sedan i `$Matches.Name` egenskapen.
 
-## <a name="group-object--ashashtable"></a>Gruppera objekt – AsHashtable
+## <a name="group-object--ashashtable"></a>Group-Object-AsHashtable
 
 En liten känd funktion i `Group-Object` är att den kan omvandla vissa data uppsättningar till en hash-mängd.
 
@@ -966,7 +966,7 @@ Jag täckte mycket jord snabbt. Min idé är att du kan sätta en ny eller förs
 [Testa det om prestanda är viktigt]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [ihopbuntning]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [PSCustomObject]: everything-about-pscustomobject.md
-[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
+[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
 [PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [Automatiska standardinställningar]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/

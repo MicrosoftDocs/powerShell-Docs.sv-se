@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Översikt över Windows PowerShell-providers
 description: Översikt över Windows PowerShell-providers
-ms.openlocfilehash: 9877647f936d36b2f195d5d9178f882e79258639
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 2f1c5f5991a64fb2b85ece7feba915164ebd34ee
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647355"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355518"
 ---
 # <a name="windows-powershell-provider-overview"></a>Översikt över Windows PowerShell-providers
 
@@ -22,7 +22,8 @@ När du skriver en provider kan du ange standard enheter – enheter som skapas 
 
 ## <a name="type-of-providers"></a>Typ av leverantörer
 
-Det finns flera typer av leverantörer, som var och en har olika funktions nivåer. En provider implementeras som en klass som härleds från en av de underordnade objekten i klassen [system. Management. Automation. SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** . Information om olika typer av leverantörer finns i [typer](./provider-types.md)av leverantörer.
+Det finns flera typer av leverantörer, som var och en har olika funktions nivåer. En provider implementeras som en klass som härleds från en av de underordnade objekten i klassen [system. Management. Automation. SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory) 
+ **CmdletProvider** . Information om olika typer av leverantörer finns i [typer](./provider-types.md)av leverantörer.
 
 ## <a name="provider-cmdlets"></a>Cmdlets för providers
 
@@ -58,7 +59,9 @@ Leverantörer kan definiera dynamiska parametrar som läggs till i en providers-
 
 ## <a name="provider-capabilities"></a>Leverantörs funktioner
 
-I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieras ett antal funktioner som providers kan stödja. Detta inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd transaktioner. Om du vill ange funktioner för en provider lägger du till en lista med värden för attributet  [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , kombinerat med en logisk `OR` åtgärd, som egenskapen [system. Management. Automation. Provider. Cmdletproviderattribute. ProviderCapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (den andra parametern för attributet) för attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) för din leverantörs klass. Följande attribut anger till exempel att providern stöder funktionerna [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** och [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transaktioner** .
+I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieras ett antal funktioner som providers kan stödja. Detta inkluderar möjligheten att använda jokertecken, filtrera objekt och stöd transaktioner. Om du vill ange funktioner för en provider lägger du till en lista med värden för attributet [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , kombinerat med en logisk `OR` åtgärd, som egenskapen [system. Management. Automation. Provider. Cmdletproviderattribute. ProviderCapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (den andra parametern för attributet) för attributet [system. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) för din leverantörs klass. Följande attribut anger till exempel att providern stöder funktionerna [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) 
+ **ShouldProcess** och [system. Management. Automation. Provider. ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) 
+ **transaktioner** .
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -67,9 +70,11 @@ I uppräkningen [system. Management. Automation. Provider. ProviderCapabilities]
 
 ## <a name="provider-cmdlet-help"></a>Hjälp om Provider-cmdlet
 
-När du skriver en provider kan du implementera din egen hjälp för de Provider-cmdletar som du stöder. Detta omfattar ett enda hjälp avsnitt för varje provider-cmdlet eller flera versioner av ett hjälp avsnitt för fall där providerns cmdlet fungerar på olika sätt baserat på användningen av dynamiska parametrar. Om du vill ha stöd för providerns cmdlet-/regionsspecifika hjälp måste leverantören implementera gränssnittet [system. Management. Automation. Provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) .
+När du skriver en provider kan du implementera din egen hjälp för de Provider-cmdletar som du stöder.
+Detta omfattar ett enda hjälp avsnitt för varje provider-cmdlet eller flera versioner av ett hjälp avsnitt för fall där providerns cmdlet fungerar på olika sätt baserat på användningen av dynamiska parametrar. Om du vill ha stöd för providerns cmdlet-/regionsspecifika hjälp måste leverantören implementera gränssnittet [system. Management. Automation. Provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) .
 
-Windows PowerShell-motorn anropar metoden [system. Management. Automation. Provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) för att visa hjälp avsnittet för dina Provider-cmdletar. -Motorn tillhandahåller namnet på den cmdlet som användaren angav när du körde `Get-Help` cmdleten och den aktuella sökvägen till användaren. Den aktuella sökvägen krävs om providern implementerar olika versioner av samma provider-cmdlet för olika enheter. Metoden måste returnera en sträng som innehåller XML-koden för cmdlet-hjälpen.
+Windows PowerShell-motorn anropar metoden [system. Management. Automation. Provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) för att visa hjälp avsnittet för dina Provider-cmdletar. -Motorn tillhandahåller namnet på den cmdlet som användaren angav när du körde `Get-Help` cmdleten och den aktuella sökvägen till användaren.
+Den aktuella sökvägen krävs om providern implementerar olika versioner av samma provider-cmdlet för olika enheter. Metoden måste returnera en sträng som innehåller XML-koden för cmdlet-hjälpen.
 
 Innehållet för hjälp filen skrivs med PSMAML XML. Detta är samma XML-schema som används för att skriva Hjälp innehåll för fristående cmdlets. Lägg till innehållet för din anpassade cmdlet-hjälp till hjälp filen för din Provider under `CmdletHelpPaths` elementet. I följande exempel visas `command` elementet för en enda Provider-cmdlet och det visar hur du anger namnet på den provider-cmdlet som din Provider. har stöd för
 

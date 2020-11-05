@@ -3,12 +3,12 @@ ms.date: 06/12/2019
 ms.topic: reference
 title: Begrepp relaterade till Windows PowerShell
 description: Begrepp relaterade till Windows PowerShell
-ms.openlocfilehash: d4a6ce0a041ace2e6a66030a0b0abbded111a9a9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a9b88a2e575b7ff7c036ce0fcbc035f0b55d0f5f
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92653768"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355366"
 ---
 # <a name="windows-powershell-concepts"></a>Begrepp relaterade till Windows PowerShell
 
@@ -30,7 +30,7 @@ Det här avsnittet innehåller konceptuell information som hjälper dig att för
 
 [PowerShell-klass](/dotnet/api/system.management.automation.powershell)
 
-[PowerShell Core API-referens](/dotnet/api/?view=pscore-6.2.0)
+[PowerShell Core API-referens](/dotnet/api/?view=pscore-6.2.0&preserve-view=true)
 
 [Programmeringsguide för Windows PowerShell](windows-powershell-programmer-s-guide.md)
 
@@ -38,6 +38,6 @@ Det här avsnittet innehåller konceptuell information som hjälper dig att för
 
 [Skriva en Windows PowerShell-Provider](../provider/writing-a-windows-powershell-provider.md)
 
-[Windows PowerShell API-referens](/dotnet/api/?view=powershellsdk-1.1.0)
+[Windows PowerShell API-referens](/dotnet/api/?view=powershellsdk-1.1.0&preserve-view=true)
 
 [Windows PowerShell-referens](../windows-powershell-reference.md)

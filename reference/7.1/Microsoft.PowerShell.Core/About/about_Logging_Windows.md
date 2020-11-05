@@ -1,23 +1,22 @@
 ---
-description: PowerShell loggar interna åtgärder från motorn, providers och cmdlets.
+description: PowerShell loggar interna åtgärder från motorn, providers och cmdlets till händelse loggen i Windows.
 keywords: powershell
 Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging-Windows
-ms.openlocfilehash: dbc11e15642673d3159d4f02a40147e68fbf1d7d
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 960394838097e4bfad1af5f4f0af7a813a50e761
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93269865"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355025"
 ---
 # <a name="about-logging-windows"></a>Om loggning av Windows
 
 ## <a name="short-description"></a>Kort beskrivning
-
-PowerShell loggar interna åtgärder från motorn, providers och cmdlets.
+PowerShell loggar interna åtgärder från motorn, providers och cmdlets till händelse loggen i Windows.
 
 ## <a name="long-description"></a>Lång beskrivning
 
@@ -32,14 +31,14 @@ PowerShell-loggar kan visas med hjälp av Windows Loggboken. Händelse loggen fi
 
 När skript block loggning är aktiverat loggar PowerShell följande händelser i `PowerShellCore/Operational` loggen:
 
-|Fält| Värde|
-|-|-|
-|EventId|`4104` / `0x1008`|
-|Kanal|`Operational`|
-|Nivå|`Verbose`|
-|Opcode|`Create`|
-|Uppgift|`CommandStart`|
-|Följt|`Runspace`|
+|  Fält  |       Värde       |
+| ------- | ----------------- |
+| EventId | `4104` / `0x1008` |
+| Kanal | `Operational`     |
+| Nivå   | `Verbose`         |
+| Opcode  | `Create`          |
+| Uppgift    | `CommandStart`    |
+| Följt | `Runspace`        |
 
 ### <a name="registering-the-powershell-event-provider-on-windows"></a>Registrera PowerShell-Händelseprovidern i Windows
 
@@ -144,4 +143,3 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

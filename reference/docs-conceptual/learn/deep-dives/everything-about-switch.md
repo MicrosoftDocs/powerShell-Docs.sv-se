@@ -3,12 +3,12 @@ title: Allt du ville veta om switch-instruktionen
 description: Switch-instruktionen i PowerShell erbjuder funktioner som inte finns på andra språk.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 685a5691599408a0d54ca99bf383bcd7702322a6
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.openlocfilehash: c2e77aa5fb36d04fec1bc86f751291205120c729
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86469726"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355127"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>Allt du ville veta om switch-instruktionen
 
@@ -657,9 +657,14 @@ Inställningen `$isEnabled` till `$true` i det här exemplet ser till att `$isVi
 
 När `switch` bearbetar dess värden skapar den en uppräknare och anropar den `$switch` . Det här är en automatisk variabel som skapats av PowerShell och du kan ändra den direkt.
 
-Detta pekade mig av [/u/frmadsen](https://www.reddit.com/user/frmadsen)
+```powershell
+$a = 1, 2, 3, 4
 
-<div class="reddit-embed" data-embed-media="www.redditmedia.com" data-embed-parent="false" data-embed-live="false" data-embed-uuid="8f6edbf1-abc6-4513-971e-ccd1d202889d" data-embed-created="2018-12-25T22:05:33.986Z"><a href="https://www.reddit.com/r/PowerShell/comments/a90rx2/what_should_i_it_student_learn_to_master/ecj2kji/">Kommentar</a> från diskussionen <a href="https://www.reddit.com/r/PowerShell/comments/a90rx2/what_should_i_it_student_learn_to_master/">vad ska jag (IT-Student) lära sig att Master PowerShell?</a>.</div><script async src="https://www.redditstatic.com/comment-embed.js"></script>
+switch($a) {
+    1 { [void]$switch.MoveNext(); $switch.Current }
+    3 { [void]$switch.MoveNext(); $switch.Current }
+}
+```
 
 Detta ger dig resultatet av:
 

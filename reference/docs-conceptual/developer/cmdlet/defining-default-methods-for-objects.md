@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Definiera standardmetoder för objekt
 description: Definiera standardmetoder för objekt
-ms.openlocfilehash: b3b61b552d0f5ef4a018c6f1dd495ac0c770cddc
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: c65ca91a7038f32d8c3ef62cfe7881e5ad4dba5a
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92653112"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355535"
 ---
 # <a name="defining-default-methods-for-objects"></a>Definiera standardmetoder för objekt
 
@@ -22,7 +22,7 @@ Den XML som används för att definiera dessa metoder beskrivs i följande avsni
 
 En kod metod refererar till en statisk metod för ett .NET Framework-objekt.
 
-I följande exempel läggs metoden **toString** till i den [System.Xml.Xmlnodtypen](/dotnet/api/System.Xml.XmlNode) . [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) -elementet definierar den utökade metoden som en Code-metod. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) anger namnet på den utökade metoden. Och [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) -elementet anger den statiska metoden. Du kan också lägga till elementet [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) i medlemmarna i [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) -elementet.
+I följande exempel läggs metoden **toString** till i den [System.Xml.Xmlnodtypen](/dotnet/api/System.Xml.XmlNode) . [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) -elementet definierar den utökade metoden som en Code-metod. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name#System_Management_Automation_PSMemberInfo_Name) anger namnet på den utökade metoden. Och [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference#System_Management_Automation_PSCodeMethod_CodeReference) -elementet anger den statiska metoden. Du kan också lägga till elementet [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) i medlemmarna i [PSMemberSets](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>
@@ -41,7 +41,7 @@ I följande exempel läggs metoden **toString** till i den [System.Xml.Xmlnodtyp
 
 ## <a name="script-methods"></a>Skript metoder
 
-En skript metod definierar en metod vars värde är utdata från ett skript. I följande exempel läggs **ConvertToDateTime** -metoden till i typen [system. Management. ManagementObject](/dotnet/api/System.Management.ManagementObject) . [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) -elementet definierar den utökade metoden som en skript metod. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) anger namnet på den utökade metoden. Och [skript](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) elementet anger det skript som genererar metod svärdet. Du kan också lägga till elementet [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) i medlemmarna i [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) -elementet.
+En skript metod definierar en metod vars värde är utdata från ett skript. I följande exempel läggs **ConvertToDateTime** -metoden till i typen [system. Management. ManagementObject](/dotnet/api/System.Management.ManagementObject) . [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod) -elementet definierar den utökade metoden som en skript metod. Elementet [Name](/dotnet/api/system.management.automation.psmemberinfo.name#System_Management_Automation_PSMemberInfo_Name) anger namnet på den utökade metoden. Och [skript](/dotnet/api/system.management.automation.psscriptmethod.script#System_Management_Automation_PSScriptMethod_Script) elementet anger det skript som genererar metod svärdet. Du kan också lägga till elementet [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod) i medlemmarna i [PSMemberSets](/dotnet/api/system.management.automation.psmemberset) -elementet.
 
 ```xml
 <Type>

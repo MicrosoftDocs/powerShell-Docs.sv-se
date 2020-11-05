@@ -5,12 +5,12 @@ ms.date: 04/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Om numeriska litteraler
-ms.openlocfilehash: 25518b80f87c90c59829bb575b059f0efcadd566
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 19ed71c2571a6cd343adf622a8cf71d6e5589aff
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272607"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354991"
 ---
 # <a name="about-numeric-literals"></a>Om numeriska litteraler
 
@@ -179,7 +179,7 @@ I PowerShell 7,1 returnerar nu ett signerat värde av den typen genom att använ
 PowerShell 7,1 tolkar detta som `-1` en `[int16]` typ.
 
 Genom att prefixet med en sträng `0` kringgås detta och behandlas som osignerat.
-Till exempel: `0b011111111`. Detta kan vara nödvändigt när du arbetar med litteraler i `[bigint]` intervallet, eftersom `u` `n` suffixen inte kan kombineras.
+Exempel: `0b011111111`. Detta kan vara nödvändigt när du arbetar med litteraler i `[bigint]` intervallet, eftersom `u` `n` suffixen inte kan kombineras.
 
 Du kan också negera binär och hex-litteraler med `-` prefixet. Detta kan resultera i ett positivt tal eftersom inloggnings bitar är tillåtna.
 
@@ -271,7 +271,7 @@ Heltals typ strängar parsas med hjälp av följande steg:
 
 ### <a name="parsing-large-value-literals"></a>Parsa stora värdes strängar
 
-Tidigare parsades högre heltals värden som Double innan de omvandlades till någon annan typ. Detta resulterar i en förlust av precision i de högre intervallen. Ett exempel:
+Tidigare parsades högre heltals värden som Double innan de omvandlades till någon annan typ. Detta resulterar i en förlust av precision i de högre intervallen. Exempel:
 
 ```
 PS> [bigint]111111111111111111111111111111111111111111111111111111
@@ -295,4 +295,4 @@ PS> 111111111111111111111111111111111111111111111111111111n
 Värden mellan `[ulong]::MaxValue` och `[decimal]::MaxValue` bör också anges med decimal-suffixet `D` för att bibehålla noggrannhet. Utan suffixet tolkas dessa värden som att `[Double]` använda det verkliga tolknings läget.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

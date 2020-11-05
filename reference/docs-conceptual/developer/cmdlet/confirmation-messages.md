@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Bekräftelsemeddelanden
 description: Bekräftelsemeddelanden
-ms.openlocfilehash: bcef63dac3594c3fe790173a938d7978aa130724
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 76302b2f8d8ca6dcdfe1b3c36f71aad23a53f7cf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668209"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355195"
 ---
 # <a name="confirmation-messages"></a>Bekräftelsemeddelanden
 
@@ -19,9 +19,9 @@ Här är olika bekräftelse meddelanden som kan visas beroende på varianterna f
 
 ## <a name="specifying-the-resource"></a>Ange resursen
 
-Du kan ange den resurs som ska ändras genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) -metoden. I det här fallet kan du ange resursen med hjälp av `target` -parametern för-metoden och åtgärden läggs till av Windows PowerShell. I följande meddelande är texten "min resurs" den resurs som är aktive ras och åtgärden är namnet på kommandot som gör anropet.
+Du kan ange den resurs som ska ändras genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -metoden. I det här fallet kan du ange resursen med hjälp av `target` -parametern för-metoden och åtgärden läggs till av Windows PowerShell. I följande meddelande är texten "min resurs" den resurs som är aktive ras och åtgärden är namnet på kommandot som gör anropet.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
@@ -30,7 +30,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 
 Om användaren väljer **Ja** eller **Ja till alla** i bekräftelse förfrågningen (som visas i följande exempel), görs ett anrop till metoden [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , vilket gör att ett andra bekräftelse meddelande visas.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
@@ -43,9 +43,9 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>Ange åtgärden och resursen
 
-Du kan ange den resurs som ska ändras och åtgärden som kommandot ska utföra genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) -metoden. I det här fallet kan du ange resursen med hjälp av- `target` parametern och åtgärden med hjälp av- `target` parametern. I följande meddelande är texten "min resurs" den resurs som har åtgärd ATS och "mina åtgärder" är den åtgärd som ska utföras.
+Du kan ange den resurs som ska ändras och åtgärden som kommandot ska utföra genom att anropa [system. Management. Automation. cmdlet. ShouldProcess% 2a? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -metoden. I det här fallet kan du ange resursen med hjälp av- `target` parametern och åtgärden med hjälp av- `target` parametern. I följande meddelande är texten "min resurs" den resurs som har åtgärd ATS och "mina åtgärder" är den åtgärd som ska utföras.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "MyAction" on Target "MyResource".
@@ -54,7 +54,7 @@ Performing operation "MyAction" on Target "MyResource".
 
 Om användaren väljer **Ja** eller **Ja till alla** i föregående meddelande, görs ett anrop till metoden [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , vilket gör att ett andra bekräftelse meddelande visas.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "MyAction" on Target "MyResource".

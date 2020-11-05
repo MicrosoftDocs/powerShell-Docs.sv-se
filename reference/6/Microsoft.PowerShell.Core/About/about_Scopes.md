@@ -2,16 +2,16 @@
 description: Förklarar begreppet omfång i PowerShell och visar hur du anger och ändrar elementets omfattning.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
-ms.openlocfilehash: 3e165867be5887ae15890f795531b5a3048c4550
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 15c3d606ec13166e137bbcd633269dbf03ab7817
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270428"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354856"
 ---
 # <a name="about-scopes"></a>Om omfång
 
@@ -36,7 +36,7 @@ Om du skapar ett objekt i ett omfång och objektet delar sitt namn med ett objek
 
 PowerShell stöder följande omfång:
 
-- Global: det omfång som aktive ras när PowerShell startas. Variabler och funktioner som förekommer när PowerShell startar har skapats i det globala omfånget, till exempel automatiska variabler och variabler. Variablerna, aliasen och funktionerna i dina PowerShell-profiler skapas också i det globala omfånget.
+- Global: det omfång som aktive ras när PowerShell startas eller när du skapar en ny session eller körnings utrymme. Variabler och funktioner som förekommer när PowerShell startar har skapats i det globala omfånget, till exempel automatiska variabler och variabler. Variablerna, aliasen och funktionerna i dina PowerShell-profiler skapas också i det globala omfånget. Det globala omfånget är det överordnade rot omfånget i en session.
 
 - Lokal: det aktuella omfånget. Det lokala omfånget kan vara det globala omfånget eller andra omfång.
 
@@ -47,11 +47,15 @@ PowerShell stöder följande omfång:
 
 ## <a name="parent-and-child-scopes"></a>Överordnad och underordnad omfattning
 
-Du kan skapa ett nytt omfång genom att köra ett skript eller en funktion, genom att skapa en session eller genom att starta en ny instans av PowerShell. När du skapar ett nytt omfång är resultatet ett överordnat område (det ursprungliga omfånget) och ett underordnat omfång (det omfång som du skapade).
-
-I PowerShell är alla omfattningar underordnade omfång i det globala omfånget, men du kan skapa många omfattningar och många rekursiva omfång.
+Du kan skapa ett nytt underordnat omfång genom att anropa ett skript eller en funktion. Det anropande omfånget är det överordnade omfånget. Det anropade skriptet eller funktionen är underordnat omfånget.
+De funktioner eller skript som du anropar kan anropa andra funktioner, vilket skapar en hierarki med underordnade omfattningar vars rot omfång är global omfattning.
 
 Om du inte uttryckligen gör objekten privat är objekten i det överordnade omfånget tillgängliga för det underordnade omfånget. Objekt som du skapar och ändrar i det underordnade omfånget påverkar dock inte det överordnade omfånget, såvida du inte uttryckligen anger omfånget när du skapar objekten.
+
+> [!NOTE]
+> Funktioner från en modul körs inte i ett underordnat omfång för det anropande omfånget.
+> Moduler har sitt eget sessionstillstånd som är länkat till det globala omfånget.
+> All modul kod körs i en modul-bestämd hierarki med omfattningar som har sitt eget rot omfång.
 
 ## <a name="inheritance"></a>Arv
 
@@ -85,7 +89,7 @@ En variabel, ett alias eller ett funktions namn kan innehålla någon av följan
 - `using:` – Används för att komma åt variabler som definierats i ett annat omfång samtidigt som skript körs via cmdletar som `Start-Job` och `Invoke-Command` .
 - `workflow:` -Anger att namnet finns i ett arbets flöde. Obs! arbets flöden stöds inte i PowerShell Core.
 - `<variable-namespace>` – En modifierare som skapats av en PowerShell PSDrive-Provider.
-  Ett exempel:
+  Exempel:
 
   |  Namnområde  |                    Beskrivning                     |
   | ----------- | -------------------------------------------------- |

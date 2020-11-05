@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Host06 – exempel
 description: Host06 – exempel
-ms.openlocfilehash: 24838b1dbebca841783c4d75adb360d3fd784150
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 8e94a8cf61e746adcdd22869ec853c0f2a27be91
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92658060"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355399"
 ---
 # <a name="host06-sample"></a>Host06 – exempel
 
@@ -17,7 +17,6 @@ Det här exemplet visar hur du skapar ett interaktivt konsolbaserade värd progr
 ## <a name="requirements"></a>Krav
 
 - Det här exemplet kräver Windows PowerShell 2,0.
-
 - Det här programmet måste köras i förhöjd läge (kör som administratör).
 
 ## <a name="demonstrates"></a>Demonstrationer
@@ -29,22 +28,19 @@ Det här exemplet visar hur du skapar ett interaktivt konsolbaserade värd progr
 - Skapa en `$profile` variabel och läsa in följande profiler.
 
   - aktuell användare, aktuell värd
-
   - aktuell användare, alla värdar
-
   - alla användare, aktuell värd
-
   - alla användare, alla värdar
 
-- Implementera gränssnittet [system. Management. Automation. Host. Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
+- Implementera gränssnittet [system. Management. Automation. Host. IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
 
-- Implementera gränssnittet [system. Management. Automation. Host. Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) för att stödja interaktiv fjärr kommunikation med hjälp av cmdletarna [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) .
+- Implementera gränssnittet [system. Management. Automation. Host. IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) för att stödja interaktiv fjärr kommunikation med hjälp av cmdletarna [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) och [exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) .
 
 - Använd Tokenize-API: n för att färga kommando raden som den är skriven.
 
-## <a name="example"></a>Exempel
+## <a name="example-1"></a>Exempel 1
 
- Det här exemplet gör att användaren kan ange kommandon på en kommando rad, bearbetar dessa kommandon och sedan skriva ut resultaten.
+Det här exemplet gör att användaren kan ange kommandon på en kommando rad, bearbetar dessa kommandon och sedan skriva ut resultaten.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -405,9 +401,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-2"></a>Exempel 2
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -629,9 +625,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-3"></a>Exempel 3
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) som används av det här värd programmet.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) som används av det här värd programmet.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1147,9 +1143,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-4"></a>Exempel 4
 
- Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
+Följande kod är implementeringen av klassen [system. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) som används av det här värd programmet. De element som inte implementeras genererar ett undantag eller returnerar ingenting.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1359,9 +1355,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exempel
+## <a name="example-5"></a>Exempel 5
 
- Följande kod läser kommando raden och färger texten som den anges. Tokens bestäms med hjälp av metoden [system. Management. Automation. Psparser. Tokenize *](/dotnet/api/System.Management.Automation.PSParser.Tokenize) .
+Följande kod läser kommando raden och färger texten som den anges. Tokens bestäms med hjälp av metoden [system. Management. Automation. Psparser. Tokenize *](/dotnet/api/System.Management.Automation.PSParser.Tokenize) .
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

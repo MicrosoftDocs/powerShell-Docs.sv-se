@@ -1,18 +1,18 @@
 ---
 title: Så här hanterar vi problem
-description: Den här artikeln förklarar hur PowerShell-dokument-teamet hanterar pull-begäranden.
+description: Den här artikeln förklarar hur PowerShell-Docs-teamet hanterar problem.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 56f0ea5b4c5c700db8fdd0b16e3ce1c4040a43dc
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692524"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354600"
 ---
 # <a name="how-we-manage-issues"></a>Så här hanterar vi problem
 
-Den här artikeln dokumenterar vi hur vi hanterar problem i PowerShell-dok lagrings platsen. Den här artikeln är utformad för att vara ett jobb stöd för medlemmar i gruppen PowerShell-dok. Den publiceras här för att tillhandahålla process genomskinlighet för våra offentliga deltagare.
+Den här artikeln dokumenterar vi hur vi hanterar problem i PowerShell-Docs lagrings platsen. Den här artikeln är utformad för att vara ett jobb stöd för medlemmar i PowerShell-Docss teamet. Den publiceras här för att tillhandahålla process genomskinlighet för våra offentliga deltagare.
 
 ## <a name="sources-of-issues"></a>Problem källor
 
@@ -35,7 +35,7 @@ Den här artikeln dokumenterar vi hur vi hanterar problem i PowerShell-dok lagri
 |Område    | Används för att ange vilken del av PowerShell eller dokument som problemet diskuterar.<br>Användbart för funktions ägare för att hitta problem med deras funktion.|
 |Pri     | Används för att ange prioriteten för problemet. Värde intervall 0-4.        |
 |Problem   | Används för att klassificera typen av feedback för problem                     |
-|Granska  | Används för problem som kräver ytterligare granskning av teamet              |
+|Genomgång  | Används för problem som kräver ytterligare granskning av teamet              |
 |Status  | Används för att ange arbets objektets status                        |
 |Väntar | Används för att indikera att vi väntar på något                   |
 
@@ -63,7 +63,7 @@ Gruppen PowerShell-dokument uppfyller en gång per vecka för att diskutera even
   | Dokument uppsättning    | URL för feedback för produkt                                           |
   | --------- | -------------------------------------------------------------- |
   | utvecklare | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | DSC       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
   | galleri   | `https://github.com/powershell/powershellgallery/issues/new`   |
   | Jea       | `https://github.com/powershell/jea/issues/new`                 |
   | förhållande | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |

@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Skriva en navigeringsprovider
 description: Skriva en navigeringsprovider
-ms.openlocfilehash: d9e2bcb02d8f2a396db453d7102ff356570d7bfc
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 3123672d3365c97714557bd0e72a6e444ac228a0
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647341"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355229"
 ---
 # <a name="writing-a-navigation-provider"></a>Skriva en navigeringsprovider
 
@@ -20,7 +20,7 @@ Mer information om Windows PowerShell-leverantörer finns i [Översikt över Win
 
 ## <a name="implementing-navigation-methods"></a>Implementera navigerings metoder
 
-Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implementerar metoder som stöder kapslade behållare, relativa sökvägar och flyttar objekt. En fullständig lista över dessa metoder finns i [NavigationCmdletProvider-metoder](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
+Klassen [system. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implementerar metoder som stöder kapslade behållare, relativa sökvägar och flyttar objekt. En fullständig lista över dessa metoder finns i [NavigationCmdletProvider-metoder](/dotnet/api/system.management.automation.provider.navigationcmdletprovider#methods).
 
 > [!NOTE]
 > Det här avsnittet bygger på informationen i [snabb starten för Windows PowerShell-providern](./windows-powershell-provider-quickstart.md). Det här avsnittet beskriver inte grunderna för hur du konfigurerar ett Provider-projekt eller hur du implementerar de metoder som ärvts från klassen [system. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) som skapar och tar bort enheter. Det här avsnittet beskriver inte heller hur du implementerar metoder som exponeras av [system. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) eller [system. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) -klasser. Ett exempel som visar hur du implementerar objekt-cmdlets finns i [skriva en objekt leverantör](./writing-an-item-provider.md). Ett exempel som visar hur du implementerar behållar-cmdlets finns i [skriva en container-Provider](./writing-a-container-provider.md).
