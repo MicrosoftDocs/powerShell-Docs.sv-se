@@ -7,43 +7,43 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
-ms.openlocfilehash: 33da44a4a228b57296b85fbafb40da51657df1c1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cb0fb1a6d7de033438c3165d44d5b8f8c03ba9a4
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266157"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343002"
 ---
-# <span data-ttu-id="96bb5-103">Get-HotFix</span><span class="sxs-lookup"><span data-stu-id="96bb5-103">Get-HotFix</span></span>
+# <span data-ttu-id="c639f-103">Get-HotFix</span><span class="sxs-lookup"><span data-stu-id="c639f-103">Get-HotFix</span></span>
 
-## <span data-ttu-id="96bb5-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="96bb5-104">SYNOPSIS</span></span>
-<span data-ttu-id="96bb5-105">Hämtar snabb korrigeringarna som installeras på lokala eller fjärranslutna datorer.</span><span class="sxs-lookup"><span data-stu-id="96bb5-105">Gets the hotfixes that are installed on local or remote computers.</span></span>
+## <span data-ttu-id="c639f-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="c639f-104">SYNOPSIS</span></span>
+<span data-ttu-id="c639f-105">Hämtar snabb korrigeringarna som installeras på lokala eller fjärranslutna datorer.</span><span class="sxs-lookup"><span data-stu-id="c639f-105">Gets the hotfixes that are installed on local or remote computers.</span></span>
 
-## <span data-ttu-id="96bb5-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="96bb5-106">SYNTAX</span></span>
+## <span data-ttu-id="c639f-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="c639f-106">SYNTAX</span></span>
 
-### <span data-ttu-id="96bb5-107">Standard (standard)</span><span class="sxs-lookup"><span data-stu-id="96bb5-107">Default (Default)</span></span>
+### <span data-ttu-id="c639f-107">Standard (standard)</span><span class="sxs-lookup"><span data-stu-id="c639f-107">Default (Default)</span></span>
 
 ```
 Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
 [<CommonParameters>]
 ```
 
-### <span data-ttu-id="96bb5-108">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="96bb5-108">Description</span></span>
+### <span data-ttu-id="c639f-108">Description</span><span class="sxs-lookup"><span data-stu-id="c639f-108">Description</span></span>
 
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
 [<CommonParameters>]
 ```
 
-## <span data-ttu-id="96bb5-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="96bb5-109">DESCRIPTION</span></span>
+## <span data-ttu-id="c639f-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="c639f-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="96bb5-110">`Get-Hotfix`Cmdlet: en hämtar snabb korrigeringar eller uppdateringar som är installerade på den lokala datorn eller angivna fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="96bb5-110">The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or specified remote computers.</span></span> <span data-ttu-id="96bb5-111">Uppdateringarna kan installeras av Windows Update, Microsoft Update, Windows Server Update Services eller installeras manuellt.</span><span class="sxs-lookup"><span data-stu-id="96bb5-111">The updates can be installed by Windows Update, Microsoft Update, Windows Server Update Services, or manually installed.</span></span>
+<span data-ttu-id="c639f-110">`Get-Hotfix`Cmdlet: en hämtar snabb korrigeringar eller uppdateringar som är installerade på den lokala datorn eller angivna fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="c639f-110">The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or specified remote computers.</span></span> <span data-ttu-id="c639f-111">Uppdateringarna kan installeras av Windows Update, Microsoft Update, Windows Server Update Services eller installeras manuellt.</span><span class="sxs-lookup"><span data-stu-id="c639f-111">The updates can be installed by Windows Update, Microsoft Update, Windows Server Update Services, or manually installed.</span></span>
 
-## <span data-ttu-id="96bb5-112">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="96bb5-112">EXAMPLES</span></span>
+## <span data-ttu-id="c639f-112">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="c639f-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="96bb5-113">Exempel 1: Hämta alla snabb korrigeringar på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="96bb5-113">Example 1: Get all hotfixes on the local computer</span></span>
+### <span data-ttu-id="c639f-113">Exempel 1: Hämta alla snabb korrigeringar på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="c639f-113">Example 1: Get all hotfixes on the local computer</span></span>
 
-<span data-ttu-id="96bb5-114">`Get-Hotfix`Cmdlet: en hämtar alla snabb korrigeringar som är installerade på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="96bb5-114">The `Get-Hotfix` cmdlet gets all hotfixes installed on the local computer.</span></span>
+<span data-ttu-id="c639f-114">`Get-Hotfix`Cmdlet: en hämtar alla snabb korrigeringar som är installerade på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="c639f-114">The `Get-Hotfix` cmdlet gets all hotfixes installed on the local computer.</span></span>
 
 ```powershell
 Get-HotFix
@@ -57,19 +57,19 @@ Server01       Security Update  KB4470788     NT AUTHORITY\SYSTEM  1/22/2019 00:
 Server01       Update           KB4480056     NT AUTHORITY\SYSTEM  1/24/2019 00:00:00
 ```
 
-### <span data-ttu-id="96bb5-115">Exempel 2: Hämta snabb korrigeringar från flera datorer som filtrerats med en sträng</span><span class="sxs-lookup"><span data-stu-id="96bb5-115">Example 2: Get hotfixes from multiple computers filtered by a string</span></span>
+### <span data-ttu-id="c639f-115">Exempel 2: Hämta snabb korrigeringar från flera datorer som filtrerats med en sträng</span><span class="sxs-lookup"><span data-stu-id="c639f-115">Example 2: Get hotfixes from multiple computers filtered by a string</span></span>
 
-<span data-ttu-id="96bb5-116">`Get-Hotfix`Kommandot använder parametrar för att hämta snabb korrigeringar som är installerade på fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="96bb5-116">The `Get-Hotfix` command uses parameters to get hotfixes installed on remote computers.</span></span> <span data-ttu-id="96bb5-117">Resultaten filtreras efter en angiven beskrivnings sträng.</span><span class="sxs-lookup"><span data-stu-id="96bb5-117">The results are filtered by a specified description string.</span></span>
+<span data-ttu-id="c639f-116">`Get-Hotfix`Kommandot använder parametrar för att hämta snabb korrigeringar som är installerade på fjärrdatorer.</span><span class="sxs-lookup"><span data-stu-id="c639f-116">The `Get-Hotfix` command uses parameters to get hotfixes installed on remote computers.</span></span> <span data-ttu-id="c639f-117">Resultaten filtreras efter en angiven beskrivnings sträng.</span><span class="sxs-lookup"><span data-stu-id="c639f-117">The results are filtered by a specified description string.</span></span>
 
 ```
 PS> Get-HotFix -Description Security* -ComputerName Server01, Server02 -Credential Domain01\admin01
 ```
 
-<span data-ttu-id="96bb5-118">`Get-Hotfix` filtrerar utdata med **beskrivnings** parametern och sträng **säkerheten** som innehåller jokertecknet asterisk ( `*` ).</span><span class="sxs-lookup"><span data-stu-id="96bb5-118">`Get-Hotfix` filters the output with the **Description** parameter and the string **Security** that includes the asterisk (`*`) wildcard.</span></span> <span data-ttu-id="96bb5-119">Parametern **computername** innehåller en kommaavgränsad sträng med fjärrdatornamn.</span><span class="sxs-lookup"><span data-stu-id="96bb5-119">The **ComputerName** parameter includes a comma-separated string of remote computer names.</span></span> <span data-ttu-id="96bb5-120">Parametern **Credential** anger ett användar konto som har behörighet att komma åt fjärrdatorerna och köra kommandon.</span><span class="sxs-lookup"><span data-stu-id="96bb5-120">The **Credential** parameter specifies a user account that has permission to access the remote computers and run commands.</span></span>
+<span data-ttu-id="c639f-118">`Get-Hotfix` filtrerar utdata med **beskrivnings** parametern och sträng **säkerheten** som innehåller jokertecknet asterisk ( `*` ).</span><span class="sxs-lookup"><span data-stu-id="c639f-118">`Get-Hotfix` filters the output with the **Description** parameter and the string **Security** that includes the asterisk (`*`) wildcard.</span></span> <span data-ttu-id="c639f-119">Parametern **computername** innehåller en kommaavgränsad sträng med fjärrdatornamn.</span><span class="sxs-lookup"><span data-stu-id="c639f-119">The **ComputerName** parameter includes a comma-separated string of remote computer names.</span></span> <span data-ttu-id="c639f-120">Parametern **Credential** anger ett användar konto som har behörighet att komma åt fjärrdatorerna och köra kommandon.</span><span class="sxs-lookup"><span data-stu-id="c639f-120">The **Credential** parameter specifies a user account that has permission to access the remote computers and run commands.</span></span>
 
-### <span data-ttu-id="96bb5-121">Exempel 3: kontrol lera om en uppdatering har installerats och skriv dator namn till en fil</span><span class="sxs-lookup"><span data-stu-id="96bb5-121">Example 3: Verify if an update is installed and write computer names to a file</span></span>
+### <span data-ttu-id="c639f-121">Exempel 3: kontrol lera om en uppdatering har installerats och skriv dator namn till en fil</span><span class="sxs-lookup"><span data-stu-id="c639f-121">Example 3: Verify if an update is installed and write computer names to a file</span></span>
 
-<span data-ttu-id="96bb5-122">Kommandona i det här exemplet verifierar om en viss uppdatering har installerats.</span><span class="sxs-lookup"><span data-stu-id="96bb5-122">The commands in this example verify whether a particular update installed.</span></span> <span data-ttu-id="96bb5-123">Om uppdateringen inte är installerad skrivs dator namnet till en textfil.</span><span class="sxs-lookup"><span data-stu-id="96bb5-123">If the update isn't installed, the computer name is written to a text file.</span></span>
+<span data-ttu-id="c639f-122">Kommandona i det här exemplet verifierar om en viss uppdatering har installerats.</span><span class="sxs-lookup"><span data-stu-id="c639f-122">The commands in this example verify whether a particular update installed.</span></span> <span data-ttu-id="c639f-123">Om uppdateringen inte är installerad skrivs dator namnet till en textfil.</span><span class="sxs-lookup"><span data-stu-id="c639f-123">If the update isn't installed, the computer name is written to a text file.</span></span>
 
 ```
 PS> $A = Get-Content -Path ./Servers.txt
@@ -77,27 +77,27 @@ PS> $A | ForEach-Object { if (!(Get-HotFix -Id KB957095 -ComputerName $_))
          { Add-Content $_ -Path ./Missing-KB957095.txt }}
 ```
 
-<span data-ttu-id="96bb5-124">`$A`Variabeln innehåller dator namn som hämtades `Get-Content` från en textfil.</span><span class="sxs-lookup"><span data-stu-id="96bb5-124">The `$A` variable contains computer names that were obtained by `Get-Content` from a text file.</span></span> <span data-ttu-id="96bb5-125">De objekt som `$A` finns i skickas pipelinen till `ForEach-Object` .</span><span class="sxs-lookup"><span data-stu-id="96bb5-125">The objects in `$A` are sent down the pipeline to `ForEach-Object`.</span></span> <span data-ttu-id="96bb5-126">En `if` instruktion använder `Get-Hotfix` cmdleten med **ID-** parametern och ett särskilt ID-nummer för varje dator namn.</span><span class="sxs-lookup"><span data-stu-id="96bb5-126">An `if` statement uses the `Get-Hotfix` cmdlet with the **Id** parameter and a specific Id number for each computer name.</span></span> <span data-ttu-id="96bb5-127">Om en dator inte har angivet snabb korrigerings-ID installerat, `Add-Content` skriver cmdleten dator namnet till en fil.</span><span class="sxs-lookup"><span data-stu-id="96bb5-127">If a computer doesn't have the specified hotfix Id installed, the `Add-Content` cmdlet writes the computer name to a file.</span></span>
+<span data-ttu-id="c639f-124">`$A`Variabeln innehåller dator namn som hämtades `Get-Content` från en textfil.</span><span class="sxs-lookup"><span data-stu-id="c639f-124">The `$A` variable contains computer names that were obtained by `Get-Content` from a text file.</span></span> <span data-ttu-id="c639f-125">De objekt som `$A` finns i skickas pipelinen till `ForEach-Object` .</span><span class="sxs-lookup"><span data-stu-id="c639f-125">The objects in `$A` are sent down the pipeline to `ForEach-Object`.</span></span> <span data-ttu-id="c639f-126">En `if` instruktion använder `Get-Hotfix` cmdleten med **ID-** parametern och ett särskilt ID-nummer för varje dator namn.</span><span class="sxs-lookup"><span data-stu-id="c639f-126">An `if` statement uses the `Get-Hotfix` cmdlet with the **Id** parameter and a specific Id number for each computer name.</span></span> <span data-ttu-id="c639f-127">Om en dator inte har angivet snabb korrigerings-ID installerat, `Add-Content` skriver cmdleten dator namnet till en fil.</span><span class="sxs-lookup"><span data-stu-id="c639f-127">If a computer doesn't have the specified hotfix Id installed, the `Add-Content` cmdlet writes the computer name to a file.</span></span>
 
-### <span data-ttu-id="96bb5-128">Exempel 4: hämta den senaste snabb korrigeringen på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="96bb5-128">Example 4: Get the most recent hotfix on the local computer</span></span>
+### <span data-ttu-id="c639f-128">Exempel 4: hämta den senaste snabb korrigeringen på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="c639f-128">Example 4: Get the most recent hotfix on the local computer</span></span>
 
-<span data-ttu-id="96bb5-129">Det här exemplet hämtar den senaste snabb korrigeringen som är installerad på en dator.</span><span class="sxs-lookup"><span data-stu-id="96bb5-129">This example gets the most recent hotfix installed on a computer.</span></span>
+<span data-ttu-id="c639f-129">Det här exemplet hämtar den senaste snabb korrigeringen som är installerad på en dator.</span><span class="sxs-lookup"><span data-stu-id="c639f-129">This example gets the most recent hotfix installed on a computer.</span></span>
 
 ```powershell
 (Get-HotFix | Sort-Object -Property InstalledOn)[-1]
 ```
 
-<span data-ttu-id="96bb5-130">`Get-Hotfix` skickar objekten nedåt i pipelinen till `Sort-Object` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="96bb5-130">`Get-Hotfix` sends the objects down the pipeline to the `Sort-Object` cmdlet.</span></span> <span data-ttu-id="96bb5-131">`Sort-Object` sorterar objekt efter stigande ordning och använder **egenskaps** parametern för att utvärdera varje **InstalledOn** datum.</span><span class="sxs-lookup"><span data-stu-id="96bb5-131">`Sort-Object` sorts objects by ascending order and uses the **Property** parameter to evaluate each **InstalledOn** date.</span></span> <span data-ttu-id="96bb5-132">Mat ris notationen `[-1]` väljer den senaste installerade snabb korrigeringen.</span><span class="sxs-lookup"><span data-stu-id="96bb5-132">The array notation `[-1]` selects the most recent installed hotfix.</span></span>
+<span data-ttu-id="c639f-130">`Get-Hotfix` skickar objekten nedåt i pipelinen till `Sort-Object` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="c639f-130">`Get-Hotfix` sends the objects down the pipeline to the `Sort-Object` cmdlet.</span></span> <span data-ttu-id="c639f-131">`Sort-Object` sorterar objekt efter stigande ordning och använder **egenskaps** parametern för att utvärdera varje **InstalledOn** datum.</span><span class="sxs-lookup"><span data-stu-id="c639f-131">`Sort-Object` sorts objects by ascending order and uses the **Property** parameter to evaluate each **InstalledOn** date.</span></span> <span data-ttu-id="c639f-132">Mat ris notationen `[-1]` väljer den senaste installerade snabb korrigeringen.</span><span class="sxs-lookup"><span data-stu-id="c639f-132">The array notation `[-1]` selects the most recent installed hotfix.</span></span>
 
-## <span data-ttu-id="96bb5-133">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="96bb5-133">PARAMETERS</span></span>
+## <span data-ttu-id="c639f-133">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="c639f-133">PARAMETERS</span></span>
 
-### <span data-ttu-id="96bb5-134">-ComputerName</span><span class="sxs-lookup"><span data-stu-id="96bb5-134">-ComputerName</span></span>
+### <span data-ttu-id="c639f-134">-ComputerName</span><span class="sxs-lookup"><span data-stu-id="c639f-134">-ComputerName</span></span>
 
-<span data-ttu-id="96bb5-135">Anger en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="96bb5-135">Specifies a remote computer.</span></span> <span data-ttu-id="96bb5-136">Ange NetBIOS-namnet, en Internet Protocol IP-adress eller ett fullständigt kvalificerat domän namn (FQDN) för en fjärran sluten dator.</span><span class="sxs-lookup"><span data-stu-id="96bb5-136">Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name (FQDN) of a remote computer.</span></span>
+<span data-ttu-id="c639f-135">Anger en fjärrdator.</span><span class="sxs-lookup"><span data-stu-id="c639f-135">Specifies a remote computer.</span></span> <span data-ttu-id="c639f-136">Ange NetBIOS-namnet, en Internet Protocol IP-adress eller ett fullständigt kvalificerat domän namn (FQDN) för en fjärran sluten dator.</span><span class="sxs-lookup"><span data-stu-id="c639f-136">Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name (FQDN) of a remote computer.</span></span>
 
-<span data-ttu-id="96bb5-137">När parametern **computername** inte anges körs den `Get-Hotfix` på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="96bb5-137">When the **ComputerName** parameter isn't specified, `Get-Hotfix` runs on the local computer.</span></span>
+<span data-ttu-id="c639f-137">När parametern **computername** inte anges körs den `Get-Hotfix` på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="c639f-137">When the **ComputerName** parameter isn't specified, `Get-Hotfix` runs on the local computer.</span></span>
 
-<span data-ttu-id="96bb5-138">Parametern **computername** är inte beroende av Windows PowerShell-fjärrkommunikation.</span><span class="sxs-lookup"><span data-stu-id="96bb5-138">The **ComputerName** parameter doesn't rely on Windows PowerShell remoting.</span></span> <span data-ttu-id="96bb5-139">Om datorn inte är konfigurerad för att köra fjärrkommandon använder du parametern **computername** .</span><span class="sxs-lookup"><span data-stu-id="96bb5-139">If your computer isn't configured to run remote commands, use the **ComputerName** parameter.</span></span>
+<span data-ttu-id="c639f-138">Parametern **computername** är inte beroende av Windows PowerShell-fjärrkommunikation.</span><span class="sxs-lookup"><span data-stu-id="c639f-138">The **ComputerName** parameter doesn't rely on Windows PowerShell remoting.</span></span> <span data-ttu-id="c639f-139">Om datorn inte är konfigurerad för att köra fjärrkommandon använder du parametern **computername** .</span><span class="sxs-lookup"><span data-stu-id="c639f-139">If your computer isn't configured to run remote commands, use the **ComputerName** parameter.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -111,16 +111,16 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="96bb5-140">-Credential</span><span class="sxs-lookup"><span data-stu-id="96bb5-140">-Credential</span></span>
+### <span data-ttu-id="c639f-140">-Credential</span><span class="sxs-lookup"><span data-stu-id="c639f-140">-Credential</span></span>
 
-<span data-ttu-id="96bb5-141">Anger ett användar konto som har behörighet att komma åt datorn och köra kommandon.</span><span class="sxs-lookup"><span data-stu-id="96bb5-141">Specifies a user account that has permission to access the computer and run commands.</span></span> <span data-ttu-id="96bb5-142">Standardvärdet är den aktuella användaren</span><span class="sxs-lookup"><span data-stu-id="96bb5-142">The default is the current user</span></span>
+<span data-ttu-id="c639f-141">Anger ett användar konto som har behörighet att komma åt datorn och köra kommandon.</span><span class="sxs-lookup"><span data-stu-id="c639f-141">Specifies a user account that has permission to access the computer and run commands.</span></span> <span data-ttu-id="c639f-142">Standardvärdet är den aktuella användaren</span><span class="sxs-lookup"><span data-stu-id="c639f-142">The default is the current user</span></span>
 
-<span data-ttu-id="96bb5-143">Ange ett användar namn, till exempel **user01** eller **Domain01\User01** , eller ange ett **PSCredential** -objekt som genererats av `Get-Credential` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="96bb5-143">Type a user name, such as **User01** or **Domain01\User01** , or enter a **PSCredential** object generated by the `Get-Credential` cmdlet.</span></span> <span data-ttu-id="96bb5-144">Om du anger ett användar namn uppmanas du att ange lösen ordet.</span><span class="sxs-lookup"><span data-stu-id="96bb5-144">If you type a user name, you're prompted to enter the password.</span></span>
+<span data-ttu-id="c639f-143">Ange ett användar namn, till exempel **user01** eller **Domain01\User01** , eller ange ett **PSCredential** -objekt som genererats av `Get-Credential` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="c639f-143">Type a user name, such as **User01** or **Domain01\User01** , or enter a **PSCredential** object generated by the `Get-Credential` cmdlet.</span></span> <span data-ttu-id="c639f-144">Om du anger ett användar namn uppmanas du att ange lösen ordet.</span><span class="sxs-lookup"><span data-stu-id="c639f-144">If you type a user name, you're prompted to enter the password.</span></span>
 
-<span data-ttu-id="96bb5-145">Autentiseringsuppgifterna lagras i ett [PSCredential](/dotnet/api/system.management.automation.pscredential) -objekt och lösen ordet lagras som en [SecureString](/dotnet/api/system.security.securestring).</span><span class="sxs-lookup"><span data-stu-id="96bb5-145">Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential) object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).</span></span>
+<span data-ttu-id="c639f-145">Autentiseringsuppgifterna lagras i ett [PSCredential](/dotnet/api/system.management.automation.pscredential) -objekt och lösen ordet lagras som en [SecureString](/dotnet/api/system.security.securestring).</span><span class="sxs-lookup"><span data-stu-id="c639f-145">Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential) object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="96bb5-146">Mer information om **SecureString** -data skydd finns i [hur säker är SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).</span><span class="sxs-lookup"><span data-stu-id="96bb5-146">For more information about **SecureString** data protection, see [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).</span></span>
+> <span data-ttu-id="c639f-146">Mer information om **SecureString** -data skydd finns i [hur säker är SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).</span><span class="sxs-lookup"><span data-stu-id="c639f-146">For more information about **SecureString** data protection, see [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -134,9 +134,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="96bb5-147">-Beskrivning</span><span class="sxs-lookup"><span data-stu-id="96bb5-147">-Description</span></span>
+### <span data-ttu-id="c639f-147">-Beskrivning</span><span class="sxs-lookup"><span data-stu-id="c639f-147">-Description</span></span>
 
-<span data-ttu-id="96bb5-148">`Get-HotFix` använder **Description** -parametern för att ange snabb korrigerings typer.</span><span class="sxs-lookup"><span data-stu-id="96bb5-148">`Get-HotFix` uses the **Description** parameter to specify hotfix types.</span></span> <span data-ttu-id="96bb5-149">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="96bb5-149">Wildcards are permitted.</span></span>
+<span data-ttu-id="c639f-148">`Get-HotFix` använder **Description** -parametern för att ange snabb korrigerings typer.</span><span class="sxs-lookup"><span data-stu-id="c639f-148">`Get-HotFix` uses the **Description** parameter to specify hotfix types.</span></span> <span data-ttu-id="c639f-149">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="c639f-149">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -150,9 +150,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="96bb5-150">-ID</span><span class="sxs-lookup"><span data-stu-id="96bb5-150">-Id</span></span>
+### <span data-ttu-id="c639f-150">-ID</span><span class="sxs-lookup"><span data-stu-id="c639f-150">-Id</span></span>
 
-<span data-ttu-id="96bb5-151">Filtrerar `Get-HotFix` resultaten för vissa snabb korrigerings-ID: n.</span><span class="sxs-lookup"><span data-stu-id="96bb5-151">Filters the `Get-HotFix` results for specific hotfix Ids.</span></span> <span data-ttu-id="96bb5-152">Jokertecken accepteras inte.</span><span class="sxs-lookup"><span data-stu-id="96bb5-152">Wildcards aren't accepted.</span></span>
+<span data-ttu-id="c639f-151">Filtrerar `Get-HotFix` resultaten för vissa snabb korrigerings-ID: n.</span><span class="sxs-lookup"><span data-stu-id="c639f-151">Filters the `Get-HotFix` results for specific hotfix Ids.</span></span> <span data-ttu-id="c639f-152">Jokertecken accepteras inte.</span><span class="sxs-lookup"><span data-stu-id="c639f-152">Wildcards aren't accepted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -166,36 +166,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="96bb5-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="96bb5-153">CommonParameters</span></span>
+### <span data-ttu-id="c639f-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c639f-153">CommonParameters</span></span>
 
-<span data-ttu-id="96bb5-154">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="96bb5-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="96bb5-155">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="96bb5-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="c639f-154">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c639f-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c639f-155">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="c639f-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="96bb5-156">INDATA</span><span class="sxs-lookup"><span data-stu-id="96bb5-156">INPUTS</span></span>
+## <span data-ttu-id="c639f-156">INDATA</span><span class="sxs-lookup"><span data-stu-id="c639f-156">INPUTS</span></span>
 
-### <span data-ttu-id="96bb5-157">Sträng</span><span class="sxs-lookup"><span data-stu-id="96bb5-157">String</span></span>
+### <span data-ttu-id="c639f-157">Sträng</span><span class="sxs-lookup"><span data-stu-id="c639f-157">String</span></span>
 
-<span data-ttu-id="96bb5-158">Du kan skicka ett eller flera dator namn för att få snabb korrigering.</span><span class="sxs-lookup"><span data-stu-id="96bb5-158">You can pipe one or more computer names to Get-HotFix.</span></span>
+<span data-ttu-id="c639f-158">Du kan skicka ett eller flera dator namn för att få snabb korrigering.</span><span class="sxs-lookup"><span data-stu-id="c639f-158">You can pipe one or more computer names to Get-HotFix.</span></span>
 
-## <span data-ttu-id="96bb5-159">UTDATA</span><span class="sxs-lookup"><span data-stu-id="96bb5-159">OUTPUTS</span></span>
+## <span data-ttu-id="c639f-159">UTDATA</span><span class="sxs-lookup"><span data-stu-id="c639f-159">OUTPUTS</span></span>
 
-### <span data-ttu-id="96bb5-160">System. Management. ManagementObject # root\CIMV2\ Win32_QuickFixEngineering</span><span class="sxs-lookup"><span data-stu-id="96bb5-160">System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering</span></span>
+### <span data-ttu-id="c639f-160">System. Management. ManagementObject # root\CIMV2\ Win32_QuickFixEngineering</span><span class="sxs-lookup"><span data-stu-id="c639f-160">System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering</span></span>
 
-<span data-ttu-id="96bb5-161">`Get-HotFix` returnerar objekt som representerar snabb korrigeringarna på datorn.</span><span class="sxs-lookup"><span data-stu-id="96bb5-161">`Get-HotFix` returns objects that represent the hotfixes on the computer.</span></span>
+<span data-ttu-id="c639f-161">`Get-HotFix` returnerar objekt som representerar snabb korrigeringarna på datorn.</span><span class="sxs-lookup"><span data-stu-id="c639f-161">`Get-HotFix` returns objects that represent the hotfixes on the computer.</span></span>
 
-## <span data-ttu-id="96bb5-162">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="96bb5-162">NOTES</span></span>
+## <span data-ttu-id="c639f-162">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="c639f-162">NOTES</span></span>
 
-<span data-ttu-id="96bb5-163">**Win32_QuickFixEngineering** [WMI-klassen](/windows/desktop/WmiSdk/retrieving-a-class) representerar en mindre systemomfattande uppdatering, vanligt vis kallat snabb korrigerings teknik (QFE), som tillämpas på det aktuella operativ systemet.</span><span class="sxs-lookup"><span data-stu-id="96bb5-163">The **Win32_QuickFixEngineering** [WMI class](/windows/desktop/WmiSdk/retrieving-a-class) represents a small system-wide update, commonly referred to as a quick-fix engineering (QFE) update, applied to the current operating system.</span></span> <span data-ttu-id="96bb5-164">Den här klassen returnerar endast uppdateringar som tillhandahålls av Component Based Servicing (CBS).</span><span class="sxs-lookup"><span data-stu-id="96bb5-164">This class returns only the updates supplied by Component Based Servicing (CBS).</span></span> <span data-ttu-id="96bb5-165">De här uppdateringarna visas inte i registret.</span><span class="sxs-lookup"><span data-stu-id="96bb5-165">These updates are not listed in the registry.</span></span> <span data-ttu-id="96bb5-166">Uppdateringar som tillhandahålls av Microsoft Windows Installer (MSI) eller [Windows updates](https://update.microsoft.com) platsen returneras inte av **Win32_QuickFixEngineering**.</span><span class="sxs-lookup"><span data-stu-id="96bb5-166">Updates supplied by Microsoft Windows Installer (MSI) or the [Windows Update](https://update.microsoft.com) site are not returned by **Win32_QuickFixEngineering**.</span></span> <span data-ttu-id="96bb5-167">Mer information finns i [Win32_QuickFixEngineering-klass](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).</span><span class="sxs-lookup"><span data-stu-id="96bb5-167">For more information, see [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).</span></span>
+<span data-ttu-id="c639f-163">Den här cmdleten är endast tillgänglig på Windows-plattformar.</span><span class="sxs-lookup"><span data-stu-id="c639f-163">This cmdlet is only available on Windows platforms.</span></span>
 
-<span data-ttu-id="96bb5-168">`Get-HotFix`Utdata kan variera mellan olika operativ system.</span><span class="sxs-lookup"><span data-stu-id="96bb5-168">The `Get-HotFix` output might vary on different operating systems.</span></span>
+<span data-ttu-id="c639f-164">**Win32_QuickFixEngineering** [WMI-klassen](/windows/desktop/WmiSdk/retrieving-a-class) representerar en mindre systemomfattande uppdatering, vanligt vis kallat snabb korrigerings teknik (QFE), som tillämpas på det aktuella operativ systemet.</span><span class="sxs-lookup"><span data-stu-id="c639f-164">The **Win32_QuickFixEngineering** [WMI class](/windows/desktop/WmiSdk/retrieving-a-class) represents a small system-wide update, commonly referred to as a quick-fix engineering (QFE) update, applied to the current operating system.</span></span> <span data-ttu-id="c639f-165">Den här klassen returnerar endast uppdateringar som tillhandahålls av Component Based Servicing (CBS).</span><span class="sxs-lookup"><span data-stu-id="c639f-165">This class returns only the updates supplied by Component Based Servicing (CBS).</span></span> <span data-ttu-id="c639f-166">De här uppdateringarna visas inte i registret.</span><span class="sxs-lookup"><span data-stu-id="c639f-166">These updates are not listed in the registry.</span></span> <span data-ttu-id="c639f-167">Uppdateringar som tillhandahålls av Microsoft Windows Installer (MSI) eller [Windows updates](https://update.microsoft.com) platsen returneras inte av **Win32_QuickFixEngineering**.</span><span class="sxs-lookup"><span data-stu-id="c639f-167">Updates supplied by Microsoft Windows Installer (MSI) or the [Windows Update](https://update.microsoft.com) site are not returned by **Win32_QuickFixEngineering**.</span></span> <span data-ttu-id="c639f-168">Mer information finns i [Win32_QuickFixEngineering-klass](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).</span><span class="sxs-lookup"><span data-stu-id="c639f-168">For more information, see [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).</span></span>
 
-## <span data-ttu-id="96bb5-169">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="96bb5-169">RELATED LINKS</span></span>
+<span data-ttu-id="c639f-169">`Get-HotFix`Utdata kan variera mellan olika operativ system.</span><span class="sxs-lookup"><span data-stu-id="c639f-169">The `Get-HotFix` output might vary on different operating systems.</span></span>
 
-[<span data-ttu-id="96bb5-170">about_Arrays</span><span class="sxs-lookup"><span data-stu-id="96bb5-170">about_Arrays</span></span>](../Microsoft.PowerShell.Core/About/about_Arrays.md)
+## <span data-ttu-id="c639f-170">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="c639f-170">RELATED LINKS</span></span>
 
-[<span data-ttu-id="96bb5-171">Lägg till innehåll</span><span class="sxs-lookup"><span data-stu-id="96bb5-171">Add-Content</span></span>](Add-Content.md)
+[<span data-ttu-id="c639f-171">about_Arrays</span><span class="sxs-lookup"><span data-stu-id="c639f-171">about_Arrays</span></span>](../Microsoft.PowerShell.Core/About/about_Arrays.md)
 
-[<span data-ttu-id="96bb5-172">Get-ComputerRestorePoint</span><span class="sxs-lookup"><span data-stu-id="96bb5-172">Get-ComputerRestorePoint</span></span>](Get-ComputerRestorePoint.md)
+[<span data-ttu-id="c639f-172">Lägg till innehåll</span><span class="sxs-lookup"><span data-stu-id="c639f-172">Add-Content</span></span>](Add-Content.md)
 
-[<span data-ttu-id="96bb5-173">Get-Credential</span><span class="sxs-lookup"><span data-stu-id="96bb5-173">Get-Credential</span></span>](../Microsoft.PowerShell.Security/Get-Credential.md)
+[<span data-ttu-id="c639f-173">Get-ComputerRestorePoint</span><span class="sxs-lookup"><span data-stu-id="c639f-173">Get-ComputerRestorePoint</span></span>](Get-ComputerRestorePoint.md)
 
-[<span data-ttu-id="96bb5-174">Win32_QuickFixEngineering klass</span><span class="sxs-lookup"><span data-stu-id="96bb5-174">Win32_QuickFixEngineering class</span></span>](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)
+[<span data-ttu-id="c639f-174">Get-Credential</span><span class="sxs-lookup"><span data-stu-id="c639f-174">Get-Credential</span></span>](../Microsoft.PowerShell.Security/Get-Credential.md)
+
+[<span data-ttu-id="c639f-175">Win32_QuickFixEngineering klass</span><span class="sxs-lookup"><span data-stu-id="c639f-175">Win32_QuickFixEngineering class</span></span>](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)

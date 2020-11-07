@@ -7,79 +7,71 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resume-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resume-Service
-ms.openlocfilehash: a799326c943b09b5b9c0f9cecfdae3b64e6af409
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 2d627625dec5afe6397a3fb346716adfd3fdb31c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93263048"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342917"
 ---
-# <span data-ttu-id="8ce49-103">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-103">Resume-Service</span></span>
+# <span data-ttu-id="b0878-103">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-103">Resume-Service</span></span>
 
-## <span data-ttu-id="8ce49-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="8ce49-104">SYNOPSIS</span></span>
-<span data-ttu-id="8ce49-105">Återupptar en eller flera pausade tjänster.</span><span class="sxs-lookup"><span data-stu-id="8ce49-105">Resumes one or more suspended (paused) services.</span></span>
+## <span data-ttu-id="b0878-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="b0878-104">SYNOPSIS</span></span>
+<span data-ttu-id="b0878-105">Återupptar en eller flera pausade tjänster.</span><span class="sxs-lookup"><span data-stu-id="b0878-105">Resumes one or more suspended (paused) services.</span></span>
 
-## <span data-ttu-id="8ce49-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="8ce49-106">SYNTAX</span></span>
+## <span data-ttu-id="b0878-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="b0878-106">SYNTAX</span></span>
 
-### <span data-ttu-id="8ce49-107">InputObject (standard)</span><span class="sxs-lookup"><span data-stu-id="8ce49-107">InputObject (Default)</span></span>
+### <span data-ttu-id="b0878-107">InputObject (standard)</span><span class="sxs-lookup"><span data-stu-id="b0878-107">InputObject (Default)</span></span>
 
 ```
 Resume-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8ce49-108">Default</span><span class="sxs-lookup"><span data-stu-id="8ce49-108">Default</span></span>
+### <span data-ttu-id="b0878-108">Standard</span><span class="sxs-lookup"><span data-stu-id="b0878-108">Default</span></span>
 
 ```
 Resume-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8ce49-109">DisplayName</span><span class="sxs-lookup"><span data-stu-id="8ce49-109">DisplayName</span></span>
+### <span data-ttu-id="b0878-109">DisplayName</span><span class="sxs-lookup"><span data-stu-id="b0878-109">DisplayName</span></span>
 
 ```
 Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="8ce49-110">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="8ce49-110">DESCRIPTION</span></span>
+## <span data-ttu-id="b0878-110">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="b0878-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="8ce49-111">Cmdleten **Resume-service** skickar ett återställnings meddelande till Windows-Domänkontrollanttjänsten för varje angiven tjänst.</span><span class="sxs-lookup"><span data-stu-id="8ce49-111">The **Resume-Service** cmdlet sends a resume message to the Windows Service Controller for each of the specified services.</span></span>
-<span data-ttu-id="8ce49-112">Om en tjänst pausas återupptas den.</span><span class="sxs-lookup"><span data-stu-id="8ce49-112">If a service is suspended, it resumes.</span></span>
-<span data-ttu-id="8ce49-113">Om den körs, ignoreras meddelandet.</span><span class="sxs-lookup"><span data-stu-id="8ce49-113">If it is currently running, the message is ignored.</span></span>
-<span data-ttu-id="8ce49-114">Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern *InputObject* för att skicka ett tjänst objekt som representerar de tjänster som du vill återuppta.</span><span class="sxs-lookup"><span data-stu-id="8ce49-114">You can specify the services by their service names or display names, or you can use the *InputObject* parameter to pass a service object that represents the services that you want to resume.</span></span>
+<span data-ttu-id="b0878-111">`Resume-Service`Cmdleten skickar ett återställnings meddelande till Windows-Domänkontrollanttjänsten för varje angiven tjänst.</span><span class="sxs-lookup"><span data-stu-id="b0878-111">The `Resume-Service` cmdlet sends a resume message to the Windows Service Controller for each of the specified services.</span></span> <span data-ttu-id="b0878-112">Om en tjänst pausas återupptas den.</span><span class="sxs-lookup"><span data-stu-id="b0878-112">If a service is suspended, it resumes.</span></span> <span data-ttu-id="b0878-113">Om den körs, ignoreras meddelandet.</span><span class="sxs-lookup"><span data-stu-id="b0878-113">If it is currently running, the message is ignored.</span></span> <span data-ttu-id="b0878-114">Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern **InputObject** för att skicka ett tjänst objekt som representerar de tjänster som du vill återuppta.</span><span class="sxs-lookup"><span data-stu-id="b0878-114">You can specify the services by their service names or display names, or you can use the **InputObject** parameter to pass a service object that represents the services that you want to resume.</span></span>
 
-## <span data-ttu-id="8ce49-115">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="8ce49-115">EXAMPLES</span></span>
+## <span data-ttu-id="b0878-115">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="b0878-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="8ce49-116">Exempel 1: återuppta en tjänst på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="8ce49-116">Example 1: Resume a service on the local computer</span></span>
+### <span data-ttu-id="b0878-116">Exempel 1: återuppta en tjänst på den lokala datorn</span><span class="sxs-lookup"><span data-stu-id="b0878-116">Example 1: Resume a service on the local computer</span></span>
 
 ```
 PS C:\> Resume-Service "sens"
 ```
 
-<span data-ttu-id="8ce49-117">Det här kommandot återupptar tjänsten system Event notification på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="8ce49-117">This command resumes the System Event Notification service  on the local computer.</span></span>
-<span data-ttu-id="8ce49-118">Tjänst namnet visas i kommandot av Sens.</span><span class="sxs-lookup"><span data-stu-id="8ce49-118">The service name is represented in the command by sens.</span></span>
-<span data-ttu-id="8ce49-119">Kommandot använder *Name* -parametern för att ange tjänst namnet för tjänsten, men kommandot utesluter parameter namnet eftersom parameter namnet är valfritt.</span><span class="sxs-lookup"><span data-stu-id="8ce49-119">The command uses the *Name* parameter to specify the service name of the service, but the command omits the parameter name because the parameter name is optional.</span></span>
+<span data-ttu-id="b0878-117">Det här kommandot återupptar tjänsten system Event notification på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="b0878-117">This command resumes the System Event Notification service on the local computer.</span></span> <span data-ttu-id="b0878-118">Tjänst namnet visas i kommandot av Sens.</span><span class="sxs-lookup"><span data-stu-id="b0878-118">The service name is represented in the command by sens.</span></span> <span data-ttu-id="b0878-119">Kommandot använder **Name** -parametern för att ange tjänst namnet för tjänsten, men kommandot utesluter parameter namnet eftersom parameter namnet är valfritt.</span><span class="sxs-lookup"><span data-stu-id="b0878-119">The command uses the **Name** parameter to specify the service name of the service, but the command omits the parameter name because the parameter name is optional.</span></span>
 
-### <span data-ttu-id="8ce49-120">Exempel 2: återuppta alla pausade tjänster</span><span class="sxs-lookup"><span data-stu-id="8ce49-120">Example 2: Resume all suspended services</span></span>
+### <span data-ttu-id="b0878-120">Exempel 2: återuppta alla pausade tjänster</span><span class="sxs-lookup"><span data-stu-id="b0878-120">Example 2: Resume all suspended services</span></span>
 
 ```
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
 
-<span data-ttu-id="8ce49-121">Detta kommando återupptar alla pausade tjänster på datorn.</span><span class="sxs-lookup"><span data-stu-id="8ce49-121">This command resumes all of the suspended  services on the computer.</span></span>
-<span data-ttu-id="8ce49-122">Kommandot Get-Service-cmdlet hämtar alla tjänster på datorn.</span><span class="sxs-lookup"><span data-stu-id="8ce49-122">The Get-Service cmdlet command gets all of the services on the computer.</span></span>
-<span data-ttu-id="8ce49-123">Pipeline-operatorn (|) skickar resultaten till Where-Object-cmdleten, som väljer de tjänster som har egenskapen **status** för pausad.</span><span class="sxs-lookup"><span data-stu-id="8ce49-123">The pipeline operator (|) passes the results to the Where-Object cmdlet, which selects the services that have a **Status** property of Paused.</span></span>
-<span data-ttu-id="8ce49-124">Nästa pipeline-operator skickar resultatet till **Resume-service** , som återupptar de pausade tjänsterna.</span><span class="sxs-lookup"><span data-stu-id="8ce49-124">The next pipeline operator sends the results to **Resume-Service** , which resumes the paused services.</span></span>
+<span data-ttu-id="b0878-121">Detta kommando återupptar alla pausade tjänster på datorn.</span><span class="sxs-lookup"><span data-stu-id="b0878-121">This command resumes all of the suspended services on the computer.</span></span> <span data-ttu-id="b0878-122">`Get-Service`Cmdlet-kommandot hämtar alla tjänster på datorn.</span><span class="sxs-lookup"><span data-stu-id="b0878-122">The `Get-Service` cmdlet command gets all of the services on the computer.</span></span> <span data-ttu-id="b0878-123">Pipeline-operatorn ( `|` ) skickar resultatet till `Where-Object` cmdleten, som väljer de tjänster som har **statusen** pausad.</span><span class="sxs-lookup"><span data-stu-id="b0878-123">The pipeline operator (`|`) passes the results to the `Where-Object` cmdlet, which selects the services that have a **Status** property of Paused.</span></span> <span data-ttu-id="b0878-124">Nästa pipeline-operator skickar resultatet till `Resume-Service` , vilket återupptar de pausade tjänsterna.</span><span class="sxs-lookup"><span data-stu-id="b0878-124">The next pipeline operator sends the results to `Resume-Service`, which resumes the paused services.</span></span>
 
-<span data-ttu-id="8ce49-125">I praktiken använder du parametern *whatIf* för att fastställa kommandots effekter innan du kör det.</span><span class="sxs-lookup"><span data-stu-id="8ce49-125">In practice, you would use the *WhatIf* parameter to determine the effect of the command before you run it.</span></span>
+<span data-ttu-id="b0878-125">I praktiken använder du parametern **whatIf** för att fastställa kommandots effekter innan du kör det.</span><span class="sxs-lookup"><span data-stu-id="b0878-125">In practice, you would use the **WhatIf** parameter to determine the effect of the command before you run it.</span></span>
 
-## <span data-ttu-id="8ce49-126">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="8ce49-126">PARAMETERS</span></span>
+## <span data-ttu-id="b0878-126">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="b0878-126">PARAMETERS</span></span>
 
-### <span data-ttu-id="8ce49-127">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="8ce49-127">-DisplayName</span></span>
+### <span data-ttu-id="b0878-127">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="b0878-127">-DisplayName</span></span>
 
-<span data-ttu-id="8ce49-128">Anger visnings namnen för de tjänster som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="8ce49-128">Specifies the display names of the services to be resumed.</span></span>
-<span data-ttu-id="8ce49-129">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="8ce49-129">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="b0878-128">Anger visnings namnen för de tjänster som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="b0878-128">Specifies the display names of the services to be resumed.</span></span>
+<span data-ttu-id="b0878-129">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="b0878-129">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -93,12 +85,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="8ce49-130">-Undanta</span><span class="sxs-lookup"><span data-stu-id="8ce49-130">-Exclude</span></span>
+### <span data-ttu-id="b0878-130">-Undanta</span><span class="sxs-lookup"><span data-stu-id="b0878-130">-Exclude</span></span>
 
-<span data-ttu-id="8ce49-131">Anger tjänster som denna cmdlet utelämnar.</span><span class="sxs-lookup"><span data-stu-id="8ce49-131">Specifies services that this cmdlet omits.</span></span>
-<span data-ttu-id="8ce49-132">Värdet för den här parametern kvalificerar parametern *Name* .</span><span class="sxs-lookup"><span data-stu-id="8ce49-132">The value of this parameter qualifies the *Name* parameter.</span></span>
-<span data-ttu-id="8ce49-133">Ange ett namn element eller ett mönster, till exempel s \*.</span><span class="sxs-lookup"><span data-stu-id="8ce49-133">Enter a name element or pattern, such as s\*.</span></span>
-<span data-ttu-id="8ce49-134">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="8ce49-134">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="b0878-131">Anger tjänster som denna cmdlet utelämnar.</span><span class="sxs-lookup"><span data-stu-id="b0878-131">Specifies services that this cmdlet omits.</span></span> <span data-ttu-id="b0878-132">Värdet för den här parametern kvalificerar parametern **Name** .</span><span class="sxs-lookup"><span data-stu-id="b0878-132">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="b0878-133">Ange ett namn element eller ett mönster, till exempel s \*.</span><span class="sxs-lookup"><span data-stu-id="b0878-133">Enter a name element or pattern, such as s\*.</span></span> <span data-ttu-id="b0878-134">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="b0878-134">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -112,12 +101,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="8ce49-135">-Inkludera</span><span class="sxs-lookup"><span data-stu-id="8ce49-135">-Include</span></span>
+### <span data-ttu-id="b0878-135">-Inkludera</span><span class="sxs-lookup"><span data-stu-id="b0878-135">-Include</span></span>
 
-<span data-ttu-id="8ce49-136">Anger vilka tjänster som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="8ce49-136">Specifies services to resume.</span></span>
-<span data-ttu-id="8ce49-137">Värdet för den här parametern kvalificerar parametern *Name* .</span><span class="sxs-lookup"><span data-stu-id="8ce49-137">The value of this parameter qualifies *Name* parameter.</span></span>
-<span data-ttu-id="8ce49-138">Ange ett namn element eller ett mönster, till exempel s \*.</span><span class="sxs-lookup"><span data-stu-id="8ce49-138">Enter a name element or pattern, such as s\*.</span></span>
-<span data-ttu-id="8ce49-139">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="8ce49-139">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="b0878-136">Anger vilka tjänster som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="b0878-136">Specifies services to resume.</span></span> <span data-ttu-id="b0878-137">Värdet för den här parametern kvalificerar parametern **Name** .</span><span class="sxs-lookup"><span data-stu-id="b0878-137">The value of this parameter qualifies **Name** parameter.</span></span> <span data-ttu-id="b0878-138">Ange ett namn element eller ett mönster, till exempel s \*.</span><span class="sxs-lookup"><span data-stu-id="b0878-138">Enter a name element or pattern, such as s\*.</span></span> <span data-ttu-id="b0878-139">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="b0878-139">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -131,10 +117,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="8ce49-140">– InputObject</span><span class="sxs-lookup"><span data-stu-id="8ce49-140">-InputObject</span></span>
+### <span data-ttu-id="b0878-140">– InputObject</span><span class="sxs-lookup"><span data-stu-id="b0878-140">-InputObject</span></span>
 
-<span data-ttu-id="8ce49-141">Anger **ServiceController** -objekt som representerar tjänsterna som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="8ce49-141">Specifies **ServiceController** objects that represent the services to resumed.</span></span>
-<span data-ttu-id="8ce49-142">Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.</span><span class="sxs-lookup"><span data-stu-id="8ce49-142">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
+<span data-ttu-id="b0878-141">Anger **ServiceController** -objekt som representerar tjänsterna som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="b0878-141">Specifies **ServiceController** objects that represent the services to resumed.</span></span> <span data-ttu-id="b0878-142">Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.</span><span class="sxs-lookup"><span data-stu-id="b0878-142">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -148,9 +133,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8ce49-143">-Name</span><span class="sxs-lookup"><span data-stu-id="8ce49-143">-Name</span></span>
+### <span data-ttu-id="b0878-143">-Name</span><span class="sxs-lookup"><span data-stu-id="b0878-143">-Name</span></span>
 
-<span data-ttu-id="8ce49-144">Anger tjänst namnen för de tjänster som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="8ce49-144">Specifies the service names of the services to be resumed.</span></span>
+<span data-ttu-id="b0878-144">Anger tjänst namnen för de tjänster som ska återupptas.</span><span class="sxs-lookup"><span data-stu-id="b0878-144">Specifies the service names of the services to be resumed.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -164,10 +149,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8ce49-145">– PassThru</span><span class="sxs-lookup"><span data-stu-id="8ce49-145">-PassThru</span></span>
+### <span data-ttu-id="b0878-145">– PassThru</span><span class="sxs-lookup"><span data-stu-id="b0878-145">-PassThru</span></span>
 
-<span data-ttu-id="8ce49-146">Returnerar ett objekt som representerar tjänsten.</span><span class="sxs-lookup"><span data-stu-id="8ce49-146">Returns an object that represents the service.</span></span>
-<span data-ttu-id="8ce49-147">Som standard genererar denna cmdlet inga utdata.</span><span class="sxs-lookup"><span data-stu-id="8ce49-147">By default, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="b0878-146">Returnerar ett objekt som representerar tjänsten.</span><span class="sxs-lookup"><span data-stu-id="b0878-146">Returns an object that represents the service.</span></span> <span data-ttu-id="b0878-147">Som standard genererar denna cmdlet inga utdata.</span><span class="sxs-lookup"><span data-stu-id="b0878-147">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -181,9 +165,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8ce49-148">-Confirm</span><span class="sxs-lookup"><span data-stu-id="8ce49-148">-Confirm</span></span>
+### <span data-ttu-id="b0878-148">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b0878-148">-Confirm</span></span>
 
-<span data-ttu-id="8ce49-149">Uppmanar dig att bekräfta innan du kör cmdleten.</span><span class="sxs-lookup"><span data-stu-id="8ce49-149">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="b0878-149">Uppmanar dig att bekräfta innan du kör cmdleten.</span><span class="sxs-lookup"><span data-stu-id="b0878-149">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -197,10 +181,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8ce49-150">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="8ce49-150">-WhatIf</span></span>
+### <span data-ttu-id="b0878-150">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b0878-150">-WhatIf</span></span>
 
-<span data-ttu-id="8ce49-151">Visar vad som skulle hända om cmdleten kördes.</span><span class="sxs-lookup"><span data-stu-id="8ce49-151">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="8ce49-152">Cmdleten körs inte.</span><span class="sxs-lookup"><span data-stu-id="8ce49-152">The cmdlet is not run.</span></span>
+<span data-ttu-id="b0878-151">Visar vad som skulle hända om cmdleten kördes.</span><span class="sxs-lookup"><span data-stu-id="b0878-151">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="b0878-152">Cmdleten körs inte.</span><span class="sxs-lookup"><span data-stu-id="b0878-152">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -214,43 +197,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8ce49-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8ce49-153">CommonParameters</span></span>
+### <span data-ttu-id="b0878-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b0878-153">CommonParameters</span></span>
 
-<span data-ttu-id="8ce49-154">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8ce49-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8ce49-155">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="8ce49-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="b0878-154">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b0878-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b0878-155">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="b0878-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="8ce49-156">INDATA</span><span class="sxs-lookup"><span data-stu-id="8ce49-156">INPUTS</span></span>
+## <span data-ttu-id="b0878-156">INDATA</span><span class="sxs-lookup"><span data-stu-id="b0878-156">INPUTS</span></span>
 
-### <span data-ttu-id="8ce49-157">System. ServiceProcess. ServiceController, system. String</span><span class="sxs-lookup"><span data-stu-id="8ce49-157">System.ServiceProcess.ServiceController, System.String</span></span>
+### <span data-ttu-id="b0878-157">System. ServiceProcess. ServiceController, system. String</span><span class="sxs-lookup"><span data-stu-id="b0878-157">System.ServiceProcess.ServiceController, System.String</span></span>
 
-<span data-ttu-id="8ce49-158">Du kan skicka vidare ett tjänst objekt eller en sträng som innehåller ett tjänst namn till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="8ce49-158">You can pipe a service object or a string that contains a service name to this cmdlet.</span></span>
+<span data-ttu-id="b0878-158">Du kan skicka vidare ett tjänst objekt eller en sträng som innehåller ett tjänst namn till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b0878-158">You can pipe a service object or a string that contains a service name to this cmdlet.</span></span>
 
-## <span data-ttu-id="8ce49-159">UTDATA</span><span class="sxs-lookup"><span data-stu-id="8ce49-159">OUTPUTS</span></span>
+## <span data-ttu-id="b0878-159">UTDATA</span><span class="sxs-lookup"><span data-stu-id="b0878-159">OUTPUTS</span></span>
 
-### <span data-ttu-id="8ce49-160">Ingen, system. ServiceProcess. ServiceController</span><span class="sxs-lookup"><span data-stu-id="8ce49-160">None, System.ServiceProcess.ServiceController</span></span>
+### <span data-ttu-id="b0878-160">Ingen, system. ServiceProcess. ServiceController</span><span class="sxs-lookup"><span data-stu-id="b0878-160">None, System.ServiceProcess.ServiceController</span></span>
 
-<span data-ttu-id="8ce49-161">Denna cmdlet genererar ett **system. ServiceProcess. ServiceController** -objekt som representerar den återupptog tjänsten om du anger parametern *Passthru* .</span><span class="sxs-lookup"><span data-stu-id="8ce49-161">This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the resumed service, if you specify the *PassThru* parameter.</span></span>
-<span data-ttu-id="8ce49-162">Annars genererar denna cmdlet inga utdata.</span><span class="sxs-lookup"><span data-stu-id="8ce49-162">Otherwise, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="b0878-161">Denna cmdlet genererar ett **system. ServiceProcess. ServiceController** -objekt som representerar den återupptog tjänsten om du anger parametern **Passthru** .</span><span class="sxs-lookup"><span data-stu-id="b0878-161">This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the resumed service, if you specify the **PassThru** parameter.</span></span> <span data-ttu-id="b0878-162">Annars genererar denna cmdlet inga utdata.</span><span class="sxs-lookup"><span data-stu-id="b0878-162">Otherwise, this cmdlet does not generate any output.</span></span>
 
-## <span data-ttu-id="8ce49-163">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="8ce49-163">NOTES</span></span>
+## <span data-ttu-id="b0878-163">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="b0878-163">NOTES</span></span>
 
-* <span data-ttu-id="8ce49-164">Statusen för tjänster som har pausats har pausats.</span><span class="sxs-lookup"><span data-stu-id="8ce49-164">The status of services that have been suspended is Paused.</span></span> <span data-ttu-id="8ce49-165">När tjänsterna återupptas körs deras status.</span><span class="sxs-lookup"><span data-stu-id="8ce49-165">When services are resumed, their status is Running.</span></span>
-* <span data-ttu-id="8ce49-166">**Resume-service** kan bara styra tjänster när den aktuella användaren har behörighet att göra detta.</span><span class="sxs-lookup"><span data-stu-id="8ce49-166">**Resume-Service** can control services only when the current user has permission to do this.</span></span> <span data-ttu-id="8ce49-167">Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.</span><span class="sxs-lookup"><span data-stu-id="8ce49-167">If a command does not work correctly, you might not have the required permissions.</span></span>
-* <span data-ttu-id="8ce49-168">Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="8ce49-168">To find the service names and display names of the services on your system, type `Get-Service`.</span></span> <span data-ttu-id="8ce49-169">Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .</span><span class="sxs-lookup"><span data-stu-id="8ce49-169">The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.</span></span>
+<span data-ttu-id="b0878-164">Den här cmdleten är endast tillgänglig på Windows-plattformar.</span><span class="sxs-lookup"><span data-stu-id="b0878-164">This cmdlet is only available on Windows platforms.</span></span>
 
-## <span data-ttu-id="8ce49-170">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="8ce49-170">RELATED LINKS</span></span>
+- <span data-ttu-id="b0878-165">Statusen för tjänster som har pausats har pausats.</span><span class="sxs-lookup"><span data-stu-id="b0878-165">The status of services that have been suspended is Paused.</span></span> <span data-ttu-id="b0878-166">När tjänsterna återupptas körs deras status.</span><span class="sxs-lookup"><span data-stu-id="b0878-166">When services are resumed, their status is Running.</span></span>
+- <span data-ttu-id="b0878-167">`Resume-Service` kan bara styra tjänster när den aktuella användaren har behörighet att göra detta.</span><span class="sxs-lookup"><span data-stu-id="b0878-167">`Resume-Service` can control services only when the current user has permission to do this.</span></span> <span data-ttu-id="b0878-168">Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.</span><span class="sxs-lookup"><span data-stu-id="b0878-168">If a command does not work correctly, you might not have the required permissions.</span></span>
+- <span data-ttu-id="b0878-169">Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="b0878-169">To find the service names and display names of the services on your system, type `Get-Service`.</span></span>
+  <span data-ttu-id="b0878-170">Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .</span><span class="sxs-lookup"><span data-stu-id="b0878-170">The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.</span></span>
 
-[<span data-ttu-id="8ce49-171">Get-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-171">Get-Service</span></span>](Get-Service.md)
+## <span data-ttu-id="b0878-171">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="b0878-171">RELATED LINKS</span></span>
 
-[<span data-ttu-id="8ce49-172">New-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-172">New-Service</span></span>](New-Service.md)
+[<span data-ttu-id="b0878-172">Get-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-172">Get-Service</span></span>](Get-Service.md)
 
-[<span data-ttu-id="8ce49-173">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-173">Restart-Service</span></span>](Restart-Service.md)
+[<span data-ttu-id="b0878-173">New-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-173">New-Service</span></span>](New-Service.md)
 
-[<span data-ttu-id="8ce49-174">Set-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-174">Set-Service</span></span>](Set-Service.md)
+[<span data-ttu-id="b0878-174">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-174">Restart-Service</span></span>](Restart-Service.md)
 
-[<span data-ttu-id="8ce49-175">Start-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-175">Start-Service</span></span>](Start-Service.md)
+[<span data-ttu-id="b0878-175">Set-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-175">Set-Service</span></span>](Set-Service.md)
 
-[<span data-ttu-id="8ce49-176">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-176">Stop-Service</span></span>](Stop-Service.md)
+[<span data-ttu-id="b0878-176">Start-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-176">Start-Service</span></span>](Start-Service.md)
 
-[<span data-ttu-id="8ce49-177">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="8ce49-177">Suspend-Service</span></span>](Suspend-Service.md)
+[<span data-ttu-id="b0878-177">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-177">Stop-Service</span></span>](Stop-Service.md)
 
-[<span data-ttu-id="8ce49-178">Remove-service</span><span class="sxs-lookup"><span data-stu-id="8ce49-178">Remove-Service</span></span>](Remove-Service.md)
+[<span data-ttu-id="b0878-178">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="b0878-178">Suspend-Service</span></span>](Suspend-Service.md)
+
+[<span data-ttu-id="b0878-179">Remove-service</span><span class="sxs-lookup"><span data-stu-id="b0878-179">Remove-Service</span></span>](Remove-Service.md)
