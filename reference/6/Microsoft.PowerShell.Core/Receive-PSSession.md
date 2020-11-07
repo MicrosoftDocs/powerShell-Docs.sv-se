@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: 266c12224ee579add22715f47a9047d400fab255
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: d40c6074c792ed8d5e094a3e9c1b3784a1c7670d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268352"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345467"
 ---
 # Receive-PSSession
 
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 
 Anger mekanismen som används för att autentisera användarautentiseringsuppgifter i kommandot för att återansluta till en frånkopplad session. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standard
 - Basic
 - CredSSP
 - Sammandrag
@@ -758,6 +758,8 @@ Du kan skicka pipe-sessionsnamn till denna cmdlet.
 Den här cmdleten returnerar resultatet av kommandon som kördes i den frånkopplade sessionen, om det finns några. Om värdet eller standardvärdet för **mål** parametern är Job, `Receive-PSSession` returnerar ett Job-objekt. Annars returneras objekt som representerar kommando resultatet.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 `Receive-PSSession` hämtar endast resultat från sessioner som kopplats från. Endast sessioner som är anslutna till eller avslutas på datorer som kör PowerShell 3,0 eller senare versioner kan kopplas från och återanslutas.
 

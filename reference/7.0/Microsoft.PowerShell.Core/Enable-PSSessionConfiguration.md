@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-pssessionconfiguration?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSSessionConfiguration
-ms.openlocfilehash: 237fe83af05de7a97113deb95a831d8295c9f4c4
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 6c8c64161ef674e3a9babaa7ad18c33b3f18cbf0
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262640"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344447"
 ---
 # Enable-PSSessionConfiguration
 
@@ -219,6 +219,8 @@ Du kan skicka ett konfigurations objekt för en session eller en sträng som inn
 Denna cmdlet returnerar inga objekt.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Om du vill använda denna cmdlet måste du starta PowerShell med alternativet **Kör som administratör** .
 

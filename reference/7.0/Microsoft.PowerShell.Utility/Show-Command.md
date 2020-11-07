@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 976a9ba6047d79bc1ac6225896c7285702daf38a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e6995da1e9ff2a1678c5703b79223481533bc9a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262244"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346164"
 ---
 # Show-Command
 
@@ -40,7 +40,7 @@ När du är klar kan du klicka på **Kopiera** för att kopiera kommandot som du
 
 I PowerShell ISE (Integrated Scripting Environment) visas en variant av `Show-Command` fönstret som standard. Information om hur du använder det här kommando fönstret finns i hjälp avsnitten för PowerShell ISE.
 
-Den här cmdleten introducerades om i PowerShell 7. 
+Den här cmdleten introducerades om i PowerShell 7.
 
 Eftersom denna cmdlet kräver ett användar gränssnitt fungerar den inte på Windows Server Core eller Windows Nano Server. Den här cmdleten är endast tillgänglig på Windows-system som stöder Windows-skrivbordet.
 
@@ -271,6 +271,8 @@ Du kan inte skicka pipe-ininformation till `Show-Command` .
 När du använder parametern **Passthru** `Show-Command` returneras en kommando sträng. När du använder parametern **ErrorPopup** `Show-Command` returneras kommandoutdata (alla objekt). Annars `Show-Command` genererar inga utdata.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 `Show-Command` fungerar inte i fjärrsessioner.
 

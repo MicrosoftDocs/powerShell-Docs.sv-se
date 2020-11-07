@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
-ms.openlocfilehash: d01de5a438ef0a3692ad9452fd4c16ac7e0bdce9
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 788e7b9d261a862658f4cf7453f35228dd3ffab6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268527"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345858"
 ---
 # Set-PSSessionConfiguration
 
@@ -501,7 +501,7 @@ Accept wildcard characters: False
 
 Anger inställningen för tråd alternativ i konfigurationen. Den här inställningen definierar hur trådar skapas och används när ett kommando körs i sessionen. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standard
 - ReuseThread
 - UseCurrentThread
 - UseNewThread
@@ -630,6 +630,8 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 Starta PowerShell med alternativet Kör som administratör för att köra denna cmdlet.
 
 `Set-PSSessionConfiguration`Cmdleten ändrar inte konfigurations namnet och **WSMan** -providern stöder inte `Rename-Item` cmdleten. Om du vill ändra namnet på en sessions konfiguration använder du `Unregister-PSSessionConfiguration` cmdleten för att ta bort konfigurationen och använder sedan `Register-PSSessionConfiguration` cmdleten för att skapa och registrera en ny konfiguration av sessionen.
@@ -666,4 +668,3 @@ Du kan dock inte använda WSMan:-enheten i PowerShell 2,0 för att ändra konfig
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

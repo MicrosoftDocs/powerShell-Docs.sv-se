@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
-ms.openlocfilehash: ce14e6038473e6c53b62b310c288e23f6a7597e2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0e7f263d309908a4a62187d3d1cc5ef08283e0c3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267585"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344413"
 ---
 # New-Event
 
@@ -28,16 +28,13 @@ New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments]
 
 ## BESKRIVNING
 
-Cmdleten **New-Event** skapar en ny anpassad händelse.
+`New-Event`Cmdleten skapar en ny anpassad händelse.
 
 Du kan använda anpassade händelser för att meddela användare om tillstånds ändringar i programmet och eventuella ändringar som programmet kan identifiera, inklusive maskinvaru-eller system villkor, program status, disk status, nätverks status eller slut för ande av ett bakgrunds jobb.
 
-Anpassade händelser läggs automatiskt till i händelse kön i sessionen när de höjs. du behöver inte prenumerera på dem.
-Men om du vill vidarebefordra en händelse till den lokala sessionen eller ange en åtgärd för att svara på händelsen, använder du Register-EngineEvent cmdlet för att prenumerera på den anpassade händelsen.
+Anpassade händelser läggs automatiskt till i händelse kön i sessionen när de höjs. du behöver inte prenumerera på dem. Men om du vill vidarebefordra en händelse till den lokala sessionen eller ange en åtgärd för att svara på händelsen, använder du `Register-EngineEvent` cmdleten för att prenumerera på den anpassade händelsen.
 
-När du prenumererar på en anpassad händelse läggs händelse prenumeranten till i sessionen.
-Om du avbryter händelse prenumerationen med hjälp av Unregister-Event cmdleten, tas händelse prenumeranten och den anpassade händelsen bort från sessionen.
-Om du inte prenumererar på den anpassade händelsen måste du ändra programmets villkor eller stänga PowerShell-sessionen för att ta bort händelsen.
+När du prenumererar på en anpassad händelse läggs händelse prenumeranten till i sessionen. Om du avbryter händelse prenumerationen med hjälp av `Unregister-Event` cmdleten, tas händelse prenumeranten och den anpassade händelsen bort från sessionen. Om du inte prenumererar på den anpassade händelsen måste du ändra programmets villkor eller stänga PowerShell-sessionen för att ta bort händelsen.
 
 ## EXEMPEL
 
@@ -47,8 +44,7 @@ Om du inte prenumererar på den anpassade händelsen måste du ändra programmet
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-Det här kommandot skapar en ny händelse i händelse kön i PowerShell.
-Ett **Windows. timer** -objekt används för att skicka händelsen.
+Det här kommandot skapar en ny händelse i händelse kön i PowerShell. Ett **Windows. timer** -objekt används för att skicka händelsen.
 
 ### Exempel 2: Utlös en händelse som svar på en annan händelse
 
@@ -65,11 +61,9 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-Den här exempel funktionen använder cmdleten **New-Event** för att utlösa en händelse som svar på en annan händelse.
-Kommandot använder Register-ObjectEvent-cmdlet för att prenumerera på händelsen Windows Management Instrumentation (WMI) som aktive ras när en ny process skapas.
-Kommandot använder parametern *åtgärd* för cmdleten för att anropa cmdleten **New-Event** , som skapar den nya händelsen.
+Den här exempel funktionen använder `New-Event` cmdleten för att utlösa en händelse som svar på en annan händelse. Kommandot använder `Register-ObjectEvent` cmdleten för att prenumerera på den Windows Management Instrumentation (WMI) händelse som aktive ras när en ny process skapas. Kommandot använder parametern **åtgärd** för cmdleten för att anropa `New-Event` cmdleten, vilket skapar den nya händelsen.
 
-Eftersom händelserna som **nya** händelser aktive ras automatiskt läggs till i PowerShell-händelseloggen behöver du inte registrera dig för den händelsen.
+Eftersom händelser som aktive `New-Event` ras automatiskt läggs till i PowerShell-händelseloggen behöver du inte registrera dig för den händelsen.
 
 ## PARAMETRAR
 
@@ -91,8 +85,7 @@ Accept wildcard characters: False
 
 ### -MessageData
 
-Anger ytterligare data som är associerade med händelsen.
-Värdet för den här parametern visas i egenskapen **MessageData** för objektet event.
+Anger ytterligare data som är associerade med händelsen. Värdet för den här parametern visas i egenskapen **MessageData** för objektet event.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -108,8 +101,7 @@ Accept wildcard characters: False
 
 ### -Sender
 
-Anger det objekt som aktiverar händelsen.
-Standardvärdet är PowerShell-motorn.
+Anger det objekt som aktiverar händelsen. Standardvärdet är PowerShell-motorn.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -125,8 +117,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-Anger ett namn för den nya händelsen.
-Den här parametern är obligatorisk och måste vara unik i sessionen.
+Anger ett namn för den nya händelsen. Den här parametern är obligatorisk och måste vara unik i sessionen.
 
 Värdet för den här parametern visas i händelsens **SourceIdentifier** -egenskap.
 
@@ -158,7 +149,10 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 ## ANTECKNINGAR
 
-Den nya anpassade händelsen, händelse prenumerationen och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
+Inga händelse källor är tillgängliga på Linux-eller macOS-plattformarna.
+
+Den nya anpassade händelsen, händelse prenumerationen och händelse kön finns bara i den aktuella sessionen.
+Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 
 ## RELATERADE LÄNKAR
 
@@ -173,4 +167,3 @@ Den nya anpassade händelsen, händelse prenumerationen och händelse kön finns
 [Avregistrera-händelse](Unregister-Event.md)
 
 [Vänta-händelse](Wait-Event.md)
-

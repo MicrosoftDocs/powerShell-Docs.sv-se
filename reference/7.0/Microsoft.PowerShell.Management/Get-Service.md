@@ -7,12 +7,12 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: ce91313d1b581e3d666c131caaa1cf7ecad0c04f
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 15bfe1123ba005a7b326c234fad360d6d9d6cc4d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262527"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345739"
 ---
 # Get-Service
 
@@ -297,6 +297,8 @@ Du kan skicka vidare ett tjänst objekt eller ett tjänst namn till denna cmdlet
 Denna cmdlet returnerar objekt som representerar tjänsterna på datorn.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Från och med PowerShell 6,0 läggs följande egenskaper till i **ServiceController** -objekten: **username** , **Description** , **DelayedAutoStart** , **BinaryPathName** och **startuptype tjänst** .
 

@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: ce52714d93cfce55ca36f89f16e37092b35c6b24
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6417881880cb7f317e7a42d6749b8b7f2cb712fb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267429"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345484"
 ---
 # Register-PSSessionConfiguration
 
@@ -542,7 +542,7 @@ Accept wildcard characters: False
 
 Anger hur trådar skapas och används när ett kommando körs i sessionen. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standard
 - ReuseThread
 - UseCurrentThread
 - UseNewThread
@@ -647,6 +647,8 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 ### Microsoft. WSMan. Management. WSManConfigContainerElement
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Om du vill köra denna cmdlet måste du starta PowerShell med alternativet **Kör som administratör** .
 

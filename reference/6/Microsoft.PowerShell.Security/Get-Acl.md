@@ -7,12 +7,12 @@ ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
-ms.openlocfilehash: 018a1da2a3fd40a95d378a563cacd68a734d9cd6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: be190b4cb0c18bdbf6a868f9116ea9bcdba441c3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267375"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345008"
 ---
 # Get-Acl
 
@@ -240,6 +240,8 @@ Du kan skicka vidare en sträng som innehåller en sökväg till `Get-Acl` .
 `Get-Acl` Returnerar ett objekt som representerar de ACL: er som det hämtar. Objekt typen beror på ACL-typen.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Som standard `Get-Acl` visar PowerShell-sökvägen till resursen ( `<provider>::<resource-path>` ), ägaren till resursen och "åtkomst", en lista (matris) av åtkomst kontroll POSTERNA i DACL (Discretionary Access Control List) för resursen. DACL-listan styrs av resurs ägaren.
 

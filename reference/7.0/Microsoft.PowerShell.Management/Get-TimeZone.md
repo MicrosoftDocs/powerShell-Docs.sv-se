@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-timezone?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TimeZone
-ms.openlocfilehash: 4ed02426fbce279adc3f30af0c95b11966fe75a5
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 44740fff5b8cef989d4c6391379741d1882f4734
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262845"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345620"
 ---
 # Get-TimeZone
 
@@ -146,6 +146,8 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ### System. TimeZoneInfo []
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 

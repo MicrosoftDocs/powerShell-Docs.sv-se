@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
-ms.openlocfilehash: 8a769959295de0eed7776cc972b007514cfe8734
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 30950cb31a6d70b61416883a16603262c297f0d1
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268526"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345416"
 ---
 # Set-PSSessionConfiguration
 
@@ -501,7 +501,7 @@ Accept wildcard characters: False
 
 Anger inställningen för tråd alternativ i konfigurationen. Den här inställningen definierar hur trådar skapas och används när ett kommando körs i sessionen. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standard
 - ReuseThread
 - UseCurrentThread
 - UseNewThread
@@ -609,6 +609,8 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 ### Microsoft. WSMan. Management. WSManConfigLeafElement
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Starta PowerShell med alternativet Kör som administratör för att köra denna cmdlet.
 

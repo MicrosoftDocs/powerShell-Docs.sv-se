@@ -7,12 +7,12 @@ ms.date: 5/1/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Computer
-ms.openlocfilehash: aeffc496e78a447af828737980429a91a74b5a6b
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 2fc21594a4765a0901f61dba7b7f1a79f3259886
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93261939"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346147"
 ---
 # Rename-Computer
 
@@ -201,7 +201,7 @@ Anger den mekanism som används för att autentisera användarautentiseringsuppg
 
 - **Basic**
 - **CredSSP**
-- **Default**
+- **Standard**
 - **Digest**
 - **Kerberos**
 - **Fram**
@@ -271,8 +271,7 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ### Inget
 
-Den här cmdleten har inte parametrar som tar in inaktuella värden.
-Du kan dock skicka vidare värdena för egenskaperna **computername** och **Nyttnamn** för objekt till denna cmdlet.
+Den här cmdleten har inte parametrar som tar in inaktuella värden. Du kan dock skicka vidare värdena för egenskaperna **computername** och **Nyttnamn** för objekt till denna cmdlet.
 
 ## UTDATA
 
@@ -282,6 +281,8 @@ Denna cmdlet returnerar ett **ComputerChangeInfo** -objekt om du anger parameter
 Annars returneras inga utdata.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 

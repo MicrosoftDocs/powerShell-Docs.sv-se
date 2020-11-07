@@ -7,12 +7,12 @@ ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Protect-CmsMessage
-ms.openlocfilehash: d148a9d1013de20885cd9914f283b85a2a7acd3f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 8cef49e068a051225e5eac188f495c71cfaa35f5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267212"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344872"
 ---
 # Protect-CmsMessage
 
@@ -206,6 +206,8 @@ Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction`
 ## UTDATA
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 

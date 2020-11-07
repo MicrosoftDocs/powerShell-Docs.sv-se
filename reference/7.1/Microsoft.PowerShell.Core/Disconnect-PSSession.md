@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
-ms.openlocfilehash: efe80ab22af8552860e3dfa8f9e2766b07bcfd5d
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 2588d0d0a8d7ce9cddf65c94dcc79700df9deeb7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268538"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345570"
 ---
 # Disconnect-PSSession
 
@@ -444,6 +444,8 @@ Du kan skicka vidare en session till `Disconnect-PSSession` .
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 - `Disconnect-PSSession`Cmdleten fungerar bara när lokala och fjärranslutna datorer kör PowerShell 3,0 eller senare.
 - Om du använder `Disconnect-PSSession` cmdleten i en frånkopplad session har kommandot ingen påverkan på sessionen och det genererar inga fel.
 - Frånkopplade loopback-sessioner med interaktiva säkerhetstoken (de som skapats med parametern **EnableNetworkAccess** ) kan bara återanslutas från den dator där sessionen skapades. Den här begränsningen skyddar datorn från skadlig åtkomst.
@@ -486,4 +488,3 @@ Du kan skicka vidare en session till `Disconnect-PSSession` .
 [about_Remote](About/about_Remote.md)
 
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
-

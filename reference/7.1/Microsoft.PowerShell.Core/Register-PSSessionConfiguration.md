@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: e3b8a075b42d7d612aed1acd6c8c71452d842cb6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 028e28e071bf6e19f2d0aef72b4eec45da6c45b7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267314"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345892"
 ---
 # Register-PSSessionConfiguration
 
@@ -516,7 +516,7 @@ Accept wildcard characters: False
 
 Anger hur trådar skapas och används när ett kommando körs i sessionen. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standard
 - ReuseThread
 - UseCurrentThread
 - UseNewThread
@@ -642,6 +642,8 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 Om du vill köra denna cmdlet måste du starta PowerShell med alternativet **Kör som administratör** .
 
 Den här cmdleten genererar XML som representerar en plugin-konfiguration för webb tjänster för hantering (WS-Management) och skickar XML till WS-Management, som registrerar plugin-programmet på den lokala datorn ( `New-Item wsman:\localhost\plugin` ).
@@ -669,4 +671,3 @@ Egenskaperna för ett konfigurations objekt för en session varierar beroende p�
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

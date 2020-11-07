@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 005e495ff5f532cc947edf894a67c078e524a72c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 35218a3860db9746b99ec441e122fcd5e2370f72
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266600"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344770"
 ---
 # Register-EngineEvent
 
@@ -44,7 +44,9 @@ Det här exemplet registrerar en PowerShell-motor-händelse på två fjärrdator
 
 ```powershell
 $S = New-PSSession -ComputerName "Server01, Server02"
-Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+Invoke-Command -Session $S {
+Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward
+}
 ```
 
 `New-PSSession` skapar en PSSession (User-Managed session) på varje fjärran sluten dator. `Invoke-Command` Cmdleten kör `Register-EngineEvent` kommandot i fjärrsessionerna.
@@ -256,6 +258,8 @@ Du kan inte skicka pipe-ininformation till `Register-EngineEvent` .
 Om du använder **Åtgärds** parametern `Register-EngineEvent` returnerar objektet **system. Management. Automation. PSEventJob** . Annars genererar den inga utdata.
 
 ## ANTECKNINGAR
+
+Inga händelse källor är tillgängliga på Linux-eller macOS-plattformarna.
 
 Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 

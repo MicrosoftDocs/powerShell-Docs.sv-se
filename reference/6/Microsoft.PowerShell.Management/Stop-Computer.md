@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
-ms.openlocfilehash: e7732c1eb243c0a4737c3f08a413fd20bbf2bf38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 8c6d70622f48183ed2f6bcd4526c305c70fe6eb2
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268496"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345093"
 ---
 # Stop-Computer
 
@@ -181,7 +181,7 @@ De acceptabla värdena för den här parametern är:
 
 - Basic
 - CredSSP
-- Default
+- Standard
 - Sammandrag
 - Kerberos
 - Fram.
@@ -237,6 +237,8 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 ### Inget
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Den här cmdleten fungerar bara på Windows och använder **Win32Shutdown** -metoden i **Win32_OperatingSystem** WMI-klassen. Den här metoden kräver att **SeShutdownPrivilege** -behörighet aktive ras för det användar konto som används för att starta om datorn.
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Event
-ms.openlocfilehash: 19841624e836f7cf8080487c977f11b88dd3174e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 35d5d75cad2855753504549262abd2e14af200c0
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264885"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344498"
 ---
 # Remove-Event
 
@@ -34,10 +34,10 @@ Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>
 ```
 
 ## BESKRIVNING
-Cmdleten **Remove-Event** tar bort händelser från händelse kön i den aktuella sessionen.
 
-Den här cmdleten tar bara bort de händelser som för närvarande finns i kön.
-Om du vill avbryta händelse registreringar eller avbryta prenumerationen använder du cmdleten Unregister-Event.
+`Remove-Event`Cmdleten tar bort händelser från händelse kön i den aktuella sessionen.
+
+Den här cmdleten tar bara bort de händelser som för närvarande finns i kön. Använd cmdleten om du vill avbryta händelse registreringar eller avbryta prenumerationer `Unregister-Event` .
 
 ## EXEMPEL
 
@@ -68,8 +68,8 @@ Det här kommandot tar bort alla händelser från händelse kön.
 ## PARAMETRAR
 
 ### -EventIdentifier
-Anger händelse-ID: t som cmdleten tar bort.
-En *EventIdentifier* -eller *SourceIdentifier* -parameter krävs i varje kommando.
+
+Anger händelse-ID: t som cmdleten tar bort. En **EventIdentifier** -eller **SourceIdentifier** -parameter krävs i varje kommando.
 
 ```yaml
 Type: System.Int32
@@ -84,9 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
-Anger käll-ID: t som denna cmdlet tar bort händelser från.
-Jokertecken är inte tillåtna.
-En *EventIdentifier* -eller *SourceIdentifier* -parameter krävs i varje kommando.
+
+Anger käll-ID: t som denna cmdlet tar bort händelser från. Jokertecken är inte tillåtna. En **EventIdentifier** -eller **SourceIdentifier** -parameter krävs i varje kommando.
 
 ```yaml
 Type: System.String
@@ -101,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Uppmanar dig att bekräfta innan du kör cmdleten.
 
 ```yaml
@@ -116,8 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,23 +132,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
 ### System. Management. Automation. PSEventArgs
-Du kan skicka vidare händelser från Get-Event för att **ta bort** händelser.
+
+Du kan skicka vidare händelser från `Get-Event` till `Remove-Event` .
 
 ## UTDATA
 
 ### Inget
+
 Cmdleten genererar inga utdata.
 
 ## ANTECKNINGAR
 
-* Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
-
-*
+Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 
 ## RELATERADE LÄNKAR
 

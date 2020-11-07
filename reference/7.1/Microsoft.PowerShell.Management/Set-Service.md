@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
-ms.openlocfilehash: 9881dccb78aab973cc6031e28308bbdd27b4da57
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cf9c44fecde650ab0b4747aea5910da49638f297
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267944"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344328"
 ---
 # Set-Service
 
@@ -419,6 +419,8 @@ Som standard `Set-Service` returnerar inte några objekt. Använd parametern **P
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 `Set-Service` kräver förhöjd behörighet. Använd alternativet **Kör som administratör** .
 
 `Set-Service` Det går bara att kontrol lera tjänster när den aktuella användaren har behörighet att hantera tjänster. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
@@ -442,4 +444,3 @@ Använd om du vill hitta tjänstens namn eller visnings namn för tjänsten `Get
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-service](Remove-Service.md)
-

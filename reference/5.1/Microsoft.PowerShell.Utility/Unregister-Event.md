@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unregister-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-Event
-ms.openlocfilehash: f1f42c1e8831896feac398228e45fc0890136fff
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3cc2983def049e705a67bad05ee39bdbd71d3888
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264806"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344430"
 ---
 # Unregister-Event
 
@@ -34,13 +34,12 @@ Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## BESKRIVNING
-Cmdleten **unregistering-Event** avbryter en händelse prenumeration som har skapats med hjälp av cmdleten register-EngineEvent, register-ObjectEvent eller Register-WmiEvent.
 
-När en händelse prenumeration avbryts tas händelse prenumeranten bort från sessionen och de prenumererade händelserna läggs inte längre till i händelse kön.
-När du avbryter en prenumeration på en händelse som skapats med hjälp av New-Event cmdleten, tas den nya händelsen också bort från sessionen.
+`Unregister-Event`Cmdleten avbryter en händelse prenumeration som har skapats med hjälp av `Register-EngineEvent` `Register-ObjectEvent` cmdleten,, eller `Register-WmiEvent` .
 
-**Avregistrering-händelsen** tar inte bort händelser från händelse kön.
-Använd Remove-Event-cmdleten om du vill ta bort händelser.
+När en händelse prenumeration avbryts tas händelse prenumeranten bort från sessionen och de prenumererade händelserna läggs inte längre till i händelse kön. När du avbryter en prenumeration på en händelse som skapats med hjälp av `New-Event` cmdleten, tas den nya händelsen också bort från sessionen.
+
+`Unregister-Event` tar inte bort händelser från händelse kön. Använd cmdleten om du vill ta bort händelser `Remove-Event` .
 
 ## EXEMPEL
 
@@ -52,8 +51,7 @@ PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 
 Med det här kommandot avbryts händelse prenumerationen som har käll-ID: n för ProcessStarted.
 
-Använd Get-Event-cmdleten för att hitta käll-ID för en händelse.
-Använd cmdleten **Get-EventSubscriber** för att hitta käll-ID för en händelse prenumeration.
+Använd cmdleten för att hitta käll-ID för en händelse `Get-Event` . Använd cmdleten för att hitta käll identifieraren för en händelse prenumeration `Get-EventSubscriber` .
 
 ### Exempel 2: Avbryt en händelse prenumeration efter prenumerations-ID
 
@@ -63,7 +61,7 @@ PS C:\> Unregister-Event -SubscriptionId 2
 
 Med det här kommandot avbryts händelse prenumerationen som har ett prenumerations-ID på 2.
 
-Använd cmdleten **Get-EventSubscriber** för att hitta prenumerations-ID för en händelse prenumeration.
+Använd cmdleten för att hitta prenumerations-ID för en händelse prenumeration `Get-EventSubscriber` .
 
 ### Exempel 3: Avbryt alla händelse prenumerationer
 
@@ -73,15 +71,15 @@ PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 
 Detta kommando avbryter alla händelse prenumerationer i sessionen.
 
-Kommandot använder cmdleten **Get-EventSubscriber** för att hämta alla händelse prenumeranter i sessionen, inklusive de prenumeranter som är dolda med parametern *SupportEvent* för cmdletarna för händelse registrering.
+Kommandot använder `Get-EventSubscriber` cmdleten för att hämta alla Event Subscriber-objekt i sessionen, inklusive de prenumeranter som är dolda med hjälp av parametern **SupportEvent** för cmdletarna för händelse registrering.
 
-Den använder en pipeline-operator (|) för att skicka prenumerantens objekt för att **avregistrera-händelse** , som tar bort dem från sessionen.
-För att slutföra uppgiften krävs även *Force* -parametern vid **avregistrering – händelse**.
+Den använder en pipeline-operator ( `|` ) för att skicka prenumerantens objekt till `Unregister-Event` , vilket tar bort dem från sessionen. För att slutföra uppgiften krävs även **Force** -parametern på `Unregister-Event` .
 
 ## PARAMETRAR
 
 ### -Force
-Avbryter alla händelse prenumerationer, inklusive prenumerationer som har dolts med hjälp av parametern *SupportEvent* i **register-ObjectEvent** , **register-WmiEvent** och **register-EngineEvent**.
+
+Avbryter alla händelse prenumerationer, inklusive prenumerationer som har dolts med hjälp av parametern **SupportEvent** i `Register-ObjectEvent` , `Register-WmiEvent` och `Register-EngineEvent` .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -96,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Anger ett käll-ID som den här cmdleten avbryter händelse prenumerationer.
 
-En *SourceIdentifier* -eller *SubscriptionId* -parameter måste inkluderas i varje kommando.
+En **SourceIdentifier** -eller **SubscriptionId** -parameter måste inkluderas i varje kommando.
 
 ```yaml
 Type: System.String
@@ -113,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 Anger ett ID för käll-ID som den här cmdleten avbryter händelse prenumerationer.
 
-En *SourceIdentifier* -eller *SubscriptionId* -parameter måste inkluderas i varje kommando.
+En **SourceIdentifier** -eller **SubscriptionId** -parameter måste inkluderas i varje kommando.
 
 ```yaml
 Type: System.Int32
@@ -130,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Uppmanar dig att bekräfta innan du kör cmdleten.
 
 ```yaml
@@ -145,8 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,26 +162,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
 ### System. Management. Automation. PSEventSubscriber
-Du kan skicka vidare utdata från Get-EventSubscriber till **avregistrera-händelse**.
+
+Du kan skicka vidare utdata från `Get-EventSubscriber` till `Unregister-Event` .
 
 ## UTDATA
 
 ### Inget
+
 Denna cmdlet returnerar inga utdata.
 
 ## ANTECKNINGAR
 
-* Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 
-  **Avregistrering-händelsen** kan inte ta bort händelser som skapats med hjälp av New-Event cmdlet om du inte har prenumererat på händelsen med hjälp av cmdleten **register-EngineEvent** .
-Om du vill ta bort en anpassad händelse från sessionen måste du ta bort den program mässigt eller stänga sessionen.
+Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 
-*
+`Unregister-Event` Det går inte att ta bort händelser som skapats med `New-Event` cmdleten om du inte har prenumererat på händelsen med hjälp av `Register-EngineEvent` cmdleten. Om du vill ta bort en anpassad händelse från sessionen måste du ta bort den program mässigt eller stänga sessionen.
 
 ## RELATERADE LÄNKAR
 

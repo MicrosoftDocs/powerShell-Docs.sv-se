@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-PSSessionConfigurationFile
-ms.openlocfilehash: 625611246ea5a07fba16ecb86a2c8c48345d9ea5
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6786210fb2b89102c6193c755168af4264fae58c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264092"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345807"
 ---
 # Test-PSSessionConfigurationFile
 
@@ -126,6 +126,8 @@ Du kan skicka en sökväg till en fil Sök väg för sessionen `Test-PSSessionCo
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 ## RELATERADE LÄNKAR
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
@@ -151,4 +153,3 @@ Du kan skicka en sökväg till en fil Sök väg för sessionen `Test-PSSessionCo
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

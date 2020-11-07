@@ -7,12 +7,12 @@ ms.date: 6/17/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
-ms.openlocfilehash: f55e69dab0075c3ca759c1408a7276fc6fbc8888
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 2d5df7926ab65f45a4d56d84b1f25919bcdb8c41
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268497"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345212"
 ---
 # Restart-Computer
 
@@ -326,8 +326,10 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 - `Restart-Computer` fungerar endast på datorer som kör Windows och kräver att WinRM och WMI stänger av ett system, inklusive det lokala systemet.
-- `Restart-Computer` använder [Win32Shutdown-metoden](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem) för [Win32_OperatingSystems](/windows/desktop/CIMWin32Prov/win32-operatingsystem) klassen Windows Management Instrumentation (WMI).  Den här metoden kräver att **SeShutdownPrivilege** -behörighet aktive ras för det användar konto som används för att starta om datorn.
+- `Restart-Computer` använder [Win32Shutdown-metoden](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem) för [Win32_OperatingSystems](/windows/desktop/CIMWin32Prov/win32-operatingsystem) klassen Windows Management Instrumentation (WMI). Den här metoden kräver att **SeShutdownPrivilege** -behörighet aktive ras för det användar konto som används för att starta om datorn.
 
 ## RELATERADE LÄNKAR
 

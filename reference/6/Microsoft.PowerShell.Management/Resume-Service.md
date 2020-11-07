@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resume-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resume-Service
-ms.openlocfilehash: 00de396b049259904433843e01879c75e3982ca1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ee44a29c4b657828accc2d8b5e5773b5c1ea6086
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263816"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345161"
 ---
 # Resume-Service
 
@@ -28,7 +28,7 @@ Resume-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <Strin
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Default
+### Standard
 
 ```
 Resume-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
@@ -44,10 +44,7 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
 
 ## BESKRIVNING
 
-Cmdleten **Resume-service** skickar ett återställnings meddelande till Windows-Domänkontrollanttjänsten för varje angiven tjänst.
-Om en tjänst pausas återupptas den.
-Om den körs, ignoreras meddelandet.
-Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern *InputObject* för att skicka ett tjänst objekt som representerar de tjänster som du vill återuppta.
+`Resume-Service`Cmdleten skickar ett återställnings meddelande till Windows-Domänkontrollanttjänsten för varje angiven tjänst. Om en tjänst pausas återupptas den. Om den körs, ignoreras meddelandet. Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern **InputObject** för att skicka ett tjänst objekt som representerar de tjänster som du vill återuppta.
 
 ## EXEMPEL
 
@@ -57,9 +54,7 @@ Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du
 PS C:\> Resume-Service "sens"
 ```
 
-Det här kommandot återupptar tjänsten system Event notification på den lokala datorn.
-Tjänst namnet visas i kommandot av Sens.
-Kommandot använder *Name* -parametern för att ange tjänst namnet för tjänsten, men kommandot utesluter parameter namnet eftersom parameter namnet är valfritt.
+Det här kommandot återupptar tjänsten system Event notification på den lokala datorn. Tjänst namnet visas i kommandot av Sens. Kommandot använder **Name** -parametern för att ange tjänst namnet för tjänsten, men kommandot utesluter parameter namnet eftersom parameter namnet är valfritt.
 
 ### Exempel 2: återuppta alla pausade tjänster
 
@@ -67,12 +62,9 @@ Kommandot använder *Name* -parametern för att ange tjänst namnet för tjänst
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
 
-Detta kommando återupptar alla pausade tjänster på datorn.
-Kommandot Get-Service-cmdlet hämtar alla tjänster på datorn.
-Pipeline-operatorn (|) skickar resultaten till Where-Object-cmdleten, som väljer de tjänster som har egenskapen **status** för pausad.
-Nästa pipeline-operator skickar resultatet till **Resume-service** , som återupptar de pausade tjänsterna.
+Detta kommando återupptar alla pausade tjänster på datorn. `Get-Service`Cmdlet-kommandot hämtar alla tjänster på datorn. Pipeline-operatorn ( `|` ) skickar resultatet till `Where-Object` cmdleten, som väljer de tjänster som har **statusen** pausad. Nästa pipeline-operator skickar resultatet till `Resume-Service` , vilket återupptar de pausade tjänsterna.
 
-I praktiken använder du parametern *whatIf* för att fastställa kommandots effekter innan du kör det.
+I praktiken använder du parametern **whatIf** för att fastställa kommandots effekter innan du kör det.
 
 ## PARAMETRAR
 
@@ -95,10 +87,7 @@ Accept wildcard characters: True
 
 ### -Undanta
 
-Anger tjänster som denna cmdlet utelämnar.
-Värdet för den här parametern kvalificerar parametern *Name* .
-Ange ett namn element eller ett mönster, till exempel s *.
-Jokertecken är tillåtna.
+Anger tjänster som denna cmdlet utelämnar. Värdet för den här parametern kvalificerar parametern **Name** . Ange ett namn element eller ett mönster, till exempel s *. Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -114,10 +103,7 @@ Accept wildcard characters: True
 
 ### -Inkludera
 
-Anger vilka tjänster som ska återupptas.
-Värdet för den här parametern kvalificerar parametern *Name* .
-Ange ett namn element eller ett mönster, till exempel s *.
-Jokertecken är tillåtna.
+Anger vilka tjänster som ska återupptas. Värdet för den här parametern kvalificerar parametern **Name** . Ange ett namn element eller ett mönster, till exempel s *. Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -133,8 +119,7 @@ Accept wildcard characters: True
 
 ### – InputObject
 
-Anger **ServiceController** -objekt som representerar tjänsterna som ska återupptas.
-Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
+Anger **ServiceController** -objekt som representerar tjänsterna som ska återupptas. Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -166,8 +151,7 @@ Accept wildcard characters: False
 
 ### – PassThru
 
-Returnerar ett objekt som representerar tjänsten.
-Som standard genererar denna cmdlet inga utdata.
+Returnerar ett objekt som representerar tjänsten. Som standard genererar denna cmdlet inga utdata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -199,8 +183,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -228,14 +211,16 @@ Du kan skicka vidare ett tjänst objekt eller en sträng som innehåller ett tj�
 
 ### Ingen, system. ServiceProcess. ServiceController
 
-Denna cmdlet genererar ett **system. ServiceProcess. ServiceController** -objekt som representerar den återupptog tjänsten om du anger parametern *Passthru* .
-Annars genererar denna cmdlet inga utdata.
+Denna cmdlet genererar ett **system. ServiceProcess. ServiceController** -objekt som representerar den återupptog tjänsten om du anger parametern **Passthru** . Annars genererar denna cmdlet inga utdata.
 
 ## ANTECKNINGAR
 
-* Statusen för tjänster som har pausats har pausats. När tjänsterna återupptas körs deras status.
-* **Resume-service** kan bara styra tjänster när den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
-* Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` . Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
+- Statusen för tjänster som har pausats har pausats. När tjänsterna återupptas körs deras status.
+- `Resume-Service` kan bara styra tjänster när den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
+- Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .
+  Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
 
 ## RELATERADE LÄNKAR
 
