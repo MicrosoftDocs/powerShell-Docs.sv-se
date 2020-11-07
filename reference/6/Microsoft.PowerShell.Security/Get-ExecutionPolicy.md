@@ -7,39 +7,39 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.openlocfilehash: a846c3605c4adf469b12bfadaa3f90e585558dea
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: f798aaef7032db450a13d79589eb7dd0ca762cd6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267243"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344838"
 ---
-# <span data-ttu-id="4568f-103">Get-ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="4568f-103">Get-ExecutionPolicy</span></span>
+# <span data-ttu-id="281c4-103">Get-ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="281c4-103">Get-ExecutionPolicy</span></span>
 
-## <span data-ttu-id="4568f-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="4568f-104">SYNOPSIS</span></span>
-<span data-ttu-id="4568f-105">Hämtar körnings principerna för den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="4568f-105">Gets the execution policies for the current session.</span></span>
+## <span data-ttu-id="281c4-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="281c4-104">SYNOPSIS</span></span>
+<span data-ttu-id="281c4-105">Hämtar körnings principerna för den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="281c4-105">Gets the execution policies for the current session.</span></span>
 
-## <span data-ttu-id="4568f-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="4568f-106">SYNTAX</span></span>
+## <span data-ttu-id="281c4-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="281c4-106">SYNTAX</span></span>
 
-### <span data-ttu-id="4568f-107">Alla</span><span class="sxs-lookup"><span data-stu-id="4568f-107">All</span></span>
+### <span data-ttu-id="281c4-107">Alla</span><span class="sxs-lookup"><span data-stu-id="281c4-107">All</span></span>
 
 ```
 Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="4568f-108">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="4568f-108">DESCRIPTION</span></span>
+## <span data-ttu-id="281c4-108">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="281c4-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="4568f-109">Använd om du vill visa körnings principerna för varje omfång i prioritetsordning `Get-ExecutionPolicy -List` .</span><span class="sxs-lookup"><span data-stu-id="4568f-109">To display the execution policies for each scope in the order of precedence, use `Get-ExecutionPolicy -List`.</span></span> <span data-ttu-id="4568f-110">Om du vill se den effektiva körnings principen för PowerShell-sessionen använder du utan `Get-ExecutionPolicy` parametrar.</span><span class="sxs-lookup"><span data-stu-id="4568f-110">To see the effective execution policy for your PowerShell session use `Get-ExecutionPolicy` with no parameters.</span></span>
+<span data-ttu-id="281c4-109">Använd om du vill visa körnings principerna för varje omfång i prioritetsordning `Get-ExecutionPolicy -List` .</span><span class="sxs-lookup"><span data-stu-id="281c4-109">To display the execution policies for each scope in the order of precedence, use `Get-ExecutionPolicy -List`.</span></span> <span data-ttu-id="281c4-110">Om du vill se den effektiva körnings principen för PowerShell-sessionen använder du utan `Get-ExecutionPolicy` parametrar.</span><span class="sxs-lookup"><span data-stu-id="281c4-110">To see the effective execution policy for your PowerShell session use `Get-ExecutionPolicy` with no parameters.</span></span>
 
-<span data-ttu-id="4568f-111">Den effektiva körnings principen bestäms av körnings principer som ställs in av `Set-ExecutionPolicy` och Grupprincip inställningar.</span><span class="sxs-lookup"><span data-stu-id="4568f-111">The effective execution policy is determined by execution policies that are set by `Set-ExecutionPolicy` and Group Policy settings.</span></span>
+<span data-ttu-id="281c4-111">Den effektiva körnings principen bestäms av körnings principer som ställs in av `Set-ExecutionPolicy` och Grupprincip inställningar.</span><span class="sxs-lookup"><span data-stu-id="281c4-111">The effective execution policy is determined by execution policies that are set by `Set-ExecutionPolicy` and Group Policy settings.</span></span>
 
-<span data-ttu-id="4568f-112">Mer information finns i [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).</span><span class="sxs-lookup"><span data-stu-id="4568f-112">For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).</span></span>
+<span data-ttu-id="281c4-112">Mer information finns i [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).</span><span class="sxs-lookup"><span data-stu-id="281c4-112">For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).</span></span>
 
-## <span data-ttu-id="4568f-113">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="4568f-113">EXAMPLES</span></span>
+## <span data-ttu-id="281c4-113">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="281c4-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="4568f-114">Exempel 1: Hämta alla körnings principer</span><span class="sxs-lookup"><span data-stu-id="4568f-114">Example 1: Get all execution policies</span></span>
+### <span data-ttu-id="281c4-114">Exempel 1: Hämta alla körnings principer</span><span class="sxs-lookup"><span data-stu-id="281c4-114">Example 1: Get all execution policies</span></span>
 
-<span data-ttu-id="4568f-115">Det här kommandot visar körnings principerna för varje omfång i prioritetsordning.</span><span class="sxs-lookup"><span data-stu-id="4568f-115">This command displays the execution policies for each scope in the order of precedence.</span></span>
+<span data-ttu-id="281c4-115">Det här kommandot visar körnings principerna för varje omfång i prioritetsordning.</span><span class="sxs-lookup"><span data-stu-id="281c4-115">This command displays the execution policies for each scope in the order of precedence.</span></span>
 
 ```powershell
 Get-ExecutionPolicy -List
@@ -55,11 +55,11 @@ CurrentUser    AllSigned
 LocalMachine   Undefined
 ```
 
-<span data-ttu-id="4568f-116">`Get-ExecutionPolicy`Cmdleten använder **list parametern List** för att visa varje omfattnings körnings princip.</span><span class="sxs-lookup"><span data-stu-id="4568f-116">The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution policy.</span></span>
+<span data-ttu-id="281c4-116">`Get-ExecutionPolicy`Cmdleten använder **list parametern List** för att visa varje omfattnings körnings princip.</span><span class="sxs-lookup"><span data-stu-id="281c4-116">The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution policy.</span></span>
 
-### <span data-ttu-id="4568f-117">Exempel 2: Ange en körnings princip</span><span class="sxs-lookup"><span data-stu-id="4568f-117">Example 2: Set an execution policy</span></span>
+### <span data-ttu-id="281c4-117">Exempel 2: Ange en körnings princip</span><span class="sxs-lookup"><span data-stu-id="281c4-117">Example 2: Set an execution policy</span></span>
 
-<span data-ttu-id="4568f-118">I det här exemplet visas hur du anger en körnings princip för den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="4568f-118">This example shows how to set an execution policy for the local computer.</span></span>
+<span data-ttu-id="281c4-118">I det här exemplet visas hur du anger en körnings princip för den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="281c4-118">This example shows how to set an execution policy for the local computer.</span></span>
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
@@ -76,11 +76,11 @@ MachinePolicy       Undefined
  LocalMachine    RemoteSigned
 ```
 
-<span data-ttu-id="4568f-119">`Set-ExecutionPolicy`Cmdleten använder parametern **ExecutionPolicy** för att ange **RemoteSigned** -principen.</span><span class="sxs-lookup"><span data-stu-id="4568f-119">The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the **RemoteSigned** policy.</span></span> <span data-ttu-id="4568f-120">Parametern **omfattning** Anger standardvärdet för omfattning, **LocalMachine**.</span><span class="sxs-lookup"><span data-stu-id="4568f-120">The **Scope** parameter specifies the default scope value, **LocalMachine**.</span></span> <span data-ttu-id="4568f-121">Om du vill visa inställningarna för körnings principen använder du `Get-ExecutionPolicy` cmdleten med **list** parametern.</span><span class="sxs-lookup"><span data-stu-id="4568f-121">To view the execution policy settings, use the `Get-ExecutionPolicy` cmdlet with the **List** parameter.</span></span>
+<span data-ttu-id="281c4-119">`Set-ExecutionPolicy`Cmdleten använder parametern **ExecutionPolicy** för att ange **RemoteSigned** -principen.</span><span class="sxs-lookup"><span data-stu-id="281c4-119">The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the **RemoteSigned** policy.</span></span> <span data-ttu-id="281c4-120">Parametern **omfattning** Anger standardvärdet för omfattning, **LocalMachine**.</span><span class="sxs-lookup"><span data-stu-id="281c4-120">The **Scope** parameter specifies the default scope value, **LocalMachine**.</span></span> <span data-ttu-id="281c4-121">Om du vill visa inställningarna för körnings principen använder du `Get-ExecutionPolicy` cmdleten med **list** parametern.</span><span class="sxs-lookup"><span data-stu-id="281c4-121">To view the execution policy settings, use the `Get-ExecutionPolicy` cmdlet with the **List** parameter.</span></span>
 
-### <span data-ttu-id="4568f-122">Exempel 3: hämta den effektiva körnings principen</span><span class="sxs-lookup"><span data-stu-id="4568f-122">Example 3: Get the effective execution policy</span></span>
+### <span data-ttu-id="281c4-122">Exempel 3: hämta den effektiva körnings principen</span><span class="sxs-lookup"><span data-stu-id="281c4-122">Example 3: Get the effective execution policy</span></span>
 
-<span data-ttu-id="4568f-123">Det här exemplet visar hur du visar den effektiva körnings principen för en PowerShell-session.</span><span class="sxs-lookup"><span data-stu-id="4568f-123">This example shows how to display the effective execution policy for a PowerShell session.</span></span>
+<span data-ttu-id="281c4-123">Det här exemplet visar hur du visar den effektiva körnings principen för en PowerShell-session.</span><span class="sxs-lookup"><span data-stu-id="281c4-123">This example shows how to display the effective execution policy for a PowerShell session.</span></span>
 
 ```
 PS> Get-ExecutionPolicy -List
@@ -98,13 +98,13 @@ PS> Get-ExecutionPolicy
 AllSigned
 ```
 
-<span data-ttu-id="4568f-124">`Get-ExecutionPolicy`Cmdleten använder **list parametern List** för att visa varje omfattnings körnings princip.</span><span class="sxs-lookup"><span data-stu-id="4568f-124">The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution policy.</span></span> <span data-ttu-id="4568f-125">`Get-ExecutionPolicy`Cmdleten körs utan en parameter för att visa den effektiva körnings principen, **AllSigned**.</span><span class="sxs-lookup"><span data-stu-id="4568f-125">The `Get-ExecutionPolicy` cmdlet is run without a parameter to display the effective execution policy, **AllSigned**.</span></span>
+<span data-ttu-id="281c4-124">`Get-ExecutionPolicy`Cmdleten använder **list parametern List** för att visa varje omfattnings körnings princip.</span><span class="sxs-lookup"><span data-stu-id="281c4-124">The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution policy.</span></span> <span data-ttu-id="281c4-125">`Get-ExecutionPolicy`Cmdleten körs utan en parameter för att visa den effektiva körnings principen, **AllSigned**.</span><span class="sxs-lookup"><span data-stu-id="281c4-125">The `Get-ExecutionPolicy` cmdlet is run without a parameter to display the effective execution policy, **AllSigned**.</span></span>
 
-### <span data-ttu-id="4568f-126">Exempel 4: avblockera ett skript för att köra det utan att ändra körnings principen</span><span class="sxs-lookup"><span data-stu-id="4568f-126">Example 4: Unblock a script to run it without changing the execution policy</span></span>
+### <span data-ttu-id="281c4-126">Exempel 4: avblockera ett skript för att köra det utan att ändra körnings principen</span><span class="sxs-lookup"><span data-stu-id="281c4-126">Example 4: Unblock a script to run it without changing the execution policy</span></span>
 
-<span data-ttu-id="4568f-127">Det här exemplet visar hur **RemoteSigned** -körnings principen förhindrar att osignerade skript körs.</span><span class="sxs-lookup"><span data-stu-id="4568f-127">This example shows how the **RemoteSigned** execution policy prevents you from running unsigned scripts.</span></span>
+<span data-ttu-id="281c4-127">Det här exemplet visar hur **RemoteSigned** -körnings principen förhindrar att osignerade skript körs.</span><span class="sxs-lookup"><span data-stu-id="281c4-127">This example shows how the **RemoteSigned** execution policy prevents you from running unsigned scripts.</span></span>
 
-<span data-ttu-id="4568f-128">Vi rekommenderar att du läser skript koden och kontrollerar att den är säker **innan** du använder `Unblock-File` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="4568f-128">A best practice is to read the script's code and verify it's safe **before** using the `Unblock-File` cmdlet.</span></span> <span data-ttu-id="4568f-129">`Unblock-File`Cmdleten avblockerar skripten så att de kan köras, men ändrar inte körnings principen.</span><span class="sxs-lookup"><span data-stu-id="4568f-129">The `Unblock-File` cmdlet unblocks scripts so they can run, but doesn't change the execution policy.</span></span>
+<span data-ttu-id="281c4-128">Vi rekommenderar att du läser skript koden och kontrollerar att den är säker **innan** du använder `Unblock-File` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="281c4-128">A best practice is to read the script's code and verify it's safe **before** using the `Unblock-File` cmdlet.</span></span> <span data-ttu-id="281c4-129">`Unblock-File`Cmdleten avblockerar skripten så att de kan köras, men ändrar inte körnings principen.</span><span class="sxs-lookup"><span data-stu-id="281c4-129">The `Unblock-File` cmdlet unblocks scripts so they can run, but doesn't change the execution policy.</span></span>
 
 ```
 PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
@@ -136,23 +136,23 @@ PS> .\Start-ActivityTracker.ps1
 Task 1:
 ```
 
-<span data-ttu-id="4568f-130">`Set-ExecutionPolicy`Använder parametern **ExecutionPolicy** för att ange **RemoteSigned** -principen.</span><span class="sxs-lookup"><span data-stu-id="4568f-130">The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **RemoteSigned** policy.</span></span> <span data-ttu-id="4568f-131">Principen har angetts för standard omfånget, **LocalMachine**.</span><span class="sxs-lookup"><span data-stu-id="4568f-131">The policy is set for the default scope, **LocalMachine**.</span></span>
+<span data-ttu-id="281c4-130">`Set-ExecutionPolicy`Använder parametern **ExecutionPolicy** för att ange **RemoteSigned** -principen.</span><span class="sxs-lookup"><span data-stu-id="281c4-130">The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **RemoteSigned** policy.</span></span> <span data-ttu-id="281c4-131">Principen har angetts för standard omfånget, **LocalMachine**.</span><span class="sxs-lookup"><span data-stu-id="281c4-131">The policy is set for the default scope, **LocalMachine**.</span></span>
 
-<span data-ttu-id="4568f-132">`Get-ExecutionPolicy`Cmdleten visar att **RemoteSigned** är den effektiva körnings principen för den aktuella PowerShell-sessionen.</span><span class="sxs-lookup"><span data-stu-id="4568f-132">The `Get-ExecutionPolicy` cmdlet shows that **RemoteSigned** is the effective execution policy for the current PowerShell session.</span></span>
+<span data-ttu-id="281c4-132">`Get-ExecutionPolicy`Cmdleten visar att **RemoteSigned** är den effektiva körnings principen för den aktuella PowerShell-sessionen.</span><span class="sxs-lookup"><span data-stu-id="281c4-132">The `Get-ExecutionPolicy` cmdlet shows that **RemoteSigned** is the effective execution policy for the current PowerShell session.</span></span>
 
-<span data-ttu-id="4568f-133">**Start-ActivityTracker.ps1** skriptet körs från den aktuella katalogen.</span><span class="sxs-lookup"><span data-stu-id="4568f-133">The **Start-ActivityTracker.ps1** script is executed from the current directory.</span></span> <span data-ttu-id="4568f-134">Skriptet blockeras av **RemoteSigned** eftersom skriptet inte har signerats digitalt.</span><span class="sxs-lookup"><span data-stu-id="4568f-134">The script is blocked by **RemoteSigned** because the script isn't digitally signed.</span></span>
+<span data-ttu-id="281c4-133">**Start-ActivityTracker.ps1** skriptet körs från den aktuella katalogen.</span><span class="sxs-lookup"><span data-stu-id="281c4-133">The **Start-ActivityTracker.ps1** script is executed from the current directory.</span></span> <span data-ttu-id="281c4-134">Skriptet blockeras av **RemoteSigned** eftersom skriptet inte har signerats digitalt.</span><span class="sxs-lookup"><span data-stu-id="281c4-134">The script is blocked by **RemoteSigned** because the script isn't digitally signed.</span></span>
 
-<span data-ttu-id="4568f-135">I det här exemplet har skript koden granskats och verifierats som säker för körning.</span><span class="sxs-lookup"><span data-stu-id="4568f-135">For this example, the script's code was reviewed and verified as safe to run.</span></span> <span data-ttu-id="4568f-136">`Unblock-File`Cmdleten använder parametern **Path** för att avblockera skriptet.</span><span class="sxs-lookup"><span data-stu-id="4568f-136">The `Unblock-File` cmdlet uses the **Path** parameter to unblock the script.</span></span>
+<span data-ttu-id="281c4-135">I det här exemplet har skript koden granskats och verifierats som säker för körning.</span><span class="sxs-lookup"><span data-stu-id="281c4-135">For this example, the script's code was reviewed and verified as safe to run.</span></span> <span data-ttu-id="281c4-136">`Unblock-File`Cmdleten använder parametern **Path** för att avblockera skriptet.</span><span class="sxs-lookup"><span data-stu-id="281c4-136">The `Unblock-File` cmdlet uses the **Path** parameter to unblock the script.</span></span>
 
-<span data-ttu-id="4568f-137">För att kontrol lera att `Unblock-File` inte har ändrat körnings principen, `Get-ExecutionPolicy` visar den effektiva körnings principen, **RemoteSigned**.</span><span class="sxs-lookup"><span data-stu-id="4568f-137">To verify that `Unblock-File` didn't change the execution policy, `Get-ExecutionPolicy` displays the effective execution policy, **RemoteSigned**.</span></span>
+<span data-ttu-id="281c4-137">För att kontrol lera att `Unblock-File` inte har ändrat körnings principen, `Get-ExecutionPolicy` visar den effektiva körnings principen, **RemoteSigned**.</span><span class="sxs-lookup"><span data-stu-id="281c4-137">To verify that `Unblock-File` didn't change the execution policy, `Get-ExecutionPolicy` displays the effective execution policy, **RemoteSigned**.</span></span>
 
-<span data-ttu-id="4568f-138">Skriptet **Start-ActivityTracker.ps1** köras från den aktuella katalogen.</span><span class="sxs-lookup"><span data-stu-id="4568f-138">The script, **Start-ActivityTracker.ps1** is executed from the current directory.</span></span> <span data-ttu-id="4568f-139">Skriptet börjar köras eftersom det har avblockerats av `Unblock-File` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="4568f-139">The script begins to run because it was unblocked by the `Unblock-File` cmdlet.</span></span>
+<span data-ttu-id="281c4-138">Skriptet **Start-ActivityTracker.ps1** köras från den aktuella katalogen.</span><span class="sxs-lookup"><span data-stu-id="281c4-138">The script, **Start-ActivityTracker.ps1** is executed from the current directory.</span></span> <span data-ttu-id="281c4-139">Skriptet börjar köras eftersom det har avblockerats av `Unblock-File` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="281c4-139">The script begins to run because it was unblocked by the `Unblock-File` cmdlet.</span></span>
 
-## <span data-ttu-id="4568f-140">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="4568f-140">PARAMETERS</span></span>
+## <span data-ttu-id="281c4-140">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="281c4-140">PARAMETERS</span></span>
 
-### <span data-ttu-id="4568f-141">– Lista</span><span class="sxs-lookup"><span data-stu-id="4568f-141">-List</span></span>
+### <span data-ttu-id="281c4-141">– Lista</span><span class="sxs-lookup"><span data-stu-id="281c4-141">-List</span></span>
 
-<span data-ttu-id="4568f-142">Hämtar alla körnings princip värden för sessionen som anges i prioritetsordning.</span><span class="sxs-lookup"><span data-stu-id="4568f-142">Gets all execution policy values for the session listed in precedence order.</span></span> <span data-ttu-id="4568f-143">Som standard `Get-ExecutionPolicy` hämtar endast den gällande körnings principen.</span><span class="sxs-lookup"><span data-stu-id="4568f-143">By default, `Get-ExecutionPolicy` gets only the effective execution policy.</span></span>
+<span data-ttu-id="281c4-142">Hämtar alla körnings princip värden för sessionen som anges i prioritetsordning.</span><span class="sxs-lookup"><span data-stu-id="281c4-142">Gets all execution policy values for the session listed in precedence order.</span></span> <span data-ttu-id="281c4-143">Som standard `Get-ExecutionPolicy` hämtar endast den gällande körnings principen.</span><span class="sxs-lookup"><span data-stu-id="281c4-143">By default, `Get-ExecutionPolicy` gets only the effective execution policy.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,17 +166,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4568f-144">– Omfattning</span><span class="sxs-lookup"><span data-stu-id="4568f-144">-Scope</span></span>
+### <span data-ttu-id="281c4-144">– Omfattning</span><span class="sxs-lookup"><span data-stu-id="281c4-144">-Scope</span></span>
 
-<span data-ttu-id="4568f-145">Anger det omfång som påverkas av en körnings princip.</span><span class="sxs-lookup"><span data-stu-id="4568f-145">Specifies the scope that is affected by an execution policy.</span></span>
+<span data-ttu-id="281c4-145">Anger det omfång som påverkas av en körnings princip.</span><span class="sxs-lookup"><span data-stu-id="281c4-145">Specifies the scope that is affected by an execution policy.</span></span>
 
-<span data-ttu-id="4568f-146">Den gällande körnings principen bestäms av prioritetsordningen enligt följande:</span><span class="sxs-lookup"><span data-stu-id="4568f-146">The effective execution policy is determined by the order of precedence as follows:</span></span>
+<span data-ttu-id="281c4-146">Den gällande körnings principen bestäms av prioritetsordningen enligt följande:</span><span class="sxs-lookup"><span data-stu-id="281c4-146">The effective execution policy is determined by the order of precedence as follows:</span></span>
 
-- <span data-ttu-id="4568f-147">**MachinePolicy**.</span><span class="sxs-lookup"><span data-stu-id="4568f-147">**MachinePolicy**.</span></span> <span data-ttu-id="4568f-148">Anges av en grupprincip för alla användare av datorn.</span><span class="sxs-lookup"><span data-stu-id="4568f-148">Set by a Group Policy for all users of the computer.</span></span>
-- <span data-ttu-id="4568f-149">**UserPolicy**.</span><span class="sxs-lookup"><span data-stu-id="4568f-149">**UserPolicy**.</span></span> <span data-ttu-id="4568f-150">Anges av en grupprincip för datorns aktuella användare.</span><span class="sxs-lookup"><span data-stu-id="4568f-150">Set by a Group Policy for the current user of the computer.</span></span>
-- <span data-ttu-id="4568f-151">**Processen**.</span><span class="sxs-lookup"><span data-stu-id="4568f-151">**Process**.</span></span> <span data-ttu-id="4568f-152">Påverkar endast den aktuella PowerShell-sessionen.</span><span class="sxs-lookup"><span data-stu-id="4568f-152">Affects only the current PowerShell session.</span></span>
-- <span data-ttu-id="4568f-153">**CurrentUser**.</span><span class="sxs-lookup"><span data-stu-id="4568f-153">**CurrentUser**.</span></span> <span data-ttu-id="4568f-154">Påverkar endast den aktuella användaren.</span><span class="sxs-lookup"><span data-stu-id="4568f-154">Affects only the current user.</span></span>
-- <span data-ttu-id="4568f-155">**LocalMachine**.</span><span class="sxs-lookup"><span data-stu-id="4568f-155">**LocalMachine**.</span></span> <span data-ttu-id="4568f-156">Standard omfattning som påverkar alla användare av datorn.</span><span class="sxs-lookup"><span data-stu-id="4568f-156">Default scope that affects all users of the computer.</span></span>
+- <span data-ttu-id="281c4-147">**MachinePolicy**.</span><span class="sxs-lookup"><span data-stu-id="281c4-147">**MachinePolicy**.</span></span> <span data-ttu-id="281c4-148">Anges av en grupprincip för alla användare av datorn.</span><span class="sxs-lookup"><span data-stu-id="281c4-148">Set by a Group Policy for all users of the computer.</span></span>
+- <span data-ttu-id="281c4-149">**UserPolicy**.</span><span class="sxs-lookup"><span data-stu-id="281c4-149">**UserPolicy**.</span></span> <span data-ttu-id="281c4-150">Anges av en grupprincip för datorns aktuella användare.</span><span class="sxs-lookup"><span data-stu-id="281c4-150">Set by a Group Policy for the current user of the computer.</span></span>
+- <span data-ttu-id="281c4-151">**Processen**.</span><span class="sxs-lookup"><span data-stu-id="281c4-151">**Process**.</span></span> <span data-ttu-id="281c4-152">Påverkar endast den aktuella PowerShell-sessionen.</span><span class="sxs-lookup"><span data-stu-id="281c4-152">Affects only the current PowerShell session.</span></span>
+- <span data-ttu-id="281c4-153">**CurrentUser**.</span><span class="sxs-lookup"><span data-stu-id="281c4-153">**CurrentUser**.</span></span> <span data-ttu-id="281c4-154">Påverkar endast den aktuella användaren.</span><span class="sxs-lookup"><span data-stu-id="281c4-154">Affects only the current user.</span></span>
+- <span data-ttu-id="281c4-155">**LocalMachine**.</span><span class="sxs-lookup"><span data-stu-id="281c4-155">**LocalMachine**.</span></span> <span data-ttu-id="281c4-156">Standard omfattning som påverkar alla användare av datorn.</span><span class="sxs-lookup"><span data-stu-id="281c4-156">Default scope that affects all users of the computer.</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicyScope
@@ -191,32 +191,34 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4568f-157">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4568f-157">CommonParameters</span></span>
+### <span data-ttu-id="281c4-157">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="281c4-157">CommonParameters</span></span>
 
-<span data-ttu-id="4568f-158">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="4568f-158">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4568f-159">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="4568f-159">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="281c4-158">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="281c4-158">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="281c4-159">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="281c4-159">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="4568f-160">INDATA</span><span class="sxs-lookup"><span data-stu-id="4568f-160">INPUTS</span></span>
+## <span data-ttu-id="281c4-160">INDATA</span><span class="sxs-lookup"><span data-stu-id="281c4-160">INPUTS</span></span>
 
-### <span data-ttu-id="4568f-161">Inget</span><span class="sxs-lookup"><span data-stu-id="4568f-161">None</span></span>
+### <span data-ttu-id="281c4-161">Inget</span><span class="sxs-lookup"><span data-stu-id="281c4-161">None</span></span>
 
-<span data-ttu-id="4568f-162">`Get-ExecutionPolicy` accepterar inte ininformation från pipelinen.</span><span class="sxs-lookup"><span data-stu-id="4568f-162">`Get-ExecutionPolicy` doesn't accept input from the pipeline.</span></span>
+<span data-ttu-id="281c4-162">`Get-ExecutionPolicy` accepterar inte ininformation från pipelinen.</span><span class="sxs-lookup"><span data-stu-id="281c4-162">`Get-ExecutionPolicy` doesn't accept input from the pipeline.</span></span>
 
-## <span data-ttu-id="4568f-163">UTDATA</span><span class="sxs-lookup"><span data-stu-id="4568f-163">OUTPUTS</span></span>
+## <span data-ttu-id="281c4-163">UTDATA</span><span class="sxs-lookup"><span data-stu-id="281c4-163">OUTPUTS</span></span>
 
-### <span data-ttu-id="4568f-164">Microsoft.PowerShell.ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="4568f-164">Microsoft.PowerShell.ExecutionPolicy</span></span>
+### <span data-ttu-id="281c4-164">Microsoft.PowerShell.ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="281c4-164">Microsoft.PowerShell.ExecutionPolicy</span></span>
 
-## <span data-ttu-id="4568f-165">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="4568f-165">NOTES</span></span>
+<span data-ttu-id="281c4-165">Cmdleten returnerar alltid **obegränsade** på Linux-och MacOS-plattformar.</span><span class="sxs-lookup"><span data-stu-id="281c4-165">The cmdlet always returns **Unrestricted** on Linux and macOS platforms.</span></span>
 
-<span data-ttu-id="4568f-166">En körnings princip är en del av säkerhets strategin för PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4568f-166">An execution policy is part of the PowerShell security strategy.</span></span> <span data-ttu-id="4568f-167">Körnings principer avgör om du kan läsa in konfigurationsfiler, till exempel din PowerShell-profil eller köra skript.</span><span class="sxs-lookup"><span data-stu-id="4568f-167">Execution policies determine whether you can load configuration files, such as your PowerShell profile, or run scripts.</span></span> <span data-ttu-id="4568f-168">Och om skripten måste signeras digitalt innan de körs.</span><span class="sxs-lookup"><span data-stu-id="4568f-168">And, whether scripts must be digitally signed before they are run.</span></span>
+## <span data-ttu-id="281c4-166">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="281c4-166">NOTES</span></span>
 
-## <span data-ttu-id="4568f-169">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="4568f-169">RELATED LINKS</span></span>
+<span data-ttu-id="281c4-167">En körnings princip är en del av säkerhets strategin för PowerShell.</span><span class="sxs-lookup"><span data-stu-id="281c4-167">An execution policy is part of the PowerShell security strategy.</span></span> <span data-ttu-id="281c4-168">Körnings principer avgör om du kan läsa in konfigurationsfiler, till exempel din PowerShell-profil eller köra skript.</span><span class="sxs-lookup"><span data-stu-id="281c4-168">Execution policies determine whether you can load configuration files, such as your PowerShell profile, or run scripts.</span></span> <span data-ttu-id="281c4-169">Och om skripten måste signeras digitalt innan de körs.</span><span class="sxs-lookup"><span data-stu-id="281c4-169">And, whether scripts must be digitally signed before they are run.</span></span>
 
-[<span data-ttu-id="4568f-170">about_Execution_Policies</span><span class="sxs-lookup"><span data-stu-id="4568f-170">about_Execution_Policies</span></span>](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md)
+## <span data-ttu-id="281c4-170">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="281c4-170">RELATED LINKS</span></span>
 
-[<span data-ttu-id="4568f-171">about_Group_Policy_Settings</span><span class="sxs-lookup"><span data-stu-id="4568f-171">about_Group_Policy_Settings</span></span>](../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
+[<span data-ttu-id="281c4-171">about_Execution_Policies</span><span class="sxs-lookup"><span data-stu-id="281c4-171">about_Execution_Policies</span></span>](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md)
 
-[<span data-ttu-id="4568f-172">Get-AuthenticodeSignature</span><span class="sxs-lookup"><span data-stu-id="4568f-172">Get-AuthenticodeSignature</span></span>](Get-AuthenticodeSignature.md)
+[<span data-ttu-id="281c4-172">about_Group_Policy_Settings</span><span class="sxs-lookup"><span data-stu-id="281c4-172">about_Group_Policy_Settings</span></span>](../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
 
-[<span data-ttu-id="4568f-173">Set-AuthenticodeSignature</span><span class="sxs-lookup"><span data-stu-id="4568f-173">Set-AuthenticodeSignature</span></span>](Set-AuthenticodeSignature.md)
+[<span data-ttu-id="281c4-173">Get-AuthenticodeSignature</span><span class="sxs-lookup"><span data-stu-id="281c4-173">Get-AuthenticodeSignature</span></span>](Get-AuthenticodeSignature.md)
 
-[<span data-ttu-id="4568f-174">Set-ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="4568f-174">Set-ExecutionPolicy</span></span>](Set-ExecutionPolicy.md)
+[<span data-ttu-id="281c4-174">Set-AuthenticodeSignature</span><span class="sxs-lookup"><span data-stu-id="281c4-174">Set-AuthenticodeSignature</span></span>](Set-AuthenticodeSignature.md)
+
+[<span data-ttu-id="281c4-175">Set-ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="281c4-175">Set-ExecutionPolicy</span></span>](Set-ExecutionPolicy.md)

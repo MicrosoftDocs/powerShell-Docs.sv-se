@@ -7,96 +7,96 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 8c10e9e97c3371e8de46ed76e4c8a1195bc21513
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 425b5e56286c22b6595954916d8aa66eec807d83
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265844"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345263"
 ---
-# <span data-ttu-id="08edb-103">Get-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-103">Get-Service</span></span>
+# <span data-ttu-id="df966-103">Get-Service</span><span class="sxs-lookup"><span data-stu-id="df966-103">Get-Service</span></span>
 
-## <span data-ttu-id="08edb-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="08edb-104">SYNOPSIS</span></span>
-<span data-ttu-id="08edb-105">Hämtar tjänsterna på datorn.</span><span class="sxs-lookup"><span data-stu-id="08edb-105">Gets the services on the computer.</span></span>
+## <span data-ttu-id="df966-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="df966-104">SYNOPSIS</span></span>
+<span data-ttu-id="df966-105">Hämtar tjänsterna på datorn.</span><span class="sxs-lookup"><span data-stu-id="df966-105">Gets the services on the computer.</span></span>
 
-## <span data-ttu-id="08edb-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="08edb-106">SYNTAX</span></span>
+## <span data-ttu-id="df966-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="df966-106">SYNTAX</span></span>
 
-### <span data-ttu-id="08edb-107">Standard (standard)</span><span class="sxs-lookup"><span data-stu-id="08edb-107">Default (Default)</span></span>
+### <span data-ttu-id="df966-107">Standard (standard)</span><span class="sxs-lookup"><span data-stu-id="df966-107">Default (Default)</span></span>
 
 ```
 Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08edb-108">DisplayName</span><span class="sxs-lookup"><span data-stu-id="08edb-108">DisplayName</span></span>
+### <span data-ttu-id="df966-108">DisplayName</span><span class="sxs-lookup"><span data-stu-id="df966-108">DisplayName</span></span>
 
 ```
 Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]> [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="08edb-109">InputObject</span><span class="sxs-lookup"><span data-stu-id="08edb-109">InputObject</span></span>
+### <span data-ttu-id="df966-109">InputObject</span><span class="sxs-lookup"><span data-stu-id="df966-109">InputObject</span></span>
 
 ```
 Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>]
  [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="08edb-110">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="08edb-110">DESCRIPTION</span></span>
+## <span data-ttu-id="df966-110">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="df966-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="08edb-111">`Get-Service`Cmdleten hämtar objekt som representerar tjänsterna på en dator, inklusive tjänster som körs och stoppas.</span><span class="sxs-lookup"><span data-stu-id="08edb-111">The `Get-Service` cmdlet gets objects that represent the services on a computer, including running and stopped services.</span></span> <span data-ttu-id="08edb-112">När körs `Get-Service` utan parametrar returneras som standard den lokala datorns tjänster.</span><span class="sxs-lookup"><span data-stu-id="08edb-112">By default, when `Get-Service` is run without parameters, all the local computer's services are returned.</span></span>
+<span data-ttu-id="df966-111">`Get-Service`Cmdleten hämtar objekt som representerar tjänsterna på en dator, inklusive tjänster som körs och stoppas.</span><span class="sxs-lookup"><span data-stu-id="df966-111">The `Get-Service` cmdlet gets objects that represent the services on a computer, including running and stopped services.</span></span> <span data-ttu-id="df966-112">När körs `Get-Service` utan parametrar returneras som standard den lokala datorns tjänster.</span><span class="sxs-lookup"><span data-stu-id="df966-112">By default, when `Get-Service` is run without parameters, all the local computer's services are returned.</span></span>
 
-<span data-ttu-id="08edb-113">Du kan dirigera denna cmdlet för att bara få vissa tjänster genom att ange tjänst namnet eller visnings namnet för tjänsterna, eller så kan du skicka pipe-tjänst objekt till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="08edb-113">You can direct this cmdlet to get only particular services by specifying the service name or the display name of the services, or you can pipe service objects to this cmdlet.</span></span>
+<span data-ttu-id="df966-113">Du kan dirigera denna cmdlet för att bara få vissa tjänster genom att ange tjänst namnet eller visnings namnet för tjänsterna, eller så kan du skicka pipe-tjänst objekt till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="df966-113">You can direct this cmdlet to get only particular services by specifying the service name or the display name of the services, or you can pipe service objects to this cmdlet.</span></span>
 
-## <span data-ttu-id="08edb-114">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="08edb-114">EXAMPLES</span></span>
+## <span data-ttu-id="df966-114">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="df966-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="08edb-115">Exempel 1: Hämta alla tjänster på datorn</span><span class="sxs-lookup"><span data-stu-id="08edb-115">Example 1: Get all services on the computer</span></span>
+### <span data-ttu-id="df966-115">Exempel 1: Hämta alla tjänster på datorn</span><span class="sxs-lookup"><span data-stu-id="df966-115">Example 1: Get all services on the computer</span></span>
 
-<span data-ttu-id="08edb-116">Det här exemplet hämtar alla tjänster på datorn.</span><span class="sxs-lookup"><span data-stu-id="08edb-116">This example gets all of the services on the computer.</span></span> <span data-ttu-id="08edb-117">Det fungerar som om du skriver `Get-Service *` .</span><span class="sxs-lookup"><span data-stu-id="08edb-117">It behaves as though you typed `Get-Service *`.</span></span> <span data-ttu-id="08edb-118">Standard visningen visar status, tjänst namn och visnings namn för varje tjänst.</span><span class="sxs-lookup"><span data-stu-id="08edb-118">The default display shows the status, service name, and display name of each service.</span></span>
+<span data-ttu-id="df966-116">Det här exemplet hämtar alla tjänster på datorn.</span><span class="sxs-lookup"><span data-stu-id="df966-116">This example gets all of the services on the computer.</span></span> <span data-ttu-id="df966-117">Det fungerar som om du skriver `Get-Service *` .</span><span class="sxs-lookup"><span data-stu-id="df966-117">It behaves as though you typed `Get-Service *`.</span></span> <span data-ttu-id="df966-118">Standard visningen visar status, tjänst namn och visnings namn för varje tjänst.</span><span class="sxs-lookup"><span data-stu-id="df966-118">The default display shows the status, service name, and display name of each service.</span></span>
 
 ```powershell
 Get-Service
 ```
 
-### <span data-ttu-id="08edb-119">Exempel 2: Hämta tjänster som börjar med en Sök sträng</span><span class="sxs-lookup"><span data-stu-id="08edb-119">Example 2: Get services that begin with a search string</span></span>
+### <span data-ttu-id="df966-119">Exempel 2: Hämta tjänster som börjar med en Sök sträng</span><span class="sxs-lookup"><span data-stu-id="df966-119">Example 2: Get services that begin with a search string</span></span>
 
-<span data-ttu-id="08edb-120">I det här exemplet hämtas tjänster med tjänst namn som börjar med WMI (Windows Management Instrumentation).</span><span class="sxs-lookup"><span data-stu-id="08edb-120">This example retrieves services with service names that begin with WMI (Windows Management Instrumentation).</span></span>
+<span data-ttu-id="df966-120">I det här exemplet hämtas tjänster med tjänst namn som börjar med WMI (Windows Management Instrumentation).</span><span class="sxs-lookup"><span data-stu-id="df966-120">This example retrieves services with service names that begin with WMI (Windows Management Instrumentation).</span></span>
 
 ```powershell
 Get-Service "wmi*"
 ```
 
-### <span data-ttu-id="08edb-121">Exempel 3: Visa tjänster som innehåller en Sök sträng</span><span class="sxs-lookup"><span data-stu-id="08edb-121">Example 3: Display services that include a search string</span></span>
+### <span data-ttu-id="df966-121">Exempel 3: Visa tjänster som innehåller en Sök sträng</span><span class="sxs-lookup"><span data-stu-id="df966-121">Example 3: Display services that include a search string</span></span>
 
-<span data-ttu-id="08edb-122">I det här exemplet visas tjänster med ett visnings namn som innehåller ordet nätverk.</span><span class="sxs-lookup"><span data-stu-id="08edb-122">This example displays services with a display name that includes the word network.</span></span> <span data-ttu-id="08edb-123">Om du söker efter visnings namnet hittar du nätverksrelaterade tjänster även om tjänst namnet inte omfattar net, till exempel xmlprov, nätverks etablerings tjänsten.</span><span class="sxs-lookup"><span data-stu-id="08edb-123">Searching the display name finds network-related services even when the service name doesn't include Net, such as xmlprov, the Network Provisioning Service.</span></span>
+<span data-ttu-id="df966-122">I det här exemplet visas tjänster med ett visnings namn som innehåller ordet nätverk.</span><span class="sxs-lookup"><span data-stu-id="df966-122">This example displays services with a display name that includes the word network.</span></span> <span data-ttu-id="df966-123">Om du söker efter visnings namnet hittar du nätverksrelaterade tjänster även om tjänst namnet inte omfattar net, till exempel xmlprov, nätverks etablerings tjänsten.</span><span class="sxs-lookup"><span data-stu-id="df966-123">Searching the display name finds network-related services even when the service name doesn't include Net, such as xmlprov, the Network Provisioning Service.</span></span>
 
 ```powershell
 Get-Service -Displayname "*network*"
 ```
 
-### <span data-ttu-id="08edb-124">Exempel 4: Hämta tjänster som börjar med en Sök sträng och ett undantag</span><span class="sxs-lookup"><span data-stu-id="08edb-124">Example 4: Get services that begin with a search string and an exclusion</span></span>
+### <span data-ttu-id="df966-124">Exempel 4: Hämta tjänster som börjar med en Sök sträng och ett undantag</span><span class="sxs-lookup"><span data-stu-id="df966-124">Example 4: Get services that begin with a search string and an exclusion</span></span>
 
-<span data-ttu-id="08edb-125">I det här exemplet hämtas endast tjänster med tjänst namn som börjar med **Win** , med undantag för WinRM-tjänsten.</span><span class="sxs-lookup"><span data-stu-id="08edb-125">This example only gets the services with service names that begin with **win** , except for the WinRM service.</span></span>
+<span data-ttu-id="df966-125">I det här exemplet hämtas endast tjänster med tjänst namn som börjar med **Win** , med undantag för WinRM-tjänsten.</span><span class="sxs-lookup"><span data-stu-id="df966-125">This example only gets the services with service names that begin with **win** , except for the WinRM service.</span></span>
 
 ```powershell
 Get-Service -Name "win*" -Exclude "WinRM"
 ```
 
-### <span data-ttu-id="08edb-126">Exempel 5: Visa tjänster som är aktiva för närvarande</span><span class="sxs-lookup"><span data-stu-id="08edb-126">Example 5: Display services that are currently active</span></span>
+### <span data-ttu-id="df966-126">Exempel 5: Visa tjänster som är aktiva för närvarande</span><span class="sxs-lookup"><span data-stu-id="df966-126">Example 5: Display services that are currently active</span></span>
 
-<span data-ttu-id="08edb-127">I det här exemplet visas endast tjänsterna med statusen körs.</span><span class="sxs-lookup"><span data-stu-id="08edb-127">This example displays only the services with a status of Running.</span></span>
+<span data-ttu-id="df966-127">I det här exemplet visas endast tjänsterna med statusen körs.</span><span class="sxs-lookup"><span data-stu-id="df966-127">This example displays only the services with a status of Running.</span></span>
 
 ```powershell
 Get-Service | Where-Object {$_.Status -eq "Running"}
 ```
 
-<span data-ttu-id="08edb-128">`Get-Service` hämtar alla tjänster på datorn och skickar objekten nedåt i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="08edb-128">`Get-Service` gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="08edb-129">`Where-Object`Cmdlet: en väljer bara de tjänster med en **status** egenskap som är lika med kör.</span><span class="sxs-lookup"><span data-stu-id="08edb-129">The `Where-Object` cmdlet, selects only the services with a **Status** property that equals Running.</span></span>
+<span data-ttu-id="df966-128">`Get-Service` hämtar alla tjänster på datorn och skickar objekten nedåt i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="df966-128">`Get-Service` gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="df966-129">`Where-Object`Cmdlet: en väljer bara de tjänster med en **status** egenskap som är lika med kör.</span><span class="sxs-lookup"><span data-stu-id="df966-129">The `Where-Object` cmdlet, selects only the services with a **Status** property that equals Running.</span></span>
 
-<span data-ttu-id="08edb-130">Status är bara en egenskap för tjänst objekt.</span><span class="sxs-lookup"><span data-stu-id="08edb-130">Status is only one property of service objects.</span></span> <span data-ttu-id="08edb-131">Om du vill se alla egenskaper skriver du `Get-Service | Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="08edb-131">To see all of the properties, type `Get-Service | Get-Member`.</span></span>
+<span data-ttu-id="df966-130">Status är bara en egenskap för tjänst objekt.</span><span class="sxs-lookup"><span data-stu-id="df966-130">Status is only one property of service objects.</span></span> <span data-ttu-id="df966-131">Om du vill se alla egenskaper skriver du `Get-Service | Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="df966-131">To see all of the properties, type `Get-Service | Get-Member`.</span></span>
 
-### <span data-ttu-id="08edb-132">Exempel 6: Visa en lista över tjänsterna på datorn som har beroende tjänster</span><span class="sxs-lookup"><span data-stu-id="08edb-132">Example 6: List the services on the computer that have dependent services</span></span>
+### <span data-ttu-id="df966-132">Exempel 6: Visa en lista över tjänsterna på datorn som har beroende tjänster</span><span class="sxs-lookup"><span data-stu-id="df966-132">Example 6: List the services on the computer that have dependent services</span></span>
 
-<span data-ttu-id="08edb-133">Det här exemplet hämtar tjänster som har beroende tjänster.</span><span class="sxs-lookup"><span data-stu-id="08edb-133">This example gets services that have dependent services.</span></span>
+<span data-ttu-id="df966-133">Det här exemplet hämtar tjänster som har beroende tjänster.</span><span class="sxs-lookup"><span data-stu-id="df966-133">This example gets services that have dependent services.</span></span>
 
 ```powershell
 Get-Service |
@@ -117,15 +117,15 @@ NoOfDependentServices : 1
 ...
 ```
 
-<span data-ttu-id="08edb-134">`Get-Service`Cmdlet: en hämtar alla tjänster på datorn och skickar objekten nedåt i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="08edb-134">The `Get-Service` cmdlet gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="08edb-135">`Where-Object`Cmdleten väljer de tjänster vars **DependentServices** -egenskap inte är null.</span><span class="sxs-lookup"><span data-stu-id="08edb-135">The `Where-Object` cmdlet selects the services whose **DependentServices** property isn't null.</span></span>
+<span data-ttu-id="df966-134">`Get-Service`Cmdlet: en hämtar alla tjänster på datorn och skickar objekten nedåt i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="df966-134">The `Get-Service` cmdlet gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="df966-135">`Where-Object`Cmdleten väljer de tjänster vars **DependentServices** -egenskap inte är null.</span><span class="sxs-lookup"><span data-stu-id="df966-135">The `Where-Object` cmdlet selects the services whose **DependentServices** property isn't null.</span></span>
 
-<span data-ttu-id="08edb-136">Resultaten skickas ned pipelinen till `Format-List` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="08edb-136">The results are sent down the pipeline to the `Format-List` cmdlet.</span></span> <span data-ttu-id="08edb-137">**Egenskaps** parametern visar namnet på tjänsten, namnet på de beroende tjänsterna och en beräknad egenskap som visar antalet beroende tjänster för varje tjänst.</span><span class="sxs-lookup"><span data-stu-id="08edb-137">The **Property** parameter displays the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services for each service.</span></span>
+<span data-ttu-id="df966-136">Resultaten skickas ned pipelinen till `Format-List` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="df966-136">The results are sent down the pipeline to the `Format-List` cmdlet.</span></span> <span data-ttu-id="df966-137">**Egenskaps** parametern visar namnet på tjänsten, namnet på de beroende tjänsterna och en beräknad egenskap som visar antalet beroende tjänster för varje tjänst.</span><span class="sxs-lookup"><span data-stu-id="df966-137">The **Property** parameter displays the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services for each service.</span></span>
 
-### <span data-ttu-id="08edb-138">Exempel 7: sortera tjänster efter egenskaps värde</span><span class="sxs-lookup"><span data-stu-id="08edb-138">Example 7: Sort services by property value</span></span>
+### <span data-ttu-id="df966-138">Exempel 7: sortera tjänster efter egenskaps värde</span><span class="sxs-lookup"><span data-stu-id="df966-138">Example 7: Sort services by property value</span></span>
 
-<span data-ttu-id="08edb-139">Det här exemplet visar att när du sorterar tjänster i stigande ordning efter värdet för deras **status** egenskap visas stoppade tjänster innan tjänsterna körs.</span><span class="sxs-lookup"><span data-stu-id="08edb-139">This example shows that when you sort services in ascending order by the value of their **Status** property, stopped services appear before running services.</span></span> <span data-ttu-id="08edb-140">Orsaken är att värdet för **status** är en uppräkning, där stoppad har värdet 1 och körs har värdet 4.</span><span class="sxs-lookup"><span data-stu-id="08edb-140">The reason is because the value of **Status** is an enumeration, in which Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="08edb-141">Mer information finns i [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span><span class="sxs-lookup"><span data-stu-id="08edb-141">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
+<span data-ttu-id="df966-139">Det här exemplet visar att när du sorterar tjänster i stigande ordning efter värdet för deras **status** egenskap visas stoppade tjänster innan tjänsterna körs.</span><span class="sxs-lookup"><span data-stu-id="df966-139">This example shows that when you sort services in ascending order by the value of their **Status** property, stopped services appear before running services.</span></span> <span data-ttu-id="df966-140">Orsaken är att värdet för **status** är en uppräkning, där stoppad har värdet 1 och körs har värdet 4.</span><span class="sxs-lookup"><span data-stu-id="df966-140">The reason is because the value of **Status** is an enumeration, in which Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="df966-141">Mer information finns i [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span><span class="sxs-lookup"><span data-stu-id="df966-141">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
 
-<span data-ttu-id="08edb-142">Om du vill visa en lista med tjänster som körs först använder du parametern **fallande** i `Sort-Object` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="08edb-142">To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.</span></span>
+<span data-ttu-id="df966-142">Om du vill visa en lista med tjänster som körs först använder du parametern **fallande** i `Sort-Object` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="df966-142">To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.</span></span>
 
 ```powershell
 Get-Service "s*" | Sort-Object status
@@ -149,27 +149,27 @@ Running  SENS               System Event Notification
 Running  seclogon           Secondary Logon
 ```
 
-### <span data-ttu-id="08edb-143">Exempel 8: Hämta de beroende tjänsterna för en tjänst</span><span class="sxs-lookup"><span data-stu-id="08edb-143">Example 8: Get the dependent services of a service</span></span>
+### <span data-ttu-id="df966-143">Exempel 8: Hämta de beroende tjänsterna för en tjänst</span><span class="sxs-lookup"><span data-stu-id="df966-143">Example 8: Get the dependent services of a service</span></span>
 
-<span data-ttu-id="08edb-144">Det här exemplet hämtar de tjänster som krävs av WinRM-tjänsten.</span><span class="sxs-lookup"><span data-stu-id="08edb-144">This example gets the services that the WinRM service requires.</span></span> <span data-ttu-id="08edb-145">Värdet för tjänstens **ServicesDependedOn** -egenskap returneras.</span><span class="sxs-lookup"><span data-stu-id="08edb-145">The value of the service's **ServicesDependedOn** property is returned.</span></span>
+<span data-ttu-id="df966-144">Det här exemplet hämtar de tjänster som krävs av WinRM-tjänsten.</span><span class="sxs-lookup"><span data-stu-id="df966-144">This example gets the services that the WinRM service requires.</span></span> <span data-ttu-id="df966-145">Värdet för tjänstens **ServicesDependedOn** -egenskap returneras.</span><span class="sxs-lookup"><span data-stu-id="df966-145">The value of the service's **ServicesDependedOn** property is returned.</span></span>
 
 ```powershell
 Get-Service "WinRM" -RequiredServices
 ```
 
-### <span data-ttu-id="08edb-146">Exempel 9: Hämta en tjänst via pipeline-operatören</span><span class="sxs-lookup"><span data-stu-id="08edb-146">Example 9: Get a service through the pipeline operator</span></span>
+### <span data-ttu-id="df966-146">Exempel 9: Hämta en tjänst via pipeline-operatören</span><span class="sxs-lookup"><span data-stu-id="df966-146">Example 9: Get a service through the pipeline operator</span></span>
 
-<span data-ttu-id="08edb-147">Det här exemplet hämtar WinRM-tjänsten på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="08edb-147">This example gets the WinRM service on the local computer.</span></span> <span data-ttu-id="08edb-148">Tjänst namn strängen, som omges av citat tecken, skickas till pipelinen `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="08edb-148">The service name string, enclosed in quotation marks, is sent down the pipeline to `Get-Service`.</span></span>
+<span data-ttu-id="df966-147">Det här exemplet hämtar WinRM-tjänsten på den lokala datorn.</span><span class="sxs-lookup"><span data-stu-id="df966-147">This example gets the WinRM service on the local computer.</span></span> <span data-ttu-id="df966-148">Tjänst namn strängen, som omges av citat tecken, skickas till pipelinen `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="df966-148">The service name string, enclosed in quotation marks, is sent down the pipeline to `Get-Service`.</span></span>
 
 ```powershell
 "WinRM" | Get-Service
 ```
 
-## <span data-ttu-id="08edb-149">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="08edb-149">PARAMETERS</span></span>
+## <span data-ttu-id="df966-149">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="df966-149">PARAMETERS</span></span>
 
-### <span data-ttu-id="08edb-150">-DependentServices</span><span class="sxs-lookup"><span data-stu-id="08edb-150">-DependentServices</span></span>
+### <span data-ttu-id="df966-150">-DependentServices</span><span class="sxs-lookup"><span data-stu-id="df966-150">-DependentServices</span></span>
 
-<span data-ttu-id="08edb-151">Anger att denna cmdlet endast hämtar de tjänster som är beroende av den angivna tjänsten.</span><span class="sxs-lookup"><span data-stu-id="08edb-151">Indicates that this cmdlet gets only the services that depend upon the specified service.</span></span>
+<span data-ttu-id="df966-151">Anger att denna cmdlet endast hämtar de tjänster som är beroende av den angivna tjänsten.</span><span class="sxs-lookup"><span data-stu-id="df966-151">Indicates that this cmdlet gets only the services that depend upon the specified service.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -183,9 +183,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08edb-152">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="08edb-152">-DisplayName</span></span>
+### <span data-ttu-id="df966-152">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="df966-152">-DisplayName</span></span>
 
-<span data-ttu-id="08edb-153">Anger, som en sträng mat ris, visnings namnen för de tjänster som ska hämtas.</span><span class="sxs-lookup"><span data-stu-id="08edb-153">Specifies, as a string array, the display names of services to be retrieved.</span></span> <span data-ttu-id="08edb-154">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="08edb-154">Wildcards are permitted.</span></span>
+<span data-ttu-id="df966-153">Anger, som en sträng mat ris, visnings namnen för de tjänster som ska hämtas.</span><span class="sxs-lookup"><span data-stu-id="df966-153">Specifies, as a string array, the display names of services to be retrieved.</span></span> <span data-ttu-id="df966-154">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="df966-154">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -199,26 +199,10 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="08edb-155">-Undanta</span><span class="sxs-lookup"><span data-stu-id="08edb-155">-Exclude</span></span>
+### <span data-ttu-id="df966-155">-Undanta</span><span class="sxs-lookup"><span data-stu-id="df966-155">-Exclude</span></span>
 
-<span data-ttu-id="08edb-156">Anger, som en sträng mat ris, en tjänst eller tjänster som denna cmdlet exkluderar från åtgärden.</span><span class="sxs-lookup"><span data-stu-id="08edb-156">Specifies, as a string array, a service or services that this cmdlet excludes from the operation.</span></span>
-<span data-ttu-id="08edb-157">Värdet för den här parametern kvalificerar parametern **Name** .</span><span class="sxs-lookup"><span data-stu-id="08edb-157">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="08edb-158">Ange ett namn element eller ett mönster, till exempel `s*` .</span><span class="sxs-lookup"><span data-stu-id="08edb-158">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="08edb-159">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="08edb-159">Wildcards are permitted.</span></span>
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### <span data-ttu-id="08edb-160">-Inkludera</span><span class="sxs-lookup"><span data-stu-id="08edb-160">-Include</span></span>
-
-<span data-ttu-id="08edb-161">Anger, som en sträng mat ris, en tjänst eller tjänster som denna cmdlet inkluderar i åtgärden.</span><span class="sxs-lookup"><span data-stu-id="08edb-161">Specifies, as a string array, a service or services that this cmdlet includes in the operation.</span></span> <span data-ttu-id="08edb-162">Värdet för den här parametern kvalificerar parametern **Name** .</span><span class="sxs-lookup"><span data-stu-id="08edb-162">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="08edb-163">Ange ett namn element eller ett mönster, till exempel `s*` .</span><span class="sxs-lookup"><span data-stu-id="08edb-163">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="08edb-164">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="08edb-164">Wildcards are permitted.</span></span>
+<span data-ttu-id="df966-156">Anger, som en sträng mat ris, en tjänst eller tjänster som denna cmdlet exkluderar från åtgärden.</span><span class="sxs-lookup"><span data-stu-id="df966-156">Specifies, as a string array, a service or services that this cmdlet excludes from the operation.</span></span>
+<span data-ttu-id="df966-157">Värdet för den här parametern kvalificerar parametern **Name** .</span><span class="sxs-lookup"><span data-stu-id="df966-157">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="df966-158">Ange ett namn element eller ett mönster, till exempel `s*` .</span><span class="sxs-lookup"><span data-stu-id="df966-158">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="df966-159">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="df966-159">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -232,9 +216,25 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="08edb-165">– InputObject</span><span class="sxs-lookup"><span data-stu-id="08edb-165">-InputObject</span></span>
+### <span data-ttu-id="df966-160">-Inkludera</span><span class="sxs-lookup"><span data-stu-id="df966-160">-Include</span></span>
 
-<span data-ttu-id="08edb-166">Anger **ServiceController** -objekt som representerar de tjänster som ska hämtas.</span><span class="sxs-lookup"><span data-stu-id="08edb-166">Specifies **ServiceController** objects representing the services to be retrieved.</span></span> <span data-ttu-id="08edb-167">Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.</span><span class="sxs-lookup"><span data-stu-id="08edb-167">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span> <span data-ttu-id="08edb-168">Du kan skicka vidare ett tjänst objekt till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="08edb-168">You can pipe a service object to this cmdlet.</span></span>
+<span data-ttu-id="df966-161">Anger, som en sträng mat ris, en tjänst eller tjänster som denna cmdlet inkluderar i åtgärden.</span><span class="sxs-lookup"><span data-stu-id="df966-161">Specifies, as a string array, a service or services that this cmdlet includes in the operation.</span></span> <span data-ttu-id="df966-162">Värdet för den här parametern kvalificerar parametern **Name** .</span><span class="sxs-lookup"><span data-stu-id="df966-162">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="df966-163">Ange ett namn element eller ett mönster, till exempel `s*` .</span><span class="sxs-lookup"><span data-stu-id="df966-163">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="df966-164">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="df966-164">Wildcards are permitted.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="df966-165">– InputObject</span><span class="sxs-lookup"><span data-stu-id="df966-165">-InputObject</span></span>
+
+<span data-ttu-id="df966-166">Anger **ServiceController** -objekt som representerar de tjänster som ska hämtas.</span><span class="sxs-lookup"><span data-stu-id="df966-166">Specifies **ServiceController** objects representing the services to be retrieved.</span></span> <span data-ttu-id="df966-167">Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.</span><span class="sxs-lookup"><span data-stu-id="df966-167">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span> <span data-ttu-id="df966-168">Du kan skicka vidare ett tjänst objekt till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="df966-168">You can pipe a service object to this cmdlet.</span></span>
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -248,9 +248,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="08edb-169">-Name</span><span class="sxs-lookup"><span data-stu-id="08edb-169">-Name</span></span>
+### <span data-ttu-id="df966-169">-Name</span><span class="sxs-lookup"><span data-stu-id="df966-169">-Name</span></span>
 
-<span data-ttu-id="08edb-170">Anger tjänst namnen för de tjänster som ska hämtas.</span><span class="sxs-lookup"><span data-stu-id="08edb-170">Specifies the service names of services to be retrieved.</span></span> <span data-ttu-id="08edb-171">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="08edb-171">Wildcards are permitted.</span></span>
+<span data-ttu-id="df966-170">Anger tjänst namnen för de tjänster som ska hämtas.</span><span class="sxs-lookup"><span data-stu-id="df966-170">Specifies the service names of services to be retrieved.</span></span> <span data-ttu-id="df966-171">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="df966-171">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -264,9 +264,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="08edb-172">-RequiredServices</span><span class="sxs-lookup"><span data-stu-id="08edb-172">-RequiredServices</span></span>
+### <span data-ttu-id="df966-172">-RequiredServices</span><span class="sxs-lookup"><span data-stu-id="df966-172">-RequiredServices</span></span>
 
-<span data-ttu-id="08edb-173">Anger att denna cmdlet bara hämtar de tjänster som krävs för den här tjänsten.</span><span class="sxs-lookup"><span data-stu-id="08edb-173">Indicates that this cmdlet gets only the services that this service requires.</span></span> <span data-ttu-id="08edb-174">Den här parametern hämtar värdet för tjänstens **ServicesDependedOn** -egenskap.</span><span class="sxs-lookup"><span data-stu-id="08edb-174">This parameter gets the value of the **ServicesDependedOn** property of the service.</span></span>
+<span data-ttu-id="df966-173">Anger att denna cmdlet bara hämtar de tjänster som krävs för den här tjänsten.</span><span class="sxs-lookup"><span data-stu-id="df966-173">Indicates that this cmdlet gets only the services that this service requires.</span></span> <span data-ttu-id="df966-174">Den här parametern hämtar värdet för tjänstens **ServicesDependedOn** -egenskap.</span><span class="sxs-lookup"><span data-stu-id="df966-174">This parameter gets the value of the **ServicesDependedOn** property of the service.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -280,48 +280,50 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="08edb-175">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="08edb-175">CommonParameters</span></span>
+### <span data-ttu-id="df966-175">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="df966-175">CommonParameters</span></span>
 
-<span data-ttu-id="08edb-176">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="08edb-176">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="08edb-177">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="08edb-177">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="df966-176">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="df966-176">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="df966-177">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="df966-177">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="08edb-178">INDATA</span><span class="sxs-lookup"><span data-stu-id="08edb-178">INPUTS</span></span>
+## <span data-ttu-id="df966-178">INDATA</span><span class="sxs-lookup"><span data-stu-id="df966-178">INPUTS</span></span>
 
-### <span data-ttu-id="08edb-179">System. ServiceProcess. ServiceController, system. String</span><span class="sxs-lookup"><span data-stu-id="08edb-179">System.ServiceProcess.ServiceController, System.String</span></span>
+### <span data-ttu-id="df966-179">System. ServiceProcess. ServiceController, system. String</span><span class="sxs-lookup"><span data-stu-id="df966-179">System.ServiceProcess.ServiceController, System.String</span></span>
 
-<span data-ttu-id="08edb-180">Du kan skicka vidare ett tjänst objekt eller ett tjänst namn till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="08edb-180">You can pipe a service object or a service name to this cmdlet.</span></span>
+<span data-ttu-id="df966-180">Du kan skicka vidare ett tjänst objekt eller ett tjänst namn till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="df966-180">You can pipe a service object or a service name to this cmdlet.</span></span>
 
-## <span data-ttu-id="08edb-181">UTDATA</span><span class="sxs-lookup"><span data-stu-id="08edb-181">OUTPUTS</span></span>
+## <span data-ttu-id="df966-181">UTDATA</span><span class="sxs-lookup"><span data-stu-id="df966-181">OUTPUTS</span></span>
 
-### <span data-ttu-id="08edb-182">System. ServiceProcess. ServiceController</span><span class="sxs-lookup"><span data-stu-id="08edb-182">System.ServiceProcess.ServiceController</span></span>
+### <span data-ttu-id="df966-182">System. ServiceProcess. ServiceController</span><span class="sxs-lookup"><span data-stu-id="df966-182">System.ServiceProcess.ServiceController</span></span>
 
-<span data-ttu-id="08edb-183">Denna cmdlet returnerar objekt som representerar tjänsterna på datorn.</span><span class="sxs-lookup"><span data-stu-id="08edb-183">This cmdlet returns objects that represent the services on the computer.</span></span>
+<span data-ttu-id="df966-183">Denna cmdlet returnerar objekt som representerar tjänsterna på datorn.</span><span class="sxs-lookup"><span data-stu-id="df966-183">This cmdlet returns objects that represent the services on the computer.</span></span>
 
-## <span data-ttu-id="08edb-184">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="08edb-184">NOTES</span></span>
+## <span data-ttu-id="df966-184">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="df966-184">NOTES</span></span>
 
-<span data-ttu-id="08edb-185">Från och med PowerShell 6,0 läggs följande egenskaper till i **ServiceController** -objekten: **username** , **Description** , **DelayedAutoStart** , **BinaryPathName** och **startuptype tjänst** .</span><span class="sxs-lookup"><span data-stu-id="08edb-185">Beginning in PowerShell 6.0, the following properties are added to the **ServiceController** objects: **UserName** , **Description** , **DelayedAutoStart** , **BinaryPathName** , and **StartupType** .</span></span>
+<span data-ttu-id="df966-185">Den här cmdleten är endast tillgänglig på Windows-plattformar.</span><span class="sxs-lookup"><span data-stu-id="df966-185">This cmdlet is only available on Windows platforms.</span></span>
 
-<span data-ttu-id="08edb-186">Du kan också referera till `Get-Service` med dess inbyggda alias `gsv` .</span><span class="sxs-lookup"><span data-stu-id="08edb-186">You can also refer to `Get-Service` by its built-in alias, `gsv`.</span></span> <span data-ttu-id="08edb-187">Mer information finns i [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span><span class="sxs-lookup"><span data-stu-id="08edb-187">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
+<span data-ttu-id="df966-186">Från och med PowerShell 6,0 läggs följande egenskaper till i **ServiceController** -objekten: **username** , **Description** , **DelayedAutoStart** , **BinaryPathName** och **startuptype tjänst** .</span><span class="sxs-lookup"><span data-stu-id="df966-186">Beginning in PowerShell 6.0, the following properties are added to the **ServiceController** objects: **UserName** , **Description** , **DelayedAutoStart** , **BinaryPathName** , and **StartupType** .</span></span>
 
-<span data-ttu-id="08edb-188">Den här cmdleten kan endast Visa tjänster när den aktuella användaren har behörighet att se dem.</span><span class="sxs-lookup"><span data-stu-id="08edb-188">This cmdlet can display services only when the current user has permission to see them.</span></span> <span data-ttu-id="08edb-189">Om denna cmdlet inte visar tjänster kanske du inte har behörighet att se dem.</span><span class="sxs-lookup"><span data-stu-id="08edb-189">If this cmdlet does not display services, you might not have permission to see them.</span></span>
+<span data-ttu-id="df966-187">Du kan också referera till `Get-Service` med dess inbyggda alias `gsv` .</span><span class="sxs-lookup"><span data-stu-id="df966-187">You can also refer to `Get-Service` by its built-in alias, `gsv`.</span></span> <span data-ttu-id="df966-188">Mer information finns i [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span><span class="sxs-lookup"><span data-stu-id="df966-188">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
 
-<span data-ttu-id="08edb-190">Om du vill hitta tjänst namnet och visnings namnet för varje tjänst i systemet skriver du `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="08edb-190">To find the service name and display name of each service on your system, type `Get-Service`.</span></span> <span data-ttu-id="08edb-191">Tjänst namnen visas i kolumnen namn och visnings namnen visas i kolumnen **DisplayName** .</span><span class="sxs-lookup"><span data-stu-id="08edb-191">The service names appear in the Name column, and the display names appear in the **DisplayName** column.</span></span>
+<span data-ttu-id="df966-189">Den här cmdleten kan endast Visa tjänster när den aktuella användaren har behörighet att se dem.</span><span class="sxs-lookup"><span data-stu-id="df966-189">This cmdlet can display services only when the current user has permission to see them.</span></span> <span data-ttu-id="df966-190">Om denna cmdlet inte visar tjänster kanske du inte har behörighet att se dem.</span><span class="sxs-lookup"><span data-stu-id="df966-190">If this cmdlet does not display services, you might not have permission to see them.</span></span>
 
-<span data-ttu-id="08edb-192">När du sorterar i stigande ordning efter värdet för egenskapen **status** visas stoppade tjänster innan tjänsterna körs.</span><span class="sxs-lookup"><span data-stu-id="08edb-192">When you sort in ascending order by the **Status** property's value, Stopped services appear before Running services.</span></span> <span data-ttu-id="08edb-193">Tjänstens **status** egenskap är ett uppräknat värde och status namnen representerar heltals värden.</span><span class="sxs-lookup"><span data-stu-id="08edb-193">The service's **Status** property is an enumerated value and the status names represent integer values.</span></span> <span data-ttu-id="08edb-194">Sorterings ordningen baseras på heltal svärdet, inte namnet.</span><span class="sxs-lookup"><span data-stu-id="08edb-194">The sort order is based on the integer value, not the name.</span></span> <span data-ttu-id="08edb-195">Stoppad visas innan eftersom det stoppades eftersom det stoppats, och det har värdet 1, och körning har värdet 4.</span><span class="sxs-lookup"><span data-stu-id="08edb-195">Stopped appears before because Running because Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="08edb-196">Mer information finns i [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span><span class="sxs-lookup"><span data-stu-id="08edb-196">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
+<span data-ttu-id="df966-191">Om du vill hitta tjänst namnet och visnings namnet för varje tjänst i systemet skriver du `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="df966-191">To find the service name and display name of each service on your system, type `Get-Service`.</span></span> <span data-ttu-id="df966-192">Tjänst namnen visas i kolumnen namn och visnings namnen visas i kolumnen **DisplayName** .</span><span class="sxs-lookup"><span data-stu-id="df966-192">The service names appear in the Name column, and the display names appear in the **DisplayName** column.</span></span>
 
-## <span data-ttu-id="08edb-197">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="08edb-197">RELATED LINKS</span></span>
+<span data-ttu-id="df966-193">När du sorterar i stigande ordning efter värdet för egenskapen **status** visas stoppade tjänster innan tjänsterna körs.</span><span class="sxs-lookup"><span data-stu-id="df966-193">When you sort in ascending order by the **Status** property's value, Stopped services appear before Running services.</span></span> <span data-ttu-id="df966-194">Tjänstens **status** egenskap är ett uppräknat värde och status namnen representerar heltals värden.</span><span class="sxs-lookup"><span data-stu-id="df966-194">The service's **Status** property is an enumerated value and the status names represent integer values.</span></span> <span data-ttu-id="df966-195">Sorterings ordningen baseras på heltal svärdet, inte namnet.</span><span class="sxs-lookup"><span data-stu-id="df966-195">The sort order is based on the integer value, not the name.</span></span> <span data-ttu-id="df966-196">Stoppad visas innan eftersom det stoppades eftersom det stoppats, och det har värdet 1, och körning har värdet 4.</span><span class="sxs-lookup"><span data-stu-id="df966-196">Stopped appears before because Running because Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="df966-197">Mer information finns i [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span><span class="sxs-lookup"><span data-stu-id="df966-197">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
 
-[<span data-ttu-id="08edb-198">New-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-198">New-Service</span></span>](New-Service.md)
+## <span data-ttu-id="df966-198">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="df966-198">RELATED LINKS</span></span>
 
-[<span data-ttu-id="08edb-199">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-199">Restart-Service</span></span>](Restart-Service.md)
+[<span data-ttu-id="df966-199">New-Service</span><span class="sxs-lookup"><span data-stu-id="df966-199">New-Service</span></span>](New-Service.md)
 
-[<span data-ttu-id="08edb-200">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-200">Resume-Service</span></span>](Resume-Service.md)
+[<span data-ttu-id="df966-200">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="df966-200">Restart-Service</span></span>](Restart-Service.md)
 
-[<span data-ttu-id="08edb-201">Set-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-201">Set-Service</span></span>](Set-Service.md)
+[<span data-ttu-id="df966-201">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="df966-201">Resume-Service</span></span>](Resume-Service.md)
 
-[<span data-ttu-id="08edb-202">Start-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-202">Start-Service</span></span>](Start-Service.md)
+[<span data-ttu-id="df966-202">Set-Service</span><span class="sxs-lookup"><span data-stu-id="df966-202">Set-Service</span></span>](Set-Service.md)
 
-[<span data-ttu-id="08edb-203">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-203">Stop-Service</span></span>](Stop-Service.md)
+[<span data-ttu-id="df966-203">Start-Service</span><span class="sxs-lookup"><span data-stu-id="df966-203">Start-Service</span></span>](Start-Service.md)
 
-[<span data-ttu-id="08edb-204">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="08edb-204">Suspend-Service</span></span>](Suspend-Service.md)
+[<span data-ttu-id="df966-204">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="df966-204">Stop-Service</span></span>](Stop-Service.md)
 
-[<span data-ttu-id="08edb-205">Remove-service</span><span class="sxs-lookup"><span data-stu-id="08edb-205">Remove-Service</span></span>](Remove-Service.md)
+[<span data-ttu-id="df966-205">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="df966-205">Suspend-Service</span></span>](Suspend-Service.md)
+
+[<span data-ttu-id="df966-206">Remove-service</span><span class="sxs-lookup"><span data-stu-id="df966-206">Remove-Service</span></span>](Remove-Service.md)

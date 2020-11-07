@@ -7,50 +7,46 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
-ms.openlocfilehash: ce14e6038473e6c53b62b310c288e23f6a7597e2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0e7f263d309908a4a62187d3d1cc5ef08283e0c3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267585"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344413"
 ---
-# <span data-ttu-id="3bf29-103">New-Event</span><span class="sxs-lookup"><span data-stu-id="3bf29-103">New-Event</span></span>
+# <span data-ttu-id="79d42-103">New-Event</span><span class="sxs-lookup"><span data-stu-id="79d42-103">New-Event</span></span>
 
-## <span data-ttu-id="3bf29-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="3bf29-104">SYNOPSIS</span></span>
-<span data-ttu-id="3bf29-105">Skapar en ny händelse.</span><span class="sxs-lookup"><span data-stu-id="3bf29-105">Creates a new event.</span></span>
+## <span data-ttu-id="79d42-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="79d42-104">SYNOPSIS</span></span>
+<span data-ttu-id="79d42-105">Skapar en ny händelse.</span><span class="sxs-lookup"><span data-stu-id="79d42-105">Creates a new event.</span></span>
 
-## <span data-ttu-id="3bf29-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="3bf29-106">SYNTAX</span></span>
+## <span data-ttu-id="79d42-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="79d42-106">SYNTAX</span></span>
 
 ```
 New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments] <PSObject[]>]
  [[-MessageData] <PSObject>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3bf29-107">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="3bf29-107">DESCRIPTION</span></span>
+## <span data-ttu-id="79d42-107">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="79d42-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="3bf29-108">Cmdleten **New-Event** skapar en ny anpassad händelse.</span><span class="sxs-lookup"><span data-stu-id="3bf29-108">The **New-Event** cmdlet creates a new custom event.</span></span>
+<span data-ttu-id="79d42-108">`New-Event`Cmdleten skapar en ny anpassad händelse.</span><span class="sxs-lookup"><span data-stu-id="79d42-108">The `New-Event` cmdlet creates a new custom event.</span></span>
 
-<span data-ttu-id="3bf29-109">Du kan använda anpassade händelser för att meddela användare om tillstånds ändringar i programmet och eventuella ändringar som programmet kan identifiera, inklusive maskinvaru-eller system villkor, program status, disk status, nätverks status eller slut för ande av ett bakgrunds jobb.</span><span class="sxs-lookup"><span data-stu-id="3bf29-109">You can use custom events to notify users about state changes in your program and any change that your program can detect, including hardware or system conditions, application status, disk status, network status, or the completion of a background job.</span></span>
+<span data-ttu-id="79d42-109">Du kan använda anpassade händelser för att meddela användare om tillstånds ändringar i programmet och eventuella ändringar som programmet kan identifiera, inklusive maskinvaru-eller system villkor, program status, disk status, nätverks status eller slut för ande av ett bakgrunds jobb.</span><span class="sxs-lookup"><span data-stu-id="79d42-109">You can use custom events to notify users about state changes in your program and any change that your program can detect, including hardware or system conditions, application status, disk status, network status, or the completion of a background job.</span></span>
 
-<span data-ttu-id="3bf29-110">Anpassade händelser läggs automatiskt till i händelse kön i sessionen när de höjs. du behöver inte prenumerera på dem.</span><span class="sxs-lookup"><span data-stu-id="3bf29-110">Custom events are automatically added to the event queue in your session whenever they are raised; you do not need to subscribe to them.</span></span>
-<span data-ttu-id="3bf29-111">Men om du vill vidarebefordra en händelse till den lokala sessionen eller ange en åtgärd för att svara på händelsen, använder du Register-EngineEvent cmdlet för att prenumerera på den anpassade händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-111">However, if you want to forward an event to the local session or specify an action to respond to the event, use the Register-EngineEvent cmdlet to subscribe to the custom event.</span></span>
+<span data-ttu-id="79d42-110">Anpassade händelser läggs automatiskt till i händelse kön i sessionen när de höjs. du behöver inte prenumerera på dem.</span><span class="sxs-lookup"><span data-stu-id="79d42-110">Custom events are automatically added to the event queue in your session whenever they are raised; you do not need to subscribe to them.</span></span> <span data-ttu-id="79d42-111">Men om du vill vidarebefordra en händelse till den lokala sessionen eller ange en åtgärd för att svara på händelsen, använder du `Register-EngineEvent` cmdleten för att prenumerera på den anpassade händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-111">However, if you want to forward an event to the local session or specify an action to respond to the event, use the `Register-EngineEvent` cmdlet to subscribe to the custom event.</span></span>
 
-<span data-ttu-id="3bf29-112">När du prenumererar på en anpassad händelse läggs händelse prenumeranten till i sessionen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-112">When you subscribe to a custom event, the event subscriber is added to your session.</span></span>
-<span data-ttu-id="3bf29-113">Om du avbryter händelse prenumerationen med hjälp av Unregister-Event cmdleten, tas händelse prenumeranten och den anpassade händelsen bort från sessionen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-113">If you cancel the event subscription by using the Unregister-Event cmdlet, the event subscriber and custom event are deleted from the session.</span></span>
-<span data-ttu-id="3bf29-114">Om du inte prenumererar på den anpassade händelsen måste du ändra programmets villkor eller stänga PowerShell-sessionen för att ta bort händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-114">If you do not subscribe to the custom event, to delete the event, you must change the program conditions or close the PowerShell session.</span></span>
+<span data-ttu-id="79d42-112">När du prenumererar på en anpassad händelse läggs händelse prenumeranten till i sessionen.</span><span class="sxs-lookup"><span data-stu-id="79d42-112">When you subscribe to a custom event, the event subscriber is added to your session.</span></span> <span data-ttu-id="79d42-113">Om du avbryter händelse prenumerationen med hjälp av `Unregister-Event` cmdleten, tas händelse prenumeranten och den anpassade händelsen bort från sessionen.</span><span class="sxs-lookup"><span data-stu-id="79d42-113">If you cancel the event subscription by using the `Unregister-Event` cmdlet, the event subscriber and custom event are deleted from the session.</span></span> <span data-ttu-id="79d42-114">Om du inte prenumererar på den anpassade händelsen måste du ändra programmets villkor eller stänga PowerShell-sessionen för att ta bort händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-114">If you do not subscribe to the custom event, to delete the event, you must change the program conditions or close the PowerShell session.</span></span>
 
-## <span data-ttu-id="3bf29-115">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="3bf29-115">EXAMPLES</span></span>
+## <span data-ttu-id="79d42-115">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="79d42-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="3bf29-116">Exempel 1: skapa en ny händelse i händelse kön</span><span class="sxs-lookup"><span data-stu-id="3bf29-116">Example 1: Create a new event in the event queue</span></span>
+### <span data-ttu-id="79d42-116">Exempel 1: skapa en ny händelse i händelse kön</span><span class="sxs-lookup"><span data-stu-id="79d42-116">Example 1: Create a new event in the event queue</span></span>
 
 ```
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-<span data-ttu-id="3bf29-117">Det här kommandot skapar en ny händelse i händelse kön i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="3bf29-117">This command creates a new event in the PowerShell event queue.</span></span>
-<span data-ttu-id="3bf29-118">Ett **Windows. timer** -objekt används för att skicka händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-118">It uses a **Windows.Timer** object to send the event.</span></span>
+<span data-ttu-id="79d42-117">Det här kommandot skapar en ny händelse i händelse kön i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="79d42-117">This command creates a new event in the PowerShell event queue.</span></span> <span data-ttu-id="79d42-118">Ett **Windows. timer** -objekt används för att skicka händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-118">It uses a **Windows.Timer** object to send the event.</span></span>
 
-### <span data-ttu-id="3bf29-119">Exempel 2: Utlös en händelse som svar på en annan händelse</span><span class="sxs-lookup"><span data-stu-id="3bf29-119">Example 2: Raise an event in response to another event</span></span>
+### <span data-ttu-id="79d42-119">Exempel 2: Utlös en händelse som svar på en annan händelse</span><span class="sxs-lookup"><span data-stu-id="79d42-119">Example 2: Raise an event in response to another event</span></span>
 
 ```
 PS C:\> function Enable-ProcessCreationEvent
@@ -65,17 +61,15 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-<span data-ttu-id="3bf29-120">Den här exempel funktionen använder cmdleten **New-Event** för att utlösa en händelse som svar på en annan händelse.</span><span class="sxs-lookup"><span data-stu-id="3bf29-120">This sample function uses the **New-Event** cmdlet to raise an event in response to another event.</span></span>
-<span data-ttu-id="3bf29-121">Kommandot använder Register-ObjectEvent-cmdlet för att prenumerera på händelsen Windows Management Instrumentation (WMI) som aktive ras när en ny process skapas.</span><span class="sxs-lookup"><span data-stu-id="3bf29-121">The command uses the Register-ObjectEvent cmdlet to subscribe to the Windows Management Instrumentation (WMI) event that is raised when a new process is created.</span></span>
-<span data-ttu-id="3bf29-122">Kommandot använder parametern *åtgärd* för cmdleten för att anropa cmdleten **New-Event** , som skapar den nya händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-122">The command uses the *Action* parameter of the cmdlet to call the **New-Event** cmdlet, which creates the new event.</span></span>
+<span data-ttu-id="79d42-120">Den här exempel funktionen använder `New-Event` cmdleten för att utlösa en händelse som svar på en annan händelse.</span><span class="sxs-lookup"><span data-stu-id="79d42-120">This sample function uses the `New-Event` cmdlet to raise an event in response to another event.</span></span> <span data-ttu-id="79d42-121">Kommandot använder `Register-ObjectEvent` cmdleten för att prenumerera på den Windows Management Instrumentation (WMI) händelse som aktive ras när en ny process skapas.</span><span class="sxs-lookup"><span data-stu-id="79d42-121">The command uses the `Register-ObjectEvent` cmdlet to subscribe to the Windows Management Instrumentation (WMI) event that is raised when a new process is created.</span></span> <span data-ttu-id="79d42-122">Kommandot använder parametern **åtgärd** för cmdleten för att anropa `New-Event` cmdleten, vilket skapar den nya händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-122">The command uses the **Action** parameter of the cmdlet to call the `New-Event` cmdlet, which creates the new event.</span></span>
 
-<span data-ttu-id="3bf29-123">Eftersom händelserna som **nya** händelser aktive ras automatiskt läggs till i PowerShell-händelseloggen behöver du inte registrera dig för den händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-123">Because the events that **New-Event** raises are automatically added to the PowerShell event queue, you do not need to register for that event.</span></span>
+<span data-ttu-id="79d42-123">Eftersom händelser som aktive `New-Event` ras automatiskt läggs till i PowerShell-händelseloggen behöver du inte registrera dig för den händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-123">Because the events that `New-Event` raises are automatically added to the PowerShell event queue, you do not need to register for that event.</span></span>
 
-## <span data-ttu-id="3bf29-124">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="3bf29-124">PARAMETERS</span></span>
+## <span data-ttu-id="79d42-124">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="79d42-124">PARAMETERS</span></span>
 
-### <span data-ttu-id="3bf29-125">-EventArguments</span><span class="sxs-lookup"><span data-stu-id="3bf29-125">-EventArguments</span></span>
+### <span data-ttu-id="79d42-125">-EventArguments</span><span class="sxs-lookup"><span data-stu-id="79d42-125">-EventArguments</span></span>
 
-<span data-ttu-id="3bf29-126">Anger ett objekt som innehåller alternativ för händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-126">Specifies an object that contains options for the event.</span></span>
+<span data-ttu-id="79d42-126">Anger ett objekt som innehåller alternativ för händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-126">Specifies an object that contains options for the event.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject[]
@@ -89,10 +83,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3bf29-127">-MessageData</span><span class="sxs-lookup"><span data-stu-id="3bf29-127">-MessageData</span></span>
+### <span data-ttu-id="79d42-127">-MessageData</span><span class="sxs-lookup"><span data-stu-id="79d42-127">-MessageData</span></span>
 
-<span data-ttu-id="3bf29-128">Anger ytterligare data som är associerade med händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-128">Specifies additional data associated with the event.</span></span>
-<span data-ttu-id="3bf29-129">Värdet för den här parametern visas i egenskapen **MessageData** för objektet event.</span><span class="sxs-lookup"><span data-stu-id="3bf29-129">The value of this parameter appears in the **MessageData** property of the event object.</span></span>
+<span data-ttu-id="79d42-128">Anger ytterligare data som är associerade med händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-128">Specifies additional data associated with the event.</span></span> <span data-ttu-id="79d42-129">Värdet för den här parametern visas i egenskapen **MessageData** för objektet event.</span><span class="sxs-lookup"><span data-stu-id="79d42-129">The value of this parameter appears in the **MessageData** property of the event object.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -106,10 +99,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3bf29-130">-Sender</span><span class="sxs-lookup"><span data-stu-id="3bf29-130">-Sender</span></span>
+### <span data-ttu-id="79d42-130">-Sender</span><span class="sxs-lookup"><span data-stu-id="79d42-130">-Sender</span></span>
 
-<span data-ttu-id="3bf29-131">Anger det objekt som aktiverar händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-131">Specifies the object that raises the event.</span></span>
-<span data-ttu-id="3bf29-132">Standardvärdet är PowerShell-motorn.</span><span class="sxs-lookup"><span data-stu-id="3bf29-132">The default is the PowerShell engine.</span></span>
+<span data-ttu-id="79d42-131">Anger det objekt som aktiverar händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-131">Specifies the object that raises the event.</span></span> <span data-ttu-id="79d42-132">Standardvärdet är PowerShell-motorn.</span><span class="sxs-lookup"><span data-stu-id="79d42-132">The default is the PowerShell engine.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -123,12 +115,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3bf29-133">-SourceIdentifier</span><span class="sxs-lookup"><span data-stu-id="3bf29-133">-SourceIdentifier</span></span>
+### <span data-ttu-id="79d42-133">-SourceIdentifier</span><span class="sxs-lookup"><span data-stu-id="79d42-133">-SourceIdentifier</span></span>
 
-<span data-ttu-id="3bf29-134">Anger ett namn för den nya händelsen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-134">Specifies a name for the new event.</span></span>
-<span data-ttu-id="3bf29-135">Den här parametern är obligatorisk och måste vara unik i sessionen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-135">This parameter is required, and it must be unique in the session.</span></span>
+<span data-ttu-id="79d42-134">Anger ett namn för den nya händelsen.</span><span class="sxs-lookup"><span data-stu-id="79d42-134">Specifies a name for the new event.</span></span> <span data-ttu-id="79d42-135">Den här parametern är obligatorisk och måste vara unik i sessionen.</span><span class="sxs-lookup"><span data-stu-id="79d42-135">This parameter is required, and it must be unique in the session.</span></span>
 
-<span data-ttu-id="3bf29-136">Värdet för den här parametern visas i händelsens **SourceIdentifier** -egenskap.</span><span class="sxs-lookup"><span data-stu-id="3bf29-136">The value of this parameter appears in the **SourceIdentifier** property of the events.</span></span>
+<span data-ttu-id="79d42-136">Värdet för den här parametern visas i händelsens **SourceIdentifier** -egenskap.</span><span class="sxs-lookup"><span data-stu-id="79d42-136">The value of this parameter appears in the **SourceIdentifier** property of the events.</span></span>
 
 ```yaml
 Type: System.String
@@ -142,35 +133,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3bf29-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3bf29-137">CommonParameters</span></span>
+### <span data-ttu-id="79d42-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="79d42-137">CommonParameters</span></span>
 
-<span data-ttu-id="3bf29-138">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="3bf29-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3bf29-139">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="3bf29-139">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="79d42-138">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="79d42-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="79d42-139">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="79d42-139">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3bf29-140">INDATA</span><span class="sxs-lookup"><span data-stu-id="3bf29-140">INPUTS</span></span>
+## <span data-ttu-id="79d42-140">INDATA</span><span class="sxs-lookup"><span data-stu-id="79d42-140">INPUTS</span></span>
 
-### <span data-ttu-id="3bf29-141">Inget</span><span class="sxs-lookup"><span data-stu-id="3bf29-141">None</span></span>
+### <span data-ttu-id="79d42-141">Inget</span><span class="sxs-lookup"><span data-stu-id="79d42-141">None</span></span>
 
-<span data-ttu-id="3bf29-142">Du kan inte skicka pipe-ininformation till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="3bf29-142">You cannot pipe input to this cmdlet.</span></span>
+<span data-ttu-id="79d42-142">Du kan inte skicka pipe-ininformation till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="79d42-142">You cannot pipe input to this cmdlet.</span></span>
 
-## <span data-ttu-id="3bf29-143">UTDATA</span><span class="sxs-lookup"><span data-stu-id="3bf29-143">OUTPUTS</span></span>
+## <span data-ttu-id="79d42-143">UTDATA</span><span class="sxs-lookup"><span data-stu-id="79d42-143">OUTPUTS</span></span>
 
-### <span data-ttu-id="3bf29-144">System. Management. Automation. PSEventArgs</span><span class="sxs-lookup"><span data-stu-id="3bf29-144">System.Management.Automation.PSEventArgs</span></span>
+### <span data-ttu-id="79d42-144">System. Management. Automation. PSEventArgs</span><span class="sxs-lookup"><span data-stu-id="79d42-144">System.Management.Automation.PSEventArgs</span></span>
 
-## <span data-ttu-id="3bf29-145">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="3bf29-145">NOTES</span></span>
+## <span data-ttu-id="79d42-145">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="79d42-145">NOTES</span></span>
 
-<span data-ttu-id="3bf29-146">Den nya anpassade händelsen, händelse prenumerationen och händelse kön finns bara i den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="3bf29-146">The new custom event, the event subscription, and the event queue exist only in the current session.</span></span> <span data-ttu-id="3bf29-147">Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.</span><span class="sxs-lookup"><span data-stu-id="3bf29-147">If you close the current session, the event queue is discarded and the event subscription is canceled.</span></span>
+<span data-ttu-id="79d42-146">Inga händelse källor är tillgängliga på Linux-eller macOS-plattformarna.</span><span class="sxs-lookup"><span data-stu-id="79d42-146">No event sources available on the Linux or macOS platforms.</span></span>
 
-## <span data-ttu-id="3bf29-148">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="3bf29-148">RELATED LINKS</span></span>
+<span data-ttu-id="79d42-147">Den nya anpassade händelsen, händelse prenumerationen och händelse kön finns bara i den aktuella sessionen.</span><span class="sxs-lookup"><span data-stu-id="79d42-147">The new custom event, the event subscription, and the event queue exist only in the current session.</span></span>
+<span data-ttu-id="79d42-148">Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.</span><span class="sxs-lookup"><span data-stu-id="79d42-148">If you close the current session, the event queue is discarded and the event subscription is canceled.</span></span>
 
-[<span data-ttu-id="3bf29-149">Hämta händelse</span><span class="sxs-lookup"><span data-stu-id="3bf29-149">Get-Event</span></span>](Get-Event.md)
+## <span data-ttu-id="79d42-149">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="79d42-149">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3bf29-150">Registrera – EngineEvent</span><span class="sxs-lookup"><span data-stu-id="3bf29-150">Register-EngineEvent</span></span>](Register-EngineEvent.md)
+[<span data-ttu-id="79d42-150">Hämta händelse</span><span class="sxs-lookup"><span data-stu-id="79d42-150">Get-Event</span></span>](Get-Event.md)
 
-[<span data-ttu-id="3bf29-151">Registrera – ObjectEvent</span><span class="sxs-lookup"><span data-stu-id="3bf29-151">Register-ObjectEvent</span></span>](Register-ObjectEvent.md)
+[<span data-ttu-id="79d42-151">Registrera – EngineEvent</span><span class="sxs-lookup"><span data-stu-id="79d42-151">Register-EngineEvent</span></span>](Register-EngineEvent.md)
 
-[<span data-ttu-id="3bf29-152">Ta bort händelse</span><span class="sxs-lookup"><span data-stu-id="3bf29-152">Remove-Event</span></span>](Remove-Event.md)
+[<span data-ttu-id="79d42-152">Registrera – ObjectEvent</span><span class="sxs-lookup"><span data-stu-id="79d42-152">Register-ObjectEvent</span></span>](Register-ObjectEvent.md)
 
-[<span data-ttu-id="3bf29-153">Avregistrera-händelse</span><span class="sxs-lookup"><span data-stu-id="3bf29-153">Unregister-Event</span></span>](Unregister-Event.md)
+[<span data-ttu-id="79d42-153">Ta bort händelse</span><span class="sxs-lookup"><span data-stu-id="79d42-153">Remove-Event</span></span>](Remove-Event.md)
 
-[<span data-ttu-id="3bf29-154">Vänta-händelse</span><span class="sxs-lookup"><span data-stu-id="3bf29-154">Wait-Event</span></span>](Wait-Event.md)
+[<span data-ttu-id="79d42-154">Avregistrera-händelse</span><span class="sxs-lookup"><span data-stu-id="79d42-154">Unregister-Event</span></span>](Unregister-Event.md)
 
+[<span data-ttu-id="79d42-155">Vänta-händelse</span><span class="sxs-lookup"><span data-stu-id="79d42-155">Wait-Event</span></span>](Wait-Event.md)
