@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
-ms.openlocfilehash: e73382da05268af278b280d69cbea0687304fb5e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 15aca668be08324f17a2a737214ede309370adf1
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267951"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342135"
 ---
 # Get-HotFix
 
@@ -28,7 +28,7 @@ Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredent
 [<CommonParameters>]
 ```
 
-### Beskrivning
+### Description
 
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
@@ -183,6 +183,8 @@ Du kan skicka ett eller flera dator namn för att få snabb korrigering.
 `Get-HotFix` returnerar objekt som representerar snabb korrigeringarna på datorn.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 **Win32_QuickFixEngineering** [WMI-klassen](/windows/desktop/WmiSdk/retrieving-a-class) representerar en mindre systemomfattande uppdatering, vanligt vis kallat snabb korrigerings teknik (QFE), som tillämpas på det aktuella operativ systemet. Den här klassen returnerar endast uppdateringar som tillhandahålls av Component Based Servicing (CBS). De här uppdateringarna visas inte i registret. Uppdateringar som tillhandahålls av Microsoft Windows Installer (MSI) eller [Windows updates](https://update.microsoft.com) platsen returneras inte av **Win32_QuickFixEngineering**. Mer information finns i [Win32_QuickFixEngineering-klass](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).
 

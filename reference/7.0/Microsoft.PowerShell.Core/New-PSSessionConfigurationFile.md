@@ -7,12 +7,12 @@ ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.openlocfilehash: 4f326fcfb2c2af6816ae7cc58f12699e748f163a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f2d5613b97e784fc9e1096d3687c156a77d21908
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262622"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343104"
 ---
 # New-PSSessionConfigurationFile
 
@@ -951,6 +951,8 @@ Det går inte att skicka några objekt till denna cmdlet.
 Denna cmdlet genererar inga utdata.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 - Parametrar, till exempel **VisibleCmdlets** och **VisibleProviders** , importerar inte objekt till sessionen. De väljer i stället bland de objekt som har importer ATS till sessionen. Om värdet för **VisibleProviders** -parametern till exempel är certifikat leverantören, men parametern **ModulesToImport** inte anger den **Microsoft. PowerShell. Security** -modul som innehåller certifikat leverantören, visas inte certifikat leverantören i sessionen.
 - `New-PSSessionConfigurationFile` skapar en konfigurations fil för sessionen som har fil namns tillägget. PSSC i den sökväg som du anger i parametern **Path** . När du använder sessionens konfigurations fil för att skapa en konfiguration av sessionen, `Register-PSSessionConfiguration` kopierar cmdleten konfigurations filen och sparar en aktiv kopia av filen i katalogen **SessionConfig** i `$PSHOME` katalogen.

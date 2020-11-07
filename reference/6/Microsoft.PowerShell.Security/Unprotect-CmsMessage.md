@@ -7,12 +7,12 @@ ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
-ms.openlocfilehash: 7d33d6b5ffe9a2a4807d864c6acb2021fff88e01
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 449feaad9c5e92ba7a4824911b558061da9218e3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93268005"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343614"
 ---
 # Unprotect-CmsMessage
 
@@ -197,6 +197,8 @@ Du kan skicka vidare ett objekt som innehåller krypterat innehåll till `Unprot
 Det okrypterade meddelandet.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 

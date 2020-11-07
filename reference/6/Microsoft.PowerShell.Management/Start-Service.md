@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
-ms.openlocfilehash: ae2b61ab4f5486b761f32603e60a10507e96a907
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ec825c981754e69453dab702815fcaaf6b4362f3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263775"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343746"
 ---
 # Start-Service
 
@@ -28,7 +28,7 @@ Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Default
+### Standard
 
 ```
 Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
@@ -252,12 +252,14 @@ Denna cmdlet skapar ett **system. ServiceProcess. ServiceController** -objekt so
 
 ## ANTECKNINGAR
 
-* Du kan också referera till `Start-Service` med dess inbyggda alias `sasv` . Mer information finns i [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-* `Start-Service` kan bara styra tjänster om den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
-* Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
+- Du kan också referera till `Start-Service` med dess inbyggda alias `sasv` . Mer information finns i [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+- `Start-Service` kan bara styra tjänster om den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
+- Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .
   Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
-* Du kan bara starta de tjänster som har start typen manuell, automatisk eller automatisk (fördröjd start). Det går inte att starta tjänsterna som har start typen inaktive rad. Om ett `Start-Service` kommando Miss lyckas med meddelandet `Cannot start service \<service-name\> on computer` använder `Get-CimInstance` du för att hitta starttyp för tjänsten och om du behöver kan du använda `Set-Service` cmdleten för att ändra start typen för tjänsten.
-* Vissa tjänster, till exempel Prestandaloggar och-varningar (SysmonLog) stoppas automatiskt om de inte har något arbete att göra. När PowerShell startar en tjänst som stannar nästan omedelbart visas följande meddelande: `Service \<display-name\> start failed.`
+- Du kan bara starta de tjänster som har start typen manuell, automatisk eller automatisk (fördröjd start). Det går inte att starta tjänsterna som har start typen inaktive rad. Om ett `Start-Service` kommando Miss lyckas med meddelandet `Cannot start service \<service-name\> on computer` använder `Get-CimInstance` du för att hitta starttyp för tjänsten och om du behöver kan du använda `Set-Service` cmdleten för att ändra start typen för tjänsten.
+- Vissa tjänster, till exempel Prestandaloggar och-varningar (SysmonLog) stoppas automatiskt om de inte har något arbete att göra. När PowerShell startar en tjänst som stannar nästan omedelbart visas följande meddelande: `Service \<display-name\> start failed.`
 
 ## RELATERADE LÄNKAR
 

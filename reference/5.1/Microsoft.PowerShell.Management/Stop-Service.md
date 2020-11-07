@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Service
-ms.openlocfilehash: 6bffe41f1efd42c686d06f59cf86b374b596d80d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 77ce507d0eaf476e2c24f41e433bd69fdcb416bb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265329"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342577"
 ---
 # Stop-Service
 
@@ -28,7 +28,7 @@ Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru]
  [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Default
+### Standard
 
 ```
 Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
@@ -44,8 +44,7 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 
 ## BESKRIVNING
 
-Cmdleten **stoppa-service** skickar ett stopp meddelande till Windows-tjänstens kontrollant för var och en av de angivna tjänsterna.
-Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern **InputObject** för att skicka ett tjänst objekt som representerar den tjänst som du vill stoppa.
+`Stop-Service`Cmdleten skickar ett stopp meddelande till Windows-Domänkontrollanttjänsten för varje angiven tjänst. Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern **InputObject** för att skicka ett tjänst objekt som representerar den tjänst som du vill stoppa.
 
 ## EXEMPEL
 
@@ -63,9 +62,7 @@ Det här kommandot stoppar Prestandaloggar och-varningar-tjänsten (SysmonLog) p
 PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
-Det här kommandot stoppar Telnet-tjänsten på den lokala datorn.
-Kommandot använder **Get-service** för att hämta ett objekt som representerar Telnet-tjänsten.
-Pipeline-operatorn (|) rör objektet att **stoppa-service** , vilket stoppar tjänsten.
+Det här kommandot stoppar Telnet-tjänsten på den lokala datorn. Kommandot använder `Get-Service` för att hämta ett objekt som representerar Telnet-tjänsten. Pipeline-operatorn ( `|` ) rör objektet till `Stop-Service` , vilket stoppar tjänsten.
 
 ### Exempel 3: stoppa en tjänst som har beroende tjänster
 
@@ -74,17 +71,11 @@ PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServ
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 
-I det här exemplet stoppas IISAdmin-tjänsten på den lokala datorn.
-Eftersom den här tjänsten stoppas stoppas även de tjänster som är beroende av IISAdmin-tjänsten, men det är bäst att föregå **Stop service** med ett kommando som visar de tjänster som är beroende av IISADMIN-tjänsten.
+I det här exemplet stoppas IISAdmin-tjänsten på den lokala datorn. Eftersom den här tjänsten stoppas stoppas även de tjänster som är beroende av IISAdmin-tjänsten, men det är bäst att föregå `Stop-Service` ett kommando som visar de tjänster som är beroende av IISADMIN-tjänsten.
 
-Det första kommandot listar de tjänster som är beroende av IISAdmin.
-Tjänsten använder **Get-service** för att hämta ett objekt som representerar IISADMIN-tjänsten.
-Pipeline-operatorn (|) skickar resultatet till Format-List-cmdlet.
-Kommandot använder *egenskaps* parametern i **format-listan** för att endast lista **namn** och **DependentServices** egenskaper för tjänsten.
+Det första kommandot listar de tjänster som är beroende av IISAdmin. Den använder `Get-Service` för att hämta ett objekt som representerar IISADMIN-tjänsten. Pipeline-operatorn ( `|` ) skickar resultatet till `Format-List` cmdleten. Kommandot använder **egenskaps** parametern för `Format-List` för att visa en lista över tjänstens **namn** och egenskaper för **DependentServices** .
 
-Det andra kommandot stoppar IISAdmin-tjänsten.
-Parametern *Force* krävs för att stoppa en tjänst som har beroende tjänster.
-Kommandot använder *Confirm* -parametern för att begära bekräftelse från användaren innan varje tjänst stoppas.
+Det andra kommandot stoppar IISAdmin-tjänsten. Parametern **Force** krävs för att stoppa en tjänst som har beroende tjänster. Kommandot använder **Confirm** -parametern för att begära bekräftelse från användaren innan varje tjänst stoppas.
 
 ## PARAMETRAR
 
@@ -107,10 +98,7 @@ Accept wildcard characters: True
 
 ### -Undanta
 
-Anger tjänster som denna cmdlet utelämnar.
-Värdet för den här parametern kvalificerar parametern *Name* .
-Ange ett namn element eller ett mönster, till exempel s *.
-Jokertecken är tillåtna.
+Anger tjänster som denna cmdlet utelämnar. Värdet för den här parametern kvalificerar parametern **Name** . Ange ett namn element eller ett mönster, till exempel s *. Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -142,10 +130,7 @@ Accept wildcard characters: False
 
 ### -Inkludera
 
-Anger tjänster som denna cmdlet stoppar.
-Värdet för den här parametern kvalificerar parametern *Name* .
-Ange ett namn element eller ett mönster, till exempel s *.
-Jokertecken är tillåtna.
+Anger tjänster som denna cmdlet stoppar. Värdet för den här parametern kvalificerar parametern **Name** . Ange ett namn element eller ett mönster, till exempel s *. Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -161,8 +146,7 @@ Accept wildcard characters: True
 
 ### – InputObject
 
-Anger **ServiceController** -objekt som representerar de tjänster som ska stoppas.
-Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
+Anger **ServiceController** -objekt som representerar de tjänster som ska stoppas. Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -178,8 +162,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Anger tjänst namnen för de tjänster som ska stoppas.
-Jokertecken är tillåtna.
+Anger tjänst namnen för de tjänster som ska stoppas. Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -211,8 +194,7 @@ Accept wildcard characters: False
 
 ### – PassThru
 
-Returnerar ett objekt som representerar tjänsten.
-Som standard genererar denna cmdlet inga utdata.
+Returnerar ett objekt som representerar tjänsten. Som standard genererar denna cmdlet inga utdata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -244,8 +226,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -273,20 +254,15 @@ Du kan skicka vidare ett tjänst objekt eller en sträng som innehåller namnet 
 
 ### Ingen, system. ServiceProcess. ServiceController
 
-Denna cmdlet skapar ett **system. ServiceProcess. ServiceController** -objekt som representerar tjänsten om du använder parametern *Passthru* .
-Annars genererar denna cmdlet inga utdata.
+Denna cmdlet skapar ett **system. ServiceProcess. ServiceController** -objekt som representerar tjänsten om du använder parametern **Passthru** . Annars genererar denna cmdlet inga utdata.
 
 ## ANTECKNINGAR
 
-* Du kan också referera till **Stop service** med det inbyggda aliaset **spsv**. Mer information finns i about_Aliases.
+Du kan också referera till `Stop-Service` med dess inbyggda alias, **spsv**. Mer information finns i about_Aliases.
 
-  **Stoppa-tjänsten** kan bara styra tjänster när den aktuella användaren har behörighet att göra detta.
-Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
+`Stop-Service` kan bara styra tjänster när den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
 
-  Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .
-Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
-
-*
+Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` . Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
 
 ## RELATERADE LÄNKAR
 

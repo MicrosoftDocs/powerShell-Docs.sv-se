@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSRemoting
-ms.openlocfilehash: 3057f56ebb2a1d5a1c36d75cc4cb67c1e2375a1a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 00f8d073d92e6b92b8139874c630352e49969bb3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265857"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344107"
 ---
 # Disable-PSRemoting
 
@@ -474,6 +474,8 @@ Det går inte att skicka några objekt till denna cmdlet.
 Denna cmdlet genererar inga utdata.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 - Om du inaktiverar-sessionsinställningar återställs inte alla ändringar som har gjorts av `Enable-PSRemoting` `Enable-PSSessionConfiguration` cmdletarna eller. Du kan behöva ångra följande ändringar manuellt.
 

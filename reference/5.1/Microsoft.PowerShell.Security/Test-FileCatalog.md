@@ -7,17 +7,16 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 128405fdbcf0c1d059287191850ffdca53278ec1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 8f5e11fca51bf92386c19a77fa9a66503b2d47a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265215"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343257"
 ---
 # Test-FileCatalog
 
 ## SAMMANFATTNING
-
 `Test-FileCatalog` verifierar om hash-värdena i en katalog fil (. cat) matchar hasharna för de faktiska filerna för att verifiera deras äkthet.
 
 Denna cmdlet stöds bara i Windows.
@@ -31,10 +30,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## BESKRIVNING
 
-`Test-FileCatalog` verifierar filens äkthet genom att jämföra hash-filerna för en katalog fil (. cat) med hash-värdena för faktiska filer på disk.
-Om det upptäcker eventuella avvikelser returneras statusen som ValidationFailed. Användare kan hämta all den här informationen med hjälp av parametern-detaljerad.
-Den visar också signerings status för katalogen i egenskapen signatur som motsvarar anrop av `Get-AuthenticodeSignature` cmdleten i katalog filen.
-Användare kan även hoppa över alla filer under valideringen med hjälp av parametern-FilesToSkip.
+`Test-FileCatalog` verifierar filens äkthet genom att jämföra hash-filerna för en katalog fil (. cat) med hash-värdena för faktiska filer på disk. Om det upptäcker eventuella avvikelser returneras statusen som ValidationFailed. Användare kan hämta all den här informationen med hjälp av parametern-detaljerad. Den visar också signerings status för katalogen i egenskapen signatur som motsvarar anrop av `Get-AuthenticodeSignature` cmdleten i katalog filen. Användare kan även hoppa över alla filer under valideringen med hjälp av parametern-FilesToSkip.
 
 Denna cmdlet stöds bara i Windows.
 
@@ -154,8 +150,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

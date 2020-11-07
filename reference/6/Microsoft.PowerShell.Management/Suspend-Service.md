@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/suspend-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Suspend-Service
-ms.openlocfilehash: 6e9fd5dd7a5736ef95976cb5195dd1d210d81651
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5e4037c4ba8947f8efb438103f2bfd47eb05d1f5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263769"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343750"
 ---
 # Suspend-Service
 
@@ -28,7 +28,7 @@ Suspend-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <Stri
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Default
+### Standard
 
 ```
 Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
@@ -44,9 +44,7 @@ Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Excl
 
 ## BESKRIVNING
 
-Cmdlet **: en Suspend-service** skickar ett uppehålls meddelande till Windows-Domänkontrollanttjänsten för varje angiven tjänst.
-Tjänsten körs fortfarande när den har pausats, men dess åtgärd stoppas tills den återupptas, till exempel av usingthe Resume-Service cmdlet.
-Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern *InputObject* för att skicka ett tjänst objekt som representerar de tjänster som du vill pausa.
+`Suspend-Service`Cmdleten skickar ett uppehålls meddelande till Windows-Tjänstekontrollanten för var och en av de angivna tjänsterna. Tjänsten körs fortfarande när den har pausats, men dess åtgärd stoppas tills den återupptas, till exempel av usingthe- `Resume-Service` cmdlet. Du kan ange tjänsterna efter tjänst namn eller visnings namn, eller så kan du använda parametern **InputObject** för att skicka ett tjänst objekt som representerar de tjänster som du vill pausa.
 
 ## EXEMPEL
 
@@ -64,8 +62,7 @@ Med det här kommandot pausas tjänsten Telnet service (Tlntsvr) på den lokala 
 PS C:\> Suspend-Service -Name lanman* -WhatIf
 ```
 
-Det här kommandot anger vad som skulle hända om du har avbrutit tjänsterna som har ett tjänst namn som börjar med LANMAN.
-Om du vill inaktivera tjänsterna kör du kommandot igen utan parametern *whatIf* .
+Det här kommandot anger vad som skulle hända om du har avbrutit tjänsterna som har ett tjänst namn som börjar med LANMAN. Om du vill inaktivera tjänsterna kör du kommandot igen utan parametern **whatIf** .
 
 ### Exempel 3: Hämta och pausa en tjänst
 
@@ -73,8 +70,7 @@ Om du vill inaktivera tjänsterna kör du kommandot igen utan parametern *whatIf
 PS C:\> Get-Service schedule | Suspend-Service
 ```
 
-Det här kommandot använder cmdleten **Get-service** för att hämta ett objekt som representerar tjänsten Schemaläggaren (Schedule) på datorn.
-Pipeline-operatorn (|) skickar resultatet till **suspend-tjänsten** , vilket gör att tjänsten pausas.
+Det här kommandot använder `Get-Service` cmdleten för att hämta ett objekt som representerar tjänsten Schemaläggaren (Schedule) på datorn. Pipeline-operatorn ( `|` ) skickar resultatet till `Suspend-Service` , vilket gör att tjänsten pausas.
 
 ### Exempel 4: inaktivera alla tjänster som kan pausas
 
@@ -82,18 +78,13 @@ Pipeline-operatorn (|) skickar resultatet till **suspend-tjänsten** , vilket g�
 PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
 ```
 
-Det här kommandot pausar alla tjänster på datorn som kan pausas.
-Den använder **Get-service** för att hämta objekt som representerar tjänsterna på datorn.
-Pipeline-operatorn skickar resultatet till Where-Object-cmdlet, som endast väljer de tjänster som har värdet $True för egenskapen **CanPauseAndContinue** .
-En annan pipeline-operator skickar resultatet till **suspend-tjänsten**.
-Parametern *Confirm* meddelar dig om bekräftelse innan du pausar varje tjänst.
+Det här kommandot pausar alla tjänster på datorn som kan pausas. Den använder `Get-Service` för att hämta objekt som representerar tjänsterna på datorn. Pipeline-operatorn skickar resultaten till `Where-Object` cmdleten, som endast väljer de tjänster som har värdet `$True` för egenskapen **CanPauseAndContinue** . En annan pipeline-operator skickar resultatet till `Suspend-Service` . Parametern **Confirm** meddelar dig om bekräftelse innan du pausar varje tjänst.
 
 ## PARAMETRAR
 
 ### -DisplayName
 
-Anger visnings namnen för de tjänster som ska pausas.
-Jokertecken är tillåtna.
+Anger visnings namnen för de tjänster som ska pausas. Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -109,10 +100,7 @@ Accept wildcard characters: True
 
 ### -Undanta
 
-Anger tjänster som ska uteslutas från de angivna tjänsterna.
-Värdet för den här parametern kvalificerar parametern *Name* .
-Ange ett namn element eller ett mönster, till exempel "s *".
-Jokertecken är tillåtna.
+Anger tjänster som ska uteslutas från de angivna tjänsterna. Värdet för den här parametern kvalificerar parametern **Name** . Ange ett namn element eller ett mönster, till exempel "s *". Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -128,10 +116,7 @@ Accept wildcard characters: True
 
 ### -Inkludera
 
-Anger vilka tjänster som ska pausas.
-Värdet för den här parametern kvalificerar parametern *Name* .
-Ange ett namn element eller ett mönster, till exempel "s *".
-Jokertecken är tillåtna.
+Anger vilka tjänster som ska pausas. Värdet för den här parametern kvalificerar parametern **Name** . Ange ett namn element eller ett mönster, till exempel "s *". Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -147,8 +132,7 @@ Accept wildcard characters: True
 
 ### – InputObject
 
-Anger **ServiceController** -objekt som representerar de tjänster som ska pausas.
-Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
+Anger **ServiceController** -objekt som representerar de tjänster som ska pausas. Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -164,11 +148,9 @@ Accept wildcard characters: False
 
 ### -Name
 
-Anger tjänst namnen för de tjänster som ska pausas.
-Jokertecken är tillåtna.
+Anger tjänst namnen för de tjänster som ska pausas. Jokertecken är tillåtna.
 
-Parameter namnet är valfritt.
-Du kan använda *namn* eller dess alias, *ServiceName* eller så kan du utelämna parameter namnet.
+Parameter namnet är valfritt. Du kan använda **namn** eller dess alias, **ServiceName** eller så kan du utelämna parameter namnet.
 
 ```yaml
 Type: System.String[]
@@ -184,8 +166,7 @@ Accept wildcard characters: True
 
 ### – PassThru
 
-Returnerar ett objekt som representerar det objekt som du arbetar med.
-Som standard genererar denna cmdlet inga utdata.
+Returnerar ett objekt som representerar det objekt som du arbetar med. Som standard genererar denna cmdlet inga utdata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,14 +227,16 @@ Du kan skicka vidare ett tjänst objekt eller en sträng som innehåller ett tj�
 
 ### Ingen, system. ServiceProcess. ServiceController
 
-Denna cmdlet skapar ett **system. ServiceProcess. ServiceController** -objekt som representerar tjänsten om du anger parametern *Passthru* .
-Annars genererar denna cmdlet inga utdata.
+Denna cmdlet skapar ett **system. ServiceProcess. ServiceController** -objekt som representerar tjänsten om du anger parametern **Passthru** . Annars genererar denna cmdlet inga utdata.
 
 ## ANTECKNINGAR
 
-* **Suspend-service** kan bara styra tjänster när den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
-* **Suspend-service** kan bara pausa tjänster som stöder inaktive ring och återupptagning. För att avgöra om en viss tjänst kan pausas använder du Get-Service-cmdlet tillsammans med egenskapen **CanPauseAndContinue** . Till exempel `Get-Service wmi | Format-List Name, CanPauseAndContinue`. Om du vill hitta alla tjänster på datorn som kan inaktive ras skriver du `Get-Service | Where-Object {$_.CanPauseAndContinue -eq $true}` .
-* Skriv **Get-service** för att hitta tjänst namn och visnings namn för tjänsterna i systemet. Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
+- `Suspend-Service` kan bara styra tjänster när den aktuella användaren har behörighet att göra detta. Om ett kommando inte fungerar som det ska kanske du inte har de behörigheter som krävs.
+- `Suspend-Service` kan endast pausa tjänster som stöder inaktive ring och återupptagning. För att avgöra om en viss tjänst kan pausas använder du `Get-Service` cmdleten tillsammans med egenskapen **CanPauseAndContinue** . Exempelvis `Get-Service wmi | Format-List Name, CanPauseAndContinue`. Om du vill hitta alla tjänster på datorn som kan inaktive ras skriver du `Get-Service | Where-Object {$_.CanPauseAndContinue -eq $true}` .
+- Om du vill hitta tjänst namn och visnings namn för tjänsterna i systemet skriver du `Get-Service` .
+  Tjänst namnen visas i kolumnen **namn** och visnings namnen visas i kolumnen **DisplayName** .
 
 ## RELATERADE LÄNKAR
 

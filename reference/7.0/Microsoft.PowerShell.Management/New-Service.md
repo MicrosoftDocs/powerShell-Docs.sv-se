@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 17b28b14a9610dd48a03cc8c654806e75d3d97e3
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 0963e90f1f994a9bd6f3f61e80bf56eebff09384
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262832"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343121"
 ---
 # New-Service
 
@@ -186,8 +186,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Anger namnet på tjänsten.
-Den här parametern är obligatorisk.
+Anger namnet på tjänsten. Den här parametern är obligatorisk.
 
 ```yaml
 Type: System.String
@@ -261,8 +260,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,7 +292,9 @@ Denna cmdlet returnerar ett objekt som representerar den nya tjänsten.
 
 ## ANTECKNINGAR
 
-Om du vill köra den här cmdleten på Windows Vista och senare versioner av Windows-operativsystemet startar du PowerShell med alternativet Kör som administratör.
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
+Starta PowerShell med alternativet **Kör som administratör** för att köra denna cmdlet.
 
 ## RELATERADE LÄNKAR
 

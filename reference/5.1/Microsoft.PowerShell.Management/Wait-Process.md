@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
-ms.openlocfilehash: 38e225a1973022f82a40694cfad89b94d050509e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6fe942f98183a3b185adf5781699bf41d03db920
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265311"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343375"
 ---
 # Wait-Process
 
@@ -40,11 +40,10 @@ Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
 ## BESKRIVNING
-Cmdleten **wait process** väntar på att en eller flera processer som körs ska stoppas innan indatamängden accepteras.
-I Windows PowerShell-konsolen förhindrar denna cmdlet kommando tolken förrän processerna har stoppats.
-Du kan ange en process efter process namn eller process-ID (PID) eller skicka ett process objekt till **wait-process**.
 
-**Wait-process** fungerar bara på processer som körs på den lokala datorn.
+`Wait-Process`Cmdleten väntar på att en eller flera processer som körs ska stoppas innan indatamängden accepteras. I PowerShell-konsolen ignorerar denna cmdlet kommando tolken tills processerna har stoppats. Du kan ange en process efter process namn eller process-ID (PID) eller skicka ett process objekt till `Wait-Process` .
+
+`Wait-Process` fungerar bara på processer som körs på den lokala datorn.
 
 ## EXEMPEL
 
@@ -58,13 +57,11 @@ PS C:\> Wait-Process -Id $nid
 
 Det här exemplet stoppar anteckningar-processen och väntar sedan på att processen ska stoppas innan nästa kommando fortsätter.
 
-Det första kommandot använder cmdleten **Get-process** för att hämta ID: t för anteckningar-processen.
-Den lagrar ID: t i variabeln $nid.
+Det första kommandot använder `Get-Process` cmdleten för att hämta ID: t för anteckningar-processen. Den lagrar ID: t i `$nid` variabeln.
 
-Det andra kommandot använder cmdleten Stop-Process för att stoppa processen med det ID som lagras i $nid.
+Det andra kommandot använder `Stop-Process` cmdleten för att stoppa processen med ID: t som lagras i `$nid` .
 
-Det tredje kommandot använder **wait-process** för att vänta tills anteckningar-processen har stoppats.
-Den använder *ID* -parametern för **wait process** för att identifiera processen.
+Det tredje kommandot använder `Wait-Process` för att vänta tills anteckningar-processen har stoppats. Den använder **ID-** parametern för `Wait-Process` för att identifiera processen.
 
 ### Exempel 2: Ange en process
 
@@ -75,10 +72,9 @@ PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
 ```
 
-De här kommandona visar tre olika metoder för att ange en process till **wait-process**.
-Det första kommandot hämtar anteckningar-processen och lagrar det i $p variabeln.
+Dessa kommandon visar tre olika metoder för att ange en process för `Wait-Process` . Det första kommandot hämtar anteckningar-processen och lagrar dem i `$p` variabeln.
 
-Det andra kommandot använder *ID-* parametern, det tredje kommandot använder parametern *Name* och det fjärde kommandot använder parametern *InputObject* .
+Det andra kommandot använder **ID-** parametern, det tredje kommandot använder parametern **Name** och det fjärde kommandot använder parametern **InputObject** .
 
 Dessa kommandon har samma resultat och kan användas utbytbart.
 
@@ -88,14 +84,13 @@ Dessa kommandon har samma resultat och kan användas utbytbart.
 PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 ```
 
-Det här kommandot väntar 30 sekunder på att Outlook-och Winword-processerna ska stoppas.
-Om båda processerna inte har stoppats visar cmdleten ett icke-avslutande fel och kommando tolken.
+Det här kommandot väntar 30 sekunder på att Outlook-och Winword-processerna ska stoppas. Om båda processerna inte har stoppats visar cmdleten ett icke-avslutande fel och kommando tolken.
 
 ## PARAMETRAR
 
 ### -ID
-Anger process-ID: n för processerna.
-Använd kommatecken för att avgränsa ID: n för att ange flera ID: n.
+
+Anger process-ID: n för processerna. Använd kommatecken för att avgränsa ID: n för att ange flera ID: n.
 Om du vill hitta ett process-ID skriver du `Get-Process` .
 
 ```yaml
@@ -111,8 +106,8 @@ Accept wildcard characters: False
 ```
 
 ### – InputObject
-Anger processerna genom att skicka process objekt.
-Ange en variabel som innehåller process objekt, eller Skriv ett kommando eller uttryck som hämtar process objekt, t. ex. Get-Process-cmdleten.
+
+Anger processerna genom att skicka process objekt. Ange en variabel som innehåller process objekt, eller Skriv ett kommando eller uttryck som hämtar process objekt, t `Get-Process` . ex. cmdleten.
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -127,9 +122,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Anger processernas process namn.
-Om du vill ange flera namn använder du kommatecken för att avgränsa namnen.
-Jokertecken stöds inte.
+
+Anger processernas process namn. Om du vill ange flera namn använder du kommatecken för att avgränsa namnen. Jokertecken stöds inte.
 
 ```yaml
 Type: System.String[]
@@ -144,9 +138,9 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
+
 Anger den maximala tiden, i sekunder, som denna cmdlet väntar på att de angivna processerna ska stoppas.
-När det här intervallet går ut visar kommandot ett icke-avslutande fel som visar de processer som fortfarande körs och slutar vänta.
-Som standard finns det ingen tids gräns.
+När det här intervallet går ut visar kommandot ett icke-avslutande fel som visar de processer som fortfarande körs och slutar vänta. Som standard finns det ingen tids gräns.
 
 ```yaml
 Type: System.Int32
@@ -161,23 +155,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
 ### System. Diagnostics. process
+
 Du kan skicka vidare ett process objekt till denna cmdlet.
 
 ## UTDATA
 
 ### Inget
+
 Denna cmdlet genererar inga utdata.
 
 ## ANTECKNINGAR
 
-* Denna cmdlet använder metoden **WaitForExit** i klassen system. Diagnostics. process. Mer information om den här metoden finns i Microsoft .NET Framework SDK.
-
-*
+Denna cmdlet använder metoden **WaitForExit** i klassen **system. Diagnostics. process** .
 
 ## RELATERADE LÄNKAR
 
