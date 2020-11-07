@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-event?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Event
-ms.openlocfilehash: 81244e9c32ca1f1d4824bdb8559607b44222c7bd
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0ab2c32fe81f2e5ffa6c292ce0fd00e05685bd2a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264405"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347711"
 ---
 # Get-Event
 
@@ -35,15 +35,11 @@ Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 
 ## BESKRIVNING
 
-Cmdleten **Get-Event** hämtar händelser i händelse kön för PowerShell för den aktuella sessionen.
-Du kan hämta alla händelser eller använda parametern *EventIdentifier* eller *SourceIdentifier* för att ange händelser.
+`Get-Event`Cmdleten hämtar händelser i händelse kön för PowerShell för den aktuella sessionen. Du kan hämta alla händelser eller använda parametern **EventIdentifier** eller **SourceIdentifier** för att ange händelser.
 
-När en händelse inträffar läggs den till i händelse kön.
-Händelse kön innehåller händelser som du har registrerat, händelser som skapats med hjälp av New-Event-cmdlet och händelsen som utlöses när PowerShell avslutas.
-Du kan använda **Get-Event** eller Wait-Event för att hämta händelser.
+När en händelse inträffar läggs den till i händelse kön. Händelse kön innehåller händelser som du har registrerat, händelser som skapats med hjälp av `New-Event` cmdleten och händelsen som utlöses när PowerShell avslutas. Du kan använda `Get-Event` eller `Wait-Event` för att hämta händelser.
 
-Denna cmdlet hämtar inte händelser från Loggbokens loggarna.
-Använd Get-WinEvent eller get-EventLog för att hämta dessa händelser.
+Denna cmdlet hämtar inte händelser från Loggbokens loggarna. Använd eller för att hämta händelser `Get-WinEvent` `Get-EventLog` .
 
 ## EXEMPEL
 
@@ -90,13 +86,11 @@ MessageData      :
 
 Det här exemplet visar hur du hämtar händelser genom att använda andra egenskaper än SourceIdentifier.
 
-Det första kommandot hämtar alla händelser i händelse kön och sparar dem i variabeln $Events.
+Det första kommandot hämtar alla händelser i händelse kön och sparar dem i `$Events` variabeln.
 
-Det andra kommandot använder mat ris notation för att hämta den första (0-index) händelsen i matrisen i variabeln $Events.
-Kommandot använder en pipeline-operator (|) för att skicka händelsen till kommandot Format-List, som visar alla egenskaper för händelsen i en lista.
-På så sätt kan du undersöka egenskaperna för händelseobjektet.
+Det andra kommandot använder mat ris notation för att hämta den första (0-index) händelsen i matrisen i `$Events` variabeln. Kommandot använder en pipeline-operator ( `|` ) för att skicka händelsen till `Format-List` kommandot, som visar alla egenskaper för händelsen i en lista. På så sätt kan du undersöka egenskaperna för händelseobjektet.
 
-Det tredje kommandot visar hur du använder Where-Object-cmdlet för att hämta en händelse baserat på den tidpunkt då den genererades.
+Det tredje kommandot visar hur du använder `Where-Object` cmdleten för att hämta en händelse baserat på den tidpunkt då den genererades.
 
 ### Exempel 4: Hämta en händelse efter dess identifierare
 
@@ -126,9 +120,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-Anger käll identifierare för vilka denna cmdlet hämtar händelser.
-Standardvärdet är alla händelser i händelse kön.
-Jokertecken är inte tillåtna.
+Anger käll identifierare för vilka denna cmdlet hämtar händelser. Standardvärdet är alla händelser i händelse kön. Jokertecken är inte tillåtna.
 
 ```yaml
 Type: System.String
@@ -156,52 +148,34 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 ### System. Management. Automation. PSEventArgs
 
-**Get-Event** returnerar ett **PSEventArgs** -objekt för varje händelse.
-Om du vill se en beskrivning av objektet skriver `Get-Help Get-Event -Full` du och läser avsnittet anteckningar i hjälp avsnittet.
+`Get-Event` Returnerar ett **PSEventArgs** -objekt för varje händelse. Om du vill se en beskrivning av objektet skriver `Get-Help Get-Event -Full` du och läser avsnittet anteckningar i hjälp avsnittet.
 
 ## ANTECKNINGAR
 
-* Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
+Inga händelse källor är tillgängliga på Linux-eller macOS-plattformarna.
 
-  Cmdleten **Get-Event** returnerar ett **PSEventArgs** -objekt ( **system. Management. Automation. PSEventArgs** ) med följande egenskaper:
+Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 
-  - Namnet.
-Namnet på datorn där händelsen inträffade.
-Det här egenskap svärdet fylls bara i när händelsen vidarebefordras från en fjärrdator.
+`Get-Event`Cmdleten returnerar ett **PSEventArgs** -objekt ( **system. Management. Automation. PSEventArgs** ) med följande egenskaper:
 
-  - RunspaceId.
-Ett GUID som unikt identifierar den session där händelsen inträffade.
-Det här egenskap svärdet fylls bara i när händelsen vidarebefordras från en fjärrdator.
+- Namnet. Namnet på datorn där händelsen inträffade. Det här egenskap svärdet fylls bara i när händelsen vidarebefordras från en fjärrdator.
 
-  - EventIdentifier.
-Ett heltal (Int32) som unikt identifierar händelse aviseringen i den aktuella sessionen.
+- RunspaceId. Ett GUID som unikt identifierar den session där händelsen inträffade. Det här egenskap svärdet fylls bara i när händelsen vidarebefordras från en fjärrdator.
 
-  - Ingen.
-Objektet som genererade händelsen.
-I värdet för parametern *åtgärd* innehåller $Sender automatisk variabel objektet Sender.
+- EventIdentifier. Ett heltal (Int32) som unikt identifierar händelse aviseringen i den aktuella sessionen.
 
-  - SourceEventArgs.
-Den första parametern som härleds från EventArgs, om den finns.
-I en tidsinställd händelse där signaturen har skickat av formulär objekt, timers. ElapsedEventArgs e, skulle egenskapen SourceEventArgs innehålla timers. ElapsedEventArgs.
-I värdet för parametern *åtgärd* innehåller den $EventArgs automatiska variabeln det här värdet.
+- Ingen. Objektet som genererade händelsen. I värdet för parametern **åtgärd** `$Sender` innehåller den automatiska variabeln objektet Sender.
 
-  - SourceArgs.
-Alla parametrar för den ursprungliga händelse under skriften.
-För en standardsignatur för händelser \[ representerar $args 0 \] avsändaren och $args \[ 1 \] representerar SourceEventArgs.
-I värdet för parametern *åtgärd* innehåller den $args automatiska variabeln det här värdet.
+- SourceEventArgs. Den första parametern som härleds från EventArgs, om den finns. I en tidsinställd händelse där signaturen har skickat av formulär objekt, **timers. ElapsedEventArgs** e, skulle egenskapen **SourceEventArgs** innehålla **timers. ElapsedEventArgs**. I värdet för parametern **åtgärd** `$EventArgs` innehåller den automatiska variabeln det här värdet.
 
-  - SourceIdentifier.
-En sträng som identifierar händelse prenumerationen.
-I värdet för parametern *åtgärd* innehåller egenskapen SourceIdentifier för den automatiska variabeln $Event det här värdet.
+- SourceArgs. Alla parametrar för den ursprungliga händelse under skriften. För en standard Event Signature `$Args[0]` representerar avsändaren och `$Args[1]` representerar **SourceEventArgs**. I värdet för parametern **åtgärd** `$Args` innehåller den automatiska variabeln det här värdet.
 
-  - TimeGenerated.
-Ett **datetime** -objekt som representerar tiden då händelsen genererades.
-I värdet för parametern *åtgärd* innehåller egenskapen TimeGenerated för den automatiska variabeln $Event det här värdet.
+- SourceIdentifier. En sträng som identifierar händelse prenumerationen. I värdet för parametern **åtgärd** innehåller egenskapen **SourceIdentifier** för den `$Event` automatiska variabeln det här värdet.
 
-  - MessageData.
-Data som är associerade med händelse prenumerationen.
-Användarna anger dessa data när de registrerar en händelse.
-I värdet för parametern *åtgärd* innehåller egenskapen MessageData för den automatiska variabeln $Event det här värdet.
+- TimeGenerated. Ett **datetime** -objekt som representerar tiden då händelsen genererades.
+  I värdet för parametern **åtgärd** innehåller egenskapen **TimeGenerated** för den `$Event` automatiska variabeln det här värdet.
+
+- MessageData. Data som är associerade med händelse prenumerationen. Användarna anger dessa data när de registrerar en händelse. I värdet för parametern **åtgärd** innehåller egenskapen **MessageData** för den `$Event` automatiska variabeln det här värdet.
 
 ## RELATERADE LÄNKAR
 
@@ -216,4 +190,3 @@ I värdet för parametern *åtgärd* innehåller egenskapen MessageData för den
 [Avregistrera-händelse](Unregister-Event.md)
 
 [Vänta-händelse](Wait-Event.md)
-

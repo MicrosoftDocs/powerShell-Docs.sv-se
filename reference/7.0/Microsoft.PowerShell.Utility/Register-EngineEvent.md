@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 26a8ef5bfb9fd520fabc836ca1e5da40558e0e8a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: cff52e9a321428cde31977f6d91e2d1047faa2ee
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262347"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346861"
 ---
 # Register-EngineEvent
 
@@ -256,6 +256,8 @@ Du kan inte skicka pipe-ininformation till `Register-EngineEvent` .
 Om du använder **Åtgärds** parametern `Register-EngineEvent` returnerar objektet **system. Management. Automation. PSEventJob** . Annars genererar den inga utdata.
 
 ## ANTECKNINGAR
+
+Inga händelse källor är tillgängliga på Linux-eller macOS-plattformarna.
 
 Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 

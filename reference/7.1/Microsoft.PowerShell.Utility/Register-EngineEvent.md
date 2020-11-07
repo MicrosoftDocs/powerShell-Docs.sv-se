@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 2adcbcc9e3c933e5c28521f26ec3ae2db03e50f7
-ms.sourcegitcommit: f58e4a04240e3419772f9eaa031b626800b615d7
+ms.openlocfilehash: 968cea73cd31bb5bf7b0341e5dbf40e297bb5edd
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "93268815"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347694"
 ---
 # Register-EngineEvent
 
@@ -259,6 +259,8 @@ Om du använder **Åtgärds** parametern `Register-EngineEvent` returnerar objek
 
 ## ANTECKNINGAR
 
+Inga händelse källor är tillgängliga på Linux-eller macOS-plattformarna.
+
 Händelser, händelse prenumerationer och händelse kön finns bara i den aktuella sessionen. Om du stänger den aktuella sessionen ignoreras händelse kön och händelse prenumerationen avbryts.
 
 ## RELATERADE LÄNKAR
@@ -274,4 +276,3 @@ Händelser, händelse prenumerationer och händelse kön finns bara i den aktuel
 [Avregistrera-händelse](Unregister-Event.md)
 
 [Vänta-händelse](Wait-Event.md)
-

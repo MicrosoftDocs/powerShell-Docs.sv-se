@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
-ms.openlocfilehash: a4c25d199b97be24277092bcb815a640a09360dd
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 314734957eea971338ac886ad82e9ce9eeb6a242
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263859"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346572"
 ---
 # Set-Acl
 
@@ -135,11 +135,9 @@ Det här kommandot ger **BUILTIN\Administrators** -gruppen fullständig kontroll
 
 Det första kommandot använder `Get-Acl` cmdleten för att hämta den Dog.txt filens säkerhets beskrivning.
 
-Next-variabler skapas för att ge **BUILTIN\Administrators** -gruppen fullständig kontroll över Dog.txt-filen. `$identity`Variabeln anges till namnet på ett [användar konto](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor).
-`$fileSystemRights`Variabeln inställd på FullControl och kan vara något av [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) -värdena som anger vilken typ av åtgärd som är kopplad till åtkomst regeln. `$type`Variabeln anges till Tillåt för att ange om åtgärden ska tillåtas eller nekas. `$fileSystemAccessRuleArgumentList`Variabeln är en argument lista som ska skickas när det nya **FileSystemAccessRule** -objektet görs. Sedan skapas ett nytt **FileSystemAccessRule** -objekt och **FileSystemAccessRule** -objektet skickas till metoden **SetAccessRule ()** lägger till den nya åtkomst regeln.
+Next-variabler skapas för att ge **BUILTIN\Administrators** -gruppen fullständig kontroll över Dog.txt-filen. `$identity`Variabeln anges till namnet på ett [användar konto](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor). `$fileSystemRights`Variabeln inställd på FullControl och kan vara något av [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) -värdena som anger vilken typ av åtgärd som är kopplad till åtkomst regeln. `$type`Variabeln anges till Tillåt för att ange om åtgärden ska tillåtas eller nekas. `$fileSystemAccessRuleArgumentList`Variabeln är en argument lista som ska skickas när det nya **FileSystemAccessRule** -objektet görs. Sedan skapas ett nytt **FileSystemAccessRule** -objekt och **FileSystemAccessRule** -objektet skickas till metoden **SetAccessRule ()** lägger till den nya åtkomst regeln.
 
-Det sista kommandot använder `Set-Acl` för att tillämpa säkerhets beskrivningen för Dog.txt.
-När kommandot har slutförts har **BUILTIN\Administrators** -gruppen fullständig kontroll över den Dog.txt.
+Det sista kommandot använder `Set-Acl` för att tillämpa säkerhets beskrivningen för Dog.txt. När kommandot har slutförts har **BUILTIN\Administrators** -gruppen fullständig kontroll över den Dog.txt.
 
 ## PARAMETRAR
 
@@ -349,13 +347,13 @@ Du kan skicka ett ACL-objekt eller en säkerhets beskrivning till `Set-Acl` .
 
 ### System. Security. AccessControl. FileSecurity
 
-`Set-Acl`Genererar inga utdata som standard.
-Men om du använder parametern **Passthru** genereras ett säkerhets objekt.
-Vilken typ av säkerhets objekt som är beror på objektets typ.
+`Set-Acl`Genererar inga utdata som standard. Men om du använder parametern **Passthru** genereras ett säkerhets objekt. Vilken typ av säkerhets objekt som är beror på objektets typ.
 
 ## ANTECKNINGAR
 
- `Set-Acl`Cmdleten stöds av PowerShell-filsystemet och register leverantörerna. Därför kan du använda den för att ändra säkerhets beskrivare för filer, kataloger och register nycklar.
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
+`Set-Acl`Cmdleten stöds av PowerShell-filsystemet och register leverantörerna. Därför kan du använda den för att ändra säkerhets beskrivare för filer, kataloger och register nycklar.
 
 ## RELATERADE LÄNKAR
 

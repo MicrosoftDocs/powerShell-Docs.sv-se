@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-PSSessionConfigurationFile
-ms.openlocfilehash: e64565cbc567ca42b190e143e065f9eddba2f311
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: cbd100b73aa40eb3d14366a3c0f845fc2837a783
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93261998"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347490"
 ---
 # Test-PSSessionConfigurationFile
 
@@ -125,6 +125,8 @@ Du kan skicka en sökväg till en fil Sök väg för sessionen `Test-PSSessionCo
 ### System. Boolean
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 

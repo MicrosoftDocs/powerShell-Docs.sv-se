@@ -7,12 +7,12 @@ ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
-ms.openlocfilehash: 9da33bcf0bc1142859d547debedfb242819041aa
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: ed56dc5655f640dae1d80c66850581ff12dbb7ee
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93273531"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347609"
 ---
 # Get-Clipboard
 
@@ -30,7 +30,7 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 `Get-Clipboard`Cmdleten hämtar innehållet i Urklipp som text. Flera rader med text returneras som en sträng mat ris som liknar `Get-Content` .
 
 > [!NOTE]
-> I Linux kräver denna cmdlet att `xclip` verktyget finns i sökvägen.
+> I Linux kräver denna cmdlet att `xclip` verktyget finns i sökvägen. Denna cmdlet stöds inte på macOS.
 
 ## EXEMPEL
 
@@ -79,4 +79,3 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ## RELATERADE LÄNKAR
 
 [Ange Urklipp](Set-Clipboard.md)
-

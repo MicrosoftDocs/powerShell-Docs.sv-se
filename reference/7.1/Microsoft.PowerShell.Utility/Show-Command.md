@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 86253a8a0bd02a60980cc3655af7bb961acf88ac
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: b5758fdb9fc3e8f604b24fb9c64cad3f95047ec3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263426"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347779"
 ---
 # Show-Command
 
@@ -40,7 +40,7 @@ När du är klar kan du klicka på **Kopiera** för att kopiera kommandot som du
 
 I PowerShell ISE (Integrated Scripting Environment) visas en variant av `Show-Command` fönstret som standard. Information om hur du använder det här kommando fönstret finns i hjälp avsnitten för PowerShell ISE.
 
-Den här cmdleten introducerades om i PowerShell 7. 
+Den här cmdleten introducerades om i PowerShell 7.
 
 Eftersom denna cmdlet kräver ett användar gränssnitt fungerar den inte på Windows Server Core eller Windows Nano Server. Den här cmdleten är endast tillgänglig på Windows-system som stöder Windows-skrivbordet.
 
@@ -272,7 +272,8 @@ När du använder parametern **Passthru** `Show-Command` returneras en kommando 
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 `Show-Command` fungerar inte i fjärrsessioner.
 
 ## RELATERADE LÄNKAR
-

@@ -7,12 +7,12 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.openlocfilehash: d33961d9c0b1980d84d35a33c45d965e84231914
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 347ffa733068d4e7f4896eb18358c7a852c88d0a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267662"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347286"
 ---
 # Get-ExecutionPolicy
 
@@ -205,6 +205,8 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
+Cmdleten returnerar alltid **obegränsade** på Linux-och MacOS-plattformar.
+
 ## ANTECKNINGAR
 
 En körnings princip är en del av säkerhets strategin för PowerShell. Körnings principer avgör om du kan läsa in konfigurationsfiler, till exempel din PowerShell-profil eller köra skript. Och om skripten måste signeras digitalt innan de körs.
@@ -220,4 +222,3 @@ En körnings princip är en del av säkerhets strategin för PowerShell. Körnin
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

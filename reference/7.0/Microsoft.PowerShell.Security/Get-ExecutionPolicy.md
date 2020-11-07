@@ -7,12 +7,12 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.openlocfilehash: 2bd5854b689fad077f6a3df2e37693cff973a62a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 96d840d68240d069511afa44753789f472618e19
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262814"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347252"
 ---
 # Get-ExecutionPolicy
 
@@ -204,6 +204,8 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ## UTDATA
 
 ### Microsoft.PowerShell.ExecutionPolicy
+
+Cmdleten returnerar alltid **obegränsade** på Linux-och MacOS-plattformar.
 
 ## ANTECKNINGAR
 

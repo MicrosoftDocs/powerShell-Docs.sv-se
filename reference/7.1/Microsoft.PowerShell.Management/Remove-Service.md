@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Service
-ms.openlocfilehash: b23e263c2d6ff64ca2a799614d213f1e549cdfe3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: dbe084b553587ba09a2ce4b76b0c662915c59808
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263259"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347354"
 ---
 # Remove-Service
 
@@ -141,6 +141,8 @@ Denna cmdlet returnerar inga utdata.
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 Starta PowerShell med alternativet **Kör som administratör** för att köra denna cmdlet.
 
 ## RELATERADE LÄNKAR
@@ -158,4 +160,3 @@ Starta PowerShell med alternativet **Kör som administratör** för att köra de
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-

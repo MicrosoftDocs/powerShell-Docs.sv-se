@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
-ms.openlocfilehash: b246e316c209cd66602967d3ad41b03758057192
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 66ecd756eccbe60003304419da64d65b6c55dd01
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93263036"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347745"
 ---
 # Set-AuthenticodeSignature
 
@@ -303,6 +303,8 @@ Du kan skicka vidare en sträng som innehåller fil Sök vägen till `Set-Authen
 ### System. Management. Automation. signatur
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
-ms.openlocfilehash: 07986e4c7e8ead25e99ffc67ff8f9ffa2241af9b
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 1325b1e604bc450f0aaec3ec4e99afa281aa1d91
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93261938"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346198"
 ---
 # Wait-Process
 
@@ -183,9 +183,9 @@ Denna cmdlet genererar inga utdata.
 
 ## ANTECKNINGAR
 
-* Denna cmdlet använder metoden **WaitForExit** i klassen system. Diagnostics. process. Mer information om den här metoden finns i Microsoft .NET Framework SDK.
+Cmdleten stöds endast på Windows-plattformar.
 
-*
+Denna cmdlet använder metoden **WaitForExit** i klassen **system. Diagnostics. process** .
 
 ## RELATERADE LÄNKAR
 

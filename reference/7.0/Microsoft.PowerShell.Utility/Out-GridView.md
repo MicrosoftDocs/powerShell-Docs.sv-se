@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
-ms.openlocfilehash: 73a2685947ac5980adab99a3f101a0c1f7f809d2
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 37b5349c8ed39ff70453b59fe6758c57880f0087
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262370"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346946"
 ---
 # Out-GridView
 
@@ -148,7 +148,7 @@ Den här kommando raden kan användas i en Windows-genväg. Utan parametern **wa
 
 Anger objekt som cmdleten accepterar som ininformation för `Out-GridView` .
 
-När du använder parametern **InputObject** för att skicka en samling objekt till `Out-GridView` , `Out-GridView` behandlar samlingen som ett samlings objekt och visar en rad som representerar samlingen. Om du vill visa varje objekt i samlingen använder du en pipeline-operator (|) för att skicka objekt till `Out-GridView` .
+När du använder parametern **InputObject** för att skicka en samling objekt till `Out-GridView` , `Out-GridView` behandlar samlingen som ett samlings objekt och visar en rad som representerar samlingen. Om du vill visa varje objekt i samlingen använder du en pipeline-operator ( `|` ) för att skicka objekt till `Out-GridView` .
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -255,6 +255,8 @@ Du kan skicka valfritt objekt till denna cmdlet.
 Normalt `Out-GridView` returnerar inte några objekt. När du använder parametern **Passthru** returneras objekten som representerar de valda raderna till pipelinen.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 Du kan inte använda ett fjärran slutet kommando för att öppna ett fönster för rutnätsvy på en annan dator.
 

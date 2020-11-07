@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: fa3ea8f965ea8089defa5fde7b88b18f00cd83bc
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 44608ba9fa2324f9d6d381801876c831ed8b3db8
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267680"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347303"
 ---
 # Get-AuthenticodeSignature
 
@@ -167,6 +167,8 @@ Du kan skicka vidare en sträng som innehåller en fil Sök väg till `Get-Authe
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 Information om Authenticode-signaturer i PowerShell finns [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 
 ## RELATERADE LÄNKAR
@@ -180,4 +182,3 @@ Information om Authenticode-signaturer i PowerShell finns [about_Signing](../Mic
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

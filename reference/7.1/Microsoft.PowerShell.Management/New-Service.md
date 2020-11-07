@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: c34c581b9af74f3199437b26971b902f6b39620f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 81920303d130a306674033b2b1ba57a3e71c949c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263295"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347439"
 ---
 # New-Service
 
@@ -186,8 +186,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Anger namnet på tjänsten.
-Den här parametern är obligatorisk.
+Anger namnet på tjänsten. Den här parametern är obligatorisk.
 
 ```yaml
 Type: System.String
@@ -261,8 +260,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,7 +292,9 @@ Denna cmdlet returnerar ett objekt som representerar den nya tjänsten.
 
 ## ANTECKNINGAR
 
-Om du vill köra den här cmdleten på Windows Vista och senare versioner av Windows-operativsystemet startar du PowerShell med alternativet Kör som administratör.
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
+Starta PowerShell med alternativet **Kör som administratör** för att köra denna cmdlet.
 
 ## RELATERADE LÄNKAR
 
@@ -313,4 +313,3 @@ Om du vill köra den här cmdleten på Windows Vista och senare versioner av Win
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-service](Remove-Service.md)
-

@@ -7,12 +7,12 @@ ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
-ms.openlocfilehash: 0a247be8c7a8067455e3153ac48cacde78eaa26d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 118c3e563743cee03dc7a75ca68e0979c1522f07
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267681"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347082"
 ---
 # Get-Acl
 
@@ -241,6 +241,8 @@ Du kan skicka vidare en sträng som innehåller en sökväg till `Get-Acl` .
 
 ## ANTECKNINGAR
 
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
+
 Som standard `Get-Acl` visar PowerShell-sökvägen till resursen ( `<provider>::<resource-path>` ), ägaren till resursen och "åtkomst", en lista (matris) av åtkomst kontroll POSTERNA i DACL (Discretionary Access Control List) för resursen. DACL-listan styrs av resurs ägaren.
 
 När du formaterar resultatet som en lista, ( `Get-Acl | Format-List` ), utöver sökvägen, ägaren och åtkomst listan, visar PowerShell följande egenskaper och egenskaps värden:
@@ -254,4 +256,3 @@ Eftersom `Get-Acl` stöds av fil systemet och register leverantörer kan du anv�
 ## RELATERADE LÄNKAR
 
 [Ange ACL](Set-Acl.md)
-

@@ -7,12 +7,12 @@ ms.date: 6/17/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
-ms.openlocfilehash: ce9e19140cb0bb8fd9172fa7ca7929fb696f9c65
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 623b7bb0084c7fe7822509081d141ddcccf0057a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268359"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347337"
 ---
 # Restart-Computer
 
@@ -325,6 +325,8 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 `Restart-Computer` genererar inga utdata.
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 - `Restart-Computer` fungerar endast på datorer som kör Windows och kräver att WinRM och WMI stänger av ett system, inklusive det lokala systemet.
 - `Restart-Computer` använder [Win32Shutdown-metoden](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem) för [Win32_OperatingSystems](/windows/desktop/CIMWin32Prov/win32-operatingsystem) klassen Windows Management Instrumentation (WMI). Den här metoden kräver att **SeShutdownPrivilege** -behörighet aktive ras för det användar konto som används för att starta om datorn.

@@ -7,12 +7,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
-ms.openlocfilehash: aef0f6e63be07f0568927f8e65df675ff4f9eba7
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 007b486b7b65d9b6481839643fe839eda49a1113
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262256"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346963"
 ---
 # New-FileCatalog
 
@@ -28,13 +28,9 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 
 ## BESKRIVNING
 
-`New-FileCatalog` skapar en [Windows Catalog-fil](/windows-hardware/drivers/install/catalog-files) för en uppsättning mappar och filer.
-Den här katalog filen innehåller hash-värden för alla filer i de angivna Sök vägarna.
-Användarna kan sedan distribuera katalogen med sina filer så att användarna kan verifiera om några ändringar har gjorts i mapparna sedan katalog skapande tiden.
+`New-FileCatalog` skapar en [Windows Catalog-fil](/windows-hardware/drivers/install/catalog-files) för en uppsättning mappar och filer. Den här katalog filen innehåller hash-värden för alla filer i de angivna Sök vägarna. Användarna kan sedan distribuera katalogen med sina filer så att användarna kan verifiera om några ändringar har gjorts i mapparna sedan katalog skapande tiden.
 
-Katalog version 1 och 2 stöds. Version 1 använder den (föråldrade) SHA1-hashalgoritmen för att skapa filhasher och version 2 använder SHA256.
-Katalog version 2 stöds inte i Windows Server 2008 R2 eller Windows 7.
-Du bör använda katalog version 2 på Windows 8, Windows Server 2012 och senare operativ system.
+Katalog version 1 och 2 stöds. Version 1 använder den (föråldrade) SHA1-hashalgoritmen för att skapa filhasher och version 2 använder SHA256. Katalog version 2 stöds inte i Windows Server 2008 R2 eller Windows 7. Du bör använda katalog version 2 på Windows 8, Windows Server 2012 och senare operativ system.
 
 ## EXEMPEL
 
@@ -54,8 +50,7 @@ Mode                LastWriteTime         Length Name
 
 ### -CatalogFilePath
 
-En sökväg till en fil eller mapp där katalog filen (. cat) ska placeras.
-Om en mappsökväg anges används standard fil namnet `catalog.cat` .
+En sökväg till en fil eller mapp där katalog filen (. cat) ska placeras. Om en mappsökväg anges används standard fil namnet `catalog.cat` .
 
 ```yaml
 Type: System.String
@@ -71,8 +66,7 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepterar `1.0` eller `2.0` som möjliga värden för att ange katalog versionen.
-`1.0` bör undvikas när det är möjligt, eftersom det använder sig av den oskyddade SHA-1-hashalgoritmen, medan använder sig av `2.0` Secure SHA-1 256-algoritmen, men `1.0` är den enda algoritm som stöds på Windows 7 och Server 2008R2.
+Accepterar `1.0` eller `2.0` som möjliga värden för att ange katalog versionen. `1.0` bör undvikas när det är möjligt, eftersom det använder sig av den oskyddade SHA-1-hashalgoritmen, medan använder sig av `2.0` Secure SHA-1 256-algoritmen, men `1.0` är den enda algoritm som stöds på Windows 7 och Server 2008R2.
 
 ```yaml
 Type: System.Int32
@@ -83,6 +77,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+
+Accepterar en sökväg eller en matris med sökvägar till filer eller mappar som ska ingå i katalog filen. Om en mapp anges tas även alla filer i mappen med.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -102,27 +112,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Path
-
-Accepterar en sökväg eller en matris med sökvägar till filer eller mappar som ska ingå i katalog filen.
-Om en mapp anges tas även alla filer i mappen med.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,6 +143,8 @@ Pipelinen tar en sträng som används som katalog fil namn.
 ### System. IO. FileInfo
 
 ## ANTECKNINGAR
+
+Den här cmdleten är endast tillgänglig på Windows-plattformar.
 
 ## RELATERADE LÄNKAR
 
