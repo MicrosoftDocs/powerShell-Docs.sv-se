@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_ISE
-ms.openlocfilehash: ec99dec9ea5012b41c10a56a688b23a6fa2c9dd8
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff543024d7c62c70217eeaf3ded192a5a24c4757
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271899"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388849"
 ---
 # <a name="about-windows-powershell-ise"></a>Om Windows PowerShell ISE
 
@@ -121,7 +121,7 @@ Windows PowerShell ISE är en valfri Windows-funktion som är aktive rad som sta
 Eftersom Windows PowerShell ISE kräver ett användar gränssnitt fungerar det inte på Server Core-installationer av Windows Server. Men om du lägger till funktionen Windows PowerShell ISE konverteras installationen automatiskt till servern med ett grafiskt användar gränssnitt.
 
 Windows PowerShell ISE bygger på Windows Presentation Foundation (WPF).
-Om de grafiska elementen i Windows PowerShell ISE inte återges på rätt sätt i systemet kan du lösa problemet genom att lägga till eller justera inställningarna "inaktivera WPF Hardware acceleration" i systemet. Mer information finns i [register inställningar för bild åter givning](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings) i MSDN-biblioteket.
+Om de grafiska elementen i Windows PowerShell ISE inte återges på rätt sätt i systemet kan du lösa problemet genom att lägga till eller justera inställningarna "inaktivera WPF Hardware acceleration" i systemet. Mer information finns i [register inställningar för bild åter givning](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings).
 
 ## <a name="see-also"></a>SE ÄVEN
 

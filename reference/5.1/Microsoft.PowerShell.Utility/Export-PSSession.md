@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 67501a78ba577f63c97e595f4bacd28160fea416
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 11533a9b127dc6d088258392c0e142bfbe5c070c
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265089"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388033"
 ---
 # Export-PSSession
 
@@ -294,16 +294,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Anger moduler med namn som anges i form av **ModuleSpecification** -objekt.
-Se avsnittet anmärkningar i [ModuleSpecification-konstruktorn (hash)](https://msdn.microsoft.com/library/jj136290).
+Anger moduler med namn som anges i form av **ModuleSpecification** -objekt. Se avsnittet anmärkningar i [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 **FullyQualifiedModule** -parametern accepterar till exempel ett modulnamn som anges i något av följande format:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**Modulnamn** och **ModuleVersion** krävs, men **GUID** är valfritt. Det går inte att ange parametern **FullyQualifiedModule** i samma kommando som en **modul** parameter. de två parametrarna kan inte anges samtidigt.
+**Modulnamn** och **ModuleVersion** krävs, men **GUID** är valfritt. Det går inte att ange parametern **FullyQualifiedModule** i samma kommando som en **modul** -parameter. de två parametrarna kan inte anges samtidigt.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

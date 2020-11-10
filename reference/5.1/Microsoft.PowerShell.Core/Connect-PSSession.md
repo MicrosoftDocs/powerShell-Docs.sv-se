@@ -7,12 +7,12 @@ ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 8aff8a2b3962b3bf09d158247c06b36f99eaf527
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3352055e9c77dd944ffd66fa5db9863166ad7e95
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342526"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388815"
 ---
 # Connect-PSSession
 
@@ -213,7 +213,6 @@ Anger att denna cmdlet tillåter omdirigering av anslutningen till en alternativ
 När du använder **ConnectionURI** -parametern kan fjärrdestinationen returnera en instruktion för att omdirigera till en annan URI. Som standard omdirigerar PowerShell inte anslutningar, men du kan använda den här parametern om du vill att den ska kunna omdirigera anslutningen.
 
 Du kan också begränsa hur många gånger anslutningen omdirigeras genom att ändra värdet för alternativet **MaximumConnectionRedirectionCount** session. Använd parametern **MaximumRedirection** för `New-PSSessionOption` cmdleten eller ange egenskapen **MaximumConnectionRedirectionCount** för variabeln **$PSSessionOption** . Standardvärdet är 5.
-Standardvärdet är 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -252,7 +251,7 @@ Accept wildcard characters: False
 Anger den mekanism som används för att autentisera användarautentiseringsuppgifter i kommandot för att återansluta till den frånkopplade sessionen. De acceptabla värdena för den här parametern är:
 
 - Standard
-- Basic
+- Grundläggande
 - CredSSP
 - Sammandrag
 - Kerberos
@@ -261,7 +260,7 @@ Anger den mekanism som används för att autentisera användarautentiseringsuppg
 
 Standardvärdet är default.
 
-Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) i MSDN-biblioteket.
+Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 > [!CAUTION]
 > CredSSP-autentisering (Credential Security Support Provider), där användarens autentiseringsuppgifter skickas till en fjärrdator som ska autentiseras, är utformad för kommandon som kräver autentisering på fler än en resurs, till exempel åtkomst till en fjärran sluten nätverks resurs. Den här mekanismen ökar säkerhets risken för Fjärråtgärden. Om fjärrdatorn har komprometterats kan de autentiseringsuppgifter som skickas till den användas för att kontrol lera nätverks sessionen.
@@ -611,9 +610,9 @@ Den här cmdleten returnerar ett objekt som representerar den session som den å
 
   **Tillgänglighet** svärdet none anger att du kan ansluta till sessionen. Värdet upptagen anger att du inte kan ansluta till **PSSession** eftersom det är anslutet till en annan session.
 
-  Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState-UPPräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) i MSDN-biblioteket.
+  Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState-uppräkning](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
-  Mer information om värdena för egenskapen **tillgänglighet** för sessioner finns i [RunspaceAvailability-UPPräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) i MSDN-biblioteket.
+  Mer information om värdena för egenskapen **Availability** för sessioner finns i [RunspaceAvailability-uppräkning](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 - Du kan inte ändra timeout-värdet för inaktivitet för en **PSSession** när du ansluter till **PSSession**. Parametern **SessionOption** för `Connect-PSSession` använder ett **SessionOption** -objekt som har ett **idleTimeout** -värde. Men **idleTimeout** -värdet för **SessionOption** -objektet och variabeln **idleTimeout** `$PSSessionOption` ignoreras vid anslutning till en **PSSession**.
 

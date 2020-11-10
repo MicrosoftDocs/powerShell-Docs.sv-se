@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/stop-job?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Job
-ms.openlocfilehash: 5b023efa2c1545da574f447b8542bfbfe9b5d861
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 56dc7462e2625768db8b52370d3b7d38c8defafe
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267410"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387268"
 ---
 # Stop-Job
 
@@ -59,19 +59,13 @@ Stop-Job [-PassThru] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParamete
 
 ## BESKRIVNING
 
-Cmdleten **stoppa-Job** stoppar PowerShell-bakgrunds jobb som pågår.
-Du kan använda den här cmdleten för att stoppa alla jobb eller stoppa valda jobb baserat på namn, ID, instans-ID eller tillstånd, eller genom att skicka ett jobb objekt till **stopp-jobb**.
+`Stop-Job`Cmdleten stoppar PowerShell-bakgrunds jobb som pågår. Du kan använda den här cmdleten för att stoppa alla jobb eller stoppa valda jobb baserat på namn, ID, instans-ID eller tillstånd, eller genom att skicka ett jobb objekt till `Stop-Job` .
 
-Du kan använda **stopp-jobb** för att stoppa bakgrunds jobb, till exempel de som startades med hjälp av Start-Job-cmdlet eller parametern *AsJob* för någon cmdlet.
-När du stoppar ett bakgrunds jobb Slutför PowerShell alla uppgifter som väntar i jobbkön och avslutar sedan jobbet.
-Inga nya aktiviteter läggs till i kön när det här kommandot har skickats.
+Du kan använda `Stop-Job` för att stoppa bakgrunds jobb, till exempel de som startades med hjälp av `Start-Job` cmdleten eller parametern **AsJob** för valfri cmdlet. När du stoppar ett bakgrunds jobb Slutför PowerShell alla uppgifter som väntar i jobbkön och avslutar sedan jobbet. Inga nya aktiviteter läggs till i kön när det här kommandot har skickats.
 
-Den här cmdleten tar inte bort bakgrunds jobb.
-Använd Remove-Job-cmdleten om du vill ta bort ett jobb.
+Den här cmdleten tar inte bort bakgrunds jobb. Använd cmdleten om du vill ta bort ett jobb `Remove-Job` .
 
-Från och med Windows PowerShell 3,0 stoppar **stopp-jobbet** även anpassade jobb typer, till exempel arbets flödes jobb och instanser av schemalagda jobb.
-Om du vill aktivera **stoppa** jobb för att stoppa ett jobb med anpassad Jobbtyp importerar du modulen som stöder den anpassade jobb typen till sessionen innan du kör ett **Stop-jobb** -kommando, antingen genom att använda Import-Module cmdlet eller genom att använda eller hämta en cmdlet i modulen.
-Information om en viss anpassad Jobbtyp finns i dokumentationen för den anpassade jobb typ funktionen.
+Från och med Windows PowerShell 3,0 `Stop-Job` stoppas även anpassade jobb typer, till exempel arbets flödes jobb och instanser av schemalagda jobb. Om du vill `Stop-Job` stoppa ett jobb med anpassad Jobbtyp importerar du modulen som stöder den anpassade jobb typen till sessionen innan du kör ett `Stop-Job` kommando, antingen med hjälp av `Import-Module` cmdleten eller genom att använda eller hämta en cmdlet i modulen. Information om en viss anpassad Jobbtyp finns i dokumentationen för den anpassade jobb typ funktionen.
 
 ## EXEMPEL
 
@@ -83,25 +77,18 @@ $j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventL
 Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
 ```
 
-Det här exemplet visar hur du använder cmdleten **stoppa-Job** för att stoppa ett jobb som körs på en fjärrdator.
+Det här exemplet visar hur du kan använda `Stop-Job` cmdleten för att stoppa ett jobb som körs på en fjärrdator.
 
-Eftersom jobbet startades med hjälp av Invoke-Command-cmdlet: en för att köra ett **Start jobb** via fjärr anslutning, lagras jobbobjektet på fjärrdatorn.
-Du måste använda ett annat **Invoke-kommando-** kommando för att köra ett **Stop-Job-** kommando via fjärr anslutning.
-Mer information om fjärran sluten bakgrunds jobb finns about_Remote_Jobs.
+Eftersom jobbet startades med hjälp av `Invoke-Command` cmdleten för att köra ett `Start-Job` kommando på distans, lagras jobbobjektet på fjärrdatorn. Du måste använda ett annat `Invoke-Command` kommando om du vill köra ett `Stop-Job` kommando via fjärr anslutning. Mer information om fjärran sluten bakgrunds jobb finns about_Remote_Jobs.
 
-Det första kommandot skapar en PowerShell-session ( **PSSession** ) på Server01-datorn och lagrar sedan Session-objektet i variabeln $s.
-Kommandot använder autentiseringsuppgifterna för en domän administratör.
+Det första kommandot skapar en PowerShell-session ( **PSSession** ) på Server01-datorn och lagrar sedan Session-objektet i `$s` variabeln. Kommandot använder autentiseringsuppgifterna för en domän administratör.
 
-Det andra kommandot använder cmdleten **Invoke-Command** för att köra ett **Start jobb** kommando i sessionen.
-Kommandot i jobbet hämtar alla händelser i system händelse loggen.
-Resulterande jobb objekt lagras i variabeln $j.
+Det andra kommandot använder `Invoke-Command` cmdleten för att köra ett `Start-Job` kommando i sessionen. Kommandot i jobbet hämtar alla händelser i system händelse loggen. Resulterande jobb objekt lagras i `$j` variabeln.
 
-Det tredje kommandot stoppar jobbet.
-Den använder cmdleten **Invoke-Command** för att köra ett **stopp-Job-** kommando i **PSSession** på Server01.
-Eftersom jobb objekt lagras i $j, vilket är en variabel på den lokala datorn, använder kommandot omfångs modifieraren using för att identifiera $j som en lokal variabel.
+Det tredje kommandot stoppar jobbet. Den använder `Invoke-Command` cmdleten för att köra ett `Stop-Job` kommando i **PSSession** på Server01. Eftersom jobb objekt lagras i `$j` , vilket är en variabel på den lokala datorn, använder kommandot Använd omfångs modifieraren för att identifiera `$j` som en lokal variabel.
 Mer information om hur du använder omfångs modifieraren finns [about_Remote_Variables](about/about_Remote_Variables.md).
 
-När kommandot har slutförts stoppas jobbet och **PSSession** i $s är tillgängligt för användning.
+När kommandot har slutförts stoppas jobbet och **PSSession** i `$s` är tillgängligt för användning.
 
 ### Exempel 2: stoppa ett bakgrunds jobb
 
@@ -157,12 +144,9 @@ Stop-Job -InstanceId e3bbfed1-9c53-401a-a2c3-a8db34336adf
 
 Kommandona visar hur du stoppar ett jobb baserat på dess instans-ID.
 
-Det första kommandot använder cmdleten Get-Job för att hämta jobben i den aktuella sessionen.
-Kommandot använder en pipeline-operator (|) för att skicka jobben till ett Format-Table-kommando, som visar en tabell med de angivna egenskaperna för varje jobb.
-Tabellen innehåller instans-ID för varje jobb.
-Den använder en beräknad egenskap för att visa jobb status.
+Det första kommandot använder `Get-Job` cmdleten för att hämta jobben i den aktuella sessionen. Kommandot använder en pipeline-operator ( `|` ) för att skicka jobben till ett `Format-Table` kommando, som visar en tabell med de angivna egenskaperna för varje jobb. Tabellen innehåller instans-ID för varje jobb. Den använder en beräknad egenskap för att visa jobb status.
 
-Det andra kommandot använder ett **stopp-jobb** -kommando som har *InstanceID* -parametern för att stoppa ett valt jobb.
+Det andra kommandot använder ett `Stop-Job` kommando som har **InstanceID** -parametern för att stoppa ett valt jobb.
 
 ### Exempel 7: stoppa ett jobb på en fjärrdator
 
@@ -177,20 +161,16 @@ Id    Name    State      HasMoreData     Location         Command
 5     Job5    Stopped    True            user01-tablet    get-eventlog system
 ```
 
-Det här exemplet visar hur du använder cmdleten **stoppa-Job** för att stoppa ett jobb som körs på en fjärrdator.
+Det här exemplet visar hur du kan använda `Stop-Job` cmdleten för att stoppa ett jobb som körs på en fjärrdator.
 
-Eftersom jobbet startades med hjälp av parametern *AsJob* i cmdleten **Invoke-Command** finns jobbobjektet på den lokala datorn, även om jobbet körs på fjärrdatorn.
-Därför kan du använda ett lokalt **stopp-jobb-** kommando för att stoppa jobbet.
+Eftersom jobbet startades med hjälp av parametern **AsJob** i `Invoke-Command` cmdleten, finns jobbobjektet på den lokala datorn, även om jobbet körs på fjärrdatorn. Därför kan du använda ett lokalt `Stop-Job` kommando för att stoppa jobbet.
 
-Det första kommandot använder cmdleten **Invoke-Command** för att starta ett bakgrunds jobb på den Server01 datorn.
-Kommandot använder parametern *AsJob* för att köra fjärrkommandot som ett bakgrunds jobb.
+Det första kommandot använder `Invoke-Command` cmdleten för att starta ett bakgrunds jobb på Server01-datorn. Kommandot använder parametern **AsJob** för att köra fjärrkommandot som ett bakgrunds jobb.
 
-Det här kommandot returnerar ett jobb objekt, vilket är samma jobb objekt som cmdleten **Start-Job** returnerar.
-Kommandot sparar jobbobjektet i variabeln $j.
+Det här kommandot returnerar ett jobb objekt, vilket är samma jobb objekt som `Start-Job` cmdleten returnerar.
+Kommandot sparar jobbobjektet i `$j` variabeln.
 
-Det andra kommandot använder en pipeline-operator för att skicka jobbet i $j-variabeln till stopp-Job.
-Kommandot använder parametern *Passthru* för att dirigera **stopp-jobb** för att returnera ett jobb objekt.
-Jobb objekts visningen bekräftar att jobbets tillstånd har stoppats.
+Det andra kommandot använder en pipeline-operator för att skicka jobbet i `$j` variabeln till `Stop-Job` . Kommandot använder parametern **Passthru** för att dirigera `Stop-Job` för att returnera ett jobb objekt. Jobb objekts visningen bekräftar att jobbets tillstånd har stoppats.
 
 Mer information om fjärran sluten bakgrunds jobb finns about_Remote_Jobs.
 
@@ -198,13 +178,10 @@ Mer information om fjärran sluten bakgrunds jobb finns about_Remote_Jobs.
 
 ### -Filter
 
-Anger en hash-tabell med villkor.
-Denna cmdlet stoppar jobb som uppfyller alla villkor.
+Anger en hash-tabell med villkor. Denna cmdlet stoppar jobb som uppfyller alla villkor.
 Ange en hash-tabell där nycklarna är jobb egenskaper och värdena är jobb egenskaps värden.
 
-Den här parametern fungerar bara på anpassade jobb typer, till exempel arbets flödes jobb och schemalagda jobb.
-Den fungerar inte på vanliga bakgrunds jobb, till exempel de som skapats med hjälp av cmdleten **Start-Job** .
-Information om stöd för den här parametern finns i hjälp avsnittet för jobb typen.
+Den här parametern fungerar bara på anpassade jobb typer, till exempel arbets flödes jobb och schemalagda jobb. Den fungerar inte på vanliga bakgrunds jobb, till exempel de som skapats med hjälp av `Start-Job` cmdleten. Information om stöd för den här parametern finns i hjälp avsnittet för jobb typen.
 
 Den här parametern introducerades i Windows PowerShell 3,0.
 
@@ -222,13 +199,9 @@ Accept wildcard characters: False
 
 ### -ID
 
-Anger ID: n för jobb som denna cmdlet stoppar.
-Standardvärdet är alla jobb i den aktuella sessionen.
+Anger ID: n för jobb som denna cmdlet stoppar. Standardvärdet är alla jobb i den aktuella sessionen.
 
-ID är ett heltal som unikt identifierar jobbet i den aktuella sessionen.
-Det är enklare att komma ihåg och skriva än instans-ID, men det är endast unikt i den aktuella sessionen.
-Du kan ange ett eller flera ID: n, avgränsade med kommatecken.
-Om du vill hitta ID: t för ett jobb skriver du `Get-Job` .
+ID är ett heltal som unikt identifierar jobbet i den aktuella sessionen. Det är enklare att komma ihåg och skriva än instans-ID, men det är endast unikt i den aktuella sessionen. Du kan ange ett eller flera ID: n, avgränsade med kommatecken. Om du vill hitta ID: t för ett jobb skriver du `Get-Job` .
 
 ```yaml
 Type: System.Int32[]
@@ -244,11 +217,9 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-Anger instans-ID: n för jobb som denna cmdlet stoppar.
-Standardvärdet är alla jobb.
+Anger instans-ID: n för jobb som denna cmdlet stoppar. Standardvärdet är alla jobb.
 
-Ett instans-ID är ett GUID som unikt identifierar jobbet på datorn.
-Använd Get-Job för att hitta instans-ID för ett jobb.
+Ett instans-ID är ett GUID som unikt identifierar jobbet på datorn. Använd om du vill hitta instans-ID: t för ett jobb `Get-Job` .
 
 ```yaml
 Type: System.Guid[]
@@ -264,10 +235,7 @@ Accept wildcard characters: False
 
 ### – Jobb
 
-Anger de jobb som denna cmdlet stoppar.
-Ange en variabel som innehåller jobben eller ett kommando som hämtar jobben.
-Du kan också använda en pipeline-operatör för att skicka jobb till cmdleten **stoppa-Job** .
-Som standard tar **stopp-jobbet** bort alla jobb som startades i den aktuella sessionen.
+Anger de jobb som denna cmdlet stoppar. Ange en variabel som innehåller jobben eller ett kommando som hämtar jobben. Du kan också använda en pipeline-operatör för att skicka jobb till `Stop-Job` cmdleten. Som standard `Stop-Job` tar bort alla jobb som startades i den aktuella sessionen.
 
 ```yaml
 Type: System.Management.Automation.Job[]
@@ -283,11 +251,9 @@ Accept wildcard characters: False
 
 ### -Name
 
-Anger egna namn på jobb som denna cmdlet stoppar.
-Ange jobb namnen i en kommaavgränsad lista eller Använd jokertecken (*) för att ange ett jobb namns mönster.
-Som standard stoppar **stopp-jobbet** alla jobb som skapats i den aktuella sessionen.
+Anger egna namn på jobb som denna cmdlet stoppar. Ange jobb namnen i en kommaavgränsad lista eller Använd jokertecken (*) för att ange ett jobb namns mönster. Som standard `Stop-Job` stoppas alla jobb som skapas i den aktuella sessionen.
 
-Eftersom det egna namnet inte garanterat är unikt använder du parametrarna *whatIf* och *Confirm* när du stoppar jobb efter namn.
+Eftersom det egna namnet inte garanterat är unikt använder du parametrarna **whatIf** och **Confirm** när du stoppar jobb efter namn.
 
 ```yaml
 Type: System.String[]
@@ -303,8 +269,7 @@ Accept wildcard characters: True
 
 ### – PassThru
 
-Returnerar ett objekt som representerar det objekt som du arbetar med.
-Som standard genererar denna cmdlet inga utdata.
+Returnerar ett objekt som representerar det objekt som du arbetar med. Som standard genererar denna cmdlet inga utdata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -320,9 +285,7 @@ Accept wildcard characters: False
 
 ### – Tillstånd
 
-Anger ett jobb tillstånd.
-Denna cmdlet stoppar endast jobb i det angivna läget.
-De acceptabla värdena för den här parametern är:
+Anger ett jobb tillstånd. Denna cmdlet stoppar endast jobb i det angivna läget. De acceptabla värdena för den här parametern är:
 
 - NotStarted
 - Körs
@@ -335,7 +298,7 @@ De acceptabla värdena för den här parametern är:
 - Pausar
 - Stoppas
 
-Mer information om jobb tillstånd finns i [JobState-uppräkning](https://msdn.microsoft.com/library/system.management.automation.jobstate) i MSDN-biblioteket.
+Mer information om jobb tillstånd finns i [JobState-uppräkning](/dotnet/api/system.management.automation.jobstate).
 
 ```yaml
 Type: System.Management.Automation.JobState
@@ -397,8 +360,7 @@ Du kan skicka vidare ett jobb objekt till denna cmdlet.
 
 ### Ingen, system. Management. Automation. PSRemotingJob
 
-Den här cmdleten returnerar ett jobb objekt, om du anger parametern *Passthru* .
-Annars genererar denna cmdlet inga utdata.
+Den här cmdleten returnerar ett jobb objekt, om du anger parametern **Passthru** . Annars genererar denna cmdlet inga utdata.
 
 ## ANTECKNINGAR
 

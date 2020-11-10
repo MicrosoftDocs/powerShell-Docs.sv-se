@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
-ms.openlocfilehash: 62d88dc105121ea0f6194dcdcfe3a234b654c6ee
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: d3cadbc6ca08741f8e747ad59456e5b6924e1688
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268491"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386945"
 ---
 # Select-Xml
 
@@ -327,7 +327,7 @@ Du kan skicka en sökväg eller XML-nod till denna cmdlet.
 
 ## ANTECKNINGAR
 
-* XPath är ett standard språk som är utformat för att identifiera delar av ett XML-dokument. Mer information om XPath-språket finns i [XPath-referens](https://msdn.microsoft.com/library/ms256115) och urvals filter avsnittet i [händelse URVALet](https://msdn.microsoft.com/library/aa385231) i MSDN-biblioteket.
+XPath är ett standard språk som är utformat för att identifiera delar av ett XML-dokument. Mer information om XPath-språket finns i [XPath-referens](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) och urvals filter avsnittet i [händelse urvalet](/previous-versions//aa385231(v=vs.85)).
 
 ## RELATERADE LÄNKAR
 

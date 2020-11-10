@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Hash_Tables
-ms.openlocfilehash: ecc4cbb02522766b04414c30c65d4d6acde3bb8a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c48eace3f0b63014e0121d3cbc7a48966d5bcbef
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270704"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387557"
 ---
 # <a name="about-hash-tables"></a>Om hash-tabeller
 
@@ -157,7 +157,7 @@ $hashtable.<key>
 <value>
 ```
 
-Ett exempel:
+Till exempel:
 
 ```powershell
 C:\PS> $hash.Number
@@ -183,7 +183,7 @@ C:\PS> $hash.count
 Hash-tabellens tabeller är inte matriser, så du kan inte använda ett heltal som ett index i hash-tabellen, men du kan använda ett nyckel namn för att indexera till hash-tabellen.
 Om nyckeln är ett sträng värde omger du nyckel namnet med citat tecken.
 
-Ett exempel:
+Till exempel:
 
 ```powershell
 C:\PS> $hash["Number"]
@@ -245,20 +245,20 @@ Om du till exempel vill ta bort tid = nu nyckel/värde-paret från hash-tabellen
 $hash.Remove("Time")
 ```
 
-Du kan använda alla egenskaper och metoder för hash-objekt i PowerShell, inklusive innehåller, rensa, klona och CopyTo. Mer information om hash-objekt finns i "system. Collections. hash" på MSDN.
+Du kan använda alla egenskaper och metoder för hash-objekt i PowerShell, inklusive innehåller, rensa, klona och CopyTo. Mer information om hash-objekt finns i [system. Collections. hash](/dotnet/api/system.collections.hashtable).
 
 ### <a name="object-types-in-hashtables"></a>Objekt typer i hash
 
 Nycklar och värden i en hash-tabell kan ha vilken .NET-objekt typ som helst, och en enda hash-tabell kan ha nycklar och värden av flera typer.
 
-Följande instruktion skapar en hash-tabell med process namns strängar och bearbetar objekt värden och sparar dem i \$ variabeln p.
+Följande instruktion skapar en hash-tabell med process namns strängar och bearbetar objekt värden och sparar dem i `$p` variabeln.
 
 ```powershell
 $p = @{"PowerShell" = (Get-Process PowerShell);
 "Notepad" = (Get-Process notepad)}
 ```
 
-Du kan visa hash-tabellen i \$ p och använda egenskaperna för nyckel namn för att visa värdena.
+Du kan visa hash-tabellen i `$p` och använda nyckel namns egenskaperna för att visa värdena.
 
 ```powershell
 C:\PS> $p
@@ -279,7 +279,7 @@ C:\PS> $p.keys | foreach {$p.$_.handles}
 251
 ```
 
-Nycklarna i en hash-tabell kan också vara vilken .NET-typ som helst. Följande instruktion lägger till ett nyckel/värde-par till hash-tabellen i \$ p-variabeln. Nyckeln är ett tjänst objekt som representerar WinRM-tjänsten och värdet är tjänstens aktuella status.
+Nycklarna i en hash-tabell kan också vara vilken .NET-typ som helst. Följande instruktion lägger till ett nyckel/värde-par till hash-tabellen i `$p` variabeln. Nyckeln är ett tjänst objekt som representerar WinRM-tjänsten och värdet är tjänstens aktuella status.
 
 ```powershell
 C:\PS> $p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
@@ -308,7 +308,7 @@ C:\PS> $p.keys | foreach {$_.name}
 winrm
 ```
 
-Nycklar och värden i en hash-tabell kan också vara hash-objekt. Följande uttryck lägger till nyckel/värde-par till hash-tabellen i den \$ p-variabel där nyckeln är en sträng, Hash2 och värdet är en hash-tabell med tre nyckel/värde-par.
+Nycklar och värden i en hash-tabell kan också vara hash-objekt. Följande uttryck lägger till nyckel/värde-par till hash-tabellen i `$p` variabeln som nyckeln är en sträng, Hash2 och värdet är en hash-tabell med tre nyckel/värde-par.
 
 ```powershell
 C:\PS> $p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
@@ -344,7 +344,7 @@ Objekten i en hash-tabell är osorterade i ordningsföljd. Nyckel-/värdeparen k
 
 Även om du inte kan sortera en hash-tabell kan du använda GetEnumerator-metoden för hash-tabeller för att räkna upp nycklar och värden, och sedan använda cmdleten Sort-Object för att sortera uppräknade värden för visning.
 
-Följande kommandon räknar exempelvis upp nycklar och värden i hash-tabellen i \$ variabeln p och sorterar sedan nycklarna i alfabetisk ordning.
+Följande kommandon räknar exempelvis upp nycklar och värden i hash-tabellen i `$p` variabeln och sorterar sedan nycklarna i alfabetisk ordning.
 
 ```powershell
 C:\PS> $p.GetEnumerator() | Sort-Object -Property key

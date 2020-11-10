@@ -6,12 +6,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem-Provider
-ms.openlocfilehash: 3b37f6e4eb53ef7291c30cbc9820caf83641a9bb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 204a90dc346e6d4ff483777b9adf7a70017ef093
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272144"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386938"
 ---
 # <a name="filesystem-provider"></a>FileSystem-Provider
 
@@ -206,7 +206,7 @@ Det här kommandot returnerar ett [system. Security. AccessControl. FileSecurity
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-Om du vill ha mer information om det här objektet, rör du kommandot till cmdleten [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) . Eller, se "[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class" i MSDN-biblioteket (Microsoft Developer Network).
+Om du vill ha mer information om det här objektet, rör du kommandot till cmdleten [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) . Eller, se [FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) -klass.
 
 ### <a name="modify-the-acl-for-a-file"></a>Ändra ACL för en fil
 
@@ -368,7 +368,7 @@ Du kan använda den här parametern för att dela upp en stor fil i mindre filer
 
 > [!NOTE]
 > När värdet för `-Delimiter` parametern är en tom sträng returnerar [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) inte något.
-> Detta är ett känt fel. Om du vill tvinga [Get-innehåll](xref:Microsoft.PowerShell.Management.Get-Content) att returnera hela filen som en enskild, icke-avgränsad sträng anger du ett värde som inte finns i filen.
+> Detta är ett känt problem. Om du vill tvinga [Get-innehåll](xref:Microsoft.PowerShell.Management.Get-Content) att returnera hela filen som en enskild, icke-avgränsad sträng anger du ett värde som inte finns i filen.
 
 #### <a name="cmdlets-supported"></a>Cmdlets som stöds
 
@@ -517,10 +517,6 @@ Hanterar alternativa data strömmar. Ange data ström namnet. Jokertecken tillå
 ### <a name="raw-switchparameter"></a>Outspädd \<SwitchParameter\>
 
 Ignorerar rad matnings tecken. Returnerar innehåll som ett enda objekt.
-
-#### <a name="cmdlets-supported"></a>Cmdlets som stöds
-
-- [Hämta innehåll](xref:Microsoft.PowerShell.Management.Get-Content)
 
 #### <a name="cmdlets-supported"></a>Cmdlets som stöds
 

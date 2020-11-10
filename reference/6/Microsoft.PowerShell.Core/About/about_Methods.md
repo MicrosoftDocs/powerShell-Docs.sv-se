@@ -6,12 +6,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 45a57efdf16779cfed0df627976270871068ed1f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 1acbe79deefbc21c4ce42bfc651eeb04ac189879
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270651"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387625"
 ---
 # <a name="about-methods"></a>Om metoder
 
@@ -81,7 +81,7 @@ Från och med PowerShell 4,0 stöds metod anrop med dynamiska metod namn.
 
 ### <a name="learning-about-methods"></a>Lär dig mer om metoder
 
-Om du vill hitta definitioner för ett objekts metoder går du till hjälp avsnittet för objekt typen i MSDN och letar efter sidan metoder. Till exempel beskriver följande sida metoder för process objekt [system. Diagnostics. process](/dotnet/api/system.diagnostics.process#methods).
+Om du vill hitta definitioner för ett objekts metoder går du till hjälp avsnittet för objekt typen och letar efter dess metoder-sida. Till exempel beskriver följande sida metoder för process objekt [system. Diagnostics. process](/dotnet/api/system.diagnostics.process#methods).
 
 Om du vill fastställa argumenten för en metod granskar du metod definitionen, som liknar syntax diagrammet för en PowerShell-cmdlet.
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: cae34c4cf942d9aa4abb9a2d716ef9854f70de2e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265287"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388254"
 ---
 # Write-EventLog
 
@@ -27,12 +27,11 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## BESKRIVNING
-Cmdleten **Write-EventLog** skriver en händelse i en händelse logg.
+`Write-EventLog`Cmdleten skriver en händelse till en händelse logg.
 
 Om du vill skriva en händelse i en händelse logg måste händelse loggen finnas på datorn och källan måste vara registrerad för händelse loggen.
 
-De cmdletar som innehåller **EventLog** -händelsen Substantiv ( **EventLog** -cmdletar) fungerar bara på klassiska händelse loggar.
-Om du vill hämta händelser från loggar som använder Windows händelse logg teknik i Windows Vista och senare versioner av Windows-operativsystemet, använder du Get-WinEvent-cmdleten.
+De cmdletar som innehåller **EventLog** -händelsen Substantiv ( **EventLog** -cmdletar) fungerar bara på klassiska händelse loggar. Använd cmdleten för att hämta händelser från loggar som använder Windows händelse logg teknik i Windows Vista och senare versioner av Windows-operativsystemet `Get-WinEvent` .
 
 ## EXEMPEL
 
@@ -55,8 +54,8 @@ Det här kommandot skriver en händelse från en Mittprog-källa till program h�
 ## PARAMETRAR
 
 ### – Kategori
-Anger en aktivitets kategori för händelsen.
-Ange ett heltal som är associerat med strängarna i kategori meddelande filen för händelse loggen.
+
+Anger en aktivitets kategori för händelsen. Ange ett heltal som är associerat med strängarna i kategori meddelande filen för händelse loggen.
 
 ```yaml
 Type: System.Int16
@@ -71,13 +70,12 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-Anger en fjärrdator.
-Standard är den lokala datorn.
+
+Anger en fjärrdator. Standard är den lokala datorn.
 
 Ange NetBIOS-namn, en IP-adress eller ett fullständigt kvalificerat domän namn för en fjärrdator.
 
-Den här parametern är inte beroende av Windows PowerShell-fjärrkommunikation.
-Du kan använda parametern *computername* i Get-EventLog-cmdleten även om datorn inte är konfigurerad för att köra fjärrkommandon.
+Den här parametern är inte beroende av Windows PowerShell-fjärrkommunikation. Du kan använda parametern **computername** för `Get-EventLog` cmdleten även om datorn inte är konfigurerad för att köra fjärrkommandon.
 
 ```yaml
 Type: System.String
@@ -92,11 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### – EntryType
-Anger händelsens post typ.
-De acceptabla värdena för den här parametern är: error, Warning, information, SuccessAudit och FailureAudit.
-Standardvärdet är information.
 
-En beskrivning av värdena finns i EventLogEntryType- [uppräkning](https://go.microsoft.com/fwlink/?LinkId=143599) i MSDN-biblioteket.
+Anger händelsens post typ. De acceptabla värdena för den här parametern är: error, Warning, information, SuccessAudit och FailureAudit. Standardvärdet är information.
+
+En beskrivning av värdena finns i EventLogEntryType- [uppräkning](/dotnet/api/system.diagnostics.eventlogentrytype).
 
 ```yaml
 Type: System.Diagnostics.EventLogEntryType
@@ -112,9 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### – EventId
-Anger händelse-ID.
-Den här parametern är obligatorisk.
-Det maximala värdet för parametern *EventId* är 65535.
+
+Anger händelse-ID. Den här parametern är obligatorisk. Det maximala värdet för parametern **EventId** är 65535.
 
 ```yaml
 Type: System.Int32
@@ -129,10 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
-Anger namnet på den logg som händelsen skrivs till.
-Ange namnet på loggen.
-Logg namnet är värdet för **logg** egenskapen, inte **LogDisplayName**.
-Jokertecken tillåts inte.
+
+Anger namnet på den logg som händelsen skrivs till. Ange namnet på loggen. Logg namnet är värdet för **logg** egenskapen, inte **LogDisplayName**. Jokertecken tillåts inte.
 Den här parametern är obligatorisk.
 
 ```yaml
@@ -148,8 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### – Meddelande
-Anger händelse meddelandet.
-Den här parametern är obligatorisk.
+
+Anger händelse meddelandet. Den här parametern är obligatorisk.
 
 ```yaml
 Type: System.String
@@ -164,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -RawData
+
 Anger de binära data som är associerade med händelsen, i byte.
 
 ```yaml
@@ -179,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Anger händelse källan, som vanligt vis är namnet på det program som skriver händelsen till loggen.
 
 ```yaml
@@ -194,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
@@ -208,9 +205,7 @@ Denna cmdlet returnerar objekt som representerar händelserna i loggarna.
 
 ## ANTECKNINGAR
 
-* Om du vill använda **Write-EventLog** startar du Windows PowerShell med alternativet Kör som administratör.
-
-*
+`Write-EventLog`Starta Windows PowerShell med alternativet Kör som administratör när du vill använda.
 
 ## RELATERADE LÄNKAR
 

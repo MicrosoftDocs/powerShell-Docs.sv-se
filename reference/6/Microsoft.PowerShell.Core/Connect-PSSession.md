@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 36a03257d8241dbe7e9c851a95eaaa3e3dbbda27
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 8f782a7d1cc4403c3f212ff7973eb2c173be4342
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345552"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387601"
 ---
 # Connect-PSSession
 
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 Anger den mekanism som används för att autentisera användarautentiseringsuppgifter i kommandot för att återansluta till den frånkopplade sessionen. De acceptabla värdena för den här parametern är:
 
 - Standard
-- Basic
+- Grundläggande
 - CredSSP
 - Sammandrag
 - Kerberos
@@ -264,7 +264,7 @@ Anger den mekanism som används för att autentisera användarautentiseringsuppg
 
 Standardvärdet är default.
 
-Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) i MSDN-biblioteket.
+Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 > [!CAUTION]
 > CredSSP-autentisering (Credential Security Support Provider), där användarens autentiseringsuppgifter skickas till en fjärrdator som ska autentiseras, är utformad för kommandon som kräver autentisering på fler än en resurs, till exempel åtkomst till en fjärran sluten nätverks resurs. Den här mekanismen ökar säkerhets risken för Fjärråtgärden. Om fjärrdatorn har komprometterats kan de autentiseringsuppgifter som skickas till den användas för att kontrol lera nätverks sessionen.
@@ -614,9 +614,9 @@ Den här cmdleten returnerar ett objekt som representerar den session som den å
 
   **Tillgänglighet** svärdet none anger att du kan ansluta till sessionen. Värdet upptagen anger att du inte kan ansluta till **PSSession** eftersom det är anslutet till en annan session.
 
-  Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState-UPPräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) i MSDN-biblioteket.
+  Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState-uppräkning](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
-  Mer information om värdena för egenskapen **tillgänglighet** för sessioner finns i [RunspaceAvailability-UPPräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) i MSDN-biblioteket.
+  Mer information om värdena för egenskapen **Availability** för sessioner finns i [RunspaceAvailability-uppräkning](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 - Du kan inte ändra timeout-värdet för inaktivitet för en **PSSession** när du ansluter till **PSSession**. Parametern **SessionOption** för `Connect-PSSession` använder ett **SessionOption** -objekt som har ett **idleTimeout** -värde. Men **idleTimeout** -värdet för **SessionOption** -objektet och variabeln **idleTimeout** `$PSSessionOption` ignoreras vid anslutning till en **PSSession**.
 

@@ -7,12 +7,12 @@ ms.date: 02/07/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
-ms.openlocfilehash: 10f086c3fc2090681f669d481eb880d81ea9d245
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 07879656c2c92ee366b68ce34815a9fbdff9cb83
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266859"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387472"
 ---
 # New-PSSessionOption
 
@@ -532,7 +532,7 @@ Bestämmer vilken mekanism som används för att matcha värd namnet. De accepta
 
 Standardvärdet är none.
 
-Information om värdena för den här parametern finns i [ProxyAccessType-uppräkning](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Information om värdena för den här parametern finns i [ProxyAccessType-uppräkning](/dotnet/api/system.management.automation.remoting.proxyaccesstype).
 
 ```yaml
 Type: System.Management.Automation.Remoting.ProxyAccessType
@@ -551,7 +551,7 @@ Accept wildcard characters: False
 
 Anger den autentiseringsmetod som används för proxy-matchning. De acceptabla värdena för den här parametern är: **Basic** , **Digest** och **Negotiate**. Standardvärdet är **Negotiate**.
 
-Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism

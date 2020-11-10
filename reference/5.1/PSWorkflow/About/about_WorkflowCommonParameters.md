@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WorkflowCommonParameters
-ms.openlocfilehash: 386200475c1dab9735921edd60abbde20ee354c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c371666d4f58386848e7ef715b7c804dc1e8f28e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270915"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387795"
 ---
 # <a name="about-workflowcommonparameters"></a>Om WorkflowCommonParameters
 
@@ -69,7 +69,7 @@ Anger den mekanism som används för att autentisera användarens autentiserings
 
 Giltiga värden är:
 
-- **Default**
+- **Standard**
 - **Basic**
 - **CredSSP**
 - **Digest**
@@ -79,7 +79,7 @@ Giltiga värden är:
 
 Standardvärdet är **default**.
 
-Information om värdena för den här parametern finns i beskrivningen av `System.Management.Automation.Runspaces.AuthenticationMechanism` uppräkningen i MSDN.
+Information om värdena för den här parametern finns i beskrivningen av `System.Management.Automation.Runspaces.AuthenticationMechanism` uppräkningen i POWERSHELL SDK.
 
 > [!WARNING]
 > Autentisering av Credential Security Service Provider (CredSSP), där användarens autentiseringsuppgifter skickas till en fjärrdator som ska autentiseras, är utformad för kommandon som kräver autentisering på fler än en resurs, till exempel åtkomst till en fjärran sluten nätverks resurs. Den här mekanismen ökar säkerhets risken för Fjärråtgärden. Om fjärrdatorn har komprometterats kan de autentiseringsuppgifter som skickas till den användas för att kontrol lera nätverks sessionen.
@@ -94,8 +94,8 @@ Giltiga värden är:
 |Name |Beskrivning |
 |---------|---------|
 |**Oförändrade** | Autentiseringsnivån är samma som föregående kommando. |
-|**Default** | Windows-autentisering. |
-|**Ingen** | Ingen COM-autentisering.   |
+|**Standard** | Windows-autentisering. |
+|**Inga** | Ingen COM-autentisering.   |
 |**Anslut** | COM-autentisering på anslutnings nivå.|
 |**Anropa** | COM-autentisering på anrops nivå.   |
 |**Åtkomstaccepterande** | COM-autentisering på paket nivå.|
@@ -166,7 +166,7 @@ Anger olika gemensamma parameter värden för arbets flödet för olika mål dat
 
 Ange en kommaavgränsad lista med hash-tabeller med en hash-tabell för varje måldator. I varje hash-tabell är den första nyckeln `PSComputerName` och dess värde namnet på mål datorn. Jokertecken tillåts i dator namnet. För återstående nycklar i hash-tabellen är nyckeln parameter namnet och värdet är parametervärdet.
 
-Ett exempel:
+Till exempel:
 
 ```powershell
 -PSParameterCollection @{PSComputerName="*"; PSElapsedTimeoutSec=20},

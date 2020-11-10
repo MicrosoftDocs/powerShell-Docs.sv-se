@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: ff1b709b363684e27a1f4eb8fdeada2d5ae1d588
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 5aa9b9967ec6a79a569c9f0e7ca93db9e9e4d5b6
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262892"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387047"
 ---
 # Export-PSSession
 
@@ -213,7 +213,7 @@ De acceptabla värdena för den här parametern är följande:
 - ExternalScript. Alla. ps1-filer i Sök vägarna som anges i miljövariabeln PATH ( `$env:path` ).
 - Filter och funktion. Alla PowerShell-funktioner.
 - Över. Skript block i den aktuella sessionen.
-- Arbets flöde. Ett PowerShell-arbetsflöde. Mer information finns i [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1).
+- Arbets flöde. Ett PowerShell-arbetsflöde. Mer information finns i [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -243,7 +243,6 @@ De acceptabla värdena för den här parametern är följande:
 - `utf8BOM`: Kodar i UTF-8-format med byte ordnings tecken (BOM)
 - `utf8NoBOM`: Kodar i UTF-8-format utan byte ordnings tecken (BOM)
 - `utf32`: Kodar i UTF-32-format.
-
 
 Från och med PowerShell 6,2 tillåter **encoding** -parametern även numeriska ID: n för registrerade tecken tabeller (som `-Encoding 1251` ) eller sträng namn för registrerade tecken tabeller (som `-Encoding "windows-1251"` ). Mer information finns i .NET-dokumentationen för [encoding. codepage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
@@ -300,16 +299,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Anger moduler med namn som anges i form av **ModuleSpecification** -objekt.
-Se avsnittet anmärkningar i [ModuleSpecification-konstruktorn (hash)](https://msdn.microsoft.com/library/jj136290).
+Anger moduler med namn som anges i form av **ModuleSpecification** -objekt. Se avsnittet anmärkningar i [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 **FullyQualifiedModule** -parametern accepterar till exempel ett modulnamn som anges i något av följande format:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**Modulnamn** och **ModuleVersion** krävs, men **GUID** är valfritt. Det går inte att ange parametern **FullyQualifiedModule** i samma kommando som en **modul** parameter. de två parametrarna kan inte anges samtidigt.
+**Modulnamn** och **ModuleVersion** krävs, men **GUID** är valfritt. Det går inte att ange parametern **FullyQualifiedModule** i samma kommando som en **modul** -parameter. de två parametrarna kan inte anges samtidigt.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

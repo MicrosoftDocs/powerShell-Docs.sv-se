@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
-ms.openlocfilehash: c1527c04d795206b8de968daf62456837627a098
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e3d1c5c071a334bddbfbc547ef2cc07e9e5c90aa
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266276"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388356"
 ---
 # Add-Computer
 
@@ -40,8 +40,7 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
 
 ## BESKRIVNING
 
-`Add-Computer`Cmdleten lägger till den lokala datorn eller fjärrdatorerna i en domän eller arbets grupp, eller flyttar dem från en domän till en annan.
-Det skapar också ett domän konto om datorn läggs till i domänen utan ett konto.
+`Add-Computer`Cmdleten lägger till den lokala datorn eller fjärrdatorerna i en domän eller arbets grupp, eller flyttar dem från en domän till en annan. Det skapar också ett domän konto om datorn läggs till i domänen utan ett konto.
 
 Du kan använda parametrarna för denna cmdlet för att ange en organisationsenhet (OU) och domänkontrollant eller för att utföra en oskyddad anslutning.
 
@@ -90,10 +89,7 @@ Den använder parametern OUPath för att ange organisationsenhet för de nya kon
 Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
 
-Detta kommando lägger till Server01-datorn till Domain02-domänen.
-Parametern **LocalCredential** används för att ange ett användar konto som har behörighet att ansluta till Server01-datorn.
-Den använder parametern **Credential** för att ange ett användar konto som har behörighet att ansluta datorer till domänen.
-Den använder parametern **restart** för att starta om datorn när anslutnings åtgärden har slutförts och **Force** -parametern för att utelämna användar bekräftelse meddelanden.
+Detta kommando lägger till Server01-datorn till Domain02-domänen. Parametern **LocalCredential** används för att ange ett användar konto som har behörighet att ansluta till Server01-datorn. Den använder parametern **Credential** för att ange ett användar konto som har behörighet att ansluta datorer till domänen. Den använder parametern **restart** för att starta om datorn när anslutnings åtgärden har slutförts och **Force** -parametern för att utelämna användar bekräftelse meddelanden.
 
 ### Exempel 6: flytta en grupp med datorer till en ny domän
 
@@ -103,9 +99,7 @@ Add-Computer -ComputerName Server01, Server02, localhost -DomainName Domain02 -L
 
 Det här kommandot flyttar Server01-och Server02-datorer och den lokala datorn från Domain01 till Domain02.
 
-Parametern **LocalCredential** används för att ange ett användar konto som har behörighet att ansluta till de tre berörda datorerna.
-Parametern **UnjoinDomainCredential** används för att ange ett användar konto som har behörighet att koppla från datorerna från Domain01-domänen och parametern **Credential** för att ange ett användar konto som har behörighet att ansluta till datorerna till Domain02-domänen.
-Den använder parametern **restart** för att starta om alla tre datorerna när flyttningen är klar.
+Parametern **LocalCredential** används för att ange ett användar konto som har behörighet att ansluta till de tre berörda datorerna. Parametern **UnjoinDomainCredential** används för att ange ett användar konto som har behörighet att koppla från datorerna från Domain01-domänen och parametern **Credential** för att ange ett användar konto som har behörighet att ansluta till datorerna till Domain02-domänen. Den använder parametern **restart** för att starta om alla tre datorerna när flyttningen är klar.
 
 ### Exempel 7: flytta en dator till en ny domän och ändra namnet på datorn
 
@@ -115,8 +109,7 @@ Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Cre
 
 Det här kommandot flyttar Server01-datorn till Domain02 och ändrar dator namnet till Server044.
 
-Kommandot använder den aktuella användarens autentiseringsuppgifter för att ansluta till Server01-datorn och ta bort anslutningen från den aktuella domänen.
-Den använder parametern **Credential** för att ange ett användar konto som har behörighet att ansluta datorn till Domain02-domänen.
+Kommandot använder den aktuella användarens autentiseringsuppgifter för att ansluta till Server01-datorn och ta bort anslutningen från den aktuella domänen. Den använder parametern **Credential** för att ange ett användar konto som har behörighet att ansluta datorn till Domain02-domänen.
 
 ### Exempel 8: lägga till datorer som listas i en fil till en ny domän
 
@@ -124,9 +117,7 @@ Den använder parametern **Credential** för att ange ett användar konto som ha
 Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
-Detta kommando lägger till de datorer som listas i Servers.txt-filen till Domain02-domänen.
-Parametern **Options** används för att ange alternativet **Win9xUpgrade** .
-Parametern **restart** startar om alla nyligen tillagda datorer när kopplingen har slutförts.
+Detta kommando lägger till de datorer som listas i Servers.txt-filen till Domain02-domänen. Parametern **Options** används för att ange alternativet **Win9xUpgrade** . Parametern **restart** startar om alla nyligen tillagda datorer när kopplingen har slutförts.
 
 ### Exempel 9: lägga till en dator i en domän med fördefinierade autentiseringsuppgifter för datorn
 
@@ -144,8 +135,7 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
 Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
 ```
 
-Den här kombinationen av kommandon skapar ett nytt dator konto med ett fördefinierat namn och tillfälligt kopplings lösen ord i en domän med en befintlig domänansluten dator.
-Sedan är en dator med det fördefinierade namnet ansluts domänen med endast dator namnet och det tillfälliga kopplings lösen ordet.
+Den här kombinationen av kommandon skapar ett nytt dator konto med ett fördefinierat namn och tillfälligt kopplings lösen ord i en domän med en befintlig domänansluten dator. Sedan är en dator med det fördefinierade namnet ansluts domänen med endast dator namnet och det tillfälliga kopplings lösen ordet.
 Det fördefinierade lösen ordet används bara för att stödja kopplings åtgärden och ersätts som en del av vanliga dator konto procedurer när datorn har slutfört anslutningen.
 
 ## PARAMETRAR
@@ -155,11 +145,9 @@ Det fördefinierade lösen ordet används bara för att stödja kopplings åtgä
 Anger de datorer som ska läggas till i en domän eller arbets grupp.
 Standard är den lokala datorn.
 
-Ange NetBIOS-namnet, en Internet Protocol IP-adress eller ett fullständigt kvalificerat domän namn för var och en av de fjärranslutna datorerna.
-Om du vill ange den lokala datorn skriver du datorns namn, en punkt (.) eller "localhost".
+Ange NetBIOS-namnet, en Internet Protocol IP-adress eller ett fullständigt kvalificerat domän namn för var och en av de fjärranslutna datorerna. Om du vill ange den lokala datorn skriver du datorns namn, en punkt ( `.` ) eller "localhost".
 
-Den här parametern är inte beroende av Windows PowerShell-fjärrkommunikation.
-Du kan använda parametern **computername** för `Add-Computer` även om datorn inte är konfigurerad för att köra fjärrkommandon.
+Den här parametern är inte beroende av Windows PowerShell-fjärrkommunikation. Du kan använda parametern **computername** för `Add-Computer` även om datorn inte är konfigurerad för att köra fjärrkommandon.
 
 Den här parametern introduceras i Windows PowerShell 3,0.
 
@@ -180,11 +168,9 @@ Accept wildcard characters: False
 Anger ett användar konto som har behörighet att ansluta datorer till en ny domän.
 Standard är den aktuella användaren.
 
-Ange ett användar namn, till exempel "user01" eller "Domain01\User01", eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten.
-Om du anger ett användar namn uppmanas du att ange ett lösen ord.
+Ange ett användar namn, till exempel "user01" eller "Domain01\User01", eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord.
 
-Använd parametern **UnjoinDomainCredential** om du vill ange ett användar konto som har behörighet att ta bort datorn från den aktuella domänen.
-Om du vill ange ett användar konto som har behörighet att ansluta till en fjärrdator använder du parametern **LocalCredential** .
+Använd parametern **UnjoinDomainCredential** om du vill ange ett användar konto som har behörighet att ta bort datorn från den aktuella domänen. Om du vill ange ett användar konto som har behörighet att ansluta till en fjärrdator använder du parametern **LocalCredential** .
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -200,8 +186,7 @@ Accept wildcard characters: False
 
 ### -DomainName
 
-Anger den domän som datorerna ska läggas till i.
-Den här parametern krävs när du lägger till datorerna i en domän.
+Anger den domän som datorerna ska läggas till i. Den här parametern krävs när du lägger till datorerna i en domän.
 
 ```yaml
 Type: System.String
@@ -217,8 +202,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Förhindrar att användaren bekräftar frågan.
-Utan den här parametern måste `Add-Computer` du bekräfta att varje dator ska läggas till.
+Förhindrar att användaren bekräftar frågan. Utan den här parametern måste `Add-Computer` du bekräfta att varje dator ska läggas till.
 
 Den här parametern introduceras i Windows PowerShell 3,0.
 
@@ -236,14 +220,11 @@ Accept wildcard characters: False
 
 ### -LocalCredential
 
-Anger ett användar konto som har behörighet att ansluta till de datorer som anges av parametern **computername** .
-Standard är den aktuella användaren.
+Anger ett användar konto som har behörighet att ansluta till de datorer som anges av parametern **computername** . Standard är den aktuella användaren.
 
-Ange ett användar namn, till exempel "user01" eller "Domain01\User01", eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten.
-Om du anger ett användar namn uppmanas du att ange ett lösen ord.
+Ange ett användar namn, till exempel "user01" eller "Domain01\User01", eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord.
 
-Om du vill ange ett användar konto som har behörighet att lägga till datorer i en ny domän, använder du parametern **Credential** .
-Om du vill ange ett användar konto som har behörighet att ta bort datorerna från den aktuella domänen använder du parametern **UnjoinDomainCredential** .
+Om du vill ange ett användar konto som har behörighet att lägga till datorer i en ny domän, använder du parametern **Credential** . Om du vill ange ett användar konto som har behörighet att ta bort datorerna från den aktuella domänen använder du parametern **UnjoinDomainCredential** .
 
 Den här parametern introduceras i Windows PowerShell 3,0.
 
@@ -261,8 +242,7 @@ Accept wildcard characters: False
 
 ### -Nyttnamn
 
-Anger ett nytt namn för datorn i den nya domänen.
-Den här parametern är endast giltig när en dator läggs till eller flyttas.
+Anger ett nytt namn för datorn i den nya domänen. Den här parametern är endast giltig när en dator läggs till eller flyttas.
 
 Den här parametern introduceras i Windows PowerShell 3,0.
 
@@ -280,8 +260,7 @@ Accept wildcard characters: False
 
 ### – Alternativ
 
-Anger avancerade alternativ för åtgärden **Lägg till dator** anslutning.
-Ange ett eller flera värden i en kommaavgränsad sträng.
+Anger avancerade alternativ för åtgärden **Lägg till dator** anslutning. Ange ett eller flera värden i en kommaavgränsad sträng.
 
 De acceptabla värdena för den här parametern är:
 
@@ -297,7 +276,8 @@ De acceptabla värdena för den här parametern är:
 
 - **JoinReadOnly** : använder ett befintligt dator konto för att ansluta datorn till en skrivskyddad domänkontrollant. Dator kontot måste läggas till i listan över tillåtna för lösenordsreplikeringsprincipen och konto lösen ordet måste replikeras till den skrivskyddade domänkontrollanten före kopplings åtgärden.
 
-- **InstallInvoke** : anger flaggorna Create (0x2) och Delete (0x4) för parametern **FJoinOptions** för **JoinDomainOrWorkgroup** -metoden. Mer information om **JoinDomainOrWorkgroup** -metoden finns i [JoinDomainOrWorkgroup-metoden i Win32_ComputerSystem-klassen](https://msdn.microsoft.com/library/aa392154) i MSDN-biblioteket. Mer information om de här alternativen finns i [NetJoinDomain-funktionen](https://msdn.microsoft.com/library/aa370433) i MSDN-biblioteket.
+- **InstallInvoke** : anger flaggorna Create (0x2) och Delete (0x4) för parametern **FJoinOptions** för **JoinDomainOrWorkgroup** -metoden. Mer information om **JoinDomainOrWorkgroup** -metoden finns i [JoinDomainOrWorkgroup-metoden i Win32_ComputerSystem-klassen](/windows/win32/cimwin32prov/joindomainorworkgroup-method-in-class-win32-computersystem).
+  Mer information om de här alternativen finns i [NetJoinDomain-funktionen](/windows/win32/api/lmjoin/nf-lmjoin-netjoindomain).
 
 Den här parametern introducerades i Windows PowerShell 3,0.
 
@@ -316,9 +296,7 @@ Accept wildcard characters: False
 
 ### -OUPath
 
-Anger en organisationsenhet (OU) för domän kontot.
-Ange det fullständiga unika namnet på ORGANISATIONSENHETen inom citat tecken.
-Standardvärdet är standard ORGANISATIONSENHETen för dator objekt i domänen.
+Anger en organisationsenhet (OU) för domän kontot. Ange det fullständiga unika namnet på ORGANISATIONSENHETen inom citat tecken. Standardvärdet är standard ORGANISATIONSENHETen för dator objekt i domänen.
 
 ```yaml
 Type: System.String
@@ -334,8 +312,7 @@ Accept wildcard characters: False
 
 ### – PassThru
 
-Returnerar ett objekt som representerar det objekt som du arbetar med.
-Som standard genererar denna cmdlet inga utdata.
+Returnerar ett objekt som representerar det objekt som du arbetar med. Som standard genererar denna cmdlet inga utdata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -351,8 +328,7 @@ Accept wildcard characters: False
 
 ### -Restart
 
-Startar om datorerna som har lagts till i domänen eller arbets gruppen.
-En omstart krävs ofta för att ändringen ska börja gälla.
+Startar om datorerna som har lagts till i domänen eller arbets gruppen. En omstart krävs ofta för att ändringen ska börja gälla.
 
 Den här parametern introduceras i Windows PowerShell 3,0.
 
@@ -370,9 +346,7 @@ Accept wildcard characters: False
 
 ### -Server
 
-Anger namnet på en domänkontrollant som lägger till datorn i domänen.
-Ange namnet i DomainName\ComputerName-format.
-Ingen domänkontrollant har angetts som standard.
+Anger namnet på en domänkontrollant som lägger till datorn i domänen. Ange namnet i DomainName\ComputerName-format. Ingen domänkontrollant har angetts som standard.
 
 ```yaml
 Type: System.String
@@ -388,15 +362,11 @@ Accept wildcard characters: False
 
 ### -UnjoinDomainCredential
 
-Anger ett användar konto som har behörighet att ta bort datorerna från deras aktuella domäner.
-Standard är den aktuella användaren.
+Anger ett användar konto som har behörighet att ta bort datorerna från deras aktuella domäner. Standard är den aktuella användaren.
 
-Ange ett användar namn, till exempel "user01" eller "Domain01\User01", eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten.
-Om du anger ett användar namn uppmanas du att ange ett lösen ord.
+Ange ett användar namn, till exempel "user01" eller "Domain01\User01", eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord.
 
-Använd den här parametern när du flyttar datorer till en annan domän.
-Om du vill ange ett användar konto som har behörighet att ansluta till den nya domänen använder du parametern **Credential** .
-Om du vill ange ett användar konto som har behörighet att ansluta till en fjärrdator använder du parametern **LocalCredential** .
+Använd den här parametern när du flyttar datorer till en annan domän. Om du vill ange ett användar konto som har behörighet att ansluta till den nya domänen använder du parametern **Credential** . Om du vill ange ett användar konto som har behörighet att ansluta till en fjärrdator använder du parametern **LocalCredential** .
 
 Den här parametern introduceras i Windows PowerShell 3,0.
 
@@ -430,8 +400,7 @@ Accept wildcard characters: False
 
 ### -WorkgroupName
 
-Anger namnet på en arbets grupp som datorerna läggs till i.
-Standardvärdet är "WORKGROUP".
+Anger namnet på en arbets grupp som datorerna läggs till i. Standardvärdet är "WORKGROUP".
 
 ```yaml
 Type: System.String

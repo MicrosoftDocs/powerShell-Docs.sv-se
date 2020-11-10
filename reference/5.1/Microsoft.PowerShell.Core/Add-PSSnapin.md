@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-PSSnapin
-ms.openlocfilehash: 5adba912d91369250ee9891ee2bb2ca0f8cba796
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a21c2974fd66a9b02929752ae487c8995579b8a7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263684"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388832"
 ---
 # Add-PSSnapin
 
@@ -136,15 +136,15 @@ Denna cmdlet returnerar ett PSSnapInInfo-objekt som representerar snapin-modulen
 
 ## ANTECKNINGAR
 
-* Från och med Windows PowerShell 3,0 paketeras de grundläggande kommandon som installeras med Windows PowerShell i moduler. I Windows PowerShell 2,0 och i värd program som skapar äldre sessioner i senare versioner av Windows PowerShell är huvud kommandona förpackade i snapin-moduler (PSSnapins). Undantaget är **Microsoft. PowerShell. Core** , som alltid är en snapin-modul. Fjärrsessioner, till exempel de som startas av New-PSSession-cmdleten, är äldre sessioner som inkluderar grundläggande snapin-moduler.
+- Från och med Windows PowerShell 3,0 paketeras de grundläggande kommandon som installeras med Windows PowerShell i moduler. I Windows PowerShell 2,0 och i värd program som skapar äldre sessioner i senare versioner av Windows PowerShell är huvud kommandona förpackade i snapin-moduler (PSSnapins). Undantaget är **Microsoft. PowerShell. Core** , som alltid är en snapin-modul. Fjärrsessioner, till exempel de som startas av New-PSSession-cmdleten, är äldre sessioner som inkluderar grundläggande snapin-moduler.
 
-  Information om **CreateDefault2** -metoden som skapar nyare sessioner med Core-moduler finns i CreateDefault2- [metoden](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) i MSDN-biblioteket.
+  Information om **CreateDefault2** -metoden som skapar nyare sessioner med Core-moduler finns i CreateDefault2- [metoden](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
 
-* Mer information om snapin-moduler finns i [about_PSSnapins](About/about_PSSnapins.md) och [hur du skapar en Windows PowerShell-snapin-modul](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
-* `Add-PSSnapin` lägger bara till snapin-modulen till den aktuella sessionen. Lägg till snapin-modulen till alla Windows PowerShell-sessioner genom att lägga till den i Windows PowerShell-profilen. Mer information finns i about_Profiles.
-* Du kan lägga till en snapin-modul som har registrerats med installations verktyget för Microsoft .NET Framework. Mer information finns i [så här registrerar du cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85)).
-* Om du vill hämta en lista över snapin-moduler som är registrerade på datorn skriver du `Get-PSSnapin -Registered` .
-* Innan du lägger till en snapin-modul `Add-PSSnapin` kontrollerar du vilken version av snapin-modulen som ska användas för att kontrol lera att den är kompatibel med den aktuella versionen av Windows PowerShell. Om snapin-modulen inte uppfyller versions kontrollen rapporterar Windows PowerShell ett fel.
+- Mer information om snapin-moduler finns i [about_PSSnapins](About/about_PSSnapins.md) och [hur du skapar en Windows PowerShell-snapin-modul](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
+- `Add-PSSnapin` lägger bara till snapin-modulen till den aktuella sessionen. Lägg till snapin-modulen till alla Windows PowerShell-sessioner genom att lägga till den i Windows PowerShell-profilen. Mer information finns i about_Profiles.
+- Du kan lägga till en snapin-modul som har registrerats med installations verktyget för Microsoft .NET Framework. Mer information finns i [så här registrerar du cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85)).
+- Om du vill hämta en lista över snapin-moduler som är registrerade på datorn skriver du `Get-PSSnapin -Registered` .
+- Innan du lägger till en snapin-modul `Add-PSSnapin` kontrollerar du vilken version av snapin-modulen som ska användas för att kontrol lera att den är kompatibel med den aktuella versionen av Windows PowerShell. Om snapin-modulen inte uppfyller versions kontrollen rapporterar Windows PowerShell ett fel.
 
 ## RELATERADE LÄNKAR
 

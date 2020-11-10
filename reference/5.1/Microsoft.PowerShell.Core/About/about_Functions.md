@@ -6,12 +6,12 @@ ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
-ms.openlocfilehash: f033bc36bf67a9d01e3f238645b83df7d75c6963
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: e028ba5f29568c9eb962ee482087ac69a42e84b1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271586"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386927"
 ---
 # <a name="about-functions"></a>Om Functions
 
@@ -486,7 +486,7 @@ Du kan skriva hjälp för en funktion med någon av följande två metoder:
 
   Om du vill associera funktionen med det XML-baserade hjälp avsnittet använder du det `.ExternalHelp` kommenterings-baserade hjälp nyckelordet. Utan det här nyckelordet `Get-Help` kan du inte hitta funktions hjälp avsnittet och anropar till `Get-Help` för funktionen returnera endast den automatiskt genererade hjälpen.
 
-  Mer information om `ExternalHelp` nyckelordet finns [about_Comment_Based_Help](about_Comment_Based_Help.md). Mer information om XML-baserad hjälp finns i [så här skriver du cmdlet-hjälpen](https://go.microsoft.com/fwlink/?LinkID=123415) i MSDN-biblioteket.
+  Mer information om `ExternalHelp` nyckelordet finns [about_Comment_Based_Help](about_Comment_Based_Help.md). Mer information om XML-baserad hjälp finns i [så här skriver du cmdlet-hjälpen](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## <a name="see-also"></a>Se även
 

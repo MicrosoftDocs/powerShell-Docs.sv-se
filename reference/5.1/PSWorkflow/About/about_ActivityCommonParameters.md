@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ActivityCommonParameters
-ms.openlocfilehash: b745bf17e4ae26156042ecdc25211830177bc692
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 93fdcdb9c5afe0b73e843baf2474ec7d3f96a6cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270962"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387812"
 ---
 # <a name="about-activitycommonparameters"></a>Om ActivityCommonParameters
 
@@ -150,7 +150,7 @@ WinRM-tjänsten använder program namnet för att välja en lyssnare som ska bet
 
 Anger den mekanism som används för att autentisera användarens autentiseringsuppgifter vid anslutning till mål datorerna. Giltiga värden är standard, Basic, CredSSP, Digest, Kerberos, Negotiate och NegotiateWithImplicitCredential. Standardvärdet är default. Den gemensamma aktivitets parametern är också en gemensam arbets flödes parameter.
 
-Information om värdena för den här parametern finns i beskrivningen av uppräkningen **system. Management. Automation. körnings utrymmen. AuthenticationMechanism** i MSDN.
+Information om värdena för den här parametern finns i beskrivningen av uppräkningen **system. Management. Automation. körnings utrymmen. AuthenticationMechanism** i PowerShell SDK.
 
 > [!WARNING]
 > Autentisering av Credential Security Service Provider (CredSSP), där användarens autentiseringsuppgifter skickas till en fjärrdator som ska autentiseras, är utformad för kommandon som kräver autentisering på fler än en resurs, till exempel åtkomst till en fjärran sluten nätverks resurs. Den här mekanismen ökar säkerhets risken för Fjärråtgärden. Om fjärrdatorn har komprometterats kan de autentiseringsuppgifter som skickas till den användas för att kontrol lera nätverks sessionen.

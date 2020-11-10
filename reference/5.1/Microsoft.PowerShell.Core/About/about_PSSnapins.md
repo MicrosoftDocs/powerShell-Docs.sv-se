@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSSnapins
-ms.openlocfilehash: cc22f8de0b9d8a55dcfa12f3b47f3852d891e67b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 494b3275e4fe8a3aacdc358317950542962957cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271521"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388900"
 ---
 # <a name="about-pssnapins"></a>Om PSSnapins
 
@@ -57,7 +57,7 @@ De inbyggda snapin-modulerna är registrerade i systemet och läggs till i Stand
 
 En Windows PowerShell-snapin-modul är ett program som skrivits i ett .NET Framework språk som är kompilerat i en. dll-fil. Om du vill använda providers och cmdlets i en snapin-modul måste du först registrera snapin-modulen (Lägg till i registret).
 
-De flesta snapin-moduler innehåller ett installations program (en. exe-eller. msi-fil) som registrerar DLL-filen åt dig. Men om du får en snapin-modul som en. dll-fil kan du registrera den på systemet. Mer information finns i [så här registrerar du cmdlets, providers och värd program](https://go.microsoft.com/fwlink/?LinkID=143619) i MSDN-biblioteket.
+De flesta snapin-moduler innehåller ett installations program (en. exe-eller. msi-fil) som registrerar DLL-filen åt dig. Men om du får en snapin-modul som en. dll-fil kan du registrera den på systemet. Mer information finns i [så här registrerar du cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85)).
 
 Om du vill hämta alla registrerade snapin-moduler i systemet eller kontrol lera att en snapin-modul är registrerad, skriver du:
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJob
-ms.openlocfilehash: 99dbdc84430c0a8b5cf505a22b139cd07236e160
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6144d9f19b86727bc09d07e94f4bcf158e3b7071
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264603"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387914"
 ---
 # Set-ScheduledJob
 
@@ -141,16 +141,15 @@ Accept wildcard characters: False
 Anger den mekanism som används för att autentisera användarens autentiseringsuppgifter.
 De acceptabla värdena för den här parametern är:
 
-- Default
-- Basic
+- Standard
+- Grundläggande
 - CredSSP
 - Sammandrag
 - Kerberos
 - Negotiate
 - NegotiateWithImplicitCredential
 
-Standardvärdet är default.
-Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) i MSDN-biblioteket.
+Standardvärdet är default. Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) i PowerShell SDK.
 
 Varning! CredSSP-autentisering (Credential Security Support Provider), där användarens autentiseringsuppgifter skickas till en fjärrdator som ska autentiseras, är utformad för kommandon som kräver autentisering på fler än en resurs, till exempel åtkomst till en fjärran sluten nätverks resurs.
 Den här mekanismen ökar säkerhets risken för Fjärråtgärden.

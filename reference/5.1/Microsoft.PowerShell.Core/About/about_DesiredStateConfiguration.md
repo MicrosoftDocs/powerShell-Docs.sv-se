@@ -6,12 +6,12 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_DesiredStateConfiguration
-ms.openlocfilehash: 2f043104c67078b98355b3e54171a8993e534837
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 5d088934ffc953ad19be401bce72f6287f0fde07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93273189"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387030"
 ---
 # <a name="about_desiredstateconfiguration"></a>about_DesiredStateConfiguration
 
@@ -27,12 +27,12 @@ DSC tillhandahåller en uppsättning PowerShell-språktillägg, nya cmdletar och
 
 DSC introduceras i PowerShell 4,0.
 
-Detaljerad information om DSC finns i [PowerShell Desired State Configuration-översikt](/powershell/scripting/dsc/overview/overview) i TechNet-biblioteket.
+Detaljerad information om DSC finns i [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/overview).
 
 ## <a name="developing-dsc-resources-with-classes"></a>UTVECKLA DSC-RESURSER MED KLASSER
 
 Från och med PowerShell 5,0 kan du utveckla DSC-resurser med hjälp av klasser.
-Mer information finns i [about_Classes](about_Classes.md)och [skriva en anpassad DSC-resurs med PowerShell-klasser](/previous-versions//dn948461(v=technet.10)) på Microsoft TechNet.
+Mer information finns i [about_Classes](about_Classes.md)och [skriva en anpassad DSC-resurs med PowerShell-klasser](/powershell/scripting/dsc/resources/authoringresourceclass).
 
 ## <a name="using-dsc"></a>ANVÄNDA DSC
 
