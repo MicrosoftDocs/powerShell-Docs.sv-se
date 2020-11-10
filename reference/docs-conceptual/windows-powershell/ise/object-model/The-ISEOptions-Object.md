@@ -2,26 +2,26 @@
 ms.date: 12/31/2019
 title: ISEOptions-objektet
 description: Objektet ISEOptions representerar olika inställningar för Windows PowerShell ISE.
-ms.openlocfilehash: 4f790550796f40c7a2d4882cc0444fa7a55eeee9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9823a4a0ea32420d830735a0a61a6c03a6458fb7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661022"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391518"
 ---
-# <a name="the-iseoptions-object"></a><span data-ttu-id="61eae-103">ISEOptions-objektet</span><span class="sxs-lookup"><span data-stu-id="61eae-103">The ISEOptions Object</span></span>
+# <a name="the-iseoptions-object"></a><span data-ttu-id="b0d7a-103">ISEOptions-objektet</span><span class="sxs-lookup"><span data-stu-id="b0d7a-103">The ISEOptions Object</span></span>
 
-<span data-ttu-id="61eae-104">Objektet **ISEOptions** representerar olika inställningar för Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-104">The **ISEOptions** object represents various settings for Windows PowerShell ISE.</span></span> <span data-ttu-id="61eae-105">Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEOptions** .</span><span class="sxs-lookup"><span data-stu-id="61eae-105">It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.</span></span>
+<span data-ttu-id="b0d7a-104">Objektet **ISEOptions** representerar olika inställningar för Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-104">The **ISEOptions** object represents various settings for Windows PowerShell ISE.</span></span> <span data-ttu-id="b0d7a-105">Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEOptions** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-105">It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.</span></span>
 
-<span data-ttu-id="61eae-106">**ISEOptions** -objektet tillhandahåller följande metoder och egenskaper.</span><span class="sxs-lookup"><span data-stu-id="61eae-106">The **ISEOptions** object provides the following methods and properties.</span></span>
+<span data-ttu-id="b0d7a-106">**ISEOptions** -objektet tillhandahåller följande metoder och egenskaper.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-106">The **ISEOptions** object provides the following methods and properties.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="61eae-107">Metoder</span><span class="sxs-lookup"><span data-stu-id="61eae-107">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="b0d7a-107">Metoder</span><span class="sxs-lookup"><span data-stu-id="b0d7a-107">Methods</span></span>
 
-### <a name="restoredefaultconsoletokencolors"></a><span data-ttu-id="61eae-108">RestoreDefaultConsoleTokenColors\(\)</span><span class="sxs-lookup"><span data-stu-id="61eae-108">RestoreDefaultConsoleTokenColors\(\)</span></span>
+### <a name="restoredefaultconsoletokencolors"></a><span data-ttu-id="b0d7a-108">RestoreDefaultConsoleTokenColors\(\)</span><span class="sxs-lookup"><span data-stu-id="b0d7a-108">RestoreDefaultConsoleTokenColors\(\)</span></span>
 
-<span data-ttu-id="61eae-109">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-109">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-110">Återställer standardvärdena för token-färgerna i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-110">Restores the default values of the token colors in the Console pane.</span></span>
+<span data-ttu-id="b0d7a-110">Återställer standardvärdena för token-färgerna i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-110">Restores the default values of the token colors in the Console pane.</span></span>
 
 ```powershell
 # Changes the color of the commands in the Console pane to red and then restores it to its default value.
@@ -29,11 +29,11 @@ $psISE.Options.ConsoleTokenColors["Command"] = 'red'
 $psISE.Options.RestoreDefaultConsoleTokenColors()
 ```
 
-### <a name="restoredefaults"></a><span data-ttu-id="61eae-111">RestoreDefaults\(\)</span><span class="sxs-lookup"><span data-stu-id="61eae-111">RestoreDefaults\(\)</span></span>
+### <a name="restoredefaults"></a><span data-ttu-id="b0d7a-111">RestoreDefaults\(\)</span><span class="sxs-lookup"><span data-stu-id="b0d7a-111">RestoreDefaults\(\)</span></span>
 
-<span data-ttu-id="61eae-112">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-112">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-112">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-112">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-113">Återställer standardvärdena för alla alternativ inställningar i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-113">Restores the default values of all options settings in the Console pane.</span></span> <span data-ttu-id="61eae-114">Den återställer också beteendet för olika varnings meddelanden som innehåller kryss rutan standard för att förhindra att meddelandet visas igen.</span><span class="sxs-lookup"><span data-stu-id="61eae-114">It also resets the behavior of various warning messages that provide the standard check box to prevent the message from being shown again.</span></span>
+<span data-ttu-id="b0d7a-113">Återställer standardvärdena för alla alternativ inställningar i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-113">Restores the default values of all options settings in the Console pane.</span></span> <span data-ttu-id="b0d7a-114">Den återställer också beteendet för olika varnings meddelanden som innehåller kryss rutan standard för att förhindra att meddelandet visas igen.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-114">It also resets the behavior of various warning messages that provide the standard check box to prevent the message from being shown again.</span></span>
 
 ```powershell
 # Changes the background color in the Console pane and then restores it to its default value.
@@ -41,11 +41,11 @@ $psISE.Options.ConsolePaneBackgroundColor = 'orange'
 $psISE.Options.RestoreDefaults()
 ```
 
-### <a name="restoredefaulttokencolors"></a><span data-ttu-id="61eae-115">RestoreDefaultTokenColors\(\)</span><span class="sxs-lookup"><span data-stu-id="61eae-115">RestoreDefaultTokenColors\(\)</span></span>
+### <a name="restoredefaulttokencolors"></a><span data-ttu-id="b0d7a-115">RestoreDefaultTokenColors\(\)</span><span class="sxs-lookup"><span data-stu-id="b0d7a-115">RestoreDefaultTokenColors\(\)</span></span>
 
-<span data-ttu-id="61eae-116">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-116">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-116">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-116">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-117">Återställer standardvärdena för token-färgerna i skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-117">Restores the default values of the token colors in the Script pane.</span></span>
+<span data-ttu-id="b0d7a-117">Återställer standardvärdena för token-färgerna i skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-117">Restores the default values of the token colors in the Script pane.</span></span>
 
 ```powershell
 # Changes the color of the comments in the Script pane to red and then restores it to its default value.
@@ -53,11 +53,11 @@ $psISE.Options.TokenColors["Comment"] = 'red'
 $psISE.Options.RestoreDefaultTokenColors()
 ```
 
-### <a name="restoredefaultxmltokencolors"></a><span data-ttu-id="61eae-118">RestoreDefaultXmlTokenColors\(\)</span><span class="sxs-lookup"><span data-stu-id="61eae-118">RestoreDefaultXmlTokenColors\(\)</span></span>
+### <a name="restoredefaultxmltokencolors"></a><span data-ttu-id="b0d7a-118">RestoreDefaultXmlTokenColors\(\)</span><span class="sxs-lookup"><span data-stu-id="b0d7a-118">RestoreDefaultXmlTokenColors\(\)</span></span>
 
-<span data-ttu-id="61eae-119">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-119">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-119">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-119">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-120">Återställer standardvärdena för token-färgerna för XML-element som visas i Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-120">Restores the default values of the token colors for XML elements that are displayed in Windows PowerShell ISE.</span></span> <span data-ttu-id="61eae-121">Se även [XmlTokenColors](#xmltokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-121">Also see [XmlTokenColors](#xmltokencolors).</span></span>
+<span data-ttu-id="b0d7a-120">Återställer standardvärdena för token-färgerna för XML-element som visas i Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-120">Restores the default values of the token colors for XML elements that are displayed in Windows PowerShell ISE.</span></span> <span data-ttu-id="b0d7a-121">Se även [XmlTokenColors](#xmltokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-121">Also see [XmlTokenColors](#xmltokencolors).</span></span>
 
 ```powershell
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -65,81 +65,81 @@ $psISE.Options.XmlTokenColors["Comment"] = 'red'
 $psISE.Options.RestoreDefaultXmlTokenColors()
 ```
 
-## <a name="properties"></a><span data-ttu-id="61eae-122">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="61eae-122">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="b0d7a-122">Egenskaper</span><span class="sxs-lookup"><span data-stu-id="b0d7a-122">Properties</span></span>
 
-### <a name="autosaveminuteinterval"></a><span data-ttu-id="61eae-123">AutoSaveMinuteInterval</span><span class="sxs-lookup"><span data-stu-id="61eae-123">AutoSaveMinuteInterval</span></span>
+### <a name="autosaveminuteinterval"></a><span data-ttu-id="b0d7a-123">AutoSaveMinuteInterval</span><span class="sxs-lookup"><span data-stu-id="b0d7a-123">AutoSaveMinuteInterval</span></span>
 
-<span data-ttu-id="61eae-124">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-124">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-124">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-124">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-125">Anger antalet minuter mellan automatiska sparade åtgärder för dina filer med Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-125">Specifies the number of minutes between automatic save operations of your files by Windows PowerShell ISE.</span></span> <span data-ttu-id="61eae-126">Standardvärdet är 2 minuter.</span><span class="sxs-lookup"><span data-stu-id="61eae-126">The default value is 2 minutes.</span></span> <span data-ttu-id="61eae-127">Värdet är ett heltal.</span><span class="sxs-lookup"><span data-stu-id="61eae-127">The value is an integer.</span></span>
+<span data-ttu-id="b0d7a-125">Anger antalet minuter mellan automatiska sparade åtgärder för dina filer med Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-125">Specifies the number of minutes between automatic save operations of your files by Windows PowerShell ISE.</span></span> <span data-ttu-id="b0d7a-126">Standardvärdet är 2 minuter.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-126">The default value is 2 minutes.</span></span> <span data-ttu-id="b0d7a-127">Värdet är ett heltal.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-127">The value is an integer.</span></span>
 
 ```powershell
 # Changes the number of minutes between automatic save operations to every 3 minutes.
 $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
-### <a name="commandpanebackgroundcolor"></a><span data-ttu-id="61eae-128">CommandPaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-128">CommandPaneBackgroundColor</span></span>
+### <a name="commandpanebackgroundcolor"></a><span data-ttu-id="b0d7a-128">CommandPaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-128">CommandPaneBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-129">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-129">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="61eae-130">För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span><span class="sxs-lookup"><span data-stu-id="61eae-130">For later versions, see [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span></span>
+<span data-ttu-id="b0d7a-129">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-129">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="b0d7a-130">För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-130">For later versions, see [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span></span>
 
-<span data-ttu-id="61eae-131">Anger bakgrunds färgen för kommando fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-131">Specifies the background color for the Command pane.</span></span> <span data-ttu-id="61eae-132">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-132">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-131">Anger bakgrunds färgen för kommando fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-131">Specifies the background color for the Command pane.</span></span> <span data-ttu-id="b0d7a-132">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-132">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the background color of the Command pane to orange.
 $psISE.Options.CommandPaneBackgroundColor = 'orange'
 ```
 
-### <a name="commandpaneup"></a><span data-ttu-id="61eae-133">CommandPaneUp</span><span class="sxs-lookup"><span data-stu-id="61eae-133">CommandPaneUp</span></span>
+### <a name="commandpaneup"></a><span data-ttu-id="b0d7a-133">CommandPaneUp</span><span class="sxs-lookup"><span data-stu-id="b0d7a-133">CommandPaneUp</span></span>
 
-<span data-ttu-id="61eae-134">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-134">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span>
+<span data-ttu-id="b0d7a-134">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-134">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span>
 
-<span data-ttu-id="61eae-135">Anger om kommando fönstret finns ovanför fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="61eae-135">Specifies whether the Command pane is located above the Output pane.</span></span>
+<span data-ttu-id="b0d7a-135">Anger om kommando fönstret finns ovanför fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-135">Specifies whether the Command pane is located above the Output pane.</span></span>
 
 ```powershell
 # Moves the Command pane to the top of the screen.
 $psISE.Options.CommandPaneUp  = $true
 ```
 
-### <a name="consolepanebackgroundcolor"></a><span data-ttu-id="61eae-136">ConsolePaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-136">ConsolePaneBackgroundColor</span></span>
+### <a name="consolepanebackgroundcolor"></a><span data-ttu-id="b0d7a-136">ConsolePaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-136">ConsolePaneBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-137">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-137">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-137">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-137">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-138">Anger bakgrunds färgen för konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-138">Specifies the background color for the Console pane.</span></span> <span data-ttu-id="61eae-139">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-139">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-138">Anger bakgrunds färgen för konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-138">Specifies the background color for the Console pane.</span></span> <span data-ttu-id="b0d7a-139">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-139">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the background color of the Console pane to red.
 $psISE.Options.ConsolePaneBackgroundColor = 'red'
 ```
 
-### <a name="consolepaneforegroundcolor"></a><span data-ttu-id="61eae-140">ConsolePaneForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-140">ConsolePaneForegroundColor</span></span>
+### <a name="consolepaneforegroundcolor"></a><span data-ttu-id="b0d7a-140">ConsolePaneForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-140">ConsolePaneForegroundColor</span></span>
 
-<span data-ttu-id="61eae-141">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-141">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-141">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-141">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-142">Anger förgrunds färgen för texten i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-142">Specifies the foreground color of the text in the Console pane.</span></span>
+<span data-ttu-id="b0d7a-142">Anger förgrunds färgen för texten i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-142">Specifies the foreground color of the text in the Console pane.</span></span>
 
 ```powershell
 # Changes the foreground color of the text in the Console pane to yellow.
 $psISE.Options.ConsolePaneForegroundColor  = 'yellow'
 ```
 
-### <a name="consolepanetextbackgroundcolor"></a><span data-ttu-id="61eae-143">ConsolePaneTextBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-143">ConsolePaneTextBackgroundColor</span></span>
+### <a name="consolepanetextbackgroundcolor"></a><span data-ttu-id="b0d7a-143">ConsolePaneTextBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-143">ConsolePaneTextBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-144">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-144">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-144">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-144">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-145">Anger bakgrunds färgen för texten i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-145">Specifies the background color of the text in the Console pane.</span></span>
+<span data-ttu-id="b0d7a-145">Anger bakgrunds färgen för texten i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-145">Specifies the background color of the text in the Console pane.</span></span>
 
 ```powershell
 # Changes the background color of the Console pane text to pink.
 $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 ```
 
-### <a name="consoletokencolors"></a><span data-ttu-id="61eae-146">ConsoleTokenColors</span><span class="sxs-lookup"><span data-stu-id="61eae-146">ConsoleTokenColors</span></span>
+### <a name="consoletokencolors"></a><span data-ttu-id="b0d7a-146">ConsoleTokenColors</span><span class="sxs-lookup"><span data-stu-id="b0d7a-146">ConsoleTokenColors</span></span>
 
-<span data-ttu-id="61eae-147">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-147">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-147">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-147">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-148">Anger färgerna i IntelliSense-tokens i Windows PowerShell ISE konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-148">Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Console pane.</span></span> <span data-ttu-id="61eae-149">Den här egenskapen är ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-149">This property is a dictionary object that contains name/value pairs of token types and colors for the Console pane.</span></span> <span data-ttu-id="61eae-150">Om du vill ändra färgerna i IntelliSense-tokens i skript fönstret, se [TokenColors](#tokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-150">To change the colors of the IntelliSense tokens in the Script pane, see [TokenColors](#tokencolors).</span></span>
-<span data-ttu-id="61eae-151">Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-151">To reset the colors to the default values, see [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).</span></span>
-<span data-ttu-id="61eae-152">Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.</span><span class="sxs-lookup"><span data-stu-id="61eae-152">Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.</span></span>
+<span data-ttu-id="b0d7a-148">Anger färgerna i IntelliSense-tokens i Windows PowerShell ISE konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-148">Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Console pane.</span></span> <span data-ttu-id="b0d7a-149">Den här egenskapen är ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-149">This property is a dictionary object that contains name/value pairs of token types and colors for the Console pane.</span></span> <span data-ttu-id="b0d7a-150">Om du vill ändra färgerna i IntelliSense-tokens i skript fönstret, se [TokenColors](#tokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-150">To change the colors of the IntelliSense tokens in the Script pane, see [TokenColors](#tokencolors).</span></span>
+<span data-ttu-id="b0d7a-151">Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-151">To reset the colors to the default values, see [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).</span></span>
+<span data-ttu-id="b0d7a-152">Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-152">Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.</span></span>
 
 ```powershell
 # Sets the color of commands to green.
@@ -148,33 +148,33 @@ $psISE.Options.ConsoleTokenColors["Command"] = 'green'
 $psISE.Options.ConsoleTokenColors["Keyword"] = 'magenta'
 ```
 
-### <a name="debugbackgroundcolor"></a><span data-ttu-id="61eae-153">DebugBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-153">DebugBackgroundColor</span></span>
+### <a name="debugbackgroundcolor"></a><span data-ttu-id="b0d7a-153">DebugBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-153">DebugBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-154">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-154">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-154">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-154">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-155">Anger bakgrunds färgen för fel söknings texten som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-155">Specifies the background color for the debug text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-156">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-156">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-155">Anger bakgrunds färgen för fel söknings texten som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-155">Specifies the background color for the debug text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-156">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-156">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the background color for the debug text that appears in the Console pane to blue.
 $psISE.Options.DebugBackgroundColor = '#0000FF'
 ```
 
-### <a name="debugforegroundcolor"></a><span data-ttu-id="61eae-157">DebugForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-157">DebugForegroundColor</span></span>
+### <a name="debugforegroundcolor"></a><span data-ttu-id="b0d7a-157">DebugForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-157">DebugForegroundColor</span></span>
 
-<span data-ttu-id="61eae-158">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-158">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-158">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-158">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-159">Anger förgrunds färgen för fel söknings texten som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-159">Specifies the foreground color for the debug text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-160">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-160">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-159">Anger förgrunds färgen för fel söknings texten som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-159">Specifies the foreground color for the debug text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-160">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-160">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the foreground color for the debug text that appears in the Console pane to yellow.
 $psISE.Options.DebugForegroundColor = 'yellow'
 ```
 
-### <a name="defaultoptions"></a><span data-ttu-id="61eae-161">DefaultOptions</span><span class="sxs-lookup"><span data-stu-id="61eae-161">DefaultOptions</span></span>
+### <a name="defaultoptions"></a><span data-ttu-id="b0d7a-161">DefaultOptions</span><span class="sxs-lookup"><span data-stu-id="b0d7a-161">DefaultOptions</span></span>
 
-<span data-ttu-id="61eae-162">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-162">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-162">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-162">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-163">En samling egenskaper som anger de standardvärden som ska användas när återställnings metoderna används.</span><span class="sxs-lookup"><span data-stu-id="61eae-163">A collection of properties that specify the default values to be used when the Reset methods are used.</span></span>
+<span data-ttu-id="b0d7a-163">En samling egenskaper som anger de standardvärden som ska användas när återställnings metoderna används.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-163">A collection of properties that specify the default values to be used when the Reset methods are used.</span></span>
 
 ```powershell
 # Displays the name of the default options. This example is from ISE 4.0.
@@ -219,134 +219,134 @@ UseEnterToSelectInScriptPaneIntellisense  : True
 IntellisenseTimeoutInSeconds              : 3
 ```
 
-### <a name="errorbackgroundcolor"></a><span data-ttu-id="61eae-164">ErrorBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-164">ErrorBackgroundColor</span></span>
+### <a name="errorbackgroundcolor"></a><span data-ttu-id="b0d7a-164">ErrorBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-164">ErrorBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-165">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-165">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-165">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-165">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-166">Anger bakgrunds färgen för fel text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-166">Specifies the background color for error text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-167">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-167">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-166">Anger bakgrunds färgen för fel text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-166">Specifies the background color for error text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-167">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-167">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the background color for the error text that appears in the Console pane to black.
 $psISE.Options.ErrorBackgroundColor = 'black'
 ```
 
-### <a name="errorforegroundcolor"></a><span data-ttu-id="61eae-168">ErrorForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-168">ErrorForegroundColor</span></span>
+### <a name="errorforegroundcolor"></a><span data-ttu-id="b0d7a-168">ErrorForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-168">ErrorForegroundColor</span></span>
 
-<span data-ttu-id="61eae-169">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-169">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-169">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-169">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-170">Anger förgrunds färgen för fel text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-170">Specifies the foreground color for error text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-171">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-171">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-170">Anger förgrunds färgen för fel text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-170">Specifies the foreground color for error text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-171">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-171">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the foreground color for the error text that appears in the console pane to green.
 $psISE.Options.ErrorForegroundColor = 'green'
 ```
 
-### <a name="fontname"></a><span data-ttu-id="61eae-172">FontName</span><span class="sxs-lookup"><span data-stu-id="61eae-172">FontName</span></span>
+### <a name="fontname"></a><span data-ttu-id="b0d7a-172">FontName</span><span class="sxs-lookup"><span data-stu-id="b0d7a-172">FontName</span></span>
 
-<span data-ttu-id="61eae-173">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-173">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-173">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-173">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-174">Anger teckensnitts namnet som används i både skript fönstret och konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-174">Specifies the font name currently in use in both the Script pane and the Console pane.</span></span>
+<span data-ttu-id="b0d7a-174">Anger teckensnitts namnet som används i både skript fönstret och konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-174">Specifies the font name currently in use in both the Script pane and the Console pane.</span></span>
 
 ```powershell
 # Changes the font used in both panes.
 $psISE.Options.FontName = 'Courier New'
 ```
 
-### <a name="fontsize"></a><span data-ttu-id="61eae-175">FontSize</span><span class="sxs-lookup"><span data-stu-id="61eae-175">FontSize</span></span>
+### <a name="fontsize"></a><span data-ttu-id="b0d7a-175">FontSize</span><span class="sxs-lookup"><span data-stu-id="b0d7a-175">FontSize</span></span>
 
-<span data-ttu-id="61eae-176">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-176">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-176">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-176">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-177">Anger tecken storleken som ett heltal.</span><span class="sxs-lookup"><span data-stu-id="61eae-177">Specifies the font size as an integer.</span></span> <span data-ttu-id="61eae-178">Den används i skript fönstret, kommando fönstret och fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="61eae-178">It is used in the Script pane, the Command pane, and the Output pane.</span></span> <span data-ttu-id="61eae-179">Det giltiga värde intervallet är 8 till 32.</span><span class="sxs-lookup"><span data-stu-id="61eae-179">The valid range of values is 8 through 32.</span></span>
+<span data-ttu-id="b0d7a-177">Anger tecken storleken som ett heltal.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-177">Specifies the font size as an integer.</span></span> <span data-ttu-id="b0d7a-178">Den används i skript fönstret, kommando fönstret och fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-178">It is used in the Script pane, the Command pane, and the Output pane.</span></span> <span data-ttu-id="b0d7a-179">Det giltiga värde intervallet är 8 till 32.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-179">The valid range of values is 8 through 32.</span></span>
 
 ```powershell
 # Changes the font size in all panes.
 $psISE.Options.FontSize = 20
 ```
 
-### <a name="intellisensetimeoutinseconds"></a><span data-ttu-id="61eae-180">IntellisenseTimeoutInSeconds</span><span class="sxs-lookup"><span data-stu-id="61eae-180">IntellisenseTimeoutInSeconds</span></span>
+### <a name="intellisensetimeoutinseconds"></a><span data-ttu-id="b0d7a-180">IntellisenseTimeoutInSeconds</span><span class="sxs-lookup"><span data-stu-id="b0d7a-180">IntellisenseTimeoutInSeconds</span></span>
 
-<span data-ttu-id="61eae-181">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-181">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-181">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-181">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-182">Anger hur många sekunder som IntelliSense använder för att försöka lösa den text som är skriven för tillfället.</span><span class="sxs-lookup"><span data-stu-id="61eae-182">Specifies the number of seconds that IntelliSense uses to try to resolve the currently typed text.</span></span>
-<span data-ttu-id="61eae-183">Efter det här antalet sekunder kan IntelliSense-tiden ta slut och du kan fortsätta att skriva.</span><span class="sxs-lookup"><span data-stu-id="61eae-183">After this number of seconds, IntelliSense times out and enables you to continue typing.</span></span> <span data-ttu-id="61eae-184">Standardvärdet är 3 sekunder.</span><span class="sxs-lookup"><span data-stu-id="61eae-184">The default value is 3 seconds.</span></span> <span data-ttu-id="61eae-185">Värdet är ett heltal.</span><span class="sxs-lookup"><span data-stu-id="61eae-185">The value is an integer.</span></span>
+<span data-ttu-id="b0d7a-182">Anger hur många sekunder som IntelliSense använder för att försöka lösa den text som är skriven för tillfället.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-182">Specifies the number of seconds that IntelliSense uses to try to resolve the currently typed text.</span></span>
+<span data-ttu-id="b0d7a-183">Efter det här antalet sekunder kan IntelliSense-tiden ta slut och du kan fortsätta att skriva.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-183">After this number of seconds, IntelliSense times out and enables you to continue typing.</span></span> <span data-ttu-id="b0d7a-184">Standardvärdet är 3 sekunder.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-184">The default value is 3 seconds.</span></span> <span data-ttu-id="b0d7a-185">Värdet är ett heltal.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-185">The value is an integer.</span></span>
 
 ```powershell
 # Changes the number of seconds for IntelliSense syntax recognition to 5.
 $psISE.Options.IntellisenseTimeoutInSeconds = 5
 ```
 
-### <a name="mrucount"></a><span data-ttu-id="61eae-186">MruCount</span><span class="sxs-lookup"><span data-stu-id="61eae-186">MruCount</span></span>
+### <a name="mrucount"></a><span data-ttu-id="b0d7a-186">MruCount</span><span class="sxs-lookup"><span data-stu-id="b0d7a-186">MruCount</span></span>
 
-<span data-ttu-id="61eae-187">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-187">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-187">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-187">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-188">Anger antalet nyligen öppnade filer som Windows PowerShell ISE spårar och visas längst ned på menyn **Öppna** .</span><span class="sxs-lookup"><span data-stu-id="61eae-188">Specifies the number of recently opened files that Windows PowerShell ISE tracks and displays at the bottom of the **File Open** menu.</span></span> <span data-ttu-id="61eae-189">Standardvärdet är 10.</span><span class="sxs-lookup"><span data-stu-id="61eae-189">The default value is 10.</span></span> <span data-ttu-id="61eae-190">Värdet är ett heltal.</span><span class="sxs-lookup"><span data-stu-id="61eae-190">The value is an integer.</span></span>
+<span data-ttu-id="b0d7a-188">Anger antalet nyligen öppnade filer som Windows PowerShell ISE spårar och visas längst ned på menyn **Öppna** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-188">Specifies the number of recently opened files that Windows PowerShell ISE tracks and displays at the bottom of the **File Open** menu.</span></span> <span data-ttu-id="b0d7a-189">Standardvärdet är 10.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-189">The default value is 10.</span></span> <span data-ttu-id="b0d7a-190">Värdet är ett heltal.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-190">The value is an integer.</span></span>
 
 ```powershell
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5.
 $psISE.Options.MruCount = 5
 ```
 
-### <a name="outputpanebackgroundcolor"></a><span data-ttu-id="61eae-191">OutputPaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-191">OutputPaneBackgroundColor</span></span>
+### <a name="outputpanebackgroundcolor"></a><span data-ttu-id="b0d7a-191">OutputPaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-191">OutputPaneBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-192">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-192">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="61eae-193">För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span><span class="sxs-lookup"><span data-stu-id="61eae-193">For later versions, see [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span></span>
+<span data-ttu-id="b0d7a-192">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-192">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="b0d7a-193">För senare versioner, se [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-193">For later versions, see [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).</span></span>
 
-<span data-ttu-id="61eae-194">Egenskapen Läs/skriv som hämtar eller anger bakgrunds färgen för själva utdatafönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-194">The read/write property that gets or sets the background color for the Output pane itself.</span></span> <span data-ttu-id="61eae-195">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-195">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-194">Egenskapen Läs/skriv som hämtar eller anger bakgrunds färgen för själva utdatafönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-194">The read/write property that gets or sets the background color for the Output pane itself.</span></span> <span data-ttu-id="b0d7a-195">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-195">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Changes the background color of the Output pane to gold.
 $psISE.Options.OutputPaneForegroundColor = 'gold'
 ```
 
-### <a name="outputpanetextforegroundcolor"></a><span data-ttu-id="61eae-196">OutputPaneTextForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-196">OutputPaneTextForegroundColor</span></span>
+### <a name="outputpanetextforegroundcolor"></a><span data-ttu-id="b0d7a-196">OutputPaneTextForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-196">OutputPaneTextForegroundColor</span></span>
 
-<span data-ttu-id="61eae-197">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-197">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="61eae-198">För senare versioner, se [ConsolePaneForegroundColor](#consolepaneforegroundcolor).</span><span class="sxs-lookup"><span data-stu-id="61eae-198">For later versions, see [ConsolePaneForegroundColor](#consolepaneforegroundcolor).</span></span>
+<span data-ttu-id="b0d7a-197">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-197">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="b0d7a-198">För senare versioner, se [ConsolePaneForegroundColor](#consolepaneforegroundcolor).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-198">For later versions, see [ConsolePaneForegroundColor](#consolepaneforegroundcolor).</span></span>
 
-<span data-ttu-id="61eae-199">Egenskapen Läs/skriv som ändrar förgrunds färgen för texten i fönstret utdata i Windows PowerShell ISE 2,0.</span><span class="sxs-lookup"><span data-stu-id="61eae-199">The read/write property that changes the foreground color of the text in the Output pane in Windows PowerShell ISE 2.0.</span></span>
+<span data-ttu-id="b0d7a-199">Egenskapen Läs/skriv som ändrar förgrunds färgen för texten i fönstret utdata i Windows PowerShell ISE 2,0.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-199">The read/write property that changes the foreground color of the text in the Output pane in Windows PowerShell ISE 2.0.</span></span>
 
 ```powershell
 # Changes the foreground color of the text in the Output Pane to blue.
 $psISE.Options.OutputPaneTextForegroundColor  = 'blue'
 ```
 
-### <a name="outputpanetextbackgroundcolor"></a><span data-ttu-id="61eae-200">OutputPaneTextBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-200">OutputPaneTextBackgroundColor</span></span>
+### <a name="outputpanetextbackgroundcolor"></a><span data-ttu-id="b0d7a-200">OutputPaneTextBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-200">OutputPaneTextBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-201">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-201">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="61eae-202">För senare versioner, se [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).</span><span class="sxs-lookup"><span data-stu-id="61eae-202">For later versions, see [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).</span></span>
+<span data-ttu-id="b0d7a-201">Den här funktionen finns i Windows PowerShell ISE 2,0, men har tagits bort eller bytt namn i senare versioner av ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-201">This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions of the ISE.</span></span> <span data-ttu-id="b0d7a-202">För senare versioner, se [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-202">For later versions, see [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).</span></span>
 
-<span data-ttu-id="61eae-203">Egenskapen Läs/skriv som ändrar bakgrunds färgen för texten i fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="61eae-203">The read/write property that changes the background color of the text in the Output pane.</span></span>
+<span data-ttu-id="b0d7a-203">Egenskapen Läs/skriv som ändrar bakgrunds färgen för texten i fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-203">The read/write property that changes the background color of the text in the Output pane.</span></span>
 
 ```powershell
 # Changes the background color of the Output pane text to pink.
 $psISE.Options.OutputPaneTextBackgroundColor = 'pink'
 ```
 
-### <a name="scriptpanebackgroundcolor"></a><span data-ttu-id="61eae-204">ScriptPaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-204">ScriptPaneBackgroundColor</span></span>
+### <a name="scriptpanebackgroundcolor"></a><span data-ttu-id="b0d7a-204">ScriptPaneBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-204">ScriptPaneBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-205">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-205">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-205">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-205">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-206">Egenskapen Läs/skriv som hämtar eller anger bakgrunds färgen för filer.</span><span class="sxs-lookup"><span data-stu-id="61eae-206">The read/write property that gets or sets the background color for files.</span></span> <span data-ttu-id="61eae-207">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="61eae-207">It is an instance of the **System.Windows.Media.Color** class.</span></span>
+<span data-ttu-id="b0d7a-206">Egenskapen Läs/skriv som hämtar eller anger bakgrunds färgen för filer.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-206">The read/write property that gets or sets the background color for files.</span></span> <span data-ttu-id="b0d7a-207">Det är en instans av klassen **system. Windows. Media. Color** .</span><span class="sxs-lookup"><span data-stu-id="b0d7a-207">It is an instance of the **System.Windows.Media.Color** class.</span></span>
 
 ```powershell
 # Sets the color of the script pane background to yellow.
 $psISE.Options.ScriptPaneBackgroundColor = 'yellow'
 ```
 
-### <a name="scriptpaneforegroundcolor"></a><span data-ttu-id="61eae-208">ScriptPaneForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-208">ScriptPaneForegroundColor</span></span>
+### <a name="scriptpaneforegroundcolor"></a><span data-ttu-id="b0d7a-208">ScriptPaneForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-208">ScriptPaneForegroundColor</span></span>
 
-<span data-ttu-id="61eae-209">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-209">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-209">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-209">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-210">Egenskapen Läs/skriv som hämtar eller anger förgrunds färgen för filer som inte är skriptfiler i skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-210">The read/write property that gets or sets the foreground color for non-script files in the Script pane.</span></span>
-<span data-ttu-id="61eae-211">Om du vill ange förgrunds färgen för skriptfiler använder du [TokenColors](#tokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-211">To set the foreground color for script files, use the [TokenColors](#tokencolors).</span></span>
+<span data-ttu-id="b0d7a-210">Egenskapen Läs/skriv som hämtar eller anger förgrunds färgen för filer som inte är skriptfiler i skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-210">The read/write property that gets or sets the foreground color for non-script files in the Script pane.</span></span>
+<span data-ttu-id="b0d7a-211">Om du vill ange förgrunds färgen för skriptfiler använder du [TokenColors](#tokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-211">To set the foreground color for script files, use the [TokenColors](#tokencolors).</span></span>
 
 ```powershell
 # Sets the foreground to color of non-script files in the script pane to green.
 $psISE.Options.ScriptPaneBackgroundColor = 'green'
 ```
 
-### <a name="selectedscriptpanestate"></a><span data-ttu-id="61eae-212">SelectedScriptPaneState</span><span class="sxs-lookup"><span data-stu-id="61eae-212">SelectedScriptPaneState</span></span>
+### <a name="selectedscriptpanestate"></a><span data-ttu-id="b0d7a-212">SelectedScriptPaneState</span><span class="sxs-lookup"><span data-stu-id="b0d7a-212">SelectedScriptPaneState</span></span>
 
-<span data-ttu-id="61eae-213">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-213">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-213">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-213">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-214">Egenskapen Läs/skriv som hämtar eller anger positionen för skript fönstret på skärmen.</span><span class="sxs-lookup"><span data-stu-id="61eae-214">The read/write property that gets or sets the position of the Script pane on the display.</span></span> <span data-ttu-id="61eae-215">Strängen kan vara antingen "maximerad", "Top" eller "Right".</span><span class="sxs-lookup"><span data-stu-id="61eae-215">The string can be either 'Maximized', 'Top', or 'Right'.</span></span>
+<span data-ttu-id="b0d7a-214">Egenskapen Läs/skriv som hämtar eller anger positionen för skript fönstret på skärmen.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-214">The read/write property that gets or sets the position of the Script pane on the display.</span></span> <span data-ttu-id="b0d7a-215">Strängen kan vara antingen "maximerad", "Top" eller "Right".</span><span class="sxs-lookup"><span data-stu-id="b0d7a-215">The string can be either 'Maximized', 'Top', or 'Right'.</span></span>
 
 ```powershell
 # Moves the Script Pane to the top.
@@ -357,81 +357,81 @@ $psISE.Options.SelectedScriptPaneState = 'Right'
 $psISE.Options.SelectedScriptPaneState = 'Maximized'
 ```
 
-### <a name="showdefaultsnippets"></a><span data-ttu-id="61eae-216">ShowDefaultSnippets</span><span class="sxs-lookup"><span data-stu-id="61eae-216">ShowDefaultSnippets</span></span>
+### <a name="showdefaultsnippets"></a><span data-ttu-id="b0d7a-216">ShowDefaultSnippets</span><span class="sxs-lookup"><span data-stu-id="b0d7a-216">ShowDefaultSnippets</span></span>
 
-<span data-ttu-id="61eae-217">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-217">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-217">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-217">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-218">Anger om <kbd>CTRL</kbd> + <kbd>J</kbd> -listan över kodfragment innehåller den Start uppsättning som ingår i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="61eae-218">Specifies whether the <kbd>CTRL</kbd>+<kbd>J</kbd> list of snippets includes the starter set that is included in Windows PowerShell.</span></span> <span data-ttu-id="61eae-219">När det är inställt på `$false` visas bara användardefinierade kodfragment i <kbd>CTRL</kbd> + <kbd>J</kbd> -listan.</span><span class="sxs-lookup"><span data-stu-id="61eae-219">When set to `$false`, only user-defined snippets appear in the <kbd>CTRL</kbd>+<kbd>J</kbd> list.</span></span>
-<span data-ttu-id="61eae-220">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-220">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-218">Anger om <kbd>CTRL</kbd> + <kbd>J</kbd> -listan över kodfragment innehåller den Start uppsättning som ingår i Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-218">Specifies whether the <kbd>CTRL</kbd>+<kbd>J</kbd> list of snippets includes the starter set that is included in Windows PowerShell.</span></span> <span data-ttu-id="b0d7a-219">När det är inställt på `$false` visas bara användardefinierade kodfragment i <kbd>CTRL</kbd> + <kbd>J</kbd> -listan.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-219">When set to `$false`, only user-defined snippets appear in the <kbd>CTRL</kbd>+<kbd>J</kbd> list.</span></span>
+<span data-ttu-id="b0d7a-220">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-220">The default value is `$true`.</span></span>
 
 ```powershell
 # Hide the default snippets from the CTRL+J list.
 $psISE.Options.ShowDefaultSnippets = $false
 ```
 
-### <a name="showintellisenseinconsolepane"></a><span data-ttu-id="61eae-221">ShowIntellisenseInConsolePane</span><span class="sxs-lookup"><span data-stu-id="61eae-221">ShowIntellisenseInConsolePane</span></span>
+### <a name="showintellisenseinconsolepane"></a><span data-ttu-id="b0d7a-221">ShowIntellisenseInConsolePane</span><span class="sxs-lookup"><span data-stu-id="b0d7a-221">ShowIntellisenseInConsolePane</span></span>
 
-<span data-ttu-id="61eae-222">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-222">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-222">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-222">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-223">Anger om IntelliSense erbjuder syntax, parameter och värde förslag i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-223">Specifies whether IntelliSense offers syntax, parameter, and value suggestions in the Console pane.</span></span>
-<span data-ttu-id="61eae-224">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-224">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-223">Anger om IntelliSense erbjuder syntax, parameter och värde förslag i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-223">Specifies whether IntelliSense offers syntax, parameter, and value suggestions in the Console pane.</span></span>
+<span data-ttu-id="b0d7a-224">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-224">The default value is `$true`.</span></span>
 
 ```powershell
 # Turn off IntelliSense in the console pane.
 $psISE.Options.ShowIntellisenseInConsolePane = $false
 ```
 
-### <a name="showintellisenseinscriptpane"></a><span data-ttu-id="61eae-225">ShowIntellisenseInScriptPane</span><span class="sxs-lookup"><span data-stu-id="61eae-225">ShowIntellisenseInScriptPane</span></span>
+### <a name="showintellisenseinscriptpane"></a><span data-ttu-id="b0d7a-225">ShowIntellisenseInScriptPane</span><span class="sxs-lookup"><span data-stu-id="b0d7a-225">ShowIntellisenseInScriptPane</span></span>
 
-<span data-ttu-id="61eae-226">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-226">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-226">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-226">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-227">Anger om IntelliSense erbjuder syntax, parameter och värde förslag i fönstret skript.</span><span class="sxs-lookup"><span data-stu-id="61eae-227">Specifies whether IntelliSense offers syntax, parameter, and value suggestions in the Script pane.</span></span>
-<span data-ttu-id="61eae-228">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-228">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-227">Anger om IntelliSense erbjuder syntax, parameter och värde förslag i fönstret skript.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-227">Specifies whether IntelliSense offers syntax, parameter, and value suggestions in the Script pane.</span></span>
+<span data-ttu-id="b0d7a-228">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-228">The default value is `$true`.</span></span>
 
 ```powershell
 # Turn off IntelliSense in the Script pane.
 $psISE.Options.ShowIntellisenseInScriptPane = $false
 ```
 
-### <a name="showlinenumbers"></a><span data-ttu-id="61eae-229">ShowLineNumbers</span><span class="sxs-lookup"><span data-stu-id="61eae-229">ShowLineNumbers</span></span>
+### <a name="showlinenumbers"></a><span data-ttu-id="b0d7a-229">ShowLineNumbers</span><span class="sxs-lookup"><span data-stu-id="b0d7a-229">ShowLineNumbers</span></span>
 
-<span data-ttu-id="61eae-230">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-230">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-230">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-230">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-231">Anger om fönstret skript visar rad nummer i vänstermarginalen.</span><span class="sxs-lookup"><span data-stu-id="61eae-231">Specifies whether the Script pane displays line numbers in the left margin.</span></span> <span data-ttu-id="61eae-232">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-232">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-231">Anger om fönstret skript visar rad nummer i vänstermarginalen.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-231">Specifies whether the Script pane displays line numbers in the left margin.</span></span> <span data-ttu-id="b0d7a-232">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-232">The default value is `$true`.</span></span>
 
 ```powershell
 # Turn off line numbers in the Script pane.
 $psISE.Options.ShowLineNumbers = $false
 ```
 
-### <a name="showoutlining"></a><span data-ttu-id="61eae-233">ShowOutlining</span><span class="sxs-lookup"><span data-stu-id="61eae-233">ShowOutlining</span></span>
+### <a name="showoutlining"></a><span data-ttu-id="b0d7a-233">ShowOutlining</span><span class="sxs-lookup"><span data-stu-id="b0d7a-233">ShowOutlining</span></span>
 
-<span data-ttu-id="61eae-234">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-234">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-234">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-234">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-235">Anger om skript fönstret visar expanderbara och komprimerbara hakparenteser bredvid avsnitt i kod i vänstermarginalen.</span><span class="sxs-lookup"><span data-stu-id="61eae-235">Specifies whether the Script pane displays expandable and collapsible brackets next to sections of code in the left margin.</span></span> <span data-ttu-id="61eae-236">När de visas kan du klicka på minus `-` ikonerna bredvid ett textblock för att komprimera det eller klicka på plus `+` ikonen för att expandera ett textblock.</span><span class="sxs-lookup"><span data-stu-id="61eae-236">When they are displayed, you can click the minus `-` icons next to a block of text to collapse it or click the plus `+` icon to expand a block of text.</span></span> <span data-ttu-id="61eae-237">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-237">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-235">Anger om skript fönstret visar expanderbara och komprimerbara hakparenteser bredvid avsnitt i kod i vänstermarginalen.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-235">Specifies whether the Script pane displays expandable and collapsible brackets next to sections of code in the left margin.</span></span> <span data-ttu-id="b0d7a-236">När de visas kan du klicka på minus `-` ikonerna bredvid ett textblock för att komprimera det eller klicka på plus `+` ikonen för att expandera ett textblock.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-236">When they are displayed, you can click the minus `-` icons next to a block of text to collapse it or click the plus `+` icon to expand a block of text.</span></span> <span data-ttu-id="b0d7a-237">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-237">The default value is `$true`.</span></span>
 
 ```powershell
 # Turn off outlining in the Script pane.
 $psISE.Options.ShowOutlining = $false
 ```
 
-### <a name="showtoolbar"></a><span data-ttu-id="61eae-238">ShowToolBar</span><span class="sxs-lookup"><span data-stu-id="61eae-238">ShowToolBar</span></span>
+### <a name="showtoolbar"></a><span data-ttu-id="b0d7a-238">ShowToolBar</span><span class="sxs-lookup"><span data-stu-id="b0d7a-238">ShowToolBar</span></span>
 
-<span data-ttu-id="61eae-239">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-239">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-239">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-239">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-240">Anger om ISE-verktygsfältet visas överst i Windows PowerShell ISEs fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-240">Specifies whether the ISE toolbar appears at the top of the Windows PowerShell ISE window.</span></span> <span data-ttu-id="61eae-241">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-241">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-240">Anger om ISE-verktygsfältet visas överst i Windows PowerShell ISEs fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-240">Specifies whether the ISE toolbar appears at the top of the Windows PowerShell ISE window.</span></span> <span data-ttu-id="b0d7a-241">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-241">The default value is `$true`.</span></span>
 
 ```powershell
 # Show the toolbar.
 $psISE.Options.ShowToolBar = $true
 ```
 
-### <a name="showwarningbeforesavingonrun"></a><span data-ttu-id="61eae-242">ShowWarningBeforeSavingOnRun</span><span class="sxs-lookup"><span data-stu-id="61eae-242">ShowWarningBeforeSavingOnRun</span></span>
+### <a name="showwarningbeforesavingonrun"></a><span data-ttu-id="b0d7a-242">ShowWarningBeforeSavingOnRun</span><span class="sxs-lookup"><span data-stu-id="b0d7a-242">ShowWarningBeforeSavingOnRun</span></span>
 
-<span data-ttu-id="61eae-243">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-243">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-243">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-243">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-244">Anger om ett varnings meddelande visas när ett skript sparas automatiskt innan det körs.</span><span class="sxs-lookup"><span data-stu-id="61eae-244">Specifies whether a warning message appears when a script is saved automatically before it is run.</span></span>
-<span data-ttu-id="61eae-245">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-245">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-244">Anger om ett varnings meddelande visas när ett skript sparas automatiskt innan det körs.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-244">Specifies whether a warning message appears when a script is saved automatically before it is run.</span></span>
+<span data-ttu-id="b0d7a-245">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-245">The default value is `$true`.</span></span>
 
 ```powershell
 # Enable the warning message when an attempt
@@ -439,11 +439,11 @@ $psISE.Options.ShowToolBar = $true
 $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 ```
 
-### <a name="showwarningforduplicatefiles"></a><span data-ttu-id="61eae-246">ShowWarningForDuplicateFiles</span><span class="sxs-lookup"><span data-stu-id="61eae-246">ShowWarningForDuplicateFiles</span></span>
+### <a name="showwarningforduplicatefiles"></a><span data-ttu-id="b0d7a-246">ShowWarningForDuplicateFiles</span><span class="sxs-lookup"><span data-stu-id="b0d7a-246">ShowWarningForDuplicateFiles</span></span>
 
-<span data-ttu-id="61eae-247">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-247">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-247">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-247">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-248">Anger om ett varnings meddelande visas när samma fil öppnas i olika PowerShell-flikar.</span><span class="sxs-lookup"><span data-stu-id="61eae-248">Specifies whether a warning message appears when the same file is opened in different PowerShell tabs.</span></span> <span data-ttu-id="61eae-249">Om det är inställt på `$true` , för att öppna samma fil på flera flikar visas följande meddelande: "en kopia av filen är öppen på en annan Windows PowerShell-flik. ändringar i den här filen kommer att påverka alla öppna kopior."</span><span class="sxs-lookup"><span data-stu-id="61eae-249">If set to `$true`, to open the same file in multiple tabs displays this message: "A copy of this file is open in another Windows PowerShell tab. Changes made to this file will affect all open copies."</span></span> <span data-ttu-id="61eae-250">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-250">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-248">Anger om ett varnings meddelande visas när samma fil öppnas i olika PowerShell-flikar.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-248">Specifies whether a warning message appears when the same file is opened in different PowerShell tabs.</span></span> <span data-ttu-id="b0d7a-249">Om det är inställt på `$true` , för att öppna samma fil på flera flikar visas följande meddelande: "en kopia av filen är öppen på en annan Windows PowerShell-flik. ändringar i den här filen kommer att påverka alla öppna kopior."</span><span class="sxs-lookup"><span data-stu-id="b0d7a-249">If set to `$true`, to open the same file in multiple tabs displays this message: "A copy of this file is open in another Windows PowerShell tab. Changes made to this file will affect all open copies."</span></span> <span data-ttu-id="b0d7a-250">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-250">The default value is `$true`.</span></span>
 
 ```powershell
 # Enable the warning message when a file is
@@ -451,13 +451,13 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 $psISE.Options.ShowWarningForDuplicateFiles = $true
 ```
 
-### <a name="tokencolors"></a><span data-ttu-id="61eae-251">TokenColors</span><span class="sxs-lookup"><span data-stu-id="61eae-251">TokenColors</span></span>
+### <a name="tokencolors"></a><span data-ttu-id="b0d7a-251">TokenColors</span><span class="sxs-lookup"><span data-stu-id="b0d7a-251">TokenColors</span></span>
 
-<span data-ttu-id="61eae-252">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-252">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-252">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-252">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-253">Anger färgerna i IntelliSense-tokens i rutan Windows PowerShell ISE skript.</span><span class="sxs-lookup"><span data-stu-id="61eae-253">Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Script pane.</span></span> <span data-ttu-id="61eae-254">Den här egenskapen är ett Dictionary-objekt som innehåller namn-/värdepar med token-typer och färger för skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-254">This property is a dictionary object that contains name/value pairs of token types and colors for the Script pane.</span></span> <span data-ttu-id="61eae-255">Om du vill ändra färgerna i IntelliSense-tokens i konsol fönstret, se [ConsoleTokenColors](#consoletokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-255">To change the colors of the IntelliSense tokens in the Console pane, see [ConsoleTokenColors](#consoletokencolors).</span></span>
-<span data-ttu-id="61eae-256">Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultTokenColors](#restoredefaulttokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-256">To reset the colors to the default values, see [RestoreDefaultTokenColors](#restoredefaulttokencolors).</span></span>
-<span data-ttu-id="61eae-257">Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.</span><span class="sxs-lookup"><span data-stu-id="61eae-257">Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.</span></span>
+<span data-ttu-id="b0d7a-253">Anger färgerna i IntelliSense-tokens i rutan Windows PowerShell ISE skript.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-253">Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Script pane.</span></span> <span data-ttu-id="b0d7a-254">Den här egenskapen är ett Dictionary-objekt som innehåller namn-/värdepar med token-typer och färger för skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-254">This property is a dictionary object that contains name/value pairs of token types and colors for the Script pane.</span></span> <span data-ttu-id="b0d7a-255">Om du vill ändra färgerna i IntelliSense-tokens i konsol fönstret, se [ConsoleTokenColors](#consoletokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-255">To change the colors of the IntelliSense tokens in the Console pane, see [ConsoleTokenColors](#consoletokencolors).</span></span>
+<span data-ttu-id="b0d7a-256">Information om hur du återställer färgerna till standardvärdena finns i [RestoreDefaultTokenColors](#restoredefaulttokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-256">To reset the colors to the default values, see [RestoreDefaultTokenColors](#restoredefaulttokencolors).</span></span>
+<span data-ttu-id="b0d7a-257">Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-257">Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.</span></span>
 
 ```powershell
 # Sets the color of commands to green.
@@ -466,33 +466,33 @@ $psISE.Options.TokenColors["Command"] = "green"
 $psISE.Options.TokenColors["Keyword"] = "magenta"
 ```
 
-### <a name="useentertoselectinconsolepaneintellisense"></a><span data-ttu-id="61eae-258">UseEnterToSelectInConsolePaneIntellisense</span><span class="sxs-lookup"><span data-stu-id="61eae-258">UseEnterToSelectInConsolePaneIntellisense</span></span>
+### <a name="useentertoselectinconsolepaneintellisense"></a><span data-ttu-id="b0d7a-258">UseEnterToSelectInConsolePaneIntellisense</span><span class="sxs-lookup"><span data-stu-id="b0d7a-258">UseEnterToSelectInConsolePaneIntellisense</span></span>
 
-<span data-ttu-id="61eae-259">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-259">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-259">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-259">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-260">Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-260">Specifies whether you can use the Enter key to select an IntelliSense provided option in the Console pane.</span></span> <span data-ttu-id="61eae-261">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-261">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-260">Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-260">Specifies whether you can use the Enter key to select an IntelliSense provided option in the Console pane.</span></span> <span data-ttu-id="b0d7a-261">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-261">The default value is `$true`.</span></span>
 
 ```powershell
 # Turn off using the ENTER key to select an IntelliSense provided option in the Console pane.
 $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $false
 ```
 
-### <a name="useentertoselectinscriptpaneintellisense"></a><span data-ttu-id="61eae-262">UseEnterToSelectInScriptPaneIntellisense</span><span class="sxs-lookup"><span data-stu-id="61eae-262">UseEnterToSelectInScriptPaneIntellisense</span></span>
+### <a name="useentertoselectinscriptpaneintellisense"></a><span data-ttu-id="b0d7a-262">UseEnterToSelectInScriptPaneIntellisense</span><span class="sxs-lookup"><span data-stu-id="b0d7a-262">UseEnterToSelectInScriptPaneIntellisense</span></span>
 
-<span data-ttu-id="61eae-263">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-263">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-263">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-263">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-264">Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-264">Specifies whether you can use the Enter key to select an IntelliSense-provided option in the Script pane.</span></span> <span data-ttu-id="61eae-265">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="61eae-265">The default value is `$true`.</span></span>
+<span data-ttu-id="b0d7a-264">Anger om du kan använda RETUR-tangenten för att välja ett IntelliSense-alternativ i skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-264">Specifies whether you can use the Enter key to select an IntelliSense-provided option in the Script pane.</span></span> <span data-ttu-id="b0d7a-265">Standardvärdet är `$true`.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-265">The default value is `$true`.</span></span>
 
 ```powershell
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
 $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 ```
 
-### <a name="uselocalhelp"></a><span data-ttu-id="61eae-266">UseLocalHelp</span><span class="sxs-lookup"><span data-stu-id="61eae-266">UseLocalHelp</span></span>
+### <a name="uselocalhelp"></a><span data-ttu-id="b0d7a-266">UseLocalHelp</span><span class="sxs-lookup"><span data-stu-id="b0d7a-266">UseLocalHelp</span></span>
 
-<span data-ttu-id="61eae-267">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-267">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-267">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-267">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-268">Anger om den lokalt installerade hjälpen eller online TechNet Library-hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord.</span><span class="sxs-lookup"><span data-stu-id="61eae-268">Specifies whether the locally installed Help or the online TechNet Library Help appears when you press <kbd>F1</kbd> with the cursor positioned in a keyword.</span></span> <span data-ttu-id="61eae-269">Om detta är inställt på `$true` visas innehållet från den lokalt installerade hjälpen i ett popup-fönster.</span><span class="sxs-lookup"><span data-stu-id="61eae-269">If set to `$true`, then a pop-up window shows content from the locally installed Help.</span></span> <span data-ttu-id="61eae-270">Du kan installera hjälpfilerna genom att köra `Update-Help` kommandot.</span><span class="sxs-lookup"><span data-stu-id="61eae-270">You can install the Help files by running the `Update-Help` command.</span></span> <span data-ttu-id="61eae-271">Om det är inställt på `$false` , öppnas webbläsaren på en sida i TechNet-biblioteket.</span><span class="sxs-lookup"><span data-stu-id="61eae-271">If set to `$false`, then your browser opens to a page in the TechNet Library.</span></span>
+<span data-ttu-id="b0d7a-268">Anger om den lokalt installerade hjälpen eller direkt hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-268">Specifies whether the locally installed Help or the online Help appears when you press <kbd>F1</kbd> with the cursor positioned in a keyword.</span></span> <span data-ttu-id="b0d7a-269">Om detta är inställt på `$true` visas innehållet från den lokalt installerade hjälpen i ett popup-fönster.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-269">If set to `$true`, then a pop-up window shows content from the locally installed Help.</span></span> <span data-ttu-id="b0d7a-270">Du kan installera hjälpfilerna genom att köra `Update-Help` kommandot.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-270">You can install the Help files by running the `Update-Help` command.</span></span> <span data-ttu-id="b0d7a-271">Om detta är inställt på `$false` , öppnas webbläsaren på en sida på docs.Microsoft.com.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-271">If set to `$false`, then your browser opens to a page on docs.microsoft.com.</span></span>
 
 ```powershell
 # Sets the option for the online help to be displayed.
@@ -501,55 +501,55 @@ $psISE.Options.UseLocalHelp = $false
 $psISE.Options.UseLocalHelp = $true
 ```
 
-### <a name="verbosebackgroundcolor"></a><span data-ttu-id="61eae-272">VerboseBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-272">VerboseBackgroundColor</span></span>
+### <a name="verbosebackgroundcolor"></a><span data-ttu-id="b0d7a-272">VerboseBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-272">VerboseBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-273">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-273">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-273">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-273">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-274">Anger bakgrunds färgen för utförlig text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-274">Specifies the background color for verbose text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-275">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="61eae-275">It is a **System.Windows.Media.Color** object.</span></span>
+<span data-ttu-id="b0d7a-274">Anger bakgrunds färgen för utförlig text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-274">Specifies the background color for verbose text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-275">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-275">It is a **System.Windows.Media.Color** object.</span></span>
 
 ```powershell
 # Changes the background color for verbose text to blue.
 $psISE.Options.VerboseBackgroundColor ='#0000FF'
 ```
 
-### <a name="verboseforegroundcolor"></a><span data-ttu-id="61eae-276">VerboseForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-276">VerboseForegroundColor</span></span>
+### <a name="verboseforegroundcolor"></a><span data-ttu-id="b0d7a-276">VerboseForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-276">VerboseForegroundColor</span></span>
 
-<span data-ttu-id="61eae-277">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-277">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-277">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-277">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-278">Anger förgrunds färgen för utförlig text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-278">Specifies the foreground color for verbose text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-279">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="61eae-279">It is a **System.Windows.Media.Color** object.</span></span>
+<span data-ttu-id="b0d7a-278">Anger förgrunds färgen för utförlig text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-278">Specifies the foreground color for verbose text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-279">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-279">It is a **System.Windows.Media.Color** object.</span></span>
 
 ```powershell
 # Changes the foreground color for verbose text to yellow.
 $psISE.Options.VerboseForegroundColor = 'yellow'
 ```
 
-### <a name="warningbackgroundcolor"></a><span data-ttu-id="61eae-280">WarningBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-280">WarningBackgroundColor</span></span>
+### <a name="warningbackgroundcolor"></a><span data-ttu-id="b0d7a-280">WarningBackgroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-280">WarningBackgroundColor</span></span>
 
-<span data-ttu-id="61eae-281">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-281">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-281">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-281">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-282">Anger bakgrunds färgen för varnings text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-282">Specifies the background color for warning text that appears in the Console pane.</span></span> <span data-ttu-id="61eae-283">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="61eae-283">It is a **System.Windows.Media.Color** object.</span></span>
+<span data-ttu-id="b0d7a-282">Anger bakgrunds färgen för varnings text som visas i konsol fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-282">Specifies the background color for warning text that appears in the Console pane.</span></span> <span data-ttu-id="b0d7a-283">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-283">It is a **System.Windows.Media.Color** object.</span></span>
 
 ```powershell
 # Changes the background color for warning text to blue.
 $psISE.Options.WarningBackgroundColor = '#0000FF'
 ```
 
-### <a name="warningforegroundcolor"></a><span data-ttu-id="61eae-284">WarningForegroundColor</span><span class="sxs-lookup"><span data-stu-id="61eae-284">WarningForegroundColor</span></span>
+### <a name="warningforegroundcolor"></a><span data-ttu-id="b0d7a-284">WarningForegroundColor</span><span class="sxs-lookup"><span data-stu-id="b0d7a-284">WarningForegroundColor</span></span>
 
-<span data-ttu-id="61eae-285">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="61eae-285">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="b0d7a-285">Stöds i Windows PowerShell ISE 2,0 och senare.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-285">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="61eae-286">Anger förgrunds färgen för varnings text som visas i fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="61eae-286">Specifies the foreground color for warning text that appears in the Output pane.</span></span> <span data-ttu-id="61eae-287">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="61eae-287">It is a **System.Windows.Media.Color** object.</span></span>
+<span data-ttu-id="b0d7a-286">Anger förgrunds färgen för varnings text som visas i fönstret utdata.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-286">Specifies the foreground color for warning text that appears in the Output pane.</span></span> <span data-ttu-id="b0d7a-287">Det är ett **system. Windows. Media. Color** -objekt.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-287">It is a **System.Windows.Media.Color** object.</span></span>
 
 ```powershell
 # Changes the foreground color for warning text to yellow.
 $psISE.Options.WarningForegroundColor = 'yellow'
 ```
 
-### <a name="xmltokencolors"></a><span data-ttu-id="61eae-288">XmlTokenColors</span><span class="sxs-lookup"><span data-stu-id="61eae-288">XmlTokenColors</span></span>
+### <a name="xmltokencolors"></a><span data-ttu-id="b0d7a-288">XmlTokenColors</span><span class="sxs-lookup"><span data-stu-id="b0d7a-288">XmlTokenColors</span></span>
 
-<span data-ttu-id="61eae-289">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-289">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-289">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-289">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-290">Anger ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för XML-innehåll som visas i Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="61eae-290">Specifies a dictionary object that contains name/value pairs of token types and colors for XML content that is displayed in Windows PowerShell ISE.</span></span> <span data-ttu-id="61eae-291">Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.</span><span class="sxs-lookup"><span data-stu-id="61eae-291">Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.</span></span> <span data-ttu-id="61eae-292">Se även [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).</span><span class="sxs-lookup"><span data-stu-id="61eae-292">Also see [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).</span></span>
+<span data-ttu-id="b0d7a-290">Anger ett Dictionary-objekt som innehåller namn/värde-par av tokens och färger för XML-innehåll som visas i Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-290">Specifies a dictionary object that contains name/value pairs of token types and colors for XML content that is displayed in Windows PowerShell ISE.</span></span> <span data-ttu-id="b0d7a-291">Token-färger kan anges för följande: attribut, kommando, CommandArgument, CommandParameter, comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, member, ny rad, Number, Operator, position, StatementSeparator, sträng, typ, okänd, variabel.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-291">Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.</span></span> <span data-ttu-id="b0d7a-292">Se även [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).</span><span class="sxs-lookup"><span data-stu-id="b0d7a-292">Also see [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).</span></span>
 
 ```powershell
 # Sets the color of XML element names to green.
@@ -558,19 +558,19 @@ $psISE.Options.XmlTokenColors["ElementName"] = 'green'
 $psISE.Options.XmlTokenColors["Comment"] = 'magenta'
 ```
 
-### <a name="zoom"></a><span data-ttu-id="61eae-293">Zoom</span><span class="sxs-lookup"><span data-stu-id="61eae-293">Zoom</span></span>
+### <a name="zoom"></a><span data-ttu-id="b0d7a-293">Zoom</span><span class="sxs-lookup"><span data-stu-id="b0d7a-293">Zoom</span></span>
 
-<span data-ttu-id="61eae-294">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="61eae-294">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="b0d7a-294">Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-294">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="61eae-295">Anger den relativa storleken på text i både konsol-och skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="61eae-295">Specifies the relative size of text in both the Console and Script panes.</span></span> <span data-ttu-id="61eae-296">Standardvärdet är 100.</span><span class="sxs-lookup"><span data-stu-id="61eae-296">The default value is 100.</span></span>
-<span data-ttu-id="61eae-297">Mindre värden gör att texten i Windows PowerShell ISE visas mindre medan större tal gör att texten blir större.</span><span class="sxs-lookup"><span data-stu-id="61eae-297">Smaller values cause the text in Windows PowerShell ISE to appear smaller while larger numbers cause text to appear larger.</span></span> <span data-ttu-id="61eae-298">Värdet är ett heltal som sträcker sig från 20 till 400.</span><span class="sxs-lookup"><span data-stu-id="61eae-298">The value is an integer that ranges from 20 to 400.</span></span>
+<span data-ttu-id="b0d7a-295">Anger den relativa storleken på text i både konsol-och skript fönstret.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-295">Specifies the relative size of text in both the Console and Script panes.</span></span> <span data-ttu-id="b0d7a-296">Standardvärdet är 100.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-296">The default value is 100.</span></span>
+<span data-ttu-id="b0d7a-297">Mindre värden gör att texten i Windows PowerShell ISE visas mindre medan större tal gör att texten blir större.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-297">Smaller values cause the text in Windows PowerShell ISE to appear smaller while larger numbers cause text to appear larger.</span></span> <span data-ttu-id="b0d7a-298">Värdet är ett heltal som sträcker sig från 20 till 400.</span><span class="sxs-lookup"><span data-stu-id="b0d7a-298">The value is an integer that ranges from 20 to 400.</span></span>
 
 ```powershell
 # Changes the text in the Windows PowerShell ISE to be double its normal size.
 $psISE.Options.Zoom = 200
 ```
 
-## <a name="see-also"></a><span data-ttu-id="61eae-299">Se även</span><span class="sxs-lookup"><span data-stu-id="61eae-299">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b0d7a-299">Se även</span><span class="sxs-lookup"><span data-stu-id="b0d7a-299">See Also</span></span>
 
-- [<span data-ttu-id="61eae-300">Användningsområden för Windows PowerShell ISE-skriptobjektmodellen</span><span class="sxs-lookup"><span data-stu-id="61eae-300">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="61eae-301">Objekt modells-hierarkin för ISE</span><span class="sxs-lookup"><span data-stu-id="61eae-301">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="b0d7a-300">Användningsområden för Windows PowerShell ISE-skriptobjektmodellen</span><span class="sxs-lookup"><span data-stu-id="b0d7a-300">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="b0d7a-301">Objekt modells-hierarkin för ISE</span><span class="sxs-lookup"><span data-stu-id="b0d7a-301">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)

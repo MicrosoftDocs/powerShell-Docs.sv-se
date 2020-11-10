@@ -7,50 +7,50 @@ ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: ef80c2c63855bffcd23f51474009b241f8f4b3ba
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: aea54dfa2ade8a9b7b67ca82fb0d6365e6eea3c4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262029"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391348"
 ---
-# <span data-ttu-id="6ae4b-103">Set-StrictMode</span><span class="sxs-lookup"><span data-stu-id="6ae4b-103">Set-StrictMode</span></span>
+# <span data-ttu-id="bcf09-103">Set-StrictMode</span><span class="sxs-lookup"><span data-stu-id="bcf09-103">Set-StrictMode</span></span>
 
-## <span data-ttu-id="6ae4b-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="6ae4b-104">SYNOPSIS</span></span>
-<span data-ttu-id="6ae4b-105">Skapar och tillämpar kod regler i uttryck, skript och skript block.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-105">Establishes and enforces coding rules in expressions, scripts, and script blocks.</span></span>
+## <span data-ttu-id="bcf09-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="bcf09-104">SYNOPSIS</span></span>
+<span data-ttu-id="bcf09-105">Skapar och tillämpar kod regler i uttryck, skript och skript block.</span><span class="sxs-lookup"><span data-stu-id="bcf09-105">Establishes and enforces coding rules in expressions, scripts, and script blocks.</span></span>
 
-## <span data-ttu-id="6ae4b-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="6ae4b-106">SYNTAX</span></span>
+## <span data-ttu-id="bcf09-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="bcf09-106">SYNTAX</span></span>
 
-### <span data-ttu-id="6ae4b-107">Version (standard)</span><span class="sxs-lookup"><span data-stu-id="6ae4b-107">Version (Default)</span></span>
+### <span data-ttu-id="bcf09-107">Version (standard)</span><span class="sxs-lookup"><span data-stu-id="bcf09-107">Version (Default)</span></span>
 
 ```
 Set-StrictMode -Version <Version> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="6ae4b-108">Av</span><span class="sxs-lookup"><span data-stu-id="6ae4b-108">Off</span></span>
+### <span data-ttu-id="bcf09-108">Av</span><span class="sxs-lookup"><span data-stu-id="bcf09-108">Off</span></span>
 
 ```
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="6ae4b-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="6ae4b-109">DESCRIPTION</span></span>
+## <span data-ttu-id="bcf09-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="bcf09-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="6ae4b-110">`Set-StrictMode`Cmdleten konfigurerar strikt läge för det aktuella omfånget och alla underordnade scope och aktiverar och inaktiverar den.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-110">The `Set-StrictMode` cmdlet configures strict mode for the current scope and all child scopes, and turns it on and off.</span></span> <span data-ttu-id="6ae4b-111">När strikt läge är på genererar PowerShell ett avslutande fel när innehållet i ett uttryck, skript eller skript block strider mot grundläggande kodnings regler för bästa praxis.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-111">When strict mode is on, PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.</span></span>
+<span data-ttu-id="bcf09-110">`Set-StrictMode`Cmdleten konfigurerar strikt läge för det aktuella omfånget och alla underordnade scope och aktiverar och inaktiverar den.</span><span class="sxs-lookup"><span data-stu-id="bcf09-110">The `Set-StrictMode` cmdlet configures strict mode for the current scope and all child scopes, and turns it on and off.</span></span> <span data-ttu-id="bcf09-111">När strikt läge är på genererar PowerShell ett avslutande fel när innehållet i ett uttryck, skript eller skript block strider mot grundläggande kodnings regler för bästa praxis.</span><span class="sxs-lookup"><span data-stu-id="bcf09-111">When strict mode is on, PowerShell generates a terminating error when the content of an expression, script, or script block violates basic best-practice coding rules.</span></span>
 
-<span data-ttu-id="6ae4b-112">Använd **versions** parametern för att avgöra vilka kodnings regler som tillämpas.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-112">Use the **Version** parameter to determine which coding rules are enforced.</span></span>
+<span data-ttu-id="bcf09-112">Använd **versions** parametern för att avgöra vilka kodnings regler som tillämpas.</span><span class="sxs-lookup"><span data-stu-id="bcf09-112">Use the **Version** parameter to determine which coding rules are enforced.</span></span>
 
-<span data-ttu-id="6ae4b-113">`Set-PSDebug -Strict` cmdlet aktiverar strikt läge för det globala omfånget.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-113">`Set-PSDebug -Strict` cmdlet turns on strict mode for the global scope.</span></span> <span data-ttu-id="6ae4b-114">`Set-StrictMode` påverkar endast det aktuella omfånget och dess underordnade omfång.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-114">`Set-StrictMode` affects only the current scope and its child scopes.</span></span> <span data-ttu-id="6ae4b-115">Därför kan du använda den i ett skript eller en funktion för att åsidosätta inställningen som ärvts från det globala omfånget.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-115">Therefore, you can use it in a script or function to override the setting inherited from the global scope.</span></span>
+<span data-ttu-id="bcf09-113">`Set-PSDebug -Strict` cmdlet aktiverar strikt läge för det globala omfånget.</span><span class="sxs-lookup"><span data-stu-id="bcf09-113">`Set-PSDebug -Strict` cmdlet turns on strict mode for the global scope.</span></span> <span data-ttu-id="bcf09-114">`Set-StrictMode` påverkar endast det aktuella omfånget och dess underordnade omfång.</span><span class="sxs-lookup"><span data-stu-id="bcf09-114">`Set-StrictMode` affects only the current scope and its child scopes.</span></span> <span data-ttu-id="bcf09-115">Därför kan du använda den i ett skript eller en funktion för att åsidosätta inställningen som ärvts från det globala omfånget.</span><span class="sxs-lookup"><span data-stu-id="bcf09-115">Therefore, you can use it in a script or function to override the setting inherited from the global scope.</span></span>
 
-<span data-ttu-id="6ae4b-116">När `Set-StrictMode` är inaktiverat har PowerShell följande beteenden:</span><span class="sxs-lookup"><span data-stu-id="6ae4b-116">When `Set-StrictMode` is off, PowerShell has the following behaviors:</span></span>
+<span data-ttu-id="bcf09-116">När `Set-StrictMode` är inaktiverat har PowerShell följande beteenden:</span><span class="sxs-lookup"><span data-stu-id="bcf09-116">When `Set-StrictMode` is off, PowerShell has the following behaviors:</span></span>
 
-- <span data-ttu-id="6ae4b-117">Oinitierade variabler antas ha värdet 0 (noll) eller `$Null` , beroende på typ</span><span class="sxs-lookup"><span data-stu-id="6ae4b-117">Uninitialized variables are assumed to have a value of 0 (zero) or `$Null`, depending on type</span></span>
-- <span data-ttu-id="6ae4b-118">Referenser till obefintliga egenskaper returnerar `$Null`</span><span class="sxs-lookup"><span data-stu-id="6ae4b-118">References to non-existent properties return `$Null`</span></span>
-- <span data-ttu-id="6ae4b-119">Resultatet av felaktig syntax i funktionen varierar med fel villkoren</span><span class="sxs-lookup"><span data-stu-id="6ae4b-119">Results of improper function syntax vary with the error conditions</span></span>
-- <span data-ttu-id="6ae4b-120">Försök att hämta ett värde med ett ogiltigt index i en matris returneras `$Null`</span><span class="sxs-lookup"><span data-stu-id="6ae4b-120">Attempting to retrieve a value using an invalid index in an array returns `$Null`</span></span>
+- <span data-ttu-id="bcf09-117">Oinitierade variabler antas ha värdet 0 (noll) eller `$Null` , beroende på typ</span><span class="sxs-lookup"><span data-stu-id="bcf09-117">Uninitialized variables are assumed to have a value of 0 (zero) or `$Null`, depending on type</span></span>
+- <span data-ttu-id="bcf09-118">Referenser till obefintliga egenskaper returnerar `$Null`</span><span class="sxs-lookup"><span data-stu-id="bcf09-118">References to non-existent properties return `$Null`</span></span>
+- <span data-ttu-id="bcf09-119">Resultatet av felaktig syntax i funktionen varierar med fel villkoren</span><span class="sxs-lookup"><span data-stu-id="bcf09-119">Results of improper function syntax vary with the error conditions</span></span>
+- <span data-ttu-id="bcf09-120">Försök att hämta ett värde med ett ogiltigt index i en matris returneras `$Null`</span><span class="sxs-lookup"><span data-stu-id="bcf09-120">Attempting to retrieve a value using an invalid index in an array returns `$Null`</span></span>
 
-## <span data-ttu-id="6ae4b-121">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="6ae4b-121">EXAMPLES</span></span>
+## <span data-ttu-id="bcf09-121">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="bcf09-121">EXAMPLES</span></span>
 
-### <span data-ttu-id="6ae4b-122">Exempel 1: Aktivera strikt läge som version 1,0</span><span class="sxs-lookup"><span data-stu-id="6ae4b-122">Example 1: Turn on strict mode as version 1.0</span></span>
+### <span data-ttu-id="bcf09-122">Exempel 1: Aktivera strikt läge som version 1,0</span><span class="sxs-lookup"><span data-stu-id="bcf09-122">Example 1: Turn on strict mode as version 1.0</span></span>
 
 ```powershell
 # Strict mode is off by default.
@@ -67,17 +67,12 @@ $a -gt 5
 ```
 
 ```Output
-The variable $a cannot be retrieved because it has not been set yet.
-
-At line:1 char:3
-+ $a <<<<  -gt 5
-+ CategoryInfo          : InvalidOperation: (a:Token) [], RuntimeException
-+ FullyQualifiedErrorId : VariableIsUndefined
+InvalidOperation: The variable '$a' cannot be retrieved because it has not been set.
 ```
 
-<span data-ttu-id="6ae4b-123">Med strikt läge inställt på version 1,0, försöker referera till variabler som inte initieras.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-123">With strict mode set to version 1.0, attempts to reference variables that are not initialized fail.</span></span>
+<span data-ttu-id="bcf09-123">Med strikt läge inställt på version 1,0, försöker referera till variabler som inte initieras.</span><span class="sxs-lookup"><span data-stu-id="bcf09-123">With strict mode set to version 1.0, attempts to reference variables that are not initialized fail.</span></span>
 
-### <span data-ttu-id="6ae4b-124">Exempel 2: Aktivera strikt läge som version 2,0</span><span class="sxs-lookup"><span data-stu-id="6ae4b-124">Example 2: Turn on strict mode as version 2.0</span></span>
+### <span data-ttu-id="bcf09-124">Exempel 2: Aktivera strikt läge som version 2,0</span><span class="sxs-lookup"><span data-stu-id="bcf09-124">Example 2: Turn on strict mode as version 2.0</span></span>
 
 ```powershell
 # Strict mode is off by default.
@@ -111,18 +106,13 @@ add(3,4)
 ```
 
 ```Output
-The function or command was called like a method. Parameters should be separated by spaces,
-as described in 'Get-Help about_Parameter.'
-At line:1 char:4
-+ add <<<< (3,4)
-+ CategoryInfo          : InvalidOperation: (:) [], RuntimeException
-+ FullyQualifiedErrorId : StrictModeFunctionCallWithParens
+InvalidOperation: The function or command was called as if it were a method. Parameters should be separated by spaces. For information about parameters, see the about_Parameters Help topic.
 ```
 
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -132,34 +122,30 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
-Property 'Month' cannot be found on this object; make sure it exists.
-At line:1 char:9
-+ $string. <<<< month
-+ CategoryInfo          : InvalidOperation: (.:OperatorToken) [], RuntimeException
-+ FullyQualifiedErrorId : PropertyNotFoundStrict
+PropertyNotFoundException: The property 'Month' cannot be found on this object. Verify that the property exists.
 ```
 
-<span data-ttu-id="6ae4b-125">Det här kommandot aktiverar strikt läge på och anger det till version 2,0.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-125">This command turns strict mode on and sets it to version 2.0.</span></span> <span data-ttu-id="6ae4b-126">Det innebär att PowerShell returnerar ett fel om du använder Method syntax, som använder parenteser och kommatecken, för ett funktions anrop eller referera till oinitierade variabler eller obefintliga egenskaper.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-126">As a result, PowerShell returns an error if you use method syntax, which uses parentheses and commas, for a function call or reference uninitialized variables or non-existent properties.</span></span>
+<span data-ttu-id="bcf09-125">Det här kommandot aktiverar strikt läge på och anger det till version 2,0.</span><span class="sxs-lookup"><span data-stu-id="bcf09-125">This command turns strict mode on and sets it to version 2.0.</span></span> <span data-ttu-id="bcf09-126">Det innebär att PowerShell returnerar ett fel om du använder Method syntax, som använder parenteser och kommatecken, för ett funktions anrop eller referera till oinitierade variabler eller obefintliga egenskaper.</span><span class="sxs-lookup"><span data-stu-id="bcf09-126">As a result, PowerShell returns an error if you use method syntax, which uses parentheses and commas, for a function call or reference uninitialized variables or non-existent properties.</span></span>
 
-<span data-ttu-id="6ae4b-127">Exempel resultatet visar effekterna av strikt läge för version 2,0.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-127">The sample output shows the effect of version 2.0 strict mode.</span></span>
+<span data-ttu-id="bcf09-127">Exempel resultatet visar effekterna av strikt läge för version 2,0.</span><span class="sxs-lookup"><span data-stu-id="bcf09-127">The sample output shows the effect of version 2.0 strict mode.</span></span>
 
-<span data-ttu-id="6ae4b-128">Utan version 2,0 strikt läge tolkas "(3, 4)"-värdet som ett enskilt Array-objekt som inget läggs till i.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-128">Without version 2.0 strict mode, the "(3,4)" value is interpreted as a single array object to which nothing is added.</span></span> <span data-ttu-id="6ae4b-129">Genom att använda version 2,0 strikt läge tolkas det korrekt som felaktig syntax för att skicka två värden.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-129">By using version 2.0 strict mode, it is correctly interpreted as faulty syntax for submitting two values.</span></span>
+<span data-ttu-id="bcf09-128">Utan version 2,0 strikt läge tolkas "(3, 4)"-värdet som ett enskilt Array-objekt som inget läggs till i.</span><span class="sxs-lookup"><span data-stu-id="bcf09-128">Without version 2.0 strict mode, the "(3,4)" value is interpreted as a single array object to which nothing is added.</span></span> <span data-ttu-id="bcf09-129">Genom att använda version 2,0 strikt läge tolkas det korrekt som felaktig syntax för att skicka två värden.</span><span class="sxs-lookup"><span data-stu-id="bcf09-129">By using version 2.0 strict mode, it is correctly interpreted as faulty syntax for submitting two values.</span></span>
 
-<span data-ttu-id="6ae4b-130">Utan version 2,0 returnerar referensen till den icke-befintliga **månads** egenskapen för en sträng `$Null` .</span><span class="sxs-lookup"><span data-stu-id="6ae4b-130">Without version 2.0, the reference to the non-existent **Month** property of a string returns only `$Null`.</span></span> <span data-ttu-id="6ae4b-131">Genom att använda version 2,0 tolkas den korrekt som ett referens fel.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-131">By using version 2.0, it is interpreted correctly as a reference error.</span></span>
+<span data-ttu-id="bcf09-130">Utan version 2,0 returnerar referensen till den icke-befintliga **månads** egenskapen för en sträng `$Null` .</span><span class="sxs-lookup"><span data-stu-id="bcf09-130">Without version 2.0, the reference to the non-existent **Month** property of a string returns only `$Null`.</span></span> <span data-ttu-id="bcf09-131">Genom att använda version 2,0 tolkas den korrekt som ett referens fel.</span><span class="sxs-lookup"><span data-stu-id="bcf09-131">By using version 2.0, it is interpreted correctly as a reference error.</span></span>
 
-### <span data-ttu-id="6ae4b-132">Exempel 3: Aktivera strikt läge som version 3,0</span><span class="sxs-lookup"><span data-stu-id="6ae4b-132">Example 3: Turn on strict mode as version 3.0</span></span>
+### <span data-ttu-id="bcf09-132">Exempel 3: Aktivera strikt läge som version 3,0</span><span class="sxs-lookup"><span data-stu-id="bcf09-132">Example 3: Turn on strict mode as version 3.0</span></span>
 
-<span data-ttu-id="6ae4b-133">Med strikt läge inställt på **av** , ogiltigt eller utanför intervall index resulterar resultatet av null-värden.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-133">With strict mode set to **Off** , invalid or out of bounds indexes result return null values.</span></span>
+<span data-ttu-id="bcf09-133">Med strikt läge inställt på **av** , ogiltigt eller utanför intervall index resulterar resultatet av null-värden.</span><span class="sxs-lookup"><span data-stu-id="bcf09-133">With strict mode set to **Off** , invalid or out of bounds indexes result return null values.</span></span>
 
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -170,33 +156,23 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
-Index was outside the bounds of the array.
-At line:1 char:1
-+ $a[2] -eq $null
-+ ~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
-    + FullyQualifiedErrorId : System.IndexOutOfRangeException
+OperationStopped: Index was outside the bounds of the array.
 
-Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
-At line:1 char:1
-+ $a['abc'] -eq $null
-+ ~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
-    + FullyQualifiedErrorId : InvalidCastFromStringToInteger
+InvalidArgument: Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 ```
 
-<span data-ttu-id="6ae4b-134">Med strikt läge inställt på version 3 eller högre, är ogiltiga eller utanför gräns index resulterar i fel.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-134">With strict mode set to version 3 or higher, invalid or out of bounds indexes result in errors.</span></span>
+<span data-ttu-id="bcf09-134">Med strikt läge inställt på version 3 eller högre, är ogiltiga eller utanför gräns index resulterar i fel.</span><span class="sxs-lookup"><span data-stu-id="bcf09-134">With strict mode set to version 3 or higher, invalid or out of bounds indexes result in errors.</span></span>
 
-## <span data-ttu-id="6ae4b-135">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="6ae4b-135">PARAMETERS</span></span>
+## <span data-ttu-id="bcf09-135">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="bcf09-135">PARAMETERS</span></span>
 
-### <span data-ttu-id="6ae4b-136">-Av</span><span class="sxs-lookup"><span data-stu-id="6ae4b-136">-Off</span></span>
+### <span data-ttu-id="bcf09-136">-Av</span><span class="sxs-lookup"><span data-stu-id="bcf09-136">-Off</span></span>
 
-<span data-ttu-id="6ae4b-137">Anger att den här cmdleten inaktiverar strikt läge för det aktuella omfånget och alla underordnade scope.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-137">Indicates that this cmdlet turns strict mode off for the current scope and all child scopes.</span></span>
+<span data-ttu-id="bcf09-137">Anger att den här cmdleten inaktiverar strikt läge för det aktuella omfånget och alla underordnade scope.</span><span class="sxs-lookup"><span data-stu-id="bcf09-137">Indicates that this cmdlet turns strict mode off for the current scope and all child scopes.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,28 +186,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ae4b-138">-Version</span><span class="sxs-lookup"><span data-stu-id="6ae4b-138">-Version</span></span>
+### <span data-ttu-id="bcf09-138">-Version</span><span class="sxs-lookup"><span data-stu-id="bcf09-138">-Version</span></span>
 
-<span data-ttu-id="6ae4b-139">Anger de villkor som orsakar ett fel i strikt läge.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-139">Specifies the conditions that cause an error in strict mode.</span></span> <span data-ttu-id="6ae4b-140">Den här parametern accepterar ett giltigt PowerShell-versions nummer.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-140">This parameter accepts any valid PowerShell version number.</span></span> <span data-ttu-id="6ae4b-141">Alla tal som är större än 3 behandlas som **senaste**.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-141">Any number higher than 3 is treated as **Latest**.</span></span>
+<span data-ttu-id="bcf09-139">Anger de villkor som orsakar ett fel i strikt läge.</span><span class="sxs-lookup"><span data-stu-id="bcf09-139">Specifies the conditions that cause an error in strict mode.</span></span> <span data-ttu-id="bcf09-140">Den här parametern accepterar ett giltigt PowerShell-versions nummer.</span><span class="sxs-lookup"><span data-stu-id="bcf09-140">This parameter accepts any valid PowerShell version number.</span></span> <span data-ttu-id="bcf09-141">Alla tal som är större än 3 behandlas som **senaste**.</span><span class="sxs-lookup"><span data-stu-id="bcf09-141">Any number higher than 3 is treated as **Latest**.</span></span>
 
-<span data-ttu-id="6ae4b-142">De effektiva värdena för den här parametern är:</span><span class="sxs-lookup"><span data-stu-id="6ae4b-142">The effective values for this parameter are:</span></span>
+<span data-ttu-id="bcf09-142">De effektiva värdena för den här parametern är:</span><span class="sxs-lookup"><span data-stu-id="bcf09-142">The effective values for this parameter are:</span></span>
 
-- <span data-ttu-id="6ae4b-143">1,0</span><span class="sxs-lookup"><span data-stu-id="6ae4b-143">1.0</span></span>
-  - <span data-ttu-id="6ae4b-144">Förhindrar referenser till oinitierade variabler, förutom oinitierade variabler i strängar.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-144">Prohibits references to uninitialized variables, except for uninitialized variables in strings.</span></span>
-- <span data-ttu-id="6ae4b-145">2.0</span><span class="sxs-lookup"><span data-stu-id="6ae4b-145">2.0</span></span>
-  - <span data-ttu-id="6ae4b-146">Förhindrar referenser till oinitierade variabler.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-146">Prohibits references to uninitialized variables.</span></span> <span data-ttu-id="6ae4b-147">Detta inkluderar oinitierade variabler i strängar.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-147">This includes uninitialized variables in strings.</span></span>
-  - <span data-ttu-id="6ae4b-148">Förhindrar referenser till obefintliga egenskaper för ett objekt.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-148">Prohibits references to non-existent properties of an object.</span></span>
-  - <span data-ttu-id="6ae4b-149">Förhindrar funktions anrop som använder syntaxen för att anropa metoder.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-149">Prohibits function calls that use the syntax for calling methods.</span></span>
-- <span data-ttu-id="6ae4b-150">3.0</span><span class="sxs-lookup"><span data-stu-id="6ae4b-150">3.0</span></span>
-  - <span data-ttu-id="6ae4b-151">Förhindrar referenser till oinitierade variabler.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-151">Prohibits references to uninitialized variables.</span></span> <span data-ttu-id="6ae4b-152">Detta inkluderar oinitierade variabler i strängar.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-152">This includes uninitialized variables in strings.</span></span>
-  - <span data-ttu-id="6ae4b-153">Förhindrar referenser till obefintliga egenskaper för ett objekt.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-153">Prohibits references to non-existent properties of an object.</span></span>
-  - <span data-ttu-id="6ae4b-154">Förhindrar funktions anrop som använder syntaxen för att anropa metoder.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-154">Prohibits function calls that use the syntax for calling methods.</span></span>
-  - <span data-ttu-id="6ae4b-155">Förhindra att matriser utanför gränser eller inte går att matcha.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-155">Prohibit out of bounds or unresolvable array indexes.</span></span>
-- <span data-ttu-id="6ae4b-156">Senast</span><span class="sxs-lookup"><span data-stu-id="6ae4b-156">Latest</span></span>
-  - <span data-ttu-id="6ae4b-157">Väljer den senaste versionen som är tillgänglig.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-157">Selects the latest version available.</span></span> <span data-ttu-id="6ae4b-158">Den senaste versionen är den mest strikta.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-158">The latest version is the most strict.</span></span> <span data-ttu-id="6ae4b-159">Använd det här värdet för att kontrol lera att skript använder den striktaste tillgängliga versionen, även när nya versioner läggs till i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-159">Use this value to make sure that scripts use the strictest available version, even when new versions are added to PowerShell.</span></span>
+- <span data-ttu-id="bcf09-143">1,0</span><span class="sxs-lookup"><span data-stu-id="bcf09-143">1.0</span></span>
+  - <span data-ttu-id="bcf09-144">Förhindrar referenser till oinitierade variabler, förutom oinitierade variabler i strängar.</span><span class="sxs-lookup"><span data-stu-id="bcf09-144">Prohibits references to uninitialized variables, except for uninitialized variables in strings.</span></span>
+- <span data-ttu-id="bcf09-145">2.0</span><span class="sxs-lookup"><span data-stu-id="bcf09-145">2.0</span></span>
+  - <span data-ttu-id="bcf09-146">Förhindrar referenser till oinitierade variabler.</span><span class="sxs-lookup"><span data-stu-id="bcf09-146">Prohibits references to uninitialized variables.</span></span> <span data-ttu-id="bcf09-147">Detta inkluderar oinitierade variabler i strängar.</span><span class="sxs-lookup"><span data-stu-id="bcf09-147">This includes uninitialized variables in strings.</span></span>
+  - <span data-ttu-id="bcf09-148">Förhindrar referenser till obefintliga egenskaper för ett objekt.</span><span class="sxs-lookup"><span data-stu-id="bcf09-148">Prohibits references to non-existent properties of an object.</span></span>
+  - <span data-ttu-id="bcf09-149">Förhindrar funktions anrop som använder syntaxen för att anropa metoder.</span><span class="sxs-lookup"><span data-stu-id="bcf09-149">Prohibits function calls that use the syntax for calling methods.</span></span>
+- <span data-ttu-id="bcf09-150">3.0</span><span class="sxs-lookup"><span data-stu-id="bcf09-150">3.0</span></span>
+  - <span data-ttu-id="bcf09-151">Förhindrar referenser till oinitierade variabler.</span><span class="sxs-lookup"><span data-stu-id="bcf09-151">Prohibits references to uninitialized variables.</span></span> <span data-ttu-id="bcf09-152">Detta inkluderar oinitierade variabler i strängar.</span><span class="sxs-lookup"><span data-stu-id="bcf09-152">This includes uninitialized variables in strings.</span></span>
+  - <span data-ttu-id="bcf09-153">Förhindrar referenser till obefintliga egenskaper för ett objekt.</span><span class="sxs-lookup"><span data-stu-id="bcf09-153">Prohibits references to non-existent properties of an object.</span></span>
+  - <span data-ttu-id="bcf09-154">Förhindrar funktions anrop som använder syntaxen för att anropa metoder.</span><span class="sxs-lookup"><span data-stu-id="bcf09-154">Prohibits function calls that use the syntax for calling methods.</span></span>
+  - <span data-ttu-id="bcf09-155">Förhindra att matriser utanför gränser eller inte går att matcha.</span><span class="sxs-lookup"><span data-stu-id="bcf09-155">Prohibit out of bounds or unresolvable array indexes.</span></span>
+- <span data-ttu-id="bcf09-156">Senast</span><span class="sxs-lookup"><span data-stu-id="bcf09-156">Latest</span></span>
+  - <span data-ttu-id="bcf09-157">Väljer den senaste versionen som är tillgänglig.</span><span class="sxs-lookup"><span data-stu-id="bcf09-157">Selects the latest version available.</span></span> <span data-ttu-id="bcf09-158">Den senaste versionen är den mest strikta.</span><span class="sxs-lookup"><span data-stu-id="bcf09-158">The latest version is the most strict.</span></span> <span data-ttu-id="bcf09-159">Använd det här värdet för att kontrol lera att skript använder den striktaste tillgängliga versionen, även när nya versioner läggs till i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="bcf09-159">Use this value to make sure that scripts use the strictest available version, even when new versions are added to PowerShell.</span></span>
 
 > [!CAUTION]
-> <span data-ttu-id="6ae4b-160">Använda en **version** av de **senaste** i skripten.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-160">Using a **Version** of **Latest** in scripts.</span></span> <span data-ttu-id="6ae4b-161">Betydelsen av **senaste** kan ändra i nya versioner av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-161">The meaning of **Latest** can change in new releases of PowerShell.</span></span> <span data-ttu-id="6ae4b-162">Ett skript som skrivits för en äldre version av PowerShell som använder omfattas därför av `Set-StrictMode -Version Latest` mer restriktiva regler när de körs i en senare version av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-162">Therefore, a script written for an older version of PowerShell that uses `Set-StrictMode -Version Latest` is subject to more restrictive rules when run in a newer version of PowerShell.</span></span>
+> <span data-ttu-id="bcf09-160">Använda en **version** av de **senaste** i skripten.</span><span class="sxs-lookup"><span data-stu-id="bcf09-160">Using a **Version** of **Latest** in scripts.</span></span> <span data-ttu-id="bcf09-161">Betydelsen av **senaste** kan ändra i nya versioner av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="bcf09-161">The meaning of **Latest** can change in new releases of PowerShell.</span></span> <span data-ttu-id="bcf09-162">Ett skript som skrivits för en äldre version av PowerShell som använder omfattas därför av `Set-StrictMode -Version Latest` mer restriktiva regler när de körs i en senare version av PowerShell.</span><span class="sxs-lookup"><span data-stu-id="bcf09-162">Therefore, a script written for an older version of PowerShell that uses `Set-StrictMode -Version Latest` is subject to more restrictive rules when run in a newer version of PowerShell.</span></span>
 
 ```yaml
 Type: System.Version
@@ -245,26 +221,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ae4b-163">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6ae4b-163">CommonParameters</span></span>
+### <span data-ttu-id="bcf09-163">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bcf09-163">CommonParameters</span></span>
 
-<span data-ttu-id="6ae4b-164">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-164">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6ae4b-165">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="6ae4b-165">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="bcf09-164">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="bcf09-164">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bcf09-165">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="bcf09-165">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="6ae4b-166">INDATA</span><span class="sxs-lookup"><span data-stu-id="6ae4b-166">INPUTS</span></span>
+## <span data-ttu-id="bcf09-166">INDATA</span><span class="sxs-lookup"><span data-stu-id="bcf09-166">INPUTS</span></span>
 
-### <span data-ttu-id="6ae4b-167">Inget</span><span class="sxs-lookup"><span data-stu-id="6ae4b-167">None</span></span>
+### <span data-ttu-id="bcf09-167">Inget</span><span class="sxs-lookup"><span data-stu-id="bcf09-167">None</span></span>
 
-<span data-ttu-id="6ae4b-168">Du kan inte skicka pipe-ininformation till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-168">You cannot pipe input to this cmdlet.</span></span>
+<span data-ttu-id="bcf09-168">Du kan inte skicka pipe-ininformation till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="bcf09-168">You cannot pipe input to this cmdlet.</span></span>
 
-## <span data-ttu-id="6ae4b-169">UTDATA</span><span class="sxs-lookup"><span data-stu-id="6ae4b-169">OUTPUTS</span></span>
+## <span data-ttu-id="bcf09-169">UTDATA</span><span class="sxs-lookup"><span data-stu-id="bcf09-169">OUTPUTS</span></span>
 
-### <span data-ttu-id="6ae4b-170">Inget</span><span class="sxs-lookup"><span data-stu-id="6ae4b-170">None</span></span>
+### <span data-ttu-id="bcf09-170">Inget</span><span class="sxs-lookup"><span data-stu-id="bcf09-170">None</span></span>
 
-<span data-ttu-id="6ae4b-171">Denna cmdlet returnerar inga utdata.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-171">This cmdlet does not return any output.</span></span>
+<span data-ttu-id="bcf09-171">Denna cmdlet returnerar inga utdata.</span><span class="sxs-lookup"><span data-stu-id="bcf09-171">This cmdlet does not return any output.</span></span>
 
-## <span data-ttu-id="6ae4b-172">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="6ae4b-172">NOTES</span></span>
+## <span data-ttu-id="bcf09-172">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="bcf09-172">NOTES</span></span>
 
-<span data-ttu-id="6ae4b-173">`Set-StrictMode` är endast effektivt i det omfång där det har angetts och i dess underordnade omfång.</span><span class="sxs-lookup"><span data-stu-id="6ae4b-173">`Set-StrictMode` is effective only in the scope in which it is set and in its child scopes.</span></span> <span data-ttu-id="6ae4b-174">Mer information om omfång i PowerShell finns [about_Scopes](about/about_Scopes.md).</span><span class="sxs-lookup"><span data-stu-id="6ae4b-174">For more information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).</span></span>
+<span data-ttu-id="bcf09-173">`Set-StrictMode` är endast effektivt i det omfång där det har angetts och i dess underordnade omfång.</span><span class="sxs-lookup"><span data-stu-id="bcf09-173">`Set-StrictMode` is effective only in the scope in which it is set and in its child scopes.</span></span> <span data-ttu-id="bcf09-174">Mer information om omfång i PowerShell finns [about_Scopes](about/about_Scopes.md).</span><span class="sxs-lookup"><span data-stu-id="bcf09-174">For more information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).</span></span>
 
-## <span data-ttu-id="6ae4b-175">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="6ae4b-175">RELATED LINKS</span></span>
+## <span data-ttu-id="bcf09-175">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="bcf09-175">RELATED LINKS</span></span>
 
-[<span data-ttu-id="6ae4b-176">Set-PSDebug</span><span class="sxs-lookup"><span data-stu-id="6ae4b-176">Set-PSDebug</span></span>](Set-PSDebug.md)
+[<span data-ttu-id="bcf09-176">Set-PSDebug</span><span class="sxs-lookup"><span data-stu-id="bcf09-176">Set-PSDebug</span></span>](Set-PSDebug.md)
