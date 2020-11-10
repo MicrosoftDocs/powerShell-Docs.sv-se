@@ -7,52 +7,52 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
-ms.openlocfilehash: 62d88dc105121ea0f6194dcdcfe3a234b654c6ee
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: d3cadbc6ca08741f8e747ad59456e5b6924e1688
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268491"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386945"
 ---
-# <span data-ttu-id="3835b-103">Select-Xml</span><span class="sxs-lookup"><span data-stu-id="3835b-103">Select-Xml</span></span>
+# <span data-ttu-id="a69be-103">Select-Xml</span><span class="sxs-lookup"><span data-stu-id="a69be-103">Select-Xml</span></span>
 
-## <span data-ttu-id="3835b-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="3835b-104">SYNOPSIS</span></span>
-<span data-ttu-id="3835b-105">Söker efter text i en XML-sträng eller ett dokument.</span><span class="sxs-lookup"><span data-stu-id="3835b-105">Finds text in an XML string or document.</span></span>
+## <span data-ttu-id="a69be-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="a69be-104">SYNOPSIS</span></span>
+<span data-ttu-id="a69be-105">Söker efter text i en XML-sträng eller ett dokument.</span><span class="sxs-lookup"><span data-stu-id="a69be-105">Finds text in an XML string or document.</span></span>
 
-## <span data-ttu-id="3835b-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="3835b-106">SYNTAX</span></span>
+## <span data-ttu-id="a69be-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="a69be-106">SYNTAX</span></span>
 
-### <span data-ttu-id="3835b-107">XML (standard)</span><span class="sxs-lookup"><span data-stu-id="3835b-107">Xml (Default)</span></span>
+### <span data-ttu-id="a69be-107">XML (standard)</span><span class="sxs-lookup"><span data-stu-id="a69be-107">Xml (Default)</span></span>
 
 ```
 Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3835b-108">Sökväg</span><span class="sxs-lookup"><span data-stu-id="3835b-108">Path</span></span>
+### <span data-ttu-id="a69be-108">Sökväg</span><span class="sxs-lookup"><span data-stu-id="a69be-108">Path</span></span>
 
 ```
 Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3835b-109">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="3835b-109">LiteralPath</span></span>
+### <span data-ttu-id="a69be-109">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="a69be-109">LiteralPath</span></span>
 
 ```
 Select-Xml -LiteralPath <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3835b-110">Innehåll</span><span class="sxs-lookup"><span data-stu-id="3835b-110">Content</span></span>
+### <span data-ttu-id="a69be-110">Innehåll</span><span class="sxs-lookup"><span data-stu-id="a69be-110">Content</span></span>
 
 ```
 Select-Xml -Content <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3835b-111">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="3835b-111">DESCRIPTION</span></span>
+## <span data-ttu-id="a69be-111">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="a69be-111">DESCRIPTION</span></span>
 
-<span data-ttu-id="3835b-112">Med **Select-XML-** cmdleten kan du använda XPath-frågor för att söka efter text i XML-strängar och dokument.</span><span class="sxs-lookup"><span data-stu-id="3835b-112">The **Select-Xml** cmdlet lets you use XPath queries to search for text in XML strings and documents.</span></span>
-<span data-ttu-id="3835b-113">Ange en XPath-fråga och Använd *innehållet* , *sökvägen* eller *XML* -parametern för att ange XML-koden som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="3835b-113">Enter an XPath query, and use the *Content* , *Path* , or *Xml* parameter to specify the XML to be searched.</span></span>
+<span data-ttu-id="a69be-112">Med **Select-XML-** cmdleten kan du använda XPath-frågor för att söka efter text i XML-strängar och dokument.</span><span class="sxs-lookup"><span data-stu-id="a69be-112">The **Select-Xml** cmdlet lets you use XPath queries to search for text in XML strings and documents.</span></span>
+<span data-ttu-id="a69be-113">Ange en XPath-fråga och Använd *innehållet* , *sökvägen* eller *XML* -parametern för att ange XML-koden som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="a69be-113">Enter an XPath query, and use the *Content* , *Path* , or *Xml* parameter to specify the XML to be searched.</span></span>
 
-## <span data-ttu-id="3835b-114">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="3835b-114">EXAMPLES</span></span>
+## <span data-ttu-id="a69be-114">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="a69be-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="3835b-115">Exempel 1: Välj AliasProperty-noder</span><span class="sxs-lookup"><span data-stu-id="3835b-115">Example 1: Select AliasProperty nodes</span></span>
+### <span data-ttu-id="a69be-115">Exempel 1: Välj AliasProperty-noder</span><span class="sxs-lookup"><span data-stu-id="a69be-115">Example 1: Select AliasProperty nodes</span></span>
 
 ```
 PS C:\> $Path = "$Pshome\Types.ps1xml"
@@ -78,36 +78,36 @@ Name                 __Class
 Namespace            ModuleName
 ```
 
-<span data-ttu-id="3835b-116">I det här exemplet hämtas egenskaperna för alias i Types.ps1XML.</span><span class="sxs-lookup"><span data-stu-id="3835b-116">This example gets the alias properties in the Types.ps1xml.</span></span>
-<span data-ttu-id="3835b-117">(Mer information om den här filen finns i about_Types.ps1XML.)</span><span class="sxs-lookup"><span data-stu-id="3835b-117">(For information about this file, see about_Types.ps1xml.)</span></span>
+<span data-ttu-id="a69be-116">I det här exemplet hämtas egenskaperna för alias i Types.ps1XML.</span><span class="sxs-lookup"><span data-stu-id="a69be-116">This example gets the alias properties in the Types.ps1xml.</span></span>
+<span data-ttu-id="a69be-117">(Mer information om den här filen finns i about_Types.ps1XML.)</span><span class="sxs-lookup"><span data-stu-id="a69be-117">(For information about this file, see about_Types.ps1xml.)</span></span>
 
-<span data-ttu-id="3835b-118">Det första kommandot sparar sökvägen till Types.ps1XML-filen i $Path variabeln.</span><span class="sxs-lookup"><span data-stu-id="3835b-118">The first command saves the path to the Types.ps1xml file in the $Path variable.</span></span>
+<span data-ttu-id="a69be-118">Det första kommandot sparar sökvägen till Types.ps1XML-filen i $Path variabeln.</span><span class="sxs-lookup"><span data-stu-id="a69be-118">The first command saves the path to the Types.ps1xml file in the $Path variable.</span></span>
 
-<span data-ttu-id="3835b-119">Det andra kommandot sparar XML-sökvägen till AliasProperty-noden i variabeln $XPath.</span><span class="sxs-lookup"><span data-stu-id="3835b-119">The second command saves the XML path to the AliasProperty node in the $XPath variable.</span></span>
+<span data-ttu-id="a69be-119">Det andra kommandot sparar XML-sökvägen till AliasProperty-noden i variabeln $XPath.</span><span class="sxs-lookup"><span data-stu-id="a69be-119">The second command saves the XML path to the AliasProperty node in the $XPath variable.</span></span>
 
-<span data-ttu-id="3835b-120">Det tredje kommandot använder **Select-XML** -cmdleten för att hämta de AliasProperty-noder som identifieras av XPath-instruktionen från Types.ps1XML-filen.</span><span class="sxs-lookup"><span data-stu-id="3835b-120">The third command uses the **Select-Xml** cmdlet to get the AliasProperty nodes that are identified by the XPath statement from the Types.ps1xml file.</span></span>
-<span data-ttu-id="3835b-121">Kommandot använder en pipeline-operator för att skicka AliasProperty-noderna till Select-Object-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="3835b-121">The command uses a pipeline operator to send the AliasProperty nodes to the Select-Object cmdlet.</span></span>
-<span data-ttu-id="3835b-122">Parametern *ExpandProperty* utökar objektet **Node** och returnerar dess namn och ReferencedMemberName egenskaper.</span><span class="sxs-lookup"><span data-stu-id="3835b-122">The *ExpandProperty* parameter expands the **Node** object and returns its Name and ReferencedMemberName properties.</span></span>
+<span data-ttu-id="a69be-120">Det tredje kommandot använder **Select-XML** -cmdleten för att hämta de AliasProperty-noder som identifieras av XPath-instruktionen från Types.ps1XML-filen.</span><span class="sxs-lookup"><span data-stu-id="a69be-120">The third command uses the **Select-Xml** cmdlet to get the AliasProperty nodes that are identified by the XPath statement from the Types.ps1xml file.</span></span>
+<span data-ttu-id="a69be-121">Kommandot använder en pipeline-operator för att skicka AliasProperty-noderna till Select-Object-cmdleten.</span><span class="sxs-lookup"><span data-stu-id="a69be-121">The command uses a pipeline operator to send the AliasProperty nodes to the Select-Object cmdlet.</span></span>
+<span data-ttu-id="a69be-122">Parametern *ExpandProperty* utökar objektet **Node** och returnerar dess namn och ReferencedMemberName egenskaper.</span><span class="sxs-lookup"><span data-stu-id="a69be-122">The *ExpandProperty* parameter expands the **Node** object and returns its Name and ReferencedMemberName properties.</span></span>
 
-<span data-ttu-id="3835b-123">Resultatet visar namnet och ReferencedMemberName för varje aliasresurspost i Types.ps1XML-filen.</span><span class="sxs-lookup"><span data-stu-id="3835b-123">The result shows the Name and ReferencedMemberName of each alias property in the Types.ps1xml file.</span></span>
-<span data-ttu-id="3835b-124">Det finns till exempel en **Count** -egenskap som är ett alias för egenskapen **length** .</span><span class="sxs-lookup"><span data-stu-id="3835b-124">For example, there is a **Count** property that is an alias of the **Length** property.</span></span>
+<span data-ttu-id="a69be-123">Resultatet visar namnet och ReferencedMemberName för varje aliasresurspost i Types.ps1XML-filen.</span><span class="sxs-lookup"><span data-stu-id="a69be-123">The result shows the Name and ReferencedMemberName of each alias property in the Types.ps1xml file.</span></span>
+<span data-ttu-id="a69be-124">Det finns till exempel en **Count** -egenskap som är ett alias för egenskapen **length** .</span><span class="sxs-lookup"><span data-stu-id="a69be-124">For example, there is a **Count** property that is an alias of the **Length** property.</span></span>
 
-### <span data-ttu-id="3835b-125">Exempel 2: mata in ett XML-dokument</span><span class="sxs-lookup"><span data-stu-id="3835b-125">Example 2: Input an XML document</span></span>
+### <span data-ttu-id="a69be-125">Exempel 2: mata in ett XML-dokument</span><span class="sxs-lookup"><span data-stu-id="a69be-125">Example 2: Input an XML document</span></span>
 
 ```
 PS C:\> [xml]$Types = Get-Content $Pshome\Types.ps1xml
 PS C:\> Select-Xml -Xml $Types -XPath "//MethodName"
 ```
 
-<span data-ttu-id="3835b-126">Det här exemplet visar hur du använder *XML-* parametern för att tillhandahålla ett XML-dokument till **Select-XML-** cmdleten.</span><span class="sxs-lookup"><span data-stu-id="3835b-126">This example shows how to use the *XML* parameter to provide an XML document to the **Select-Xml** cmdlet.</span></span>
+<span data-ttu-id="a69be-126">Det här exemplet visar hur du använder *XML-* parametern för att tillhandahålla ett XML-dokument till **Select-XML-** cmdleten.</span><span class="sxs-lookup"><span data-stu-id="a69be-126">This example shows how to use the *XML* parameter to provide an XML document to the **Select-Xml** cmdlet.</span></span>
 
-<span data-ttu-id="3835b-127">Det första kommandot använder cmdleten Get-Content för att hämta innehållet i Types.ps1XML-filen och spara den i $Types variabeln.</span><span class="sxs-lookup"><span data-stu-id="3835b-127">The first command uses the Get-Content cmdlet to get the content of the Types.ps1xml file and save it in the $Types variable.</span></span>
-<span data-ttu-id="3835b-128">\[XML-koden \] kastar variabeln som ett XML-objekt.</span><span class="sxs-lookup"><span data-stu-id="3835b-128">The \[xml\] casts the variable as an XML object.</span></span>
+<span data-ttu-id="a69be-127">Det första kommandot använder cmdleten Get-Content för att hämta innehållet i Types.ps1XML-filen och spara den i $Types variabeln.</span><span class="sxs-lookup"><span data-stu-id="a69be-127">The first command uses the Get-Content cmdlet to get the content of the Types.ps1xml file and save it in the $Types variable.</span></span>
+<span data-ttu-id="a69be-128">\[XML-koden \] kastar variabeln som ett XML-objekt.</span><span class="sxs-lookup"><span data-stu-id="a69be-128">The \[xml\] casts the variable as an XML object.</span></span>
 
-<span data-ttu-id="3835b-129">Det andra kommandot använder **Select-XML** -cmdlet: en för att hämta methodName-noderna i Types.ps1XML-filen.</span><span class="sxs-lookup"><span data-stu-id="3835b-129">The second command uses the **Select-Xml** cmdlet to get the MethodName nodes in the Types.ps1xml file.</span></span>
-<span data-ttu-id="3835b-130">Kommandot använder *XML-* parametern för att ange XML-innehållet i variabeln $types och *XPath* -parametern för att ange sökvägen till methodName-noden.</span><span class="sxs-lookup"><span data-stu-id="3835b-130">The command uses the *Xml* parameter to specify the XML content in the $Types variable and the *XPath* parameter to specify the path to the MethodName node.</span></span>
+<span data-ttu-id="a69be-129">Det andra kommandot använder **Select-XML** -cmdlet: en för att hämta methodName-noderna i Types.ps1XML-filen.</span><span class="sxs-lookup"><span data-stu-id="a69be-129">The second command uses the **Select-Xml** cmdlet to get the MethodName nodes in the Types.ps1xml file.</span></span>
+<span data-ttu-id="a69be-130">Kommandot använder *XML-* parametern för att ange XML-innehållet i variabeln $types och *XPath* -parametern för att ange sökvägen till methodName-noden.</span><span class="sxs-lookup"><span data-stu-id="a69be-130">The command uses the *Xml* parameter to specify the XML content in the $Types variable and the *XPath* parameter to specify the path to the MethodName node.</span></span>
 
-### <span data-ttu-id="3835b-131">Exempel 3: Sök efter PowerShell-hjälpfiler</span><span class="sxs-lookup"><span data-stu-id="3835b-131">Example 3: Search PowerShell Help files</span></span>
+### <span data-ttu-id="a69be-131">Exempel 3: Sök efter PowerShell-hjälpfiler</span><span class="sxs-lookup"><span data-stu-id="a69be-131">Example 3: Search PowerShell Help files</span></span>
 
 ```
 PS C:\> $Namespace = @{command = "http://schemas.microsoft.com/maml/dev/command/2004/10"; maml = "http://schemas.microsoft.com/maml/2004/10"; dev = "http://schemas.microsoft.com/maml/dev/2004/10"}
@@ -133,12 +133,12 @@ Checkpoint-Computer     C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microso
 ...
 ```
 
-<span data-ttu-id="3835b-132">Det här exemplet visar hur du använder **Select-XML** -cmdleten för att söka i Hjälp filerna för PowerShell-baserad cmdlet-baserad cmdlet.</span><span class="sxs-lookup"><span data-stu-id="3835b-132">This example shows how to use the **Select-Xml** cmdlet to search the PowerShell XML-based cmdlet help files.</span></span>
-<span data-ttu-id="3835b-133">I det här exemplet ska vi söka efter det cmdlet-namn som fungerar som en rubrik för varje hjälpfil och sökvägen till hjälp filen.</span><span class="sxs-lookup"><span data-stu-id="3835b-133">In this example, we'll search for the cmdlet name that serves as a title for each help file and the path to the help file.</span></span>
+<span data-ttu-id="a69be-132">Det här exemplet visar hur du använder **Select-XML** -cmdleten för att söka i Hjälp filerna för PowerShell-baserad cmdlet-baserad cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a69be-132">This example shows how to use the **Select-Xml** cmdlet to search the PowerShell XML-based cmdlet help files.</span></span>
+<span data-ttu-id="a69be-133">I det här exemplet ska vi söka efter det cmdlet-namn som fungerar som en rubrik för varje hjälpfil och sökvägen till hjälp filen.</span><span class="sxs-lookup"><span data-stu-id="a69be-133">In this example, we'll search for the cmdlet name that serves as a title for each help file and the path to the help file.</span></span>
 
-<span data-ttu-id="3835b-134">Det första kommandot skapar en hash-tabell som representerar det XML-namnområde som används för hjälpfilerna och sparar det i $Namespace-variabeln.</span><span class="sxs-lookup"><span data-stu-id="3835b-134">The first command creates a hash table that represents the XML namespace that is used for the help files and saves it in the $Namespace variable.</span></span>
+<span data-ttu-id="a69be-134">Det första kommandot skapar en hash-tabell som representerar det XML-namnområde som används för hjälpfilerna och sparar det i $Namespace-variabeln.</span><span class="sxs-lookup"><span data-stu-id="a69be-134">The first command creates a hash table that represents the XML namespace that is used for the help files and saves it in the $Namespace variable.</span></span>
 
-### <span data-ttu-id="3835b-135">Exempel 4: olika sätt att mata in XML</span><span class="sxs-lookup"><span data-stu-id="3835b-135">Example 4: Different ways to input XML</span></span>
+### <span data-ttu-id="a69be-135">Exempel 4: olika sätt att mata in XML</span><span class="sxs-lookup"><span data-stu-id="a69be-135">Example 4: Different ways to input XML</span></span>
 
 ```
 PS C:\> $Xml = @"
@@ -174,12 +174,12 @@ Fr.Book1.com
 Pl.Book1.com
 ```
 
-<span data-ttu-id="3835b-136">I det här exemplet visas två olika sätt att skicka XML till **Select-XML-** cmdleten.</span><span class="sxs-lookup"><span data-stu-id="3835b-136">This example shows two different ways to send XML to the **Select-Xml** cmdlet.</span></span>
+<span data-ttu-id="a69be-136">I det här exemplet visas två olika sätt att skicka XML till **Select-XML-** cmdleten.</span><span class="sxs-lookup"><span data-stu-id="a69be-136">This example shows two different ways to send XML to the **Select-Xml** cmdlet.</span></span>
 
-<span data-ttu-id="3835b-137">Det första kommandot sparar en här-sträng som innehåller XML i variabeln $Xml.</span><span class="sxs-lookup"><span data-stu-id="3835b-137">The first command saves a here-string that contains XML in the $Xml variable.</span></span>
-<span data-ttu-id="3835b-138">(Mer information om här – strängar finns i about_Quoting_Rules.)</span><span class="sxs-lookup"><span data-stu-id="3835b-138">(For more information about here-strings, see about_Quoting_Rules.)</span></span>
+<span data-ttu-id="a69be-137">Det första kommandot sparar en här-sträng som innehåller XML i variabeln $Xml.</span><span class="sxs-lookup"><span data-stu-id="a69be-137">The first command saves a here-string that contains XML in the $Xml variable.</span></span>
+<span data-ttu-id="a69be-138">(Mer information om här – strängar finns i about_Quoting_Rules.)</span><span class="sxs-lookup"><span data-stu-id="a69be-138">(For more information about here-strings, see about_Quoting_Rules.)</span></span>
 
-### <span data-ttu-id="3835b-139">Exempel 5: Använd standard namn området xmlns</span><span class="sxs-lookup"><span data-stu-id="3835b-139">Example 5: Use the default xmlns namespace</span></span>
+### <span data-ttu-id="a69be-139">Exempel 5: Använd standard namn området xmlns</span><span class="sxs-lookup"><span data-stu-id="a69be-139">Example 5: Use the default xmlns namespace</span></span>
 
 ```
 PS C:\> $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
@@ -188,21 +188,21 @@ The second command uses the **Select-Xml** cmdlet to get the content of the Titl
 PS C:\> Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" | foreach {$_.Node.Innerxml}
 ```
 
-<span data-ttu-id="3835b-140">Det här exemplet visar hur du använder **Select-XML** -cmdleten med XML-dokument som använder standardvärdet för xmlns-namnrymd.</span><span class="sxs-lookup"><span data-stu-id="3835b-140">This example shows how to use the **Select-Xml** cmdlet with XML documents that use the default xmlns namespace.</span></span>
-<span data-ttu-id="3835b-141">Exemplet hämtar titlarna på Windows PowerShell ISE kodfragment-filer som skapats av användare.</span><span class="sxs-lookup"><span data-stu-id="3835b-141">The example gets the titles of Windows PowerShell ISE user-created snippet files.</span></span>
-<span data-ttu-id="3835b-142">Information om kodfragment finns i New-IseSnippet.</span><span class="sxs-lookup"><span data-stu-id="3835b-142">For information about snippets, see New-IseSnippet.</span></span>
+<span data-ttu-id="a69be-140">Det här exemplet visar hur du använder **Select-XML** -cmdleten med XML-dokument som använder standardvärdet för xmlns-namnrymd.</span><span class="sxs-lookup"><span data-stu-id="a69be-140">This example shows how to use the **Select-Xml** cmdlet with XML documents that use the default xmlns namespace.</span></span>
+<span data-ttu-id="a69be-141">Exemplet hämtar titlarna på Windows PowerShell ISE kodfragment-filer som skapats av användare.</span><span class="sxs-lookup"><span data-stu-id="a69be-141">The example gets the titles of Windows PowerShell ISE user-created snippet files.</span></span>
+<span data-ttu-id="a69be-142">Information om kodfragment finns i New-IseSnippet.</span><span class="sxs-lookup"><span data-stu-id="a69be-142">For information about snippets, see New-IseSnippet.</span></span>
 
-<span data-ttu-id="3835b-143">Det första kommandot skapar en hash-tabell för det standard namn område som XML-filerna använder och tilldelar dem till $SnippetNamespace variabeln.</span><span class="sxs-lookup"><span data-stu-id="3835b-143">The first command creates a hash table for the default namespace that snippet XML files use and assigns it to the $SnippetNamespace variable.</span></span>
-<span data-ttu-id="3835b-144">Värdet för hash-tabellen är XMLNS-schemats URI i XML-kodfragmentet.</span><span class="sxs-lookup"><span data-stu-id="3835b-144">The hash table value is the XMLNS schema URI in the snippet XML.</span></span>
-<span data-ttu-id="3835b-145">Hash-tabellens nyckel namn, skärm klipp, är godtyckligt.</span><span class="sxs-lookup"><span data-stu-id="3835b-145">The hash table key name, snip, is arbitrary.</span></span>
-<span data-ttu-id="3835b-146">Du kan använda ett namn som inte är reserverat, men du kan inte använda xmlns.</span><span class="sxs-lookup"><span data-stu-id="3835b-146">You can use any name that is not reserved, but you cannot use xmlns.</span></span>
+<span data-ttu-id="a69be-143">Det första kommandot skapar en hash-tabell för det standard namn område som XML-filerna använder och tilldelar dem till $SnippetNamespace variabeln.</span><span class="sxs-lookup"><span data-stu-id="a69be-143">The first command creates a hash table for the default namespace that snippet XML files use and assigns it to the $SnippetNamespace variable.</span></span>
+<span data-ttu-id="a69be-144">Värdet för hash-tabellen är XMLNS-schemats URI i XML-kodfragmentet.</span><span class="sxs-lookup"><span data-stu-id="a69be-144">The hash table value is the XMLNS schema URI in the snippet XML.</span></span>
+<span data-ttu-id="a69be-145">Hash-tabellens nyckel namn, skärm klipp, är godtyckligt.</span><span class="sxs-lookup"><span data-stu-id="a69be-145">The hash table key name, snip, is arbitrary.</span></span>
+<span data-ttu-id="a69be-146">Du kan använda ett namn som inte är reserverat, men du kan inte använda xmlns.</span><span class="sxs-lookup"><span data-stu-id="a69be-146">You can use any name that is not reserved, but you cannot use xmlns.</span></span>
 
-## <span data-ttu-id="3835b-147">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="3835b-147">PARAMETERS</span></span>
+## <span data-ttu-id="a69be-147">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="a69be-147">PARAMETERS</span></span>
 
-### <span data-ttu-id="3835b-148">– Innehåll</span><span class="sxs-lookup"><span data-stu-id="3835b-148">-Content</span></span>
+### <span data-ttu-id="a69be-148">– Innehåll</span><span class="sxs-lookup"><span data-stu-id="a69be-148">-Content</span></span>
 
-<span data-ttu-id="3835b-149">Anger en sträng som innehåller den XML som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="3835b-149">Specifies a string that contains the XML to search.</span></span>
-<span data-ttu-id="3835b-150">Du kan också skicka en sträng till **Select-XML**.</span><span class="sxs-lookup"><span data-stu-id="3835b-150">You can also pipe strings to **Select-Xml**.</span></span>
+<span data-ttu-id="a69be-149">Anger en sträng som innehåller den XML som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="a69be-149">Specifies a string that contains the XML to search.</span></span>
+<span data-ttu-id="a69be-150">Du kan också skicka en sträng till **Select-XML**.</span><span class="sxs-lookup"><span data-stu-id="a69be-150">You can also pipe strings to **Select-Xml**.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -216,13 +216,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3835b-151">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="3835b-151">-LiteralPath</span></span>
+### <span data-ttu-id="a69be-151">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="a69be-151">-LiteralPath</span></span>
 
-<span data-ttu-id="3835b-152">Anger sökvägar och fil namn för de XML-filer som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="3835b-152">Specifies the paths and file names of the XML files to search.</span></span>
-<span data-ttu-id="3835b-153">Till skillnad från *sökväg* används värdet för parametern *LiteralPath* exakt som det har angetts.</span><span class="sxs-lookup"><span data-stu-id="3835b-153">Unlike *Path* , the value of the *LiteralPath* parameter is used exactly as it is typed.</span></span>
-<span data-ttu-id="3835b-154">Inga tecken tolkas som jokertecken.</span><span class="sxs-lookup"><span data-stu-id="3835b-154">No characters are interpreted as wildcards.</span></span>
-<span data-ttu-id="3835b-155">Om sökvägen innehåller escape-tecken omger du den med enkla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="3835b-155">If the path includes escape characters, enclose it in single quotation marks.</span></span>
-<span data-ttu-id="3835b-156">Enkla citat tecken säger att PowerShell inte tolkar några tecken som escape-sekvenser.</span><span class="sxs-lookup"><span data-stu-id="3835b-156">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
+<span data-ttu-id="a69be-152">Anger sökvägar och fil namn för de XML-filer som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="a69be-152">Specifies the paths and file names of the XML files to search.</span></span>
+<span data-ttu-id="a69be-153">Till skillnad från *sökväg* används värdet för parametern *LiteralPath* exakt som det har angetts.</span><span class="sxs-lookup"><span data-stu-id="a69be-153">Unlike *Path* , the value of the *LiteralPath* parameter is used exactly as it is typed.</span></span>
+<span data-ttu-id="a69be-154">Inga tecken tolkas som jokertecken.</span><span class="sxs-lookup"><span data-stu-id="a69be-154">No characters are interpreted as wildcards.</span></span>
+<span data-ttu-id="a69be-155">Om sökvägen innehåller escape-tecken omger du den med enkla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="a69be-155">If the path includes escape characters, enclose it in single quotation marks.</span></span>
+<span data-ttu-id="a69be-156">Enkla citat tecken säger att PowerShell inte tolkar några tecken som escape-sekvenser.</span><span class="sxs-lookup"><span data-stu-id="a69be-156">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -236,14 +236,14 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3835b-157">– Namnrymd</span><span class="sxs-lookup"><span data-stu-id="3835b-157">-Namespace</span></span>
+### <span data-ttu-id="a69be-157">– Namnrymd</span><span class="sxs-lookup"><span data-stu-id="a69be-157">-Namespace</span></span>
 
-<span data-ttu-id="3835b-158">Anger en hash-tabell för de namn områden som används i XML-filen.</span><span class="sxs-lookup"><span data-stu-id="3835b-158">Specifies a hash table of the namespaces used in the XML.</span></span>
-<span data-ttu-id="3835b-159">Använd formatet @ { \<namespaceName\>  =  \<namespaceValue\> }.</span><span class="sxs-lookup"><span data-stu-id="3835b-159">Use the format @{\<namespaceName\> = \<namespaceValue\>}.</span></span>
+<span data-ttu-id="a69be-158">Anger en hash-tabell för de namn områden som används i XML-filen.</span><span class="sxs-lookup"><span data-stu-id="a69be-158">Specifies a hash table of the namespaces used in the XML.</span></span>
+<span data-ttu-id="a69be-159">Använd formatet @ { \<namespaceName\>  =  \<namespaceValue\> }.</span><span class="sxs-lookup"><span data-stu-id="a69be-159">Use the format @{\<namespaceName\> = \<namespaceValue\>}.</span></span>
 
-<span data-ttu-id="3835b-160">När XML använder standard namn området, som börjar med xmlns, använder du en godtycklig nyckel för namn områdets namn.</span><span class="sxs-lookup"><span data-stu-id="3835b-160">When the XML uses the default namespace, which begins with xmlns, use an arbitrary key for the namespace name.</span></span>
-<span data-ttu-id="3835b-161">Du kan inte använda xmlns.</span><span class="sxs-lookup"><span data-stu-id="3835b-161">You cannot use xmlns.</span></span>
-<span data-ttu-id="3835b-162">I XPath-instruktionen prefixerar du varje nodnamn med namn områdets namn och ett kolon, till exempel//namespaceName: Node.</span><span class="sxs-lookup"><span data-stu-id="3835b-162">In the XPath statement, prefix each node name with the namespace name and a colon, such as //namespaceName:Node.</span></span>
+<span data-ttu-id="a69be-160">När XML använder standard namn området, som börjar med xmlns, använder du en godtycklig nyckel för namn områdets namn.</span><span class="sxs-lookup"><span data-stu-id="a69be-160">When the XML uses the default namespace, which begins with xmlns, use an arbitrary key for the namespace name.</span></span>
+<span data-ttu-id="a69be-161">Du kan inte använda xmlns.</span><span class="sxs-lookup"><span data-stu-id="a69be-161">You cannot use xmlns.</span></span>
+<span data-ttu-id="a69be-162">I XPath-instruktionen prefixerar du varje nodnamn med namn områdets namn och ett kolon, till exempel//namespaceName: Node.</span><span class="sxs-lookup"><span data-stu-id="a69be-162">In the XPath statement, prefix each node name with the namespace name and a colon, such as //namespaceName:Node.</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -257,10 +257,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3835b-163">-Path</span><span class="sxs-lookup"><span data-stu-id="3835b-163">-Path</span></span>
+### <span data-ttu-id="a69be-163">-Path</span><span class="sxs-lookup"><span data-stu-id="a69be-163">-Path</span></span>
 
-<span data-ttu-id="3835b-164">Anger sökväg och fil namn för de XML-filer som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="3835b-164">Specifies the path and file names of the XML files to search.</span></span>
-<span data-ttu-id="3835b-165">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="3835b-165">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="a69be-164">Anger sökväg och fil namn för de XML-filer som ska genomsökas.</span><span class="sxs-lookup"><span data-stu-id="a69be-164">Specifies the path and file names of the XML files to search.</span></span>
+<span data-ttu-id="a69be-165">Jokertecken är tillåtna.</span><span class="sxs-lookup"><span data-stu-id="a69be-165">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -274,12 +274,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="3835b-166">-XML</span><span class="sxs-lookup"><span data-stu-id="3835b-166">-Xml</span></span>
+### <span data-ttu-id="a69be-166">-XML</span><span class="sxs-lookup"><span data-stu-id="a69be-166">-Xml</span></span>
 
-<span data-ttu-id="3835b-167">Anger en eller flera XML-noder.</span><span class="sxs-lookup"><span data-stu-id="3835b-167">Specifies one or more XML nodes.</span></span>
+<span data-ttu-id="a69be-167">Anger en eller flera XML-noder.</span><span class="sxs-lookup"><span data-stu-id="a69be-167">Specifies one or more XML nodes.</span></span>
 
-<span data-ttu-id="3835b-168">Ett XML-dokument kommer att bearbetas som en samling av XML-noder.</span><span class="sxs-lookup"><span data-stu-id="3835b-168">An XML document will be processed as a collection of XML nodes.</span></span>
-<span data-ttu-id="3835b-169">Om du rör ett XML-dokument för att **välja-XML** genomsöks varje dokument-nod separat när den kommer till pipelinen.</span><span class="sxs-lookup"><span data-stu-id="3835b-169">If you pipe an XML document to **Select-Xml** , each document node will be searched separately as it comes through the pipeline.</span></span>
+<span data-ttu-id="a69be-168">Ett XML-dokument kommer att bearbetas som en samling av XML-noder.</span><span class="sxs-lookup"><span data-stu-id="a69be-168">An XML document will be processed as a collection of XML nodes.</span></span>
+<span data-ttu-id="a69be-169">Om du rör ett XML-dokument för att **välja-XML** genomsöks varje dokument-nod separat när den kommer till pipelinen.</span><span class="sxs-lookup"><span data-stu-id="a69be-169">If you pipe an XML document to **Select-Xml** , each document node will be searched separately as it comes through the pipeline.</span></span>
 
 ```yaml
 Type: System.Xml.XmlNode[]
@@ -293,11 +293,11 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3835b-170">– XPath</span><span class="sxs-lookup"><span data-stu-id="3835b-170">-XPath</span></span>
+### <span data-ttu-id="a69be-170">– XPath</span><span class="sxs-lookup"><span data-stu-id="a69be-170">-XPath</span></span>
 
-<span data-ttu-id="3835b-171">Anger en XPath-Sök fråga.</span><span class="sxs-lookup"><span data-stu-id="3835b-171">Specifies an XPath search query.</span></span>
-<span data-ttu-id="3835b-172">Frågespråket är Skift läges känsligt.</span><span class="sxs-lookup"><span data-stu-id="3835b-172">The query language is case-sensitive.</span></span>
-<span data-ttu-id="3835b-173">Den här parametern är obligatorisk.</span><span class="sxs-lookup"><span data-stu-id="3835b-173">This parameter is required.</span></span>
+<span data-ttu-id="a69be-171">Anger en XPath-Sök fråga.</span><span class="sxs-lookup"><span data-stu-id="a69be-171">Specifies an XPath search query.</span></span>
+<span data-ttu-id="a69be-172">Frågespråket är Skift läges känsligt.</span><span class="sxs-lookup"><span data-stu-id="a69be-172">The query language is case-sensitive.</span></span>
+<span data-ttu-id="a69be-173">Den här parametern är obligatorisk.</span><span class="sxs-lookup"><span data-stu-id="a69be-173">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -311,24 +311,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3835b-174">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3835b-174">CommonParameters</span></span>
+### <span data-ttu-id="a69be-174">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a69be-174">CommonParameters</span></span>
 
-<span data-ttu-id="3835b-175">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="3835b-175">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3835b-176">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="3835b-176">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="a69be-175">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a69be-175">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a69be-176">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="a69be-176">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3835b-177">INDATA</span><span class="sxs-lookup"><span data-stu-id="3835b-177">INPUTS</span></span>
+## <span data-ttu-id="a69be-177">INDATA</span><span class="sxs-lookup"><span data-stu-id="a69be-177">INPUTS</span></span>
 
-### <span data-ttu-id="3835b-178">System. String eller System.Xml.Xmlnod</span><span class="sxs-lookup"><span data-stu-id="3835b-178">System.String or System.Xml.XmlNode</span></span>
+### <span data-ttu-id="a69be-178">System. String eller System.Xml.Xmlnod</span><span class="sxs-lookup"><span data-stu-id="a69be-178">System.String or System.Xml.XmlNode</span></span>
 
-<span data-ttu-id="3835b-179">Du kan skicka en sökväg eller XML-nod till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="3835b-179">You can pipe a path or XML node to this cmdlet.</span></span>
+<span data-ttu-id="a69be-179">Du kan skicka en sökväg eller XML-nod till denna cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a69be-179">You can pipe a path or XML node to this cmdlet.</span></span>
 
-## <span data-ttu-id="3835b-180">UTDATA</span><span class="sxs-lookup"><span data-stu-id="3835b-180">OUTPUTS</span></span>
+## <span data-ttu-id="a69be-180">UTDATA</span><span class="sxs-lookup"><span data-stu-id="a69be-180">OUTPUTS</span></span>
 
-### <span data-ttu-id="3835b-181">Microsoft. PowerShell. commands. SelectXmlInfo</span><span class="sxs-lookup"><span data-stu-id="3835b-181">Microsoft.PowerShell.Commands.SelectXmlInfo</span></span>
+### <span data-ttu-id="a69be-181">Microsoft. PowerShell. commands. SelectXmlInfo</span><span class="sxs-lookup"><span data-stu-id="a69be-181">Microsoft.PowerShell.Commands.SelectXmlInfo</span></span>
 
-## <span data-ttu-id="3835b-182">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="3835b-182">NOTES</span></span>
+## <span data-ttu-id="a69be-182">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="a69be-182">NOTES</span></span>
 
-* <span data-ttu-id="3835b-183">XPath är ett standard språk som är utformat för att identifiera delar av ett XML-dokument.</span><span class="sxs-lookup"><span data-stu-id="3835b-183">XPath is a standard language that is designed to identify parts of an XML document.</span></span> <span data-ttu-id="3835b-184">Mer information om XPath-språket finns i [XPath-referens](https://msdn.microsoft.com/library/ms256115) och urvals filter avsnittet i [händelse URVALet](https://msdn.microsoft.com/library/aa385231) i MSDN-biblioteket.</span><span class="sxs-lookup"><span data-stu-id="3835b-184">For more information about the XPath language, see [XPath Reference](https://msdn.microsoft.com/library/ms256115) and the Selection Filters section of the [Event Selection](https://msdn.microsoft.com/library/aa385231) in the MSDN library.</span></span>
+<span data-ttu-id="a69be-183">XPath är ett standard språk som är utformat för att identifiera delar av ett XML-dokument.</span><span class="sxs-lookup"><span data-stu-id="a69be-183">XPath is a standard language that is designed to identify parts of an XML document.</span></span> <span data-ttu-id="a69be-184">Mer information om XPath-språket finns i [XPath-referens](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) och urvals filter avsnittet i [händelse urvalet](/previous-versions//aa385231(v=vs.85)).</span><span class="sxs-lookup"><span data-stu-id="a69be-184">For more information about the XPath language, see [XPath Reference](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) and the Selection Filters section of [Event Selection](/previous-versions//aa385231(v=vs.85)).</span></span>
 
-## <span data-ttu-id="3835b-185">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="3835b-185">RELATED LINKS</span></span>
+## <span data-ttu-id="a69be-185">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="a69be-185">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3835b-186">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="3835b-186">ConvertTo-Xml</span></span>](ConvertTo-Xml.md)
+[<span data-ttu-id="a69be-186">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="a69be-186">ConvertTo-Xml</span></span>](ConvertTo-Xml.md)
