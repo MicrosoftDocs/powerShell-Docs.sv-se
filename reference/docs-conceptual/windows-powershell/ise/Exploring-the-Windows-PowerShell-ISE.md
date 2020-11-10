@@ -4,12 +4,12 @@ title: Utforska Windows PowerShell ISE
 description: Den här artikeln är en översikt över funktionerna i Windows PowerShell ISE
 ms.topic: landing-page
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.openlocfilehash: 91faedfcda70228807cdab6690912e7ad0944303
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296361"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391263"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
 
@@ -79,7 +79,8 @@ Gör att du kan se om de kommandon och skript som du kör är slutförda. Status
 
 ## <a name="help"></a>Hjälp
 
-Hjälp för Windows PowerShell ISE finns på webben i TechNet-biblioteket. Du kan öppna hjälpen genom att klicka på **Windows PowerShell ISE hjälp** på **Hjälp** -menyn eller genom att trycka på <kbd>F1</kbd> -tangenten var som helst, förutom när markören är på ett cmdlet-namn i antingen skript fönstret eller konsol fönstret. På **Hjälp** -menyn kan du också köra- `Update-Help` cmdleten och Visa kommando fönstret som hjälper dig att skapa kommandon genom att visa alla parametrar för en cmdlet och göra det möjligt att fylla i parametrarna i ett lättanvänt formulär.
+Hjälp för Windows PowerShell ISE finns på docs.microsoft.com. Du kan öppna hjälpen genom att klicka på **Windows PowerShell ISE hjälp** på **Hjälp** -menyn eller genom att trycka på <kbd>F1</kbd> -tangenten var som helst, förutom när markören är på ett cmdlet-namn i antingen skript fönstret eller konsol fönstret.
+På **Hjälp** -menyn kan du också köra- `Update-Help` cmdleten och Visa kommando fönstret som hjälper dig att skapa kommandon genom att visa alla parametrar för en cmdlet och göra det möjligt att fylla i parametrarna i ett lättanvänt formulär.
 
 ## <a name="see-also"></a>Se även
 

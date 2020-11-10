@@ -3,12 +3,12 @@ ms.date: 09/12/2016
 ms.topic: reference
 title: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 description: Lägga till indatatyper i ett cmdlet-hjälpavsnitt
-ms.openlocfilehash: 1a8f04832ddfdf796596da2367a5c599aa0f245e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f2ad87c54230bcdd7e0ea708e9a1869daef7495f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647745"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391110"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Lägga till indatatyper i ett cmdlet-hjälpavsnitt
 
@@ -45,8 +45,8 @@ Följande XML visar ett exempel på hur du använder `<maml:inputTypes>` noden f
 <command:inputTypes>
   <command:inputType>
     <dev:type>
-      <maml:name> System.DateTime </maml:name>
-      <maml:uri>  https://msdn.microsoft.com/library/system.datetime.aspx </maml:uri>
+      <maml:name>System.DateTime</maml:name>
+      <maml:uri>https://docs.microsoft.com/dotnet/api/system.datetime</maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

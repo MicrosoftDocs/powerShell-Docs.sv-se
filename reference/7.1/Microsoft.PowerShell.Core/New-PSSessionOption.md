@@ -7,12 +7,12 @@ ms.date: 02/07/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
-ms.openlocfilehash: c8d51054b2beb4da0e7d54280d85b9688928147e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 73bc543ff9525a51b1e776ec1c24e9baca4e4f71
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267621"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390719"
 ---
 # New-PSSessionOption
 
@@ -532,7 +532,7 @@ Bestämmer vilken mekanism som används för att matcha värd namnet. De accepta
 
 Standardvärdet är none.
 
-Information om värdena för den här parametern finns i [ProxyAccessType-uppräkning](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Information om värdena för den här parametern finns i [ProxyAccessType-uppräkning](/dotnet/api/system.management.automation.remoting.proxyaccesstype).
 
 ```yaml
 Type: System.Management.Automation.Remoting.ProxyAccessType
@@ -551,7 +551,7 @@ Accept wildcard characters: False
 
 Anger den autentiseringsmetod som används för proxy-matchning. De acceptabla värdena för den här parametern är: **Basic** , **Digest** och **Negotiate**. Standardvärdet är **Negotiate**.
 
-Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -701,4 +701,3 @@ Egenskaperna för ett konfigurations objekt för en session varierar beroende p�
 [Invoke-kommando](Invoke-Command.md)
 
 [New-PSSession](New-PSSession.md)
-

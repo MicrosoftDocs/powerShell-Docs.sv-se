@@ -1,14 +1,14 @@
 ---
-ms.date: 06/12/2017
+ms.date: 11/09/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
-description: Den här artikeln explans hur du konfigurerar en virtuell dator vid första uppstarten med DSC
-ms.openlocfilehash: 9fa8c4a21486aaef87e1c0a3097e5983a378d98d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+description: Den här artikeln förklarar hur du konfigurerar en virtuell dator vid första uppstarten med DSC
+ms.openlocfilehash: 09449053ff085209dec6ccbfa800e5d112d1c769
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656195"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390005"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurera en virtuell dator vid första uppstart med hjälp av DSC
 
@@ -18,11 +18,11 @@ ms.locfileid: "92656195"
 ## <a name="requirements"></a>Krav
 
 > [!NOTE]
-> Register nyckeln **dscautomationhostenabled registernyckel** som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4,0. Information om hur du konfigurerar nya virtuella datorer vid första uppstart i PowerShell 4,0 finns i [vill konfigurera dina datorer automatiskt med DSC vid första uppstarten?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Register nyckeln **dscautomationhostenabled registernyckel** som beskrivs i det här avsnittet är inte tillgänglig i PowerShell 4,0. Information om hur du konfigurerar nya virtuella datorer vid första uppstart i PowerShell 4,0 finns i [vill konfigurera dina datorer automatiskt med DSC vid första uppstarten?](https://devblogs.microsoft.com/powershell/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Om du vill köra de här exemplen behöver du:
 
-- En startbar virtuell hård disk att arbeta med. Du kan ladda ned en ISO-fil med en utvärderings version av Windows Server 2016 på [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
+- En startbar virtuell hård disk att arbeta med. Du kan ladda ned en ISO-fil med en utvärderings version av Windows Server 2016 i [Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
   Du hittar instruktioner om hur du skapar en virtuell hård disk från en ISO-avbildning vid [skapande av startbara virtuella hård diskar](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - En värddator som har Hyper-V aktiverat. Mer information finns i [Översikt över Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
@@ -63,7 +63,7 @@ Configuration SampleIISInstall
 
 ### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>Så här infogar du MOF-dokumentet för konfiguration på den virtuella hård disken
 
-1. Montera den virtuella hård disken som du vill använda för att mata in konfigurationen genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Exempel:
+1. Montera den virtuella hård disken som du vill använda för att mata in konfigurationen genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Till exempel:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -80,14 +80,14 @@ Configuration SampleIISInstall
    SampleIISInstall
    ```
 
-1. Då skapas en `localhost.mof` fil i en ny mapp med namnet `SampleIISInstall` . Byt namn på och flytta filen till rätt plats på den virtuella hård disken med `Pending.mof` hjälp av cmdleten [Move-item](/powershell/module/microsoft.powershell.management/move-item) . Exempel:
+1. Då skapas en `localhost.mof` fil i en ny mapp med namnet `SampleIISInstall` . Byt namn på och flytta filen till rätt plats på den virtuella hård disken med `Pending.mof` hjälp av cmdleten [Move-item](/powershell/module/microsoft.powershell.management/move-item) . Till exempel:
 
    ```powershell
    Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
    ```
 
 1. Demontera den virtuella hård disken genom att anropa cmdleten [demontera-VHD](/powershell/module/hyper-v/dismount-vhd) .
-   Exempel:
+   Till exempel:
 
    ```powershell
    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -127,7 +127,7 @@ configuration PullClientBootstrap
 
 ### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>För att mata in MOF-dokumentet metaconfiguration på den virtuella hård disken
 
-1. Montera den virtuella hård disken där du vill mata in metaconfiguration genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Exempel:
+1. Montera den virtuella hård disken där du vill mata in metaconfiguration genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Till exempel:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -153,7 +153,7 @@ configuration PullClientBootstrap
    ```
 
 1. Demontera den virtuella hård disken genom att anropa cmdleten [demontera-VHD](/powershell/module/hyper-v/dismount-vhd) .
-   Exempel:
+   Till exempel:
 
    ```powershell
    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -168,7 +168,7 @@ Efter den första starten och operativ system installationen kommer DSC att häm
 Som standard är värdet för `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled`
 nyckeln har angetts till 2, vilket gör att en DSC-konfiguration kan köras om datorn är i vänte läge eller nuvarande tillstånd. Om du inte vill att en konfiguration ska köras vid första uppstarten måste du ange värdet för den här nyckeln till 0:
 
-1. Montera den virtuella hård disken genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Exempel:
+1. Montera den virtuella hård disken genom att anropa cmdleten [Mount-VHD](/powershell/module/hyper-v/mount-vhd) . Till exempel:
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -177,25 +177,18 @@ nyckeln har angetts till 2, vilket gör att en DSC-konfiguration kan köras om d
 1. Läs in register `HKLM\Software` under nyckeln från den virtuella hård disken genom att anropa `reg load` .
 
    ```powershell
-   reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+   reg load HKLM\Vhd E:\Windows\System32\Config\Software
    ```
 
-1. Navigera till `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` med hjälp av PowerShell-huvudprovidern.
+1. Ändra värdet för `DSCAutomationHostEnabled` till 0 i den inlästa Hive.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
+   reg add "HKLM\Vhd\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DSCAutomationHostEnabled /t REG_DWORD /d 0 /f
    ```
 
-1. Ändra värdet `DSCAutomationHostEnabled` till 0.
+1. Ta bort registret genom att köra följande kommandon:
 
    ```powershell
-   Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
-   ```
-
-5. Ta bort registret genom att köra följande kommandon:
-
-   ```powershell
-   [gc]::Collect()
    reg unload HKLM\Vhd
    ```
 

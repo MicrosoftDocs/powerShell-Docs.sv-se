@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Skapa en Windows PowerShell-egenskapsprovider
 description: Skapa en Windows PowerShell-egenskapsprovider
-ms.openlocfilehash: ec9c707f094366c14498613f363b7de1cdbfe5ab
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 5370624afa784598ca784b201f7e7345eb958ff9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92654589"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390923"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Skapa en Windows PowerShell-egenskapsprovider
 
@@ -120,7 +120,7 @@ Här är standard implementeringen av [system. Management. Automation. Provider.
 
 ## <a name="building-the-windows-powershell-provider"></a>Skapa Windows PowerShell-providern
 
-Se [hur du registrerar cmdlets, providers och värd program](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Se [hur du registrerar cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="see-also"></a>Se även
 
@@ -128,6 +128,6 @@ Se [hur du registrerar cmdlets, providers och värd program](https://msdn.micros
 
 [Utforma din Windows PowerShell-Provider](./designing-your-windows-powershell-provider.md)
 
-[Utöka objekt typer och formatering](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Utöka objekt typer och formatering](/previous-versions//ms714665(v=vs.85))
 
-[Registrera cmdlets, providers och värd program](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrera cmdlets, providers och värd program](/previous-versions//ms714644(v=vs.85))

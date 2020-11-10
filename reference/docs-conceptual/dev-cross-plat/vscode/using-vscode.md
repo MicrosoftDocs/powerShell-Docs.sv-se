@@ -2,12 +2,12 @@
 title: Använda Visual Studio Code för PowerShell-utveckling
 description: Använda Visual Studio Code för PowerShell-utveckling
 ms.date: 11/07/2019
-ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 8a4ceb3da669716915449af2d211aaf2ae61bb4f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782539"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390312"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Använda Visual Studio Code för PowerShell-utveckling
 
@@ -42,9 +42,9 @@ För traditionella Windows PowerShell-arbetsbelastningar, se [Installera Windows
 
    Det finns installations anvisningar för varje plattform:
 
-   - **Windows**: följ installations anvisningarna på sidan som [körs i Visual Studio Code på Windows][vsc-setup-win] .
-   - **MacOS**: följ installationsinstruktionerna på sidan [med Visual Studio Code på MacOS][vsc-setup-macOS] .
-   - **Linux**: följ installations anvisningarna på sidan som [Kör Visual Studio Code på Linux][vsc-setup-linux] .
+   - **Windows** : följ installations anvisningarna på sidan som [körs i Visual Studio Code på Windows][vsc-setup-win] .
+   - **MacOS** : följ installationsinstruktionerna på sidan [med Visual Studio Code på MacOS][vsc-setup-macOS] .
+   - **Linux** : följ installations anvisningarna på sidan som [Kör Visual Studio Code på Linux][vsc-setup-linux] .
 
 1. Installera PowerShell-tillägget.
 
@@ -57,7 +57,7 @@ För traditionella Windows PowerShell-arbetsbelastningar, se [Installera Windows
       ![Visual Studio Code – vy över PowerShell-tillägget](media/using-vscode/vscode.png)
 
    1. Klicka på knappen **Installera** i PowerShell-tillägget från Microsoft.
-   1. När du har installerat klickar du på **Läs in**igen om du ser knappen **Installera** **igen.**
+   1. När du har installerat klickar du på **Läs in** igen om du ser knappen **Installera** **igen.**
    1. När Visual Studio Code har lästs in på nytt är du redo för redigering.
 
 Om du till exempel vill skapa en ny fil klickar du på **fil > ny**. Spara genom att klicka på **arkiv > Spara** och ange ett fil namn, till exempel `HelloWorld.ps1` . Stäng filen genom att klicka på `X` bredvid fil namnet. Avsluta Visual Studio Code genom att stänga av **filen >**.
@@ -113,7 +113,7 @@ När du har läst dokumentationen kan du lägga till konfigurations inställning
 }
 ```
 
-Om du inte vill att de här inställningarna ska påverka alla filtyper kan du också använda Visual Studio Code för konfigurationer på olika språk. Skapa en språkspecifik inställning genom att placera inställningarna i ett `[<language-name>]` fält. Exempel:
+Om du inte vill att de här inställningarna ska påverka alla filtyper kan du också använda Visual Studio Code för konfigurationer på olika språk. Skapa en språkspecifik inställning genom att placera inställningarna i ett `[<language-name>]` fält. Till exempel:
 
 ```json
 {
@@ -225,7 +225,7 @@ Följ de här stegen för att skapa en fel söknings konfigurations fil:
 
 1. Öppna vyn **fel sökning** på Windows eller Linux genom att trycka på <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>. I MacOS trycker du på <kbd>cmd</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.
 1. Klicka på länken **skapa en launch.jspå fil** .
-1. Välj **PowerShell**i dialog rutan **Välj miljö** .
+1. Välj **PowerShell** i dialog rutan **Välj miljö** .
 1. Välj den typ av fel sökning du vill använda:
 
    - **Starta aktuell fil** – starta och Felsök filen i det för tillfället aktiva redigerings fönstret
@@ -317,7 +317,7 @@ Om du är intresse rad av att bidra är pull-begäranden mycket tacksam. Följ t
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [GitHub-problem]:          https://github.com/PowerShell/vscode-powershell/issues

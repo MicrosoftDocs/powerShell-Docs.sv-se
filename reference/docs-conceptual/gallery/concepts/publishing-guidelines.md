@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 description: I den här artikeln beskrivs rekommenderade steg för att se till att paketen som publiceras till PowerShell-galleriet är mycket antagna och ger användarna ett högt värde.
 title: PowerShell-galleriet publicerings rikt linjer och metod tips
-ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 97af3761fad1efb849b7197761a3855c9f1b05a4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656148"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391178"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publicerings rikt linjer och metod tips
 
@@ -50,7 +50,7 @@ Granska resultaten och se till att:
 - Alla fel korrigeras eller åtgärdas i dokumentationen.
 - Alla varningar granskas och åtgärdas där det är tillämpligt.
 
-Användare som laddar ned paket från PowerShell-galleriet är starkt uppmanade att köra **PSScriptAnalyzer** och utvärdera alla fel och varningar. Användare kan förmodligen kontakta paket ägare om de ser att det finns ett fel rapporterat av **PSScriptAnalyzer** . Om det finns en övertygande anledning för ditt paket att behålla kod som flaggats som ett fel, lägger du till den informationen i dokumentationen för att undvika att behöva besvara samma fråga flera gånger.
+Användare som laddar ned paket från PowerShell-galleriet är starkt uppmanade att köra **PSScriptAnalyzer** och utvärdera alla fel och varningar. Användare kan förmodligen kontakta paket ägare om de ser att det finns ett fel rapporterat av **PSScriptAnalyzer**. Om det finns en övertygande anledning för ditt paket att behålla kod som flaggats som ett fel, lägger du till den informationen i dokumentationen för att undvika att behöva besvara samma fråga flera gånger.
 
 ## <a name="include-documentation-and-examples"></a>Ta med dokumentation och exempel
 
@@ -139,7 +139,7 @@ Målen för test täckningen anropas i dokumentationen för [resurs modulen med 
 
 ## <a name="include-andor-link-to-license-terms"></a>Inkludera och/eller länka till licens villkoren
 
-Alla paket som har publicerats till PowerShell-galleriet måste ange licens villkoren eller vara kopplade till den licens som ingår i [användnings villkoren](https://www.powershellgallery.com/policies/Terms) . **Exhibit A** Den bästa metoden för att ange en annan licens är att tillhandahålla en länk till licensen med hjälp av **LicenseURI** i **PSData** . Mer information finns i avsnittet om [paket manifest-och Galleri gränssnitt](package-manifest-affecting-ui.md).
+Alla paket som har publicerats till PowerShell-galleriet måste ange licens villkoren eller vara kopplade till den licens som ingår i [användnings villkoren](https://www.powershellgallery.com/policies/Terms) . **Exhibit A** Den bästa metoden för att ange en annan licens är att tillhandahålla en länk till licensen med hjälp av **LicenseURI** i **PSData**. Mer information finns i avsnittet om [paket manifest-och Galleri gränssnitt](package-manifest-affecting-ui.md).
 
 ```powershell
 PrivateData = @{
@@ -188,9 +188,9 @@ PowerShell skapades innan SemVer publicerades, vilket ger stöd för de flesta m
 PowerShell-galleriet är inte avsedd att vara ett mål för att testa publicerings processen. Det bästa sättet att testa processen från slut punkt till slut punkt för att publicera till PowerShell-galleriet är att konfigurera och använda din egen lokala lagrings plats. Detta kan göras på några sätt, t. ex.:
 
 - Konfigurera en lokal PowerShell-galleriet instans med hjälp av [projektet PS, privat Galleri](https://github.com/PowerShell/PSPrivateGallery) i GitHub. I det här för hands versionen av projektet får du hjälp att skapa en instans av PowerShell-galleriet som du kan styra och använda för dina tester.
-- Konfigurera en [intern NuGet-lagringsplats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/).
+- Konfigurera en [intern NuGet-lagringsplats](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/).
   Detta kräver mer arbete för att konfigureras, men har fördelen att du verifierar några av kraven, särskilt att validera användningen av en API-nyckel och om beroenden finns i målet när du publicerar.
-- Konfigurera en fil resurs som test **lagrings plats** . Detta är enkelt att konfigurera, men eftersom det är en fil resurs kommer de verifieringar som anges ovan inte att äga rum. En möjlig fördel i detta fall är att fil resursen inte kontrollerar den nödvändiga API-nyckeln, så du kan använda samma nyckel som du skulle använda för att publicera till PowerShell-galleriet.
+- Konfigurera en fil resurs som test **lagrings plats**. Detta är enkelt att konfigurera, men eftersom det är en fil resurs kommer de verifieringar som anges ovan inte att äga rum. En möjlig fördel i detta fall är att fil resursen inte kontrollerar den nödvändiga API-nyckeln, så du kan använda samma nyckel som du skulle använda för att publicera till PowerShell-galleriet.
 
 Med någon av dessa lösningar använder `Register-PSRepository` du för att definiera en ny **lagrings plats** som du använder i- `-Repository` parametern för `Publish-Module` .
 
@@ -201,7 +201,7 @@ En ytterligare punkt om test publicering: alla paket som du publicerar till Powe
 Vi rekommenderar starkt att utgivare använder `Publish-Module` `Publish-Script` cmdletarna och när de arbetar med PowerShell-galleriet. **PowerShellGet** har skapats för att hjälpa dig att undvika att komma ihåg viktig information om hur du installerar från och publicerar till PowerShell-galleriet. Ibland har utgivare valt att hoppa över **PowerShellGet** och använda **NuGet** -klienten, eller **PackageManagement** -cmdlets i stället för `Publish-Module` . Det finns ett antal information som är lätt att missa, vilket resulterar i en rad olika support förfrågningar.
 
 Om det är en anledning att du inte kan använda `Publish-Module` eller, kan du `Publish-Script` berätta för oss.
-Skriv ett problem i **PowerShellGet** GitHub-lagrings platsen och ange information som gör det möjligt att välja **NuGet** eller **PackageManagement** .
+Skriv ett problem i **PowerShellGet** GitHub-lagrings platsen och ange information som gör det möjligt att välja **NuGet** eller **PackageManagement**.
 
 ## <a name="recommended-workflow"></a>Rekommenderat arbets flöde
 

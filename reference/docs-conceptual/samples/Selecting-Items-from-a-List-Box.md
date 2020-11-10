@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Välj objekt från en listruta
 description: Den här artikeln visar hur du skapar en List Rute kontroll med hjälp av .NET Framework Forms Building-funktioner i Windows PowerShell.
-ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: d6f881f0b92f294da105ae7df5e25e8c20ce5094
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501056"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391246"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Välj objekt från en listruta
 
@@ -75,7 +75,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**. Sedan startar du en ny instans av klassen .NET Framework klass **system. Windows. Forms. form**; Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
+Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**. Sedan startar du en ny instans av klassen .NET Framework klass **system. Windows. Forms. form** ; Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -89,7 +89,7 @@ När du har skapat en instans av formulär klassen tilldelar du värden till tre
 - **Ändra.** Detta är storleken på formuläret, i bild punkter. Föregående skript skapar ett formulär som är 300 bild punkter brett med 200 pixlar högt.
 
 - **Star ting position.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript.
-  Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
+  Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen** visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -131,7 +131,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom List rutor. Mer kontroller finns i [namn området system. Windows. Forms](/dotnet/api/system.windows.forms) på MSDN.
+Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom List rutor. Mer kontroller finns i [namn området system. Windows. Forms](/dotnet/api/system.windows.forms).
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox

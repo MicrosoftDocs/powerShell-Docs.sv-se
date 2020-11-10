@@ -7,12 +7,12 @@ ms.date: 4/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
-ms.openlocfilehash: 29a39e88d6d39659df1dd9d2e05318351dc47f3a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 8c27ebe1c5f1a0c53f5012f1faa17a9fdb1cdcff
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262389"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391042"
 ---
 # Add-Member
 
@@ -244,7 +244,7 @@ De acceptabla värdena för den här parametern är:
 - ScriptMethod
 - CodeMethod
 
-Information om dessa värden finns i [PSMemberTypes-uppräkning](/dotnet/api/system.management.automation.psmembertypes) i MSDN-biblioteket.
+Information om dessa värden finns i [PSMemberTypes-uppräkning](/dotnet/api/system.management.automation.psmembertypes) i PowerShell SDK.
 
 Alla objekt har inte alla typer av medlemmar.
 Om du anger en medlems typ som objektet inte har, returnerar PowerShell ett fel.

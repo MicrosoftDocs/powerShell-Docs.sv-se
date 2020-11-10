@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: Filtrera Sök Resultat
 description: I den här artikeln beskrivs användar gränssnittet som används för att filtrera innehåll i PowerShell-galleriet.
-ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a769daae903e614b96be1056e3ff14eca41970bd
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661404"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389835"
 ---
 # <a name="filtering-search-results"></a>Filtrera Sök Resultat
 
@@ -22,7 +22,7 @@ Med list rutan filtrera efter kan användare filtrera resultaten genom att:
 - Inkludera för hands version
 - Endast stabilt
 
-Information om "för hands version" och "stabil" finns i [för hands versions tillägg som läggs till i PowerShellGet och PowerShell-galleriet](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) i PowerShell-teamets blogg.
+Information om "för hands version" och "stabil" finns i [för hands versions tillägg som läggs till i PowerShellGet och PowerShell-galleriet](https://devblogs.microsoft.com/powershell/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) i PowerShell-teamets blogg.
 
 Med kryss rutorna under List rutan kan användarna filtrera resultaten genom att:
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: PowerShell-galleriet
 description: PowerShell-galleriet är den centrala lagrings platsen för PowerShell-moduler, skript och DSC-resurser.
-ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 4fff1f9476c919e95c25ae7729aaa7573be53f07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662112"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390821"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 
@@ -26,9 +26,9 @@ Se [Komma igång](getting-started.md) för mer information om hur du använder P
 
 ## <a name="supported-operating-systems"></a>Operativsystem som stöds
 
-För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare** .
+För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare**.
 
-**PowerShellGet** kräver .NET Framework 4,5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** kräver .NET Framework 4,5 eller senare. Mer information finns i [installera .NET Framework för utvecklare](/dotnet/framework/install/guide-for-developers).
 
 Eftersom **PowerShell Core** är plattforms oberoende och innebär det att den fungerar på Windows, Linux och MacOS, vilket även gör **PowerShellGet** tillgängliga på dessa system. En fullständig lista över system som stöds av **PowerShell Core** finns i [Installera PowerShell](/powershell/scripting/install/installing-powershell).
 

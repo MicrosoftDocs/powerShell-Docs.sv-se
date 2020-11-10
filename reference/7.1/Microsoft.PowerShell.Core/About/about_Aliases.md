@@ -6,12 +6,12 @@ ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Aliases
-ms.openlocfilehash: e0a1fa357e591dd17986a8dd685a1818751ab355
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 9213bd41af6d5383c7e67d33b8909736a6e380bb
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272588"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391297"
 ---
 # <a name="about-aliases"></a>Om alias
 
@@ -171,10 +171,10 @@ Get-Help about_Functions
 
 ## <a name="alias-objects"></a>ALIAS-OBJEKT
 
-PowerShell-alias representeras av objekt som är instanser av klassen system. Management. Automation. AliasInfo. Mer information om den här typen av objekt finns i [AliasInfo-klassen][aliasinfo] i MSDN-biblioteket (Microsoft Developer Network).
+PowerShell-alias representeras av objekt som är instanser av klassen system. Management. Automation. AliasInfo. Mer information om den här typen av objekt finns i [AliasInfo-klassen][aliasinfo] i PowerShell SDK.
 
 Hämta aliasen om du vill visa egenskaper och metoder för alias-objekten.
-Sedan kan du skicka vidare till Get-Member-cmdlet: en. Ett exempel:
+Sedan kan du skicka vidare till Get-Member-cmdlet: en. Till exempel:
 
 ```powershell
 Get-Alias | Get-Member
@@ -202,7 +202,7 @@ Om du vill visa innehållet i enheten skriver du:
 Get-ChildItem
 ```
 
-Om du vill visa innehållet i enheten från en annan PowerShell-enhet börjar du med sökvägen med enhets namnet. Inkludera kolon (:). Ett exempel:
+Om du vill visa innehållet i enheten från en annan PowerShell-enhet börjar du med sökvägen med enhets namnet. Inkludera kolon (:). Till exempel:
 
 ```powershell
 Get-ChildItem -Path Alias:
@@ -235,4 +235,3 @@ Get-Help Alias
 
 <!-- External links -->
 [aliasinfo]: /dotnet/api/system.management.automation.aliasinfo
-

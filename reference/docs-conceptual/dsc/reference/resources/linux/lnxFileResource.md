@@ -3,12 +3,12 @@ ms.date: 07/17/2020
 ms.topic: reference
 title: DSC för Linux nxFile-resurs
 description: DSC för Linux nxFile-resurs
-ms.openlocfilehash: 6ec2d8201f3594879b781fe04e32a28cc87ba934
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 14a8174a92f1bbde9b1f16cf814ef7c83309c737
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92644740"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389036"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC för Linux nxFile-resurs
 
@@ -40,15 +40,15 @@ nxFile <string> #ResourceName
 |Egenskap |Beskrivning |
 |---|---|
 |DestinationPath |Anger den plats där du vill kontrol lera statusen för en fil eller katalog. |
-|Sök |Anger sökvägen från vilken du vill kopiera filen eller mappens resurs. Sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL. Fjärranslutna `http/https/ftp` URL: er stöds bara när värdet för **Type** -egenskapen är **File** . |
-|Typ |Anger om den resurs som konfigureras är en katalog eller en fil. Ange den här egenskapen som **katalog** för att ange att resursen är en katalog. Ange den som **fil** för att ange att resursen är en fil. Standardvärdet är **File** . |
+|Sök |Anger sökvägen från vilken du vill kopiera filen eller mappens resurs. Sökvägen kan vara en lokal sökväg eller en `http/https/ftp` URL. Fjärranslutna `http/https/ftp` URL: er stöds bara när värdet för **Type** -egenskapen är **File**. |
+|Typ |Anger om den resurs som konfigureras är en katalog eller en fil. Ange den här egenskapen som **katalog** för att ange att resursen är en katalog. Ange den som **fil** för att ange att resursen är en fil. Standardvärdet är **File**. |
 |Innehåll |Anger innehållet i en fil, till exempel en viss sträng. |
-|Kontrollsumma |Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Värdena är: **ctime** , **mtime** eller **MD5** . |
-|Rekursivt |Anger om under kataloger ingår. Ange den här egenskapen som `$true` anger att du vill att under kataloger ska tas med. Standardvärdet är `$false`. Den här egenskapen är endast giltig när egenskapen **Type** har angetts till **Directory** . |
+|Kontrollsumma |Definierar den typ som ska användas för att avgöra om två filer är identiska. Om ingen **kontroll Summa** anges används bara fil-eller katalog namnet för jämförelse. Värdena är: **ctime** , **mtime** eller **MD5**. |
+|Rekursivt |Anger om under kataloger ingår. Ange den här egenskapen som `$true` anger att du vill att under kataloger ska tas med. Standardvärdet är `$false`. Den här egenskapen är endast giltig när egenskapen **Type** har angetts till **Directory**. |
 |Force |Vissa fil åtgärder (till exempel att skriva över en fil eller ta bort en katalog som inte är tom) resulterar i ett fel. Om du använder **Force** -egenskapen åsidosätts sådana fel. Standardvärdet är `$false`. |
 |Länkar |Anger det önskade beteendet för symboliska länkar. Ange den här egenskapen som **ska följas för att följa** symboliska länkar och agera på länk målet. Kopiera till exempel filen i stället för länken. Ange den här egenskapen som ska **hanteras** för att agera på länken. Kopiera till exempel själva länken. Ange den här egenskapen som **Ignorera** om du vill ignorera symboliska länkar. |
 |Group |Namnet på **gruppen** som har behörighet till filen eller katalogen. |
-|Läge |Anger önskade behörigheter för resursen, i oktalt eller symbolisk notation. Till exempel **777** eller **rwxrwxrwx** . Om du använder symbolisk notation ska du inte ange det första tecknen som anger katalog eller fil. |
+|Läge |Anger önskade behörigheter för resursen, i oktalt eller symbolisk notation. Till exempel **777** eller **rwxrwxrwx**. Om du använder symbolisk notation ska du inte ange det första tecknen som anger katalog eller fil. |
 |Ägare |Namnet på gruppen som ska äga filen eller katalogen. |
 
 ## <a name="common-properties"></a>Gemensamma egenskaper
@@ -60,7 +60,7 @@ nxFile <string> #ResourceName
 
 ## <a name="additional-information"></a>Ytterligare information
 
-Linux och Windows använder olika rad brytnings tecken i textfiler som standard och detta kan orsaka oväntade resultat när du konfigurerar vissa filer på en Linux-dator med **nxFile** . Det finns flera sätt att hantera innehållet i en Linux-fil samtidigt som du undviker problem som orsakas av oväntade rad brytnings tecken:
+Linux och Windows använder olika rad brytnings tecken i textfiler som standard och detta kan orsaka oväntade resultat när du konfigurerar vissa filer på en Linux-dator med **nxFile**. Det finns flera sätt att hantera innehållet i en Linux-fil samtidigt som du undviker problem som orsakas av oväntade rad brytnings tecken:
 
 1. Kopiera filen från en fjärran sluten källa (http, https eller FTP)
 
@@ -81,7 +81,7 @@ Linux och Windows använder olika rad brytnings tecken i textfiler som standard 
    }
    ```
 
-1. Läs filens innehåll i PowerShell-skriptet med [Get-Content](https://technet.microsoft.com/library/hh849787.aspx) när du har angett att **$OFS** -egenskapen ska använda det rad brytnings tecken som används i Linux.
+1. Läs filens innehåll i PowerShell-skriptet med [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) när du har angett att **$OFS** -egenskapen ska använda det rad brytnings tecken som används i Linux.
 
    ```powershell
    Import-DSCResource -Module nx

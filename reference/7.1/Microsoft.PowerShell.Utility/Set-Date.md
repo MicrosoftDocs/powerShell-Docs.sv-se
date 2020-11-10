@@ -7,12 +7,12 @@ ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
-ms.openlocfilehash: 1c2a029a20b80826f74662a2b68d4a5f32276b00
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 196ed2830534d6f53491ae73d31291ded1aa2249
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263462"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389869"
 ---
 # Set-Date
 
@@ -131,12 +131,9 @@ Accept wildcard characters: False
 
 Anger vilka element i datum och tid som visas. De acceptabla värdena för den här parametern är:
 
-- Ikraftträdande.
-  visar endast datumet.
-- Tid.
-  visar endast tiden.
-- DateTime.
-  visar datum och tid.
+- **Datum** – visar endast datumet.
+- **Time** – visar endast tiden.
+- **Datetime** – visar datum och tid.
 
 Den här parametern påverkar endast visningen.
 Det påverkar inte det **datetime** -objekt som `Get-Date` hämtas.
@@ -208,11 +205,10 @@ Du kan skicka vidare ett datum till `Set-Date` .
 - Använd denna cmdlet försiktigt när du ändrar datum och tid på datorn. Ändringen kan förhindra att datorn tar emot systemomfattande händelser och uppdateringar som utlöses av ett datum eller en tid. Använd parametrarna **whatIf** och **Confirm** för att undvika fel.
 - Du kan använda standard-.NET-metoder med **datetime** -och **TimeSpan** -objekten som används med `Set-Date` , till exempel **AddDays** , **AddMonths** och **FromFileTime**. Mer information finns i [datetime-metoder](/dotnet/api/system.datetime) och
 
-  [TimeSpan-metoder](/dotnet/api/system.timespan) i MSDN-biblioteket.
+  [TimeSpan-metoder](/dotnet/api/system.timespan) i .NET SDK.
 
 ## RELATERADE LÄNKAR
 
 [Hämta datum](Get-Date.md)
 
 [New-TimeSpan](New-TimeSpan.md)
-

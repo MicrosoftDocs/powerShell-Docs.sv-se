@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
-ms.openlocfilehash: 543c2b683ca3631e2e05f57d9c70ff4455071e4b
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1d4881638b616d93414851b98b0a75fca72169ff
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267686"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389801"
 ---
 # Get-Process
 
@@ -59,13 +59,11 @@ Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 
 ## BESKRIVNING
 
-`Get-Process`Cmdleten hämtar processerna på en lokal dator.
+`Get-Process`Cmdleten hämtar processerna på en lokal dator eller fjärrdator.
 
-Utan parametrar hämtar denna cmdlet alla processer på den lokala datorn.
-Du kan också ange en viss process efter process namn eller process-ID (PID) eller skicka ett process objekt via pipelinen till denna cmdlet.
+Utan parametrar hämtar denna cmdlet alla processer på den lokala datorn. Du kan också ange en viss process efter process namn eller process-ID (PID) eller skicka ett process objekt via pipelinen till denna cmdlet.
 
-Som standard returnerar denna cmdlet ett process objekt med detaljerad information om processen och stöder metoder som gör att du kan starta och stoppa processen.
-Du kan också använda parametrarna för `Get-Process` cmdleten för att hämta fil versions information för programmet som körs i processen och för att hämta de moduler som processen läste in.
+Som standard returnerar denna cmdlet ett process objekt med detaljerad information om processen och stöder metoder som gör att du kan starta och stoppa processen. Du kan också använda parametrarna för `Get-Process` cmdleten för att hämta fil versions information för programmet som körs i processen och för att hämta de moduler som processen läste in.
 
 ## EXEMPEL
 
@@ -75,8 +73,7 @@ Du kan också använda parametrarna för `Get-Process` cmdleten för att hämta 
 Get-Process
 ```
 
-Det här kommandot hämtar en lista över alla aktiva processer som körs på den lokala datorn.
-En definition av varje kolumn finns i avsnittet om [anteckningar](#notes) .
+Det här kommandot hämtar en lista över alla aktiva processer som körs på den lokala datorn. En definition av varje kolumn finns i avsnittet om [anteckningar](#notes) .
 
 ### Exempel 2: Hämta alla tillgängliga data om en eller flera processer
 
@@ -84,12 +81,9 @@ En definition av varje kolumn finns i avsnittet om [anteckningar](#notes) .
 Get-Process winword, explorer | Format-List *
 ```
 
-Det här kommandot hämtar alla tillgängliga data om Winword-och Utforskaren-processer på datorn.
-Den använder **Name** -parametern för att ange processerna, men utelämnar det valfria parameter namnet.
-Pipeline-operatorn `|` skickar data till `Format-List` cmdleten, som visar alla tillgängliga egenskaper `*` för process objekt i Winword och Utforskaren.
+Det här kommandot hämtar alla tillgängliga data om Winword-och Utforskaren-processer på datorn. Den använder **Name** -parametern för att ange processerna, men utelämnar det valfria parameter namnet. Pipeline-operatorn `|` skickar data till `Format-List` cmdleten, som visar alla tillgängliga egenskaper `*` för process objekt i Winword och Utforskaren.
 
-Du kan också identifiera processerna efter process-ID.
-Till exempel `Get-Process -Id 664, 2060` .
+Du kan också identifiera processerna efter process-ID. Till exempel `Get-Process -Id 664, 2060` .
 
 ### Exempel 3: Hämta alla processer med en arbets mängd som är större än en angiven storlek
 
@@ -97,13 +91,9 @@ Till exempel `Get-Process -Id 664, 2060` .
 Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
 ```
 
-Det här kommandot hämtar alla processer som har en arbets mängd som är större än 20 MB.
-Den använder `Get-Process`  cmdleten för att hämta alla processer som körs.
-Pipeline-operatorn `|` överför process objekt till `Where-Object` cmdleten, som endast väljer objektet med ett värde som är större än 20 000 000 byte för den **aktiva** egenskapen.
+Det här kommandot hämtar alla processer som har en arbets mängd som är större än 20 MB. Den använder `Get-Process` cmdleten för att hämta alla processer som körs. Pipeline-operatorn `|` överför process objekt till `Where-Object` cmdleten, som endast väljer objektet med ett värde som är större än 20 000 000 byte för den **aktiva** egenskapen.
 
-Den **aktiva** processen är en av många egenskaper för process objekt.
-Om du vill se alla egenskaper skriver du `Get-Process | Get-Member` .
-Som standard är värdena för alla mängd egenskaper i byte, även om standard visningen visar dem i kilobyte och megabyte.
+Den **aktiva** processen är en av många egenskaper för process objekt. Om du vill se alla egenskaper skriver du `Get-Process | Get-Member` . Som standard är värdena för alla mängd egenskaper i byte, även om standard visningen visar dem i kilobyte och megabyte.
 
 ### Exempel 4: Visa en lista över processer på datorn i grupper baserat på prioritet
 
@@ -112,8 +102,7 @@ $A = Get-Process
 $A | Get-Process | Format-Table -View priority
 ```
 
-De här kommandona visar processerna på datorn i grupper baserat på deras prioritets klass.
-Det första kommandot hämtar alla processer på datorn och lagrar dem sedan i `$A` variabeln.
+De här kommandona visar processerna på datorn i grupper baserat på deras prioritets klass. Det första kommandot hämtar alla processer på datorn och lagrar dem sedan i `$A` variabeln.
 
 Det andra kommandot rör objektet **process** som lagras i `$A` variabeln till `Get-Process` cmdleten, sedan till `Format-Table` cmdleten, som formaterar processerna med hjälp av vyn **prioritet** .
 
@@ -139,7 +128,7 @@ NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
     27 54572 54520   576 5.52   4428 .           pwsh
 ```
 
-Det här exemplet innehåller ett `Format-Table` kommando som lägger till egenskapen **MachineName** i `Get-Process` standardutdata-visningen.
+I det här exemplet hämtas processer från den lokala datorn och en fjärrdator (S1). De hämtade processerna är skickas till `Format-Table` kommandot som lägger till egenskapen **MachineName** i `Get-Process` standardutdata-visningen.
 
 ### Exempel 6: Hämta versions information för en process
 
@@ -207,8 +196,7 @@ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
     83    96.21      77.53       4.39    1192  10 pwsh
 ```
 
-De här kommandona visar hur du använder den `$PID` automatiska variabeln för att identifiera den process som är värd för den aktuella PowerShell-sessionen.
-Du kan använda den här metoden för att skilja värd processen från andra PowerShell-processer som du kanske vill stoppa eller stänga.
+De här kommandona visar hur du använder den `$PID` automatiska variabeln för att identifiera den process som är värd för den aktuella PowerShell-sessionen. Du kan använda den här metoden för att skilja värd processen från andra PowerShell-processer som du kanske vill stoppa eller stänga.
 
 Det första kommandot hämtar alla PowerShell-processer i den aktuella sessionen.
 
@@ -222,8 +210,7 @@ Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWin
 
 Det här kommandot hämtar alla processer som har en huvud fönster rubrik och visar dem i en tabell med process-ID och process namnet.
 
-Egenskapen **mainWindowTitle** är bara en av många användbara egenskaper för det **process** objekt som `Get-Process` returnerar.
-Om du vill visa alla egenskaper, rör du resultatet av ett `Get-Process` kommando till `Get-Member` cmdleten `Get-Process | Get-Member` .
+Egenskapen **mainWindowTitle** är bara en av många användbara egenskaper för det **process** objekt som `Get-Process` returnerar. Om du vill visa alla egenskaper, rör du resultatet av ett `Get-Process` kommando till `Get-Member` cmdleten `Get-Process | Get-Member` .
 
 ## PARAMETRAR
 
@@ -235,9 +222,7 @@ I Windows Vista och senare versioner av Windows måste du öppna PowerShell med 
 
 Använd cmdleten för att hämta fil versions information för en process på en fjärrdator `Invoke-Command` .
 
-Att använda den här parametern motsvarar att hämta egenskapen **MainModule. FileVersionInfo** för varje process objekt.
-När du använder den här parametern `Get-Process` returnerar en **FileVersionInfo** Object **system. Diagnostics. FileVersionInfo** , inte ett process objekt.
-Därför kan du inte skicka kommandots utdata till en cmdlet som förväntar sig ett process objekt, till exempel `Stop-Process` .
+Att använda den här parametern motsvarar att hämta egenskapen **MainModule. FileVersionInfo** för varje process objekt. När du använder den här parametern `Get-Process` returnerar en **FileVersionInfo** Object **system. Diagnostics. FileVersionInfo** , inte ett process objekt. Därför kan du inte skicka kommandots utdata till en cmdlet som förväntar sig ett process objekt, till exempel `Stop-Process` .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -253,9 +238,7 @@ Accept wildcard characters: False
 
 ### -ID
 
-Anger en eller flera processer efter process-ID (PID).
-Använd kommatecken för att avgränsa ID: n för att ange flera ID: n.
-Om du vill hitta ett process-ID skriver du `Get-Process` .
+Anger en eller flera processer efter process-ID (PID). Använd kommatecken för att avgränsa ID: n för att ange flera ID: n. Om du vill hitta ett process-ID skriver du `Get-Process` .
 
 ```yaml
 Type: System.Int32[]
@@ -287,8 +270,7 @@ Accept wildcard characters: False
 
 ### – InputObject
 
-Anger ett eller flera process objekt.
-Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
+Anger ett eller flera process objekt. Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -306,13 +288,11 @@ Accept wildcard characters: False
 
 Anger att denna cmdlet hämtar de moduler som har lästs in av processerna.
 
-I Windows Vista och senare versioner av Windows måste du öppna PowerShell med alternativet Kör som administratör för att kunna använda den här parametern på processer som du inte äger.
+I Windows Vista och senare versioner av Windows måste du öppna PowerShell med alternativet **Kör som administratör** för att kunna använda den här parametern på processer som du inte äger.
 
 Använd cmdleten för att hämta moduler som har lästs in av en process på en fjärrdator `Invoke-Command` .
 
-Den här parametern motsvarar att hämta egenskapen **modules** för varje process objekt.
-När du använder den här parametern returnerar denna cmdlet en **ProcessModule** Object **system. Diagnostics. ProcessModule** , inte ett process objekt.
-Därför kan du inte skicka kommandots utdata till en cmdlet som förväntar sig ett process objekt, till exempel `Stop-Process` .
+Den här parametern motsvarar att hämta egenskapen **modules** för varje process objekt. När du använder den här parametern returnerar denna cmdlet en **ProcessModule** Object **system. Diagnostics. ProcessModule** , inte ett process objekt. Därför kan du inte skicka kommandots utdata till en cmdlet som förväntar sig ett process objekt, till exempel `Stop-Process` .
 
 När du använder både *modulen* och **FileVersionInfo** -parametrarna i samma kommando, returnerar denna cmdlet ett **FileVersionInfo** -objekt med information om fil versionen för alla moduler.
 
@@ -330,9 +310,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Anger en eller flera processer efter process namn.
-Du kan ange flera process namn (avgränsade med kommatecken) och använda jokertecken.
-Parameter namnet ("namn") är valfritt.
+Anger en eller flera processer efter process namn. Du kan ange flera process namn (avgränsade med kommatecken) och använda jokertecken. Parameter namnet ("namn") är valfritt.
 
 ```yaml
 Type: System.String[]
@@ -360,16 +338,14 @@ Du kan skicka vidare ett process objekt till denna cmdlet.
 
 ### System. Diagnostics. process, system. Diagnostics. FileVersionInfo, system. Diagnostics. ProcessModule
 
-Som standard returnerar denna cmdlet ett **system. Diagnostics. process** -objekt.
-Om du använder parametern **FileVersionInfo** returneras ett **system. Diagnostics. FileVersionInfo** -objekt.
-Om du använder parametern **modul** , utan parametern **FileVersionInfo** , returneras ett **system. Diagnostics. ProcessModule** -objekt.
+Som standard returnerar denna cmdlet ett **system. Diagnostics. process** -objekt. Om du använder parametern **FileVersionInfo** returneras ett **system. Diagnostics. FileVersionInfo** -objekt. Om du använder parametern **modul** , utan parametern **FileVersionInfo** , returneras ett **system. Diagnostics. ProcessModule** -objekt.
 
 ## ANTECKNINGAR
 
 - Du kan också referera till den här cmdleten med dess inbyggda alias, PS och GPS. Mer information finns i [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 - På datorer som kör en 64-bitars version av Windows får 64-bitars versionen av PowerShell bara 64-bitars process-moduler och 32-bitars versionen av PowerShell får bara 32-bitars process moduler.
 - Du kan använda egenskaper och metoder för Win32_Process-objektet Windows Management Instrumentation (WMI) i PowerShell. Mer information finns i `Get-WmiObject` och WMI SDK.
-- Standard visningen av en process är en tabell som innehåller följande kolumner. En beskrivning av alla egenskaper för process objekt finns i [process egenskaper](/dotnet/api/system.diagnostics.process) i MSDN-biblioteket.
+- Standard visningen av en process är en tabell som innehåller följande kolumner. En beskrivning av alla egenskaper för process objekt finns i [process egenskaper](/dotnet/api/system.diagnostics.process).
   - Handtag: antalet referenser som processen har öppnat.
   - NPM (K): mängden icke växlings Bart minne som processen använder, i kilobyte.
   - PM (K): hur mycket växlings Bart minne som processen använder, i kilobyte.
@@ -379,8 +355,7 @@ Om du använder parametern **modul** , utan parametern **FileVersionInfo** , ret
     Virtuellt minne innehåller lagrings utrymme i växlingsfilerna på disk.
   - PROCESSOR (er): mängden processor tid som processen har använt på alla processorer, i sekunder.
   - ID: process-ID (PID) för processen.
-  - ProcessName: namnet på processen.
-    Förklaringar av begreppen som rör processer finns i ord listan i hjälp-och Support Center och i hjälpen för aktivitets hanteraren.
+  - ProcessName: namnet på processen. Förklaringar av begreppen som rör processer finns i ord listan i hjälp-och Support Center och i hjälpen för aktivitets hanteraren.
 - Du kan också använda de inbyggda alternativa vyerna för de processer som är tillgängliga med `Format-Table` , t. ex. **StartTime** och **Priority** , och du kan skapa egna vyer.
 
 ## RELATERADE LÄNKAR
@@ -394,4 +369,3 @@ Om du använder parametern **modul** , utan parametern **FileVersionInfo** , ret
 [Stoppa – process](Stop-Process.md)
 
 [Vänta-process](Wait-Process.md)
-

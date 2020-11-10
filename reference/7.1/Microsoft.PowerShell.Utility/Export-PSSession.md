@@ -7,12 +7,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 2fda80c934db3e868f0e49e131e6721c7b899f7c
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 5d5841720c6187863902a929632e15d1687685e1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93268041"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389410"
 ---
 # Export-PSSession
 
@@ -213,7 +213,7 @@ De acceptabla värdena för den här parametern är följande:
 - ExternalScript. Alla. ps1-filer i Sök vägarna som anges i miljövariabeln PATH ( `$env:path` ).
 - Filter och funktion. Alla PowerShell-funktioner.
 - Över. Skript block i den aktuella sessionen.
-- Arbets flöde. Ett PowerShell-arbetsflöde. Mer information finns i [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1).
+- Arbets flöde. Ett PowerShell-arbetsflöde. Mer information finns i [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -300,16 +300,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Anger moduler med namn som anges i form av **ModuleSpecification** -objekt.
-Se avsnittet anmärkningar i [ModuleSpecification-konstruktorn (hash)](https://msdn.microsoft.com/library/jj136290).
+Anger moduler med namn som anges i form av **ModuleSpecification** -objekt. Se avsnittet anmärkningar i [ModuleSpecification-konstruktorn (hash)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 **FullyQualifiedModule** -parametern accepterar till exempel ett modulnamn som anges i något av följande format:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**Modulnamn** och **ModuleVersion** krävs, men **GUID** är valfritt. Det går inte att ange parametern **FullyQualifiedModule** i samma kommando som en **modul** parameter. de två parametrarna kan inte anges samtidigt.
+**Modulnamn** och **ModuleVersion** krävs, men **GUID** är valfritt. Det går inte att ange parametern **FullyQualifiedModule** i samma kommando som en **modul** -parameter. de två parametrarna kan inte anges samtidigt.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

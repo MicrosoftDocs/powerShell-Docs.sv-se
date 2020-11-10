@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: PowerShell-galleriet vanliga frågor
 description: Vanliga frågor och svar om PowerShell-galleriet
-ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 52c89d570041e1fce3466f574af7de25f05ec4c5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92654166"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389903"
 ---
 # <a name="frequently-asked-questions-about-the-powershell-gallery"></a>Vanliga frågor och svar om PowerShell-galleriet
 
@@ -17,14 +17,14 @@ En PowerShell-modul är ett återanvändbart paket som innehåller vissa PowerSh
 
 ## <a name="what-is-a-powershell-script"></a>Vad är ett PowerShell-skript?
 
-Ett PowerShell-skript är en serie kommandon som lagras i en. ps1-fil för att aktivera åter användning och delning. PowerShell-arbetsflöden är också PowerShell-skript, som innehåller en uppsättning aktiviteter och som tillhandahåller sekvenseringen för dessa aktiviteter. Mer information finns på [komma igång med PowerShell-arbetsflöde](https://technet.microsoft.com/library/jj134242.aspx).
+Ett PowerShell-skript är en serie kommandon som lagras i en. ps1-fil för att aktivera åter användning och delning. PowerShell-arbetsflöden är också PowerShell-skript, som innehåller en uppsättning aktiviteter och som tillhandahåller sekvenseringen för dessa aktiviteter. Mer information finns på [komma igång med PowerShell-arbetsflöde](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11)).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Hur skiljer sig PowerShell-skript från PowerShell-moduler?
 
 Moduler är i allmänhet bättre för delning, men vi aktiverar skript delning för att göra det enklare för dig att bidra med arbets flöden och skript till communityn. Mer information finns i följande Bloggar:
 
-- [Skriv inte skript, skriv PowerShell-moduler](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [Förstå PowerShell-moduler](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [Skriv inte skript, skriv PowerShell-moduler](https://devblogs.microsoft.com/scripting/dont-write-scripts-write-powershell-modules/)
+- [Förstå PowerShell-moduler](https://devblogs.microsoft.com/scripting/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Hur kan jag publicera till PowerShell-galleriet?
 
@@ -64,7 +64,7 @@ Alla typer av PowerShell-moduler (skript moduler, binära moduler eller manifest
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hur gör jag för att skapa ett korrekt formaterat modul manifest?
 
-Det enklaste sättet att skapa ett modul manifest är att köra cmdleten [New-ModuleManifest][] . I PowerShell 5,0 eller senare genererar New-ModuleManifest ett korrekt formaterat modul manifest med tomma fält för användbara metadata som **ProjectUri** , **LicenseUri** och **taggar** . Fyll bara i tomma eller Använd det genererade manifestet som ett exempel på korrekt formatering.
+Det enklaste sättet att skapa ett modul manifest är att köra cmdleten [New-ModuleManifest][] . I PowerShell 5,0 eller senare genererar New-ModuleManifest ett korrekt formaterat modul manifest med tomma fält för användbara metadata som **ProjectUri** , **LicenseUri** och **taggar**. Fyll bara i tomma eller Använd det genererade manifestet som ett exempel på korrekt formatering.
 
 Använd cmdleten [test-ModuleManifest][] för att kontrol lera att alla obligatoriska metadatafält har fyllts i korrekt.
 
@@ -84,7 +84,7 @@ Alla typer av PowerShell-skript (skript eller arbets flöden) kan publiceras i g
 Skriv det du söker i text rutan. Om du till exempel vill hitta moduler som är relaterade till Azure SQL skriver du bara "Azure SQL". Vår sökmotor söker efter dessa nyckelord i alla publicerade paket, inklusive titlar, beskrivningar och över metadata. Sedan, baserat på en viktad kvalitets poäng, visas närmaste matchningar. Du kan också söka efter ett särskilt fält med fält: "value"-syntax i Sök frågan för följande fält:
 
 - Taggar
-- Functions
+- Funktioner
 - Cmdletar
 - DscResources
 - PowerShellVersion
@@ -93,7 +93,7 @@ Så när du till exempel söker efter PowerShellVersion: "2.0" visas endast resu
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hur gör jag för att skapa en korrekt formaterad skript fil?
 
-Det enklaste sättet att skapa en korrekt formaterad skript fil är att köra cmdleten [New-ScriptFileInfo][] . I PowerShell 5,0 genererar New-ScriptFileInfo en korrekt formaterad skript fil med tomma fält för användbara metadata som **ProjectUri** , **LicenseUri** och **taggar** . Fyll bara i tomma eller Använd den genererade skript filen som ett exempel på korrekt formatering.
+Det enklaste sättet att skapa en korrekt formaterad skript fil är att köra cmdleten [New-ScriptFileInfo][] . I PowerShell 5,0 genererar New-ScriptFileInfo en korrekt formaterad skript fil med tomma fält för användbara metadata som **ProjectUri** , **LicenseUri** och **taggar**. Fyll bara i tomma eller Använd den genererade skript filen som ett exempel på korrekt formatering.
 
 Använd cmdleten [test-ScriptFileInfo][] för att kontrol lera att alla obligatoriska metadatafält har fyllts i korrekt.
 
@@ -144,7 +144,7 @@ Bild 1: PowerShellGet-arkitektur
 
 I allmänhet rekommenderar vi att du väljer den senaste versionen av PowerShellGet-modulen (Observera att .NET 4,5 krävs).
 
-För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare** .
+För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare**.
 
 Det innebär att **PowerShellGet** kräver något av följande operativsystem:
 
@@ -156,7 +156,7 @@ Det innebär att **PowerShellGet** kräver något av följande operativsystem:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** kräver också .NET Framework 4,5 eller senare. Du kan installera .NET Framework 4.5 eller senare [här](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** kräver också .NET Framework 4,5 eller senare. Mer information finns i [installera .NET Framework för utvecklare](/dotnet/framework/install/guide-for-developers).
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Är det möjligt att reservera namn för paket som ska publiceras i framtiden?
 

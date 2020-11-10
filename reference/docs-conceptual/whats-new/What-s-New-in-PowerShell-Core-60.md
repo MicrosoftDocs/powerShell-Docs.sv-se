@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6,0
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,0
 ms.date: 08/06/2018
-ms.openlocfilehash: 68060356b2ec79a81a822a256db8e50812f9d738
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: bccfb663d180d59531efbc897474e53f632f29d9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158215"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389546"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nyheter i PowerShell Core 6,0
 
@@ -29,7 +29,7 @@ PowerShell stöder nu officiellt macOS och Linux, inklusive:
 
 - Windows 7, 8,1 och 10
 - Windows Server 2008 R2, 2012 R2, 2016
-- [Windows Server, halvårs kanal][semi-annual]
+- [Windows Server Semi-Annual-kanal][semi-annual]
 - Ubuntu 14,04, 16,04 och 17,04
 - Debian 8,7 + och 9
 - CentOS 7
@@ -149,7 +149,7 @@ Det innebär att du kan använda cmdletar som `Enter-PSSession` och `New-PSSessi
 
 Mer information om hur du konfigurerar och använder SSH-baserad fjärr kommunikation finns i [PowerShell-fjärrkommunikation via SSH][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standard kodning är UTF-8 utan en BOM förutom New-ModuleManifest
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standard kodning är UTF-8 utan en BOM förutom för New-ModuleManifest
 
 Tidigare var Windows PowerShell-cmdletar som `Get-Content` , som `Set-Content` använder olika kodningar, t. ex. ASCII och UTF-16. Var Ian sen i kodnings standardvärden skapade problem när du blandar cmdletar utan att ange en kodning.
 
@@ -157,17 +157,17 @@ Plattformar som inte är Windows-plattformar använder traditionellt UTF-8 utan 
 
 Det innebär att alla inbyggda cmdlets som använder `-Encoding` parametern använder `UTF8NoBOM` värdet som standard. Följande cmdletar påverkas av den här uppdateringen:
 
-- Lägg till innehåll
-- Exportera – CliXml
+- Add-Content
+- Export-Clixml
 - Export-Csv
-- Exportera – PSSession
+- Export-PSSession
 - Format-Hex
-- Hämta innehåll
+- Get-Content
 - Import-Csv
-- Ut-fil
+- Out-File
 - Select-String
-- Skicka meddelande
-- Ange innehåll
+- Send-MailMessage
+- Set-Content
 
 Dessa cmdletar har också uppdaterats så att `-Encoding` parametern kan accepteras universellt `System.Text.Encoding` .
 
@@ -247,7 +247,7 @@ Om du lägger till `&` slutet av en pipeline körs pipelinen som ett PowerShell-
 - Korrigera webb-cmdletar för att inkludera HTTP-svaret i undantaget när svars status koden inte är slutförd. (#3201)
 - Ändra webb-cmdletar `UserAgent` från `WindowsPowerShell` till `PowerShell` . (#4914) (Tack [@markekraus](https://github.com/markekraus) )
 - Lägg till explicit `ContentType` identifiering till `Invoke-RestMethod` (#4692)
-- Korrigera webb-cmdletar `-SkipHeaderValidation` så att de fungerar med icke-standard-huvud för användar agenten. (#4479 &
+- Korrigera webb-cmdletar `-SkipHeaderValidation` så att de fungerar med User-Agent-huvuden som inte är standard. (#4479 &
   #<a name="4512-thanks-markekraus"></a>4512) (tack [@markekraus](https://github.com/markekraus) )
 
 ### <a name="json-cmdlets"></a>JSON-cmdletar
@@ -342,7 +342,7 @@ Vi har också åtgärdat ett antal buggar i PowerShell Core. En fullständig lis
 
 Om du vill välja bort den här Telemetrin skapar du bara `POWERSHELL_TELEMETRY_OPTOUT` miljövariabler med något av följande värden: `true` , `1` eller `yes` . När du skapar variabeln kringgås all telemetri även före den första körningen av PowerShell. Vi planerar också att exponera dessa telemetridata och de insikter vi få från Telemetrin i [Community-instrumentpanelen][community-dashboard]. Du hittar mer information om hur vi använder dessa data i det här [blogg inlägget][telemetry-blog].
 
-[.NET-blogg]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[.NET-blogg]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
 [.NET Core 2.0]: /dotnet/core/
 [.NET Standard]: /dotnet/standard/net-standard
 [breaking-changes]: breaking-changes-ps6.md

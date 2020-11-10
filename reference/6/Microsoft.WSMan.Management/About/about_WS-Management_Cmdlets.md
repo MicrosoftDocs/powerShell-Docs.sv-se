@@ -6,12 +6,12 @@ ms.date: 01/04/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WS Management_Cmdlets
-ms.openlocfilehash: 8bb63126ae9a3b73e2e09e4c8da8f0aeaffd270c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4023198edf716ee3102ed2a009b6e2c29ddab73f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270297"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390345"
 ---
 # <a name="about-ws-management-cmdlets"></a>Om WS-Management-cmdletar
 
@@ -90,7 +90,7 @@ Följande WS-Management-cmdletar är tillgängliga.
 
 ## <a name="additional-ws-management-information"></a>Ytterligare WS-Management information
 
-Mer information om WS-Management finns i följande avsnitt i MSDN-biblioteket (Microsoft Developer Network).
+Mer information om WS-Management finns i följande avsnitt i Windows-dokumentationen.
 
 [Windows Remote Management](/windows/win32/winrm/portal)
 

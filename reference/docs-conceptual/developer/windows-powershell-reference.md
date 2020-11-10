@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell-referens
 description: Windows PowerShell-referens
-ms.openlocfilehash: bea8fb0057a8294abcbbf8e9c5e098290048a903
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9c1547ac5ec5134c99aa9213e6aaca1af8d5b3e9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656877"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390243"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-referens
 
@@ -30,7 +30,7 @@ Förutom Windows PowerShell SDK innehåller följande resurser mer information.
 
 [Skriva en Windows PowerShell-cmdlet](./cmdlet/writing-a-windows-powershell-cmdlet.md) Innehåller information och kod exempel för program hanterare som utformar cmdlets och för utvecklare som implementerar cmdlet-kod.
 
-[Windows PowerShell-teamets blogg](https://blogs.msdn.microsoft.com/PowerShell/) Den bästa resursen för att lära sig och samar beta med andra Windows PowerShell-användare. Läs Windows PowerShell-teamets blogg och gå sedan till forumet för Windows PowerShell-användare (Microsoft. offentlig. Windows. PowerShell).
+[Windows PowerShell-teamets blogg](https://devblogs.microsoft.com/powershell/) Den bästa resursen för att lära sig och samar beta med andra Windows PowerShell-användare. Läs Windows PowerShell-teamets blogg och gå sedan till forumet för Windows PowerShell-användare (Microsoft. offentlig. Windows. PowerShell).
 Använd Windows Live Search för att hitta andra Windows PowerShell-Bloggar och-resurser. När du utvecklar dina kunskaper kan du sedan utveckla dina idéer fritt.
 
 [PowerShell-modulens webbläsare](/powershell/module/) Innehåller de senaste versionerna av kommando rads hjälp avsnitten.
@@ -41,7 +41,7 @@ Använd Windows Live Search för att hitta andra Windows PowerShell-Bloggar och-
 
 [System. Management. Automation. Provider](/dotnet/api/System.Management.Automation.Provider) denna namnrymd innehåller de klasser, uppräkningar och gränssnitt som krävs för att implementera en Windows PowerShell-Provider. I synnerhet är klassen [system. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) den basklass från vilken alla klasser för Windows PowerShell-leverantörer måste härledas.
 
-[Microsoft. PowerShell. kommandon](/dotnet/api/Microsoft.PowerShell.Commands) denna namnrymd innehåller klasserna för de cmdlets och providers som implementeras av Windows PowerShell. På samma sätt rekommenderar vi att du skapar en *dittnamn* . Kommando namn området för de cmdlets som du implementerar.
+[Microsoft. PowerShell. kommandon](/dotnet/api/Microsoft.PowerShell.Commands) denna namnrymd innehåller klasserna för de cmdlets och providers som implementeras av Windows PowerShell. På samma sätt rekommenderar vi att du skapar en *dittnamn*. Kommando namn området för de cmdlets som du implementerar.
 
 [System. Management. Automation. Host](/dotnet/api/System.Management.Automation.Host) denna namnrymd innehåller de klasser, uppräkningar och gränssnitt som cmdleten använder för att definiera interaktionen mellan användaren och Windows PowerShell.
 

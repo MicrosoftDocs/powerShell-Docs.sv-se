@@ -3,23 +3,23 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell-exempelkod
 description: Windows PowerShell-exempelkod
-ms.openlocfilehash: bfda7d2edc4ab4e01808367c8e2edd01517a5f48
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: da916fa3557f44ecc9126ecef38235109aa391ec
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656966"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390141"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-exempelkod
 
-Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnittet innehåller exempel koden som finns i Windows SDK exempel.
+Windows PowerShell- &reg; exempel är tillgängliga via Windows SDK. Det här avsnittet innehåller exempel koden som finns i Windows SDK exempel.
 
 > [!NOTE]
-> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0** . Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas Windows PowerShell-exempel katalogen **\<PowerShell Samples>** .
+> När Windows SDK installeras skapas en **exempel** katalog där alla Windows PowerShell-exempel görs tillgängliga. En typisk installations katalog är **C:\Program\Microsoft SDKs\Windows\v6.0**. Starta Windows PowerShell och skriv **"CD Samples\SysMgmt\PowerShell"** för att hitta mappen Windows PowerShell-exempel. I det här dokumentet kallas Windows PowerShell-exempel katalogen **\<PowerShell Samples>** .
 
 ## <a name="sample-code-listing"></a>Exempel kod lista
 
-|                                    Exempelkod                                    |                                                                                                                                           Beskrivning                                                                                                                                           |
+|                                    Exempelkod                                    |                                                                                                                                           Description                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01 – kodexempel](./accessdbprovidersample01-code-sample.md) | Detta är den provider som beskrivs i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).                                                                                                                                                            |
 | [AccessDbProviderSample02 – kodexempel](./accessdbprovidersample02-code-sample.md) | Det här är den provider som beskrivs i [skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md).                                                                                                                                                            |
@@ -38,11 +38,11 @@ Windows PowerShell®-exempel är tillgängliga via Windows SDK. Det här avsnitt
 | [Runspace02 – kodexempel](./runspace02-code-samples.md)                           | I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra `Get-Process` cmdleten synkront.                                                                                                            |
 | [RunSpace03 – kodexempel](./runspace03-code-samples.md)                           | Detta är kod exemplen för körnings utrymme som beskrivs i "skapa ett konsol program som kör ett angivet skript".                                                                                                                                                                         |
 | [RunSpace04 – kodexempel](./runspace04-code-samples.md)                           | Det här är ett kod exempel för en körnings utrymme som använder klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra ett skript som genererar ett avslutande fel.                                                                         |
-| [RunSpace05 – kodexempel](./runspace05-code-sample.md)                             | Det här är käll koden för Runspace05-exemplet som beskrivs i [Konfigurera en körnings utrymme med hjälp av RunspaceConfiguration](https://msdn.microsoft.com/42681d19-2d05-4975-befd-afb1990e79b2).                                                                                                           |
-| [RunSpace06 – kodexempel](./runspace06-code-sample.md)                             | Det här är käll koden för Runspace06-exemplet som beskrivs i [Konfigurera en körnings utrymme med hjälp av en Windows PowerShell-snapin-modul](https://msdn.microsoft.com/a7289ee8-9732-49ee-91c7-d533e9538b83).                                                                                                    |
-| [RunSpace07 – kodexempel](./runspace07-code-sample.md)                             | Det här är käll koden för Runspace07-exemplet som beskrivs i [skapa ett konsol program som lägger till kommandon i en pipeline](https://msdn.microsoft.com/01eb7808-e97b-4905-80be-9e2fa38c262e).                                                                                              |
-| [RunSpace08 – kodexempel](./runspace08-code-sample.md)                             | Det här är käll koden för Runspace08-exemplet som beskrivs i [skapa ett konsol program som lägger till parametrar till ett kommando](https://msdn.microsoft.com/848b2b46-60f1-4a86-b448-cfc7c0cccfba).                                                                                             |
-| [RunSpace09 – kodexempel](./runspace09-code-sample.md)                             | Det här är käll koden för Runspace09-exemplet som beskrivs i [skapa ett konsol program som anropar en pipeline asynkront](https://msdn.microsoft.com/198c1c94-2a06-457e-93ce-c0d910618e47).                                                                                        |
+| [RunSpace05 – kodexempel](./runspace05-code-sample.md)                             |                                                                                                            |
+| [RunSpace06 – kodexempel](./runspace06-code-sample.md)                             |                                                                                                     |
+| [RunSpace07 – kodexempel](./runspace07-code-sample.md)                             |                                                                                               |
+| [RunSpace08 – kodexempel](./runspace08-code-sample.md)                             |                                                                                              |
+| [RunSpace09 – kodexempel](./runspace09-code-sample.md)                             |                                                                                       |
 | [RunSpace10 – kodexempel](./runspace10-code-sample.md)                             | Det här är käll koden för Runspace10-exemplet, som lägger till en cmdlet till [system. Management. Automation. körnings utrymmen. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) och använder sedan den ändrade konfigurations informationen för att skapa körnings utrymme. |
 
 ## <a name="see-also"></a>Se även

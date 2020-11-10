@@ -7,12 +7,12 @@ ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSSession
-ms.openlocfilehash: 2f233dad23a8dead5e6fe0d072d71f0e2528551d
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 5e7fdf1eeee1360777f801ae140d013bf9194977
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93268556"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388985"
 ---
 # Get-PSSession
 
@@ -291,8 +291,8 @@ Den här parametern konfigurerar den tillfälliga anslutning som skapas för att
 
 De acceptabla värdena för den här parametern är:
 
-- Default
-- Basic
+- Standard
+- Grundläggande
 - CredSSP
 - Sammandrag
 - Kerberos
@@ -301,7 +301,7 @@ De acceptabla värdena för den här parametern är:
 
 Standardvärdet är default.
 
-Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) i MSDN-biblioteket.
+Mer information om värdena för den här parametern finns i [AuthenticationMechanism-uppräkning](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 Varning! CredSSP-autentisering (Credential Security Support Provider), där användarens autentiseringsuppgifter skickas till en fjärrdator som ska autentiseras, är utformad för kommandon som kräver autentisering på fler än en resurs, till exempel åtkomst till en fjärran sluten nätverks resurs. Den här mekanismen ökar säkerhets risken för Fjärråtgärden. Om fjärrdatorn har komprometterats kan de autentiseringsuppgifter som skickas till den användas för att kontrol lera nätverks sessionen.
 
@@ -691,9 +691,9 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 **Tillgänglighet** svärdet **none** anger att du kan ansluta till sessionen. Värdet **upptagen** anger att du inte kan ansluta till **PSSession** eftersom det är anslutet till en annan session.
 
-Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState-uppräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
+Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState-uppräkning](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
-Mer information om värdena för egenskapen **Availability** för sessioner finns i [RunspaceAvailability-uppräkning](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
+Mer information om värdena för egenskapen **Availability** för sessioner finns i [RunspaceAvailability-uppräkning](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATERADE LÄNKAR
 

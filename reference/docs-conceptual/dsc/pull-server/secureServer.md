@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 description: Det här dokumentet innehåller metod tips för att hjälpa tekniker som distribuerar DSC-pull-servern.
 keywords: DSC, PowerShell, konfiguration, installation
 title: Metodtips för hämtningsservern
-ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6c754e6d035cc714a86da86ec916ba2c7f833268
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664322"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389393"
 ---
 # <a name="pull-server-best-practices"></a>Metodtips för hämtningsservern
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 innehåller en funktion som kallas DSC-tjänsten. Funktio
 
 ### <a name="dsc-resource"></a>DSC-resurs
 
-En pull-Server-distribution kan för enklas genom att tillhandahålla tjänsten med hjälp av ett DSC-konfigurations skript. Det här dokumentet innehåller konfigurations skript som kan användas för att distribuera en produktions klar Server-nod. Om du vill använda konfigurations skripten krävs en DSC-modul som inte ingår i Windows Server. Namnet på den obligatoriska modulen är **xPSDesiredStateConfiguration** , som innehåller DSC- **xDscWebService** . XPSDesiredStateConfiguration-modulen kan hämtas [här](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+En pull-Server-distribution kan för enklas genom att tillhandahålla tjänsten med hjälp av ett DSC-konfigurations skript. Det här dokumentet innehåller konfigurations skript som kan användas för att distribuera en produktions klar Server-nod. Om du vill använda konfigurations skripten krävs en DSC-modul som inte ingår i Windows Server. Namnet på den obligatoriska modulen är **xPSDesiredStateConfiguration** , som innehåller DSC- **xDscWebService**. XPSDesiredStateConfiguration-modulen kan hämtas [här](https://github.com/dsccommunity/xPSDesiredStateConfiguration).
 
 Använd `Install-Module` cmdleten från **PowerShellGet** -modulen.
 
@@ -139,7 +139,7 @@ Planerings uppgift
 ### <a name="public-key-infrastructure"></a>Infrastruktur för offentliga nycklar
 
 De flesta organisationer i dag kräver att nätverks trafik, särskilt trafik som inkluderar sådana känsliga data som servrar konfigureras, måste verifieras och/eller krypteras under överföringen.
-Även om det är möjligt att distribuera en pull-server med HTTP som underlättar klient begär anden i klartext, är det en bra idé att skydda trafiken med HTTPS. Tjänsten kan konfigureras att använda HTTPS med en uppsättning parametrar i DSC- **xPSDesiredStateConfiguration** .
+Även om det är möjligt att distribuera en pull-server med HTTP som underlättar klient begär anden i klartext, är det en bra idé att skydda trafiken med HTTPS. Tjänsten kan konfigureras att använda HTTPS med en uppsättning parametrar i DSC- **xPSDesiredStateConfiguration**.
 
 Certifikat kraven för säker HTTPS-trafik för hämtnings servern skiljer sig inte från att skydda andra HTTPS-webbplatser. **Webb server** mal len i en Windows Server Certificate Services uppfyller de funktioner som krävs.
 
