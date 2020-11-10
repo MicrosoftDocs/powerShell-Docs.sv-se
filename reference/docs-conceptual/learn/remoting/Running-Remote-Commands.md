@@ -3,12 +3,12 @@ ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: Kör fjärrkommandon
 description: Förklarar metoder för att köra kommandon på fjärrdatorer med hjälp av PowerShell.
-ms.openlocfilehash: e9e07fec96cbd93d3bf06be2a1f98ec7aa7d8f19
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: cff18a4f51c3ed8e3ed2c1f35862a88911e7ceb5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501362"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391416"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
 
@@ -118,7 +118,7 @@ Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Exempel:
+Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Till exempel:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -130,29 +130,29 @@ Windows PowerShell-fjärrhantering börjar bara här. Genom att använda de cmdl
 
 Windows PowerShell innehåller en WSMan-Provider. Providern skapar en `WSMAN:` enhet som gör det möjligt att navigera i en hierarki med konfigurations inställningar på den lokala datorn och fjärrdatorer.
 
-Mer information om WSMan-providern finns i [WSMan-providern](https://technet.microsoft.com/library/dd819476.aspx) och [om WS-Management cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
+Mer information om WSMan-providern finns i [WSMan-providern](/powershell/module/microsoft.wsman.management/about/about_wsman_provider) och [om WS-Management cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), eller i Windows PowerShell-konsolen skriver du `Get-Help wsman` .
 
 Mer information finns i:
 
-- [Om vanliga frågor och svar om fjärr anslutning](https://technet.microsoft.com/library/dd315359.aspx)
-- [Registrera – PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [Importera – PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [Om vanliga frågor och svar om fjärr anslutning](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [Registrera – PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
+- [Importera – PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 
-Hjälp med fjärr kommunikations fel finns i [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+Hjälp med fjärr kommunikations fel finns i [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting).
 
 ## <a name="see-also"></a>Se även
 
-- [about_Remote](https://technet.microsoft.com/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [about_Remote_FAQ](https://technet.microsoft.com/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
-- [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
-- [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-kommando](/powershell/module/microsoft.powershell.core/invoke-command)
-- [Importera – PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
-- [Registrera – PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan-Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)
+- [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_PSSessions)
+- [about_WS-Management_Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets)
+- [Invoke-kommando](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Importera – PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [Registrera – PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
+- [WSMan-Provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

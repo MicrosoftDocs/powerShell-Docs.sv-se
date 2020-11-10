@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Listrutor med flera val
 description: Den här artikeln visar hur du skapar en List Rute kontroll med flera val med hjälp av .NET Framework Forms Building-funktioner i Windows PowerShell.
-ms.openlocfilehash: e11d1f545f748e0503b92c02bc7a101d8014bd96
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 2724188695f054d1115b385987cda8a578c102de
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500291"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391535"
 ---
 # <a name="multiple-selection-list-boxes"></a>List rutor med flera val
 
@@ -74,7 +74,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**. Sedan startar du en ny instans av klassen .NET Framework klass **system. Windows. Forms. form**; Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
+Skriptet börjar genom att läsa in två .NET Framework klasser: **system. Drawing** och **system. Windows. Forms**. Sedan startar du en ny instans av klassen .NET Framework klass **system. Windows. Forms. form** ; Det innehåller ett tomt formulär eller fönster som du kan börja lägga till kontroller i.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -86,7 +86,8 @@ När du har skapat en instans av formulär klassen tilldelar du värden till tre
 
 - **Ändra.** Detta är storleken på formuläret, i bild punkter. Föregående skript skapar ett formulär som är 300 bild punkter brett med 200 pixlar högt.
 
-- **Star ting position.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript. Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen**visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
+- **Star ting position.** Den här valfria egenskapen anges till **CenterScreen** i föregående skript.
+  Om du inte lägger till den här egenskapen väljer Windows en plats när formuläret öppnas. Genom att ange **Star ting position** till **CenterScreen** visas formuläret automatiskt i mitten av skärmen varje gången det läses in.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -128,7 +129,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom text rutor. Mer kontroller finns i [namn området system. Windows. Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) på MSDN.
+Lägg till kontrollen (i det här fallet en listruta) som gör det möjligt för användarna att ange den information som du har beskrivet i din etikett text. Det finns många andra kontroller som du kan använda förutom text rutor. Mer kontroller finns i [namn området system. Windows. Forms](/dotnet/api/system.windows.forms).
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -183,6 +184,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Se även
 
-- [Helg skript: åtgärda exempel på PowerShell-gränssnittet](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Helg skript: åtgärda exempel på PowerShell-gränssnittet](https://devblogs.microsoft.com/scripting/weekend-scripter-fixing-powershell-gui-examples/)
 - [GitHub: Dave Wyatt s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Veckans Windows PowerShell-tips: fler List rutor med flera val och mer!](https://technet.microsoft.com/library/ff730950.aspx)
+- [Veckans Windows PowerShell-tips: fler List rutor med flera val och mer!](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730950(v=technet.10))

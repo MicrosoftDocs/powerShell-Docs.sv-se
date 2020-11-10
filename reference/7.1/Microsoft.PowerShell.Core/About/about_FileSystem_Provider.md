@@ -6,16 +6,17 @@ ms.date: 06/18/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem-Provider
-ms.openlocfilehash: 8407dd11c3c9ead10b081b937fbac3db82735eb3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: fb4135663d368867661e87327aa52a9213757d08
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270236"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391484"
 ---
 # <a name="filesystem-provider"></a>FileSystem-Provider
 
 ## <a name="provider-name"></a>Providernamn
+
 Filsystem
 
 ## <a name="drives"></a>Enheter
@@ -210,7 +211,7 @@ Det här kommandot returnerar ett [system. Security. AccessControl. FileSecurity
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-Om du vill ha mer information om det här objektet, rör du kommandot till cmdleten [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) . Eller, se "[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class" i MSDN-biblioteket (Microsoft Developer Network).
+Om du vill ha mer information om det här objektet, rör du kommandot till cmdleten [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) . Eller, se [FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) -klass.
 
 ### <a name="modify-the-acl-for-a-file"></a>Ändra ACL för en fil
 
@@ -372,7 +373,7 @@ Du kan använda den här parametern för att dela upp en stor fil i mindre filer
 
 > [!NOTE]
 > När värdet för `-Delimiter` parametern är en tom sträng returnerar [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) inte något.
-> Detta är ett känt fel. Om du vill tvinga [Get-innehåll](xref:Microsoft.PowerShell.Management.Get-Content) att returnera hela filen som en enskild, icke-avgränsad sträng anger du ett värde som inte finns i filen.
+> Detta är ett känt problem. Om du vill tvinga [Get-innehåll](xref:Microsoft.PowerShell.Management.Get-Content) att returnera hela filen som en enskild, icke-avgränsad sträng anger du ett värde som inte finns i filen.
 
 #### <a name="cmdlets-supported"></a>Cmdlets som stöds
 
@@ -566,4 +567,3 @@ Get-Help Get-ChildItem -Path c:
 ## <a name="see-also"></a>Se även
 
 [about_Providers](../About/about_Providers.md)
-

@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: b0177a00bbbf93659775ee94f7d4898a99f570f3
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 5c7783cb6f865aead9aae7ae0df77d9ee2db7b16
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345586"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391365"
 ---
 # Receive-PSSession
 
@@ -372,7 +372,7 @@ Accept wildcard characters: False
 Anger mekanismen som används för att autentisera användarautentiseringsuppgifter i kommandot för att återansluta till en frånkopplad session. De acceptabla värdena för den här parametern är:
 
 - Standard
-- Basic
+- Grundläggande
 - CredSSP
 - Sammandrag
 - Kerberos
@@ -789,7 +789,7 @@ När du kopplar från en **PSSession** kopplas sessionstillståndet ned och till
 - Värdet för egenskapen **State** är i förhållande till den aktuella sessionen. Värdet frånkopplat innebär att **PSSession** inte är ansluten till den aktuella sessionen. Det innebär dock inte att **PSSession** är frånkopplad från alla sessioner. Den kan vara ansluten till en annan session.
   Använd egenskapen **tillgänglighet** för att avgöra om du kan ansluta eller återansluta till sessionen.
 - **Tillgänglighet** svärdet none anger att du kan ansluta till sessionen. Värdet upptagen anger att du inte kan ansluta till **PSSession** eftersom det är anslutet till en annan session.
-- Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) i MSDN-biblioteket.
+- Mer information om värdena för egenskapen **State** för sessioner finns i [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 - Mer information om värdena för egenskapen **Availability** för sessioner finns i [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## RELATERADE LÄNKAR

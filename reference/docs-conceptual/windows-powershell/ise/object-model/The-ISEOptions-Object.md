@@ -2,12 +2,12 @@
 ms.date: 12/31/2019
 title: ISEOptions-objektet
 description: Objektet ISEOptions representerar olika inställningar för Windows PowerShell ISE.
-ms.openlocfilehash: 4f790550796f40c7a2d4882cc0444fa7a55eeee9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9823a4a0ea32420d830735a0a61a6c03a6458fb7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661022"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391518"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions-objektet
 
@@ -492,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Stöds i Windows PowerShell ISE 3,0 och senare, och finns inte i tidigare versioner.
 
-Anger om den lokalt installerade hjälpen eller online TechNet Library-hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord. Om detta är inställt på `$true` visas innehållet från den lokalt installerade hjälpen i ett popup-fönster. Du kan installera hjälpfilerna genom att köra `Update-Help` kommandot. Om det är inställt på `$false` , öppnas webbläsaren på en sida i TechNet-biblioteket.
+Anger om den lokalt installerade hjälpen eller direkt hjälpen visas när du trycker på <kbd>F1</kbd> med markören placerad i ett nyckelord. Om detta är inställt på `$true` visas innehållet från den lokalt installerade hjälpen i ett popup-fönster. Du kan installera hjälpfilerna genom att köra `Update-Help` kommandot. Om detta är inställt på `$false` , öppnas webbläsaren på en sida på docs.Microsoft.com.
 
 ```powershell
 # Sets the option for the online help to be displayed.

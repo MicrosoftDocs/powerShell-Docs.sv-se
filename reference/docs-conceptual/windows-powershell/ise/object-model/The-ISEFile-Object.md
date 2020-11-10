@@ -2,16 +2,16 @@
 ms.date: 12/31/2019
 title: ISEFile-objektet
 description: Ett ISEFile-objekt representerar en fil i Windows PowerShell ISE.
-ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b5ea70219787f254fe85d728518cbc4746c00250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662140"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391501"
 ---
 # <a name="the-isefile-object"></a>ISEFile-objektet
 
-Ett **ISEFile** -objekt representerar en fil i Windows PowerShell &reg; Ise (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. `$psISE.CurrentFile`Filerna och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
+Ett **ISEFile** -objekt representerar en fil i Windows PowerShell ISE (Integrated Scripting Environment). Det är en instans av klassen **Microsoft. PowerShell. Host. ISE. ISEFile** . I det här avsnittet visas dess medlems metoder och medlems egenskaper. `$psISE.CurrentFile`Filerna och filerna i samlingen filer på en PowerShell-flik är alla instanser av klassen * * * * Microsoft. PowerShell. Host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Metoder
 
@@ -21,7 +21,7 @@ Stöds i Windows PowerShell ISE 2,0 och senare.
 
 Sparar filen på disk.
 
-**\[ saveEncoding \]** – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8** .
+`[saveEncoding]` – valfri [system. text. Encoding](/dotnet/api/system.text.encoding) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8**.
 
 ### <a name="exceptions"></a>Undantag
 
@@ -47,7 +47,7 @@ Sparar filen med det angivna fil namnet och kodningen.
 
 **filename** – sträng namnet som ska användas för att spara filen.
 
-**\[ saveEncoding \]** – valfri [system. text. Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8** .
+`[saveEncoding]` – valfri [system. text. Encoding](/dotnet/api/system.text.encoding) en valfri tecken kodnings parameter som ska användas för den sparade filen. Standardvärdet är **utf8**.
 
 ### <a name="exceptions"></a>Undantag
 
