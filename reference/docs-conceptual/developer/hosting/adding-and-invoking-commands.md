@@ -3,46 +3,46 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Lägga till och anropa kommandon
 description: Lägga till och anropa kommandon
-ms.openlocfilehash: 476ab754ad6c61f18295157c5e215011c67dfdcb
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 90c86d10dd145664722d12254054e6b831386624
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664571"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389172"
 ---
-# <a name="adding-and-invoking-commands"></a><span data-ttu-id="2b03a-103">Lägga till och anropa kommandon</span><span class="sxs-lookup"><span data-stu-id="2b03a-103">Adding and invoking commands</span></span>
+# <a name="adding-and-invoking-commands"></a><span data-ttu-id="cfbc7-103">Lägga till och anropa kommandon</span><span class="sxs-lookup"><span data-stu-id="cfbc7-103">Adding and invoking commands</span></span>
 
-<span data-ttu-id="2b03a-104">När du har skapat en körnings utrymme kan du lägga till Windows-PowerShellcommands och skript i en pipeline och sedan anropa pipelinen synkront eller asynkront.</span><span class="sxs-lookup"><span data-stu-id="2b03a-104">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
+<span data-ttu-id="cfbc7-104">När du har skapat en körnings utrymme kan du lägga till Windows-PowerShellcommands och skript i en pipeline och sedan anropa pipelinen synkront eller asynkront.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-104">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
 
-## <a name="creating-a-pipeline"></a><span data-ttu-id="2b03a-105">Skapa en pipeline</span><span class="sxs-lookup"><span data-stu-id="2b03a-105">Creating a pipeline</span></span>
+## <a name="creating-a-pipeline"></a><span data-ttu-id="cfbc7-105">Skapa en pipeline</span><span class="sxs-lookup"><span data-stu-id="cfbc7-105">Creating a pipeline</span></span>
 
- <span data-ttu-id="2b03a-106">Klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) innehåller flera metoder för att lägga till kommandon, parametrar och skript i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="2b03a-106">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="2b03a-107">Du kan anropa pipelinen synkront genom att anropa en överlagring av metoden [system. Management. Automation. PowerShell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) eller asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) och sedan metoden [system. Management. Automation. PowerShell. EndInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .</span><span class="sxs-lookup"><span data-stu-id="2b03a-107">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+<span data-ttu-id="cfbc7-106">Klassen [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) innehåller flera metoder för att lägga till kommandon, parametrar och skript i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-106">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="cfbc7-107">Du kan anropa pipelinen synkront genom att anropa en överlagring av metoden [system. Management. Automation. PowerShell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) eller asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) och sedan metoden [system. Management. Automation. PowerShell. EndInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-107">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
-### <a name="addcommand"></a><span data-ttu-id="2b03a-108">AddCommand</span><span class="sxs-lookup"><span data-stu-id="2b03a-108">AddCommand</span></span>
+### <a name="addcommand"></a><span data-ttu-id="cfbc7-108">AddCommand</span><span class="sxs-lookup"><span data-stu-id="cfbc7-108">AddCommand</span></span>
 
-1. <span data-ttu-id="2b03a-109">Skapa ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.</span><span class="sxs-lookup"><span data-stu-id="2b03a-109">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+1. <span data-ttu-id="cfbc7-109">Skapa ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-109">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
    ```csharp
    PowerShell ps = PowerShell.Create();
    ```
 
-2. <span data-ttu-id="2b03a-110">Lägg till kommandot som du vill köra.</span><span class="sxs-lookup"><span data-stu-id="2b03a-110">Add the command that you want to execute.</span></span>
+2. <span data-ttu-id="cfbc7-110">Lägg till kommandot som du vill köra.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-110">Add the command that you want to execute.</span></span>
 
    ```csharp
    ps.AddCommand("Get-Process");
    ```
 
-3. <span data-ttu-id="2b03a-111">Anropa kommandot.</span><span class="sxs-lookup"><span data-stu-id="2b03a-111">Invoke the command.</span></span>
+3. <span data-ttu-id="cfbc7-111">Anropa kommandot.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-111">Invoke the command.</span></span>
 
    ```csharp
    ps.Invoke();
    ```
 
- <span data-ttu-id="2b03a-112">Om du anropar metoden [system. Management. Automation. PowerShell. Addcommand \*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) mer än en gång innan du anropar metoden [system. Management. Automation. PowerShell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) är resultatet av det första kommandot skickas till det andra, och så vidare.</span><span class="sxs-lookup"><span data-stu-id="2b03a-112">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="2b03a-113">Om du inte vill skicka vidare resultatet av ett tidigare kommando till ett kommando lägger du till det genom att anropa [system. Management. Automation. PowerShell. Addstatement \*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) i stället.</span><span class="sxs-lookup"><span data-stu-id="2b03a-113">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
+<span data-ttu-id="cfbc7-112">Om du anropar metoden [system. Management. Automation. PowerShell. Addcommand \*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) mer än en gång innan du anropar metoden [system. Management. Automation. PowerShell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) är resultatet av det första kommandot skickas till det andra, och så vidare.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-112">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="cfbc7-113">Om du inte vill skicka vidare resultatet av ett tidigare kommando till ett kommando lägger du till det genom att anropa [system. Management. Automation. PowerShell. Addstatement \*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) i stället.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-113">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
 
-### <a name="addparameter"></a><span data-ttu-id="2b03a-114">AddParameter</span><span class="sxs-lookup"><span data-stu-id="2b03a-114">AddParameter</span></span>
+### <a name="addparameter"></a><span data-ttu-id="cfbc7-114">AddParameter</span><span class="sxs-lookup"><span data-stu-id="cfbc7-114">AddParameter</span></span>
 
- <span data-ttu-id="2b03a-115">I föregående exempel körs ett enda kommando utan några parametrar.</span><span class="sxs-lookup"><span data-stu-id="2b03a-115">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="2b03a-116">Du kan lägga till parametrar till kommandot med hjälp av metoden [system. Management. Automation. Pscommand. Addparameter \*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) , exempel: följande kod hämtar en lista över alla processer som heter `PowerShell` körs på datorn.</span><span class="sxs-lookup"><span data-stu-id="2b03a-116">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
+ <span data-ttu-id="cfbc7-115">I föregående exempel körs ett enda kommando utan några parametrar.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-115">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="cfbc7-116">Du kan lägga till parametrar till kommandot med hjälp av metoden [system. Management. Automation. Pscommand. Addparameter \*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) , exempel: följande kod hämtar en lista över alla processer som heter `PowerShell` körs på datorn.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-116">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -50,7 +50,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="2b03a-117">Du kan lägga till ytterligare parametrar genom att anropa [system. Management. Automation. Pscommand. Addparameter \*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) upprepade gånger.</span><span class="sxs-lookup"><span data-stu-id="2b03a-117">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
+<span data-ttu-id="cfbc7-117">Du kan lägga till ytterligare parametrar genom att anropa [system. Management. Automation. Pscommand. Addparameter \*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) upprepade gånger.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-117">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -59,7 +59,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="2b03a-118">Du kan också lägga till en ord lista med parameter namn och värden genom att anropa metoden [system. Management. Automation. PowerShell. AddParameters \*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) .</span><span class="sxs-lookup"><span data-stu-id="2b03a-118">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
+<span data-ttu-id="cfbc7-118">Du kan också lägga till en ord lista med parameter namn och värden genom att anropa metoden [system. Management. Automation. PowerShell. AddParameters \*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-118">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -72,9 +72,9 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ```
 
-### <a name="addstatement"></a><span data-ttu-id="2b03a-119">AddStatement</span><span class="sxs-lookup"><span data-stu-id="2b03a-119">AddStatement</span></span>
+### <a name="addstatement"></a><span data-ttu-id="cfbc7-119">AddStatement</span><span class="sxs-lookup"><span data-stu-id="cfbc7-119">AddStatement</span></span>
 
- <span data-ttu-id="2b03a-120">Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. Addstatement \*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen. följande kod hämtar en lista över processer som körs med namnet `PowerShell` och hämtar sedan listan över tjänster som körs.</span><span class="sxs-lookup"><span data-stu-id="2b03a-120">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
+<span data-ttu-id="cfbc7-120">Du kan simulera batching med hjälp av metoden [system. Management. Automation. PowerShell. Addstatement \*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , som lägger till ytterligare en instruktion i slutet av pipelinen. följande kod hämtar en lista över processer som körs med namnet `PowerShell` och hämtar sedan listan över tjänster som körs.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-120">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -83,25 +83,25 @@ ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```
 
-### <a name="addscript"></a><span data-ttu-id="2b03a-121">AddScript</span><span class="sxs-lookup"><span data-stu-id="2b03a-121">AddScript</span></span>
+### <a name="addscript"></a><span data-ttu-id="cfbc7-121">AddScript</span><span class="sxs-lookup"><span data-stu-id="cfbc7-121">AddScript</span></span>
 
- <span data-ttu-id="2b03a-122">Du kan köra ett befintligt skript genom att anropa metoden [system. Management. Automation. PowerShell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) .</span><span class="sxs-lookup"><span data-stu-id="2b03a-122">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="2b03a-123">I följande exempel läggs ett skript till i pipelinen och körs.</span><span class="sxs-lookup"><span data-stu-id="2b03a-123">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="2b03a-124">Det här exemplet förutsätter att det redan finns ett skript `MyScript.ps1` som heter i en mapp med namnet `D:\PSScripts` .</span><span class="sxs-lookup"><span data-stu-id="2b03a-124">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
+<span data-ttu-id="cfbc7-122">Du kan köra ett befintligt skript genom att anropa metoden [system. Management. Automation. PowerShell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-122">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="cfbc7-123">I följande exempel läggs ett skript till i pipelinen och körs.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-123">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="cfbc7-124">Det här exemplet förutsätter att det redan finns ett skript `MyScript.ps1` som heter i en mapp med namnet `D:\PSScripts` .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-124">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- <span data-ttu-id="2b03a-125">Det finns också en version av metoden [system. Management. Automation. PowerShell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) som tar en boolesk parameter med namnet `useLocalScope` .</span><span class="sxs-lookup"><span data-stu-id="2b03a-125">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="2b03a-126">Om den här parametern är inställd på `true` körs skriptet i det lokala omfånget.</span><span class="sxs-lookup"><span data-stu-id="2b03a-126">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="2b03a-127">Följande kod kommer att köra skriptet i det lokala omfånget.</span><span class="sxs-lookup"><span data-stu-id="2b03a-127">The following code will run the script in the local scope.</span></span>
+<span data-ttu-id="cfbc7-125">Det finns också en version av metoden [system. Management. Automation. PowerShell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) som tar en boolesk parameter med namnet `useLocalScope` .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-125">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="cfbc7-126">Om den här parametern är inställd på `true` körs skriptet i det lokala omfånget.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-126">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="cfbc7-127">Följande kod kommer att köra skriptet i det lokala omfånget.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-127">The following code will run the script in the local scope.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="2b03a-128">Anropa en pipeline synkront</span><span class="sxs-lookup"><span data-stu-id="2b03a-128">Invoking a pipeline synchronously</span></span>
+### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="cfbc7-128">Anropa en pipeline synkront</span><span class="sxs-lookup"><span data-stu-id="cfbc7-128">Invoking a pipeline synchronously</span></span>
 
- <span data-ttu-id="2b03a-129">När du har lagt till element i pipelinen anropar du det.</span><span class="sxs-lookup"><span data-stu-id="2b03a-129">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="2b03a-130">Om du vill anropa pipelinen synkront anropar du en överlagring av metoden [system. Management. Automation. PowerShell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) .</span><span class="sxs-lookup"><span data-stu-id="2b03a-130">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="2b03a-131">I följande exempel visas hur du synkront anropar en pipeline.</span><span class="sxs-lookup"><span data-stu-id="2b03a-131">The following example shows how to synchronously invoke a pipeline.</span></span>
+<span data-ttu-id="cfbc7-129">När du har lagt till element i pipelinen anropar du det.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-129">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="cfbc7-130">Om du vill anropa pipelinen synkront anropar du en överlagring av metoden [system. Management. Automation. PowerShell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-130">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="cfbc7-131">I följande exempel visas hur du synkront anropar en pipeline.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-131">The following example shows how to synchronously invoke a pipeline.</span></span>
 
 ```csharp
 using System;
@@ -131,11 +131,11 @@ namespace HostPS1e
 }
 ```
 
-### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="2b03a-132">Anropa en pipeline asynkront</span><span class="sxs-lookup"><span data-stu-id="2b03a-132">Invoking a pipeline asynchronously</span></span>
+### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="cfbc7-132">Anropa en pipeline asynkront</span><span class="sxs-lookup"><span data-stu-id="cfbc7-132">Invoking a pipeline asynchronously</span></span>
 
- <span data-ttu-id="2b03a-133">Du anropar en pipeline asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) för att skapa ett [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) -objekt och sedan anropa metoden [system. Management. Automation. PowerShell. EndInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .</span><span class="sxs-lookup"><span data-stu-id="2b03a-133">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+<span data-ttu-id="cfbc7-133">Du anropar en pipeline asynkront genom att anropa en överlagring av [system. Management. Automation. PowerShell. BeginInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) för att skapa ett [IAsyncResult](/dotnet/api/system.iasyncresult) -objekt och sedan anropa metoden [system. Management. Automation. PowerShell. EndInvoke \*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .</span><span class="sxs-lookup"><span data-stu-id="cfbc7-133">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](/dotnet/api/system.iasyncresult) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
- <span data-ttu-id="2b03a-134">I följande exempel visas hur du anropar en pipeline asynkront.</span><span class="sxs-lookup"><span data-stu-id="2b03a-134">The following example shows how to invoke a pipeline asynchronously.</span></span>
+ <span data-ttu-id="cfbc7-134">I följande exempel visas hur du anropar en pipeline asynkront.</span><span class="sxs-lookup"><span data-stu-id="cfbc7-134">The following example shows how to invoke a pipeline asynchronously.</span></span>
 
 ```csharp
 using System;
@@ -177,8 +177,8 @@ namespace HostPS3
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="2b03a-135">Se även</span><span class="sxs-lookup"><span data-stu-id="2b03a-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cfbc7-135">Se även</span><span class="sxs-lookup"><span data-stu-id="cfbc7-135">See Also</span></span>
 
- [<span data-ttu-id="2b03a-136">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="2b03a-136">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="cfbc7-136">Skapa en InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="cfbc7-136">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
 
- [<span data-ttu-id="2b03a-137">Skapa ett begränsat körningsutrymme</span><span class="sxs-lookup"><span data-stu-id="2b03a-137">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
+ [<span data-ttu-id="cfbc7-137">Skapa ett begränsat körningsutrymme</span><span class="sxs-lookup"><span data-stu-id="cfbc7-137">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
