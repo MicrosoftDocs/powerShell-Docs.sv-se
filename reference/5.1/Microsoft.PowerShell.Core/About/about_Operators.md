@@ -2,16 +2,16 @@
 description: Beskriver de operatorer som stöds av PowerShell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: a8c9c60c9c1513e1ee4ce71c8c880e20bf1df7b3
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: b783d2cb76fe8a0a66ec77b67ef915f3b78def04
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93273483"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483014"
 ---
 # <a name="about-operators"></a>Om operatörer
 
@@ -89,7 +89,7 @@ Precis som på andra språk, kan det `(...)` vara så att operator prioriteten �
 
 I PowerShell finns det dock ytterligare beteenden.
 
-- `(...)` gör att du kan låta utdata från ett _kommando_ delta i ett uttryck. Ett exempel:
+- `(...)` gör att du kan låta utdata från ett _kommando_ delta i ett uttryck. Exempel:
 
   ```powershell
   PS> (Get-Item *.txt).Count -gt 10
@@ -121,6 +121,11 @@ Returnerar resultatet av en eller flera uttryck som en matris. Om det bara finns
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>Litteral syntax för hash-tabell `@{}`
+
+I likhet med matrisens under uttryck används den här syntaxen för att deklarera en hash-tabell.
+Mer information finns i [about_Hash_Tables](about_Hash_Tables.md).
 
 #### <a name="call-operator-"></a>Anrops operator `&`
 

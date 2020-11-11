@@ -2,16 +2,16 @@
 description: Visar PowerShell-operatörer i prioritetsordning.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/08/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
-ms.openlocfilehash: 602a99d6acee63177d45425d90f8fcd47766fb93
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 27cc1be95067a38e6c210b37a3398416d0845846
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272079"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483051"
 ---
 # <a name="about-operator-precedence"></a>Om operator prioritet
 
@@ -32,7 +32,7 @@ Operator-kolumnen visar operatorerna. Referens kolumnen visar PowerShell-hjälp 
 
 |         OPERATOR         |           FÖRHÅLLANDE            |
 | ------------------------ | ------------------------------ |
-| `$() @() ()`             | [about_Operators][]            |
+| `$() @() () @{}`         | [about_Operators][]            |
 | `.` (medlems åtkomst)      | [about_Operators][]            |
 | `::` oföränderlig            | [about_Operators][]            |
 | `[0]` (index operator)   | [about_Operators][]            |
