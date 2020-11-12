@@ -1,13 +1,13 @@
 ---
 title: Supportlängd för PowerShell Core
 description: Information om principerna som styr support för PowerShell
-ms.date: 03/09/2020
-ms.openlocfilehash: cefa7e1f45fc88bbbb8e18c969c4399bac2c9392
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.date: 11/11/2020
+ms.openlocfilehash: 16b5480a0aecdd4b069d78372e09e04d1451eba6
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524883"
+ms.locfileid: "94550289"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -28,24 +28,6 @@ En aktuell version är en version som sker mellan LTS-versioner. Aktuella versio
 
 > [!IMPORTANT]
 > Du måste ha den senaste korrigerings uppdateringen installerad för att kunna användas. Om du till exempel kör PowerShell 7,0 och 7.0.1 har släppts, måste du uppdatera till 7.0.1 för att få support.
-
-## <a name="lifecycle-of-powershell-core-6x"></a>Livs cykel för PowerShell Core 6. x
-
-PowerShell-kärnan använde [Microsoft modern Lifecycle-principen][modern]. Den här support livs cykeln är avsedd att hålla kunderna uppdaterade med de senaste versionerna.
-
-Grenen version 6. x av PowerShell Core uppdaterades ungefär en gång var sjätte månad (exempel: 6,0, 6,1, 6,2 osv.). Men med lanseringen av PowerShell 7 kommer det inte längre finnas lägre versioner av 6. x. PowerShell 6.2. x kommer även fortsättnings vis att ta emot service uppdateringar och stöds fortfarande.
-
-> [!IMPORTANT]
-> Du måste uppdatera inom sex månader efter att varje ny del versions version fortsätter att få support.
-
-Om exempelvis PowerShell Core 6,1 lanseras den 1 juli 2018 förväntas du uppdatera till PowerShell Core 6,1 före den 1 januari 2019 för att underhålla supporten.
-
-> [!IMPORTANT]
-> Du måste uppdatera inom 30 dagar efter att varje ny korrigerings version släpps för att fortsätta få support.
-
-Om du till exempel kör PowerShell Core 6,1 och 6.1.3 släpptes den 19 februari 2019 förväntas du uppdatera till PowerShell Core 6.1.3 senast 21 mars 2019, vilket är 30 dagar efter att stödet har släppts. Om det finns några korrigeringar som krävs kommer korrigeringarna att lanseras i nästa kumulativa uppdatering.
-
-Den moderna livs cykel policyn kräver också att Microsoft ger kunderna tolv månaders varsel innan de kan avbryta supporten för en produkt (dvs. PowerShell Core).
 
 ## <a name="supported-platforms"></a>Plattformar som stöds
 

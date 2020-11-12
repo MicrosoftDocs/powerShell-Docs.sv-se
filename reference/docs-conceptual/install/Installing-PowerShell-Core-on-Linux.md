@@ -2,12 +2,12 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 11/11/2020
-ms.openlocfilehash: 28f388c63740cf74e56c707aef531a2a220a9468
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 226d9c33ccf9c805c2e36a96013385a4c75a97b3
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524832"
+ms.locfileid: "94550238"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
@@ -27,7 +27,16 @@ För Linux-distributioner som inte stöds officiellt kan du försöka installera
 
 <!-- TODO: Update for supported releases v7.0 & v7.1 -->
 
-Officiellt versioner som stöds
+Officiellt stödda plattforms utgåvor för PowerShell 7,1
+
+- Ubuntu 16.04/18.04/20.04 (inklusive ARM64)
+- Ubuntu 19,10 (via Snap-paket)
+- Debian 9/10
+- CentOS och RHEL 7/8
+- Fedora 30
+- Alpine 3.11 + (inklusive ARM64)
+
+Officiellt stödda plattforms utgåvor för PowerShell 7,0
 
 - Ubuntu 16.04
 - Ubuntu 18,04 och 20,04

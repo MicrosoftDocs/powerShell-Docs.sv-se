@@ -1,13 +1,13 @@
 ---
-ms.date: 10/15/2020
+ms.date: 11/11/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: e98b1222755f3d4ffbd432af6b01d56f63307bb2
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: fa7e72869e2c3b3b5920b556b8dacf5068bc00d5
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92156583"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550221"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -33,7 +33,7 @@ Den här artikeln beskriver de experimentella funktioner som är tillgängliga o
 | Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |
-| PSUnixFileStat (endast Windows)                          |         | &check; | &check; |
+| PSUnixFileStat (endast Windows-konventionellt i PS 7.1 +)  |         | &check; |         |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
@@ -213,6 +213,9 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 -rw-r--r-- jimtru    staff         11/8/2019 10:37      201297 CHANGELOG.md
 ```
 
+> [!NOTE]
+> Den här funktionen har flyttat från experiment fasen och är en vanlig funktion i PowerShell 7,1 och högre.
+
 ## <a name="psuseabbreviationexpansion"></a>PSUseAbbreviationExpansion
 
 Den här funktionen gör det möjligt att slutföra nedtvingade cmdlets och funktioner:
@@ -231,6 +234,6 @@ Detta fungerar bara för slut för ande av flikar (interaktiv användning), så 
 
 Den här funktionen aktiverar under Systems-plugin-modellen i PowerShell. Funktionen gör det möjligt att separera komponenter i `System.Management.Automation.dll` enskilda under system som finns i en egen sammansättning. Den här separationen minskar den grundläggande PowerShell-motorns disk utrymme och gör att dessa komponenter blir valfria funktioner för en minimal PowerShell-installation.
 
-För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb**, **CommandCompleter**, **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
+För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb** , **CommandCompleter** , **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
 
 Experiment funktionen innehåller en ny cmdlet, [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). Den här cmdleten är endast tillgänglig om funktionen är aktive rad. Denna cmdlet returnerar information om de del system som är tillgängliga i systemet.

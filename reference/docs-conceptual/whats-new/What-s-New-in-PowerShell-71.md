@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,1
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,1
 ms.date: 11/11/2020
-ms.openlocfilehash: 720fd3eae3e79ee5ab82b7b35d83b6c9b054617b
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: e4f6a97fd36368f9b8afcf995ec2d1d4f3fadca2
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94531811"
+ms.locfileid: "94550255"
 ---
 # <a name="whats-new-in-powershell-71"></a>Nyheter i PowerShell 7,1
 
@@ -19,13 +19,21 @@ Vi bygger på stiftelsen som etablerats i PowerShell 7,0, våra ansträngningar 
 
 PowerShell 7,1 har för närvarande stöd för följande operativ system på x64, inklusive:
 
-- Windows 8,1 och 10
-- Windows Server 2012 R2, 2016 och 2019
+- Windows 8.1/10 (inklusive ARM64)
+- Windows Server 2012 R2, 2016, 2019 och Semi-Annual-kanal (SAC)
+- Ubuntu 16.04/18.04/20.04 (inklusive ARM64)
+- Ubuntu 19,10 (via Snap-paket)
+- Debian 9/10
+- CentOS och RHEL 7/8
+- Fedora 30
+- Alpine 3.11 + (inklusive ARM64)
 - macOS 10.13 +
-- Red Hat Enterprise Linux (RHEL)/CentOS 7 och 8
-- Debian 9 och 10
-- Ubuntu 18,04 och 20,04
-- Alpine Linux 3,10 och 3.11 +
+
+Vi har också community-support för:
+
+- Arc Linux
+- Raspbian Linux
+- Kali Linux
 
 Mer uppdaterad information om operativ system och support livs cykel som stöds finns i [PowerShell-Supportens livs cykel](/powershell/scripting/powershell-support-lifecycle)
 

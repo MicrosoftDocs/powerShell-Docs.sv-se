@@ -1,24 +1,44 @@
 ---
-title: Installera PowerShell Core i ARM
+title: Installera PowerShell Core på arm
 description: Installera PowerShell Core på ARM-baserade system
-ms.date: 10/30/2020
-ms.openlocfilehash: 7dc2554da115edbc306fabba69ff869962c3da64
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.date: 11/11/2020
+ms.openlocfilehash: 12b27a97d3c64a9885d27d68f802474fe5239702
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524815"
+ms.locfileid: "94550272"
 ---
-# <a name="powershell-core-on-arm"></a>Powershell Core på ARM
+# <a name="powershell-core-on-arm"></a>PowerShell Core på arm
 
-<!-- TODO: add link to .NET 5 lifecylce - distingquish 7.0 vs 7.1-->
+Stöd för PowerShell på arm baseras på de **.net Core-principer som stöds av OS-livscykeln**.
 
-Stöd för PowerShell på ARM baseras på den [operativ system livs cykel princip som stöds av .net Core](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
-PowerShell stöds på den plattform som stöds av den här principen.
+PowerShell 7,0 baseras på den [operativ system livs cykel princip för .net Core 3,1 som stöds](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) och har stöd för följande plattformar:
+
+|         Operativsystem          |          Version           | Arkitekturer |          Livscykel           |
+| ------------------- | -------------------------- | ------------- | ---------------------------- |
+| Windows Nano Server | Version 1803 +              | Arm32         | [Windows][Windows-lifecycle] |
+| Alpine Linux        | 3.10 +                      | Arm64         | [Alpina][Alpine-lifecycle]   |
+| Debian              | 9 +                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
+| Ubuntu              | 20,10, 20,04, 18,04, 16,04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
+
+PowerShell 7,0 baseras på den [operativ system livs cykel princip för .net Core 5,0 som stöds](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) och har stöd för följande plattformar:
+
+|        Operativsystem         |          Version           | Arkitekturer |          Livscykel           |
+| ----------------- | -------------------------- | ------------- | ---------------------------- |
+| Windows 10-klient | Version 1607 +              | Arm64         | [Windows][Windows-lifecycle] |
+| Alpine Linux      | 3.11 +                      | Arm64         | [Alpina][Alpine-lifecycle]   |
+| Debian            | 9 +                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
+| Ubuntu            | 20,10, 20,04, 18,04, 16,04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
+
+[Windows-lifecycle]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
+[Alpine-lifecycle]: https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases
+[Debian-lifecycle]: https://wiki.debian.org/DebianReleases
+[Ubuntu-lifecycle]: https://wiki.ubuntu.com/Releases
 
 Installations anvisningar finns i följande artiklar:
 
-- [Windows 10 på ARM](installing-powershell-core-on-windows.md#installing-the-zip-package)
+- [Windows 10 på arm](installing-powershell-core-on-windows.md#installing-the-zip-package)
 - [Windows 10 IoT Enterprise](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise)
 - [Windows 10 IoT Core](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core)
 - [Raspbian](installing-powershell-core-on-linux.md#raspbian)
