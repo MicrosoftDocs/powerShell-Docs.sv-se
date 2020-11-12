@@ -1,19 +1,19 @@
 ---
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
-ms.date: 10/30/2020
-ms.openlocfilehash: 825c9066d0a4e4734b9255514520b32f0876ecea
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.date: 11/11/2020
+ms.openlocfilehash: 8f8fe7f186488775ea9afa22a63fee95390e2545
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296375"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524503"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
 Det finns flera sätt att installera PowerShell i Windows.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Den senaste versionen av PowerShell stöds på Windows 7 SP1, Server 2008 R2 och senare versioner.
 
@@ -30,8 +30,8 @@ Om du vill installera PowerShell på Windows laddar du ned det [senaste][] insta
 
 MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Exempel:
 
-- `PowerShell-7.0.3-win-x64.msi`
-- `PowerShell-7.0.3-win-x86.msi`
+- `PowerShell-7.1.0-win-x64.msi`
+- `PowerShell-7.1.0-win-x86.msi`
 
 När du har laddat ned dubbelklickar du på installations programmet och följer anvisningarna.
 
@@ -41,13 +41,14 @@ Installations programmet skapar en genväg på Start-menyn i Windows.
 - Du kan starta PowerShell via Start-menyn eller `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1. För PowerShell Core 6. x är PowerShell 7 en uppgradering på plats som tar bort PowerShell Core 6. x.
+> PowerShell 7,1 installeras i en ny katalog och körs sida vid sida med Windows PowerShell 5,1.
+> PowerShell 7,1 är en uppgradering på plats som ersätter PowerShell 6. x. eller PowerShell 7,0.
 >
-> - PowerShell 7 installeras för att `$env:ProgramFiles\PowerShell\7`
+> - PowerShell 7,1 är installerat på `$env:ProgramFiles\PowerShell\7`
 > - `$env:ProgramFiles\PowerShell\7`Mappen läggs till`$env:PATH`
 > - `$env:ProgramFiles\PowerShell\6`Mappen tas bort
 >
-> Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av [zip-installations](#zip) metoden.
+> Om du behöver köra PowerShell 7,1 sida vid sida med andra versioner använder du [zip-installations](#zip) metoden för att installera den andra versionen i en annan mapp.
 
 ### <a name="administrative-install-from-the-command-line"></a>Administrativ installation från kommando raden
 
@@ -60,7 +61,7 @@ MSI-paket kan installeras från kommando raden och gör det möjligt för admini
 I följande exempel visas hur du tyst installerar PowerShell med alla installations alternativ aktiverade.
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 En fullständig lista över kommando rads alternativ för `Msiexec.exe` finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
@@ -78,10 +79,22 @@ Från och med PowerShell 7,1 skapar MSI-paketet register nycklar som lagrar inst
 
 Detta kan användas av administratörer och utvecklare för att hitta sökvägen till PowerShell. `<GUID>`Värdena är desamma för alla för hands versioner och del versioner. `<GUID>`Värdena ändras för varje större version.
 
-## <a name="installing-the-msix-package"></a><a id="msix" />Installera MSIX-paketet
+## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installera från Microsoft Store
+
+PowerShell 7,1 har publicerats till Microsoft Store. Du hittar PowerShell-versionen på [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) webbplats eller i Store-programmet i Windows.
+
+Fördelar med Microsoft Store-paketet:
+
+- Automatiska uppdateringar har skapats direkt i Windows 10
+- Integreras med andra mekanismer för program varu distribution som Intune och SCCM
 
 > [!NOTE]
-> MSIX-paketet stöds inte officiellt för tillfället. Vi fortsätter att bygga paketet enbart för internt test ändamål.
+> Eventuella konfigurations inställningar på system nivå som lagras i `$PSHOME` kan inte ändras. Detta inkluderar WSMAN-konfigurationen. Detta förhindrar att fjärrsessioner ansluter till Store-baserade installationer av PowerShell. Konfigurationer på användar nivå och SSH-fjärrkommunikation stöds.
+
+### <a name="using-the-msix-package"></a>Använda MSIX-paketet
+
+> [!NOTE]
+> I för hands versioner av PowerShell ingår ett MSIX-paket. MSIX-paketet stöds inte officiellt. Vi fortsätter att bygga paketet enbart för internt test ändamål.
 
 Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår versions[sida för] GitHub- [versioner]. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
@@ -97,10 +110,10 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Hämta något av följande ZIP-arkiv från sidan [release][releases] .
 
-- PowerShell-7.0.3-win-x64.zip
-- PowerShell-7.0.3-win-x86.zip
-- PowerShell-7.0.3-win-arm64.zip
-- PowerShell-7.0.3-win-arm32.zip
+- PowerShell-7.1.0-win-x64.zip
+- PowerShell-7.1.0-win-x86.zip
+- PowerShell-7.1.0-win-arm64.zip
+- PowerShell-7.1.0-win-arm32.zip
 
 Beroende på hur du laddar ned filen kan du behöva avblockera filen med hjälp av `Unblock-File` cmdleten. Zippa upp innehållet till valfri plats och kör `pwsh.exe` därifrån. Till skillnad från när du installerar MSI-paketen söker inte du efter krav i ZIP-arkivet. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
 
@@ -239,7 +252,7 @@ Följande kommandon kan användas för att installera PowerShell med de publicer
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.0.3
+   PowerShell         Microsoft.PowerShell         7.1.0
    PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
    ```
 

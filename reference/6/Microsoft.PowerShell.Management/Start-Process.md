@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: a221c6126bbbf22dffb493828f759bcbd4cfe759
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 53c06982abcf980897c049b6f6bd0c159f2eb4b5
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93268832"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524696"
 ---
 # Start-Process
 
@@ -117,6 +117,19 @@ Observera att det första kommandot anger en sträng som **argument List**. Det 
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### Exempel 8: skapa en frånkopplad process på Linux
+
+I Windows `Start-Process` skapar en oberoende process som förblir igång oberoende av start gränssnittet. På andra plattformar än Windows-plattformar är den nyligen startade processen kopplad till gränssnittet som startades. Om start gränssnittet stängs avbryts den underordnade processen.
+
+För att undvika att avsluta den underordnade processen på UNIX-liknande plattformar kan du kombinera `Start-Process` med `nohup` . I följande exempel startas en bakgrunds instans av PowerShell på Linux som är aktiv även när du har stängt start sessionen. `nohup`Kommandot samlar in utdata i filen `nohup.out` i den aktuella katalogen.
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+I det här exemplet `Start-Process` kör Linux `nohup` -kommandot som startar `pwsh` som en frånkopplad process. Mer information finns på sidan man för [nohup](https://linux.die.net/man/1/nohup).
 
 ## PARAMETRAR
 

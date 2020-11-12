@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Information om principerna som styr support för PowerShell
 ms.date: 03/09/2020
-ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: cefa7e1f45fc88bbbb8e18c969c4399bac2c9392
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501753"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524883"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -55,29 +55,31 @@ Vår community har också bidragit med paket för vissa plattformar, men de stö
 
 Plattformar som anges som `Experimental` inte stöds officiellt, men som är tillgängliga för experimentering och feedback.
 
-| Plattform                                          |      6,2      |    7.0    |
-| ------------------------------------------------- | :-----------: | :-------: |
-| Windows 8,1 och 10                               |   Stöds   | Stöds |
-| Windows Server 2012 R2, 2016                      |   Stöds   | Stöds |
-| [Windows Server Semi-Annual-kanal][semi-annual] |   Stöds   | Stöds |
-| Ubuntu 16,04 och 18,04                            |   Stöds   | Stöds |
-| Ubuntu 19,10 (via Snap-paket)                   |   Community   | Community |
-| Ubuntu 20,04 (via Snap-paket)                   |   Community   | Community |
-| Debian 9                                          |   Stöds   | Stöds |
-| Debian 10                                         | Stöds inte | Stöds |
-| CentOS 7                                          |   Stöds   | Stöds |
-| CentOS 8                                          | Stöds inte | Stöds |
-| Red Hat Enterprise Linux 7                        |   Stöds   | Stöds |
-| Red Hat Enterprise Linux 8                        | Stöds inte | Stöds |
-| Fedora 30                                         | Stöds inte | Stöds |
-| Alpina 3,8                                        |   Visa anteckning    | Visa anteckning  |
-| Alpina 3,9 och 3,10                               | Stöds inte | Visa anteckning  |
-| macOS 10.12 +                                      |   Stöds   | Stöds |
-| Båge                                              |   Community   | Community |
-| Raspbian                                          |   Community   | Community |
-| Kali                                              |   Community   | Community |
-| AppImage (fungerar på flera Linux-plattformar)      |   Community   | Community |
-| [Snapin-paket](https://snapcraft.io/powershell)   |   Se Obs!    | Se Obs!  |
+<!-- TODO: update OS list -->
+
+|                     Plattform                      |      7.0      |      7.1      |
+| ------------------------------------------------- | :-----------: | :-----------: |
+| Windows 8,1 och 10                               |   Stöds   |   Stöds   |
+| Windows Server 2012 R2, 2016, 2019                |   Stöds   |   Stöds   |
+| [Windows Server Semi-Annual-kanal][semi-annual] |   Stöds   |   Stöds   |
+| Ubuntu 16,04, 18,04                               |   Stöds   |   Stöds   |
+| Ubuntu 20.04                                      | Stöds inte |   Stöds   |
+| Ubuntu 19,10, 20,10 (via Snap-paket)            |   Community   |   Stöds   |
+| Debian 9                                          |   Stöds   |   Stöds   |
+| Debian 10                                         |   Stöds   |   Stöds   |
+| CentOS 7                                          |   Stöds   |   Stöds   |
+| CentOS 8                                          |   Stöds   |   Stöds   |
+| Red Hat Enterprise Linux 7                        |   Stöds   |   Stöds   |
+| Red Hat Enterprise Linux 8                        |   Stöds   |   Stöds   |
+| Fedora 31 +                                        |   Stöds   | Stöds inte |
+| Alpina 3,10                                       |   Visa anteckning    | Stöds inte |
+| Alpine 3.11 +                                      |   Visa anteckning    |   Visa anteckning    |
+| macOS 10.13 +                                      |   Stöds   |   Stöds   |
+| Båge                                              |   Community   |   Community   |
+| Raspbian                                          |   Community   |   Community   |
+| Kali                                              |   Community   |   Community   |
+| AppImage (fungerar på flera Linux-plattformar)      |   Community   |   Community   |
+| [Snapin-paket](https://snapcraft.io/powershell)   |   Se Obs!    |   Se Obs!    |
 
 > [!NOTE]
 > Snapin-paket stöds på samma sätt som den distribution som du kör paketet på.
@@ -89,21 +91,24 @@ Plattformar som anges som `Experimental` inte stöds officiellt, men som är til
 
 I följande tabell visas de datum då olika versioner inte längre stöds, baserat på [livs cykeln för PowerShell](#lifecycle-of-powershell-7).
 
-| Version |    Livs längd     |
-| :-----: | ------------------ |
-|   7.0   | 3 december 2022   |
-|   6,2   | 4 september 2020  |
-|   6.1   | 28 september 2019 |
-|   6.0   | 13 februari 2019  |
+| Version |          Livs längd           |
+| :-----: | ------------------------------ |
+|   7.1   | mitten – februari 2022 (projicerad) |
+|   7.0   | 3 december 2022               |
+|   6,2   | 4 september 2020              |
+|   6.1   | 28 september 2019             |
+|   6.0   | 13 februari 2019              |
 
 > [!NOTE]
-> Det här dokumentet är om stöd för PowerShell Core 6 och PowerShell 7. Windows PowerShell (1,0-5,1) är en del av Windows OS. Komponenterna får samma stöd som den överordnade produkten eller plattformen. Mer information finns i [livs cykel information om produkt och tjänster](/lifecycle/products/).
+> Det här dokumentet är om stöd för PowerShell Core. Windows PowerShell (1,0-5,1) är en del av Windows OS. Komponenterna får samma stöd som den överordnade produkten eller plattformen. Mer information finns i [livs cykel information om produkt och tjänster](/lifecycle/products/).
 
 ## <a name="unsupported-platforms"></a>Plattformar som inte stöds
 
 När en plattforms version når livs längd som definieras av plattforms ägaren, kommer PowerShell-kärnan också upphöra att stödja den plattforms versionen. Tidigare utgivna paket är fortfarande tillgängliga för kunder som behöver åtkomst men formell support och uppdateringar av någon typ kommer inte längre att tillhandahållas.
 
 Distributions ägarna avslutade därför stödet för följande versioner och stöds inte.
+
+<!-- TODO: Update this table Jason-->
 
 |    Plattform    | Version |                                                         Uttjänta                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -156,16 +161,17 @@ I tabellen nedan beskrivs de funktioner som uppfyller underhålls villkoren och 
 
 Följande tabell innehåller en tids linje för de större versionerna av PowerShell. Den här tabellen tillhandahålls för historisk referens. Den är inte avsedd att användas för att fastställa support livs cykeln.
 
-|       Version        | Utgivningsdatum |                                                                     Anteckning                                                                      |
-| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7,0 (LTS) |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
-| PowerShell 6,0       |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
-| PowerShell 5.1       |   Aug-2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
-| PowerShell 5.0       |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
-| PowerShell 4.0       |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
-| PowerShell 3.0       |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
-| PowerShell 2,0       |   Jul – 2009   | Integrerad i Windows 7 och Windows Server 2008 R2. Kan installeras på Windows XP SP3, Windows Server 2003 SP2 och Windows Vista SP1.            |
-| PowerShell 1,0       |   Nov-2006   | Kan installeras på Windows XP SP2, Windows Server 2003 SP1 och Windows Vista. Valfri komponent i Windows Server 2008.                          |
+|         Version          | Utgivningsdatum |                                                                     Anteckning                                                                      |
+| ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7,1 (aktuell) |   Nov-2020   | Bygger på .NET Core 5,0 (aktuell)                                                                                                              |
+| PowerShell 7,0 (LTS)     |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
+| PowerShell 6,0           |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
+| PowerShell 5.1           |   Aug-2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
+| PowerShell 5.0           |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
+| PowerShell 4.0           |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
+| PowerShell 3.0           |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
+| PowerShell 2,0           |   Jul – 2009   | Integrerad i Windows 7 och Windows Server 2008 R2. Kan installeras på Windows XP SP3, Windows Server 2003 SP2 och Windows Vista SP1.            |
+| PowerShell 1,0           |   Nov-2006   | Kan installeras på Windows XP SP2, Windows Server 2003 SP1 och Windows Vista. Valfri komponent i Windows Server 2008.                          |
 
 <!-- hyperlink references -->
 [avgiftsbelagd support]: https://support.microsoft.com/hub/4343728/support-for-business

@@ -2,20 +2,20 @@
 description: Miljövariabeln PSModulePath innehåller en lista över mappar som genomsöks för att hitta moduler och resurser.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
-ms.openlocfilehash: b904b01cc3fc63f32151885d040fe7b0e618f6d5
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 5d87f550b3aa8774ae81f68848d5aa252b2e5851
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272264"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524662"
 ---
 # <a name="about-psmodulepath"></a>Om PSModulePath
 
-`$env:PSModulePath`Miljövariabeln innehåller en lista över mappar som genomsöks för att hitta moduler och resurser.
+`$env:PSModulePath`Miljövariabeln innehåller en lista över mappar som genomsöks för att hitta moduler och resurser. PowerShell söker rekursivt igenom varje mapp efter modul ( `.psd1` eller `.psm1` ) filer.
 
 Som standard är de effektiva platser som `$env:PSModulePath` är tilldelade:
 
@@ -130,6 +130,21 @@ PowerShell Core 6 skriver över `$env:PSModulePath` . Inga ändringar har gjorts
 ### <a name="starting-powershell-7-from-powershell-6"></a>Starta PowerShell 7 från PowerShell 6
 
 PowerShell 7-starten fortsätter i befintligt skick med att ärva sökvägar som PowerShell Core 6 lagt till. Eftersom PS7 sökvägar är i förväg finns det inget funktionellt problem.
+
+## <a name="module-search-behavior"></a>Beteende för modul sökning
+
+PowerShell söker rekursivt igenom varje mapp i **PSModulePath** efter modul ( `.psd1` eller `.psm1` ) filer. Med det här Sök mönstret kan flera versioner av samma modul installeras i olika mappar. Exempel:
+
+```Output
+    Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/14/2020  5:56 PM                1.0.0.1
+d----           9/13/2019  3:53 PM                2.1.2
+```
+
+Som standard laddar PowerShell det högsta versions numret för en modul när flera versioner hittas. Om du vill läsa in en speciell version använder `Import-Module` du med parametern **FullyQualifiedName** . Mer information finns i [import-module](xref:Microsoft.PowerShell.Core.Import-Module).
 
 ## <a name="see-also"></a>Se även
 

@@ -2,16 +2,16 @@
 description: Innehåller information om PowerShell Thread-baserade jobb. Ett tråd jobb är en typ av bakgrunds jobb som kör ett kommando eller uttryck i en separat tråd i den aktuella sessionen.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 online version: 1.0.0
 schema: 2.0.0
 title: about_Thread_Jobs
-ms.openlocfilehash: 973d0ddf18b63cd7462817cf68f7c5d7466f4724
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: ba6251a195d3efdebd427b3f705386336b069211
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "93273008"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524645"
 ---
 # <a name="about-thread-jobs"></a>Om tråd jobb
 
@@ -21,31 +21,40 @@ Innehåller information om PowerShell Thread-baserade jobb. Ett tråd jobb är e
 
 ## <a name="long-description"></a>Lång beskrivning
 
-Den här artikeln beskriver hur du kör tråd jobb i PowerShell på en lokal dator.
-Information om hur du kör bakgrunds jobb på en lokal dator finns [about_Jobs](about_Jobs.md).
+PowerShell kör kommandon och skript via jobb samtidigt. Det finns tre typer av jobb som tillhandahålls av PowerShell för att stödja samtidighet.
 
-Starta ett tråd jobb med hjälp av `Start-ThreadJob` cmdleten. Denna cmdlet är tillgänglig i **ThreadJob** -modulen som levereras med PowerShell.
-`Start-ThreadJob` Returnerar ett enskilt jobb objekt som kapslar in kommandot eller skriptet som körs och kan användas med alla PowerShell-jobb som manipulerar-cmdletar.
+- `RemoteJob` -Kommandon och skript körs i en fjärran sluten session. Mer information finns i [about_Remote_Jobs](about_Remote_Jobs.md).
+- `BackgroundJob` -Kommandon och skript körs i en separat process på den lokala datorn. Mer information finns i artikeln [om jobb](about_Jobs.md).
+- `PSTaskJob` eller `ThreadJob` -kommandon och skript körs i en separat tråd i samma process på den lokala datorn.
 
-## <a name="the-job-cmdlets"></a>Jobb-cmdletar
+Trådbaserade jobb är inte lika robusta som fjärr-och bakgrunds jobb eftersom de körs i samma process på olika trådar. Om ett jobb har ett kritiskt fel som låser processen avslutas alla andra jobb i processen.
 
-|Cmdlet           |Beskrivning                                            |
-|-----------------|-------------------------------------------------------|
-|`Start-ThreadJob`|Startar ett tråd jobb på en lokal dator.               |
-|`Get-Job`        |Hämtar de jobb som startades i den aktuella sessionen.|
-|`Receive-Job`    |Hämtar resultatet av jobb.                              |
-|`Stop-Job`       |Stoppar ett pågående jobb.                                   |
-|`Wait-Job`       |Ignorerar kommando tolken tills ett eller flera jobb|
-|                 |full.                                              |
-|`Remove-Job`     |Tar bort ett jobb.                                         |
+Trådbaserade jobb kräver dock mindre kostnader. De använder inte Remoting-skiktet eller serialiseringen. Resultat objekt returneras som referenser till Live-objekt i den aktuella sessionen. Utan den här omkostnaderna körs trådbaserade jobb snabbare och använder färre resurser än andra jobb typer.
 
-## <a name="how-to-start-a-thread-job-on-the-local-computer"></a>Så här startar du ett tråd jobb på den lokala datorn
+> [!IMPORTANT]
+> Den överordnade sessionen som skapade jobbet övervakar också jobb statusen och samlar in pipeline-data. Det underordnade jobbets process avslutas av den överordnade processen när jobbet når ett slutfört tillstånd. Om den överordnade sessionen avbryts avbryts alla pågående underordnade jobb tillsammans med deras underordnade processer.
 
-Om du vill starta ett tråd jobb på den lokala datorn använder du `Start-ThreadJob` cmdleten.
+Det finns två sätt att komma runt den här situationen:
 
-Om du vill skriva ett `Start-ThreadJob` kommando, omger du kommandot eller skriptet som jobbet körs inom klammerparenteser ( `{ }` ).
+1. Används `Invoke-Command` för att skapa jobb som körs i frånkopplade sessioner. Mer information finns i [about_Remote_Jobs](about_Remote_Jobs.md).
+1. Använd `Start-Process` för att skapa en ny process i stället för ett jobb. Mer information finns i [Start process](xref:Microsoft.PowerShell.Management.Start-Process).
 
-Följande kommando startar ett tråd jobb som kör ett `Get-Process` kommando på den lokala datorn.
+## <a name="how-to-start-and-manage-thread-based-jobs"></a>Starta och hantera trådbaserade jobb
+
+Det finns två sätt att starta trådbaserade jobb:
+
+- `Start-ThreadJob` – från **ThreadJob** -modulen
+- `ForEach-Object -Parallel -AsJob` -Parallel-funktionen har lagts till i PowerShell 7,0
+
+Använd samma **jobb** -cmdlets som beskrivs i [about_Jobs](about_Jobs.md) för att hantera trådbaserade jobb.
+
+### <a name="using-start-threadjob"></a>Använda `Start-ThreadJob`
+
+**ThreadJob** -modulen levererades först med PowerShell 6. Den kan också installeras från PowerShell-galleriet för Windows PowerShell 5,1.
+
+Om du vill starta ett tråd jobb på den lokala datorn använder du `Start-ThreadJob` cmdleten med ett kommando eller ett skript som omges av klammerparenteser ( `{ }` ).
+
+I följande exempel startar ett tråd jobb som kör ett `Get-Process` kommando på den lokala datorn.
 
 ```powershell
 Start-ThreadJob -ScriptBlock { Get-Process }
@@ -53,7 +62,11 @@ Start-ThreadJob -ScriptBlock { Get-Process }
 
 `Start-ThreadJob`Kommandot returnerar ett `ThreadJob` objekt som representerar det jobb som körs. Jobbobjektet innehåller användbar information om jobbet, inklusive dess aktuella status för körning. Resultatet av jobbet samlas in när resultatet genereras.
 
-Om du vill skriva ett `ForEach-Object -Parallel` kommando, pipe-data till kommandot och omger kommandot eller skriptet som jobbet körs inom klammerparenteser ( `{}` ). Använd `-AsJob` parameter växeln så att ett jobb objekt returneras.
+### <a name="using-foreach-object--parallel--asjob"></a>Använda `ForEach-Object -Parallel -AsJob`
+
+PowerShell 7,0 har lagt till en ny parameter uppsättning till `ForEach-Object` cmdleten. Med de nya parametrarna kan du köra skript block i parallella trådar som PowerShell-jobb.
+
+Du kan skicka pipe-data till `ForEach-Object -Parallel` . Data skickas till skript blocket som körs parallellt. `-AsJob`Parametern skapar jobb objekt för var och en av de parallella trådarna.
 
 Följande kommando startar ett jobb som innehåller underordnade jobb för varje indatavärde skickas till kommandot. Varje underordnat jobb kör `Write-Output` kommandot med ett skickas-indatavärde som argument.
 
@@ -91,26 +104,6 @@ Följande kommando startar ett jobb som kör ett `Write-Output` kommando för va
 
 Eftersom varje underordnat jobb körs parallellt, garanteras inte ordningen på de genererade resultaten.
 
-## <a name="powershell-concurrency-and-jobs"></a>PowerShell-samtidighet och jobb
-
-PowerShell kör kommandon och skript via jobb samtidigt. Det finns tre jobbbaserade lösningar som tillhandahålls av PowerShell för att stödja samtidighet.
-
-|Jobb            |Beskrivning                                                  |
-|---------------|-------------------------------------------------------------|
-|`RemoteJob`    |Kommando och skript körs på en fjärrdator.                 |
-|`BackgroundJob`|Kommando och skript körs i en separat process på den lokala    |
-|               |datorspecifika.                                                     |
-|`ThreadJob`    |Kommando och skript körs i en separat tråd inom samma  |
-|               |processen på den lokala datorn.                                |
-
-Varje typ av jobb har fördelar och nack delar. Att köra skript på en annan dator eller i en separat process har en bra isolering. Eventuella fel påverkar inte andra jobb som körs eller klienten som startade jobbet. Men Remoting-lagret lägger till overhead, inklusive objekt serialisering. Alla objekt som skickas till och från fjärrsessionen måste serialiseras och sedan avserialiseras i takt med att den passerar mellan klienten och mål sessionen. Serialiserings åtgärden kan använda många beräknings-och minnes resurser för stora komplexa data objekt.
-
-## <a name="powershell-thread-based-jobs"></a>PowerShell Thread-baserade jobb
-
-Trådbaserade jobb är inte lika robusta som fjärr-och bakgrunds jobb eftersom de körs i samma process på olika trådar. Om ett jobb har ett kritiskt fel som gör att processen kraschar, kommer alla andra jobb i processen också att Miss sen.
-
-Trådbaserade jobb har dock mycket mindre kostnader. De behöver inte använda Remoting-lagret eller serialiseringen. Resultatet är att trådbaserade jobb ofta körs mycket snabbare och använder mycket mindre resurser än andra jobb typer.
-
 ## <a name="thread-job-performance"></a>Prestanda för tråd jobb
 
 Tråd jobb är snabbare och lättare att få högre vikt än andra typer av jobb. Men de har fortfarande överkapaciteter som kan vara stora jämfört med arbete som utförs av jobbet.
@@ -127,23 +120,39 @@ Tråd jobb ger bästa möjliga prestanda när det arbete de utför är större �
 (Measure-Command {
     1..1000 | ForEach { Start-ThreadJob { Write-Output "Hello $using:_" } } | Receive-Job -Wait
 }).TotalMilliseconds
-10457.962
-
+36860.8226
 
 (Measure-Command {
     1..1000 | ForEach-Object { "Hello: $_" }
 }).TotalMilliseconds
-24.9277
+7.1975
 ```
 
-I det första exemplet ovan visas en förgrunds slinga som skapar 1000 tråd jobb för att göra en enkel sträng skrivning. På grund av jobb omkostnader tar det över 33 sekunder att slutföra.
+I det första exemplet ovan visas en förgrunds slinga som skapar 1000 tråd jobb för att göra en enkel sträng skrivning. På grund av jobb omkostnader tar det över 36 sekunder att slutföra.
 
-Det andra exemplet kör `ForEach` cmdleten för att utföra samma 1000-åtgärder och varje sträng skrivning körs sekventiellt utan någon jobb kostnad. Det slutförs med 25 millisekunder.
+Det andra exemplet kör `ForEach` cmdleten för att utföra samma 1000-åtgärder.
+Den här gången `ForEach-Object` körs i tur och ordning på en enda tråd, utan någon jobb kostnad. Den slutförs på bara 7 millisekunder.
+
+I följande exempel samlas upp till 5000 poster upp för 10 separata system loggar. Eftersom skriptet kräver läsning av ett antal loggar, är det klokt att utföra åtgärderna parallellt.
 
 ```powershell
 $logNames.count
 10
 
+Measure-Command {
+    $logs = $logNames | ForEach-Object {
+        Get-WinEvent -LogName $_ -MaxEvents 5000 2>$null
+    }
+}
+
+TotalMilliseconds : 252398.4321 (4 minutes 12 seconds)
+$logs.Count
+50000
+```
+
+Skriptet slutförs på hälften av den tidpunkt då jobben körs parallellt.
+
+```powershell
 Measure-Command {
     $logs = $logNames | ForEach {
         Start-ThreadJob {
@@ -157,23 +166,9 @@ $logs.Count
 50000
 ```
 
-I exemplet ovan samlas upp till 5000 poster upp för 10 separata system loggar. Eftersom skriptet kräver läsning av ett antal loggar, är det klokt att utföra åtgärderna parallellt. Och jobbet slutförs över två gånger så snabbt som när skriptet körs sekventiellt.
-
-```powershell
-Measure-Command {
-    $logs = $logNames | ForEach-Object {
-        Get-WinEvent -LogName $_ -MaxEvents 5000 2>$null
-    }
-}
-
-TotalMilliseconds : 252398.4321 (4 minutes 12 seconds)
-$logs.Count
-50000
-```
-
 ## <a name="thread-jobs-and-variables"></a>Tråd jobb och variabler
 
-Variabler överförs till tråd jobb på olika sätt.
+Det finns flera sätt att skicka värden till trådbaserade jobb.
 
 `Start-ThreadJob` kan acceptera variabler som är skickas till cmdleten, skickas till-skript blocket via `$using` nyckelordet eller skickas via parametern **argument List** .
 
@@ -186,9 +181,9 @@ Start-ThreadJob { Write-Output $using:msg } | Wait-Job | Receive-Job
 
 Start-ThreadJob { param ([string] $message) Write-Output $message } -ArgumentList @($msg) |
   Wait-Job | Receive-Job
+```
 
-`ForEach-Object -Parallel` accepts piped in variables, and variables passed
-directly to the script block via the `$using` keyword.
+`ForEach-Object -Parallel` accepterar skickas i variabler och variabler som skickas direkt till-skript blocket via `$using` nyckelordet.
 
 ```powershell
 $msg = "Hello"
@@ -199,6 +194,8 @@ $msg | ForEach-Object -Parallel { Write-Output $_ } -AsJob | Wait-Job | Receive-
 ```
 
 Eftersom tråd jobb körs i samma process, måste alla typer av variabel referenser som skickas till jobbet behandlas noggrant. Om det inte är ett tråd säkert objekt ska det aldrig tilldelas, och metod och egenskaper ska aldrig anropas på den.
+
+I följande exempel skickas ett tråd säkert .NET- `ConcurrentDictionary` objekt till alla underordnade jobb för att samla in unika namngivna process objekt. Eftersom det är ett tråd säkert objekt kan det användas på ett säkert sätt medan jobben körs samtidigt i processen.
 
 ```powershell
 $threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
@@ -220,8 +217,6 @@ NPM(K)  PM(M)   WS(M) CPU(s)    Id SI ProcessName
 ------  -----   ----- ------    -- -- -----------
   112  108.25  124.43  69.75 16272  1 pwsh
 ```
-
-Exemplet ovan skickar ett tråd säkert dotNet- `ConcurrentDictionary` objekt till alla underordnade jobb för att samla in unika namngivna process objekt. Eftersom det är ett tråd säkert objekt kan det användas på ett säkert sätt medan jobben körs samtidigt i processen.
 
 ## <a name="see-also"></a>Se även
 

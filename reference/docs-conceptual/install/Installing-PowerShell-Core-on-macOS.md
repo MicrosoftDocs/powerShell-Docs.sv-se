@@ -1,17 +1,17 @@
 ---
 title: Installera PowerShell i macOS
 description: Information om hur du installerar PowerShell på macOS
-ms.date: 09/23/2020
-ms.openlocfilehash: 86647888910fb27528fb78c46a457fa1da856eb0
-ms.sourcegitcommit: 51104c7932a185b4d3293dbca306625369687468
+ms.date: 11/11/2020
+ms.openlocfilehash: c64edd202de90cb4e7a335376c60a0bba0633baa
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91224692"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524402"
 ---
 # <a name="installing-powershell-on-macos"></a>Installera PowerShell i macOS
 
-PowerShell stöder macOS 10,12 och högre. PowerShell 7.0.3 eller högre och PowerShell Preview 7.1.0 eller högre kräver macOS 10,13 och högre. Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör du `pwsh` från en Terminal.
+PowerShell 7,0 eller högre kräver macOS 10,13 och högre. Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör du `pwsh` från en Terminal.
 
 > [!NOTE]
 > PowerShell 7 är en uppgradering på plats som tar bort PowerShell Core 6. x.
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>Installation via direkt hämtning
 
-Hämta PKG-paketet `powershell-lts-7.0.3-osx-x64.pkg` från sidan [versioner][] på din MacOS-dator.
+Hämta PKG-paketet `powershell-lts-7.1.0-osx-x64.pkg` från sidan [versioner][] på din MacOS-dator.
 
 Du kan dubbelklicka på filen och följa anvisningarna eller installera den från terminalen:
 
 ```sh
-sudo installer -pkg powershell-lts-7.0.3-osx-x64.pkg -target /
+sudo installer -pkg powershell-lts-7.1.0-osx-x64.pkg -target /
 ```
 
 Installera [openssl](#installing-dependencies). OpenSSL krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.
@@ -144,19 +144,19 @@ Installera [openssl](#installing-dependencies). OpenSSL krävs för PowerShell-f
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/powershell-7.0.3-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.0.3
+sudo mkdir -p /usr/local/microsoft/powershell/7.1.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.3
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.0.3/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.0.3/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.1.0/pwsh /usr/local/bin/pwsh
 ```
 
 ## <a name="installing-dependencies"></a>Installerar beroenden
@@ -204,7 +204,7 @@ Om du vill ta bort ytterligare PowerShell-sökvägar läser du avsnittet [sökv�
 
 ## <a name="paths"></a>Sökvägar
 
-- `$PSHOME` är `/usr/local/microsoft/powershell/7.0.3/`
+- `$PSHOME` är `/usr/local/microsoft/powershell/7.1.0/`
 - Användar profilerna kommer att läsas från `~/.config/powershell/profile.ps1`
 - Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
 - Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
@@ -216,7 +216,7 @@ Profilerna respekterar PowerShell-konfigurationen per värd. Så att den standar
 
 PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] på MacOS.
 
-Eftersom macOS är en härledning av BSD används prefixet `/usr/local` i stället för `/opt` . Så, `$PSHOME` är `/usr/local/microsoft/powershell/7.0.3/` och den symboliska länken placeras på `/usr/local/bin/pwsh` .
+Eftersom macOS är en härledning av BSD används prefixet `/usr/local` i stället för `/opt` . Så, `$PSHOME` är `/usr/local/microsoft/powershell/7.1.0/` och den symboliska länken placeras på `/usr/local/bin/pwsh` .
 
 ## <a name="installation-support"></a>Installations stöd
 

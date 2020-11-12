@@ -2,16 +2,16 @@
 description: Ger information om hur PowerShell-arbetsjobb kör ett kommando eller uttryck i bakgrunden utan att interagera med den aktuella sessionen.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Jobs
-ms.openlocfilehash: b28eb480e3f994696738d6053ea7e2622a743ce5
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: d4d4f4b8a2f57edcfa72247d9f9bc224b848789a
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "93272960"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524781"
 ---
 # <a name="about-jobs"></a>Om jobb
 
@@ -20,21 +20,25 @@ Ger information om hur PowerShell-arbetsjobb kör ett kommando eller uttryck i b
 
 ## <a name="long-description"></a>Lång beskrivning
 
-PowerShell kör kommandon och skript via jobb samtidigt. Det finns tre jobbbaserade lösningar som tillhandahålls av PowerShell för att stödja samtidighet.
+PowerShell kör kommandon och skript via jobb samtidigt. Det finns tre typer av jobb som tillhandahålls av PowerShell för att stödja samtidighet.
 
-|Jobb            |Beskrivning                                                  |
-|---------------|-------------------------------------------------------------|
-|`RemoteJob`    |Kommando och skript körs på en fjärrdator.                 |
-|`BackgroundJob`|Kommando och skript körs i en separat process på den lokala    |
-|               |datorspecifika.                                                     |
-|`ThreadJob`    |Kommando och skript körs i en separat tråd inom samma  |
-|               |processen på den lokala datorn.                                |
+- `RemoteJob` -Kommandon och skript körs på en fjärrsession. Mer information finns i [about_Remote_Jobs](about_Remote_Jobs.md).
+- `BackgroundJob` -Kommandon och skript körs i en separat process på den lokala datorn.
+- `PSTaskJob` eller `ThreadJob` -kommandon och skript körs i en separat tråd i samma process på den lokala datorn. Mer information finns i [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs).
 
-Varje typ av jobb har fördelar och nack delar. Att köra skript på en annan dator eller i en separat process har en bra isolering. Eventuella fel påverkar inte andra jobb som körs eller klienten som startade jobbet. Men Remoting-lagret lägger till overhead, inklusive objekt serialisering. Alla objekt som skickas till och från fjärrsessionen måste serialiseras och sedan avserialiseras i takt med att den passerar mellan klienten och mål sessionen. Serialiserings åtgärden kan använda många beräknings-och minnes resurser för stora komplexa data objekt.
+Att köra skript på distans, på en separat dator eller i en separat process, ger bra isolering. Eventuella fel som inträffar i fjärrjobbet påverkar inte andra jobb som körs eller den överordnade sessionen som startade jobbet. Dock lägger dataremoting till overhead, inklusive objekt serialisering. Alla objekt serialiseras och avserialiseras när de skickas mellan den överordnade sessionen och fjärrsessionen (Job). Serialisering av stora komplexa data objekt kan förbruka stora mängder beräknings-och minnes resurser och överföra stora mängder data i nätverket.
 
-I det här avsnittet beskrivs hur du kör bakgrunds jobb i PowerShell på en lokal dator. Information om hur du kör bakgrunds jobb på fjärrdatorer finns [about_Remote_Jobs](about_Remote_Jobs.md). Mer information om tråd jobb finns i [about_Thread_Jobs](about_Thread_Jobs.md).
+Trådbaserade jobb är inte lika robusta som fjärr-och bakgrunds jobb eftersom de körs i samma process på olika trådar. Om ett jobb har ett kritiskt fel som låser processen avslutas alla andra jobb i processen.
 
-När du startar ett bakgrunds jobb returnerar kommando tolken omedelbart, även om jobbet tar en längre tid att slutföra. Du kan fortsätta att arbeta i sessionen utan avbrott medan jobbet körs.
+Trådbaserade jobb kräver dock mindre kostnader. De använder inte Remoting-skiktet eller serialiseringen. Resultat objekt returneras som referenser till Live-objekt i den aktuella sessionen. Utan den här omkostnaderna körs trådbaserade jobb snabbare och använder färre resurser än andra jobb typer.
+
+> [!IMPORTANT]
+> Den överordnade sessionen som skapade jobbet övervakar också jobb statusen och samlar in pipeline-data. Det underordnade jobbets process avslutas av den överordnade processen när jobbet når ett slutfört tillstånd. Om den överordnade sessionen avbryts avbryts alla pågående underordnade jobb tillsammans med deras underordnade processer.
+
+Det finns två sätt att komma runt den här situationen:
+
+1. Används `Invoke-Command` för att skapa jobb som körs i frånkopplade sessioner. Mer information finns i [about_Remote_Jobs](about_Remote_Jobs.md).
+1. Använd `Start-Process` för att skapa en ny process i stället för ett jobb. Mer information finns i [Start process](xref:Microsoft.PowerShell.Management.Start-Process).
 
 ## <a name="the-job-cmdlets"></a>Jobb-cmdletar
 
@@ -64,92 +68,76 @@ Följande kommando startar ett bakgrunds jobb som kör ett `Get-Process` kommand
 Start-Job -ScriptBlock {Get-Process}
 ```
 
+När du startar ett bakgrunds jobb returnerar kommando tolken omedelbart, även om jobbet tar en längre tid att slutföra. Du kan fortsätta att arbeta i sessionen utan avbrott medan jobbet körs.
+
 `Start-Job`Kommandot returnerar ett objekt som representerar jobbet. Jobbobjektet innehåller användbar information om jobbet, men det innehåller inte jobb resultatet.
 
-Spara jobbobjektet i en variabel och Använd sedan det med andra jobb-cmdletar för att hantera bakgrunds jobbet. Följande kommando startar ett jobb objekt och sparar det resulterande jobbobjektet i `$job` variabeln.
+Du kan spara jobbobjektet i en variabel och sedan använda det med andra **jobb** -cmdletar för att hantera bakgrunds jobbet. Följande kommando startar ett jobb objekt och sparar det resulterande jobbobjektet i `$job` variabeln.
 
 ```powershell
 $job = Start-Job -ScriptBlock {Get-Process}
 ```
 
-Från och med PowerShell 6,0 kan du använda en amersand ( `&` ) i slutet av en pipeline för att starta ett bakgrunds jobb. Följande kommando fungerar som likvärdigt med kommandot ovan.
+Från och med PowerShell 6,0 kan du använda bakgrunds operatorn ( `&` ) i slutet av en pipeline för att starta ett bakgrunds jobb. Mer information finns i [bakgrunds operator](about_Operators.md#background-operator-).
+
+Att använda bakgrunds operatören är detsamma som att använda `Start-Job` cmdleten i föregående exempel.
 
 ```powershell
 $job = Get-Process &
 ```
 
-Et-tecknet ( `&` ) kallas för bakgrunds operatorn. Mer information finns i [bakgrunds operator](about_Operators.md#background-operator-).
-
-Du kan också använda `Get-Job` cmdleten för att hämta objekt som representerar de jobb som startats i den aktuella sessionen. `Get-Job` returnerar samma jobb objekt som `Start-Job` returnerar.
-
 ## <a name="getting-job-objects"></a>Hämtar jobb objekt
 
-Använd cmdleten för att hämta objektet som representerar bakgrunds jobben som startades i den aktuella sessionen `Get-Job` . Utan parametrar `Get-Job` returnerar alla jobb som startades i den aktuella sessionen.
-
-Följande kommando hämtar till exempel jobben i den aktuella sessionen.
+`Get-Job`Cmdleten returnerar objekt som representerar bakgrunds jobben som startades i den aktuella sessionen. Utan parametrar `Get-Job` returnerar alla jobb som startades i den aktuella sessionen.
 
 ```powershell
-PS C:> Get-Job
-
-Id  Name  PSJobTypeName State      HasMoreData  Location   Command
---  ----  ------------- -----      -----------  --------   -------
-1   Job1  BackgroundJob Running    True         localhost  Get-Process
-```
-
-Du kan också spara jobbobjektet i en variabel och använda det för att representera jobbet i ett senare kommando. Följande kommando hämtar jobbet med ID 1 och sparar det i `$job` variabeln.
-
-```powershell
-$job = Get-Job -Id 1
+Get-Job
 ```
 
 Jobbobjektet innehåller jobbets tillstånd, vilket indikerar om jobbet har avslut ATS. Ett slutfört jobb har statusen **slutförd** eller **misslyckad**. Ett jobb kan också **blockeras** eller **köras**.
 
-```powershell
-Get-Job
-
+```Output
 Id  Name  PSJobTypeName State      HasMoreData  Location   Command
 --  ----  ------------- -----      -----------  --------   -------
 1   Job1  BackgroundJob Complete   True         localhost  Get-Process
 ```
 
+Du kan spara jobbobjektet i en variabel och använda det för att representera jobbet i ett senare kommando. Följande kommando hämtar jobbet med ID 1 och sparar det i `$job` variabeln.
+
+```powershell
+$job = Get-Job -Id 1
+```
+
 ## <a name="getting-the-results-of-a-job"></a>Hämta resultatet av ett jobb
 
-När du kör ett bakgrunds jobb visas inte resultaten direkt. I stället `Start-Job` returnerar cmdleten ett jobb objekt som representerar jobbet, men det innehåller inte resultatet. Använd cmdleten för att hämta resultatet av ett bakgrunds jobb `Receive-Job` .
+När du kör ett bakgrunds jobb visas inte resultaten direkt. Använd cmdleten för att hämta resultatet av ett bakgrunds jobb `Receive-Job` .
 
-Följande kommando använder `Receive-Job` cmdleten för att hämta resultatet av jobbet. Det använder ett jobb objekt som sparats i `$job` variabeln för att identifiera jobbet.
+I följande exempel `Receive-Job` hämtar cmdlet resultatet från jobbet med jobbobjektet i `$job` variabeln.
 
 ```powershell
 Receive-Job -Job $job
 ```
 
-`Receive-Job`Cmdleten returnerar resultatet från jobbet.
-
-```
+```Output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
 -------  ------    -----      ----- -----   ------    -- -----------
     103       4    11328       9692    56           1176 audiodg
     804      14    12228      14108   100   101.74  1740 CcmExec
     668       7     2672       6168   104    32.26   488 csrss
-# ...
+...
 ```
 
-Du kan också spara resultatet av ett jobb i en variabel. Följande kommando sparar resultatet av jobbet i `$job` variabeln till `$results` variabeln.
+Du kan spara resultatet av ett jobb i en variabel. Följande kommando sparar resultatet av jobbet i `$job` variabeln till `$results` variabeln.
 
 ```powershell
 $results = Receive-Job -Job $job
 ```
 
-Du kan också spara resultatet av jobbet i en fil med hjälp av omdirigerings operatorn ( `>` ) eller `Out-File` cmdleten. Följande kommando använder operatorn för omdirigering för att spara resultatet av jobbet i `$job` variabeln i `Results.txt` filen.
-
-```powershell
-Receive-Job -Job $job > results.txt
-```
-
-## <a name="getting-and-keeping-partial-job-results"></a>Hämta och behålla del jobbs resultat
+### <a name="getting-and-keeping-partial-job-results"></a>Hämta och behålla del jobbs resultat
 
 `Receive-Job`Cmdlet: en hämtar resultatet av ett bakgrunds jobb. Om jobbet har slutförts, `Receive-Job` hämtas alla jobb resultat. Om jobbet fortfarande körs `Receive-Job` hämtar de resultat som har genererats hittills. Du kan köra `Receive-Job` kommandon igen för att få återstående resultat.
 
-När `Receive-Job` returnerar resultat tas dessa resultat som standard bort från cachen där jobb resultat lagras. Om du kör ett annat `Receive-Job` kommando får du bara de resultat som ännu inte har tagits emot.
+Som standard `Receive-Job` tar bort resultaten från cachen där jobb resultat lagras. När du kör `Receive-Job` igen får du bara de nya resultaten som kom efter den första körningen.
 
 Följande kommandon visar resultatet av kommandon som `Receive-Job` körs innan jobbet har slutförts.
 
@@ -171,9 +159,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
   1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-Om du inte vill `Receive-Job` ta bort jobb resultatet som det har returnerat använder du parametern **Keep** . Därför `Receive-Job` returneras alla resultat som har genererats fram till den tiden.
-
-Följande kommandon visar effekterna av att använda parametern **Keep** i ett jobb som inte har slutförts än.
+Använd parametern **Keep** för att förhindra `Receive-Job` borttagning av jobb resultat som returneras. Följande kommandon visar effekterna av att använda parametern **Keep** i ett jobb som inte har slutförts än.
 
 ```powershell
 C:\PS> Receive-Job -Job $job -Keep
@@ -195,7 +181,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
    1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-## <a name="waiting-for-the-results"></a>Väntar på resultaten
+### <a name="waiting-for-the-results"></a>Väntar på resultaten
 
 Om du kör ett kommando som tar lång tid att slutföra kan du använda egenskaperna för jobbobjektet för att fastställa när jobbet har slutförts. Följande kommando använder `Get-Job` objektet för att hämta alla bakgrunds jobb i den aktuella sessionen.
 
@@ -205,7 +191,7 @@ Get-Job
 
 Resultaten visas i en tabell. Jobbets status visas i kolumnen **status** .
 
-```
+```Output
 Id Name  PSJobTypeName State    HasMoreData Location  Command
 -- ----  ------------- -----    ----------- --------  -------
 1  Job1  BackgroundJob Complete True        localhost Get-Process
@@ -213,14 +199,11 @@ Id Name  PSJobTypeName State    HasMoreData Location  Command
 3  Job3  BackgroundJob Complete True        localhost dir -Path C:\* -Re...
 ```
 
-I det här fallet visar egenskapen State att jobb 2 fortfarande körs. Om du vill använda `Receive-Job` cmdleten för att hämta jobb resultaten nu skulle resultaten vara ofullständiga. Du kan använda `Receive-Job` cmdleten upprepade gånger för att hämta alla resultat. Som standard får du bara de resultat som inte redan tagits emot, varje gång du använder den, men du kan använda parametern **Keep** för `Receive-Job` cmdlet: en för att behålla resultaten, även om de redan har tagits emot.
+I det här fallet visar egenskapen **State** att jobb 2 fortfarande körs. Om du vill använda `Receive-Job` cmdleten för att hämta jobb resultaten nu skulle resultaten vara ofullständiga. Du kan använda `Receive-Job` cmdleten upprepade gånger för att hämta alla resultat. Använd egenskapen **State** för att fastställa när jobbet har slutförts.
 
-Du kan skriva de partiella resultaten till en fil och sedan lägga till nya resultat när de tas emot eller vänta och kontrol lera jobbets tillstånd senare.
+Du kan också använda parametern **wait** i `Receive-Job` cmdleten. Vid användning av den här parametern returnerar cmdleten inte kommando tolken förrän jobbet har slutförts och alla resultat är tillgängliga.
 
-Du kan använda parametern **wait** för `Receive-Job` cmdleten, som inte returnerar kommando tolken förrän jobbet har slutförts och alla resultat är tillgängliga.
-
-Du kan också använda `Wait-Job` cmdleten för att vänta på ett eller alla resultat av jobbet. `Wait-Job` Du kan vänta på ett visst jobb, för alla jobb eller för att utföra slutförda jobb.
-
+Du kan också använda `Wait-Job` cmdleten för att vänta på ett eller alla resultat av jobbet. `Wait-Job` låter dig vänta på ett eller flera jobb eller för alla jobb.
 Följande kommando använder `Wait-Job` cmdleten för att vänta på ett jobb med **ID**
 10.
 
@@ -260,27 +243,28 @@ Remove-Job -Job $job
 
 ## <a name="investigating-a-failed-job"></a>Undersöka ett misslyckat jobb
 
-Om du vill ta reda på varför ett jobb misslyckades, Använd egenskapen **orsak** för jobbobjektet.
+Jobb kan inte utföras av många olika orsaker. jobbobjektet innehåller en **orsaks** egenskap som innehåller information om orsaken till felet.
 
-Följande kommando startar ett jobb utan de autentiseringsuppgifter som krävs. Objektet sparas i `$job` variabeln.
+I följande exempel startas ett jobb utan de autentiseringsuppgifter som krävs.
 
 ```powershell
 $job = Start-Job -ScriptBlock {New-Item -Path HKLM:\Software\MyCompany}
+Get-Job $job
 
 Id Name  PSJobTypeName State  HasMoreData  Location  Command
 -- ----  ------------- -----  -----------  --------  -------
 1  Job1  BackgroundJob Failed False        localhost New-Item -Path HKLM:...
 ```
 
-Följande kommando använder egenskapen orsak för att hitta felet som gjorde att jobbet inte kunde köras.
+Granska **orsaks** egenskapen för att hitta det fel som gjorde att jobbet inte kunde köras.
 
 ```powershell
 $job.ChildJobs[0].JobStateInfo.Reason
 ```
 
-I det här fallet misslyckades jobbet eftersom fjärrdatorn krävde explicita autentiseringsuppgifter för att köra kommandot. Värdet för egenskapen **orsak** är:
+I det här fallet misslyckades jobbet eftersom fjärrdatorn krävde explicita autentiseringsuppgifter för att köra kommandot. Egenskapen **orsak** innehåller följande meddelande:
 
-Det gick inte att ansluta till fjärrservern. följande fel meddelande visas: "åtkomst nekad".
+> Det gick inte att ansluta till fjärrservern. följande fel meddelande visas: "åtkomst nekad".
 
 ## <a name="see-also"></a>Se även
 
