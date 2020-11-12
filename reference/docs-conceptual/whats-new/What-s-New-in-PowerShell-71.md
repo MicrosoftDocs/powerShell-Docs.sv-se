@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,1
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,1
 ms.date: 11/11/2020
-ms.openlocfilehash: e4f6a97fd36368f9b8afcf995ec2d1d4f3fadca2
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 9ad552a8105b16d1f01ddacbdee1a43663ef3fd1
+ms.sourcegitcommit: 28831acbb09d3edbaa6bd9fc62491603d64d3849
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550255"
+ms.locfileid: "94553275"
 ---
 # <a name="whats-new-in-powershell-71"></a>Nyheter i PowerShell 7,1
 
@@ -31,7 +31,7 @@ PowerShell 7,1 har för närvarande stöd för följande operativ system på x64
 
 Vi har också community-support för:
 
-- Arc Linux
+- Båge Linux
 - Raspbian Linux
 - Kali Linux
 
@@ -124,7 +124,6 @@ Den senaste informationen om ändringar och förbättringar finns i [ändringslo
 - Åtgärda fel meddelandet från en ny symbolisk länk saknar mål (#13085) (tack @yecril71pl !)
 - Gör så att parametern `args` inte kan ha värdet null i offentliga `ConsoleHost` API: er (#13429)
 - Lägg till saknad dispose `CancellationTokenSource` (#13420) (tack @Youssef1313 !)
-- Lägg till parametern `-Paged` till `Get-Help` som stöder sid indelning (#13374)
 - Korrigeringen `Get-Help` visas inte korrekt om parametern stöder jokertecken (#13353) (tack @ThomasNieto !)
 - Uppdatera `pwsh` Hjälp för `-InputFormat` parameter (#13355) (tack @sethvs !)
 - Deklarera MIT-licens för filer som har kopierats från Roslyn (#13305) (tack @xtqqczze !)
@@ -156,7 +155,7 @@ Den senaste informationen om ändringar och förbättringar finns i [ändringslo
 - Ändra `CimCmdlets` att använda `AliasAttribute` (#12617) (tack @thlac !)
 - Korrigera felaktigt index i format sträng i ParameterBinderBase (#12630) (tack @powercode !)
 - Kopiera `CommandInfo` egenskapen i `Command.Clone()` (#12301) (tack @TylerLeonhardt !)
-- Använd `-IncludeEqual` i `Compa-Object` när `-ExcludeDifferent` har angetts (#12317) (tack @davidseibel !)
+- Använd `-IncludeEqual` i `Compare-Object` när `-ExcludeDifferent` har angetts (#12317) (tack @davidseibel !)
 - Ändra `Get-FileHash` till Stäng fil handtag innan du skriver utdata (#12474) (tack @HumanEquivalentUnit !)
 - Åtgärda inkonsekvent undantags meddelande i `-replace` operatorn (#12388) (tack @jackdcasey !)
 - Åtgärda `WinCompat` inläsning av modul för att hantera PowerShell 7-moduler med högre prioritet (#12269)
