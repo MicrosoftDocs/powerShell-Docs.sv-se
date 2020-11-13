@@ -2,12 +2,12 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 11/11/2020
-ms.openlocfilehash: 226d9c33ccf9c805c2e36a96013385a4c75a97b3
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 8bb9591b2cb3b6c46afbe544aae30fa5b10effcb
+ms.sourcegitcommit: 0577ce140ecbe9ab309da84c39217d15cdf6f7a6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550238"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94574626"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
@@ -198,7 +198,7 @@ Ladda ned Debian-paketet `powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb` från s
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
