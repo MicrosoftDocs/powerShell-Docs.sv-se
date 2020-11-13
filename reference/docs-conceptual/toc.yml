@@ -55,24 +55,26 @@
       items:
         - name: Översikt
           href: learn/deep-dives/overview.md
-        - name: Allt du vill veta om matriser
-          href: learn/deep-dives/everything-about-arrays.md
-        - name: Allt du vill veta mer om hashtabeller
-          href: learn/deep-dives/everything-about-hashtable.md
-        - name: Allt du vill veta mer om PSCustomObject
-          href: learn/deep-dives/everything-about-pscustomobject.md
-        - name: Allt du vill veta om strängersättning
-          href: learn/deep-dives/everything-about-string-substitutions.md
-        - name: Allt du vill veta om if/then/else
-          href: learn/deep-dives/everything-about-if.md
-        - name: Allt du vill veta om byte
-          href: learn/deep-dives/everything-about-switch.md
-        - name: Allt du vill veta om undantag
-          href: learn/deep-dives/everything-about-exceptions.md
-        - name: Allt du vill veta om $null
-          href: learn/deep-dives/everything-about-null.md
-        - name: Allt du vill veta om ShouldProcess
-          href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: Allt du vill veta om...
+          items:
+            - name: Allt du vill veta om matriser
+              href: learn/deep-dives/everything-about-arrays.md
+            - name: Allt du vill veta mer om hashtabeller
+              href: learn/deep-dives/everything-about-hashtable.md
+            - name: Allt du vill veta mer om PSCustomObject
+              href: learn/deep-dives/everything-about-pscustomobject.md
+            - name: Allt du vill veta om strängersättning
+              href: learn/deep-dives/everything-about-string-substitutions.md
+            - name: Allt du vill veta om if/then/else
+              href: learn/deep-dives/everything-about-if.md
+            - name: Allt du vill veta om byte
+              href: learn/deep-dives/everything-about-switch.md
+            - name: Allt du vill veta om undantag
+              href: learn/deep-dives/everything-about-exceptions.md
+            - name: Allt du vill veta om $null
+              href: learn/deep-dives/everything-about-null.md
+            - name: Allt du vill veta om ShouldProcess
+              href: learn/deep-dives/everything-about-shouldprocess.md
         - name: Skrivförlopp vid flertrådskörning
           href: learn/deep-dives/write-progress-across-multiple-threads.md
         - name: Lägg till support för autentiseringsuppgifter in PowerShell-funktioner
@@ -120,6 +122,8 @@
   items:
     - name: Nyheter i PowerShell 7.x
       items:
+        - name: Nyheter i PowerShell 7.1
+          href: whats-new/what-s-new-in-powershell-71.md
         - name: Nyheter i PowerShell 7.0
           href: whats-new/what-s-new-in-powershell-70.md
     - name: Nyheter i PowerShell Core 6.x
