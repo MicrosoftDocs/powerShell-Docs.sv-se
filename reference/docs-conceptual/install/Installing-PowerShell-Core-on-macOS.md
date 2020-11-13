@@ -2,23 +2,23 @@
 title: Installera PowerShell i macOS
 description: Information om hur du installerar PowerShell på macOS
 ms.date: 11/11/2020
-ms.openlocfilehash: c64edd202de90cb4e7a335376c60a0bba0633baa
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: c530d5c984d7629d95e8e727a08b53d6db39f6aa
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524402"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94589150"
 ---
 # <a name="installing-powershell-on-macos"></a>Installera PowerShell i macOS
 
 PowerShell 7,0 eller högre kräver macOS 10,13 och högre. Alla paket är tillgängliga på vår GitHub- [releases][] -sida. När paketet har installerats kör du `pwsh` från en Terminal.
 
 > [!NOTE]
-> PowerShell 7 är en uppgradering på plats som tar bort PowerShell Core 6. x.
+> PowerShell 7,1 är en uppgradering på plats som tar bort PowerShell Core 6. x och 7,0.
 >
 > `/usr/local/microsoft/powershell/6`Mappen ersätts av `/usr/local/microsoft/powershell/7` .
 >
-> Om du behöver köra PowerShell 6 sida vid sida med PowerShell 7 installerar du om PowerShell 6 med hjälp av metoden för [binärt Arkiv](#binary-archives) .
+> Om du behöver köra och en äldre version av PowerShell Core sida vid sida med PowerShell 7,1 installerar du den version du vill använda med hjälp av metoden för [binärt Arkiv](#binary-archives) .
 
 Det finns flera sätt att installera PowerShell på macOS. Använd någon av följande metoder:
 
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>Installation via direkt hämtning
 
-Hämta PKG-paketet `powershell-lts-7.1.0-osx-x64.pkg` från sidan [versioner][] på din MacOS-dator.
+Hämta PKG-paketet `powershell-7.1.0-osx-x64.pkg` från sidan [versioner][] på din MacOS-dator.
 
 Du kan dubbelklicka på filen och följa anvisningarna eller installera den från terminalen:
 
 ```sh
-sudo installer -pkg powershell-lts-7.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.0-osx-x64.pkg -target /
 ```
 
 Installera [openssl](#installing-dependencies). OpenSSL krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.

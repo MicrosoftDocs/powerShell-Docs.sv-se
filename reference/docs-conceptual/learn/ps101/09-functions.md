@@ -1,16 +1,16 @@
 ---
-title: Functions
+title: Funktioner
 description: Med PowerShell-funktioner kan du skapa verktyg som kan återanvändas i skript.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ca48f3020fa306f8a24328bd18648d5954c48a94
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436458"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94589146"
 ---
 # <a name="chapter-9---functions"></a>Kapitel 9 – funktioner
 
@@ -22,7 +22,7 @@ Du behöver inte göra några förkomplicerade saker. Håll det enkelt och Anvä
 
 ## <a name="naming"></a>Namngivning
 
-När du namnger dina funktioner i PowerShell använder du ett [Pascal Case] []-namn med ett godkänt verb och ett singular substantiv. Jag rekommenderar också att du förkorrigerar substantiv. Exempel: `<ApprovedVerb>-<Prefix><SingularNoun>`.
+När du namnger dina funktioner i PowerShell använder du ett [Pascal-Case][] -namn med ett godkänt verb och ett singular substantiv. Jag rekommenderar också att du förkorrigerar substantiv. Till exempel: `<ApprovedVerb>-<Prefix><SingularNoun>`.
 
 I PowerShell finns det en detaljerad lista över godkända verb som kan hämtas genom att köra `Get-Verb` .
 
@@ -247,7 +247,7 @@ function Test-MrParameter {
 }
 ```
 
-Varför använde jag **computername** och inte **dator**, **Server namn**eller **värd** för mitt parameter namn? Det beror på att jag ville ha funktionen standard som standard-cmdletar.
+Varför använde jag **computername** och inte **dator** , **Server namn** eller **värd** för mitt parameter namn? Det beror på att jag ville ha funktionen standard som standard-cmdletar.
 
 Jag skapar en funktion för att fråga alla kommandon i ett system och returnera antalet som har vissa parameter namn.
 
@@ -268,7 +268,7 @@ function Get-MrParameterCount {
 }
 ```
 
-Som du ser i resultaten som visas nedan, kan du 39 kommandon som har en **computername** -parameter. Det finns inga cmdletar som har parametrar som **dator**, **servername**, **Host**eller **Machine**.
+Som du ser i resultaten som visas nedan, kan du 39 kommandon som har en **computername** -parameter. Det finns inga cmdletar som har parametrar som **dator** , **servername** , **Host** eller **Machine**.
 
 ```powershell
 Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
@@ -339,7 +339,7 @@ function Test-MrCmdletBinding {
 }
 ```
 
-När `CmdletBinding` du lägger till läggs de gemensamma parametrarna automatiskt till. `CmdletBinding`kräver ett `param` block, men `param` blocket kan vara tomt.
+När `CmdletBinding` du lägger till läggs de gemensamma parametrarna automatiskt till. `CmdletBinding` kräver ett `param` block, men `param` blocket kan vara tomt.
 
 ```powershell
 Get-Command -Name Test-MrCmdletBinding -Syntax
@@ -372,7 +372,7 @@ PipelineVariable
 
 ## <a name="supportsshouldprocess"></a>SupportsShouldProcess
 
-`SupportsShouldProcess`lägger till parametrarna **whatIf** och **Confirm** . De behövs bara för kommandon som gör ändringar.
+`SupportsShouldProcess` lägger till parametrarna **whatIf** och **Confirm** . De behövs bara för kommandon som gör ändringar.
 
 ```powershell
 function Test-MrSupportsShouldProcess {
@@ -473,7 +473,7 @@ function Test-MrParameterValidation {
 ```
 
 Syntaxen som används i föregående exempel är PowerShell version 3,0 och högre kompatibel.
-`[Parameter(Mandatory=$true)]`kan anges i stället för att göra funktionen kompatibel med PowerShell version 2,0 och högre. Nu när **computername** krävs, om ett sådant inte har angetts, kommer funktionen att uppmanas att ange en.
+`[Parameter(Mandatory=$true)]` kan anges i stället för att göra funktionen kompatibel med PowerShell version 2,0 och högre. Nu när **computername** krävs, om ett sådant inte har angetts, kommer funktionen att uppmanas att ange en.
 
 ```powershell
 Test-MrParameterValidation
@@ -579,7 +579,7 @@ Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose
 
 Om du vill att din funktion ska godkänna pipeline-ininformation krävs ytterligare kod. Som tidigare nämnts i den här boken kan kommandon acceptera pipeline-inmatade **värde** (efter typ) eller **efter egenskaps namn**. Du kan skriva funktioner precis som de inbyggda kommandona så att de accepterar antingen en eller båda av de här typerna av inmatade.
 
-Om du vill acceptera pipeline-inmatat **värde**anger du `ValueFromPipeline` parameterns parameter för den specifika parametern. Tänk på att du bara kan acceptera pipeline-indata **med värde** från en av varje datatyp. Om du t. ex. har två parametrar som accepterar inmatade strängar, kan bara en av dem acceptera pipeline-inmatade **värden** , eftersom om du har angett den för båda sträng parametrarna, vet inte pipeline-indatatypen vilken av dem som ska bindas till. Det här är ett annat orsak till varför jag anropar den här typen av pipeline-indatatyper _efter typ_ i stället för **efter värde**.
+Om du vill acceptera pipeline-inmatat **värde** anger du `ValueFromPipeline` parameterns parameter för den specifika parametern. Tänk på att du bara kan acceptera pipeline-indata **med värde** från en av varje datatyp. Om du t. ex. har två parametrar som accepterar inmatade strängar, kan bara en av dem acceptera pipeline-inmatade **värden** , eftersom om du har angett den för båda sträng parametrarna, vet inte pipeline-indatatypen vilken av dem som ska bindas till. Det här är ett annat orsak till varför jag anropar den här typen av pipeline-indatatyper _efter typ_ i stället för **efter värde**.
 
 Pipeline-InInformationen kommer att finnas i ett objekt i taget på samma sätt som objekt hanteras i en `foreach` slinga.
 Ett `process` block krävs minst för att bearbeta vart och ett av dessa objekt om du accepterar en matris som inmatad. Om du bara accepterar ett enda värde som indata är ett `process` block inte nödvändigt, men jag rekommenderar att du ändå anger det för konsekvens.
@@ -620,7 +620,7 @@ function Test-MrPipelineInput {
 }
 ```
 
-`BEGIN`och `END` block är valfria. `BEGIN`anges före `PROCESS` blocket och används för att utföra alla inledande arbeten innan de objekt som tas emot från pipelinen. Detta är viktigt att förstå. Det går inte att komma åt värden som är skickas i `BEGIN` blocket. `END`Blocket anges efter `PROCESS` blocket och används för rensning när alla objekt som skickas har bearbetats.
+`BEGIN` och `END` block är valfria. `BEGIN` anges före `PROCESS` blocket och används för att utföra alla inledande arbeten innan de objekt som tas emot från pipelinen. Detta är viktigt att förstå. Det går inte att komma åt värden som är skickas i `BEGIN` blocket. `END`Blocket anges efter `PROCESS` blocket och används för rensning när alla objekt som skickas har bearbetats.
 
 ## <a name="error-handling"></a>Felhantering
 
@@ -646,7 +646,7 @@ function Test-MrErrorHandling {
 }
 ```
 
-Det finns ett par olika sätt att hantera fel i PowerShell. `Try/Catch`är det mer modern sättet att hantera fel.
+Det finns ett par olika sätt att hantera fel i PowerShell. `Try/Catch` är det mer modern sättet att hantera fel.
 
 ```powershell
 function Test-MrErrorHandling {
@@ -702,7 +702,7 @@ function Test-MrErrorHandling {
 
 Ändra inte den globala `$ErrorActionPreference` variabeln om det inte är absolut nödvändigt. Om du använder något som .NET direkt från din PowerShell-funktion kan du inte ange **ErrorAction** i själva kommandot. I så fall kan du behöva ändra den globala `$ErrorActionPreference` variabeln, men om du ändrar den, ändrar du den direkt efter att du har försökt med kommandot.
 
-## <a name="comment-based-help"></a>Kommenterings-baserad hjälp
+## <a name="comment-based-help"></a>Comment-Based hjälp
 
 Det anses vara en bra idé att lägga till kommenterad hjälp till dina funktioner så att de personer som du delar dem med vet hur de ska användas.
 
@@ -766,7 +766,7 @@ All syntax för att skriva en funktion i PowerShell kan verka överbelastad sär
 
 I det här kapitlet har du lärt dig grunderna i att skriva funktioner i PowerShell som innehåller information om hur du aktiverar en funktion i en avancerad funktion och några av de viktiga element som du bör tänka på när du skriver PowerShell-funktioner som parameter validering, utförlig utdata, pipeline-indata, fel hantering och kommenterad hjälp.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Hur får du en lista över godkända verb i PowerShell?
 1. Hur aktiverar du en PowerShell-funktion i en avancerad funktion?
@@ -783,7 +783,7 @@ I det här kapitlet har du lärt dig grunderna i att skriva funktioner i PowerSh
 - [about_Functions_Advanced][]
 - [about_Try_Catch_Finally][]
 - [about_Comment_Based_Help][]
-- [Video: PowerShell-Toolmaking med avancerade funktioner och skript moduler] []
+- [Video: PowerShell-Toolmaking med avancerade funktioner och skript-moduler][]
 
 <!-- link references -->
 [about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions
@@ -793,4 +793,5 @@ I det här kapitlet har du lärt dig grunderna i att skriva funktioner i PowerSh
 [about_Functions_Advanced]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
 [about_Try_Catch_Finally]: /powershell/module/microsoft.powershell.core/about/about_try_catch_finally
 [about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
-[Video: PowerShell-Toolmaking med avancerade funktioner och skript moduler]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/) [Pascal Case]:/dotNet/standard/design-Guidelines/capitalization-Conventionss
+[Video: PowerShell-Toolmaking med avancerade funktioner och skript-moduler]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
+[Pascal-fall]: /dotnet/standard/design-guidelines/capitalization-conventions

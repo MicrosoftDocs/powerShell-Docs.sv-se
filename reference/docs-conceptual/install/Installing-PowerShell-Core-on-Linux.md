@@ -2,12 +2,12 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 11/11/2020
-ms.openlocfilehash: 8bb9591b2cb3b6c46afbe544aae30fa5b10effcb
-ms.sourcegitcommit: 0577ce140ecbe9ab309da84c39217d15cdf6f7a6
+ms.openlocfilehash: c56708ab930a7285de92d657ed12182fc298fb73
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/13/2020
-ms.locfileid: "94574626"
+ms.locfileid: "94589116"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
@@ -95,12 +95,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämtning – Ubuntu 16,04
 
-Ladda ned Debian-paketet `powershell-lts_7.1.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell_7.1.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -144,12 +144,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation via direkt hämtning – Ubuntu 18,04
 
-Ladda ned Debian-paketet `powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell_7.1.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -193,12 +193,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-2004"></a>Installation via direkt hämtning – Ubuntu 20,04
 
-Ladda ned Debian-paketet `powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell_7.1.0-1.ubuntu.20.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -289,12 +289,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämtning – Debian 9
 
-Ladda ned Debian-paketet `powershell-lts_7.1.0-1.debian.9_amd64.deb` från sidan [releases][] på Debian-datorn.
+Ladda ned Debian-paketet `powershell_7.1.0-1.debian.9_amd64.deb` från sidan [releases][] på Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -448,18 +448,18 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämtning – CentOS 7
 
-Med [CentOS 7][]laddar du ned rpm-paketet `powershell-lts-7.1.0-1.rhel.7.x86_64.rpm` från sidan [utgåvor][] till CentOS-datorn.
+Med [CentOS 7][]laddar du ned rpm-paketet `powershell-7.1.0-1.rhel.7.x86_64.rpm` från sidan [utgåvor][] till CentOS-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo yum install powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Avinstallation-CentOS 7
@@ -491,18 +491,18 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämtning – Red Hat Enterprise Linux (RHEL) 7
 
-Hämta RPM-paketet `powershell-lts-7.1.0-1.rhel.7.x86_64.rpm` från sidan [versioner][] till Red Hat Enterprise Linux datorn.
+Hämta RPM-paketet `powershell-7.1.0-1.rhel.7.x86_64.rpm` från sidan [versioner][] till Red Hat Enterprise Linux datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo yum install powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Avinstallation-Red Hat Enterprise Linux (RHEL) 7
