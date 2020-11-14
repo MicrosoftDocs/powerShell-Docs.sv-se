@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell 7,1
 description: Nya funktioner och ändringar som lanseras i PowerShell 7,1
 ms.date: 11/11/2020
-ms.openlocfilehash: 9ad552a8105b16d1f01ddacbdee1a43663ef3fd1
-ms.sourcegitcommit: 28831acbb09d3edbaa6bd9fc62491603d64d3849
+ms.openlocfilehash: 5596d3ca69f5d8ea47f01ff0915e6fa33c1c463f
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553275"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625728"
 ---
 # <a name="whats-new-in-powershell-71"></a>Nyheter i PowerShell 7,1
 
@@ -15,7 +15,11 @@ PowerShell 7,1 är en utgåva med öppen källkod, plattforms oberoende plattfor
 
 Vi bygger på stiftelsen som etablerats i PowerShell 7,0, våra ansträngningar fokuserar på community-problem och inkluderar ett antal förbättringar och korrigeringar. Vi strävar efter att se till att PowerShell är en stabil och genomförd plattform.
 
+PowerShell 7,1 inkluderar även PSReadLine 2.1.0. Den här versionen innehåller förutsägande IntelliSense. Mer information om funktionen förutsägande IntelliSense finns i [meddelandet](https://devblogs.microsoft.com/powershell/announcing-psreadline-2-1-with-predictive-intellisense/) i PowerShell-bloggen.
+
 ## <a name="where-can-i-install-powershell"></a>Var kan jag installera PowerShell?
+
+<!-- TODO: Update list of OS below - make sure this is consistent across all docs -->
 
 PowerShell 7,1 har för närvarande stöd för följande operativ system på x64, inklusive:
 
@@ -25,7 +29,7 @@ PowerShell 7,1 har för närvarande stöd för följande operativ system på x64
 - Ubuntu 19,10 (via Snap-paket)
 - Debian 9/10
 - CentOS och RHEL 7/8
-- Fedora 30
+- Fedora 32
 - Alpine 3.11 + (inklusive ARM64)
 - macOS 10.13 +
 
@@ -83,7 +87,7 @@ Den senaste informationen om ändringar och förbättringar finns i [ändringslo
 
 ### <a name="breaking-changes"></a>Icke-bakåtkompatibla ändringar
 
-<!-- TODO: Add descriptions for each breaking change  -->
+<!-- TODO: Add descriptions for each breaking change - this might need to be a separate article that we link to -->
 
 - Korrigera `$?` till inte `$false` när det interna kommandot skriver till `stderr` (#13395)
 - Byt namn `-FromUnixTime` till `-UnixTimeSeconds` på för `Get-Date` att tillåta UNIX-tidsinformation (#13084) (tack @aetos382 !)
@@ -99,11 +103,14 @@ Den senaste informationen om ändringar och förbättringar finns i [ändringslo
 
 ### <a name="experimental-features"></a>Experimentella funktioner
 
-<!-- TODO: note which features are now mainstream  -->
+Mer information om experiment funktionerna finns i [använda experimentella funktioner](../learn/experimental-features.md).
 
+- Flytta `PSNullConditionalOperators` funktion från experiment (#13529)
+- Flytta `PSUnixFileStat` funktion från experimentell
 - Lägg till `-Runspace` parameter till alla `*-PSBreakpoint` cmdletar (#10492) (tack @KirkMunro !)
-- Stöd `PSPath` för att skicka till interna kommandon (#12386)
+- Lägg till `PSNativePSPathResolution` som stöd `PSPath` för att skicka till interna kommandon (#12386)
 - Använd invariant kultur sträng konvertering för `-replace` operatör (#10954) (tack @iSazonov !)
+- Lägg till `PSSubsystemPluginModel` stöd för framtida förutsägande IntelliSense-plugin-program
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>Allmänna cmdlet-uppdateringar och korrigeringar
 
@@ -114,8 +121,6 @@ Den senaste informationen om ändringar och förbättringar finns i [ändringslo
 - Lägg till stöd för `TLS` 1,3 i Web-cmdlets (#13409) (tack @iSazonov !)
 - Lägg till null-kontroll för `args` i `CommandLineParser` (#13451) (tack @iSazonov !)
 - Behandla referens punkter för Microsoft Store program (#13481) (tack @iSazonov !)
-- Flytta `PSNullConditionalOperators` funktion från experiment (#13529)
-- Flytta `PSNativePSPathResolution` funktion från experiment (#13522)
 - Använd fältet om egenskapen inte finns för `ObRoot` när du använder PowerShell Direct to container (#13375) (tack @hemisphera !)
 - Ignorera `UTF-7` föråldrade varningar (#13484)
 - Undvik flera uppräkningar av en `IEnumerable<Expression>` instans i `Compiler.cs` (#13491)

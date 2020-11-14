@@ -6,12 +6,12 @@ ms.date: 09/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Modes
-ms.openlocfilehash: 0b94125574bc65359b264225bb6c64231c1052d7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 63b0edcb9465d10474a60c0d2a66c145baacc93f
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93269853"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625677"
 ---
 # <a name="about-language-modes"></a>Om språk lägen
 
@@ -182,7 +182,7 @@ I andra konfigurationer av sessioner kan du hitta språk läget indirekt genom a
 
 Du kan hitta språk läget för en FullLanguage-eller ConstrainedLanguage-session genom att hämta värdet för egenskapen LanguageMode för sessionens tillstånd.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 $ExecutionContext.SessionState.LanguageMode
@@ -200,15 +200,7 @@ När du kör `$ExecutionContext.SessionState.LanguageMode` kommandot i en nolang
 
 - ScriptsNotAllowed: syntaxen stöds inte av den här körnings utrymme. Detta kan bero på att det inte är i något språk läge.
 
-## <a name="keywords"></a>RESERVERADE
-
-- about_ConstrainedLanguage
-- about_FullLanguage
-- about_NoLanguage
-- about_RestrictedLanguage
-
 ## <a name="see-also"></a>SE ÄVEN
 
 - [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 - [about_Session_Configurations](about_Session_Configurations.md)
-

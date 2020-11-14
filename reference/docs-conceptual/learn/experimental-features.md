@@ -2,12 +2,12 @@
 ms.date: 11/11/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: fa7e72869e2c3b3b5920b556b8dacf5068bc00d5
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550221"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625711"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -28,12 +28,12 @@ Den här artikeln beskriver de experimentella funktioner som är tillgängliga o
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: |
 | PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |         |
 | PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |         |
+| PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |
+| PSUnixFileStat (endast Windows-konventionellt i PS 7.1 +)  |         | &check; |         |
 | PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
 | PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
 | Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |
-| PSUnixFileStat (endast Windows-konventionellt i PS 7.1 +)  |         | &check; |         |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
