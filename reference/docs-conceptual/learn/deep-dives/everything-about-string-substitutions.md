@@ -79,7 +79,7 @@ Du kan köra kommandon inuti en sträng. Trots att jag har det här alternativet
 $message = "Date: $(Get-Date)"
 ```
 
-## <a name="format-string"></a>Format sträng
+## <a name="format-string"></a>Formatsträng
 
 .NET har ett sätt att formatera strängar som jag tycker är ganska enkla att arbeta med. Låt oss först visa dig den statiska metoden för den innan jag visar PowerShell-genvägen för att göra samma sak.
 
@@ -144,7 +144,7 @@ Men om det är allt du behöver finns det ett snabbare alternativ.
 
 Det är också värt att peka på att du även kan `-split` strängar.
 
-## <a name="join-path"></a>Anslut till sökväg
+## <a name="join-path"></a>Join-Path
 
 Detta är ofta överblickat men en bra cmdlet för att skapa en fil Sök väg.
 
