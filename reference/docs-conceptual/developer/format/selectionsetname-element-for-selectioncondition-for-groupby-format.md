@@ -4,10 +4,10 @@ ms.topic: reference
 title: SelectionSetName-element för SelectionCondition för GroupBy (format)
 description: SelectionSetName-element för SelectionCondition för GroupBy (format)
 ms.openlocfilehash: a4f28c1caba3790718b99f63659cb0cbed8def16
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654988"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-groupby-format"></a>SelectionSetName-element för SelectionCondition för GroupBy (format)

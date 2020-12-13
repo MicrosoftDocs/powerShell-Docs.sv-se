@@ -4,10 +4,10 @@ ms.topic: reference
 title: Visa felinformation
 description: Visa felinformation
 ms.openlocfilehash: 37a3adb91d0e616a5c7f27bcab866f8da139f969
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653062"
 ---
 # <a name="displaying-error-information"></a>Visa felinformation

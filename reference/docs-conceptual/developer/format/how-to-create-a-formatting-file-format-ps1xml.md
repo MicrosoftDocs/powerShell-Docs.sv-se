@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en formateringsfil (.format.ps1xml)
 description: Skapa en formateringsfil (.format.ps1xml)
 ms.openlocfilehash: 5bbc1ba40bfccf13636abc0f0751938aa724b761
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652008"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>Skapa en formateringsfil (.format.ps1xml)

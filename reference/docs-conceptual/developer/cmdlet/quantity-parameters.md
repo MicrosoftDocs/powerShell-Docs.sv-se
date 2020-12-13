@@ -4,10 +4,10 @@ ms.topic: reference
 title: Kvantitetsparametrar
 description: Kvantitetsparametrar
 ms.openlocfilehash: 3f7c23eec34a709b1f2d59f611c93909b20f4124
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650304"
 ---
 # <a name="quantity-parameters"></a>Kvantitetsparametrar

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Cmdlet-felrapportering
 description: Cmdlet-felrapportering
 ms.openlocfilehash: f06cf98183d56249080623895bd1f5a3e070cefd
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653409"
 ---
 # <a name="cmdlet-error-reporting"></a>Fel rapportering för cmdlet
@@ -36,7 +36,7 @@ Rapportering av ett fel som inte avslutas bör alltid utföras inom cmdletens im
 
 ## <a name="reporting-terminating-errors"></a>Rapportera avslutande fel
 
-Avslutande fel rapporteras genom att Utlös ande undantag eller genom att anropa metoden [system. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Tänk på att cmdlets också kan fånga upp och återanvända undantag, till exempel **OutOfMemory** , men de behöver inte rethrowa undantag eftersom PowerShell-körningen även kommer att fånga dem.
+Avslutande fel rapporteras genom att Utlös ande undantag eller genom att anropa metoden [system. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Tänk på att cmdlets också kan fånga upp och återanvända undantag, till exempel **OutOfMemory**, men de behöver inte rethrowa undantag eftersom PowerShell-körningen även kommer att fånga dem.
 
 Du kan också definiera egna undantag för problem som är specifika för din situation eller lägga till ytterligare information i ett befintligt undantag med hjälp av fel posten.
 
@@ -69,9 +69,9 @@ Följande rikt linjer bör följas när du anger fel identifierare:
 
 Fel kategorier används för att gruppera fel för användaren. PowerShell definierar dessa kategorier och cmdlets och PowerShell-leverantörer måste välja mellan dem när fel posten skapas.
 
-En beskrivning av de fel kategorier som är tillgängliga finns i uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . I allmänhet bör du undvika att använda **noerror** , **UndefinedError** och **GenericError** när det är möjligt.
+En beskrivning av de fel kategorier som är tillgängliga finns i uppräkningen [system. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . I allmänhet bör du undvika att använda **noerror**, **UndefinedError** och **GenericError** när det är möjligt.
 
-Användare kan visa fel baserat på kategori när de har angetts `$ErrorView` till **CategoryView** .
+Användare kan visa fel baserat på kategori när de har angetts `$ErrorView` till **CategoryView**.
 
 ## <a name="see-also"></a>Se även
 

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lägga till exempel i ett cmdlet-hjälpavsnitt
 description: Lägga till exempel i ett cmdlet-hjälpavsnitt
 ms.openlocfilehash: 6b72e29c93740b7953d9b68fc8e68c02eb2f4dee
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654723"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Lägga till exempel i ett cmdlet-hjälpavsnitt

@@ -4,10 +4,10 @@ ms.topic: reference
 title: SelectionSetName-element för EntrySelectedBy för ListControl (format)
 description: SelectionSetName-element för EntrySelectedBy för ListControl (format)
 ms.openlocfilehash: 413a77f7ba06fe952e574061e58d0b5d80c5b3c4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651838"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>SelectionSetName-element för EntrySelectedBy för ListControl (format)

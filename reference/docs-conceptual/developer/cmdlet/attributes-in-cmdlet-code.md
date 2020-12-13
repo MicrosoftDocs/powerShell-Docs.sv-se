@@ -4,10 +4,10 @@ ms.topic: reference
 title: Attribut i cmdlet-kod
 description: Attribut i cmdlet-kod
 ms.openlocfilehash: 296bb8bcb06ef660e97dc792d1ecf596cc7c2930
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653646"
 ---
 # <a name="attributes-in-cmdlet-code"></a>Attribut i cmdlet-kod

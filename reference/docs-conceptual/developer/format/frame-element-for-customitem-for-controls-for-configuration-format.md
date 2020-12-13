@@ -4,10 +4,10 @@ ms.topic: reference
 title: Frame-element för CustomItem för Controls för Configuration (format)
 description: Frame-element för CustomItem för Controls för Configuration (format)
 ms.openlocfilehash: 85d095b9b0c25b68b2353bce56b85333aff91b98
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652243"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>Frame-element för CustomItem för Controls för Configuration (format)

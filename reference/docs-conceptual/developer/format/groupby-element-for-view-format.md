@@ -4,10 +4,10 @@ ms.topic: reference
 title: GroupBy-element för View (format)
 description: GroupBy-element för View (format)
 ms.openlocfilehash: d8ca93a3b2c1490928885579919c07f5eb274cd8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652099"
 ---
 # <a name="groupby-element-for-view-format"></a>GroupBy-element för View (format)

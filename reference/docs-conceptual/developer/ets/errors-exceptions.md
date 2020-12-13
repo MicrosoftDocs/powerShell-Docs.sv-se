@@ -4,15 +4,15 @@ ms.topic: reference
 title: Fel och undantag i det utökade typ systemet
 description: Fel och undantag i det utökade typ systemet
 ms.openlocfilehash: 295c16ad9abb67b0c4967bf32125bfc7ee0a35da
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652476"
 ---
 # <a name="errors-and-exceptions-in-the-extended-type-system"></a>Fel och undantag i det utökade typ systemet
 
-Fel kan uppstå i ETS vid initiering av typ data och vid åtkomst till en medlem i ett **PSObject** -objekt eller med hjälp av en av verktygs klasserna som **LanguagePrimitives** .
+Fel kan uppstå i ETS vid initiering av typ data och vid åtkomst till en medlem i ett **PSObject** -objekt eller med hjälp av en av verktygs klasserna som **LanguagePrimitives**.
 
 ## <a name="runtime-errors"></a>Körnings fel
 
@@ -33,7 +33,7 @@ Alla fel som inträffar när en ETS-metod anropas orsakar ett **MethodException*
 
 ## <a name="casting-errors"></a>Data typs fel
 
-När en ogiltig omvandling görs, genereras en **PSInvalidCastException** . Eftersom detta undantag härleds från **system. InvalidCastException** , kan det inte direkt svällas från skriptet. Tänk på att den entitet som försöker omvandlaren måste figursätta **PSInvalidCastException** i en **PSRuntimeException** för att detta ska kunna svällas av skript. Om ett försök görs att ange värdet för en **PSPropertySet** , **PSMemberSet** , **PSMethodInfo** eller en medlem i **ReadOnlyPSMemberInfoCollection 1** , genereras en **NotSupportedException** .
+När en ogiltig omvandling görs, genereras en **PSInvalidCastException** . Eftersom detta undantag härleds från **system. InvalidCastException**, kan det inte direkt svällas från skriptet. Tänk på att den entitet som försöker omvandlaren måste figursätta **PSInvalidCastException** i en **PSRuntimeException** för att detta ska kunna svällas av skript. Om ett försök görs att ange värdet för en **PSPropertySet**, **PSMemberSet**, **PSMethodInfo** eller en medlem i **ReadOnlyPSMemberInfoCollection 1**, genereras en **NotSupportedException** .
 
 ## <a name="common-runtime-errors"></a>Vanliga körnings fel
 

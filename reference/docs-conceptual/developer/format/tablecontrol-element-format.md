@@ -4,10 +4,10 @@ ms.topic: reference
 title: TableControl-element (format)
 description: TableControl-element (format)
 ms.openlocfilehash: 93e05e22d61504d7781b6f3c07f9a3fd0b3c9e8a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651460"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl-element (format)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Cmdlet-attribut
 description: Cmdlet-attribut
 ms.openlocfilehash: 6a106f33cb34c6c33b88a981815543bc9af4e4ba
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653516"
 ---
 # <a name="cmdlet-attributes"></a>Cmdlet-attribut

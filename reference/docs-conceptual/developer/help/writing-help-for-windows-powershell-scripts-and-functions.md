@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skriva hjälp för PowerShell-skript och-funktioner
 description: Skriva hjälp för PowerShell-skript och-funktioner
 ms.openlocfilehash: f72742e2a131f41ba8ffdcec4901c7c3ea1da1ad
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654640"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Skriva hjälp för PowerShell-skript och-funktioner

@@ -4,10 +4,10 @@ ms.topic: reference
 title: GetProc02 – kodexempel
 description: GetProc02 – kodexempel
 ms.openlocfilehash: f3fdef32af6bc12179da02ad19228603ad348f7d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654434"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02 – kodexempel
@@ -21,7 +21,7 @@ Här är kod exemplen för GetProc02-exempel-cmdleten. Detta är det `Get-Proces
 
 Fullständig exempel kod finns i följande avsnitt.
 
-|Språk|Avsnitt|
+|Språk|Ämne|
 |--------------|-----------|
 |C#|[GetProc02 (C#) – kodexempel](./getproc02-csharp-sample-code.md)|
 |VB.NET|[GetProc02 (VB.NET) – kodexempel](./getproc02-vb-net-sample-code.md)|

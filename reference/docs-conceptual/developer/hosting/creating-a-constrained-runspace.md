@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa ett begränsat körningsutrymme
 description: Skapa ett begränsat körningsutrymme
 ms.openlocfilehash: 53fee3cc7d8625425bc6a73196aee9eee7f17ed6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651166"
 ---
 # <a name="creating-a-constrained-runspace"></a>Skapa ett begränsat körningsutrymme
@@ -104,7 +104,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="making-commands-private"></a>Göra kommandon privata
 
- Du kan också göra ett kommando privat genom att ställa in egenskapen [system. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) på [system. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private** . Värd programmet och andra kommandon kan anropa det kommandot, men användare av programmet kan inte. I följande exempel är kommandot [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privat.
+ Du kan också göra ett kommando privat genom att ställa in egenskapen [system. Management. Automation. Commandinfo. visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) på [system. Management. Automation. SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**. Värd programmet och andra kommandon kan anropa det kommandot, men användare av programmet kan inte. I följande exempel är kommandot [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) privat.
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

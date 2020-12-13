@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en bred vy
 description: Skapa en bred vy
 ms.openlocfilehash: 4230ef91a3612e962b2773b12e8016df6f760eae
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92655612"
 ---
 # <a name="creating-a-wide-view"></a>Skapa en bred vy

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Förstå en Windows PowerShell-modul
 description: Förstå en Windows PowerShell-modul
 ms.openlocfilehash: 882e9db59dc1bc8570676d1da7ce84c808d076e8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651148"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Förstå en Windows PowerShell-modul
@@ -82,7 +82,7 @@ När du har skapat en skript-, binär-eller manifest-modul kan du spara arbetet 
 
 I allmänhet kan du bestämma var du ska installera modulen genom att använda en av Sök vägarna som lagras i `$ENV:PSModulePath` variabeln. Genom att använda någon av dessa sökvägar kan PowerShell automatiskt hitta och läsa in modulen när en användare gör ett anrop till den i sin kod. Om du lagrar modulen någon annan stans kan du uttryckligen meddela PowerShell genom att skicka in platsen för modulen som en parameter när du anropar `Install-Module` .
 
-Oavsett sökvägen kallas sökvägen för mappen (typen modulebase), och namnet på *base* skriptet, den binära eller manifest-modulens fil ska vara samma som mappens mappnamn, med följande undantag:
+Oavsett sökvägen kallas sökvägen för mappen (typen modulebase), och namnet på  skriptet, den binära eller manifest-modulens fil ska vara samma som mappens mappnamn, med följande undantag:
 
 - Dynamiska moduler som skapas av `New-Module` cmdleten kan namnges med hjälp av `Name` parametern för cmdleten.
 

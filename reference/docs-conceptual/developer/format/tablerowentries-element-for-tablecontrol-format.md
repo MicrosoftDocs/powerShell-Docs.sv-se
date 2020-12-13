@@ -4,10 +4,10 @@ ms.topic: reference
 title: TableRowEntries-element för TableControl (format)
 description: TableRowEntries-element för TableControl (format)
 ms.openlocfilehash: 1df63e645234da8276c7ccc5af34e81a56475e43
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651473"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableRowEntries-element för TableControl (format)

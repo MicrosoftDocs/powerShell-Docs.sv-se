@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skriva hjälp för PowerShell-moduler
 description: Skriva hjälp för PowerShell-moduler
 ms.openlocfilehash: 3bef45c0dd8a7e63bc419bb3e5a7a1783810105b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654660"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Skriva hjälp för PowerShell-moduler
@@ -20,15 +20,15 @@ I det här dokumentet beskrivs formatet och rätt placering av hjälp avsnitt f�
 
 En modul kan innehålla följande typer av hjälp.
 
-- **Cmdlet-hjälp** . Hjälp avsnitten som beskriver cmdlets i en modul är XML-filer som använder kommandot hjälp schema för kommandot
+- **Cmdlet-hjälp**. Hjälp avsnitten som beskriver cmdlets i en modul är XML-filer som använder kommandot hjälp schema för kommandot
 
-- **Leverantörs hjälp** . Hjälp avsnitten som beskriver leverantörer i en modul är XML-filer som använder providerns hjälp schema.
+- **Leverantörs hjälp**. Hjälp avsnitten som beskriver leverantörer i en modul är XML-filer som använder providerns hjälp schema.
 
-- **Funktions hjälp** . Hjälp avsnitten som beskriver funktioner i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i funktionen, skript-eller skript-modulen
+- **Funktions hjälp**. Hjälp avsnitten som beskriver funktioner i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i funktionen, skript-eller skript-modulen
 
-- **Skript hjälp** . De hjälp avsnitt som beskriver skript i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i skript-eller skript-modulen.
+- **Skript hjälp**. De hjälp avsnitt som beskriver skript i en modul kan vara XML-filer som använder kommandot hjälp schema eller kommentarer baserade hjälp avsnitt i skript-eller skript-modulen.
 
-- **Konceptuell ("About") hjälp** . Du kan använda ett konceptuellt hjälp avsnitt för att beskriva modulen och dess medlemmar och förklara hur medlemmarna kan användas tillsammans för att utföra uppgifter.
+- **Konceptuell ("About") hjälp**. Du kan använda ett konceptuellt hjälp avsnitt för att beskriva modulen och dess medlemmar och förklara hur medlemmarna kan användas tillsammans för att utföra uppgifter.
   Konceptuella hjälp ämnen är textfiler med Unicode-kodning (UTF-8). Fil namnet måste använda `about_<name>.help.txt` formatet, till exempel `about_MyModule.help.txt` . Som standard innehåller PowerShell över 100 av dessa begrepp om hjälp avsnitt och de formateras som i följande exempel.
 
   ```Output
@@ -85,7 +85,7 @@ Du kan tillhandahålla hjälp avsnitt för moduler på olika språk. `Get-Help`C
 
 Från och med PowerShell 3,0 körs ett `Get-Help` kommando för en cmdlet eller funktion som aktiverar automatisk import av modulen. `Get-Help`Cmdleten visar omedelbart innehållet i hjälp avsnitten i modulen.
 
-Om modulen inte innehåller hjälp ämnen och det inte finns några hjälp avsnitt för kommandona i modulen på användarens dator, `Get-Help` visar den automatiskt genererade hjälpen. Den automatiskt genererade hjälpen innehåller kommandosyntaxen, parametrarna och indata-och utdatatyperna, men innehåller inte några beskrivningar. Den automatiskt genererade hjälpen innehåller text som instruerar användaren att försöka använda `Update-Help` cmdleten för att hämta hjälp för kommandot från Internet eller en fil resurs. Det rekommenderar också att du **Online** använder `Get-Help` cmdleten online för att hämta online-versionen av hjälp avsnittet.
+Om modulen inte innehåller hjälp ämnen och det inte finns några hjälp avsnitt för kommandona i modulen på användarens dator, `Get-Help` visar den automatiskt genererade hjälpen. Den automatiskt genererade hjälpen innehåller kommandosyntaxen, parametrarna och indata-och utdatatyperna, men innehåller inte några beskrivningar. Den automatiskt genererade hjälpen innehåller text som instruerar användaren att försöka använda `Update-Help` cmdleten för att hämta hjälp för kommandot från Internet eller en fil resurs. Det rekommenderar också att du  använder `Get-Help` cmdleten online för att hämta online-versionen av hjälp avsnittet.
 
 ## <a name="supporting-updatable-help"></a>Stöd för uppdateringsbar hjälp
 

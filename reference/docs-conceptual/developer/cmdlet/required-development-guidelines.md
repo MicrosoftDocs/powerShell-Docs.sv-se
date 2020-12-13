@@ -4,10 +4,10 @@ ms.topic: reference
 title: Obligatoriska riktlinjer för utveckling
 description: Obligatoriska riktlinjer för utveckling
 ms.openlocfilehash: 98db075b314eb7f54f2deb56022799d9f830f9ef
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92655753"
 ---
 # <a name="required-development-guidelines"></a>Obligatoriska riktlinjer för utveckling
@@ -169,7 +169,7 @@ Mer information om hur du deklarerar cmdlet-attributet finns i [CmdletAttribute-
 
 ### <a name="override-an-input-processing-method-rc03"></a>Åsidosätt en metod för bearbetning av indata (RC03)
 
-För att cmdleten ska delta i Windows PowerShell-miljön, måste den åsidosätta minst en av följande *metoder för bearbetning av indata* .
+För att cmdleten ska delta i Windows PowerShell-miljön, måste den åsidosätta minst en av följande *metoder för bearbetning av indata*.
 
 [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) den här metoden kallas en gång och används för att tillhandahålla för bearbetnings funktioner.
 

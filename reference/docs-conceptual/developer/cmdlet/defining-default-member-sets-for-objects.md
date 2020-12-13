@@ -4,10 +4,10 @@ ms.topic: reference
 title: Definiera standardmedlemsuppsättningar för objekt
 description: Definiera standardmedlemsuppsättningar för objekt
 ms.openlocfilehash: 919f7ba65322c6a56a27e046fb211bde151abf7d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653126"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Definiera standardmedlemsuppsättningar för objekt

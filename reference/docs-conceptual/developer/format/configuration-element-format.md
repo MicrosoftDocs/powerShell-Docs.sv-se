@@ -4,10 +4,10 @@ ms.topic: reference
 title: Configuration-element (format)
 description: Configuration-element (format)
 ms.openlocfilehash: 0524736d40dd7a7acb0b6fb61d1438b75672c240
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92655697"
 ---
 # <a name="configuration-element-format"></a>Configuration-element (format)
