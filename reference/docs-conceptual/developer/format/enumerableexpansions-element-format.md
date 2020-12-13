@@ -4,10 +4,10 @@ ms.topic: reference
 title: EnumerableExpansions-element (format)
 description: EnumerableExpansions-element (format)
 ms.openlocfilehash: 789599e6ff368b4685c7937d5b6eb38618752f9e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660176"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions-element (format)

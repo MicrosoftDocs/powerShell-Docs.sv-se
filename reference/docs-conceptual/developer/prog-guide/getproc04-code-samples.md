@@ -4,10 +4,10 @@ ms.topic: reference
 title: GetProc04 – kodexempel
 description: GetProc04 – kodexempel
 ms.openlocfilehash: db94eda2b3aa5fc88a3054df66f54628e1482f56
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92659241"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 – kodexempel
@@ -21,7 +21,7 @@ Här är kod exemplen för GetProc04-exempel-cmdleten. Detta är det `Get-Proces
 
 Fullständig exempel kod finns i följande avsnitt.
 
-|Språk|Avsnitt|
+|Språk|Ämne|
 |--------------|-----------|
 |C#|[GetProc04 (C#) – kodexempel](./getproc04-csharp-sample-code.md)|
 |VB.NET|[GetProc04 (VB.NET) – kodexempel](./getproc04-vb-net-sample-code.md)|

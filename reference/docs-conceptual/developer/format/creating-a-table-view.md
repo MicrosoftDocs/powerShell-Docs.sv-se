@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en tabellvy
 description: Skapa en tabellvy
 ms.openlocfilehash: 035d42f7968a9e8babec692a7a5873e24b36cd97
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660303"
 ---
 # <a name="creating-a-table-view"></a>Skapa en tabellvy

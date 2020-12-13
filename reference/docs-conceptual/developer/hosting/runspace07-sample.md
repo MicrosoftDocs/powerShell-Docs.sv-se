@@ -4,10 +4,10 @@ ms.topic: reference
 title: Runspace07 – exempel
 description: Runspace07 – exempel
 ms.openlocfilehash: 4356f33a1d962a0a6c5ca1ebb8c3e4c579463022
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657660"
 ---
 # <a name="runspace07-sample"></a>Runspace07 – exempel

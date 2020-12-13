@@ -4,10 +4,10 @@ ms.topic: reference
 title: RunSpace10 – kodexempel
 description: RunSpace10 – kodexempel
 ms.openlocfilehash: d9219ca29ec85b8dd2af19c9eba3ddb49050c25c
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92659139"
 ---
 # <a name="runspace10-code-sample"></a>RunSpace10 – kodexempel

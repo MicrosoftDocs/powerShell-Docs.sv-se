@@ -4,10 +4,10 @@ ms.topic: reference
 title: Moduler och snapin-moduler
 description: Moduler och snapin-moduler
 ms.openlocfilehash: de4ff1de9a29b78d7783fe7ed0265f5516db1fb4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658684"
 ---
 # <a name="modules-and-snap-ins"></a>Moduler och snapin-moduler

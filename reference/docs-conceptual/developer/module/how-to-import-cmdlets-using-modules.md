@@ -4,10 +4,10 @@ ms.topic: reference
 title: Importera cmdlets med hjälp av moduler
 description: Importera cmdlets med hjälp av moduler
 ms.openlocfilehash: 485a4be4d2accaf050a6536e7f92a0673f62a30b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657295"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Importera cmdlets med hjälp av moduler

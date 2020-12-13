@@ -4,10 +4,10 @@ ms.topic: reference
 title: RemoteRunspace01 – exempel
 description: RemoteRunspace01 – exempel
 ms.openlocfilehash: 13c6213089700e779eb185fe48a67c1616fad437
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658025"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 – exempel

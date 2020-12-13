@@ -4,10 +4,10 @@ ms.topic: reference
 title: Importera en PowerShell-modul
 description: Importera en PowerShell-modul
 ms.openlocfilehash: 688509c0943a9a0289e75b80543f278e16cfedfe
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658790"
 ---
 # <a name="importing-a-powershell-module"></a>Importera en PowerShell-modul
@@ -66,13 +66,13 @@ Som standard returnerar cmdleten [import-module](/powershell/module/Microsoft.Po
 När en modul importeras med hjälp av cmdleten [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) , importeras alla medlemmar som exporter ATS till sessionen, inklusive alla kommandon som exporteras till modulen av en kapslad modul. Som standard exporteras inte variabler och alias. Om du vill begränsa vilka medlemmar som exporteras använder du ett [modul manifest](./how-to-write-a-powershell-module-manifest.md).
 Om du vill begränsa vilka medlemmar som importeras använder du följande parametrar för `Import-Module` cmdleten.
 
-- **Funktion** : den här parametern begränsar vilka funktioner som exporteras. (Om du använder ett modul-manifest, se FunctionsToExport-nyckeln.)
+- **Funktion**: den här parametern begränsar vilka funktioner som exporteras. (Om du använder ett modul-manifest, se FunctionsToExport-nyckeln.)
 
-- `**Cmdlet** : den här parametern begränsar de cmdlet: ar som exporteras (om du använder ett modul manifest, se CmdletsToExport-nyckeln).
+- `**Cmdlet**: den här parametern begränsar de cmdlet: ar som exporteras (om du använder ett modul manifest, se CmdletsToExport-nyckeln).
 
-- **Variabel** : den här parametern begränsar de variabler som exporteras (om du använder ett modul-manifest, se VariablesToExport-nyckeln).
+- **Variabel**: den här parametern begränsar de variabler som exporteras (om du använder ett modul-manifest, se VariablesToExport-nyckeln).
 
-- **Alias** : den här parametern begränsar de alias som exporteras (om du använder ett modul manifest, se AliasesToExport-nyckeln).
+- **Alias**: den här parametern begränsar de alias som exporteras (om du använder ett modul manifest, se AliasesToExport-nyckeln).
 
 ## <a name="see-also"></a>Se även
 

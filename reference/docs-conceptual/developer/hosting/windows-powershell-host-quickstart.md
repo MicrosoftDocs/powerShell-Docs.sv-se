@@ -4,10 +4,10 @@ ms.topic: reference
 title: Snabbstart för Windows PowerShell-värd
 description: Snabbstart för Windows PowerShell-värd
 ms.openlocfilehash: 4cb7dae60342abb40bd7a989a27a692826b360e5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657430"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snabbstart för Windows PowerShell-värd

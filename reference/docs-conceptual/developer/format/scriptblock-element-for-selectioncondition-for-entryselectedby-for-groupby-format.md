@@ -4,10 +4,10 @@ ms.topic: reference
 title: ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)
 description: ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)
 ms.openlocfilehash: cc92aa642b42fa3e4c4f974e954d5eac73179de3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664886"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a>ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)

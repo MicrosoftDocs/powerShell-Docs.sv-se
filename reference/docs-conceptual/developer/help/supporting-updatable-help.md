@@ -4,15 +4,15 @@ ms.topic: reference
 title: Stöd för uppdateringsbar hjälp
 description: Stöd för uppdateringsbar hjälp
 ms.openlocfilehash: 671365303b403942d6085bd4dfe1244552a4c5ec
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658085"
 ---
 # <a name="supporting-updatable-help"></a>Stöd för uppdateringsbar hjälp
 
-*Windows PowerShells uppdaterings bara hjälp system* , som introducerades i Windows 8 och Windows Server 2012, är utformat för att säkerställa att användarna alltid har de senaste hjälp avsnitten i kommando tolken på sin lokala dator. Tillsammans med Windows PowerShell online-hjälpen ger uppdaterings bara hjälp en komplett hjälp lösning för användare. I det här avsnittet beskrivs det uppdaterings bara hjälp systemet och en förklaring av hur du kan använda uppdaterings bara hjälp för de olika modulerna.
+*Windows PowerShells uppdaterings bara hjälp system*, som introducerades i Windows 8 och Windows Server 2012, är utformat för att säkerställa att användarna alltid har de senaste hjälp avsnitten i kommando tolken på sin lokala dator. Tillsammans med Windows PowerShell online-hjälpen ger uppdaterings bara hjälp en komplett hjälp lösning för användare. I det här avsnittet beskrivs det uppdaterings bara hjälp systemet och en förklaring av hur du kan använda uppdaterings bara hjälp för de olika modulerna.
 
 Det här avsnittet innehåller följande ämnen.
 

@@ -4,10 +4,10 @@ ms.topic: reference
 title: SelectionSetName-element för EntrySelectedBy för Controls för View (format)
 description: SelectionSetName-element för EntrySelectedBy för Controls för View (format)
 ms.openlocfilehash: 3211b7cacd7e57770b48b03f4aade33da506f180
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664741"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-view-format"></a>SelectionSetName-element för EntrySelectedBy för Controls för View (format)
@@ -29,7 +29,7 @@ I följande avsnitt beskrivs attribut, underordnade element och `SelectionSetNam
 
 ### <a name="attributes"></a>Attribut
 
-Inget
+Inga
 
 ### <a name="child-elements"></a>Underordnade element
 

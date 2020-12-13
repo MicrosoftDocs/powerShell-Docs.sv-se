@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skriva en binär PowerShell-modul
 description: Skriva en binär PowerShell-modul
 ms.openlocfilehash: 1d5cea474ac418f78cc782360b7c23b7614d6669
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92663066"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Skriva en binär PowerShell-modul

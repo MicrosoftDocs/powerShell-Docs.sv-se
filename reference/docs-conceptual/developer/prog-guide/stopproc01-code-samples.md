@@ -4,10 +4,10 @@ ms.topic: reference
 title: StopProc01 – kodexempel
 description: StopProc01 – kodexempel
 ms.openlocfilehash: c74bccd0d385ad87c409f40e0f6815377622e774
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664430"
 ---
 # <a name="stopproc01-code-samples"></a>StopProc01 – kodexempel
@@ -19,7 +19,7 @@ Här är kod exemplet för StopProc01-exempel-cmdleten. Detta är det `Stop-Proc
 >
 > De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen.
 
-|Språk|Avsnitt|
+|Språk|Ämne|
 |--------------|-----------|
 |C#|[StopProc01 (C#) – kodexempel](./stopproc01-csharp-sample-code.md)|
 

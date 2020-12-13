@@ -4,10 +4,10 @@ ms.topic: reference
 title: Registrera cmdlets
 description: Registrera cmdlets
 ms.openlocfilehash: 4b48aae4bdd358ec39f482f4a1bd29ed0295cbde
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664523"
 ---
 # <a name="registering-cmdlets"></a>Registrera cmdlets

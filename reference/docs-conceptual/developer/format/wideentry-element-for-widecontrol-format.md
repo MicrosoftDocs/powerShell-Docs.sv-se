@@ -4,10 +4,10 @@ ms.topic: reference
 title: WideEntry-element för WideControl (format)
 description: WideEntry-element för WideControl (format)
 ms.openlocfilehash: 3faaf767d11914792effd6765beed956a502c642
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664545"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideEntry-element för WideControl (format)

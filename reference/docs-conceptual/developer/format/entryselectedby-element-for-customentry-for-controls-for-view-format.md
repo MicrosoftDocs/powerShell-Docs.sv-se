@@ -4,10 +4,10 @@ ms.topic: reference
 title: EntrySelectedBy-element för CustomEntry för Controls för View (format)
 description: EntrySelectedBy-element för CustomEntry för Controls för View (format)
 ms.openlocfilehash: 29b0574a95d81962fb3f72a526f89273baeea647
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660256"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>EntrySelectedBy-element för CustomEntry för Controls för View (format)
