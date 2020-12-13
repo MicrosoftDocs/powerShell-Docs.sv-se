@@ -4,10 +4,10 @@ ms.topic: reference
 title: RightIndent-element för Frame för GroupBy (format)
 description: RightIndent-element för Frame för GroupBy (format)
 ms.openlocfilehash: 9a2734eee3d4c3c27fa6fa7db7ce47fa126304a6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665540"
 ---
 # <a name="rightindent-element-for-frame-for-groupby-format"></a>RightIndent-element för Frame för GroupBy (format)

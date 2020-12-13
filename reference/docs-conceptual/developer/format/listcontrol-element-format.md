@@ -4,10 +4,10 @@ ms.topic: reference
 title: ListControl-element (format)
 description: ListControl-element (format)
 ms.openlocfilehash: cd5687ac8e94e2245d1ae2de8b2206185e5b8ca4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666594"
 ---
 # <a name="listcontrol-element-format"></a>ListControl-element (format)

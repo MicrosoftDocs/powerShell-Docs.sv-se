@@ -4,10 +4,10 @@ ms.topic: reference
 title: CustomControl-element för Control för Controls för View (format)
 description: CustomControl-element för Control för Controls för View (format)
 ms.openlocfilehash: 141e44d80ab27861baac39d5a5ae1ff1f673e99b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668039"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>CustomControl-element för Control för Controls för View (format)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: CustomEntries-element för CustomControl för GroupBy (format)
 description: CustomEntries-element för CustomControl för GroupBy (format)
 ms.openlocfilehash: cde59d38b83930cb64a3a0040891783e4ab96723
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666798"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>CustomEntries-element för CustomControl för GroupBy (format)

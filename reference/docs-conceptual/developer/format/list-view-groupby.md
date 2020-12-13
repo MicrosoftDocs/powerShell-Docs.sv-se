@@ -4,10 +4,10 @@ ms.topic: reference
 title: Listvy (gruppbaserad)
 description: Listvy (gruppbaserad)
 ms.openlocfilehash: e039c38d1e4e93f65a508fe60aaaf35c64ebe2ed
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666628"
 ---
 # <a name="list-view-groupby"></a>Listvy (gruppbaserad)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: RightIndent-element för Frame för Controls för Configuration (format)
 description: RightIndent-element för Frame för Controls för Configuration (format)
 ms.openlocfilehash: 99a3653fb744df9b17bbc60b75d4d3932c672106
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665557"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-configuration-format"></a>RightIndent-element för Frame för Controls för Configuration (format)

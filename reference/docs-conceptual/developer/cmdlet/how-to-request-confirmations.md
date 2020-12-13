@@ -4,10 +4,10 @@ ms.topic: reference
 title: Begära bekräftelser
 description: Begära bekräftelser
 ms.openlocfilehash: 3e29803407bd9fbf13e6db0d0a02239c34e9c4fa
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667002"
 ---
 # <a name="how-to-request-confirmations"></a>Begära bekräftelser

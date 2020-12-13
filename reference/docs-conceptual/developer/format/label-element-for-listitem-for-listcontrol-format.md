@@ -4,10 +4,10 @@ ms.topic: reference
 title: Label-element för ListItem för ListControl (format)
 description: Label-element för ListItem för ListControl (format)
 ms.openlocfilehash: 01ff34c4129abe2c76a0a21794e756b77bff12bf
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666662"
 ---
 # <a name="label-element-for-listitem-for-listcontrol-format"></a>Label-element för ListItem för ListControl (format)

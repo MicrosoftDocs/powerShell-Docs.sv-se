@@ -4,10 +4,10 @@ ms.topic: reference
 title: PropertyName-element för SelectionCondition för CustomControl för View (format)
 description: PropertyName-element för SelectionCondition för CustomControl för View (format)
 ms.openlocfilehash: 1dd325a58b29a0f13b1341559c2a7dfe251c6b36
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665863"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>PropertyName-element för SelectionCondition för CustomControl för View (format)

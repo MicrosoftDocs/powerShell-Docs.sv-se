@@ -4,10 +4,10 @@ ms.topic: reference
 title: PropertyName-element för ExpressionBinding för Controls för Configuration (format)
 description: PropertyName-element för ExpressionBinding för Controls för Configuration (format)
 ms.openlocfilehash: 1deb49c92a9457d8e1032c1ce698d7d9488edd8e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666254"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-configuration-format"></a>PropertyName-element för ExpressionBinding för Controls för Configuration (format)

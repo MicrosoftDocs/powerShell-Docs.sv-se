@@ -4,10 +4,10 @@ ms.topic: reference
 title: NewLine-element för CustomItem för GroupBy (format)
 description: NewLine-element för CustomItem för GroupBy (format)
 ms.openlocfilehash: 7068288e40bf4b7539290ab5deb5f8fe086c4c9e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666407"
 ---
 # <a name="newline-element-for-customitem-for-groupby-format"></a>NewLine-element för CustomItem för GroupBy (format)

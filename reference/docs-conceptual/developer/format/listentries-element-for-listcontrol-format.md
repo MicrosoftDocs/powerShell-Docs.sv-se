@@ -4,10 +4,10 @@ ms.topic: reference
 title: ListEntries-element för ListControl (format)
 description: ListEntries-element för ListControl (format)
 ms.openlocfilehash: d4d6625bb92ea27863fc30d5bf5625f9275e4f69
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666611"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListEntries-element för ListControl (format)

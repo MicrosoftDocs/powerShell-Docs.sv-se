@@ -4,10 +4,10 @@ ms.topic: reference
 title: StopProcessSample02 – exempel
 description: StopProcessSample02 – exempel
 ms.openlocfilehash: 96171413f9f04d12460d48ba91c2c927e1856fd1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666900"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 – exempel
@@ -22,7 +22,7 @@ Det här exemplet visar hur du skriver en cmdlet som skriver fel sökning (Write
 
 2. Dubbelklicka på ikonen för lösnings filen (. SLN). Detta öppnar exempelprojektet i Microsoft Visual Studio.
 
-3. I menyn **build** väljer du **build-lösning** .
+3. I menyn **build** väljer du **build-lösning**.
 
     Biblioteket för exemplet skapas i standardmappen \Bin eller \Bin\Debug.
 

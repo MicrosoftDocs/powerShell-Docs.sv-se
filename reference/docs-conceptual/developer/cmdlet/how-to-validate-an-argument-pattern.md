@@ -4,10 +4,10 @@ ms.topic: reference
 title: Verifiera ett argumentmönster
 description: Verifiera ett argumentmönster
 ms.openlocfilehash: ab5777c918a53c0a3900f87c52e7f14f9cb9b726
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666917"
 ---
 # <a name="how-to-validate-an-argument-pattern"></a>Verifiera ett argumentmönster

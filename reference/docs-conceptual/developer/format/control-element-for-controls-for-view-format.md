@@ -4,10 +4,10 @@ ms.topic: reference
 title: Control-element för Controls för View  (format)
 description: Control-element för Controls för View  (format)
 ms.openlocfilehash: c48b8b7ecaebfde5e6ed2123b837d92561551766
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668090"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Control-element för Controls för View  (format)

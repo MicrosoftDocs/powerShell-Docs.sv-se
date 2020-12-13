@@ -4,10 +4,10 @@ ms.topic: reference
 title: Deklarera cmdlet-parametrar
 description: Deklarera cmdlet-parametrar
 ms.openlocfilehash: ed53f9788c9afb142b137e08966dff33551b9d0f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667104"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Deklarera cmdlet-parametrar

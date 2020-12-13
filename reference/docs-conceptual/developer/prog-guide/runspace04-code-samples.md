@@ -4,10 +4,10 @@ ms.topic: reference
 title: RunSpace04 – kodexempel
 description: RunSpace04 – kodexempel
 ms.openlocfilehash: 2978d44be2459c337cd6194d967eee2940a507ab
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667512"
 ---
 # <a name="runspace04-code-samples"></a>RunSpace04 – kodexempel
@@ -21,7 +21,7 @@ Här är ett kod exempel för en körnings utrymme som använder klassen [system
 
 Fullständig exempel kod finns i följande avsnitt.
 
-|Språk|Avsnitt|
+|Språk|Ämne|
 |--------------|-----------|
 |VB.NET|[Runspace01 (VB.NET) – kodexempel](./runspace01-vb-net-code-sample.md)|
 

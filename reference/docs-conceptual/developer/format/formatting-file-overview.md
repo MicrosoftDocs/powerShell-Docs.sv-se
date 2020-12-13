@@ -4,10 +4,10 @@ ms.topic: reference
 title: Översikt över formateringsfiler
 description: Översikt över formateringsfiler
 ms.openlocfilehash: b86119c304c895ec08ac67de693b3a052bc7a2a0
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667835"
 ---
 # <a name="formatting-file-overview"></a>Översikt över formateringsfiler
@@ -25,7 +25,7 @@ Varje fil format kan definiera följande komponenter som kan delas över alla vy
 
 - Standard konfigurations inställning, till exempel om data som visas i rader med tabeller ska visas på nästa rad, om data är längre än kolumnens bredd. Mer information om de här inställningarna finns i [definiera vanliga konfigurations inställningar](./defining-common-configuration-features.md).
 
-- Objekt uppsättningar som kan visas av alla vyer i format filen. Mer information om dessa uppsättningar (kallas *urvals uppsättningar* ) finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
+- Objekt uppsättningar som kan visas av alla vyer i format filen. Mer information om dessa uppsättningar (kallas *urvals uppsättningar*) finns i [definiera uppsättningar av objekt](./defining-selection-sets.md).
 
 - Vanliga kontroller som kan användas av alla vyer i format filen. Kontrollerna ger dig bättre kontroll över hur data visas. Mer information om kontroller finns i [definiera anpassade kontroller](./creating-custom-controls.md).
 

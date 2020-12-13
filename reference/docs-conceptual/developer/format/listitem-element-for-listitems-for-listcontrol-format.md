@@ -4,10 +4,10 @@ ms.topic: reference
 title: ListItem-element för ListItems för ListControl (format)
 description: ListItem-element för ListItems för ListControl (format)
 ms.openlocfilehash: 999491b7851aa4fa21667ad376d7e9853500ca08
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666560"
 ---
 # <a name="listitem-element-for-listitems-for-listcontrol-format"></a>ListItem-element för ListItems för ListControl (format)
@@ -34,7 +34,7 @@ I följande avsnitt beskrivs attributen, underordnade element och `ListItem` ele
 
 ### <a name="attributes"></a>Attribut
 
-Inget
+Inga
 
 ### <a name="child-elements"></a>Underordnade element
 

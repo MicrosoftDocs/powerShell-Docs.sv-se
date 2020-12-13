@@ -4,10 +4,10 @@ ms.topic: reference
 title: DefaultSettings-element (format)
 description: DefaultSettings-element (format)
 ms.openlocfilehash: 1c2055b38a416fe2d75fa20c6c87e92d9eed4285
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666730"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings-element (format)

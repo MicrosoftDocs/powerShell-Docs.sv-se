@@ -4,10 +4,10 @@ ms.topic: reference
 title: TypeName-element för EntrySelectedBy för Controls för Configuration (format)
 description: TypeName-element för EntrySelectedBy för Controls för Configuration (format)
 ms.openlocfilehash: ce74c23ca35597902c6b94fdccd44324ba8e0233
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667750"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-configuration-format"></a>TypeName-element för EntrySelectedBy för Controls för Configuration (format)

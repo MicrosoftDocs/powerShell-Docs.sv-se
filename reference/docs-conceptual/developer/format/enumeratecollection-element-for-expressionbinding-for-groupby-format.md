@@ -4,10 +4,10 @@ ms.topic: reference
 title: EnumerateCollection-element för ExpressionBinding för GroupBy (format)
 description: EnumerateCollection-element för ExpressionBinding för GroupBy (format)
 ms.openlocfilehash: 7c8258df879a5386b1eae4b5ad4b6bd7f7d17b8e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667971"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-groupby-format"></a>EnumerateCollection-element för ExpressionBinding för GroupBy (format)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Alignment-element för TableColumnHeader för TableControl (format)
 description: Alignment-element för TableColumnHeader för TableControl (format)
 ms.openlocfilehash: cf8b90c12c28951283b5870186e2c88d427318a5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666832"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>Alignment-element för TableColumnHeader för TableControl (format)

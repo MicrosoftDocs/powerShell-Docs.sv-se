@@ -4,10 +4,10 @@ ms.topic: reference
 title: Begrepp relaterade till formateringsfiler
 description: Begrepp relaterade till formateringsfiler
 ms.openlocfilehash: b88dc177f227b3e5ce8043b46996c002ce879fa9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667852"
 ---
 # <a name="formatting-file-concepts"></a>Begrepp relaterade till formateringsfiler

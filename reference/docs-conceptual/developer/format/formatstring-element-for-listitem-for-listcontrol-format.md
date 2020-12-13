@@ -4,10 +4,10 @@ ms.topic: reference
 title: FormatString-element för ListItem för ListControl  (format)
 description: FormatString-element för ListItem för ListControl  (format)
 ms.openlocfilehash: 1c16da92928ea632241942f4f2c63390c4fea706
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667920"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>FormatString-element för ListItem för ListControl  (format)

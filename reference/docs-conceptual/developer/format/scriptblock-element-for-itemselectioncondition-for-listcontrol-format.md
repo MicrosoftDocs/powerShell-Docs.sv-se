@@ -4,10 +4,10 @@ ms.topic: reference
 title: ScriptBlock-element för ItemSelectionCondition för ListControl (format)
 description: ScriptBlock-element för ItemSelectionCondition för ListControl (format)
 ms.openlocfilehash: 1e518f898e0e1e62ca64f9897b1323cc6dd89ae9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665051"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-listcontrol-format"></a>ScriptBlock-element för ItemSelectionCondition för ListControl (format)

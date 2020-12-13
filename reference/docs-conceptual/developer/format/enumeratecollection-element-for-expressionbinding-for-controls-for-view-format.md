@@ -4,10 +4,10 @@ ms.topic: reference
 title: EnumerateCollection-element för ExpressionBinding för Controls för View (format)
 description: EnumerateCollection-element för ExpressionBinding för Controls för View (format)
 ms.openlocfilehash: c7b15ee701252b310f79d272452f6ffd1c62d268
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668005"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-view-format"></a>EnumerateCollection-element för ExpressionBinding för Controls för View (format)

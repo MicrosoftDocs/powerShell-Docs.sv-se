@@ -4,15 +4,15 @@ ms.topic: reference
 title: Vanliga parameternamn
 description: Vanliga parameternamn
 ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668226"
 ---
 # <a name="common-parameter-names"></a>Vanliga parameternamn
 
-De parametrar som beskrivs i det här avsnittet kallas *vanliga parametrar* . De läggs till i cmdlets av Windows PowerShell-körningsmiljön och kan inte deklareras av cmdleten.
+De parametrar som beskrivs i det här avsnittet kallas *vanliga parametrar*. De läggs till i cmdlets av Windows PowerShell-körningsmiljön och kan inte deklareras av cmdleten.
 
 > [!NOTE]
 > Dessa parametrar läggs också till i Provider-cmdletar och till funktioner som är dekorerade till `CmdletBinding` attributet.
@@ -37,13 +37,13 @@ Den här parametern anger vilken åtgärd som ska utföras när ett fel inträff
 
 Datatyp: sträng
 
-Den här parametern anger vilken variabel som objekt ska placeras i när ett fel inträffar. Om du vill lägga till i den här variabeln använder du + *varname* i stället för att rensa och ange variabeln.
+Den här parametern anger vilken variabel som objekt ska placeras i när ett fel inträffar. Om du vill lägga till i den här variabeln använder du +*varname* i stället för att rensa och ange variabeln.
 
 ### <a name="outvariable-alias-ov"></a>Övervariabel (alias: OV)
 
 Datatyp: sträng
 
-Den här parametern anger den variabel där alla utdata som genereras av cmdleten ska placeras. Om du vill lägga till i den här variabeln använder du + *varname* i stället för att rensa och ange variabeln.
+Den här parametern anger den variabel där alla utdata som genereras av cmdleten ska placeras. Om du vill lägga till i den här variabeln använder du +*varname* i stället för att rensa och ange variabeln.
 
 ### <a name="outbuffer-alias-ob"></a>Utbuffer (alias: OB)
 
@@ -67,7 +67,7 @@ Den här parametern anger vilken åtgärd som ska utföras när cmdleten skriver
 
 Datatyp: sträng
 
-Den här parametern anger vilken variabel som varnings meddelanden kan sparas i. Om du vill lägga till i den här variabeln använder du + *varname* i stället för att rensa och ange variabeln.
+Den här parametern anger vilken variabel som varnings meddelanden kan sparas i. Om du vill lägga till i den här variabeln använder du +*varname* i stället för att rensa och ange variabeln.
 
 ## <a name="risk-mitigation-parameters"></a>Risk-Mitigation parametrar
 

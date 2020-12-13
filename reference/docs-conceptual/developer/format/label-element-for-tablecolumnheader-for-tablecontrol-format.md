@@ -4,10 +4,10 @@ ms.topic: reference
 title: Label-element för TableColumnHeader för TableControl (format)
 description: Label-element för TableColumnHeader för TableControl (format)
 ms.openlocfilehash: fe4c209903c04e683b44e2bdcbf381adb6874ace
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667801"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label-element för TableColumnHeader för TableControl (format)

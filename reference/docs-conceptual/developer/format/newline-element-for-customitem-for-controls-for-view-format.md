@@ -4,10 +4,10 @@ ms.topic: reference
 title: NewLine-element för CustomItem för Controls för View (format)
 description: NewLine-element för CustomItem för Controls för View (format)
 ms.openlocfilehash: 3b368f021fcbd2ecabf2032b951afe2979a3d027
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666441"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-view-format"></a>NewLine-element för CustomItem för Controls för View (format)

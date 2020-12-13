@@ -4,10 +4,10 @@ ms.topic: reference
 title: Läsa in och exportera formateringsdata
 description: Läsa in och exportera formateringsdata
 ms.openlocfilehash: 38857526801051bf6d31d300d5be1a3fd2c80391
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666526"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Läsa in och exportera formateringsdata

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Windows PowerShell-sessionstillstånd
 description: Windows PowerShell-sessionstillstånd
 ms.openlocfilehash: 51de92f1f392f708cf49c7ccb4a6808fd628076c
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668141"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell-sessionstillstånd

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Så här fungerar uppdateringsbar hjälp
 description: Så här fungerar uppdateringsbar hjälp
 ms.openlocfilehash: c0d2413a27b661cdb9a12fa8a0beae5dee8a21b4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667614"
 ---
 # <a name="how-updatable-help-works"></a>Så här fungerar uppdateringsbar hjälp

@@ -4,10 +4,10 @@ ms.topic: reference
 title: ScriptBlock-element för SelectionCondition för Controls för Configuration (format)
 description: ScriptBlock-element för SelectionCondition för Controls för Configuration (format)
 ms.openlocfilehash: 42e9d2b00f7690e46242b2c4602245e4bf391bbf
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664961"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-configuration-format"></a>ScriptBlock-element för SelectionCondition för Controls för Configuration (format)

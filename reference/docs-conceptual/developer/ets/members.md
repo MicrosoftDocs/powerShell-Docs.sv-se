@@ -4,10 +4,10 @@ ms.topic: reference
 title: Medlemmar i utökad typ system klass
 description: Medlemmar i utökad typ system klass
 ms.openlocfilehash: 06488ce423f363a285ab53b21ab45989654346dc
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666849"
 ---
 # <a name="extended-type-system-class-members"></a>Medlemmar i utökad typ system klass
@@ -24,7 +24,7 @@ ETS refererar till ett antal olika typer av medlemmar vars typer definieras av *
 
 ## <a name="accessing-members"></a>Åtkomst till medlemmar
 
-Samlingar med medlemmar kan nås via egenskaperna **members** , **Method** och **Properties** för **PSObject** -objektet.
+Samlingar med medlemmar kan nås via egenskaperna **members**, **Method** och **Properties** för **PSObject** -objektet.
 
 ## <a name="ets-properties"></a>ETS-egenskaper
 
