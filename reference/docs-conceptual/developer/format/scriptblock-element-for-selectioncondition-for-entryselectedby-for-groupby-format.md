@@ -4,52 +4,52 @@ ms.topic: reference
 title: ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)
 description: ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)
 ms.openlocfilehash: cc92aa642b42fa3e4c4f974e954d5eac73179de3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664886"
 ---
-# <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a><span data-ttu-id="e047e-103">ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="e047e-103">ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy (Format)</span></span>
+# <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a><span data-ttu-id="6e845-103">ScriptBlock-element för SelectionCondition för EntrySelectedBy för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="6e845-103">ScriptBlock Element for SelectionCondition for EntrySelectedBy for GroupBy (Format)</span></span>
 
-<span data-ttu-id="e047e-104">Anger det skript som utlöser villkoret.</span><span class="sxs-lookup"><span data-stu-id="e047e-104">Specifies the script that triggers the condition.</span></span> <span data-ttu-id="e047e-105">När det här skriptet utvärderas `true` , uppfylls villkoret och definitionen används.</span><span class="sxs-lookup"><span data-stu-id="e047e-105">When this script is evaluated to `true`, the condition is met, and the definition is used.</span></span> <span data-ttu-id="e047e-106">Det här elementet används när du definierar hur en ny grupp av objekt visas.</span><span class="sxs-lookup"><span data-stu-id="e047e-106">This element is used when defining how a new group of objects is displayed.</span></span>
+<span data-ttu-id="6e845-104">Anger det skript som utlöser villkoret.</span><span class="sxs-lookup"><span data-stu-id="6e845-104">Specifies the script that triggers the condition.</span></span> <span data-ttu-id="6e845-105">När det här skriptet utvärderas `true` , uppfylls villkoret och definitionen används.</span><span class="sxs-lookup"><span data-stu-id="6e845-105">When this script is evaluated to `true`, the condition is met, and the definition is used.</span></span> <span data-ttu-id="6e845-106">Det här elementet används när du definierar hur en ny grupp av objekt visas.</span><span class="sxs-lookup"><span data-stu-id="6e845-106">This element is used when defining how a new group of objects is displayed.</span></span>
 
-<span data-ttu-id="e047e-107">Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry-element for CustomControl for groupby (format) EntrySelectedBy-element för CustomEntry (format) SelectionCondition element for EntrySelectedBy för groupby (format) script block element for SelectionCondition</span><span class="sxs-lookup"><span data-stu-id="e047e-107">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) GroupBy Element for View (Format) CustomControl Element for GroupBy (Format) CustomEntries Element for CustomControl for GroupBy (Format) CustomEntry Element for CustomControl for GroupBy (Format) EntrySelectedBy Element for CustomEntry for GroupBy (Format) SelectionCondition Element for EntrySelectedBy for GroupBy (Format) ScriptBlock Element for SelectionCondition for GroupBy (Format)</span></span>
+<span data-ttu-id="6e845-107">Konfigurations element (format) ViewDefinitions element (format) visnings element (format) GroupBy-element för View (format) CustomControl-element för GroupBy (format) CustomEntries-element för CustomControl for GroupBy (format) CustomEntry-element for CustomControl for groupby (format) EntrySelectedBy-element för CustomEntry (format) SelectionCondition element for EntrySelectedBy för groupby (format) script block element for SelectionCondition</span><span class="sxs-lookup"><span data-stu-id="6e845-107">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) GroupBy Element for View (Format) CustomControl Element for GroupBy (Format) CustomEntries Element for CustomControl for GroupBy (Format) CustomEntry Element for CustomControl for GroupBy (Format) EntrySelectedBy Element for CustomEntry for GroupBy (Format) SelectionCondition Element for EntrySelectedBy for GroupBy (Format) ScriptBlock Element for SelectionCondition for GroupBy (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="e047e-108">Syntax</span><span class="sxs-lookup"><span data-stu-id="e047e-108">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="6e845-108">Syntax</span><span class="sxs-lookup"><span data-stu-id="6e845-108">Syntax</span></span>
 
 ```xml
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="e047e-109">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="e047e-109">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="6e845-109">Attribut och element</span><span class="sxs-lookup"><span data-stu-id="6e845-109">Attributes and Elements</span></span>
 
-<span data-ttu-id="e047e-110">I följande avsnitt beskrivs attribut, underordnade element och `ScriptBlock` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="e047e-110">The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.</span></span>
+<span data-ttu-id="6e845-110">I följande avsnitt beskrivs attribut, underordnade element och `ScriptBlock` elementets överordnade element.</span><span class="sxs-lookup"><span data-stu-id="6e845-110">The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="e047e-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="e047e-111">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="6e845-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="6e845-111">Attributes</span></span>
 
-<span data-ttu-id="e047e-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="e047e-112">None.</span></span>
+<span data-ttu-id="6e845-112">Inga.</span><span class="sxs-lookup"><span data-stu-id="6e845-112">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="e047e-113">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="e047e-113">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="6e845-113">Underordnade element</span><span class="sxs-lookup"><span data-stu-id="6e845-113">Child Elements</span></span>
 
-<span data-ttu-id="e047e-114">Inga.</span><span class="sxs-lookup"><span data-stu-id="e047e-114">None.</span></span>
+<span data-ttu-id="6e845-114">Inga.</span><span class="sxs-lookup"><span data-stu-id="6e845-114">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="e047e-115">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="e047e-115">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="6e845-115">Överordnade element</span><span class="sxs-lookup"><span data-stu-id="6e845-115">Parent Elements</span></span>
 
-|<span data-ttu-id="e047e-116">Element</span><span class="sxs-lookup"><span data-stu-id="e047e-116">Element</span></span>|<span data-ttu-id="e047e-117">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="e047e-117">Description</span></span>|
+|<span data-ttu-id="6e845-116">Element</span><span class="sxs-lookup"><span data-stu-id="6e845-116">Element</span></span>|<span data-ttu-id="6e845-117">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="6e845-117">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="e047e-118">SelectionCondition-element för EntrySelectedBy för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="e047e-118">SelectionCondition Element for EntrySelectedBy for GroupBy (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|<span data-ttu-id="e047e-119">Definierar ett villkor som måste finnas för att den kontroll definition som ska användas.</span><span class="sxs-lookup"><span data-stu-id="e047e-119">Defines a condition that must exist for the control definition to be used.</span></span>|
+|[<span data-ttu-id="6e845-118">SelectionCondition-element för EntrySelectedBy för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="6e845-118">SelectionCondition Element for EntrySelectedBy for GroupBy (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|<span data-ttu-id="6e845-119">Definierar ett villkor som måste finnas för att den kontroll definition som ska användas.</span><span class="sxs-lookup"><span data-stu-id="6e845-119">Defines a condition that must exist for the control definition to be used.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="e047e-120">Textvärde</span><span class="sxs-lookup"><span data-stu-id="e047e-120">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="6e845-120">Textvärde</span><span class="sxs-lookup"><span data-stu-id="6e845-120">Text Value</span></span>
 
-<span data-ttu-id="e047e-121">Ange det skript som utvärderas.</span><span class="sxs-lookup"><span data-stu-id="e047e-121">Specify the script that is evaluated.</span></span>
+<span data-ttu-id="6e845-121">Ange det skript som utvärderas.</span><span class="sxs-lookup"><span data-stu-id="6e845-121">Specify the script that is evaluated.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="e047e-122">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="e047e-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="6e845-122">Kommentarer</span><span class="sxs-lookup"><span data-stu-id="6e845-122">Remarks</span></span>
 
-<span data-ttu-id="e047e-123">Urvals villkoret måste ange minst ett skript eller egenskaps namn som ska utvärderas, men det går inte att ange båda.</span><span class="sxs-lookup"><span data-stu-id="e047e-123">The selection condition must specify a least one script or property name to evaluate, but cannot specify both.</span></span> <span data-ttu-id="e047e-124">Mer information om hur urvals villkor kan användas finns i [definiera villkor för att visa data](./defining-conditions-for-displaying-data.md).</span><span class="sxs-lookup"><span data-stu-id="e047e-124">For more information about how selection conditions can be used, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).</span></span>
+<span data-ttu-id="6e845-123">Urvals villkoret måste ange minst ett skript eller egenskaps namn som ska utvärderas, men det går inte att ange båda.</span><span class="sxs-lookup"><span data-stu-id="6e845-123">The selection condition must specify a least one script or property name to evaluate, but cannot specify both.</span></span> <span data-ttu-id="6e845-124">Mer information om hur urvals villkor kan användas finns i [definiera villkor för att visa data](./defining-conditions-for-displaying-data.md).</span><span class="sxs-lookup"><span data-stu-id="6e845-124">For more information about how selection conditions can be used, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="e047e-125">Se även</span><span class="sxs-lookup"><span data-stu-id="e047e-125">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6e845-125">Se även</span><span class="sxs-lookup"><span data-stu-id="6e845-125">See Also</span></span>
 
-[<span data-ttu-id="e047e-126">SelectionCondition-element för EntrySelectedBy för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="e047e-126">SelectionCondition Element for EntrySelectedBy for GroupBy (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+[<span data-ttu-id="6e845-126">SelectionCondition-element för EntrySelectedBy för GroupBy (format)</span><span class="sxs-lookup"><span data-stu-id="6e845-126">SelectionCondition Element for EntrySelectedBy for GroupBy (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
 
-[<span data-ttu-id="e047e-127">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="e047e-127">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="6e845-127">Skriva en PowerShell-formateringsfil</span><span class="sxs-lookup"><span data-stu-id="6e845-127">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

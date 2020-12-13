@@ -4,37 +4,37 @@ ms.topic: reference
 title: Runspace07 – exempel
 description: Runspace07 – exempel
 ms.openlocfilehash: 4356f33a1d962a0a6c5ca1ebb8c3e4c579463022
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657660"
 ---
-# <a name="runspace07-sample"></a><span data-ttu-id="5fcd3-103">Runspace07 – exempel</span><span class="sxs-lookup"><span data-stu-id="5fcd3-103">Runspace07 Sample</span></span>
+# <a name="runspace07-sample"></a><span data-ttu-id="14875-103">Runspace07 – exempel</span><span class="sxs-lookup"><span data-stu-id="14875-103">Runspace07 Sample</span></span>
 
-<span data-ttu-id="5fcd3-104">Det här exemplet visar hur du skapar en körnings utrymme och sedan använder den körnings utrymme för att köra två cmdlets synkront med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.</span><span class="sxs-lookup"><span data-stu-id="5fcd3-104">This sample shows how to create a runspace, and then use that runspace to run two cmdlets synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="14875-104">Det här exemplet visar hur du skapar en körnings utrymme och sedan använder den körnings utrymme för att köra två cmdlets synkront med hjälp av ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt.</span><span class="sxs-lookup"><span data-stu-id="14875-104">This sample shows how to create a runspace, and then use that runspace to run two cmdlets synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="5fcd3-105">Krav</span><span class="sxs-lookup"><span data-stu-id="5fcd3-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="14875-105">Krav</span><span class="sxs-lookup"><span data-stu-id="14875-105">Requirements</span></span>
 
-<span data-ttu-id="5fcd3-106">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="5fcd3-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="14875-106">Det här exemplet kräver Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="14875-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="5fcd3-107">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="5fcd3-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="14875-107">Demonstrationer</span><span class="sxs-lookup"><span data-stu-id="14875-107">Demonstrates</span></span>
 
-<span data-ttu-id="5fcd3-108">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="5fcd3-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="14875-108">Det här exemplet demonstrerar följande.</span><span class="sxs-lookup"><span data-stu-id="14875-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="5fcd3-109">Skapa ett [system. Management. Automation. körnings utrymmen. körnings utrymme](/dotnet/api/System.Management.Automation.Runspaces.Runspace) -objekt med hjälp av klassen [system. Management. Automation. körnings utrymmen. RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) .</span><span class="sxs-lookup"><span data-stu-id="5fcd3-109">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="14875-109">Skapa ett [system. Management. Automation. körnings utrymmen. körnings utrymme](/dotnet/api/System.Management.Automation.Runspaces.Runspace) -objekt med hjälp av klassen [system. Management. Automation. körnings utrymmen. RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) .</span><span class="sxs-lookup"><span data-stu-id="14875-109">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="5fcd3-110">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt som använder körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="5fcd3-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="14875-110">Skapar ett [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -objekt som använder körnings utrymme.</span><span class="sxs-lookup"><span data-stu-id="14875-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="5fcd3-111">Lägger till cmdlets i pipelinen för objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .</span><span class="sxs-lookup"><span data-stu-id="5fcd3-111">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="14875-111">Lägger till cmdlets i pipelinen för objektet [system. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .</span><span class="sxs-lookup"><span data-stu-id="14875-111">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="5fcd3-112">Köra cmdlets synkront.</span><span class="sxs-lookup"><span data-stu-id="5fcd3-112">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="14875-112">Köra cmdlets synkront.</span><span class="sxs-lookup"><span data-stu-id="14875-112">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="5fcd3-113">Extraherar egenskaper från objekten [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) som returnerades av kommandot.</span><span class="sxs-lookup"><span data-stu-id="5fcd3-113">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="14875-113">Extraherar egenskaper från objekten [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) som returnerades av kommandot.</span><span class="sxs-lookup"><span data-stu-id="14875-113">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="5fcd3-114">Exempel</span><span class="sxs-lookup"><span data-stu-id="5fcd3-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="14875-114">Exempel</span><span class="sxs-lookup"><span data-stu-id="14875-114">Example</span></span>
 
-<span data-ttu-id="5fcd3-115">Det här exemplet skapar en körnings utrymme som används av ett [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -objekt för att köra cmdletarna [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) och [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) .</span><span class="sxs-lookup"><span data-stu-id="5fcd3-115">This sample creates a runspace that used by a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.</span></span>
+<span data-ttu-id="14875-115">Det här exemplet skapar en körnings utrymme som används av ett [system. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) -objekt för att köra cmdletarna [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) och [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) .</span><span class="sxs-lookup"><span data-stu-id="14875-115">This sample creates a runspace that used by a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlets.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -137,6 +137,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="5fcd3-116">Se även</span><span class="sxs-lookup"><span data-stu-id="5fcd3-116">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="14875-116">Se även</span><span class="sxs-lookup"><span data-stu-id="14875-116">See Also</span></span>
 
-[<span data-ttu-id="5fcd3-117">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="5fcd3-117">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="14875-117">Skriva ett Windows PowerShell-värdprogram</span><span class="sxs-lookup"><span data-stu-id="14875-117">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

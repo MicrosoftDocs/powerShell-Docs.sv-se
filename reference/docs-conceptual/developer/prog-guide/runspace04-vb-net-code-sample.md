@@ -4,22 +4,22 @@ ms.topic: reference
 title: RunSpace04  (VB.NET) – kodexempel
 description: RunSpace04  (VB.NET) – kodexempel
 ms.openlocfilehash: 16d46eb4b4f2c1bc6d32b35c29a5d638beba6e24
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657006"
 ---
-# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="35982-103">RunSpace04  (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="35982-103">RunSpace04  (VB.NET) Code Sample</span></span>
+# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="a5938-103">RunSpace04  (VB.NET) – kodexempel</span><span class="sxs-lookup"><span data-stu-id="a5938-103">RunSpace04  (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="35982-104">Här är käll koden för VB.NET för Runspace04-exemplet.</span><span class="sxs-lookup"><span data-stu-id="35982-104">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="35982-105">I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra ett skript som genererar ett avslutande fel.</span><span class="sxs-lookup"><span data-stu-id="35982-105">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="35982-106">Värd programmet ansvarar för att fånga upp felet och tolka fel posten.</span><span class="sxs-lookup"><span data-stu-id="35982-106">The host application is responsible for catching the error and interpreting the error record.</span></span>
+<span data-ttu-id="a5938-104">Här är käll koden för VB.NET för Runspace04-exemplet.</span><span class="sxs-lookup"><span data-stu-id="a5938-104">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="a5938-105">I det här exemplet används klassen [system. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) för att köra ett skript som genererar ett avslutande fel.</span><span class="sxs-lookup"><span data-stu-id="a5938-105">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="a5938-106">Värd programmet ansvarar för att fånga upp felet och tolka fel posten.</span><span class="sxs-lookup"><span data-stu-id="a5938-106">The host application is responsible for catching the error and interpreting the error record.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="35982-107">Du kan ladda ned VB.NET-källfilen (runspace02. VB) för det här exemplet med hjälp av Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3,0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="35982-107">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="35982-108">Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="35982-108">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="a5938-107">Du kan ladda ned VB.NET-källfilen (runspace02. VB) för det här exemplet med hjälp av Windows Software Development Kit för Windows Vista och Microsoft .NET Framework 3,0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="a5938-107">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="a5938-108">Instruktioner för hämtning finns i [Installera Windows PowerShell och ladda ned Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="a5938-108">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="35982-109">De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen.</span><span class="sxs-lookup"><span data-stu-id="35982-109">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="a5938-109">De hämtade källfilerna är tillgängliga i **\<PowerShell Samples>** katalogen.</span><span class="sxs-lookup"><span data-stu-id="a5938-109">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="35982-110">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="35982-110">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="a5938-110">Kod exempel</span><span class="sxs-lookup"><span data-stu-id="a5938-110">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -110,8 +110,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace04.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace04.vb#L09-L92 "Runspace04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="35982-111">Se även</span><span class="sxs-lookup"><span data-stu-id="35982-111">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a5938-111">Se även</span><span class="sxs-lookup"><span data-stu-id="a5938-111">See Also</span></span>
 
-[<span data-ttu-id="35982-112">Programmeringsguide för Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="35982-112">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="a5938-112">Programmeringsguide för Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="a5938-112">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="35982-113">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="35982-113">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="a5938-113">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="a5938-113">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
