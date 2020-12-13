@@ -4,10 +4,10 @@ ms.topic: reference
 title: CustomEntry-element för CustomEntries för CustomControl för View (format)
 description: CustomEntry-element för CustomEntries för CustomControl för View (format)
 ms.openlocfilehash: ff481f13e6f16267bdda4c3053faebc96d9a6d3a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646057"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>CustomEntry-element för CustomEntries för CustomControl för View (format)

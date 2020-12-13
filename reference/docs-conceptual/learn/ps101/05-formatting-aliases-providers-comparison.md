@@ -6,10 +6,10 @@ ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: I det här kapitlet beskrivs begreppen utdata, kommando-alias, providers och jämförelse åtgärder.
 ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501617"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Kapitel 5 – formatering, alias, providers, jämförelse

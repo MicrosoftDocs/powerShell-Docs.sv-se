@@ -4,10 +4,10 @@ keywords: Jea, PowerShell, säkerhet
 title: JEA säkerhets aspekter
 description: Eftersom JEA tillåter dessa användare att köra administrations kommandon utan att ha fullständig administratörs behörighet kan du ta bort dessa användare från privilegierade säkerhets grupper.
 ms.openlocfilehash: f65f9d6c6620261de0a9c8de7812637565ca1806
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501583"
 ---
 # <a name="jea-security-considerations"></a>JEA säkerhets aspekter
@@ -32,12 +32,12 @@ I följande tabell sammanfattas möjliga konfigurations alternativ och resultera
 
 |        Datortyp         | Konfiguration av virtuellt konto grupp |                   Lokal användar kontext                    | Nätverks användar kontext |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| Domänkontrollant            | Standard                             | Domän användare, medlem i "*Domain*\Domain admins"         | Dator konto     |
-| Domänkontrollant            | Domän grupper A och B               | Domän användare, medlem i*domän*\A,*domän*\b       | Dator konto     |
-| Medlems Server eller arbets Station | Standard                             | Lokal användare, medlem i "*Builtin*\Administrators"        | Dator konto     |
+| Domänkontrollant            | Standardvärde                             | Domän användare, medlem i "*Domain*\Domain admins"         | Dator konto     |
+| Domänkontrollant            | Domän grupper A och B               | Domän användare, medlem i *domän*\A,*domän*\b       | Dator konto     |
+| Medlems Server eller arbets Station | Standardvärde                             | Lokal användare, medlem i "*Builtin*\Administrators"        | Dator konto     |
 | Medlems Server eller arbets Station | Lokala grupper C och D                | Lokal användare, medlem i "*Computer*\c" och "*Computer*\d" | Dator konto     |
 
-När du tittar på säkerhets gransknings händelser och program händelse loggar ser du att varje JEA-användarsession har ett unikt virtuellt konto. Det här unika kontot hjälper dig att spåra användar åtgärder i en JEA-slutpunkt tillbaka till den ursprungliga användare som körde kommandot. Virtuella konto namn följer formatet `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` . om användaren till exempel går **Alice** in i domän **contoso** och startar om en tjänst i en Jea-slutpunkt, är det användar namn som är associerat med alla Service Control Manager-händelser `WinRM Virtual Users\WinRM_VA_1_contoso_alice` .
+När du tittar på säkerhets gransknings händelser och program händelse loggar ser du att varje JEA-användarsession har ett unikt virtuellt konto. Det här unika kontot hjälper dig att spåra användar åtgärder i en JEA-slutpunkt tillbaka till den ursprungliga användare som körde kommandot. Virtuella konto namn följer formatet `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` . om användaren till exempel går  in i domän **contoso** och startar om en tjänst i en Jea-slutpunkt, är det användar namn som är associerat med alla Service Control Manager-händelser `WinRM Virtual Users\WinRM_VA_1_contoso_alice` .
 
 **Grupphanterade tjänst konton (gMSAs)** är användbara när en medlems Server måste ha åtkomst till nätverks resurser i Jea-sessionen. Till exempel när en JEA-slutpunkt används för att styra åtkomsten till en REST API tjänst som finns på en annan dator. Det är enkelt att skriva funktioner för att anropa REST-API: er, men du behöver en nätverks identitet för att autentisera med API: et. Genom att använda ett grupphanterat tjänst konto gör du det andra hoppet möjligt samtidigt som du behåller kontrollen över vilka datorer som kan använda kontot. De gällande behörigheterna för gMSA definieras av de säkerhets grupper (lokala eller domän) som gMSA-kontot tillhör.
 
@@ -105,6 +105,6 @@ Undvik att använda jokertecken i roll funktionerna. Se till att regelbundet [Gr
 
 ## <a name="jea-doesnt-protect-against-admins"></a>JEA skyddar inte mot administratörer
 
-En av grund principerna för JEA är att den tillåter icke-administratörer att utföra vissa administrativa uppgifter. JEA skyddar inte mot användare som redan har administratörs behörighet. Användare som tillhör **domän administratörer**, lokala **Administratörer**eller andra privilegierade grupper kan kringgå Jea skydd på ett annat sätt. De kan till exempel Logga in med RDP, använda fjärranslutna MMC-konsoler eller ansluta till obegränsade PowerShell-slutpunkter. Lokala administratörer på ett system kan också ändra JEA-konfigurationer för att tillåta ytterligare användare eller ändra en roll kapacitet för att utöka omfattningen av vad en användare kan göra i sin JEA-session. Det är viktigt att utvärdera dina JEA-användares utökade behörigheter för att se om det finns andra sätt att få privilegie rad åtkomst till systemet.
+En av grund principerna för JEA är att den tillåter icke-administratörer att utföra vissa administrativa uppgifter. JEA skyddar inte mot användare som redan har administratörs behörighet. Användare som tillhör **domän administratörer**, lokala **Administratörer** eller andra privilegierade grupper kan kringgå Jea skydd på ett annat sätt. De kan till exempel Logga in med RDP, använda fjärranslutna MMC-konsoler eller ansluta till obegränsade PowerShell-slutpunkter. Lokala administratörer på ett system kan också ändra JEA-konfigurationer för att tillåta ytterligare användare eller ändra en roll kapacitet för att utöka omfattningen av vad en användare kan göra i sin JEA-session. Det är viktigt att utvärdera dina JEA-användares utökade behörigheter för att se om det finns andra sätt att få privilegie rad åtkomst till systemet.
 
 En vanlig metod är att använda JEA för vanlig daglig underhåll och har en just-in-Time-, Privileged Access Management-lösning som gör det möjligt för användare att tillfälligt bli lokala administratörer i nödfalls situationer. På så sätt ser du till att användarna inte är permanenta administratörer i systemet, men kan hämta dessa rättigheter om och bara när de slutför ett arbets flöde som dokumenterar deras användning av dessa behörigheter.

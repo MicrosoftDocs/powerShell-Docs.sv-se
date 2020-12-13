@@ -4,10 +4,10 @@ ms.topic: reference
 title: Ge stöd för jokertecken i cmdlet-parametrar
 description: Ge stöd för jokertecken i cmdlet-parametrar
 ms.openlocfilehash: 06693c62cd2613050bdeb9d6b12ad6e9597a9894
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646389"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Ge stöd för jokertecken i cmdlet-parametrar
@@ -15,7 +15,7 @@ ms.locfileid: "92646389"
 Du måste ofta utforma en cmdlet för att kunna köras mot en grupp resurser i stället för till en enda resurs. En cmdlet kan till exempel behöva hitta alla filer i ett data lager som har samma namn eller tillägg. Du måste ge stöd för jokertecken när du skapar en cmdlet som ska köras mot en grupp med resurser.
 
 > [!NOTE]
-> Användning av jokertecken kallas ibland *globbing* .
+> Användning av jokertecken kallas ibland *globbing*.
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows PowerShell-cmdletar som använder jokertecken
 

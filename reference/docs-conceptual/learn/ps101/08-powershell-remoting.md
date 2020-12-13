@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: ee83af41b53b254dd3dd993931333edac2f44f5a
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436465"
 ---
 # <a name="chapter-8---powershell-remoting"></a>Kapitel 8 – PowerShell-fjärrkommunikation
@@ -232,7 +232,7 @@ Start... W32time     Windows Time      dc01
 Running  W32time     Windows Time      sql02
 ```
 
-I föregående exempel frågades tre servrar om status för Windows tids tjänst. `Get-Service`Cmdleten placerades inuti skript blocket för `Invoke-Command` . `Get-Service`körs faktiskt på fjärrdatorn och resultatet returneras till din lokala dator som avserialiserade objekt.
+I föregående exempel frågades tre servrar om status för Windows tids tjänst. `Get-Service`Cmdleten placerades inuti skript blocket för `Invoke-Command` . `Get-Service` körs faktiskt på fjärrdatorn och resultatet returneras till din lokala dator som avserialiserade objekt.
 
 Rör föregående kommando för att `Get-Member` Visa att resultaten är deserialiserade objekt.
 
@@ -329,7 +329,7 @@ Get-PSSession | Remove-PSSession
 
 I det här kapitlet har du lärt dig om PowerShell-fjärrkommunikation, hur du kör kommandon i en interaktiv session med en fjärran sluten dator och hur du kör kommandon mot flera datorer med en-till-många-fjärrkommunikation. Du har också lärt dig fördelarna med att använda en PowerShell-session när du kör flera kommandon mot samma fjärrdator.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Hur aktiverar jag PowerShell-fjärrkommunikation?
 1. Vad är PowerShell-kommandot för att starta en interaktiv session med en fjärran sluten dator?

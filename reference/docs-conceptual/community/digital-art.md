@@ -5,10 +5,10 @@ ms.date: 02/14/2020
 description: Hämta PowerShell-relaterade bilder och affischer
 title: Digital PowerShell-bild
 ms.openlocfilehash: efc246af2ae946c10d4ce9d759bd42d041663e98
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "91980163"
 ---
 # <a name="powershell-digital-art"></a>Digital PowerShell-bild

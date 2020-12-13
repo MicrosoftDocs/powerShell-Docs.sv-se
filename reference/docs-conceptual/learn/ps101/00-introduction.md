@@ -6,10 +6,10 @@ ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: Detta är introduktionen till boken PowerShell 101 av Mike F. Robbins.
 ms.openlocfilehash: d85590c2ef34c4e8b5cb7f2707bd9d6dd9b84b89
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501515"
 ---
 # <a name="introduction"></a>Introduktion
@@ -39,7 +39,7 @@ I stället för att tillhandahålla enorma mängder information försöker den h
 
 ## <a name="about-the-author"></a>Om författaren
 
-Mike F Robbins är en tidigare Microsoft MVP, en gemensam författare till _Windows POWERSHELL TFM 4-utgåvan_och en bidrags författare i _PowerShell djup dykningar_ -boken. Mike har varit en stark supportare för PowerShell-gruppen och är nu den ledande skribenten för [Azure PowerShell][] på Microsoft. He bloggar på [mikefrobbins.com][] och finns på Twitter [@mikefrobbins][] .
+Mike F Robbins är en tidigare Microsoft MVP, en gemensam författare till _Windows POWERSHELL TFM 4-utgåvan_ och en bidrags författare i _PowerShell djup dykningar_ -boken. Mike har varit en stark supportare för PowerShell-gruppen och är nu den ledande skribenten för [Azure PowerShell][] på Microsoft. He bloggar på [mikefrobbins.com][] och finns på Twitter [@mikefrobbins][] .
 
 ## <a name="lab-environment"></a>Labb miljö
 

@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Göra det andra hoppet i PowerShell-fjärrkommunikation
 description: I den här artikeln beskrivs de olika metoderna för att konfigurera en andra hopp-autentisering för PowerShell-fjärrkommunikation, inklusive säkerhets aspekter och rekommendationer.
 ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501379"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Göra det andra hoppet i PowerShell-fjärrkommunikation
@@ -15,7 +15,7 @@ ms.locfileid: "92501379"
 "Andra hopp problemet" syftar på en situation som följande:
 
 1. Du är inloggad på _reserverad_.
-2. Från _ServerA_säkerhetsstartar du en fjärran sluten PowerShell-session för att ansluta till _ServerB_.
+2. Från säkerhetsstartar du en fjärran sluten PowerShell-session för att ansluta till _ServerB_.
 3. Ett kommando som du kör på _ServerB_ via din PowerShell-fjärrsession försöker få åtkomst till en resurs på _ServerC_.
 4. Åtkomst till resursen på _ServerC_ nekas eftersom de autentiseringsuppgifter som du använde för att skapa PowerShell-fjärrsessionen inte skickas från _ServerB_ till _ServerC_.
 
@@ -118,7 +118,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-Parametern **PrincipalsAllowedToDelegateToAccount** anger attributet **msDS-AllowedToActOnBehalfOfOtherIdentity**för Active Directory Object, som innehåller en åtkomst kontrol lista (ACL) som anger vilka konton som har behörighet att delegera autentiseringsuppgifter till det associerade kontot (i vårt exempel är det dator kontot för den server som är _reserverad_).
+Parametern **PrincipalsAllowedToDelegateToAccount** anger attributet **msDS-AllowedToActOnBehalfOfOtherIdentity** för Active Directory Object, som innehåller en åtkomst kontrol lista (ACL) som anger vilka konton som har behörighet att delegera autentiseringsuppgifter till det associerade kontot (i vårt exempel är det dator kontot för den server som är _reserverad_).
 
 Nu ska vi ställa in variablerna som ska användas för att representera servrarna:
 
@@ -129,7 +129,7 @@ $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
 
-WinRM (och därmed PowerShell-fjärrkommunikation) körs som dator kontot som standard. Du kan se detta genom att titta på **StartName** `winrm` tjänstens StartName-egenskap:
+WinRM (och därmed PowerShell-fjärrkommunikation) körs som dator kontot som standard. Du kan se detta genom att titta på  `winrm` tjänstens StartName-egenskap:
 
 ```powershell
 Get-CimInstance Win32_Service -Filter 'Name="winrm"' | Select-Object StartName
@@ -155,7 +155,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos- [Key Distribution Center (KDC)](/windows/win32/secauthn/key-distribution-center) nekar åtkomst försök (negativ cache) i 15 minuter. Om _ServerB_ tidigare har försökt få åtkomst till _ServerC_måste du rensa cacheminnet på _ServerB_ genom att anropa följande kommando:
+Kerberos- [Key Distribution Center (KDC)](/windows/win32/secauthn/key-distribution-center) nekar åtkomst försök (negativ cache) i 15 minuter. Om _ServerB_ tidigare har försökt få åtkomst till _ServerC_ måste du rensa cacheminnet på _ServerB_ genom att anropa följande kommando:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -182,7 +182,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 I det här exemplet `$using` används variabeln för att göra `$ServerC` variabeln synlig för _ServerB_.
 Mer information om `$using` variabeln finns i [about_Remote_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables).
 
-Om du vill tillåta att flera servrar delegerar autentiseringsuppgifter till _ServerC_anger du värdet för parametern **PrincipalsAllowedToDelegateToAccount** på _ServerC_ till en matris:
+Om du vill tillåta att flera servrar delegerar autentiseringsuppgifter till _ServerC_ anger du värdet för parametern **PrincipalsAllowedToDelegateToAccount** på _ServerC_ till en matris:
 
 ```powershell
 # Set up variables for each server

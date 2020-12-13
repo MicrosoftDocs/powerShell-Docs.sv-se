@@ -4,10 +4,10 @@ ms.topic: reference
 title: Windows PowerShell-hjälp skrivs
 description: Windows PowerShell-hjälp skrivs
 ms.openlocfilehash: 3e34d76b61ed50ae47e8bfa7e6fe5e990e36dd68
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649508"
 ---
 # <a name="writing-windows-powershell-help"></a>Windows PowerShell-hjälp skrivs

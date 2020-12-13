@@ -3,10 +3,10 @@ title: WS-Management-fjärrkommunikation (WSMan) i PowerShell Core
 description: Fjärr kommunikation i PowerShell Core med WSMan
 ms.date: 08/06/2018
 ms.openlocfilehash: fdc4159279db28b8ee60bc0853e19512a1f9ec14
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501311"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management-fjärrkommunikation (WSMan) i PowerShell Core

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Bakgrundsjobb
 description: Bakgrundsjobb
 ms.openlocfilehash: 5478789a2ee1f2eabc71a46673e3a707643cdba8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648616"
 ---
 # <a name="background-jobs"></a>Bakgrundsjobb
@@ -16,7 +16,7 @@ Cmdlets kan utföra sina åtgärder internt eller som ett *bakgrunds jobb* i Win
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Bakgrunds jobb, underordnade jobb och jobb databasen
 
-Jobbobjektet som returneras av de cmdletar som har stöd för bakgrunds jobb definierar jobbet. (Cmdleten [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) returnerar också ett Job-objekt.) Namnet på jobbet, en identifierare som används för att ange jobbet, tillståndsinformation och de underordnade jobben ingår i den här definitionen. Jobbet utför inget arbete. Varje bakgrunds jobb har minst ett underordnat jobb eftersom det underordnade jobbet utför det faktiska arbetet. När du kör en cmdlet så att arbetet utförs som ett bakgrunds jobb måste cmdleten lägga till jobbet och de underordnade jobben till en gemensam lagrings plats, som kallas *jobbets lagrings plats* .
+Jobbobjektet som returneras av de cmdletar som har stöd för bakgrunds jobb definierar jobbet. (Cmdleten [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) returnerar också ett Job-objekt.) Namnet på jobbet, en identifierare som används för att ange jobbet, tillståndsinformation och de underordnade jobben ingår i den här definitionen. Jobbet utför inget arbete. Varje bakgrunds jobb har minst ett underordnat jobb eftersom det underordnade jobbet utför det faktiska arbetet. När du kör en cmdlet så att arbetet utförs som ett bakgrunds jobb måste cmdleten lägga till jobbet och de underordnade jobben till en gemensam lagrings plats, som kallas *jobbets lagrings plats*.
 
 Mer information om hur bakgrunds jobb hanteras på kommando raden finns i följande avsnitt:
 

@@ -4,10 +4,10 @@ keywords: Jea, PowerShell, säkerhet
 title: JEA roll funktioner
 description: En roll funktion är en PowerShell-datafil med tillägget. psrc som visar alla cmdletar, funktioner, providers och externa program som görs tillgängliga för att ansluta användare.
 ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92500002"
 ---
 # <a name="jea-role-capabilities"></a>JEA roll funktioner
@@ -95,7 +95,7 @@ Du kan inte använda både en **ValidatePattern** och **ValidateSet** för samma
 
 Om du gör det åsidosätter **ValidatePattern** **ValidateSet**.
 
-Mer information om **ValidatePattern**finns i [det här *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) och PowerShell-referensen för [vanliga uttryck](/powershell/module/microsoft.powershell.core/about/about_regular_expressions) .
+Mer information om **ValidatePattern** finns i [det här *Hey, Scripting Guy!* post](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) och PowerShell-referensen för [vanliga uttryck](/powershell/module/microsoft.powershell.core/about/about_regular_expressions) .
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Tillåta externa kommandon och PowerShell-skript
 

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Definiera valuppsättningar
 description: Definiera valuppsättningar
 ms.openlocfilehash: d709a368a45623d56fdbf4e98a11a5e5f8a193fa
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648268"
 ---
 # <a name="defining-selection-sets"></a>Definiera valuppsättningar

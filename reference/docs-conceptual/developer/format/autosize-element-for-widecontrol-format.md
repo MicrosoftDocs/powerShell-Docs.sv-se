@@ -4,10 +4,10 @@ ms.topic: reference
 title: AutoSize-element för WideControl (format)
 description: AutoSize-element för WideControl (format)
 ms.openlocfilehash: 42dfae337ba8805e1ddcff4269401afdb3e281f6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650018"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>AutoSize-element för WideControl (format)
@@ -32,7 +32,7 @@ Inga.
 
 ### <a name="child-elements"></a>Underordnade element
 
-Inget
+Inga
 
 ### <a name="parent-elements"></a>Överordnade element
 

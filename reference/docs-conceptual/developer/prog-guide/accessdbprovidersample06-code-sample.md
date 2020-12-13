@@ -4,10 +4,10 @@ ms.topic: reference
 title: AccessDbProviderSample06 – kodexempel
 description: AccessDbProviderSample06 – kodexempel
 ms.openlocfilehash: 401aca7fab86cfbf3fa8d671eab17412dd162a88
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647490"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>AccessDbProviderSample06 – kodexempel

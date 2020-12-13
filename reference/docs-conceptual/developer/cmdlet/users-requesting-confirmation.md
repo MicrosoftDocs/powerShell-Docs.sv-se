@@ -4,10 +4,10 @@ ms.topic: reference
 title: Användare som begär bekräftelse
 description: Användare som begär bekräftelse
 ms.openlocfilehash: 58dbe27635ca38886b728f585fec063645b3597e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646299"
 ---
 # <a name="users-requesting-confirmation"></a>Användare som begär bekräftelse

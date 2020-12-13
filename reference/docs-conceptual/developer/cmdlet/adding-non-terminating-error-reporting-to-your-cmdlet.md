@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lägga till rapportering av fel som avbryter körningen i en cmdlet
 description: Lägga till rapportering av fel som avbryter körningen i en cmdlet
 ms.openlocfilehash: 883ff2d522266495e409fb0d45f29713baa6f047
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648666"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Lägga till rapportering av fel som avbryter körningen i en cmdlet

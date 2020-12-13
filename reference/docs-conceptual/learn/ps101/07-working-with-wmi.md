@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 243685efa1f976ddb46a0d0efc4ed0635844606d
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436521"
 ---
 # <a name="chapter-7---working-with-wmi"></a>Kapitel 7 – arbeta med WMI
@@ -18,7 +18,7 @@ ms.locfileid: "84436521"
 
 PowerShell levereras som standard med cmdlets för att arbeta med andra tekniker som Windows Management Instrumentation (WMI). Det finns flera inbyggda WMI-cmdletar som finns i PowerShell utan att behöva installera ytterligare program vara eller moduler.
 
-PowerShell har haft cmdletar för att arbeta med WMI sedan början. `Get-Command`kan användas för att avgöra vilka WMI-cmdletar som finns i PowerShell. Följande resultat är från min Windows 10 Lab Environment-dator som kör PowerShell version 5,1. Resultaten kan variera beroende på vilken PowerShell-version som körs.
+PowerShell har haft cmdletar för att arbeta med WMI sedan början. `Get-Command` kan användas för att avgöra vilka WMI-cmdletar som finns i PowerShell. Följande resultat är från min Windows 10 Lab Environment-dator som kör PowerShell version 5,1. Resultaten kan variera beroende på vilken PowerShell-version som körs.
 
 ```powershell
 Get-Command -Noun WMI*
@@ -123,7 +123,7 @@ SerialNumber
 ```
 
 Som standard finns det flera egenskaper som hämtas bakom de scener som aldrig används.
-Det kanske inte är mycket viktigt när du frågar efter WMI på den lokala datorn. Men när du har startat frågor mot fjärrdatorer är det inte bara ytterligare bearbetnings tid att returnera den informationen, utan även ytterligare onödig information att behöva hämta över nätverket. `Get-CimInstance`har en **egenskaps** parameter som begränsar den information som hämtas. Detta gör att frågan till WMI är mer effektiv.
+Det kanske inte är mycket viktigt när du frågar efter WMI på den lokala datorn. Men när du har startat frågor mot fjärrdatorer är det inte bara ytterligare bearbetnings tid att returnera den informationen, utan även ytterligare onödig information att behöva hämta över nätverket. `Get-CimInstance` har en **egenskaps** parameter som begränsar den information som hämtas. Detta gör att frågan till WMI är mer effektiv.
 
 ```powershell
 Get-CimInstance -ClassName Win32_BIOS -Property SerialNumber |
@@ -179,7 +179,7 @@ At line:1 char:1
 
 Många personer har säkerhets problem när de kommer till PowerShell, men sanningen har exakt samma behörigheter i PowerShell som du gör i det grafiska användar gränssnittet. Varken mer eller mindre. Problemet i föregående exempel är att användaren som kör PowerShell inte har behörighet att fråga WMI-information från DC01-servern. Jag kan starta om PowerShell som domän administratör eftersom det `Get-CimInstance` inte finns någon **Credential** -parameter. Men litar på mig, som inte är en bra idé, eftersom allt som jag kör från PowerShell skulle köras som en domän administratör. Det kan vara farligt från en säkerhets synpunkt beroende på situationen.
 
-Genom att använda principen om minsta behörighet, höjer jag till mitt domän administratörs konto på ett per kommando med hjälp av parametern **Credential** , om ett kommando har ett. `Get-CimInstance`har inte någon **Credential** -parameter, så lösningen i det här scenariot är att skapa en **CimSession** först. Använd sedan **CimSession** i stället för ett dator namn för att fråga WMI på fjärrdatorn.
+Genom att använda principen om minsta behörighet, höjer jag till mitt domän administratörs konto på ett per kommando med hjälp av parametern **Credential** , om ett kommando har ett. `Get-CimInstance` har inte någon **Credential** -parameter, så lösningen i det här scenariot är att skapa en **CimSession** först. Använd sedan **CimSession** i stället för ett dator namn för att fråga WMI på fjärrdatorn.
 
 ```powershell
 $CimSession = New-CimSession -ComputerName dc01 -Credential (Get-Credential)
@@ -330,7 +330,7 @@ Get-CimSession | Remove-CimSession
 
 I det här kapitlet har du lärt dig att använda PowerShell för att arbeta med WMI på både lokala och fjärranslutna datorer. Du har också lärt dig hur du använder CIM-cmdletar för att arbeta med fjärrdatorer med både WSMan-eller DCOM-protokollet.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Vad är skillnaden i WMI-och CIM-cmdletarna?
 1. Som standard använder-protokollet `Get-CimInstance` cmdleten?

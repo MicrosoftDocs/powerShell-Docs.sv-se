@@ -4,10 +4,10 @@ ms.topic: reference
 title: Deklaration av attributet ValidateCount
 description: Deklaration av attributet ValidateCount
 ms.openlocfilehash: 6acdd02a10ecc1bc2be0e6be88cf2f42a3673eb8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646274"
 ---
 # <a name="validatecount-attribute-declaration"></a>Deklaration av attributet ValidateCount

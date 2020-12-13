@@ -4,10 +4,10 @@ ms.topic: reference
 title: CustomControl-element för Control för Controls för Configuration (format)
 description: CustomControl-element för Control för Controls för Configuration (format)
 ms.openlocfilehash: 631995c6a50c0f020cb2e991cfbf58a09a75cc72
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649999"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>CustomControl-element för Control för Controls för Configuration (format)

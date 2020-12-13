@@ -4,10 +4,10 @@ keywords: Jea, PowerShell, säkerhet
 title: Registrerar JEA-konfigurationer
 description: När du registrerar JEA-slutpunkten med systemet blir slut punkten tillgänglig för användning av användare och automatiserings motorer.
 ms.openlocfilehash: 6e7f8cdc1e7a666bddaa42034d70fcbcf55c1972
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92499917"
 ---
 # <a name="registering-jea-configurations"></a>Registrerar JEA-konfigurationer

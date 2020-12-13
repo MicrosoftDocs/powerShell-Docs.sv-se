@@ -3,10 +3,10 @@ title: PowerShell fjärrkommunikation via SSH
 ms.date: 10/19/2020
 description: Förklarar hur du konfigurerar SSH-protokollet för PowerShell-fjärrkommunikation.
 ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501345"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell fjärrkommunikation via SSH
@@ -99,7 +99,7 @@ PowerShell 6 eller högre, och SSH måste vara installerat på alla datorer. Ins
    Restart-Service sshd
    ```
 
-1. Lägg till sökvägen där OpenSSH är installerat i din PATH-miljö variabel. Till exempel `C:\Program Files\OpenSSH\`. Med den här posten kan `ssh.exe` du hitta.
+1. Lägg till sökvägen där OpenSSH är installerat i din PATH-miljö variabel. Ett exempel är `C:\Program Files\OpenSSH\`. Med den här posten kan `ssh.exe` du hitta.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Konfigurera på en Ubuntu 16,04 Linux-dator
 

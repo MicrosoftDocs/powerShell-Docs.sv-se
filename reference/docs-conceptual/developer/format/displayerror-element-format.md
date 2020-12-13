@@ -4,10 +4,10 @@ ms.topic: reference
 title: DisplayError-element (format)
 description: DisplayError-element (format)
 ms.openlocfilehash: fb54df86a3558263687a8c417870495b7066f563
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649927"
 ---
 # <a name="displayerror-element-format"></a>DisplayError-element (format)

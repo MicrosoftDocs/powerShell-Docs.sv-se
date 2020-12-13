@@ -4,10 +4,10 @@ keywords: Jea, PowerShell, säkerhet
 title: Översikt över bara tillräckligt med administration (JEA)
 description: JEA är en säkerhets teknik som möjliggör delegerad administration för allt som hanteras av PowerShell.
 ms.openlocfilehash: cc1c49960e274b58635c1ca4e6769a54c3c7ded6
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501719"
 ---
 # <a name="just-enough-administration"></a>Precis tillräcklig administration

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa flera körningsutrymmen
 description: Skapa flera körningsutrymmen
 ms.openlocfilehash: 2dc9cc0397178d679a4d418b7b19fb0895a4e1b7
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649399"
 ---
 # <a name="creating-multiple-runspaces"></a>Skapa flera körningsutrymmen

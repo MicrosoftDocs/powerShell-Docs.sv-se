@@ -4,10 +4,10 @@ ms.topic: reference
 title: TypeName-element för SelectionCondition för EntrySelectedBy för WideControl (format)
 description: TypeName-element för SelectionCondition för EntrySelectedBy för WideControl (format)
 ms.openlocfilehash: af6e4782c345b43e16bce59c333bdaaceba0d845
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645502"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>TypeName-element för SelectionCondition för EntrySelectedBy för WideControl (format)

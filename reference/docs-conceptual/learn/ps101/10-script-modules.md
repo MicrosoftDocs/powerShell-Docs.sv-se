@@ -1,22 +1,22 @@
 ---
-title: Skript moduler
+title: Skriptmoduler
 description: Skript moduler är ett enkelt sätt att paketera skript och funktioner i ett återanvändbart verktyg.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 661ba725764e1f31df628f6c5f2d58d760656e37
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436514"
 ---
 # <a name="chapter-10---script-modules"></a>Kapitel 10 – skript moduler
 
 Att aktivera en-liners och skript i PowerShell till återanvändbara verktyg blir ännu viktigare om det är något som du kommer att använda ofta. Genom att paketera dina funktioner i en-skript-modul kan de se ut och känna sig tryggare och gör dem lättare att dela.
 
-## <a name="dot-sourcing-functions"></a>Funktioner för punkt-källa
+## <a name="dot-sourcing-functions"></a>Dot-Sourcing funktioner
 
 Något som vi inte pratar om i det förra kapitlet är funktioner för punkt-ursprung. När en funktion i ett skript inte är en del av en modul, är det enda sättet att läsa in den i minnet att vara i punkt källa `.PS1` filen som den sparats i.
 
@@ -259,7 +259,7 @@ När `.PSM1` filen finns på rätt sökväg, kommer modulen att läsas in automa
 ## <a name="module-manifests"></a>Modul manifest
 
 Alla moduler bör ha ett modul manifest. Ett modul manifest innehåller metadata om modulen.
-Fil namns tillägget för en modul manifest fil är `.PSD1` . Alla filer med `.PSD1` fil namns tillägget är inte modul manifest. De kan också användas för sådant som att lagra miljö delen av en DSC-konfiguration. `New-ModuleManifest`används för att skapa ett modul manifest. **Sökväg** är det enda värde som krävs. Modulen fungerar dock inte om **RootModule** inte har angetts. Det är en bra idé att ange **författare** och **Beskrivning** om du vill ladda upp modulen till en NuGet-lagringsplats med PowerShellGet eftersom dessa värden krävs i det scenariot.
+Fil namns tillägget för en modul manifest fil är `.PSD1` . Alla filer med `.PSD1` fil namns tillägget är inte modul manifest. De kan också användas för sådant som att lagra miljö delen av en DSC-konfiguration. `New-ModuleManifest` används för att skapa ett modul manifest. **Sökväg** är det enda värde som krävs. Modulen fungerar dock inte om **RootModule** inte har angetts. Det är en bra idé att ange **författare** och **Beskrivning** om du vill ladda upp modulen till en NuGet-lagringsplats med PowerShellGet eftersom dessa värden krävs i det scenariot.
 
 Versionen av en modul utan manifest är 0,0. Detta är en död Giveaway att modulen inte har något manifest.
 
@@ -321,7 +321,7 @@ Det är inte nödvändigt att använda båda `Export-ModuleMember` i `.PSM1` fil
 
 I det här kapitlet har du lärt dig hur du förvandlar dina funktioner till en-skript-modul i PowerShell. Du har också lagt till några av de bästa metoderna för att skapa skript moduler, till exempel skapa ett modul manifest för din skript-modul.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Hur skapar du en modul för skript i PowerShell?
 1. Varför är det viktigt att dina funktioner använder ett godkänt verb?

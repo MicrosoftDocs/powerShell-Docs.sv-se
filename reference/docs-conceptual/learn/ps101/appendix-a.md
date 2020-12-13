@@ -1,18 +1,18 @@
 ---
-title: Bilaga A – syntax för hjälp
+title: Bilaga A – hjälpsyntax
 description: Den här artikeln förklarar hur du läser och förstår syntaxen för en cmdlet som presenteras av Get-Help.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: e8e28f66c02370b098f63a0396ef8a724cf3a1bd
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436304"
 ---
-# <a name="appendix-a---help-syntax"></a>Bilaga A – syntax för hjälp
+# <a name="appendix-a---help-syntax"></a>Bilaga A – hjälpsyntax
 
 I följande exempel visas avsnittet **syntax** i hjälpen för `Get-EventLog` cmdleten.
 
@@ -55,7 +55,7 @@ Den andra parametern är **InstanceID**. Observera att parameter namnet och data
 [[-InstanceId] <Int64[]>]
 ```
 
-Den andra parameter uppsättningen har en **list** parameter. Det är en växel parameter eftersom det inte finns någon datatype efter parameter namnet. När **list** parametern anges är värdet **True**. Värdet är **false**när det inte anges.
+Den andra parameter uppsättningen har en **list** parameter. Det är en växel parameter eftersom det inte finns någon datatype efter parameter namnet. När **list** parametern anges är värdet **True**. Värdet är **false** när det inte anges.
 
 ```
 [-List]

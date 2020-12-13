@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en Windows PowerShell-provider
 description: Skapa en Windows PowerShell-provider
 ms.openlocfilehash: 51f19bf0dfa5f976a5045ae1342730c8f22f695e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647483"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Skapa en Windows PowerShell-provider
@@ -40,7 +40,7 @@ Windows PowerShell använder följande regler för en Windows PowerShell-enhet:
 
 I följande tabell visas avsnitt som innehåller kod exempel som bygger på varandra. Från och med det andra avsnittet kan Basic Windows PowerShell-providern initieras och avinitieras av Windows PowerShell-körningsmiljön, nästa avsnitt lägger till funktioner för att komma åt data, nästa avsnitt lägger till funktioner för att ändra data (objekten i lagrade data) och så vidare.
 
-|                                                    Avsnitt                                                    |                                                                                         Definition                                                                                          |
+|                                                    Ämne                                                    |                                                                                         Definition                                                                                          |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Designa en Windows PowerShell-provider](./designing-your-windows-powershell-provider.md)               | I det här avsnittet beskrivs saker du bör tänka på innan du implementerar en Windows PowerShell-Provider. Den sammanfattar Windows PowerShell-providerns bas klasser och gränssnitt som används. |
 | [Skapa en grundläggande Windows PowerShell-provider](./creating-a-basic-windows-powershell-provider.md)           | Det här avsnittet visar hur du skapar en Windows PowerShell-provider som gör det möjligt för Windows PowerShell-körningsmiljön att initiera och avinitiera providern.                                        |

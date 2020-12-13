@@ -4,10 +4,10 @@ ms.topic: reference
 title: SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)
 description: SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)
 ms.openlocfilehash: 3ecf7fde99b9ee66a153eea416792f351ff62af3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647917"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>SelectionCondition-element för EntrySelectedBy för EnumerableExpansion (format)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: AccessDBProviderSample04
 description: AccessDBProviderSample04
 ms.openlocfilehash: 962d0ab673ff797a60b56ccae7a16a810cc43c58
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649038"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04

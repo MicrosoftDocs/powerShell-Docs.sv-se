@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: b8fd45e5e5dc408754ebac015757ef4241428978
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84633353"
 ---
 # <a name="chapter-4---one-liners-and-the-pipeline"></a>Kapitel 4 – en-liners och pipelinen
@@ -21,7 +21,7 @@ Det hjälper dig att förbereda dig för att hantera servrar via en fjärr anslu
 
 Precis som i föregående kapitel måste du vara noga med att följa anvisningarna i Windows 10 Lab Environment-datorn.
 
-## <a name="one-liners"></a>En-liners
+## <a name="one-liners"></a>One-Liners
 
 En PowerShell-liner är en kontinuerlig pipeline och inte nödvändigt vis ett kommando som finns på en fysisk rad. Alla kommandon som finns på en fysisk rad är inte en-liners.
 
@@ -377,7 +377,7 @@ Get-Service -Name w32time | Get-Member
    TypeName: System.ServiceProcess.ServiceController
 ```
 
-`Get-Service`skapar en ServiceController objekt typ.
+`Get-Service` skapar en ServiceController objekt typ.
 
 Som du såg tidigare i hjälpen, **InputObject** -parametern för `Stop-Service` accepterar **ServiceController** -objekt via pipelinen **efter värde** (efter typ). Det innebär att när resultatet av `Get-Service` cmdleten är skickas `Stop-Service` , binder de till **InputObject** -parametern för `Stop-Service` .
 
@@ -556,7 +556,7 @@ Som du ser kan samma information som vi tidigare fastställde genom att gå igen
 
 I det här kapitlet har du lärt dig om PowerShell One-liners. Du har lärt dig att antalet fysiska rader som ett kommando är på inte har något att göra med om det är en PowerShell-liner. Du har också lärt dig om filtrering, till vänster, pipelinen och PowerShellGet.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Vad är en PowerShell-liner?
 1. Vad är några av de tecken där naturliga rad brytningar kan uppstå i PowerShell?

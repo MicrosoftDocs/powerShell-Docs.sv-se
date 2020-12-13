@@ -4,10 +4,10 @@ ms.topic: reference
 title: Label-element för GroupBy (format)
 description: Label-element för GroupBy (format)
 ms.openlocfilehash: ff4b0dec01bb5b472b1813540661791b91568eed
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649791"
 ---
 # <a name="label-element-for-groupby-format"></a>Label-element för GroupBy (format)

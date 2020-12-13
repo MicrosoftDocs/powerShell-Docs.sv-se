@@ -4,10 +4,10 @@ ms.topic: reference
 title: FirstLineHanging-element för Frame för CustomControl för View (format)
 description: FirstLineHanging-element för Frame för CustomControl för View (format)
 ms.openlocfilehash: 8b9601b2afd7ab5523e339fb45119f5cf9f4a535
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648136"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>FirstLineHanging-element för Frame för CustomControl för View (format)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lägga till parameteruppsättningar i en cmdlet
 description: Lägga till parameteruppsättningar i en cmdlet
 ms.openlocfilehash: dd5ee2a880a4d516ea82e5afe0ced12369197243
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648652"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Lägga till parameteruppsättningar i en cmdlet

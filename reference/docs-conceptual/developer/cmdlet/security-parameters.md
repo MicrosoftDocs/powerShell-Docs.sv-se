@@ -4,10 +4,10 @@ ms.topic: reference
 title: Säkerhetsparametrar
 description: Säkerhetsparametrar
 ms.openlocfilehash: 2c73a3372fa719ea436d4a3ae1223d4cbaaf9108
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650257"
 ---
 # <a name="security-parameters"></a>Säkerhetsparametrar
@@ -32,7 +32,7 @@ I följande tabell visas rekommenderade namn och funktioner för parametrar som 
 |**KeyContainerName**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange namnet på nyckel behållaren.|
 |**Nyckellängd**<br>Datatyp: Heltal|Implementera den här parametern så att användaren kan ange längden på nyckeln i bitar.|
 |**Åtgärd**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en åtgärd som kan utföras på ett skyddat objekt.|
-|**Viktigaste**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en unik identifierbar entitet för åtkomst.|
+|**Huvudkonto**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en unik identifierbar entitet för åtkomst.|
 |**Grupperna**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange rätt en cmdlet måste utföra en åtgärd för en viss entitet.|
 |**Behörigheter**<br>Datatyp: matris med privilegier|Implementera den här parametern så att användaren kan ange de rättigheter som en cmdlet måste utföra för att utföra åtgärden för en viss post.|
 |**Role**<br>Datatyp: sträng|Implementera den här parametern så att användaren kan ange en uppsättning åtgärder som kan utföras av en entitet.|

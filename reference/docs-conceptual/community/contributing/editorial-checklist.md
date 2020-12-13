@@ -4,10 +4,10 @@ description: Det här är en sammanfattande lista med regler för redigering av 
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "81624745"
 ---
 # <a name="editors-checklist"></a>Redaktörens check lista
@@ -31,22 +31,22 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 ## <a name="formatting"></a>Formatering
 
 - Element för bakticks-syntax som visas, infogade, i ett stycke
-  - Cmdlet-namn`Verb-Noun`
-  - Variabel`$counter`
-  - Syntaktiska exempel`Verb-Noun -Parameter`
-  - Fil Sök `C:\Program Files\PowerShell`vägar,`/usr/bin/pwsh`
+  - Cmdlet-namn `Verb-Noun`
+  - Variabel `$counter`
+  - Syntaktiska exempel `Verb-Noun -Parameter`
+  - Fil Sök vägar `C:\Program Files\PowerShell` , `/usr/bin/pwsh`
   - URL: er som inte är avsedda att vara klickade i dokumentet
   - Egenskaps-eller parameter värden
 - Använd fetstil för egenskaps namn, parameter namn, klass namn, Modulnamn, entitetsnamn, namn på objekt eller typnamn
   - Fetstil används för semantisk markering, inte betoning
-  - Fet – Använd asterisker`**`
-- Kursiv – Använd under streck`_`
+  - Fet – Använd asterisker `**`
+- Kursiv – Använd under streck `_`
   - Används endast för betoning, inte för semantisk markering
 - Rad brytningar vid 100 kolumner (eller vid 80 för **about_Topics**)
 - Inga hårda flikar – Använd bara blank steg
 - Inga avslutande blank steg på rader
 
-### <a name="headers"></a>Rubriker
+### <a name="headers"></a>Sidhuvuden
 
 - H1 är endast första ett H1 per artikel
 - Använd endast [ATX-rubriker](https://github.github.com/gfm/#atx-headings)
@@ -59,7 +59,7 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 ### <a name="code-blocks"></a>Kodblock
 
 - Tom rad före och efter
-- Använd taggade kod avgränsningar – **PowerShell**, **utdata**eller annat lämpligt språk-ID
+- Använd taggade kod avgränsningar – **PowerShell**, **utdata** eller annat lämpligt språk-ID
 - Otaggade block för staket eller andra gränssnitt
 - Lägg till utdata i ett separat kodblock förutom enkla exempel där du inte har för avsikt att läsa in läsaren för att använda **kopierings** knappen
 - Se listan över [språk som stöds](/contribute/code-in-docs#supported-languages)
@@ -68,7 +68,7 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 
 - Indraget korrekt
 - Tom rad före första objektet och efter sista posten
-- Punkt-Använd bindestreck (`-`) inte asterisk (`*`) – för lätt att förväxla med betoning
+- Punkt-Använd bindestreck ( `-` ) inte asterisk ( `*` ) – för lätt att förväxla med betoning
 - För numrerade listor är alla siffror "1".
 
 ## <a name="terminology"></a>Terminologi
@@ -84,7 +84,7 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
   - Använd fullständiga namn på cmdletar och parametrar-inga alias
   - Använda ihopbuntning för parametrar när kommando raden blir för lång
   - Undvik att använda rad fortsättnings omskalning – Använd bara vid behov
-- Ta bort eller förenkla PowerShell-prompten (`PS>`) utom där det krävs för exemplet
+- Ta bort eller förenkla PowerShell-prompten ( `PS>` ) utom där det krävs för exemplet
 - Exempel på cmdlet-referens måste följa följande PlatyPS-schema
 
   ~~~Markdown
@@ -109,10 +109,10 @@ Det här är en sammanfattning av regler som ska gälla när du skriver nya elle
 ## <a name="linking-to-other-documents"></a>Länka till andra dokument
 
 - Länka utanför dokument uppsättning eller mellan cmdlet-referens och konceptuell
-  - Använd relativa URL: er vid länkning till docs.microsoft.com `https://docs.microsoft.com/en-us`(ta bort)
-  - Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta `/en-us` bort från URL)
+  - Använd relativa URL: er vid länkning till docs.microsoft.com (ta bort `https://docs.microsoft.com/en-us` )
+  - Ta inte med språk i URL: er för Microsoft-egenskaper (t. ex. ta bort `/en-us` från URL)
   - Alla URL: er till externa webbplatser bör använda HTTPS om det inte är giltigt för mål platsen
 - Inom dokument uppsättning
-  - Länk till fil Sök väg (t `../folder/file.md`. ex.)
-  - Alla fil Sök vägar använder snedstreck (`/`)-tecken
+  - Länk till fil Sök väg (t. ex. `../folder/file.md` )
+  - Alla fil Sök vägar använder snedstreck ( `/` )-tecken
 - Bild länkar måste ha en unik alternativ text

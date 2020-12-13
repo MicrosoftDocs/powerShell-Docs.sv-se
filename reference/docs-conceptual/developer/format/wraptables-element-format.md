@@ -4,10 +4,10 @@ ms.topic: reference
 title: WrapTables-element (format)
 description: WrapTables-element (format)
 ms.openlocfilehash: 005aea73126b7187645c3aa34cc318b142c56666
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647788"
 ---
 # <a name="wraptables-element-format"></a>WrapTables-element (format)

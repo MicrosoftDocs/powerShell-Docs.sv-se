@@ -1,15 +1,15 @@
 ---
-title: Identifiera objekt, egenskaper och metoder
+title: Upptäcka objekt, egenskaper och metoder
 description: Du behöver inte vara utvecklare för att förstå och använda objekt, egenskaper och metoder.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436367"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>Kapitel 3 – identifiera objekt, egenskaper och metoder
@@ -28,9 +28,9 @@ Modulen är en del av verktyg för fjärrserveradministration (RSAT) för Window
 - Information om hur du installerar RSAT-verktyg finns i [Windows Management-moduler][].
 - För äldre versioner av Windows, se [RSAT för Windows][].
 
-## <a name="get-member"></a>Hämta medlem
+## <a name="get-member"></a>Get-Member
 
-`Get-Member`hjälper dig att identifiera vilka objekt, egenskaper och metoder som är tillgängliga för kommandon.
+`Get-Member` hjälper dig att identifiera vilka objekt, egenskaper och metoder som är tillgängliga för kommandon.
 Alla kommandon som producerar objektbaserade utdata kan skickas till `Get-Member` . En egenskap är en egenskap för ett objekt. Driv rutins licensen har en egenskap som kallas ögon färg och de vanligaste värdena för den egenskapen är blå och brun. En metod är en åtgärd som kan vidtas för ett objekt. I och med licens exempel för driv rutiner är en av metoderna "återkalla" eftersom motor fordonets avdelning kan återkalla driv rutins licensen.
 
 ### <a name="properties"></a>Egenskaper
@@ -47,7 +47,7 @@ Status   Name               DisplayName
 Running  w32time            Windows Time
 ```
 
-**Status**, **namn**och **DisplayName** är exempel på egenskaper som visas i den föregående uppsättningen med resultat. Värdet för egenskapen **status** är `Running` , värdet för egenskapen **Name** är `w32time` och värdet för **DisplayName** är `Windows Time` .
+**Status**, **namn** och **DisplayName** är exempel på egenskaper som visas i den föregående uppsättningen med resultat. Värdet för egenskapen **status** är `Running` , värdet för egenskapen **Name** är `w32time` och värdet för **DisplayName** är `Windows Time` .
 
 Nu ska jag skicka en pipe till samma kommando för att `Get-Member` :
 
@@ -171,7 +171,7 @@ CanShutdown         : True
 CanStop             : True
 ```
 
-I föregående exempel `Can*` användes som ett av värdena för **egenskaps** parametern för att returnera alla egenskaper som börjar med `Can` . Dessa inkluderar **CanPauseAndContinue**, **CanShutdown**och **CanStop**.
+I föregående exempel `Can*` användes som ett av värdena för **egenskaps** parametern för att returnera alla egenskaper som börjar med `Can` . Dessa inkluderar **CanPauseAndContinue**, **CanShutdown** och **CanStop**.
 
 ### <a name="methods"></a>Metoder
 
@@ -442,7 +442,7 @@ At line:1 char:40
     + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
 ```
 
-`Out-Host`skriver direkt till PowerShell-värden, men genererar inte objektbaserade utdata för pipelinen. Så det går inte att skickas till `Get-Member` .
+`Out-Host` skriver direkt till PowerShell-värden, men genererar inte objektbaserade utdata för pipelinen. Så det går inte att skickas till `Get-Member` .
 
 ## <a name="active-directory"></a>Active Directory
 
@@ -683,7 +683,7 @@ UserPrincipalName      : miker@mikefrobbins.com
 
 I det här kapitlet har du lärt dig hur du avgör vilken typ av objekt ett kommando skapar, hur du avgör vilka egenskaper och metoder som är tillgängliga för ett kommando och hur du arbetar med kommandon som begränsar de egenskaper som returneras som standard.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Vilken typ av objekt `Get-Process` skapar cmdleten?
 1. Hur tar du reda på vilka egenskaper som är tillgängliga för ett kommando?

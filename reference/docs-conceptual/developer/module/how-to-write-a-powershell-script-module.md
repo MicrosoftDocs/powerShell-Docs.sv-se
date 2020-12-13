@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skriva en PowerShell-skriptmodul
 description: Skriva en PowerShell-skriptmodul
 ms.openlocfilehash: c44b09a915501fb10773ab11cf13136d5035ba69
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649143"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>Skriva en PowerShell-skriptmodul

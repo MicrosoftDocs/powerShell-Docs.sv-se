@@ -4,10 +4,10 @@ ms.topic: reference
 title: HideTableHeaders-element (format)
 description: HideTableHeaders-element (format)
 ms.openlocfilehash: fefd296757ba190151f1ce592e6609c5f3f070e2
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648128"
 ---
 # <a name="hidetableheaders-element-format"></a>HideTableHeaders-element (format)

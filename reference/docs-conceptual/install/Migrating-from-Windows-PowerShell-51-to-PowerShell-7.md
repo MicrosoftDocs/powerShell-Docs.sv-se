@@ -3,10 +3,10 @@ title: Migrera från Windows PowerShell 5.1 till PowerShell 7
 description: Uppdatera från PowerShell 5,1 till PowerShell 7 för dina Windows-plattformar.
 ms.date: 03/25/2020
 ms.openlocfilehash: cb14a4f159b6dc33f31386da4264c0ebb640aef8
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/23/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "83810577"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migrera från Windows PowerShell 5.1 till PowerShell 7
@@ -15,7 +15,7 @@ PowerShell 7 är utformat för molnbaserade, lokala miljöer och hybrid miljöer
 
 - Installerar och körs sida vid sida med Windows PowerShell
 - Förbättrad kompatibilitet med befintliga Windows PowerShell-moduler
-- Nya språk funktioner, t. ex. ternära operatörer och`ForEach-Object -Parallel`
+- Nya språk funktioner, t. ex. ternära operatörer och `ForEach-Object -Parallel`
 - Förbättrade prestanda
 - SSH-baserad fjärr kommunikation
 - Samverkan mellan plattformar
@@ -60,9 +60,9 @@ PowerShell 7 installeras i en ny katalog, vilket möjliggör körning sida vid s
 
 Installera platser efter version:
 
-- Windows PowerShell 5,1:`$env:WINDIR\System32\WindowsPowerShell\v1.0`
-- PowerShell Core 6. x:`$env:ProgramFiles\PowerShell\6`
-- PowerShell 7:`$env:ProgramFiles\PowerShell\7`
+- Windows PowerShell 5,1: `$env:WINDIR\System32\WindowsPowerShell\v1.0`
+- PowerShell Core 6. x: `$env:ProgramFiles\PowerShell\6`
+- PowerShell 7: `$env:ProgramFiles\PowerShell\7`
 
 Den nya platsen läggs till i din sökväg så att du kan köra både Windows PowerShell 5,1 och PowerShell 7. Om du migrerar från PowerShell Core 6. x till PowerShell 7 tas PowerShell 6 bort och sökvägen ersätts.
 
@@ -72,7 +72,7 @@ I Windows PowerShell heter PowerShell-körbara filen `powershell.exe` . I versio
 
 Som standard är Windows PowerShell-och PowerShell 7 Store-moduler på olika platser. PowerShell 7 kombinerar dessa platser i `$Env:PSModulePath` miljö variabeln. När du importerar en modul efter namn, kontrollerar PowerShell platsen som anges av `$Env:PSModulePath` . Detta gör att PowerShell 7 kan läsa in både Core-och Desktop-moduler.
 
-|            Installations omfång            |                Windows PowerShell 5,1                 |             PowerShell 7,0             |
+|            Installations omfång            |                Windows PowerShell 5.1                 |             PowerShell 7,0             |
 | ----------------------------------- | ----------------------------------------------------- | -------------------------------------- |
 | PowerShell-moduler                  | `$env:WINDIR\system32\WindowsPowerShell\v1.0\Modules` | `$PSHOME\Modules`                      |
 | Användaren är installerad<br>AllUsers-omfång    | `$env:ProgramFiles\WindowsPowerShell\Modules`         | `$env:ProgramFiles\PowerShell\Modules` |
@@ -148,7 +148,7 @@ De flesta moduler som du använder i Windows PowerShell 5,1 fungerar redan med P
 
 Med PowerShell-fjärrkommunikation kan du köra alla PowerShell-kommandon på en eller flera fjärrdatorer. Du kan upprätta beständiga anslutningar, starta interaktiva sessioner och köra skript på fjärrdatorer.
 
-#### <a name="ws-management-remoting"></a>WS-Management Remoting
+#### <a name="ws-management-remoting"></a>WS-Management fjärr kommunikation
 
 Windows PowerShell 5,1 och tidigare använder WS-Management-protokollet (WSMAN) för anslutnings förhandling och data transport. Windows Remote Management (WinRM) använder WSMAN-protokollet. Om WinRM har Aktiver ATS använder PowerShell 7 den befintliga Windows PowerShell 5,1-slutpunkten med namnet `Microsoft.PowerShell` för fjärr anslutningar. Kör cmdleten om du vill uppdatera PowerShell 7 för att ta med sin egen slut punkt `Enable-PSRemoting` . Information om hur du ansluter till vissa slut punkter finns i [WS-Management Remoting i PowerShell Core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
 
@@ -187,7 +187,7 @@ Mer information finns i [openssh Key Management](/windows-server/administration/
 
 ### <a name="group-policy-supported"></a>grupprincip som stöds
 
-PowerShell innehåller grupprincip inställningar som hjälper dig att definiera konsekventa alternativ värden för servrar i en företags miljö. Inställningarna omfattar:
+PowerShell innehåller grupprincip inställningar som hjälper dig att definiera konsekventa alternativ värden för servrar i en företags miljö. Några exempel på inställningar är:
 
 - Konfiguration av konsolsession: anger en konfigurations slut punkt där PowerShell körs.
 - Aktivera modul loggning: anger LogPipelineExecutionDetails-egenskapen för moduler.
@@ -249,6 +249,6 @@ Mer information om hur du anpassar VSCode-layouten till ISE finns i [så här re
 > [!NOTE]
 > Det finns inga planer på att uppdatera ISE med nya funktioner. ISE är nu en funktion för att avinstallera användare i de senaste versionerna av Windows 10 och Windows Server. Det finns inga planer på att permanent ta bort ISE. PowerShell-teamet och dess partners fokuserar på att förbättra skript upplevelsen i PowerShell-tillägget för Visual Studio Code.
 
-## <a name="next-steps"></a>Efterföljande moment
+## <a name="next-steps"></a>Nästa steg
 
 Följ med kunskapen för att snabbt migrera, [Installera PowerShell 7](/powershell/scripting/install/installing-powershell-core-on-windows) nu!

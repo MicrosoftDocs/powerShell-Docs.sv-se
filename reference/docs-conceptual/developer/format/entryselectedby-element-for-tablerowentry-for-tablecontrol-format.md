@@ -4,10 +4,10 @@ ms.topic: reference
 title: EntrySelectedBy-element för TableRowEntry  för TableControl (format)
 description: EntrySelectedBy-element för TableRowEntry  för TableControl (format)
 ms.openlocfilehash: 1b7fc60b6fa9864b66e9edfebb3e4a86e287f3f8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645895"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>EntrySelectedBy-element för TableRowEntry  för TableControl (format)

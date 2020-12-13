@@ -4,10 +4,10 @@ ms.topic: reference
 title: ItemSelectionCondition-element för ExpressionBinding för Controls för View (format)
 description: ItemSelectionCondition-element för ExpressionBinding för Controls för View (format)
 ms.openlocfilehash: adbe747bdb4f6c1d180e5b630247de0fd3d72b85
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648055"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format"></a>ItemSelectionCondition-element för ExpressionBinding för Controls för View (format)

@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 4f0d7b7f5f3c12bb9475af5aed42b2d32cfbc14d
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436311"
 ---
 # <a name="chapter-6---flow-control"></a>Kapitel 6 – flödes kontroll
@@ -22,9 +22,9 @@ När du går från att skriva PowerShell en-liners för att skriva skript så l�
 
 En av fördelarna med PowerShell är att när du har gått igenom hur du gör något för ett objekt är det nästan lika enkelt att göra samma uppgift för hundratals objekt. Upprepa bara objekten med någon av de många olika typerna av slingor i PowerShell.
 
-### <a name="foreach-object"></a>-Objekt
+### <a name="foreach-object"></a>ForEach-Object
 
-`ForEach-Object`är en cmdlet för att söka igenom objekt i en pipeline, till exempel med PowerShell en-liners. `ForEach-Object`strömmar objekten via pipelinen.
+`ForEach-Object` är en cmdlet för att söka igenom objekt i en pipeline, till exempel med PowerShell en-liners. `ForEach-Object` strömmar objekten via pipelinen.
 
 Även om parametern **module** i `Get-Command` accepterar flera värden som är strängar, accepterar den bara dem via pipeline-inmatade efter egenskaps namn eller via parameter inmatade. I följande scenario måste du använda cmdleten om jag vill skicka två strängar efter värde till `Get-Command` för användning med parametern **module** `ForEach-Object` .
 
@@ -146,7 +146,7 @@ I föregående exempel itererar loopen fyra gånger genom att börja med siffran
 
 ### <a name="do"></a>Gör följande
 
-Det finns två olika `do` slingor i PowerShell. `Do Until`körs när det angivna villkoret är falskt.
+Det finns två olika `do` slingor i PowerShell. `Do Until` körs när det angivna villkoret är falskt.
 
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
@@ -172,7 +172,7 @@ What's your guess?: 3
 
 Föregående exempel är ett tal spel som fortsätter tills värdet du antar motsvarar samma siffra som `Get-Random` cmdleten genererade.
 
-`Do While`är bara tvärtom. Den körs så länge det angivna villkoret utvärderas till sant.
+`Do While` är bara tvärtom. Den körs så länge det angivna villkoret utvärderas till sant.
 
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
@@ -199,7 +199,7 @@ What's your guess?: 4
 
 Samma resultat uppnås med en `Do While` slinga genom att du återställer test villkoret till inte lika med.
 
-`Do`loopar körs alltid minst en gång eftersom villkoret utvärderas i slutet av slingan.
+`Do` loopar körs alltid minst en gång eftersom villkoret utvärderas i slutet av slingan.
 
 ### <a name="while"></a>Tiden
 
@@ -221,7 +221,7 @@ Det föregående exemplet beräknar vilken dag som tacksägelse dag är på USA.
 
 ## <a name="break-continue-and-return"></a>Bryt, Fortsätt och returnera
 
-`Break`är utformad för att bryta ut ur en slinga. Den används också ofta med `switch` instruktionen.
+`Break` är utformad för att bryta ut ur en slinga. Den används också ofta med `switch` instruktionen.
 
 ```powershell
 for ($i = 1; $i -lt 5; $i++) {
@@ -279,7 +279,7 @@ Observera att i föregående exempel returnerar utdata det första resultatet oc
 
 I det här kapitlet har du lärt dig om de olika typerna av slingor som finns i PowerShell.
 
-## <a name="review"></a>Granska
+## <a name="review"></a>Genomgång
 
 1. Vad är skillnaden i `ForEach-Object` cmdleten och den uppbyggda skript konstruktionen?
 1. Vad är den främsta fördelen med att använda en while-loop i stället för att göra det eller göra tills loop.

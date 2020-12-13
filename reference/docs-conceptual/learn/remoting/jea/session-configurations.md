@@ -4,10 +4,10 @@ keywords: Jea, PowerShell, säkerhet
 title: JEA
 description: Sessionsbaserade definierar vem som kan använda JEA-slutpunkten och vilka roller de har åtkomst till.
 ms.openlocfilehash: b616d5bf260bbdfe89b6422fd4a8b4866f7fdc67
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501566"
 ---
 # <a name="jea-session-configurations"></a>JEA

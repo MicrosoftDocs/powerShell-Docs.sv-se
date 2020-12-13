@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Säkerhets aspekter för PowerShell-fjärrkommunikation med WinRM
 description: Det här dokumentet beskriver säkerhets problem, rekommendationer och bästa praxis när du använder PowerShell-fjärrkommunikation.
 ms.openlocfilehash: 48167bd297905883b3d75caf9a07d06e6a9fc467
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501481"
 ---
 # <a name="security-considerations-for-powershell-remoting-using-winrm"></a>Säkerhets aspekter för PowerShell-fjärrkommunikation med WinRM

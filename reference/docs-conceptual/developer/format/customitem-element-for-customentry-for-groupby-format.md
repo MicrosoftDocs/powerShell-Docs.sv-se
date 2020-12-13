@@ -4,10 +4,10 @@ ms.topic: reference
 title: CustomItem-element för CustomEntry för GroupBy (format)
 description: CustomItem-element för CustomEntry för GroupBy (format)
 ms.openlocfilehash: 5db23ad4dad5bd66ea64b9c6e91b8224a4aa4eca
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645990"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>CustomItem-element för CustomEntry för GroupBy (format)

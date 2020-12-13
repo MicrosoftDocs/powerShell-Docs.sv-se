@@ -4,10 +4,10 @@ ms.topic: reference
 title: Deklaration av attributet ValidateLength
 description: Deklaration av attributet ValidateLength
 ms.openlocfilehash: b35fe24c6fc44aaca6a39d819d6e3fc2d8a2cade
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646190"
 ---
 # <a name="validatelength-attribute-declaration"></a>Deklaration av attributet ValidateLength

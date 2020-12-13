@@ -4,10 +4,10 @@ ms.topic: reference
 title: Egenskaper för utökad typ system
 description: Egenskaper för utökad typ system
 ms.openlocfilehash: cccd3c400a8822ee25c44e8e1625e35571420259
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646138"
 ---
 # <a name="ets-properties"></a>ETS-egenskaper
@@ -47,7 +47,7 @@ En antecknings egenskap är en egenskap som har ett namn/värde-par. Med avseend
 - **IsSettable** -egenskap: anger om det går att ange värdet för antecknings egenskapen.
 - **MemberType** -egenskap: en **NoteProperty** -uppräknings konstant som definierar den här egenskapen som en antecknings egenskap.
 - **TypeNameOfValue** -egenskap: det fullständigt kvalificerade typ namnet för objektet som returneras av antecknings egenskapens get-åtgärd.
-- **Värde** : värdet för antecknings egenskapen.
+- **Värde**: värdet för antecknings egenskapen.
 
 ## <a name="powershell-property"></a>PowerShell-egenskap
 
@@ -56,7 +56,7 @@ En PowerShell-egenskap är en egenskap som definierats för bas objektet eller e
 - **IsGettable** -egenskap: anger om värdet för bas-eller den anpassade egenskapen kan hämtas.
 - **IsSettable** -egenskap: anger om värdet för egenskapen bas eller anpassad kan anges.
 - **MemberType** -egenskap: en konstant egenskaps uppräkning som definierar den här egenskapen som en PowerShell-egenskap.
-- **TypeNameOfValue** -egenskap: det fullständigt kvalificerade namnet på egenskaps värde typen. Till exempel, för en egenskap vars värde är en sträng, är egenskaps värde typen **system. String** .
+- **TypeNameOfValue** -egenskap: det fullständigt kvalificerade namnet på egenskaps värde typen. Till exempel, för en egenskap vars värde är en sträng, är egenskaps värde typen **system. String**.
 - **Värde** egenskap: egenskapens värde. Om Get-eller Set-åtgärden anropas för en egenskap som inte stöder den åtgärden genereras ett **GetValueException** -eller **SetValueException** -undantag
 
 ## <a name="powershell-script-property"></a>Egenskaper för PowerShell-skript

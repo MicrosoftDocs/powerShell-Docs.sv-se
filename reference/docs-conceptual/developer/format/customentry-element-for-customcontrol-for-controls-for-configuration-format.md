@@ -4,10 +4,10 @@ ms.topic: reference
 title: CustomEntry-element för CustomControl för Controls för Configuration (format)
 description: CustomEntry-element för CustomControl för Controls för Configuration (format)
 ms.openlocfilehash: 3967be86a1d6c12c7215ef19d50bac9fafd5ad6d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648288"
 ---
 # <a name="customentry-element-for-customcontrol-for-controls-for-configuration-format"></a>CustomEntry-element för CustomControl för Controls för Configuration (format)

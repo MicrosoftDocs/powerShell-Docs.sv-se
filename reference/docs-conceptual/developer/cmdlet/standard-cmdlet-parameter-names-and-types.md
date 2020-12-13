@@ -4,10 +4,10 @@ ms.topic: reference
 title: Standardnamn och standardtyper för cmdlet-parametrar
 description: Standardnamn och standardtyper för cmdlet-parametrar
 ms.openlocfilehash: 87491d76a827af077decaf933884a06579806e9b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650183"
 ---
 # <a name="standard-cmdlet-parameter-names-and-types"></a>Standardnamn och standardtyper för cmdlet-parametrar

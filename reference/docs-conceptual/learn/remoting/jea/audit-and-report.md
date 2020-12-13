@@ -4,10 +4,10 @@ keywords: Jea, PowerShell, säkerhet
 title: Granskning och rapportering av JEA
 description: Granskningen hjälper dig att utvärdera att rätt personer har åtkomst till JEA-slutpunkten och att de tilldelade rollerna fortfarande är lämpliga.
 ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92500019"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Granskning och rapportering av JEA

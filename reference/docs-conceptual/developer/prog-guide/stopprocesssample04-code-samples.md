@@ -4,10 +4,10 @@ ms.topic: reference
 title: StopProcessSample04 – kodexempel
 description: StopProcessSample04 – kodexempel
 ms.openlocfilehash: 84598b48fd8a6f61d51a87de5fd5c4b5bcd7b764
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647412"
 ---
 # <a name="stopprocesssample04-code-samples"></a>StopProcessSample04 – kodexempel
@@ -21,7 +21,7 @@ Här är kod exemplen för StopProc00-exempel-cmdleten. Detta är det `Stop-Proc
 
 Fullständig exempel kod finns i följande avsnitt.
 
-|Språk|Avsnitt|
+|Språk|Ämne|
 |--------------|-----------|
 |C#|[StopProc04 (C#) exempel kod](./stopprocesssample04-csharp-sample-code.md)|
 |VB.NET|[StopProc04 (VB.NET) exempel kod](./stopprocesssample04-vb-net-sample-code.md)|

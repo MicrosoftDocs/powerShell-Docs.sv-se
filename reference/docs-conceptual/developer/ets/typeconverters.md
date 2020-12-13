@@ -4,10 +4,10 @@ ms.topic: reference
 title: Typ konverterare för utökat typ system
 description: Typ konverterare för utökat typ system
 ms.openlocfilehash: 0774e9eaae1187162b3d55cc45b902f7411a1f18
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648438"
 ---
 # <a name="ets-type-converters"></a>ETS-typkonverterare
@@ -24,7 +24,7 @@ Dessa standard konverteringar kontrol leras före eventuella anpassade konverter
 | Null                  | Char              | ' \ 0 '                                                                                                                                                                |
 | Null                  | Numeriskt           | `0` av den typ som anges i parametern **resultType** .                                                                                                          |
 | Null                  | Boolesk           | Resultat av anrop till `IsTrue(System.Object)(Null)` metoden.                                                                                                        |
-| Null                  | PSObject          | Nytt objekt av typen **PSObject** .                                                                                                                                    |
+| Null                  | PSObject          | Nytt objekt av typen **PSObject**.                                                                                                                                    |
 | Null                  | Ej värde-typ    | Ha.                                                                                                                                                               |
 | Null                  | Nullable &lt; T&gt; | Ha.                                                                                                                                                               |
 | Härledd klass         | Basklass        | **valueToConvert**                                                                                                                                                  |
@@ -38,8 +38,8 @@ Dessa standard konverteringar kontrol leras före eventuella anpassade konverter
 | IDictionary           | Hash-tabell        | Resultat av anrop till hash-hash (valueToConvert).                                                                                                                       |
 | Sträng                | Char []            | `valueToConvert.ToCharArray`                                                                                                                                        |
 | Sträng                | Verifiering             | Resultat från anrop till `Regx(valueToConvert)` .                                                                                                                          |
-| Sträng                | Typ              | Returnerar rätt typ med **valueToConvert** -parametern för att söka i **RunspaceConfiguration. sammansättningar** .                                                 |
-| Sträng                | Numeriskt           | Om **valueToConvert** är "" returneras `0` av **resultType** . Annars används kulturen "kultur invariant" för att skapa ett numeriskt värde.                       |
+| Sträng                | Typ              | Returnerar rätt typ med **valueToConvert** -parametern för att söka i **RunspaceConfiguration. sammansättningar**.                                                 |
+| Sträng                | Numeriskt           | Om **valueToConvert** är "" returneras `0` av **resultType**. Annars används kulturen "kultur invariant" för att skapa ett numeriskt värde.                       |
 | Integer               | System. Enum       | Konverterar heltalet till konstanten om heltalet definieras av uppräkningen. Om heltalet inte är definierat genereras ett **PSInvalidCastException** -undantag. |
 
 ## <a name="custom-conversions"></a>Anpassade konverteringar
@@ -74,8 +74,8 @@ Om objekt typen för **resultType** -parametern har en konstruktor som har en en
 
 ## <a name="implicit-cast-operator-converter"></a>Konverterare för implicit omvandling
 
-Om parametern **valueToConvert** har en implicit omvandlings operator som konverterar till **resultType** , anropas dess omvandlings operator. Om **resultType** -parametern har en implicit omvandlings operator som konverterar från **valueToConvert** , anropas dess omvandlings operator.
+Om parametern **valueToConvert** har en implicit omvandlings operator som konverterar till **resultType**, anropas dess omvandlings operator. Om **resultType** -parametern har en implicit omvandlings operator som konverterar från **valueToConvert**, anropas dess omvandlings operator.
 
 ## <a name="explicit-cast-operator-converter"></a>Konverterare för explicit Cast-operator
 
-Om parametern **valueToConvert** har en explicit omvandlings operator som konverterar till **resultType** , anropas dess omvandlings operator. Om **resultType** -parametern har en explicit omvandlings operator som konverterar från **valueToConvert** , anropas dess omvandlings operator.
+Om parametern **valueToConvert** har en explicit omvandlings operator som konverterar till **resultType**, anropas dess omvandlings operator. Om **resultType** -parametern har en explicit omvandlings operator som konverterar från **valueToConvert**, anropas dess omvandlings operator.
