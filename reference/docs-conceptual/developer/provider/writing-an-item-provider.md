@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skriva en objektprovider
 description: Skriva en objektprovider
 ms.openlocfilehash: f70c6ee50277988c4e3b7c255dc4548bc30319dd
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355212"
 ---
 # <a name="writing-an-item-provider"></a>Skriva en objektprovider

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Windows PowerShell SDK
 description: Windows PowerShell SDK
 ms.openlocfilehash: 751ccb02741db0ea63df1768dec4a19c5fa9ce92
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94390209"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell

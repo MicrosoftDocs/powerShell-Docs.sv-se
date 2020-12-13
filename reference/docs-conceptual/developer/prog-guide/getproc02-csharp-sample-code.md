@@ -4,10 +4,10 @@ ms.topic: reference
 title: GetProc02 (C#) – kodexempel
 description: GetProc02 (C#) – kodexempel
 ms.openlocfilehash: 17fd0d0c0829ed21ef955fd2e62e9ee089d62190
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355620"
 ---
 # <a name="getproc02-c-sample-code"></a>GetProc02 (C#) – kodexempel

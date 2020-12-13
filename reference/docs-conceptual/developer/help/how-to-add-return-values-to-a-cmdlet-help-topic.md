@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lägga till returvärden i ett cmdlet-hjälpavsnitt
 description: Lägga till returvärden i ett cmdlet-hjälpavsnitt
 ms.openlocfilehash: 8c556821a257451a320916231cb20fc82e75ebb4
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94389750"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Lägga till returvärden i ett cmdlet-hjälpavsnitt

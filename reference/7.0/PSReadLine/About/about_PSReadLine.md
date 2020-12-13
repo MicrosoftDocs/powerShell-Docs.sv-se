@@ -6,22 +6,22 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Om PSReadLine
-ms.openlocfilehash: 890f8e92172f2d492b6b817b558d4f25c70e8949
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f5ae99a7c8bdae82372423a3e4d8261d95ab83d5
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93269936"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692215"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>KORT BESKRIVNING
+## <a name="short-description"></a>Kort beskrivning
 
 PSReadLine ger en förbättrad kommando rads redigerings upplevelse i PowerShell-konsolen.
 
-## <a name="long-description"></a>LÅNG BESKRIVNING
+## <a name="long-description"></a>Lång beskrivning
 
 PSReadLine 2,0 ger en kraftfull redigerings upplevelse för kommando tolken för PowerShell-konsolen. Den tillhandahåller:
 
@@ -35,10 +35,10 @@ PSReadLine 2,0 ger en kraftfull redigerings upplevelse för kommando tolken för
 - Emacs YANK/Kill-ring
 - PowerShell-token-baserad "Word"-förflyttning och stopp
 
-Följande funktioner är tillgängliga i klassen **[Microsoft. PowerShell. PSConsoleReadLine]**.
-
 > [!NOTE]
 > Från och med PowerShell 7,0 hoppar PowerShell över automatisk inläsning av PSReadLine i Windows om ett skärm läsar program har identifierats. PSReadLine fungerar för närvarande inte bra med skärm läsare. Standard åter givningen och formateringen av PowerShell 7,0 i Windows fungerar korrekt. Du kan läsa in modulen manuellt om det behövs.
+
+Följande funktioner är tillgängliga i klassen **[Microsoft. PowerShell. PSConsoleReadLine]**.
 
 ## <a name="basic-editing-functions"></a>Grundläggande redigerings funktioner
 
@@ -1287,22 +1287,18 @@ Den här hjälp metoden används för anpassade bindningar som följer DigitArgu
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>NOTE
+## <a name="note"></a>Anteckning
 
-### <a name="powershell-compatibility"></a>POWERSHELL-KOMPATIBILITET
-
-PSReadLine kräver PowerShell 3,0 eller senare och konsol värden. Den fungerar inte i PowerShell ISE. Den fungerar i-konsolen i Visual Studio Code.
-
-### <a name="command-history"></a>KOMMANDO HISTORIK
+### <a name="command-history"></a>Kommando historik
 
 PSReadLine underhåller en historik fil som innehåller alla kommandon och data som du har angett från kommando raden. Detta kan innehålla känsliga data, inklusive lösen ord. Om du till exempel använder `ConvertTo-SecureString` cmdleten loggas lösen ordet i historik filen som oformaterad text. Historikfilerna är en fil med namnet `$($host.Name)_history.txt` . I Windows-system lagras historik filen på `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` . På andra datorer än Windows-system lagras historikfilerna i `$env:XDG_DATA_HOME/powershell/PSReadLine` eller `$env:HOME/.local/share/powershell/PSReadLine` .
 
-### <a name="feedback--contributing-to-psreadline"></a>FEEDBACK & som bidrar till PSReadLine
+### <a name="feedback--contributing-to-psreadline"></a>Feedback & som bidrar till PSReadLine
 
 [PSReadLine på GitHub](https://github.com/PowerShell/PSReadLine)
 
 Skicka gärna en pull-begäran eller skicka feedback på sidan GitHub.
 
-## <a name="see-also"></a>SE ÄVEN
+## <a name="see-also"></a>Se även
 
 PSReadLine påverkas kraftigt av GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) -biblioteket.

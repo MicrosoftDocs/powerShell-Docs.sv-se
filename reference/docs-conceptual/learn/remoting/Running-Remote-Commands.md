@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Kör fjärrkommandon
 description: Förklarar metoder för att köra kommandon på fjärrdatorer med hjälp av PowerShell.
 ms.openlocfilehash: cff18a4f51c3ed8e3ed2c1f35862a88911e7ceb5
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94391416"
 ---
 # <a name="running-remote-commands"></a>Kör fjärrkommandon
@@ -118,7 +118,7 @@ Följande kommando kör till exempel ett Get-HotFix-kommando i sessionerna i $s-
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Till exempel:
+Nu kan du använda data i `$h` variabeln med andra kommandon i samma session. Resultaten visas på den lokala datorn. Exempel:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}

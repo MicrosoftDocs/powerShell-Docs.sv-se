@@ -4,15 +4,15 @@ ms.topic: reference
 title: Cmdlet-parametrar
 description: Cmdlet-parametrar
 ms.openlocfilehash: 1ab495cb674f6b2cd769c3f64d899aec67704216
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668277"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parametrar
 
-Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera indata direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen. argumenten (även kallade *värden* ) för dessa parametrar kan ange de indata som cmdleten accepterar, hur cmdleten ska utföra sina åtgärder och vilka data som cmdleten returnerar till pipelinen.
+Cmdlet-parametrar tillhandahåller mekanismen som tillåter att en cmdlet accepterar ininformation. Parametrar kan acceptera indata direkt från kommando raden eller från objekt som skickas till cmdleten via pipelinen. argumenten (även kallade *värden*) för dessa parametrar kan ange de indata som cmdleten accepterar, hur cmdleten ska utföra sina åtgärder och vilka data som cmdleten returnerar till pipelinen.
 
 ## <a name="in-this-section"></a>I det här avsnittet
 

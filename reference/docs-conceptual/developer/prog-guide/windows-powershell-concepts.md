@@ -4,10 +4,10 @@ ms.topic: reference
 title: Begrepp relaterade till Windows PowerShell
 description: Begrepp relaterade till Windows PowerShell
 ms.openlocfilehash: a9b88a2e575b7ff7c036ce0fcbc035f0b55d0f5f
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355366"
 ---
 # <a name="windows-powershell-concepts"></a>Begrepp relaterade till Windows PowerShell

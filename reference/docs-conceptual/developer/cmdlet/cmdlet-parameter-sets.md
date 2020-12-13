@@ -4,10 +4,10 @@ ms.topic: reference
 title: Cmdlet-parameteruppsättningar
 description: Cmdlet-parameteruppsättningar
 ms.openlocfilehash: e84af7faf5b7459d8dbe06847526efe804e2c5e1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668294"
 ---
 # <a name="cmdlet-parameter-sets"></a>Cmdlet-parameter uppsättningar

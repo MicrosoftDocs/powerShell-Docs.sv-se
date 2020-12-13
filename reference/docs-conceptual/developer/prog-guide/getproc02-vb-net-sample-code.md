@@ -4,10 +4,10 @@ ms.topic: reference
 title: GetProc02 (VB.NET) – kodexempel
 description: GetProc02 (VB.NET) – kodexempel
 ms.openlocfilehash: aefc3a4df5e0f29120916648ecdca41931a4c1c6
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93354549"
 ---
 # <a name="getproc02-vbnet-sample-code"></a>GetProc02 (VB.NET) – kodexempel

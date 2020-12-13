@@ -4,10 +4,10 @@ ms.topic: reference
 title: Windows PowerShell-exempelkod
 description: Windows PowerShell-exempelkod
 ms.openlocfilehash: da916fa3557f44ecc9126ecef38235109aa391ec
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94390141"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-exempelkod
@@ -19,7 +19,7 @@ Windows PowerShell- &reg; exempel är tillgängliga via Windows SDK. Det här av
 
 ## <a name="sample-code-listing"></a>Exempel kod lista
 
-|                                    Exempelkod                                    |                                                                                                                                           Description                                                                                                                                           |
+|                                    Exempelkod                                    |                                                                                                                                           Beskrivning                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01 – kodexempel](./accessdbprovidersample01-code-sample.md) | Detta är den provider som beskrivs i [skapa en grundläggande Windows PowerShell-Provider](./creating-a-basic-windows-powershell-provider.md).                                                                                                                                                            |
 | [AccessDbProviderSample02 – kodexempel](./accessdbprovidersample02-code-sample.md) | Det här är den provider som beskrivs i [skapa en Windows PowerShell-enhets leverantör](./creating-a-windows-powershell-drive-provider.md).                                                                                                                                                            |

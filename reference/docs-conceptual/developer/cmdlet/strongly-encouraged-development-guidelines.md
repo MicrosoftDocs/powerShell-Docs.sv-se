@@ -4,10 +4,10 @@ ms.topic: reference
 title: Starkt rekommenderade riktlinjer för utveckling
 description: Starkt rekommenderade riktlinjer för utveckling
 ms.openlocfilehash: e12fa0d1adc0d7a0dad938457bdcd289736df97c
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355246"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Starkt rekommenderade riktlinjer för utveckling

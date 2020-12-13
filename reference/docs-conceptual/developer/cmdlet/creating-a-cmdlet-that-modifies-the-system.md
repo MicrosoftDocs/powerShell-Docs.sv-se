@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en cmdlet som ändrar systemet
 description: Skapa en cmdlet som ändrar systemet
 ms.openlocfilehash: 757f2c97bb4b5dcf2fb633cd35fe52bc5f6c5cf9
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355552"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Skapa en cmdlet som ändrar systemet
@@ -46,7 +46,7 @@ Följande är klass definitionen för denna Stop-Proc-cmdlet.
 public class StopProcCommand : Cmdlet
 ```
 
-Observera att [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) `SupportsShouldProcess` nyckelordet Attribute är inställt på `true` att aktivera cmdleten för att anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)i system. Management. Automation. CmdletAttribute-deklarationen.
+Observera att [](/dotnet/api/System.Management.Automation.CmdletAttribute) `SupportsShouldProcess` nyckelordet Attribute är inställt på `true` att aktivera cmdleten för att anropa [system. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) och [system. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)i system. Management. Automation. CmdletAttribute-deklarationen.
 Utan det här nyckelordet är `Confirm` `WhatIf` parametrarna och inte tillgängliga för användaren.
 
 ### <a name="extremely-destructive-actions"></a>Extremt destruktiva åtgärder

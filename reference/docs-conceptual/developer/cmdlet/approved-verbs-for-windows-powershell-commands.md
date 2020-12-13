@@ -4,10 +4,10 @@ ms.topic: reference
 title: Godkända verb för PowerShell-kommandon
 description: Godkända verb för PowerShell-kommandon
 ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355110"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Godkända verb för PowerShell-kommandon
@@ -75,7 +75,7 @@ PowerShell använder uppräknings klassen [system. Management. Automation. Verbs
 |[Kopiera](/dotnet/api/System.Management.Automation.VerbsCommon.Copy) (CP)|Kopierar en resurs till ett annat namn eller till en annan behållare. Till exempel `Copy-Item` kopierar cmdleten ett objekt (till exempel en fil) från en plats i data lagret till en annan plats.|Duplicera, klona, replikera, synkronisera|
 |[RETUR](/dotnet/api/System.Management.Automation.VerbsCommon.Enter) (et)|Anger en åtgärd som gör det möjligt för användaren att flytta till en resurs. Till exempel `Enter-PSSession` placerar cmdleten användaren i en interaktiv session. Verbet är länkat till `Exit` .|Push-överför till|
 |[Avsluta](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (t ex)|Anger den aktuella miljön eller kontexten till den senast använda kontexten. Till exempel `Exit-PSSession` placerar cmdleten användaren i sessionen som användes för att starta den interaktiva sessionen. Verbet är länkat till `Enter` .|Pop, ut|
-|[Sök](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Söker efter ett objekt i en behållare som är okänt, underförstådd, valfri eller angiven.|Sök|
+|[Sök](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Söker efter ett objekt i en behållare som är okänt, underförstådd, valfri eller angiven.|Search|
 |[Hämta](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Anger en åtgärd som hämtar en resurs. Verbet är länkat till `Set` .|Läsa, öppna, katta, skriva, dir, Hämta, dumpa, Hämta, undersöka, söka efter|
 |[Dölj](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Gör en resurs okänd. Till exempel kan en-cmdlet som innehåller namnet Dölj verb dölja en tjänst från en användare. Verbet är länkat till `Show` .|Blockera|
 |[Anslut](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Kombinerar resurser till en resurs. Till exempel `Join-Path` kombinerar cmdleten en sökväg med en av dess underordnade sökvägar för att skapa en enskild sökväg. Verbet är länkat till `Split` .|Kombinera, Unita, Anslut, koppla|
@@ -174,7 +174,7 @@ PowerShell använder klassen [system. Management. Automation. VerbsLifeCycle](/d
 |[Distribuera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deploy) (DP)|Skickar ett program, en webbplats eller en lösning till ett fjärrmål [s] på ett sådant sätt att en konsument av lösningen kan komma åt den när distributionen har slutförts. Det här verbet lades till i PowerShell 6.||
 |[Inaktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Disable) (d)|Konfigurerar en resurs till ett otillgängligt eller inaktivt tillstånd. Till exempel `Disable-PSBreakpoint` gör cmdleten en inaktiv Bryt punkt. Verbet är länkat till `Enable` .|Stoppa, Dölj|
 |[Aktivera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Enable) (e)|Konfigurerar en resurs till ett tillgängligt eller aktivt tillstånd. Till exempel `Enable-PSBreakpoint` gör cmdleten en aktiv Bryt punkt. Verbet är länkat till `Disable` .|Starta, börja|
-|[Installera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Install) (är)|Placerar en resurs på en plats och eventuellt initierar den. Verbet är länkat till `Uninstall` .|Konfiguration|
+|[Installera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Install) (är)|Placerar en resurs på en plats och eventuellt initierar den. Verbet är länkat till `Uninstall` .|Installation|
 |[Anropa](/dotnet/api/System.Management.Automation.VerbsLifecycle.Invoke) (i)|Utför en åtgärd, till exempel köra ett kommando eller en metod.|Kör, starta|
 |[Registrera](/dotnet/api/System.Management.Automation.VerbsLifecycle.Register) (RG)|Skapar en post för en resurs i en lagrings plats, till exempel en databas. Verbet är länkat till `Unregister` .||
 |[Begäran](/dotnet/api/System.Management.Automation.VerbsLifecycle.Request) (RQ)|Frågar efter en resurs eller ber om behörighet.||

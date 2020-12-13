@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lägga till användarmeddelanden i en cmdlet
 description: Lägga till användarmeddelanden i en cmdlet
 ms.openlocfilehash: de6fcc093af1d01287eed1eb8cc7b81cf5d2fdd8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668345"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Lägga till användarmeddelanden i en cmdlet

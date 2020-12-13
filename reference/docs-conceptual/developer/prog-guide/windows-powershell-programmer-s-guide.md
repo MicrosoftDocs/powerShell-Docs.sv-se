@@ -4,10 +4,10 @@ ms.topic: reference
 title: Guide för Windows PowerShell-programmerare&#39;s
 description: Guide för Windows PowerShell-programmerare&#39;s
 ms.openlocfilehash: 446be2241bb7b05b4bd7ffe8b7797214a7564944
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355297"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Guide för Windows PowerShell-programmerare&#39;s
@@ -91,7 +91,7 @@ Mer information om hur du börjar använda Windows PowerShell-gränssnittet finn
 
 ## <a name="contents-of-this-guide"></a>Innehåll i den här guiden
 
-|Avsnitt|Definition|
+|Ämne|Definition|
 |-----------|----------------|
 |[Skapa en Windows PowerShell-provider](./how-to-create-a-windows-powershell-provider.md)|I det här avsnittet beskrivs hur du skapar en Windows PowerShell-Provider för Windows PowerShell.|
 |[Så här skapar du ett Windows PowerShell-värdprogram](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|I det här avsnittet beskrivs hur du skriver ett värd program som manipulerar en körnings utrymme och hur du skriver ett värd program som implementerar en egen anpassad värd.|

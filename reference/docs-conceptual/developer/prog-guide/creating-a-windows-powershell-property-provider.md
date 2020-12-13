@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en Windows PowerShell-egenskapsprovider
 description: Skapa en Windows PowerShell-egenskapsprovider
 ms.openlocfilehash: 5370624afa784598ca784b201f7e7345eb958ff9
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94390923"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Skapa en Windows PowerShell-egenskapsprovider

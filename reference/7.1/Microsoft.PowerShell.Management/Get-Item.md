@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 25d07028430d6ad6719136bd484d39e116d81516
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266901"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661366"
 ---
 # Get-Item
 
@@ -130,9 +130,9 @@ I PowerShell 6,2 lades en alternativ vy till för att hämta hardlink-informatio
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### Exempel 9: utdata för experimentell funktion PSUnixFileStat
+### Exempel 9: utdata för operativ system som inte är Windows-operativsystem
 
-I PowerShell 7 på UNIX-system tillhandahåller experimentella funktions **PSUnixFileStat** UNIX-liknande utdata:
+I PowerShell 7,1 på UNIX `Get-Item` -system tillhandahåller cmdlet: en UNIX-liknande utdata:
 
 ```powershell
 PS> Get-Item /Users
@@ -152,6 +152,9 @@ De nya egenskaperna som nu är en del av utdata är:
 - **Användaren** är filens ägare
 - **Grupp** är grupp ägare
 - **Storlek** är storleken på filen eller katalogen som representeras på ett UNIX-system
+
+> [!NOTE]
+> Den här funktionen har flyttats från experimentell till vanlig i PowerShell 7,1.
 
 ## PARAMETRAR
 
@@ -315,7 +318,7 @@ Denna cmdlet har ingen **rekursivt** -parameter, eftersom den bara får ett obje
 Använd om du vill hämta innehållet i ett objekt rekursivt `Get-ChildItem` .
 
 Använd denna cmdlet för att hämta register nycklar och `Get-ItemProperty` för att hämta register värden och data för att navigera i registret. Register värden anses vara egenskaper för register nyckeln.
-  
+
 Denna cmdlet är utformad för att fungera med data som exponeras av vilken provider som helst. Om du vill visa en lista över tillgängliga providers i din session skriver du `Get-PsProvider` . Mer information finns i [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATERADE LÄNKAR

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Windows PowerShell-felposter
 description: Windows PowerShell-felposter
 ms.openlocfilehash: 899acf08508b1469b7ec3985d5665367fc2c1531
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355603"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-felposter

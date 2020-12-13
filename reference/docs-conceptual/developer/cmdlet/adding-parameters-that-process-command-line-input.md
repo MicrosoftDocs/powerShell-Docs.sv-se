@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lägga till parametrar som bearbetar kommandoradsindata
 description: Lägga till parametrar som bearbetar kommandoradsindata
 ms.openlocfilehash: f20469d366330aa787fbc16e4f0a76e67fc7c6db
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93354617"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Lägga till parametrar som bearbetar kommandoradsindata
@@ -92,7 +92,7 @@ Denna cmdlet använder en sträng mat ris för `Name` parametern. Om möjligt b�
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>Deklarera parametrar som positions-eller namngivna
 
-En cmdlet måste ange varje parameter som antingen en positions-eller namngiven parameter. Båda typerna av parametrar accepterar enstaka argument, flera argument avgränsade med kommatecken och booleska inställningar. En boolesk parameter, som även kallas för en *växel* , hanterar endast booleska inställningar. Växeln används för att bestämma förekomst av parametern. Det rekommenderade standardvärdet är `false` .
+En cmdlet måste ange varje parameter som antingen en positions-eller namngiven parameter. Båda typerna av parametrar accepterar enstaka argument, flera argument avgränsade med kommatecken och booleska inställningar. En boolesk parameter, som även kallas för en *växel*, hanterar endast booleska inställningar. Växeln används för att bestämma förekomst av parametern. Det rekommenderade standardvärdet är `false` .
 
 Exempel- `Get-Proc` cmdleten definierar `Name` parametern som en positions parameter med position
 0. Det innebär att det första argumentet som användaren anger på kommando raden automatiskt infogas för den här parametern. Om du vill definiera en namngiven parameter för vilken användaren måste ange parameter namnet från kommando raden lämnar du `Position` nyckelordet utanför deklarationen för attributet.

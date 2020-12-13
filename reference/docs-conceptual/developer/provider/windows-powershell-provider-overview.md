@@ -4,10 +4,10 @@ ms.topic: reference
 title: Översikt över Windows PowerShell-providers
 description: Översikt över Windows PowerShell-providers
 ms.openlocfilehash: 2f1c5f5991a64fb2b85ece7feba915164ebd34ee
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355518"
 ---
 # <a name="windows-powershell-provider-overview"></a>Översikt över Windows PowerShell-providers
@@ -35,7 +35,7 @@ Användare navigerar leverantörs enheter som fil system. Därför förväntas s
 
 ### <a name="drive-qualified-paths"></a>Enhet – kvalificerade sökvägar
 
-En enhets kvalificerad sökväg är en kombination av objekt namn, behållare och under behållare där objektet finns och Windows PowerShell-enheten som objektet har åtkomst till. (Enheter definieras av den provider som används för att få åtkomst till data lagret. Den här sökvägen börjar med enhets namnet följt av ett kolon (:). Exempelvis: `get-childitem C:`
+En enhets kvalificerad sökväg är en kombination av objekt namn, behållare och under behållare där objektet finns och Windows PowerShell-enheten som objektet har åtkomst till. (Enheter definieras av den provider som används för att få åtkomst till data lagret. Den här sökvägen börjar med enhets namnet följt av ett kolon (:). Exempel: `get-childitem C:`
 
 ### <a name="provider-qualified-paths"></a>Kvalificerade sökvägar för Provider
 

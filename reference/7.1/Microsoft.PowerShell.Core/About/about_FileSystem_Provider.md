@@ -2,16 +2,16 @@
 description: Filsystem
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/18/2019
+ms.date: 11/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem-Provider
-ms.openlocfilehash: fb4135663d368867661e87327aa52a9213757d08
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: a1ea71d8ce402c71ae872260e8a38b03de89cf1d
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391484"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661417"
 ---
 # <a name="filesystem-provider"></a>FileSystem-Provider
 
@@ -25,7 +25,7 @@ Filsystem
 
 ## <a name="capabilities"></a>Funktioner
 
-**Filter** , **ShouldProcess**
+**Filter**, **ShouldProcess**
 
 ## <a name="short-description"></a>Kort beskrivning
 
@@ -35,12 +35,12 @@ Ger åtkomst till filer och kataloger.
 
 Med PowerShell- **dataprovidern** kan du hämta, lägga till, ändra, rensa och ta bort filer och kataloger i PowerShell.
 
-**Fil Systems** enheter är ett hierarkiskt namn område som innehåller de kataloger och filer som finns på din dator. En **fil Systems** enhet kan vara en logisk eller phsyical enhet, katalog eller mappad nätverks resurs.
+**Fil Systems** enheter är ett hierarkiskt namn område som innehåller de kataloger och filer som finns på din dator. En **fil Systems** enhet kan vara en logisk eller fysisk enhet, katalog eller mappad nätverks resurs.
 
 En enhet `TEMP:` som heter kommer att mappas till användarens tillfälliga katalog Sök väg.
 
 >[!NOTE]
-> Innehåll i TEMP: enheten tas inte bort automatiskt av PowerShell och är upp till den användare eller det operativ system som ska hanteras.
+> Innehåll i TEMP: enheten tas inte bort automatiskt av PowerShell och är upp till den användare eller det operativ system som ska hanteras. Den här funktionen har flyttats från experimentella funktioner i PowerShell version 7,0
 
 **Fil Systems** leverantören stöder följande cmdletar, som beskrivs i den här artikeln.
 
@@ -65,11 +65,11 @@ En enhet `TEMP:` som heter kommer att mappas till användarens tillfälliga kata
 
 ## <a name="types-exposed-by-this-provider"></a>Typer som exponeras av denna provider
 
-Filerna är instanser av klassen [system. io. fileinfo](/dotnet/api/system.io.fileinfo) .  Kataloger är instanser av klassen [system. io. DirectoryInfo](/dotnet/api/system.io.directoryinfo) .
+Filerna är instanser av klassen [system. io. fileinfo](/dotnet/api/system.io.fileinfo) . Kataloger är instanser av klassen [system. io. DirectoryInfo](/dotnet/api/system.io.directoryinfo) .
 
 ## <a name="navigating-the-filesystem-drives"></a>Navigera i fil Systems enheter
 
-**Fil Systems** leverantören visar sina data lager genom att mappa alla logiska enheter på datorn som PowerShell-enheter. Om du vill arbeta med en **fil Systems** enhet kan du ändra din plats till en enhet utfärdande enhets namnet följt av ett kolon ( `:` ).
+**Fil Systems** leverantören visar sina data lager genom att mappa alla logiska enheter på datorn som PowerShell-enheter. Om du vill arbeta med en **fil Systems** enhet kan du ändra din plats till en enhet med hjälp av enhets namnet följt av ett kolon ( `:` ).
 
 ```powershell
 Set-Location C:
@@ -340,18 +340,18 @@ Dynamiska parametrar är cmdlet-parametrar som läggs till av en PowerShell-Prov
 
 Anger fil kodningen. Standardvärdet är ASCII.
 
-- **ASCII** : använder kodningen för ASCII-teckenuppsättningen (7-bitars).
-- **BigEndianUnicode** : kodar i UTF-16-format med big-endian byte-ordningen.
-- **Sträng** : använder kodnings typen för en sträng.
-- **Unicode** : kodar i UTF-16-format med en liten-endian-order.
-- **UTF7** : kodar i UTF-7-format.
-- **Utf8** : kodar i UTF-8-format.
-- **UTF8BOM** : kodar i UTF-8-format med byte ordnings tecken (BOM)
-- **UF8NOBOM** : kodar i UTF-8-format utan byte ordnings tecken (BOM)
-- **UTF32** : kodar i UTF-32-format.
-- **Standard** : kodas på den installerade standard tecken tabellen.
-- **OEM** : använder standard kodning för MS-DOS-och-konsol program.
-- **Okänd** : kodnings typen är okänd eller ogiltig. Data kan behandlas som binära.
+- **ASCII**: använder kodningen för ASCII-teckenuppsättningen (7-bitars).
+- **BigEndianUnicode**: kodar i UTF-16-format med big-endian byte-ordningen.
+- **Sträng**: använder kodnings typen för en sträng.
+- **Unicode**: kodar i UTF-16-format med en liten-endian-order.
+- **UTF7**: kodar i UTF-7-format.
+- **Utf8**: kodar i UTF-8-format.
+- **UTF8BOM**: kodar i UTF-8-format med byte ordnings tecken (BOM)
+- **UF8NOBOM**: kodar i UTF-8-format utan byte ordnings tecken (BOM)
+- **UTF32**: kodar i UTF-32-format.
+- **Standard**: kodas på den installerade standard tecken tabellen.
+- **OEM**: använder standard kodning för MS-DOS-och-konsol program.
+- **Okänd**: kodnings typen är okänd eller ogiltig. Data kan behandlas som binära.
 
 #### <a name="cmdlets-supported"></a>Cmdlets som stöds
 

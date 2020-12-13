@@ -4,10 +4,10 @@ ms.topic: reference
 title: Bekräftelsemeddelanden
 description: Bekräftelsemeddelanden
 ms.openlocfilehash: 76302b2f8d8ca6dcdfe1b3c36f71aad23a53f7cf
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355195"
 ---
 # <a name="confirmation-messages"></a>Bekräftelsemeddelanden

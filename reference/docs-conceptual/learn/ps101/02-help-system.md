@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: dcaa6c990e2fdf5e6cca69ca596680310940817f
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94391433"
 ---
 # <a name="chapter-2---the-help-system"></a>Kapitel 2 – hjälp systemet
@@ -434,7 +434,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 Observera i föregående exempel där kördes `Get-Command` , parametern **Substantiv** används och `Process` anges som värde för parametern **Substantiv** . Vad händer om du inte vet hur du använder `Get-Command` cmdleten? Du kan använda `Get-Help` för att visa hjälp avsnittet för `Get-Command` .
 
-Parametrarna **Name** , **Substantiv** och **verb** accepterar jokertecken. I följande exempel visas jokertecken som används med parametern **Name** :
+Parametrarna **Name**, **Substantiv** och **verb** accepterar jokertecken. I följande exempel visas jokertecken som används med parametern **Name** :
 
 ```Output
 Get-Command -Name *service*

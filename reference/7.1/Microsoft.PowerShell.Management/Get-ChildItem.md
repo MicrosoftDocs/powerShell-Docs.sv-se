@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-ms.openlocfilehash: c29a938fc73b8b69ea1bbf96f12f5d42d16f79bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0bcd46e49559ad625621a7ff81162af695f6f93c
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267782"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661332"
 ---
 # Get-ChildItem
 
@@ -72,7 +72,7 @@ d-----        2/15/2019     08:29                Logs
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-Som standard `Get-ChildItem` visas läget ( **attribut** ), **LastWriteTime** , fil storlek ( **längd** ) och **namnet** på objektet. Bokstäverna i egenskapen **mode** kan tolkas på följande sätt:
+Som standard `Get-ChildItem` visas läget (**attribut**), **LastWriteTime**, fil storlek (**längd**) och **namnet** på objektet. Bokstäverna i egenskapen **mode** kan tolkas på följande sätt:
 
 - `l` Operationsföljdslänkkod
 - `d` katalogen
@@ -176,10 +176,10 @@ Mode                LastWriteTime         Length Name
 `Get-ChildItem`Cmdleten använder parametern **Path** för att ange katalogen **C:\test**. Parametern **Path** innehåller ett avslutande asterisk ( `*` )-jokertecken för att ange katalogens innehåll.
 Parametern **include** använder en asterisk ( `*` ) som jokertecken för att ange alla filer med fil namns tillägget **. txt**.
 
-När parametern **include** används, behöver parametern **Path** en avslutande asterisk ( `*` ) som jokertecken för att ange katalogens innehåll. Till exempel `-Path C:\Test\*`.
+När parametern **include** används, behöver parametern **Path** en avslutande asterisk ( `*` ) som jokertecken för att ange katalogens innehåll. Ett exempel är `-Path C:\Test\*`.
 
 - Om parametern **rekursivt** läggs till i kommandot är den efterföljande asterisken ( `*` ) i parametern **Path** valfri. Parametern **rekursivt** hämtar objekt från **Sök vägs** katalogen och dess under kataloger. Till exempel `-Path C:\Test\ -Recurse -Include *.txt`
-- Om en avslutande asterisk ( `*` ) inte ingår i parametern **Path** returnerar kommandot inga utdata och återgår till PowerShell-prompten. Till exempel `-Path C:\Test\`.
+- Om en avslutande asterisk ( `*` ) inte ingår i parametern **Path** returnerar kommandot inga utdata och återgår till PowerShell-prompten. Ett exempel är `-Path C:\Test\`.
 
 ### Exempel 5: Hämta underordnade objekt med parametern exclude
 
@@ -217,7 +217,7 @@ d-----        2/15/2019     13:21                Backup
 ```
 
 `Get-ChildItem`Cmdleten använder parametern **Path** för att ange katalogen `C:\Test\Logs` .
-Parametern **exclude** använder jokertecknet asterisk ( `*` ) för att ange vilka filer eller kataloger som börjar med **A** eller som **a** ska uteslutas från utdata.
+Parametern **exclude** använder jokertecknet asterisk ( `*` ) för att ange vilka filer eller kataloger som börjar med  eller som  ska uteslutas från utdata.
 
 När **exkluderings** parametern används är en efterföljande asterisk ( `*` ) i parametern **Path** valfri. Exempel: `-Path C:\Test\Logs` eller `-Path C:\Test\Logs\*`.
 
@@ -317,9 +317,9 @@ I PowerShell 6,2 lades en alternativ vy till för att hämta information om hår
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Exempel 9: utdata för experimentell funktion PSUnixFileStat
+### Exempel 9: utdata för operativ system som inte är Windows-operativsystem
 
-I PowerShell 7 på UNIX-system tillhandahåller experimentella funktions **PSUnixFileStat** UNIX-liknande utdata:
+I PowerShell 7,1 på UNIX `Get-ChildItem` -system tillhandahåller UNIX-liknande utdata:
 
 ```powershell
 PS> Get-ChildItem /etc/r*
@@ -349,7 +349,10 @@ De nya egenskaperna som nu är en del av utdata är:
 - **Grupp** är grupp ägare
 - **Storlek** är storleken på filen eller katalogen som representeras på ett UNIX-system
 
-## Parametrar
+> [!NOTE]
+> Den här funktionen har flyttats från experimentell till vanlig i PowerShell 7,1.
+
+## Parameters (Parametrar)
 
 ### -Attribut
 
@@ -359,7 +362,7 @@ Om du till exempel vill hämta icke-systemfiler (inte kataloger) som är krypter
 
 `Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
-Om du vill söka efter filer och mappar med attribut som används ofta använder du parametern **attribut** . Eller Parameters- **katalogen** , **fil** , **dold** , **ReadOnly** och **system**.
+Om du vill söka efter filer och mappar med attribut som används ofta använder du parametern **attribut** . Eller Parameters- **katalogen**, **fil**, **dold**, **ReadOnly** och **system**.
 
 Parametern **attributs** stöder följande egenskaper:
 

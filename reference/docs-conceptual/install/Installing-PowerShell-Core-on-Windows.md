@@ -2,12 +2,12 @@
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
 ms.date: 11/11/2020
-ms.openlocfilehash: 8f8fe7f186488775ea9afa22a63fee95390e2545
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524503"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661434"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -78,33 +78,6 @@ Från och med PowerShell 7,1 skapar MSI-paketet register nycklar som lagrar inst
 | 7.1. x-förhandsgranskning |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
 
 Detta kan användas av administratörer och utvecklare för att hitta sökvägen till PowerShell. `<GUID>`Värdena är desamma för alla för hands versioner och del versioner. `<GUID>`Värdena ändras för varje större version.
-
-## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installera från Microsoft Store
-
-PowerShell 7,1 har publicerats till Microsoft Store. Du hittar PowerShell-versionen på [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) webbplats eller i Store-programmet i Windows.
-
-Fördelar med Microsoft Store-paketet:
-
-- Automatiska uppdateringar har skapats direkt i Windows 10
-- Integreras med andra mekanismer för program varu distribution som Intune och SCCM
-
-> [!NOTE]
-> Eventuella konfigurations inställningar på system nivå som lagras i `$PSHOME` kan inte ändras. Detta inkluderar WSMAN-konfigurationen. Detta förhindrar att fjärrsessioner ansluter till Store-baserade installationer av PowerShell. Konfigurationer på användar nivå och SSH-fjärrkommunikation stöds.
-
-### <a name="using-the-msix-package"></a>Använda MSIX-paketet
-
-> [!NOTE]
-> I för hands versioner av PowerShell ingår ett MSIX-paket. MSIX-paketet stöds inte officiellt. Vi fortsätter att bygga paketet enbart för internt test ändamål.
-
-Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår versions[sida för] GitHub- [versioner]. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
-
-MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
-
-Du måste använda cmdleten för att installera paketet `Add-AppxPackage` .
-
-```powershell
-Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
-```
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installera ZIP-paketet
 
@@ -262,6 +235,39 @@ Följande kommandon kan användas för att installera PowerShell med de publicer
    winget install --name PowerShell --exact
    winget install --name PowerShell-Preview --exact
    ```
+
+## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installera från Microsoft Store
+
+PowerShell 7,1 har publicerats till Microsoft Store. Du hittar PowerShell-versionen på [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) webbplats eller i Store-programmet i Windows.
+
+Fördelar med Microsoft Store-paketet:
+
+- Automatiska uppdateringar har skapats direkt i Windows 10
+- Integreras med andra mekanismer för program varu distribution som Intune och SCCM
+
+Begränsningar:
+
+MSIX-paket körs i ett program begränsat läge som virtualiserar åtkomst till vissa fil system och register platser.
+
+- Alla register ändringar under HKEY_CURRENT_USER kopieras vid skrivning till en privat plats per användare per app. Dessa värden är därför inte tillgängliga för andra program.
+- Eventuella konfigurations inställningar på system nivå som lagras i `$PSHOME` kan inte ändras. Detta inkluderar WSMAN-konfigurationen. Detta förhindrar att fjärrsessioner ansluter till Store-baserade installationer av PowerShell. Konfigurationer på användar nivå och SSH-fjärrkommunikation stöds.
+
+Mer information finns i [förstå hur paketerade skrivbordsappar körs i Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+
+### <a name="using-the-msix-package"></a>Använda MSIX-paketet
+
+> [!NOTE]
+> I för hands versioner av PowerShell ingår ett MSIX-paket. MSIX-paketet stöds inte officiellt. Paketet är konstruerat för test ändamål under för hands versions perioden.
+
+Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår versions[sida för] GitHub- [versioner]. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
+
+MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
+
+Du måste använda cmdleten för att installera paketet `Add-AppxPackage` .
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Så här skapar du en fjärran sluten slut punkt
 

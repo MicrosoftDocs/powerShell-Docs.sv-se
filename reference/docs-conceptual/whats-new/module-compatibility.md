@@ -2,12 +2,12 @@
 title: PowerShell 7-modulens kompatibilitet
 ms.date: 02/03/2020
 description: Den här artikeln visar statusen för PowerShell 7 med PowerShell-moduler publicerade för andra Microsoft-produkter.
-ms.openlocfilehash: f845b33881c93fa076d97adf101f4f3e006df73b
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 718ba0f502a23bc2c2a9268d65d3b8129de0af49
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501634"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661383"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7-modulens kompatibilitet
 
@@ -75,7 +75,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | AppBackgroundTask                  | Internt kompatibel                  | Windows 10-1903 +                   |
 | AppLocker                          | Testat med kompatibilitetsläge    |                                    |
 | AppvClient                         | Testat med kompatibilitetsläge    |                                    |
-| Appx                               | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 + |
+| Appx                               | Internt kompatibel * *                | Windows Server 1809 +<br>Windows 10-1809 +<br>* * Måste använda kompatibilitetsläge med PowerShell 7,1 |
 | AssignedAccess                     | Internt kompatibel                  | Windows 10-1809 +                   |
 | BestPractices                      | Stöds inte av kompatibilitetsläge |                                    |
 | BitLocker                          | Internt kompatibel                  | Windows Server 1809 + med BitLocker<br>Windows 10-1809 + |
@@ -169,7 +169,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | SMS                                | Testat med kompatibilitetsläge    |                                               |
 | SoftwareInventoryLogging           | Internt kompatibel                  | Windows Server 1809 +                          |
 | StartLayout                        | Internt kompatibel                  | Windows Server 1809 + med Skriv bords miljö<br>Windows 10-1809 + |
-| Storage                            | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
+| Lagring                            | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +      |
 | StorageBusCache                    | Testat med kompatibilitetsläge    |                                               |
 | StorageMigrationService            | Testat med kompatibilitetsläge    |                                               |
 | StorageQOS                         | Internt kompatibel                  | Windows Server 1809 + med RSAT-klustring – PowerShell<br>Windows 10 1809 + med RSAT. FailoverCluster. Management. tools |
@@ -192,7 +192,7 @@ I Windows 10 görs Windows Management-moduler tillgängliga som Windows- **valfr
 | WindowsUpdate                      | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
 | WindowsUpdateProvider              | Internt kompatibel                  | Windows Server 1809 +<br>Windows 10-1809 +       |
 
-## <a name="notes"></a>Anteckningar
+## <a name="notes"></a>Kommentarer
 
 ### <a name="servermanager-module"></a>ServerManager-modul
 
