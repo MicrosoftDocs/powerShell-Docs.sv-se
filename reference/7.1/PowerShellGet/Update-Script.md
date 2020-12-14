@@ -7,12 +7,12 @@ ms.date: 07/09/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Script
-ms.openlocfilehash: 0bf221e28586d4cb3530583255b763ff0d6282df
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 25da03724603b0000c46ae2da69d63cdf2f36cec
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264045"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891691"
 ---
 # Update-Script
 
@@ -263,6 +263,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ### System. Object
 
 ## ANTECKNINGAR
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## RELATERADE LÄNKAR
 

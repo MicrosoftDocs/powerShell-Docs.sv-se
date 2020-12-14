@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: PowerShell-galleriet
 description: PowerShell-galleriet är den centrala lagrings platsen för PowerShell-moduler, skript och DSC-resurser.
-ms.openlocfilehash: 4fff1f9476c919e95c25ae7729aaa7573be53f07
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: f1ce6a8e2d5d72ac14cf3e4854626ef612d27891
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390821"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470323"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell-galleriet
 
@@ -26,7 +26,7 @@ Se [Komma igång](getting-started.md) för mer information om hur du använder P
 
 ## <a name="supported-operating-systems"></a>Operativsystem som stöds
 
-För **PowerShellGet** -modulen krävs **PowerShell version 3.0 eller senare**.
+För **PowerShellGet**-modulen krävs **PowerShell version 3.0 eller senare**.
 
 **PowerShellGet** kräver .NET Framework 4,5 eller senare. Mer information finns i [installera .NET Framework för utvecklare](/dotnet/framework/install/guide-for-developers).
 
@@ -37,4 +37,8 @@ Mer information finns i dokumentationen för modulerna.
 
 ## <a name="got-a-question-have-feedback"></a>Fick du en fråga? Har du feedback till oss?
 
-Mer information om PowerShell-galleriet-och PowerShellGet finns på sidan [komma igång](getting-started.md) . Ge feedback och rapportera problem med [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+Mer information om PowerShell-galleriet-och PowerShellGet finns på sidan [komma igång](getting-started.md) .
+
+För att se aktuell status för PowerShell-galleriet tjänsterna, se sidan [PowerShell-galleriet status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) på GitHub.
+
+Ge feedback och rapportera fel i [GitHub-lagringsplatsen](https://github.com/PowerShell/PowerShellGallery/issues).

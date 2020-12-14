@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: a299b04c8e041819ef2870abe263fae381b1d5dc
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.openlocfilehash: 34b0d7833d858a8b71c28d0f872ddb9e4948b76d
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93269331"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514991"
 ---
 # Get-Date
 
@@ -75,7 +75,7 @@ Tuesday, June 25, 2019 14:53:32
 
 ### Exempel 2: Hämta element i aktuellt datum och tid
 
-Det här exemplet visar hur du kan använda `Get-Date` för att hämta antingen datum-eller tids element. Parametern använder argumenten **date** , **Time** eller **datetime**.
+Det här exemplet visar hur du kan använda `Get-Date` för att hämta antingen datum-eller tids element. Parametern använder argumenten **date**, **Time** eller **datetime**.
 
 ```powershell
 Get-Date -DisplayHint Date
@@ -156,7 +156,7 @@ Den gregorianska kalendern har 365 dagar, med undantag för skottår som har 366
 366
 ```
 
-`Get-Date` använder tre parametrar för att ange datum: **år** , **månad** och **dag**. Kommandot omges av parenteser så att resultatet utvärderas av egenskapen **DayofYear** .
+`Get-Date` använder tre parametrar för att ange datum: **år**, **månad** och **dag**. Kommandot omges av parenteser så att resultatet utvärderas av egenskapen **DayofYear** .
 
 ### Exempel 6: kontrol lera om ett datum har justerats för sommar tid
 
@@ -301,7 +301,7 @@ Accept wildcard characters: False
 
 Anger den dag i månaden som visas. Ange ett värde från 1 till 31.
 
-Om det angivna värdet är större än antalet dagar i månaden lägger PowerShell till antalet dagar i månaden. Visar till exempel `Get-Date -Month 2 -Day 31` **3 mars** , inte **31 februari**.
+Om det angivna värdet är större än antalet dagar i månaden lägger PowerShell till antalet dagar i månaden. Visar till exempel `Get-Date -Month 2 -Day 31` **3 mars**, inte **31 februari**.
 
 ```yaml
 Type: System.Int32
@@ -321,9 +321,9 @@ Anger vilka element i datum och tid som visas.
 
 De godkända värdena är följande:
 
-- **Datum** : visar endast datumet
-- **Tid** : visar endast tiden
-- **Datetime** : visar datum och tid
+- **Datum**: visar endast datumet
+- **Tid**: visar endast tiden
+- **Datetime**: visar datum och tid
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -349,7 +349,7 @@ När **format** parametern används `Get-Date` får endast **datetime** -objekte
 
 Från och med PowerShell 5,0 kan du använda följande ytterligare format som värden för parametern **format** .
 
-- **Filedate**. En fil eller Sök vägs vänlig representation av aktuellt datum i lokal tid. Formatet är `yyyyMMdd` (Skift läges känsligt, med ett fyrsiffrigt år, 2-siffrig månad och en dag med två siffror). Ett exempel:
+- **Filedate**. En fil eller Sök vägs vänlig representation av aktuellt datum i lokal tid. Formatet är `yyyyMMdd` (Skift läges känsligt, med ett fyrsiffrigt år, 2-siffrig månad och en dag med två siffror). Exempel:
   20190627.
 
 - **FileDateUniversal**. En fil eller Sök vägs vänlig representation av aktuellt datum i Universal Time (UTC). Formatet är `yyyyMMddZ` (Skift läges känsligt, med ett fyrsiffrigt år, 2-siffrig månad, en dag med en bokstav `Z` som UTC-indikator). Till exempel: 20190627Z.
@@ -514,7 +514,7 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ### Pipeline-inmatade
 
-`Get-Date` accepterar pipeline-ininformation. Till exempel `Get-ChildItem | Get-Date`.
+`Get-Date` accepterar pipeline-ininformation. Ett exempel är `Get-ChildItem | Get-Date`.
 
 ## UTDATA
 
@@ -527,7 +527,7 @@ När ett **datetime** -objekt skickas ned pipelinen till en-cmdlet, till exempel
 Metoden `(Get-Date).ToString()` konverterar ett **datetime** -objekt till **ett String** -objekt.
 
 Om du vill visa ett objekts egenskaper och metoder skickar du objektet nedåt i pipeline till `Get-Member` .
-Till exempel `Get-Date | Get-Member`.
+Ett exempel är `Get-Date | Get-Member`.
 
 ## ANTECKNINGAR
 
@@ -535,7 +535,7 @@ Till exempel `Get-Date | Get-Member`.
 
 Giltiga **UFormat-specificerare** visas i följande tabell:
 
-| Format specificerare |                                 Innebörd                     |         Exempel          |
+| Format specificerare |                                 Betydelse                     |         Exempel          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Veckodag-fullständigt namn                                             | Måndag                   |
 | `%a` | Veckodag-förkortat namn                                      | Mån                      |
@@ -545,7 +545,7 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 | `%c` | Datum och tid – förkortat                                             | Tor Jun 27 08:44:18 2019 |
 | `%D` | Datum i formatet åååå-mm-dd                                                 | 06/27/19                 |
 | `%d` | Dag i månaden – 2 siffror                                             | 05                       |
-| `%e` | Dagen i månads siffrorna föregås av ett blank steg                            | \<space\>5               |
+| `%e` | Dag i månaden – föregås av ett blank steg om bara en siffra           | \<space\>5               |
 | `%F` | Datum i åååå-mm-dd-format, motsvarar% Y-% m-% d (ISO 8601-datum format) | 2019-06-27               |
 | `%G` | Samma som "Y"                                                             |                          |
 | `%g` | Samma som "y"                                                             |                          |

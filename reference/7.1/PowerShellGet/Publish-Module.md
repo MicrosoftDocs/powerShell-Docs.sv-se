@@ -7,12 +7,12 @@ ms.date: 10/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
-ms.openlocfilehash: d7b75b9aec6cba352d72176de59af82155d1fa17
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3ada5513343a5d6527cf1b091e1ee85e51f7f8de
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264236"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892257"
 ---
 # Publish-Module
 
@@ -46,7 +46,7 @@ Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
 
 När du anger en modul efter namn, `Publish-Module` publicerar den första modulen som skulle hittas genom att köra `Get-Module -ListAvailable <Name>` . Om du anger en lägsta version av en modul som ska publiceras, `Publish-Module` publicerar den första modulen med en version som är större än eller lika med den lägsta version som du har angett.
 
-Att publicera en modul kräver metadata som visas på Galleri sidan för modulen. Obligatoriska metadata innehåller modulens namn, version, beskrivning och författare. Även om de flesta metadata tas från modulens manifest, måste vissa metadata anges i `Publish-Module` parametrar, till exempel **tag** , **ReleaseNote** , **IconUri** , **ProjectUri** och **LicenseUri** , eftersom dessa parametrar matchar fält i ett NuGet-baserat Galleri.
+Att publicera en modul kräver metadata som visas på Galleri sidan för modulen. Obligatoriska metadata innehåller modulens namn, version, beskrivning och författare. Även om de flesta metadata tas från modulens manifest, måste vissa metadata anges i `Publish-Module` parametrar, till exempel **tag**, **ReleaseNote**, **IconUri**, **ProjectUri** och **LicenseUri**, eftersom dessa parametrar matchar fält i ett NuGet-baserat Galleri.
 
 ## EXEMPEL
 
@@ -281,7 +281,7 @@ Accept wildcard characters: False
 
 ### – Databas
 
-Anger det egna namnet på en lagrings plats som har registrerats genom att köra `Register-PSRepository` . Lagrings platsen måste ha en **PublishLocation** , vilket är en giltig NUGET-URI.
+Anger det egna namnet på en lagrings plats som har registrerats genom att köra `Register-PSRepository` . Lagrings platsen måste ha en **PublishLocation**, vilket är en giltig NUGET-URI.
 **PublishLocation** kan anges genom att köra `Set-PSRepository` .
 
 ```yaml
@@ -378,7 +378,14 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 `Publish-Module` körs på PowerShell 3,0 eller senare versioner av PowerShell på Windows 7 eller Windows 2008 R2 och senare versioner av Windows.
 
-Att publicera en modul kräver metadata som visas på Galleri sidan för modulen. Obligatoriska metadata innehåller modulens namn, version, beskrivning och författare. De flesta metadata tas från modulens manifest, men vissa metadata kan anges i `Publish-Module` parametrar, t. ex. **tagg** , **ReleaseNote** , **IconUri** , **ProjectUri** och **LicenseUri**. Mer information finns i [paket manifest värden som påverkar PowerShell-galleriet användar gränssnittet](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
+
+Att publicera en modul kräver metadata som visas på Galleri sidan för modulen. Obligatoriska metadata innehåller modulens namn, version, beskrivning och författare. De flesta metadata tas från modulens manifest, men vissa metadata kan anges i `Publish-Module` parametrar, t. ex. **tagg**, **ReleaseNote**, **IconUri**, **ProjectUri** och **LicenseUri**. Mer information finns i [paket manifest värden som påverkar PowerShell-galleriet användar gränssnittet](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
 
 ## RELATERADE LÄNKAR
 
@@ -393,4 +400,3 @@ Att publicera en modul kräver metadata som visas på Galleri sidan för modulen
 [Avinstallera-modul](Uninstall-Module.md)
 
 [Update-modul](Update-Module.md)
-

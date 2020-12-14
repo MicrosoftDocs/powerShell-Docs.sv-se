@@ -7,12 +7,12 @@ ms.date: 06/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Command
-ms.openlocfilehash: d872f53c504874f69f1e39c506a72bfefa072aa6
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 824e5b0012f8cf8394252704d0e16e49b3f7fa39
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262221"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892696"
 ---
 # Find-Command
 
@@ -320,6 +320,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 `Find-Command` matar ut ett **PSGetCommandInfo** -objekt.
 
 ## ANTECKNINGAR
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## RELATERADE LÄNKAR
 

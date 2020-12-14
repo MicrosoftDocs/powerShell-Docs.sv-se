@@ -1,17 +1,16 @@
 ---
 description: Beskriver hur du kan använda klasser för att utveckla i PowerShell med önskad tillstånds konfiguration (DSC).
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 1/11/2019
-online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/11/2019
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_and_DSC
-ms.openlocfilehash: 21a013bb817367dd2a11cc0826263d0f3203796b
+ms.openlocfilehash: a5819ac54f34393e0fbbf3b8933e840730c5d827
 ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349837"
+ms.locfileid: "96349879"
 ---
 # <a name="about-classes-and-desired-state-configuration"></a>Om klasser och önskad tillstånds konfiguration
 
@@ -21,7 +20,7 @@ Beskriver hur du kan använda klasser för att utveckla i PowerShell med önskad
 
 ## <a name="long-description"></a>Lång beskrivning
 
-Från och med Windows PowerShell 5,0 lades språk till för att definiera klasser och andra användardefinierade typer med hjälp av formell syntax och semantik som liknar andra objektorienterade programmeringsspråk. Målet är att göra det möjligt för utvecklare och IT-proffs att använda Windows PowerShell för en större mängd användnings fall, förenkla utvecklingen av PowerShell-artefakter som DSC-resurser och påskynda täckning av hanterings ytor.
+Från och med Windows PowerShell 5,0 lades språk till för att definiera klasser och andra användardefinierade typer med hjälp av formell syntax och semantik som liknar andra objektorienterade programmeringsspråk. Målet är att göra det möjligt för utvecklare och IT-proffs att använda PowerShell för ett bredare utbud av användnings fall, förenkla utvecklingen av PowerShell-artefakter som DSC-resurser och påskynda täckning av hanterings ytor.
 
 ## <a name="supported-scenarios"></a>Scenarier som stöds
 
@@ -753,8 +752,6 @@ function Html ([HTML] $doc) { return $doc }
 
 ## <a name="see-also"></a>Se även
 
-[about_DesiredStateConfiguration](../../Microsoft.PowerShell.Core/About/about_desiredstateconfiguration.md)
-
 [about_Enum](../../Microsoft.PowerShell.Core/About/about_Enum.md)
 
 [about_Hidden](../../Microsoft.PowerShell.Core/About/about_hidden.md)
@@ -763,4 +760,5 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Bygg anpassade resurser för Desired Configuration för Windows PowerShell](/powershell/scripting/dsc/resources/authoringResource)
+[Bygg anpassade PowerShell-resurser för Desired State Configuration](/powershell/scripting/dsc/resources/authoringResource)
+

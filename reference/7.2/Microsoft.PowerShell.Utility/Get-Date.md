@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/25/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
+ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
 ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514943"
+ms.locfileid: "95514974"
 ---
 # Get-Date
 
@@ -21,20 +20,36 @@ Hämtar aktuellt datum och aktuell tid.
 
 ## SYNTAX
 
-### NET (standard)
+### Datum (standard)
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
  [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-Format <String>] [<CommonParameters>]
+ [-Format <String>] [-AsUTC] [<CommonParameters>]
 ```
 
-### UFormat
+### DateUFormat
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
  [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-UFormat <String>] [<CommonParameters>]
+ -UFormat <String> [<CommonParameters>]
+```
+
+### UnixTimeSeconds
+
+```
+Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
+ [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
+ [-Format <String>] [-AsUTC] [<CommonParameters>]
+```
+
+### UnixTimeSecondsUFormat
+
+```
+Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
+ [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
+ -UFormat <String> [<CommonParameters>]
 ```
 
 ## BESKRIVNING
@@ -87,14 +102,14 @@ Tuesday 06/25/2019 16:17 -07:00
 
 De .NET-format specificerare som används i det här exemplet definieras enligt följande:
 
-| Specificerare | Definition |
-| --- | --- |
-| `dddd` | Veckodag-fullständigt namn |
-| `MM` | Månadsnummer |
-| `dd` | Dag i månaden – 2 siffror |
-| `yyyy` | År i 4-siffrigt format |
-| `HH:mm` | Tid i 24-timmarsformat – inga sekunder |
-| `K` | Tids zons förskjutning från Universal Time Coordinator (UTC) |
+| Specificerare |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `dddd`    | Veckodag-fullständigt namn                           |
+| `MM`      | Månadsnummer                                          |
+| `dd`      | Dag i månaden – 2 siffror                           |
+| `yyyy`    | År i 4-siffrigt format                                |
+| `HH:mm`   | Tid i 24-timmarsformat – inga sekunder                    |
+| `K`       | Tids zons förskjutning från Universal Time Coordinator (UTC) |
 
 Mer information om .NET-format specificerare finns i [anpassade datum-och tids format strängar](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
 
@@ -115,14 +130,14 @@ Tuesday 06/25/2019 16:19 -07
 
 Det **UFormat** format som används i det här exemplet definieras enligt följande:
 
-| Specificerare | Definition |
-| --- | --- |
-| `%A` | Veckodag-fullständigt namn |
-| `%m` | Månadsnummer |
-| `%d` | Dag i månaden – 2 siffror |
-| `%Y` | År i 4-siffrigt format |
-| `%R` | Tid i 24-timmarsformat – inga sekunder |
-| `%Z` | Tids zons förskjutning från Universal Time Coordinator (UTC) |
+| Specificerare |                      Definition                       |
+| --------- | ----------------------------------------------------- |
+| `%A`      | Veckodag-fullständigt namn                           |
+| `%m`      | Månadsnummer                                          |
+| `%d`      | Dag i månaden – 2 siffror                           |
+| `%Y`      | År i 4-siffrigt format                                |
+| `%R`      | Tid i 24-timmarsformat – inga sekunder                    |
+| `%Z`      | Tids zons förskjutning från Universal Time Coordinator (UTC) |
 
 En lista över giltiga **UFormat** format-specificerare finns i avsnittet [Obs](#notes) !
 
@@ -187,7 +202,7 @@ New-Item -Path C:\Test\$timestamp -Type Directory
 ```
 
 ```Output
-    Directory: C:\Test
+Directory: C:\Test
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
@@ -198,7 +213,66 @@ d-----         6/27/2019    07:59                2019-06-27T07.59.24.4603750-07.
 
 `New-Item` använder parametern **Path** för att ange platsen för en ny katalog. Sökvägen innehåller `$timestamp` variabeln som katalog namn. Parametern **Type** anger att en katalog har skapats.
 
+### Exempel 9: konvertera en Unix-tidsstämpel
+
+I det här exemplet konverteras en UNIX-tid (som representeras av antalet sekunder sedan 1970-01-01 0:00:00) till DateTime.
+
+```powershell
+Get-Date -UnixTimeSeconds 1577836800
+```
+
+```Output
+Wednesday, January 01, 2020 12:00:00 AM
+```
+
+### Exempel 10: returnera ett datum värde som tolkas som UTC
+
+Det här exemplet illustrerar hur du tolkar ett datum värde som dess UTC-motsvarighet. I exemplet är den här datorn inställd på **Pacific, normal tid**. Som standard `Get-Date` returnerar värden för den tids zonen. Använd parametern **AsUTC** för att konvertera värdet till UTC-ekvivalent tid.
+
+```powershell
+PS> Get-TimeZone
+
+Id                         : Pacific Standard Time
+DisplayName                : (UTC-08:00) Pacific Time (US & Canada)
+StandardName               : Pacific Standard Time
+DaylightName               : Pacific Daylight Time
+BaseUtcOffset              : -08:00:00
+SupportsDaylightSavingTime : True
+
+PS> (Get-Date -Date "2020-01-01T00:00:00").Kind
+Unspecified
+
+PS> Get-Date -Date "2020-01-01T00:00:00"
+
+Wednesday, January 1, 2020 12:00:00 AM
+
+PS> (Get-Date -Date "2020-01-01T00:00:00" -AsUTC).Kind
+Utc
+
+PS> Get-Date -Date "2020-01-01T00:00:00" -AsUTC
+
+Wednesday, January 1, 2020 8:00:00 AM
+```
+
 ## PARAMETRAR
+
+### -AsUTC
+
+Konverterar datumvärdet till motsvarande tid i UTC.
+
+Den här parametern introducerades i PowerShell 7,1.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Datum
 
@@ -212,7 +286,7 @@ Till exempel på engelska (USA):
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: (All)
+Parameter Sets: DateAndFormat, DateAndUFormat
 Aliases: LastWriteTime
 
 Required: False
@@ -285,7 +359,7 @@ Från och med PowerShell 5,0 kan du använda följande ytterligare format som v�
 
 ```yaml
 Type: System.String
-Parameter Sets: net
+Parameter Sets: DateAndFormat, UnixTimeSecondsAndFormat
 Aliases:
 
 Required: False
@@ -387,10 +461,28 @@ När parametern **UFormat** används `Get-Date` får bara **datetime** -objektet
 
 ```yaml
 Type: System.String
-Parameter Sets: UFormat
+Parameter Sets: DateAndUFormat, UnixTimeSecondsAndUFormat
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnixTimeSeconds
+
+Datum och tid som representeras i sekunder sedan 1 januari 1970, 0:00:00.
+
+Den här parametern introducerades i PowerShell 7,1.
+
+```yaml
+Type: System.Int64
+Parameter Sets: UnixTimeSecondsAndFormat, UnixTimeSecondsAndUFormat
+Aliases: UnixTime
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -415,7 +507,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
@@ -442,9 +534,6 @@ Ett exempel är `Get-Date | Get-Member`.
 
 Giltiga **UFormat-specificerare** visas i följande tabell:
 
-> [!IMPORTANT]
-> Ytterligare **UFormat** -specificerare läggs till i nyare versioner av PowerShell. Till exempel `%F` har lagts till i PowerShell 6,2, så den är inte tillgänglig i Windows PowerShell 5,1 eller äldre. Tänk på detta när du använder **UFormat** -specificerare i skript som har utformats för att köras på flera versioner av PowerShell.
-
 | Format specificerare |                                 Betydelse                     |         Exempel          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Veckodag-fullständigt namn                                             | Måndag                   |
@@ -456,6 +545,7 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 | `%D` | Datum i formatet åååå-mm-dd                                                 | 06/27/19                 |
 | `%d` | Dag i månaden – 2 siffror                                             | 05                       |
 | `%e` | Dag i månaden – föregås av ett blank steg om bara en siffra           | \<space\>5               |
+| `%F` | Datum i åååå-mm-dd-format, motsvarar% Y-% m-% d (ISO 8601-datum format) | 2019-06-27               |
 | `%G` | Samma som "Y"                                                             |                          |
 | `%g` | Samma som "y"                                                             |                          |
 | `%H` | Timme i 24-timmarsformat                                                  | 17                       |
@@ -471,7 +561,7 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 | `%R` | Tid i 24-timmarsformat – inga sekunder                                      | 17:45                    |
 | `%r` | Tid i 12-timmarsformat                                                  | 09:15:36 AM              |
 | `%S` | Sekunder                                                                 | 05                       |
-| `%s` | Förflutna sekunder sedan den 1 januari 1970 00:00:00                          | 1150451174,95705         |
+| `%s` | Förflutna sekunder sedan den 1 januari 1970 00:00:00                          | 1150451174               |
 | `%t` | Vågrätt tabbtecken                                                |                          |
 | `%T` | Tid i 24-timmarsformat                                                  | 17:45:52                 |
 | `%U` | Samma som "W"                                                             |                          |

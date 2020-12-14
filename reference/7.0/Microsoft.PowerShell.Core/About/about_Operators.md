@@ -6,12 +6,12 @@ ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: 736ca53ff4992ea430ec89ad1795dcf278b0da41
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: 88369b1ccf3157e56dd5266784d8ca16e55b1f8f
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483136"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892529"
 ---
 # <a name="about-operators"></a>Om operatörer
 
@@ -85,7 +85,7 @@ Särskilda operatörer har specifika användnings fall som inte passar in i någ
 
 #### <a name="grouping-operator--"></a>Grupp operator `( )`
 
-Precis som på andra språk, kan det `(...)` vara så att operator prioriteten åsidosätts i uttryck. Exempelvis: `(1 + 2) / 3`
+Precis som på andra språk, kan det `(...)` vara så att operator prioriteten åsidosätts i uttryck. Exempel: `(1 + 2) / 3`
 
 I PowerShell finns det dock ytterligare beteenden.
 
@@ -542,7 +542,7 @@ ${a}?[0]
 > [!NOTE]
 > Eftersom PowerShell kan `?` ingå i variabel namnet, krävs formell specifikation av variabel namnet för att använda dessa operatorer. Det krävs för att använda `{}` runt variabel namn som `${a}` eller när `?` är en del av variabel namnet `${a?}` .
 >
-> Variabelns namn-syntaxen i `${<name>}` ska inte förväxlas med `$()` operatorn för under uttryck. Mer information finns i avsnittet om variabel namn i [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
+> Variabelns namn-syntaxen i `${<name>}` ska inte förväxlas med `$()` operatorn för under uttryck. Mer information finns i avsnittet om variabel namn i [about_Variables](about_Variables.md#variable-names-that-include-special-characters).
 
 ## <a name="see-also"></a>Se även
 

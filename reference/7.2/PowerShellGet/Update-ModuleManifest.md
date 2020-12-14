@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/08/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.openlocfilehash: 0924366eac2e6ee0e8a250db916d354ee6993cb7
+ms.openlocfilehash: 4f00450257178cac72d03303358150fd9f5cd26b
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892046"
+ms.locfileid: "94891824"
 ---
 # Update-ModuleManifest
 
@@ -648,6 +647,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RequireLicenseAcceptance
+
+Anger att licens godkännande krävs för modulen.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RequiredAssemblies
 
 Anger de Assembly ( `.dll` )-filer som modulen kräver. Ange sammansättnings fil namnen.
@@ -673,22 +688,6 @@ Anger moduler som måste vara i det globala sessionstillståndet. Om de moduler 
 
 ```yaml
 Type: System.Object[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RequireLicenseAcceptance
-
-Anger att licens godkännande krävs för modulen.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -790,7 +789,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -WhatIf

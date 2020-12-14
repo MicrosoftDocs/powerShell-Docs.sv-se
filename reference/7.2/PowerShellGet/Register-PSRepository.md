@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/powershellget/register-psrepository?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/register-psrepository?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSRepository
-ms.openlocfilehash: 300d3388c39a86cb732d50404ad7d8c28bd3034e
+ms.openlocfilehash: 179e672a099cfb92275795a0dc6129581a0e0299
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892199"
+ms.locfileid: "94892737"
 ---
 # Register-PSRepository
 

@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 03/11/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
-ms.openlocfilehash: c6468d2f8226cb26ec5385c7d5a8a895155ad673
+ms.openlocfilehash: f9cba90ffa69d04df196f4062c8f190d545b9bc3
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892662"
+ms.locfileid: "94892536"
 ---
 # Find-Module
 
@@ -203,7 +202,7 @@ Version    Name              Repository           Description
 Innehåller i de resultat moduler som marker ATS som en för hands version.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -378,7 +377,7 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: True
+Accept wildcard characters: False
 ```
 
 ### -Proxy

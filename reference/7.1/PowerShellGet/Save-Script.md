@@ -7,12 +7,12 @@ ms.date: 07/02/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Script
-ms.openlocfilehash: 539131ad5a22671984079988ce589b5b7a2fd15b
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3d5b661f333d03b71f90098d29cf806825ed9324
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264062"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892148"
 ---
 # Save-Script
 
@@ -358,6 +358,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## ANTECKNINGAR
 
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
+
 ## RELATERADE LÄNKAR
 
 [Sök – skript](Find-Script.md)
@@ -371,4 +378,3 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 [Avinstallera – skript](Uninstall-Script.md)
 
 [Uppdatera skript](Update-Script.md)
-

@@ -2,15 +2,15 @@
 description: Gör att du kan ange vilka namn områden som används i sessionen.
 Locale: en-US
 ms.date: 11/18/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: 798b7bc9759c7c88eb612d0eb47bdb92c015cc18
+ms.openlocfilehash: d08ada489ebe04ae51e3927486f354a8371de03f
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892029"
+ms.locfileid: "94892543"
 ---
 # <a name="about-using"></a>Om att använda
 
@@ -46,9 +46,6 @@ using module <module-name>
 Värdet för `<module-name>` kan vara ett modulnamn, en fullständig modul eller en sökväg till en modul.
 
 När `<module-name>` är en sökväg kan sökvägen vara fullständigt kvalificerad eller relativ. En relativ sökväg matchas i förhållande till skriptet som innehåller using-instruktionen.
-
-> [!NOTE]
-> När den relativa sökvägen innehåller ett snedstreck ( `/` ) behandlar PowerShell sökvägen som relativ till den aktuella platsen i stället för i förhållande till skript platsen. Den här buggen har åtgärd ATS i PowerShell 7,1.
 
 När `<module-name>` är ett namn eller en modul-specifikation söker PowerShell i **PSModulePath** efter den angivna modulen.
 

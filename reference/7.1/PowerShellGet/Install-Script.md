@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Script
-ms.openlocfilehash: 2be7545829ddbbb7ddad798acb82f83c0feb3db1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a5fa4388f149c2c1017454a6384d63807fccfc8a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266330"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892410"
 ---
 # Install-Script
 
@@ -42,7 +42,7 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
 
 `Install-Script`Cmdlet: en hämtar en skript nytto Last från en lagrings plats, verifierar att nytto lasten är ett giltigt PowerShell-skript och kopierar skript filen till en angiven installations plats.
 
-Standard databaserna `Install-Script` fungerar i kan konfigureras via `Register-PSRepository` `Set-PSRepository` `Unregister-PSRepository` cmdletarna,, och `Get-PSRepository` . När du arbetar med flera databaser `Install-Script` installerar det första skriptet som matchar de angivna Sök kriterierna ( **namn** , **MinimumVersion** eller **MaximumVersion** ) från den första lagrings platsen utan fel.
+Standard databaserna `Install-Script` fungerar i kan konfigureras via `Register-PSRepository` `Set-PSRepository` `Unregister-PSRepository` cmdletarna,, och `Get-PSRepository` . När du arbetar med flera databaser `Install-Script` installerar det första skriptet som matchar de angivna Sök kriterierna (**namn**, **MinimumVersion** eller **MaximumVersion**) från den första lagrings platsen utan fel.
 
 ## EXEMPEL
 
@@ -500,6 +500,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## ANTECKNINGAR
 
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
+
 ## RELATERADE LÄNKAR
 
 [Sök – skript](Find-Script.md)
@@ -511,4 +518,3 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 [Avinstallera – skript](Uninstall-Script.md)
 
 [Uppdatera skript](Update-Script.md)
-

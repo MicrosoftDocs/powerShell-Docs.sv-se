@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/16/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: ee94ba7808cb364306826325cfbc3df2cf9834a5
+ms.openlocfilehash: f29c208805894634960085cd3816ce7780b7602f
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892594"
+ms.locfileid: "94891848"
 ---
 # Update-Module
 
@@ -214,7 +213,7 @@ Accept wildcard characters: True
 
 ### – PassThru
 
-Returnerar ett objekt som representerar det objekt som du arbetar med. Som standard genererar denna cmdlet inga utdata. Stöd för **Passthru** -parameter har lagts till i **PowerShellGet** 2.0.0
+Returnerar ett objekt som representerar det objekt som du arbetar med. Som standard genererar denna cmdlet inga utdata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -290,7 +289,7 @@ Anger modulens installations omfång. De acceptabla värdena för den här param
 
 När inget **omfång** har definierats anges standardvärdet baserat på PowerShellGet-versionen.
 
-- I PowerShellGet-versioner 2.0.0 och senare är standardvärdet **allusers** när du kör en upphöjd session och **CurrentUser** för alla andra.
+- I PowerShellGet-versioner 2.0.0 och senare är standardvärdet **CurrentUser**, vilket inte kräver höjning för installation.
 - I PowerShellGet 1. x-versioner är standardvärdet **allusers**, vilket kräver höjning för installation.
 
 ```yaml
@@ -342,7 +341,8 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## ANTECKNINGAR
 
-För PowerShell 5,1 eller lägre är standard omfånget i en upphöjd session **allusers** och i en icke-förhöjd session **CurrentUser**. Uppdatering av modulen för **allusers**, `$env:ProgramFiles\PowerShell\Modules` kräver förhöjd behörighet. Module-uppdateringar för **CurrentUser**, `$home\Documents\PowerShell\Modules` , behöver inte utökade behörigheter.
+För PowerShell version 6,0 och senare är standard installations omfånget alltid **CurrentUser**.
+Module-uppdateringar för **CurrentUser**, `$home\Documents\PowerShell\Modules` , behöver inte utökade behörigheter. Uppdatering av modulen för **allusers**, `$env:ProgramFiles\PowerShell\Modules` kräver förhöjd behörighet.
 
 > [!IMPORTANT]
 > Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:

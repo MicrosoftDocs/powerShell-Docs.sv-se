@@ -2,15 +2,15 @@
 description: Beskriver hur PowerShell använder tecken kodning för indata och utdata av sträng data.
 Locale: en-US
 ms.date: 10/21/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Character_Encoding
-ms.openlocfilehash: 27a5d818c1ed8e114e15d8a121626fc79101a59f
+ms.openlocfilehash: 3b47a528b0beae5e8142157454cbc676ffd7e795
 ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349780"
+ms.locfileid: "96349826"
 ---
 # <a name="about_character_encoding"></a>about_Character_Encoding
 

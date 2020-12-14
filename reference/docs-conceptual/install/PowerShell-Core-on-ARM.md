@@ -2,18 +2,18 @@
 title: Installera PowerShell Core på arm
 description: Installera PowerShell Core på ARM-baserade system
 ms.date: 11/11/2020
-ms.openlocfilehash: 12b27a97d3c64a9885d27d68f802474fe5239702
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 85a2cccb18341ffee8c81430bc8490e5d3e97b41
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550272"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892080"
 ---
 # <a name="powershell-core-on-arm"></a>PowerShell Core på arm
 
 Stöd för PowerShell på arm baseras på de **.net Core-principer som stöds av OS-livscykeln**.
 
-PowerShell 7,0 baseras på den [operativ system livs cykel princip för .net Core 3,1 som stöds](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) och har stöd för följande plattformar:
+PowerShell 7,1 baseras på den [operativ system livs cykel princip för .net Core 3,1 som stöds](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) och har stöd för följande plattformar:
 
 |         Operativsystem          |          Version           | Arkitekturer |          Livscykel           |
 | ------------------- | -------------------------- | ------------- | ---------------------------- |

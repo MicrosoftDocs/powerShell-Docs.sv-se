@@ -3,12 +3,12 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, resurs, Galleri, installation
 title: Lägga till parametrar i en konfiguration
 description: DSC-konfigurationer kan vara parameterstyrda för att tillåta fler dynamiska konfigurationer utifrån användarindata.
-ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 72f3cf9efb5d99170e71992bed86a20a57132250
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656814"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470340"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Lägga till parametrar i en konfiguration
 
@@ -35,7 +35,7 @@ Configuration TestConfig
 
 ## <a name="built-in-configuration-parameters"></a>Inbyggda konfigurations parametrar
 
-Till skillnad från en Function-CmdletBinding, lägger attributet [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) till inga funktioner. Förutom [vanliga parametrar](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kan konfigurationer också använda följande inbyggda parametrar, utan att du behöver definiera dem.
+Till skillnad från en Function-CmdletBinding, lägger attributet [](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) till inga funktioner. Förutom [vanliga parametrar](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kan konfigurationer också använda följande inbyggda parametrar, utan att du behöver definiera dem.
 
 |        Parameter        |                                         Beskrivning                                          |
 | ----------------------- | -------------------------------------------------------------------------------------------- |
@@ -179,7 +179,7 @@ Du kan ange argument för varje `parameter` attribut, för att styra aspekter av
 $ServiceName
 ```
 
-För `$State` -parametern skulle vi vilja hindra användaren från att ange värden utanför en fördefinierad uppsättning (som att köra, stoppa) `ValidationSet*` attributet skulle hindra användaren från att ange värden utanför en fördefinierad uppsättning (t. ex. igång, stoppad). I följande exempel läggs `ValidationSet` attributet till i `$State` parametern. Eftersom vi inte vill göra `$State` parametern **obligatorisk** , måste du lägga till ett standardvärde för den.
+För `$State` -parametern skulle vi vilja hindra användaren från att ange värden utanför en fördefinierad uppsättning (som att köra, stoppa) `ValidationSet*` attributet skulle hindra användaren från att ange värden utanför en fördefinierad uppsättning (t. ex. igång, stoppad). I följande exempel läggs `ValidationSet` attributet till i `$State` parametern. Eftersom vi inte vill göra `$State` parametern **obligatorisk**, måste du lägga till ett standardvärde för den.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -210,7 +210,7 @@ Configuration TestConfig
         $State="Running",
 
         [String]
-        $ComputerName="localhost",
+        $ComputerName="localhost"
     )
 
     # It is best practice to explicitly import any required resources or modules.

@@ -1,16 +1,16 @@
 ---
-title: about_Character_Encoding
 description: Beskriver hur PowerShell använder tecken kodning för indata och utdata av sträng data.
-ms.date: 10/21/2020
 Locale: en-US
+ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 3067a97a00da6f6f759ad874f98c06fe7ad6d923
-ms.sourcegitcommit: df80c558e9a4b89c9798f084bd04012ece15155c
+title: about_Character_Encoding
+ms.openlocfilehash: 48a33903bd44db68a3c581183f83ec23ea97161a
+ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "93273381"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349814"
 ---
 # <a name="about_character_encoding"></a>about_Character_Encoding
 
@@ -43,7 +43,7 @@ Följande cmdletar har parametern **encoding** :
 
 ## <a name="the-byte-order-mark"></a>Byte-ordning-markering
 
-Byte-order-markering (BOM) är en _Unicode-signatur_ i de första byten i en fil eller text ström som anger vilken Unicode-kodning som används för data. Mer information finns i artikeln [byte ordnings märke](https://wikipedia.org/wiki/Byte_order_mark) i wikipedia.
+Byte-order-markering (BOM) är en _Unicode-signatur_ i de första byten i en fil eller text ström som anger vilken Unicode-kodning som används för data. Mer information finns i dokumentationen [för byte-ordnings märkning](/globalization/encoding/byte-order-mark) .
 
 I Windows PowerShell skapar Unicode-kodning, förutom `UTF7` , alltid en struktur. PowerShell-kärnan är standardvärdet `utf8NoBOM` för alla text utdata.
 
