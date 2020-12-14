@@ -7,21 +7,21 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-script?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Script
-ms.openlocfilehash: ae3d0e3c9f70381884f3e12b19111e4c4eb47307
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 734fb13b228c3f2c99e310f472fe3dd2c79497c8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265994"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889801"
 ---
-# <span data-ttu-id="27a94-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="27a94-103">Install-Script</span></span>
+# <span data-ttu-id="ad948-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="ad948-103">Install-Script</span></span>
 
-## <span data-ttu-id="27a94-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="27a94-104">SYNOPSIS</span></span>
-<span data-ttu-id="27a94-105">Installerar ett skript.</span><span class="sxs-lookup"><span data-stu-id="27a94-105">Installs a script.</span></span>
+## <span data-ttu-id="ad948-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="ad948-104">SYNOPSIS</span></span>
+<span data-ttu-id="ad948-105">Installerar ett skript.</span><span class="sxs-lookup"><span data-stu-id="ad948-105">Installs a script.</span></span>
 
-## <span data-ttu-id="27a94-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="27a94-106">SYNTAX</span></span>
+## <span data-ttu-id="ad948-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ad948-106">SYNTAX</span></span>
 
-### <span data-ttu-id="27a94-107">NameParameterSet (standard)</span><span class="sxs-lookup"><span data-stu-id="27a94-107">NameParameterSet (Default)</span></span>
+### <span data-ttu-id="ad948-107">NameParameterSet (standard)</span><span class="sxs-lookup"><span data-stu-id="ad948-107">NameParameterSet (Default)</span></span>
 
 ```
 Install-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
@@ -31,7 +31,7 @@ Install-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <S
 
 ```
 
-### <span data-ttu-id="27a94-108">InputObject</span><span class="sxs-lookup"><span data-stu-id="27a94-108">InputObject</span></span>
+### <span data-ttu-id="ad948-108">InputObject</span><span class="sxs-lookup"><span data-stu-id="ad948-108">InputObject</span></span>
 
 ```
 Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-Proxy <Uri>]
@@ -39,15 +39,15 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="27a94-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="27a94-109">DESCRIPTION</span></span>
+## <span data-ttu-id="ad948-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="ad948-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="27a94-110">`Install-Script`Cmdlet: en hämtar en skript nytto Last från en lagrings plats, verifierar att nytto lasten är ett giltigt PowerShell-skript och kopierar skript filen till en angiven installations plats.</span><span class="sxs-lookup"><span data-stu-id="27a94-110">The `Install-Script` cmdlet acquires a script payload from a repository, verifies that the payload is a valid PowerShell script, and copies the script file to a specified installation location.</span></span>
+<span data-ttu-id="ad948-110">`Install-Script`Cmdlet: en hämtar en skript nytto Last från en lagrings plats, verifierar att nytto lasten är ett giltigt PowerShell-skript och kopierar skript filen till en angiven installations plats.</span><span class="sxs-lookup"><span data-stu-id="ad948-110">The `Install-Script` cmdlet acquires a script payload from a repository, verifies that the payload is a valid PowerShell script, and copies the script file to a specified installation location.</span></span>
 
-<span data-ttu-id="27a94-111">Standard databaserna `Install-Script` fungerar i kan konfigureras via `Register-PSRepository` `Set-PSRepository` `Unregister-PSRepository` cmdletarna,, och `Get-PSRepository` .</span><span class="sxs-lookup"><span data-stu-id="27a94-111">The default repositories `Install-Script` operates against are configurable through the `Register-PSRepository`, `Set-PSRepository`, `Unregister-PSRepository`, and `Get-PSRepository` cmdlets.</span></span> <span data-ttu-id="27a94-112">När du arbetar med flera databaser `Install-Script` installerar det första skriptet som matchar de angivna Sök kriterierna ( **namn** , **MinimumVersion** eller **MaximumVersion** ) från den första lagrings platsen utan fel.</span><span class="sxs-lookup"><span data-stu-id="27a94-112">When operating against multiple repositories, `Install-Script` installs the first script that matches the specified search criteria ( **Name** , **MinimumVersion** , or **MaximumVersion** ) from the first repository without any error.</span></span>
+<span data-ttu-id="ad948-111">Standard databaserna `Install-Script` fungerar i kan konfigureras via `Register-PSRepository` `Set-PSRepository` `Unregister-PSRepository` cmdletarna,, och `Get-PSRepository` .</span><span class="sxs-lookup"><span data-stu-id="ad948-111">The default repositories `Install-Script` operates against are configurable through the `Register-PSRepository`, `Set-PSRepository`, `Unregister-PSRepository`, and `Get-PSRepository` cmdlets.</span></span> <span data-ttu-id="ad948-112">När du arbetar med flera databaser `Install-Script` installerar det första skriptet som matchar de angivna Sök kriterierna (**namn**, **MinimumVersion** eller **MaximumVersion**) från den första lagrings platsen utan fel.</span><span class="sxs-lookup"><span data-stu-id="ad948-112">When operating against multiple repositories, `Install-Script` installs the first script that matches the specified search criteria (**Name**, **MinimumVersion**, or **MaximumVersion**) from the first repository without any error.</span></span>
 
-## <span data-ttu-id="27a94-113">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="27a94-113">EXAMPLES</span></span>
+## <span data-ttu-id="ad948-113">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="ad948-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="27a94-114">Exempel 1: hitta ett skript och installera det</span><span class="sxs-lookup"><span data-stu-id="27a94-114">Example 1: Find a script and install it</span></span>
+### <span data-ttu-id="ad948-114">Exempel 1: hitta ett skript och installera det</span><span class="sxs-lookup"><span data-stu-id="ad948-114">Example 1: Find a script and install it</span></span>
 
 ```
 PS C:\> Find-Script -Repository "Local1" -Name "Required-Script2"
@@ -89,17 +89,17 @@ PackageManagementProvider  : NuGet
 InstalledLocation          : C:\Users\pattif\Documents\WindowsPowerShell\Scripts
 ```
 
-<span data-ttu-id="27a94-115">Det första kommandot hittar skriptet som heter `Required-Script2` från Local1-lagringsplatsen och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="27a94-115">The first command finds the script named `Required-Script2` from the Local1 repository and displays the results.</span></span>
+<span data-ttu-id="ad948-115">Det första kommandot hittar skriptet som heter `Required-Script2` från Local1-lagringsplatsen och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="ad948-115">The first command finds the script named `Required-Script2` from the Local1 repository and displays the results.</span></span>
 
-<span data-ttu-id="27a94-116">Det andra kommandot hittar `Required-Script2` skriptet och använder sedan pipeline-operatorn för att skicka det till `Install-Script` cmdlet: en för att installera det.</span><span class="sxs-lookup"><span data-stu-id="27a94-116">The second command finds the `Required-Script2` script, and then uses the pipeline operator to pass it to the `Install-Script` cmdlet to install it.</span></span>
+<span data-ttu-id="ad948-116">Det andra kommandot hittar `Required-Script2` skriptet och använder sedan pipeline-operatorn för att skicka det till `Install-Script` cmdlet: en för att installera det.</span><span class="sxs-lookup"><span data-stu-id="ad948-116">The second command finds the `Required-Script2` script, and then uses the pipeline operator to pass it to the `Install-Script` cmdlet to install it.</span></span>
 
-<span data-ttu-id="27a94-117">Det tredje kommandot använder `Get-Command` cmdleten för att hämta `Required-Script2` och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="27a94-117">The third command uses the `Get-Command` cmdlet to get `Required-Script2`, and then displays the results.</span></span>
+<span data-ttu-id="ad948-117">Det tredje kommandot använder `Get-Command` cmdleten för att hämta `Required-Script2` och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="ad948-117">The third command uses the `Get-Command` cmdlet to get `Required-Script2`, and then displays the results.</span></span>
 
-<span data-ttu-id="27a94-118">Det fjärde kommandot använder `Get-InstalledScript` cmdleten för att hämta `Required-Script2` och visa resultaten.</span><span class="sxs-lookup"><span data-stu-id="27a94-118">The fourth command uses the `Get-InstalledScript` cmdlet to get `Required-Script2` and display the results.</span></span>
+<span data-ttu-id="ad948-118">Det fjärde kommandot använder `Get-InstalledScript` cmdleten för att hämta `Required-Script2` och visa resultaten.</span><span class="sxs-lookup"><span data-stu-id="ad948-118">The fourth command uses the `Get-InstalledScript` cmdlet to get `Required-Script2` and display the results.</span></span>
 
-<span data-ttu-id="27a94-119">Det femte kommandot hämtar `Required-Script2` och använder pipeline-operatorn för att skicka den till `Format-List` cmdlet: en för att formatera utdata.</span><span class="sxs-lookup"><span data-stu-id="27a94-119">The fifth command gets `Required-Script2` and uses the pipeline operator to pass it to the `Format-List` cmdlet to format the output.</span></span>
+<span data-ttu-id="ad948-119">Det femte kommandot hämtar `Required-Script2` och använder pipeline-operatorn för att skicka den till `Format-List` cmdlet: en för att formatera utdata.</span><span class="sxs-lookup"><span data-stu-id="ad948-119">The fifth command gets `Required-Script2` and uses the pipeline operator to pass it to the `Format-List` cmdlet to format the output.</span></span>
 
-### <span data-ttu-id="27a94-120">Exempel 2: installera ett skript med AllUsers-scope</span><span class="sxs-lookup"><span data-stu-id="27a94-120">Example 2: Install a script with AllUsers scope</span></span>
+### <span data-ttu-id="ad948-120">Exempel 2: installera ett skript med AllUsers-scope</span><span class="sxs-lookup"><span data-stu-id="ad948-120">Example 2: Install a script with AllUsers scope</span></span>
 
 ```
 PS C:\> Install-Script -Repository "Local1" -Name "Required-Script3" -Scope "AllUsers"
@@ -131,13 +131,13 @@ PackageManagementProvider  : NuGet
 InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 ```
 
-<span data-ttu-id="27a94-121">Det första kommandot installerar skriptet med namnet `Required-Script3` och tilldelar det allusers-omfånget.</span><span class="sxs-lookup"><span data-stu-id="27a94-121">The first command installs the script named `Required-Script3` and assigns it AllUsers scope.</span></span>
+<span data-ttu-id="ad948-121">Det första kommandot installerar skriptet med namnet `Required-Script3` och tilldelar det allusers-omfånget.</span><span class="sxs-lookup"><span data-stu-id="ad948-121">The first command installs the script named `Required-Script3` and assigns it AllUsers scope.</span></span>
 
-<span data-ttu-id="27a94-122">Det andra kommandot hämtar det installerade skriptet `Required-Script3` och visar information om det.</span><span class="sxs-lookup"><span data-stu-id="27a94-122">The second command gets the installed script `Required-Script3` and displays information about it.</span></span>
+<span data-ttu-id="ad948-122">Det andra kommandot hämtar det installerade skriptet `Required-Script3` och visar information om det.</span><span class="sxs-lookup"><span data-stu-id="ad948-122">The second command gets the installed script `Required-Script3` and displays information about it.</span></span>
 
-<span data-ttu-id="27a94-123">Det tredje kommandot hämtar `Required-Script3` och använder pipeline-operatorn för att skicka den till `Format-List` cmdlet: en för att formatera utdata.</span><span class="sxs-lookup"><span data-stu-id="27a94-123">The third command gets `Required-Script3` and uses the pipeline operator to pass it to the `Format-List` cmdlet to format the output.</span></span>
+<span data-ttu-id="ad948-123">Det tredje kommandot hämtar `Required-Script3` och använder pipeline-operatorn för att skicka den till `Format-List` cmdlet: en för att formatera utdata.</span><span class="sxs-lookup"><span data-stu-id="ad948-123">The third command gets `Required-Script3` and uses the pipeline operator to pass it to the `Format-List` cmdlet to format the output.</span></span>
 
-### <span data-ttu-id="27a94-124">Exempel 3: installera ett skript och dess beroenden</span><span class="sxs-lookup"><span data-stu-id="27a94-124">Example 3: Install a script and its dependencies</span></span>
+### <span data-ttu-id="ad948-124">Exempel 3: installera ett skript och dess beroenden</span><span class="sxs-lookup"><span data-stu-id="ad948-124">Example 3: Install a script and its dependencies</span></span>
 
 ```
 PS C:\> Find-Script -Repository "Local1" -Name "Script-WithDependencies2" -IncludeDependencies
@@ -183,25 +183,25 @@ Version    Name                        Type       Repository    Description
 2.5        Required-Script3            Script     local1        Description for the Required-Script3 script
 ```
 
-<span data-ttu-id="27a94-125">Det första kommandot hittar skriptet med namnet `Script-WithDependencies2` och dess beroenden i Local1-lagringsplatsen och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="27a94-125">The first command finds the script named `Script-WithDependencies2` and its dependencies in the Local1 repository and displays the results.</span></span>
+<span data-ttu-id="ad948-125">Det första kommandot hittar skriptet med namnet `Script-WithDependencies2` och dess beroenden i Local1-lagringsplatsen och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="ad948-125">The first command finds the script named `Script-WithDependencies2` and its dependencies in the Local1 repository and displays the results.</span></span>
 
-<span data-ttu-id="27a94-126">Det andra kommandot installeras `Script-WithDependencies2` .</span><span class="sxs-lookup"><span data-stu-id="27a94-126">The second command installs `Script-WithDependencies2`.</span></span>
+<span data-ttu-id="ad948-126">Det andra kommandot installeras `Script-WithDependencies2` .</span><span class="sxs-lookup"><span data-stu-id="ad948-126">The second command installs `Script-WithDependencies2`.</span></span>
 
-<span data-ttu-id="27a94-127">Det tredje kommandot använder `Get-InstalledScript` skript-cmdleten för att hämta installerade skript och visa resultaten.</span><span class="sxs-lookup"><span data-stu-id="27a94-127">The third command uses the `Get-InstalledScript` script cmdlet to get installed scripts and display the results.</span></span>
+<span data-ttu-id="ad948-127">Det tredje kommandot använder `Get-InstalledScript` skript-cmdleten för att hämta installerade skript och visa resultaten.</span><span class="sxs-lookup"><span data-stu-id="ad948-127">The third command uses the `Get-InstalledScript` script cmdlet to get installed scripts and display the results.</span></span>
 
-<span data-ttu-id="27a94-128">Det fjärde kommandot använder `Get-InstalledModule` cmdleten för att hämta installerade moduler och visa resultatet.</span><span class="sxs-lookup"><span data-stu-id="27a94-128">The fourth command uses the `Get-InstalledModule` cmdlet to get installed modules and display the results.</span></span>
+<span data-ttu-id="ad948-128">Det fjärde kommandot använder `Get-InstalledModule` cmdleten för att hämta installerade moduler och visa resultatet.</span><span class="sxs-lookup"><span data-stu-id="ad948-128">The fourth command uses the `Get-InstalledModule` cmdlet to get installed modules and display the results.</span></span>
 
-<span data-ttu-id="27a94-129">Det femte kommandot använder `Find-Script` cmdleten för att hitta skript där namnet börjar med `Required-Script` och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="27a94-129">The fifth command uses the `Find-Script` cmdlet to find scripts where the name begins with `Required-Script` and display the results.</span></span>
+<span data-ttu-id="ad948-129">Det femte kommandot använder `Find-Script` cmdleten för att hitta skript där namnet börjar med `Required-Script` och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="ad948-129">The fifth command uses the `Find-Script` cmdlet to find scripts where the name begins with `Required-Script` and display the results.</span></span>
 
-<span data-ttu-id="27a94-130">Det sjätte kommandot installerar skripten där namnet börjar med `Required-Script` i Local1-lagringsplatsen.</span><span class="sxs-lookup"><span data-stu-id="27a94-130">The sixth command installs the scripts where the name begins with `Required-Script` in the Local1 repository.</span></span>
+<span data-ttu-id="ad948-130">Det sjätte kommandot installerar skripten där namnet börjar med `Required-Script` i Local1-lagringsplatsen.</span><span class="sxs-lookup"><span data-stu-id="ad948-130">The sixth command installs the scripts where the name begins with `Required-Script` in the Local1 repository.</span></span>
 
-<span data-ttu-id="27a94-131">Det sista kommandot hämtar installerade skript och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="27a94-131">The final command gets installed scripts and displays the results.</span></span>
+<span data-ttu-id="ad948-131">Det sista kommandot hämtar installerade skript och visar resultatet.</span><span class="sxs-lookup"><span data-stu-id="ad948-131">The final command gets installed scripts and displays the results.</span></span>
 
-## <span data-ttu-id="27a94-132">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="27a94-132">PARAMETERS</span></span>
+## <span data-ttu-id="ad948-132">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="ad948-132">PARAMETERS</span></span>
 
-### <span data-ttu-id="27a94-133">-AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="27a94-133">-AcceptLicense</span></span>
+### <span data-ttu-id="ad948-133">-AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="ad948-133">-AcceptLicense</span></span>
 
-<span data-ttu-id="27a94-134">Godkänn licens avtalet automatiskt under installationen om modulen kräver det.</span><span class="sxs-lookup"><span data-stu-id="27a94-134">Automatically accept the license agreement during installation if the module requires it.</span></span>
+<span data-ttu-id="ad948-134">Godkänn licens avtalet automatiskt under installationen om modulen kräver det.</span><span class="sxs-lookup"><span data-stu-id="ad948-134">Automatically accept the license agreement during installation if the module requires it.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,9 +215,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-135">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="27a94-135">-AllowPrerelease</span></span>
+### <span data-ttu-id="ad948-135">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="ad948-135">-AllowPrerelease</span></span>
 
-<span data-ttu-id="27a94-136">Gör att du kan installera ett skript som är markerat som en för hands version.</span><span class="sxs-lookup"><span data-stu-id="27a94-136">Allows you to install a script marked as a prerelease.</span></span>
+<span data-ttu-id="ad948-136">Gör att du kan installera ett skript som är markerat som en för hands version.</span><span class="sxs-lookup"><span data-stu-id="ad948-136">Allows you to install a script marked as a prerelease.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -231,9 +231,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-137">-Confirm</span><span class="sxs-lookup"><span data-stu-id="27a94-137">-Confirm</span></span>
+### <span data-ttu-id="ad948-137">-Confirm</span><span class="sxs-lookup"><span data-stu-id="ad948-137">-Confirm</span></span>
 
-<span data-ttu-id="27a94-138">Uppmanar dig att bekräfta innan du kör cmdleten.</span><span class="sxs-lookup"><span data-stu-id="27a94-138">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="ad948-138">Uppmanar dig att bekräfta innan du kör cmdleten.</span><span class="sxs-lookup"><span data-stu-id="ad948-138">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,9 +247,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-139">-Credential</span><span class="sxs-lookup"><span data-stu-id="27a94-139">-Credential</span></span>
+### <span data-ttu-id="ad948-139">-Credential</span><span class="sxs-lookup"><span data-stu-id="ad948-139">-Credential</span></span>
 
-<span data-ttu-id="27a94-140">Anger ett användar konto som har behörighet att installera ett skript för en angiven paket leverantör eller källa.</span><span class="sxs-lookup"><span data-stu-id="27a94-140">Specifies a user account that has rights to install a script for a specified package provider or source.</span></span>
+<span data-ttu-id="ad948-140">Anger ett användar konto som har behörighet att installera ett skript för en angiven paket leverantör eller källa.</span><span class="sxs-lookup"><span data-stu-id="ad948-140">Specifies a user account that has rights to install a script for a specified package provider or source.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -263,9 +263,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-141">-Force</span><span class="sxs-lookup"><span data-stu-id="27a94-141">-Force</span></span>
+### <span data-ttu-id="ad948-141">-Force</span><span class="sxs-lookup"><span data-stu-id="ad948-141">-Force</span></span>
 
-<span data-ttu-id="27a94-142">Tvingar kommandot att köras utan att fråga användaren om bekräftelse.</span><span class="sxs-lookup"><span data-stu-id="27a94-142">Forces the command to run without asking for user confirmation.</span></span>
+<span data-ttu-id="ad948-142">Tvingar kommandot att köras utan att fråga användaren om bekräftelse.</span><span class="sxs-lookup"><span data-stu-id="ad948-142">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -279,9 +279,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-143">– InputObject</span><span class="sxs-lookup"><span data-stu-id="27a94-143">-InputObject</span></span>
+### <span data-ttu-id="ad948-143">– InputObject</span><span class="sxs-lookup"><span data-stu-id="ad948-143">-InputObject</span></span>
 
-<span data-ttu-id="27a94-144">Används för pipeline-ininformation.</span><span class="sxs-lookup"><span data-stu-id="27a94-144">Used for pipeline input.</span></span>
+<span data-ttu-id="ad948-144">Används för pipeline-ininformation.</span><span class="sxs-lookup"><span data-stu-id="ad948-144">Used for pipeline input.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject[]
@@ -295,25 +295,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-145">– MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="27a94-145">-MaximumVersion</span></span>
+### <span data-ttu-id="ad948-145">– MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="ad948-145">-MaximumVersion</span></span>
 
-<span data-ttu-id="27a94-146">Anger den högsta versionen av ett enstaka skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="27a94-146">Specifies the maximum version of a single scripts to install.</span></span> <span data-ttu-id="27a94-147">Du kan inte lägga till den här parametern om du försöker installera flera skript.</span><span class="sxs-lookup"><span data-stu-id="27a94-147">You cannot add this parameter if you are attempting to install multiple scripts.</span></span> <span data-ttu-id="27a94-148">Parametrarna **MaximumVersion** och **RequiredVersion** kan inte anges samtidigt. Du kan inte använda båda parametrarna i samma kommando.</span><span class="sxs-lookup"><span data-stu-id="27a94-148">The **MaximumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: NameParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="27a94-149">– MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="27a94-149">-MinimumVersion</span></span>
-
-<span data-ttu-id="27a94-150">Anger den lägsta version av ett enskilt skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="27a94-150">Specifies the minimum version of a single script to install.</span></span> <span data-ttu-id="27a94-151">Du kan inte lägga till den här parametern om du försöker installera flera skript.</span><span class="sxs-lookup"><span data-stu-id="27a94-151">You cannot add this parameter if you are attempting to install multiple scripts.</span></span> <span data-ttu-id="27a94-152">Parametrarna **MinimumVersion** och **RequiredVersion** kan inte anges samtidigt. Du kan inte använda båda parametrarna i samma kommando.</span><span class="sxs-lookup"><span data-stu-id="27a94-152">The **MinimumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
+<span data-ttu-id="ad948-146">Anger den högsta versionen av ett enstaka skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="ad948-146">Specifies the maximum version of a single scripts to install.</span></span> <span data-ttu-id="ad948-147">Du kan inte lägga till den här parametern om du försöker installera flera skript.</span><span class="sxs-lookup"><span data-stu-id="ad948-147">You cannot add this parameter if you are attempting to install multiple scripts.</span></span> <span data-ttu-id="ad948-148">Parametrarna **MaximumVersion** och **RequiredVersion** kan inte anges samtidigt. Du kan inte använda båda parametrarna i samma kommando.</span><span class="sxs-lookup"><span data-stu-id="ad948-148">The **MaximumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -327,9 +311,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-153">-Name</span><span class="sxs-lookup"><span data-stu-id="27a94-153">-Name</span></span>
+### <span data-ttu-id="ad948-149">– MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="ad948-149">-MinimumVersion</span></span>
 
-<span data-ttu-id="27a94-154">Anger en matris med namn på skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="27a94-154">Specifies an array of names of scripts to install.</span></span>
+<span data-ttu-id="ad948-150">Anger den lägsta version av ett enskilt skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="ad948-150">Specifies the minimum version of a single script to install.</span></span> <span data-ttu-id="ad948-151">Du kan inte lägga till den här parametern om du försöker installera flera skript.</span><span class="sxs-lookup"><span data-stu-id="ad948-151">You cannot add this parameter if you are attempting to install multiple scripts.</span></span> <span data-ttu-id="ad948-152">Parametrarna **MinimumVersion** och **RequiredVersion** kan inte anges samtidigt. Du kan inte använda båda parametrarna i samma kommando.</span><span class="sxs-lookup"><span data-stu-id="ad948-152">The **MinimumVersion** and the **RequiredVersion** parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ad948-153">-Name</span><span class="sxs-lookup"><span data-stu-id="ad948-153">-Name</span></span>
+
+<span data-ttu-id="ad948-154">Anger en matris med namn på skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="ad948-154">Specifies an array of names of scripts to install.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -343,7 +343,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-155">-NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="27a94-155">-NoPathUpdate</span></span>
+### <span data-ttu-id="ad948-155">-NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="ad948-155">-NoPathUpdate</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -357,7 +357,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-156">– PassThru</span><span class="sxs-lookup"><span data-stu-id="27a94-156">-PassThru</span></span>
+### <span data-ttu-id="ad948-156">– PassThru</span><span class="sxs-lookup"><span data-stu-id="ad948-156">-PassThru</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -371,9 +371,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-157">-Proxy</span><span class="sxs-lookup"><span data-stu-id="27a94-157">-Proxy</span></span>
+### <span data-ttu-id="ad948-157">-Proxy</span><span class="sxs-lookup"><span data-stu-id="ad948-157">-Proxy</span></span>
 
-<span data-ttu-id="27a94-158">Anger en proxyserver för begäran, i stället för att ansluta direkt till Internet resursen.</span><span class="sxs-lookup"><span data-stu-id="27a94-158">Specifies a proxy server for the request, rather than connecting directly to the Internet resource.</span></span>
+<span data-ttu-id="ad948-158">Anger en proxyserver för begäran, i stället för att ansluta direkt till Internet resursen.</span><span class="sxs-lookup"><span data-stu-id="ad948-158">Specifies a proxy server for the request, rather than connecting directly to the Internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -387,9 +387,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-159">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="27a94-159">-ProxyCredential</span></span>
+### <span data-ttu-id="ad948-159">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="ad948-159">-ProxyCredential</span></span>
 
-<span data-ttu-id="27a94-160">Anger ett användar konto som har behörighet att använda den proxyserver som anges av parametern **proxy** .</span><span class="sxs-lookup"><span data-stu-id="27a94-160">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
+<span data-ttu-id="ad948-160">Anger ett användar konto som har behörighet att använda den proxyserver som anges av parametern **proxy** .</span><span class="sxs-lookup"><span data-stu-id="ad948-160">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -403,9 +403,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-161">– Databas</span><span class="sxs-lookup"><span data-stu-id="27a94-161">-Repository</span></span>
+### <span data-ttu-id="ad948-161">– Databas</span><span class="sxs-lookup"><span data-stu-id="ad948-161">-Repository</span></span>
 
-<span data-ttu-id="27a94-162">Anger det egna namnet på en lagrings plats som har registrerats med `Register-PSRepository` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="27a94-162">Specifies the friendly name of a repository that has been registered with the `Register-PSRepository` cmdlet.</span></span> <span data-ttu-id="27a94-163">Standardvärdet är alla registrerade databaser.</span><span class="sxs-lookup"><span data-stu-id="27a94-163">The default is all registered repositories.</span></span>
+<span data-ttu-id="ad948-162">Anger det egna namnet på en lagrings plats som har registrerats med `Register-PSRepository` cmdleten.</span><span class="sxs-lookup"><span data-stu-id="ad948-162">Specifies the friendly name of a repository that has been registered with the `Register-PSRepository` cmdlet.</span></span> <span data-ttu-id="ad948-163">Standardvärdet är alla registrerade databaser.</span><span class="sxs-lookup"><span data-stu-id="ad948-163">The default is all registered repositories.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -419,9 +419,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-164">– RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="27a94-164">-RequiredVersion</span></span>
+### <span data-ttu-id="ad948-164">– RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="ad948-164">-RequiredVersion</span></span>
 
-<span data-ttu-id="27a94-165">Anger det exakta versions numret för det skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="27a94-165">Specifies the exact version number of the script to install.</span></span>
+<span data-ttu-id="ad948-165">Anger det exakta versions numret för det skript som ska installeras.</span><span class="sxs-lookup"><span data-stu-id="ad948-165">Specifies the exact version number of the script to install.</span></span>
 
 ```yaml
 Type: System.String
@@ -435,20 +435,20 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-166">– Omfattning</span><span class="sxs-lookup"><span data-stu-id="27a94-166">-Scope</span></span>
+### <span data-ttu-id="ad948-166">– Omfattning</span><span class="sxs-lookup"><span data-stu-id="ad948-166">-Scope</span></span>
 
-<span data-ttu-id="27a94-167">Anger skriptets installations omfång.</span><span class="sxs-lookup"><span data-stu-id="27a94-167">Specifies the installation scope of the script.</span></span>
-<span data-ttu-id="27a94-168">Giltiga värden är: AllUsers och CurrentUser.</span><span class="sxs-lookup"><span data-stu-id="27a94-168">Valid values are: AllUsers and CurrentUser.</span></span>
+<span data-ttu-id="ad948-167">Anger skriptets installations omfång.</span><span class="sxs-lookup"><span data-stu-id="ad948-167">Specifies the installation scope of the script.</span></span>
+<span data-ttu-id="ad948-168">Giltiga värden är: AllUsers och CurrentUser.</span><span class="sxs-lookup"><span data-stu-id="ad948-168">Valid values are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="27a94-169">Med AllUsers omfattning kan moduler installeras på en plats som är tillgänglig för alla användare av datorn, det vill säga `$env:ProgramFiles\WindowsPowerShell\Scripts` .</span><span class="sxs-lookup"><span data-stu-id="27a94-169">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, `$env:ProgramFiles\WindowsPowerShell\Scripts`.</span></span>
+<span data-ttu-id="ad948-169">Med AllUsers omfattning kan moduler installeras på en plats som är tillgänglig för alla användare av datorn, det vill säga `$env:ProgramFiles\WindowsPowerShell\Scripts` .</span><span class="sxs-lookup"><span data-stu-id="ad948-169">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, `$env:ProgramFiles\WindowsPowerShell\Scripts`.</span></span>
 
-<span data-ttu-id="27a94-170">I CurrentUser-scopet kan moduler endast installeras till `$home\Documents\WindowsPowerShell\Scripts` , så att modulen endast är tillgänglig för den aktuella användaren.</span><span class="sxs-lookup"><span data-stu-id="27a94-170">The CurrentUser scope lets modules be installed only to `$home\Documents\WindowsPowerShell\Scripts`, so that the module is available only to the current user.</span></span>
+<span data-ttu-id="ad948-170">I CurrentUser-scopet kan moduler endast installeras till `$home\Documents\WindowsPowerShell\Scripts` , så att modulen endast är tillgänglig för den aktuella användaren.</span><span class="sxs-lookup"><span data-stu-id="ad948-170">The CurrentUser scope lets modules be installed only to `$home\Documents\WindowsPowerShell\Scripts`, so that the module is available only to the current user.</span></span>
 
-<span data-ttu-id="27a94-171">När inget **omfång** har definierats anges standardvärdet baserat på den aktuella sessionen:</span><span class="sxs-lookup"><span data-stu-id="27a94-171">When no **Scope** is defined, the default will be set based on the current session:</span></span>
+<span data-ttu-id="ad948-171">När inget **omfång** har definierats anges standardvärdet baserat på den aktuella sessionen:</span><span class="sxs-lookup"><span data-stu-id="ad948-171">When no **Scope** is defined, the default will be set based on the current session:</span></span>
 
-- <span data-ttu-id="27a94-172">För en upphöjd **PowerShell-session** är standardvärdet allusers;</span><span class="sxs-lookup"><span data-stu-id="27a94-172">For an elevated PowerShell session, **Scope** defaults to AllUsers;</span></span>
-- <span data-ttu-id="27a94-173">För icke-förhöjda PowerShell-sessioner i [PowerShellGet-versioner 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet) och senare, är **omfånget** CurrentUser;</span><span class="sxs-lookup"><span data-stu-id="27a94-173">For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet) and above, **Scope** is CurrentUser;</span></span>
-- <span data-ttu-id="27a94-174">För icke-förhöjda PowerShell-sessioner i PowerShellGet-versioner 1.6.7 och tidigare, är **omfånget** odefinierat och `Install-Module` fungerar inte.</span><span class="sxs-lookup"><span data-stu-id="27a94-174">For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, **Scope** is undefined, and `Install-Module` fails.</span></span>
+- <span data-ttu-id="ad948-172">För en upphöjd **PowerShell-session** är standardvärdet allusers;</span><span class="sxs-lookup"><span data-stu-id="ad948-172">For an elevated PowerShell session, **Scope** defaults to AllUsers;</span></span>
+- <span data-ttu-id="ad948-173">För icke-förhöjda PowerShell-sessioner i [PowerShellGet-versioner 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet) och senare, är **omfånget** CurrentUser;</span><span class="sxs-lookup"><span data-stu-id="ad948-173">For non-elevated PowerShell sessions in [PowerShellGet versions 2.0.0](https://www.powershellgallery.com/packages/PowerShellGet) and above, **Scope** is CurrentUser;</span></span>
+- <span data-ttu-id="ad948-174">För icke-förhöjda PowerShell-sessioner i PowerShellGet-versioner 1.6.7 och tidigare, är **omfånget** odefinierat och `Install-Module` fungerar inte.</span><span class="sxs-lookup"><span data-stu-id="ad948-174">For non-elevated PowerShell sessions in PowerShellGet versions 1.6.7 and earlier, **Scope** is undefined, and `Install-Module` fails.</span></span>
 
 ```yaml
 Type: System.String
@@ -463,9 +463,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-175">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="27a94-175">-WhatIf</span></span>
+### <span data-ttu-id="ad948-175">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ad948-175">-WhatIf</span></span>
 
-<span data-ttu-id="27a94-176">Visar vad som skulle hända om cmdleten kördes.</span><span class="sxs-lookup"><span data-stu-id="27a94-176">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="27a94-177">Cmdleten körs inte.</span><span class="sxs-lookup"><span data-stu-id="27a94-177">The cmdlet is not run.</span></span>
+<span data-ttu-id="ad948-176">Visar vad som skulle hända om cmdleten kördes.</span><span class="sxs-lookup"><span data-stu-id="ad948-176">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ad948-177">Cmdleten körs inte.</span><span class="sxs-lookup"><span data-stu-id="ad948-177">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -479,35 +479,43 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="27a94-178">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="27a94-178">CommonParameters</span></span>
+### <span data-ttu-id="ad948-178">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ad948-178">CommonParameters</span></span>
 
-<span data-ttu-id="27a94-179">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="27a94-179">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="27a94-180">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="27a94-180">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="ad948-179">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ad948-179">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ad948-180">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ad948-180">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="27a94-181">INDATA</span><span class="sxs-lookup"><span data-stu-id="27a94-181">INPUTS</span></span>
+## <span data-ttu-id="ad948-181">INDATA</span><span class="sxs-lookup"><span data-stu-id="ad948-181">INPUTS</span></span>
 
-### <span data-ttu-id="27a94-182">System.String[]</span><span class="sxs-lookup"><span data-stu-id="27a94-182">System.String[]</span></span>
+### <span data-ttu-id="ad948-182">System.String[]</span><span class="sxs-lookup"><span data-stu-id="ad948-182">System.String[]</span></span>
 
-### <span data-ttu-id="27a94-183">System. Management. Automation. PSObject []</span><span class="sxs-lookup"><span data-stu-id="27a94-183">System.Management.Automation.PSObject[]</span></span>
+### <span data-ttu-id="ad948-183">System. Management. Automation. PSObject []</span><span class="sxs-lookup"><span data-stu-id="ad948-183">System.Management.Automation.PSObject[]</span></span>
 
-### <span data-ttu-id="27a94-184">System. String</span><span class="sxs-lookup"><span data-stu-id="27a94-184">System.String</span></span>
+### <span data-ttu-id="ad948-184">System. String</span><span class="sxs-lookup"><span data-stu-id="ad948-184">System.String</span></span>
 
-### <span data-ttu-id="27a94-185">System. URI</span><span class="sxs-lookup"><span data-stu-id="27a94-185">System.Uri</span></span>
+### <span data-ttu-id="ad948-185">System. URI</span><span class="sxs-lookup"><span data-stu-id="ad948-185">System.Uri</span></span>
 
-### <span data-ttu-id="27a94-186">System. Management. Automation. PSCredential</span><span class="sxs-lookup"><span data-stu-id="27a94-186">System.Management.Automation.PSCredential</span></span>
+### <span data-ttu-id="ad948-186">System. Management. Automation. PSCredential</span><span class="sxs-lookup"><span data-stu-id="ad948-186">System.Management.Automation.PSCredential</span></span>
 
-## <span data-ttu-id="27a94-187">UTDATA</span><span class="sxs-lookup"><span data-stu-id="27a94-187">OUTPUTS</span></span>
+## <span data-ttu-id="ad948-187">UTDATA</span><span class="sxs-lookup"><span data-stu-id="ad948-187">OUTPUTS</span></span>
 
-### <span data-ttu-id="27a94-188">System. Object</span><span class="sxs-lookup"><span data-stu-id="27a94-188">System.Object</span></span>
-## <span data-ttu-id="27a94-189">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="27a94-189">NOTES</span></span>
+### <span data-ttu-id="ad948-188">System. Object</span><span class="sxs-lookup"><span data-stu-id="ad948-188">System.Object</span></span>
 
-## <span data-ttu-id="27a94-190">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="27a94-190">RELATED LINKS</span></span>
+## <span data-ttu-id="ad948-189">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="ad948-189">NOTES</span></span>
 
-[<span data-ttu-id="27a94-191">Sök – skript</span><span class="sxs-lookup"><span data-stu-id="27a94-191">Find-Script</span></span>](Find-Script.md)
+> [!IMPORTANT]
+> <span data-ttu-id="ad948-190">Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1.</span><span class="sxs-lookup"><span data-stu-id="ad948-190">As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS) versions 1.0 and 1.1.</span></span> <span data-ttu-id="ad948-191">Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet.</span><span class="sxs-lookup"><span data-stu-id="ad948-191">If you are not using TLS 1.2 or higher, you will receive an error when trying to access the PowerShell Gallery.</span></span> <span data-ttu-id="ad948-192">Använd följande kommando för att se till att du använder TLS 1,2:</span><span class="sxs-lookup"><span data-stu-id="ad948-192">Use the following command to ensure you are using TLS 1.2:</span></span>
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> <span data-ttu-id="ad948-193">Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.</span><span class="sxs-lookup"><span data-stu-id="ad948-193">For more information, see the [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the PowerShell blog.</span></span>
 
-[<span data-ttu-id="27a94-192">Publicera – skript</span><span class="sxs-lookup"><span data-stu-id="27a94-192">Publish-Script</span></span>](Publish-Script.md)
+## <span data-ttu-id="ad948-194">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="ad948-194">RELATED LINKS</span></span>
 
-[<span data-ttu-id="27a94-193">Spara – skript</span><span class="sxs-lookup"><span data-stu-id="27a94-193">Save-Script</span></span>](Save-Script.md)
+[<span data-ttu-id="ad948-195">Sök – skript</span><span class="sxs-lookup"><span data-stu-id="ad948-195">Find-Script</span></span>](Find-Script.md)
 
-[<span data-ttu-id="27a94-194">Avinstallera – skript</span><span class="sxs-lookup"><span data-stu-id="27a94-194">Uninstall-Script</span></span>](Uninstall-Script.md)
+[<span data-ttu-id="ad948-196">Publicera – skript</span><span class="sxs-lookup"><span data-stu-id="ad948-196">Publish-Script</span></span>](Publish-Script.md)
 
-[<span data-ttu-id="27a94-195">Uppdatera skript</span><span class="sxs-lookup"><span data-stu-id="27a94-195">Update-Script</span></span>](Update-Script.md)
+[<span data-ttu-id="ad948-197">Spara – skript</span><span class="sxs-lookup"><span data-stu-id="ad948-197">Save-Script</span></span>](Save-Script.md)
+
+[<span data-ttu-id="ad948-198">Avinstallera – skript</span><span class="sxs-lookup"><span data-stu-id="ad948-198">Uninstall-Script</span></span>](Uninstall-Script.md)
+
+[<span data-ttu-id="ad948-199">Uppdatera skript</span><span class="sxs-lookup"><span data-stu-id="ad948-199">Update-Script</span></span>](Update-Script.md)
