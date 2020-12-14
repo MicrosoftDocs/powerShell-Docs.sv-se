@@ -1,0 +1,104 @@
+---
+external help file: PSDiagnostics-help.xml
+Locale: en-US
+Module Name: PSDiagnostics
+ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/stop-trace?view=powershell-7.2&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Stop-Trace
+ms.openlocfilehash: 5727ae52326830fa16012722d0b801b7d43e50dd
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94708590"
+---
+# Stop-Trace
+
+## SAMMANFATTNING
+Stoppa en loggnings session för händelse spårning.
+
+## SYNTAX
+
+```
+Stop-Trace [-SessionName] <Object> [-ETS] [<CommonParameters>]
+```
+
+## BESKRIVNING
+
+Denna cmdlet stoppar en loggnings session för Windows Event trace.
+
+Denna cmdlet används av följande cmdlets:
+
+- `Disable-PSWSManCombinedTrace`
+- `Disable-WSManTrace`
+
+Du måste köra denna cmdlet från en upphöjd PowerShell-session.
+
+## EXEMPEL
+
+### Exempel 1: stoppa en WSMan-spårningssession för spårning av loggar
+
+```powershell
+Stop-Trace -SessionName 'wsmlog'
+```
+
+## PARAMETRAR
+
+### -ETS
+Skicka kommandon till Event trace-sessioner direkt utan att spara eller schemalägga.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sessionsnamn
+Namnet på händelsespårningssessionen som ska stoppas.
+
+```yaml
+Type: System.Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INDATA
+
+### Inga
+
+## UTDATA
+
+### Inga
+
+## ANTECKNINGAR
+
+## RELATERADE LÄNKAR
+
+[Händelse spårning](/windows/desktop/ETW/event-tracing-portal)
+
+[Starta spårning](start-trace.md)
+
+[Disable-PSWSManCombinedTrace](Disable-PSWSManCombinedTrace.md)
+
+[Disable-WSManTrace](Disable-WSManTrace.md)
+
+[Aktivera – PSWSManCombinedTrace](Enable-PSWSManCombinedTrace.md)
+
+[Aktivera – WSManTrace](Enable-WSManTrace.md)
+
