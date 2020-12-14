@@ -3,23 +3,18 @@ ms.date: 02/03/2020
 keywords: PowerShell, Core
 title: Versions historik för moduler och cmdletar
 description: Den här artikeln innehåller moduler och cmdletar som ingår i olika versioner av PowerShell.
-ms.openlocfilehash: 43ea0cde106e9f0aafe9c18726589f931724b35f
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: e79735e516c9aaa485c6513fb80de623014f06f5
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342866"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810359"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Versions historik för moduler och cmdletar
 
 Den här artikeln innehåller moduler och cmdletar som ingår i olika versioner av PowerShell. Det här är en sammanfattning av information som finns i viktig information. Mer detaljerad information finns i versions anteckningarna:
 
 - [Nyheter i PowerShell 7.0](what-s-new-in-powershell-70.md)
-- [Nyheter i PowerShell 6.2](what-s-new-in-powershell-core-62.md)
-- [Nyheter i PowerShell 6,1](what-s-new-in-powershell-core-61.md)
-- [Nyheter i PowerShell 6,0](what-s-new-in-powershell-core-60.md)
-- [Bryta ändringar i PowerShell 6,0](breaking-changes-ps6.md)
-- [Kända problem i PowerShell 6,0](known-issues-ps6.md)
 
 Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen.
 
@@ -45,7 +40,8 @@ Detta är ett pågående arbete. Hjälp oss att uppdatera den här informationen
 | PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
 | PSDiagnostics                             | &check; | &check; | &check; | &check; | Endast Windows |
 | PSReadline 1. x                            | &check; |         |         |         | Endast Windows |
-| PSReadline 2. x                            |         | &check; | &check; | &check; |              |
+| PSReadline 2,0                            |         | &check; | &check; |         |              |
+| PSReadline 2,1                            |         |         |         | &check; |              |
 | PSScheduledJob                            | &check; |         |         |         | Endast Windows |
 | PSWorkflow                                | &check; |         |         |         | Endast Windows |
 | PSWorkflowUtility                         | &check; |         |         |         | Endast Windows |

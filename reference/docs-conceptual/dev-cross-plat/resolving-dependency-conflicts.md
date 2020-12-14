@@ -3,12 +3,12 @@ title: Lösa beroende konflikter i PowerShell-modulens sammansättning
 description: När du skriver en binär PowerShell-modul i C#, är det naturligt att ta beroenden på andra paket eller bibliotek för att tillhandahålla funktioner.
 ms.date: 06/25/2020
 ms.custom: rjmholt
-ms.openlocfilehash: 536bcfd1ced536faccde0d6c5bc483cdaf31ce68
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 93bb39bdd440c7f97c27aa81e68f68331569b69e
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87775172"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810410"
 ---
 # <a name="resolving-powershell-module-assembly-dependency-conflicts"></a>Lösa beroende konflikter i PowerShell-modulens sammansättning
 
@@ -500,7 +500,7 @@ namespace AlcModule.Cmdlets
 
         public AlcModuleAssemblyLoadContext(string dependencyDirPath)
         {
-            _depdendencyDirPath = dependencyDirPath;
+            _dependencyDirPath = dependencyDirPath;
         }
 
         protected override Assembly Load(AssemblyName assemblyName)
@@ -509,7 +509,7 @@ namespace AlcModule.Cmdlets
             // looking for an assembly of the given name
             // in the configured dependency directory
             string assemblyPath = Path.Combine(
-                s_dependencyDirPath,
+                _dependencyDirPath,
                 $"{assemblyName.Name}.dll");
 
             // The ALC must use inherited methods to load assemblies
@@ -587,7 +587,7 @@ Några intressanta punkter är:
 - Vi läser inte in beroenden förrän körs `Test-AlcModule` och dess `EndProcessing()` metod anropas.
 - När `EndProcessing()` anropas, kan inte standard-ALC hitta `AlcModule.Engine.dll` och Utlös `Resolving` händelsen.
 - Vår händelse hanterare kopplar upp den anpassade ALC till standardvärdet för ALC och inläsningar `AlcModule.Engine.dll` .
-- När `AlcEngine.Use()` anropas i används `AlcModule.Engine.dll` den anpassade ALC igen för att lösa problemet `Shared.Dependency.dll` . Mer specifikt laddar den alltid _our_ `Shared.Dependency.dll` ut eftersom den aldrig står i konflikt med något i standard-ALC och bara ser ut i vår `Dependencies` katalog.
+- När `AlcEngine.Use()` anropas i används `AlcModule.Engine.dll` den anpassade ALC igen för att lösa problemet `Shared.Dependency.dll` . Mer specifikt laddar den alltid  `Shared.Dependency.dll` ut eftersom den aldrig står i konflikt med något i standard-ALC och bara ser ut i vår `Dependencies` katalog.
 
 Genom att sätta samman implementeringen ser vår nya källkod ut så här:
 

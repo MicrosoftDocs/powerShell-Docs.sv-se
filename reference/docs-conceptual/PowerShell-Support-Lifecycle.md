@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Information om principerna som styr support för PowerShell
 ms.date: 11/11/2020
-ms.openlocfilehash: 16b5480a0aecdd4b069d78372e09e04d1451eba6
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: f2a1df0fabdfb624db666d240172930dc60f1bfe
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550289"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810393"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -54,20 +54,18 @@ Plattformar som anges som `Experimental` inte stöds officiellt, men som är til
 | Red Hat Enterprise Linux 7                        |   Stöds   |   Stöds   |
 | Red Hat Enterprise Linux 8                        |   Stöds   |   Stöds   |
 | Fedora 31 +                                        |   Stöds   | Stöds inte |
-| Alpina 3,10                                       |   Visa anteckning    | Stöds inte |
-| Alpine 3.11 +                                      |   Visa anteckning    |   Visa anteckning    |
+| Alpina 3,10                                       |   Se anmärkning 1  | Stöds inte |
+| Alpine 3.11 +                                      |   Se anmärkning 1  |   Se anmärkning 1  |
 | macOS 10.13 +                                      |   Stöds   |   Stöds   |
 | Båge                                              |   Community   |   Community   |
 | Raspbian                                          |   Community   |   Community   |
 | Kali                                              |   Community   |   Community   |
 | AppImage (fungerar på flera Linux-plattformar)      |   Community   |   Community   |
-| [Snapin-paket](https://snapcraft.io/powershell)   |   Se Obs!    |   Se Obs!    |
+| [Snapin-paket](https://snapcraft.io/powershell)   |   Se anmärkning 2  |   Se Obs!    |
 
 > [!NOTE]
-> Snapin-paket stöds på samma sätt som den distribution som du kör paketet på.
-
-> [!NOTE]
-> CIM, PowerShell-fjärrkommunikation och DSC stöds inte på Alpina.
+> - 1 – CIM, PowerShell-fjärrkommunikation och DSC stöds inte på Alpina.
+> - 2-Snap-paket stöds på samma sätt som den distribution som du kör paketet på.
 
 ## <a name="powershell-releases-end-of-life"></a>Slut på livs längd för PowerShell-versioner
 

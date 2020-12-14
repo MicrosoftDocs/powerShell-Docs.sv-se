@@ -3,19 +3,20 @@ ms.date: 07/29/2020
 keywords: powershell,cmdlet
 title: Använda PowerShell-dokumentationen
 description: I den här artikeln beskrivs hur du använder funktionerna i den här webbplatsen, inklusive Sök filtrering och versions val.
-ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7e036fce0abb12f6c1ab4c0092784321a41a916
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501124"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810308"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Använda PowerShell-dokumentationen
 
 Välkommen till PowerShell-onlinedokumentationen. Den här platsen innehåller cmdlet-referens för följande versioner av PowerShell:
 
-- PowerShell 7
-- PowerShell 6
+- PowerShell 7,2 (för hands version)
+- PowerShell 7,1 (aktuell)
+- PowerShell 7,0 (LTS)
 - PowerShell 5.1
 
 ## <a name="finding-articles-and-selecting-a-version"></a>Hitta artiklar och välja en version
@@ -51,5 +52,6 @@ Den här platsen innehåller dokumentation för följande ämnen:
 - PowerShell 3.0
 - PowerShell 4.0
 - PowerShell 5.0
+- PowerShell 6
 - PowerShell-arbetsflöden
 - PowerShell-Webbåtkomst
