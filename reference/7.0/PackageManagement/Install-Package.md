@@ -7,12 +7,12 @@ ms.date: 05/23/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Installationspaket
-ms.openlocfilehash: 506775bf4ef58244a04cb13c1cab926d112111bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9778263a0a9d5db6924579c863419e87bb27ef71
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267507"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890274"
 ---
 # Installationspaket
 
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Anger ett användar konto som har behörighet att komma åt datorn och köra kommandon. Ange ett användar namn, till exempel **user01** , **Domain01\User01** , eller ange ett **PSCredential** -objekt som genereras av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord.
+Anger ett användar konto som har behörighet att komma åt datorn och köra kommandon. Ange ett användar namn, till exempel **user01**, **Domain01\User01**, eller ange ett **PSCredential** -objekt som genereras av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord.
 
 När parametern **Credential** inte anges `Install-Package` använder den aktuella användaren.
 
@@ -812,6 +812,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ## ANTECKNINGAR
 
 Att inkludera en paket leverantör i ett kommando kan göra dynamiska parametrar tillgängliga för en cmdlet. Dynamiska parametrar är speciella för en paket leverantör. `Get-Help`Cmdleten listar en cmdlets parameter uppsättningar och inkluderar providerns parameter uppsättning. Till exempel `Install-Package` har **PowerShellGet** parameter uppsättning som innehåller `-NoPathUpdate` , `AllowClobber` , och `SkipPublisherCheck` .
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## RELATERADE LÄNKAR
 

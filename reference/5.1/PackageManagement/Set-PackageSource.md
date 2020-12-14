@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/set-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PackageSource
-ms.openlocfilehash: a8dc659d3ffdfcd296660f64f7b7cbd0bb132217
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4d534ebf97f7d7f37115e23f12cbd4d725e2212b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264531"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889961"
 ---
 # Set-PackageSource
 
@@ -79,7 +79,7 @@ Set-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-Credential 
 
 ### Exempel 1: ändra en paket källa
 
-Det här kommandot ändrar det befintliga namnet på en paket källa. Källan är inställd på **betrodd** , vilket eliminerar uppfrågar om du vill verifiera källan när paket installeras.
+Det här kommandot ändrar det befintliga namnet på en paket källa. Källan är inställd på **betrodd**, vilket eliminerar uppfrågar om du vill verifiera källan när paket installeras.
 
 ```
 PS C:\> Set-PackageSource -Name MyNuget -NewName NewNuGet -Trusted -ProviderName NuGet
@@ -421,6 +421,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ### Denna cmdlet genererar inga utdata.
 
 ## ANTECKNINGAR
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## RELATERADE LÄNKAR
 

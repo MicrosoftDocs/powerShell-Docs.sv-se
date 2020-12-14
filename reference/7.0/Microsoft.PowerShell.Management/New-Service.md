@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 0963e90f1f994a9bd6f3f61e80bf56eebff09384
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 7ba9bf66295bcbc2d8f7b7f94007b3fb673882fb
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94343121"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890982"
 ---
 # New-Service
 
@@ -38,7 +37,7 @@ Med parametrarna för denna cmdlet kan du ange visnings namn, beskrivning, start
 ### Exempel 1: skapa en tjänst
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
 ```
 
 Det här kommandot skapar en tjänst med namnet TestService.
@@ -48,7 +47,7 @@ Det här kommandot skapar en tjänst med namnet TestService.
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -83,7 +82,7 @@ Det här exemplet lägger till **adtagent** för den tjänst som skapas.
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName "Test Service"
   StartupType = "Manual"
@@ -101,6 +100,12 @@ New-Service @params
 
 Anger sökvägen till tjänstens körbara fil. Den här parametern är obligatorisk.
 
+Den fullständigt kvalificerade sökvägen till den binära filen för tjänsten. Om sökvägen innehåller ett blank steg måste den vara citerad så att den tolkas korrekt. Ska till exempel `d:\my share\myservice.exe` anges som `'"d:\my share\myservice.exe"'` .
+
+Sökvägen kan även innehålla argument för en tjänst för automatisk start. Ett exempel är `'"d:\myshare\myservice.exe arg1 arg2"'`. Dessa argument skickas till tjänst start punkten.
+
+Mer information finns i **lpBinaryPathName** -parametern för [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) -API: et.
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)
@@ -117,7 +122,7 @@ Accept wildcard characters: False
 
 Anger kontot som används av tjänsten som [tjänst inloggnings konto](/windows/desktop/ad/about-service-logon-accounts).
 
-Ange ett användar namn, till exempel **user01** eller **Domain01\User01** , eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord i den här cmdleten.
+Ange ett användar namn, till exempel **user01** eller **Domain01\User01**, eller ange ett **PSCredential** -objekt, t. ex. ett som genererades av `Get-Credential` cmdleten. Om du anger ett användar namn uppmanas du att ange ett lösen ord i den här cmdleten.
 
 Autentiseringsuppgifterna lagras i ett [PSCredential](/dotnet/api/system.management.automation.pscredential) -objekt och lösen ordet lagras som en [SecureString](/dotnet/api/system.security.securestring).
 
@@ -280,7 +285,7 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## INDATA
 
-### Inget
+### Inga
 
 Du kan inte skicka pipe-ininformation till denna cmdlet.
 

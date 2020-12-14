@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/09/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-script?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-script?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Script
-ms.openlocfilehash: 7f0da0403b21b6b4980844f13c23b2659500dd7c
+ms.openlocfilehash: 0fa537e463464fe055ea14aeab05cbb3ac5d1012
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94891446"
+ms.locfileid: "94890407"
 ---
 # Update-Script
 

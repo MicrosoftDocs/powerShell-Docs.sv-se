@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 10/03/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
-ms.openlocfilehash: 602d160a4cc7fd4e8a806d2c3d2772ee5053535d
+ms.openlocfilehash: 2edc05ff660cfcca232af878c593c29de68eb122
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94889699"
+ms.locfileid: "94891361"
 ---
 # Publish-Module
 
@@ -118,7 +117,7 @@ Accept wildcard characters: False
 
 ### -Undanta
 
-Definierar filer som ska undantas från den publicerade modulen. **Exkludering** av parameter stöd är Add i **PowershellGet** version 2.0.0.
+Definierar filer som ska undantas från den publicerade modulen.
 
 ```yaml
 Type: System.String[]
@@ -314,7 +313,7 @@ Accept wildcard characters: False
 
 ### -SkipAutomaticTags
 
-Tar bort kommandon och resurser från att inkluderas som taggar. Hoppar över automatiskt tillägg av taggar i en modul. Stöd för **SkipAutomaticTags** -parameter läggs till i **PowerShellGet** -versionen 2.0.0
+Tar bort kommandon och resurser från att inkluderas som taggar. Hoppar över automatiskt tillägg av taggar i en modul.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/import-packageprovider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PackageProvider
-ms.openlocfilehash: 8b900f8e7ff2583e20d359fd3d15aee653b9c1d6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 428cb3afa574345ef5cb4b79b76b31cf9bfb2e7b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264243"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890087"
 ---
 # Import-PackageProvider
 
@@ -170,6 +170,13 @@ Du kan skicka vidare ett **PackageProvider** -objekt som returnerades av `Get-Pa
 
 ## ANTECKNINGAR
 
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
+
 ## RELATERADE LÄNKAR
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
@@ -181,4 +188,3 @@ Du kan skicka vidare ett **PackageProvider** -objekt som returnerades av `Get-Pa
 [Registrera – PackageSource](Register-PackageSource.md)
 
 [Get-PackageProvider](Get-PackageProvider.md)
-

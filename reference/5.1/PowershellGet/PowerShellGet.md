@@ -8,18 +8,25 @@ Module Name: PowerShellGet
 ms.date: 06/09/2017
 schema: 2.0.0
 title: PowerShellGet
-ms.openlocfilehash: cca9864ec78ff7976538b73ef35627e72e1e784c
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 130582b1b9f18a8f6ada7c009c6d25a7dab75e46
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93269702"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890720"
 ---
 # PowerShellGet-modul
 
 ## Beskrivning
 
 PowerShellGet är en modul med kommandon för att upptäcka, installera, uppdatera och publicera PowerShell-artefakter som moduler, DSC-resurser, roll funktioner och skript.
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## PowerShellGet-cmdletar
 

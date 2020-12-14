@@ -7,12 +7,12 @@ ms.date: 06/04/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-DscResource
-ms.openlocfilehash: 9953a7912d29517249fa215b154c1dfae46585d1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2596bf1789f4eb8c7c3983bf64f99ff0c1132b67
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266349"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890053"
 ---
 # Find-DscResource
 
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Parametern **AllVersions** visar var och en av en DSC-resurs tillgängliga versioner. Du kan inte använda parametern **AllVersions** med parametrarna **MinimumVersion** , **MaximumVersion** eller **RequiredVersion** .
+Parametern **AllVersions** visar var och en av en DSC-resurs tillgängliga versioner. Du kan inte använda parametern **AllVersions** med parametrarna **MinimumVersion**, **MaximumVersion** eller **RequiredVersion** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -359,6 +359,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## ANTECKNINGAR
 
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
+
 ## RELATERADE LÄNKAR
 
 [Get-InstalledModule](Get-InstalledModule.md)
@@ -370,4 +377,3 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
 [Avinstallera-modul](Uninstall-Module.md)
-

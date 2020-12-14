@@ -8,18 +8,25 @@ Module Name: PackageManagement
 ms.date: 06/09/2017
 schema: 2.0.0
 title: PackageManagement
-ms.openlocfilehash: 28138731e65e14ceb4295466891fcbd772333c87
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 01b1bce187cd0526e56abc812f91b44a2c022a29
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93269768"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890863"
 ---
 # PackageManagement-modul
 
 ## Beskrivning
 
 I det här avsnittet visas hjälp avsnitt för Package Management-cmdletar.
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## PackageManagement-cmdletar
 

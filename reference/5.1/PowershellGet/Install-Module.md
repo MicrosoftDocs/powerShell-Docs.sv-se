@@ -7,12 +7,12 @@ ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
-ms.openlocfilehash: 5e210a626c0b64884bb95807a51d712061276122
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: ec9862e9003bd73e952422a8d15d373193a80c12
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93268868"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889784"
 ---
 # Install-Module
 
@@ -352,14 +352,14 @@ Anger modulens installations omfång. De acceptabla värdena för den här param
 
 `$env:ProgramFiles\WindowsPowerShell\Modules`
 
-**CurrentUser** installerar moduler på en plats som endast är tillgänglig för den aktuella användaren av datorn. Ett exempel:
+**CurrentUser** installerar moduler på en plats som endast är tillgänglig för den aktuella användaren av datorn. Exempel:
 
 `$home\Documents\WindowsPowerShell\Modules`
 
 När inget **omfång** har definierats anges standardvärdet baserat på PowerShellGet-versionen.
 
-- I PowerShellGet-versioner 2.0.0 och senare är standardvärdet **CurrentUser** , vilket inte kräver höjning för installation.
-- I PowerShellGet 1. x-versioner är standardvärdet **allusers** , vilket kräver höjning för installation.
+- I PowerShellGet-versioner 2.0.0 och senare är standardvärdet **CurrentUser**, vilket inte kräver höjning för installation.
+- I PowerShellGet 1. x-versioner är standardvärdet **allusers**, vilket kräver höjning för installation.
 
 ```yaml
 Type: System.String
@@ -436,11 +436,18 @@ När du använder parametern **Passthru** `Install-Module` matar ut ett **PSRepo
 
 `Install-Module` körs på PowerShell 5,0 eller senare versioner, på Windows 7 eller Windows 2008 R2 och senare versioner av Windows.
 
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
+
 Som en säkerhets åtgärd bör du utvärdera modulens kod innan du kör några cmdlets eller Functions för första gången. För att förhindra att moduler som innehåller skadlig kod körs, importeras inte installerade moduler automatiskt efter installationen.
 
 Om det Modulnamn som anges av **namn** parametern inte finns i databasen `Install-Module` returneras ett fel.
 
-Om du vill installera flera moduler använder du parametern **Name** och anger en kommaavgränsad matris med modulnamn. Om du anger flera modulnamn kan du inte använda **MinimumVersion** , **MaximumVersion** eller **RequiredVersion**. `Find-Module` skapar **PSRepositoryItemInfo** -objekt som kan skickas till pipelinen till `Install-Module` . Pipelinen är ett annat sätt att ange flera moduler som ska installeras i ett enda kommando.
+Om du vill installera flera moduler använder du parametern **Name** och anger en kommaavgränsad matris med modulnamn. Om du anger flera modulnamn kan du inte använda **MinimumVersion**, **MaximumVersion** eller **RequiredVersion**. `Find-Module` skapar **PSRepositoryItemInfo** -objekt som kan skickas till pipelinen till `Install-Module` . Pipelinen är ett annat sätt att ange flera moduler som ska installeras i ett enda kommando.
 
 Som standard installeras moduler för omfånget för **allusers** i `$env:ProgramFiles\WindowsPowerShell\Modules` . Standard förhindrar förvirring när du installerar PowerShell-resurser för Desired State Configuration (DSC).
 

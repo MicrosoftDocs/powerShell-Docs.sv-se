@@ -1,17 +1,16 @@
 ---
 description: Gör att du kan ange vilka namn områden som används i sessionen.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/29/2020
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: ff6b43c3af1deddb5cb1b4c2e2c86a2cc2cac5d4
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: b48cd85e200f44cdf9fdf278de78e07a918386c8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93273231"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891354"
 ---
 # <a name="about-using"></a>Om att använda
 
@@ -26,7 +25,7 @@ Med `using` instruktionen kan du ange vilka namn områden som används i session
 
 `using`Instruktionen ska inte förväxlas med `using:` omfångs modifieraren för variabler. Mer information finns i [about_Remote_Variables](about_Remote_Variables.md).
 
-## <a name="syntax"></a>Syntax
+## <a name="namespace-syntax"></a>Syntax för namnrymd
 
 Så här anger du .NET-namnrum som ska matcha typer:
 
@@ -34,11 +33,32 @@ Så här anger du .NET-namnrum som ska matcha typer:
 using namespace <.NET-namespace>
 ```
 
+Genom att ange ett namn område blir det enklare att referera till typer med deras korta namn.
+
+## <a name="module-syntax"></a>Modulens syntax
+
 Läsa in klasser från en PowerShell-modul:
 
 ```
 using module <module-name>
 ```
+
+Värdet för `<module-name>` kan vara ett modulnamn, en fullständig modul eller en sökväg till en modul.
+
+När `<module-name>` är en sökväg kan sökvägen vara fullständigt kvalificerad eller relativ. En relativ sökväg matchas i förhållande till skriptet som innehåller using-instruktionen.
+
+När `<module-name>` är ett namn eller en modul-specifikation söker PowerShell i **PSModulePath** efter den angivna modulen.
+
+En modul specifikation är en hash-tabell som har följande nycklar.
+
+- `ModuleName` - **Krävs** Anger namnet på modulen.
+- `GUID` - **Valfritt** Anger modulens GUID.
+- Du **måste** också ange en av de tre nycklarna nedan. Nycklarna kan inte användas tillsammans.
+  - `ModuleVersion` -Anger en minsta godtagbar version av modulen.
+  - `RequiredVersion` -Anger en exakt, obligatorisk version av modulen.
+  - `MaximumVersion` -Anger den högsta godkända versionen av modulen.
+
+## <a name="assembly-syntax"></a>Syntax för sammansättning
 
 För preload-typer från en .NET-sammansättning:
 
@@ -46,8 +66,6 @@ För preload-typer från en .NET-sammansättning:
 using assembly <.NET-assembly-path>
 using assembly <.NET-namespace>
 ```
-
-Genom att ange ett namn område blir det enklare att referera till typer med deras korta namn.
 
 Inläsning av en sammansättnings-och inläsnings-.NET-typer från den sammansättningen till ett skript vid parse-tiden. På så sätt kan du skapa nya PowerShell-klasser som använder typer från den förinstallerade sammansättningen.
 

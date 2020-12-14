@@ -7,12 +7,12 @@ ms.date: 03/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
-ms.openlocfilehash: 8b17019932df5b2cad68a9ea382387451d1b22e1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: b30e233eb9c4f4f9191ac6470f2821536dda6dc3
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264483"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889835"
 ---
 # Find-Module
 
@@ -175,7 +175,7 @@ Version     Name                            Repository    Description
 ```
 
 `Find-Module`Cmdlet: en använder parametern **lagrings plats** för att söka i lagrings platsen, **PSGallery**.
-Parametern **includes** anger **dscresource Keyword Supports** , som är en funktion som parametern kan söka efter i lagrings platsen.
+Parametern **includes** anger **dscresource Keyword Supports**, som är en funktion som parametern kan söka efter i lagrings platsen.
 
 ### Exempel 8: hitta en modul med ett filter
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Anger om du vill inkludera alla versioner av en modul i resultaten. Du kan inte använda parametern **AllVersions** med parametrarna **MinimumVersion** , **MaximumVersion** eller **RequiredVersion** .
+Anger om du vill inkludera alla versioner av en modul i resultaten. Du kan inte använda parametern **AllVersions** med parametrarna **MinimumVersion**, **MaximumVersion** eller **RequiredVersion** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 
 ### -Tagga
 
-Anger en matris med taggar. Exempel taggar är **DesiredStateConfiguration** , **DSC** , **DSCResourceKit** eller **PSModule**.
+Anger en matris med taggar. Exempel taggar är **DesiredStateConfiguration**, **DSC**, **DSCResourceKit** eller **PSModule**.
 
 ```yaml
 Type: System.String[]
@@ -491,7 +491,12 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## ANTECKNINGAR
 
-Denna cmdlet körs på PowerShell 5,0 eller senare versioner av Windows PowerShell, på Windows 7 eller Windows 2008 R2 och senare versioner av Windows.
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## RELATERADE LÄNKAR
 

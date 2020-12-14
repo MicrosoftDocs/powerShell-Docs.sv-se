@@ -7,12 +7,12 @@ ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: 29ba3907a349257f63e127739786ab6e210c0f82
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: dee60b0beae3f39642cbc1c388ffb79e687626b8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262275"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891132"
 ---
 # Update-Module
 
@@ -290,8 +290,8 @@ Anger modulens installations omfång. De acceptabla värdena för den här param
 
 När inget **omfång** har definierats anges standardvärdet baserat på PowerShellGet-versionen.
 
-- I PowerShellGet-versioner 2.1.0 och senare är standardvärdet **CurrentUser** , vilket inte kräver höjning för installation.
-- I PowerShellGet 1. x-2.0. x-versioner är **omfattnings** parametern inte tillgänglig och standardvärdet är **allusers** , vilket kräver höjning för installation.
+- I PowerShellGet-versioner 2.1.0 och senare är standardvärdet **CurrentUser**, vilket inte kräver höjning för installation.
+- I PowerShellGet 1. x-2.0. x-versioner är **omfattnings** parametern inte tillgänglig och standardvärdet är **allusers**, vilket kräver höjning för installation.
 
 ```yaml
 Type: System.String
@@ -343,7 +343,14 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ## ANTECKNINGAR
 
 För PowerShell version 6,0 och senare är standard installations omfånget alltid **CurrentUser**.
-Module-uppdateringar för **CurrentUser** , `$home\Documents\PowerShell\Modules` , behöver inte utökade behörigheter. Uppdatering av modulen för **allusers** , `$env:ProgramFiles\PowerShell\Modules` kräver förhöjd behörighet.
+Module-uppdateringar för **CurrentUser**, `$home\Documents\PowerShell\Modules` , behöver inte utökade behörigheter. Uppdatering av modulen för **allusers**, `$env:ProgramFiles\PowerShell\Modules` kräver förhöjd behörighet.
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 `Update-Module` körs på PowerShell 3,0 eller senare versioner av PowerShell på Windows 7 eller Windows 2008 R2 och senare versioner av Windows.
 

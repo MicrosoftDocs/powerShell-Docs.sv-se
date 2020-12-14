@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.openlocfilehash: 81c58a09cb6c4e6cedcc7abfa832af7bb694b0e1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2ad1f5991920cecf0a5b494bde698510c1c55b94
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267927"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890812"
 ---
 # Update-ModuleManifest
 
@@ -61,7 +61,7 @@ $Parms = @{
 Update-ModuleManifest @Parms
 ```
 
-`$Parms` är en splat som lagrar parameter värden för **sökväg** , **författare** , **företags namn** och **Copyright**. `Update-ModuleManifest` hämtar parameter värden från `@Parms` och uppdaterar modulens manifest **TestManifest.psd1**.
+`$Parms` är en splat som lagrar parameter värden för **sökväg**, **författare**, **företags namn** och **Copyright**. `Update-ModuleManifest` hämtar parameter värden från `@Parms` och uppdaterar modulens manifest **TestManifest.psd1**.
 
 ## PARAMETRAR
 
@@ -822,5 +822,12 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ### System. Object
 
 ## ANTECKNINGAR
+
+> [!IMPORTANT]
+> Från och med april 2020 stöder PowerShell-galleriet inte längre Transport Layer Security (TLS), version 1,0 och 1,1. Om du inte använder TLS 1,2 eller senare visas ett fel meddelande när du försöker få åtkomst till PowerShell-galleriet. Använd följande kommando för att se till att du använder TLS 1,2:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Mer information finns i [meddelandet](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) i PowerShell-bloggen.
 
 ## RELATERADE LÄNKAR
