@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Lägga till och anropa kommandon
 description: Lägga till och anropa kommandon
-ms.openlocfilehash: 90c86d10dd145664722d12254054e6b831386624
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: c30cb15d473c344e40b96938c355d77c059fe2d5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94389172"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96616037"
 ---
 # <a name="adding-and-invoking-commands"></a>Lägga till och anropa kommandon
 
@@ -53,9 +53,9 @@ PowerShell.Create().AddCommand("Get-Process")
 Du kan lägga till ytterligare parametrar genom att anropa [system. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) upprepade gånger.
 
 ```csharp
-PowerShell.Create().AddCommand("Get-Process")
-                   .AddParameter("Name", "PowerShell")
-                   .AddParameter("Id", "12768")
+PowerShell.Create().AddCommand("Get-Command")
+                   .AddParameter("Name", "Get-VM")
+                   .AddParameter("Module", "Hyper-V")
                    .Invoke();
 ```
 
@@ -63,10 +63,10 @@ Du kan också lägga till en ord lista med parameter namn och värden genom att 
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
-parameters.Add("Name", "PowerShell");
+parameters.Add("Name", "Get-VM");
 
-parameters.Add("Id", "12768");
-PowerShell.Create().AddCommand("Get-Process")
+parameters.Add("Module", "Hyper-V");
+PowerShell.Create().AddCommand("Get-Command")
    .AddParameters(parameters)
       .Invoke()
 

@@ -2,15 +2,15 @@
 description: Förklarar hur du installerar, importerar och använder PowerShell-moduler.
 Locale: en-US
 ms.date: 12/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
-ms.openlocfilehash: ab4e9658ed4820c3ae84ac1cd9a55b59cc8017ab
+ms.openlocfilehash: b98c8b27b68c213ac43fbd350ecd920f813dec6b
 ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96564487"
+ms.locfileid: "96564593"
 ---
 # <a name="about-modules"></a>Om moduler
 

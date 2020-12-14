@@ -1,22 +1,22 @@
 ---
 title: Så här hanterar vi pull-begäranden
-description: Den här artikeln förklarar hur PowerShell-dokument-teamet hanterar pull-begäranden.
-ms.date: 03/05/2020
+description: Den här artikeln förklarar hur PowerShell-Docs-teamet hanterar pull-begäranden.
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 7050db6ad30963d0a75b2a083daace494d703027
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158181"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090533"
 ---
 # <a name="managing-pull-requests"></a>Hantera pull-begäranden
 
-Den här artikeln dokumenterar hur vi hanterar pull-begäranden i PowerShell-dokumentets lagrings plats. Den här artikeln är utformad för att vara ett jobb stöd för medlemmar i gruppen PowerShell-dok. Den publiceras här för att tillhandahålla process genomskinlighet för våra offentliga deltagare.
+Den här artikeln dokumenterar hur vi hanterar pull-begäranden i PowerShell-Docs-lagringsplatsen. Den här artikeln är utformad för att vara ett jobb stöd för medlemmar i PowerShell-Docss teamet. Den publiceras här för att tillhandahålla process genomskinlighet för våra offentliga deltagare.
 
 ## <a name="best-practices"></a>Bästa praxis
 
-- Den person som skickar in PR ska inte sammanfoga PR utan en peer-granskning.
+- Den person som skickar PR bör inte sammanfoga PR utan en peer-granskning.
 - Tilldela peer-granskaren när PR skickas. Med den tidiga tilldelningen kan granskaren svara snabbare med redaktionella kommentarer.
 - Använd kommentarer för att beskriva vilken typ av ändring eller typ av granskning som begärs. Se till att @mention granskaren. Om ändringen till exempel är mindre och du inte behöver en fullständig teknisk granskning förklarar du detta i en kommentar.
 
@@ -43,7 +43,7 @@ Se [redaktionell check lista](editorial-checklist.md) för en mer omfattande lis
 - Kontrol lera för hands versions åter givning
 - Kontrol lera metadata-MS. date, ta bort MS. AssetID, se till att obligatoriska fält
 - Verifiera markdown-korrigering
-  - Se stil guide för formatering av speciellt innehåll
+  - Se stil guide för regler för innehålls bestämd formatering
 - Organisera om exempel enligt följande:
   - Introduktions mening (er)
   - Kod och utdata
@@ -60,7 +60,7 @@ Se [redaktionell check lista](editorial-checklist.md) för en mer omfattande lis
 
 ## <a name="branch-merge-process"></a>Gren sammanfognings process
 
-Mellanlagringsplatsen är den enda gren som någonsin ska slås samman i real tid. Sammanfogningar från förgreningar (arbets) grenar ska vara squashed.
+`staging`Grenen är den enda gren som sammanfogas till `live` . Sammanfogningar från förgreningar (arbets) grenar ska vara squashed.
 
 | *Sammanfoga från/till*  | *version – gren* | *mellanlagringsområdet*        | *realtidsinformation*      |
 | ---------------- |:----------------:|:----------------:|:-----------:|
@@ -97,9 +97,9 @@ När en PR slås samman ändras huvud grenen i mål grenen. Alla öppna pull som
 
 ## <a name="publishing-to-live"></a>Publicera till Live
 
-Med jämna mellanrum måste ändringarna som har ackumulerats i `staging` grenen publiceras på den aktiva webbplatsen. Detta kräver att `staging` grenen slås samman i `live` grenen.
+Med jämna mellanrum måste ändringarna som har ackumulerats i `staging` grenen publiceras på den aktiva webbplatsen.
 
-- `staging`Grenen ska slås samman till `live` minst en gång per vecka.
+- `staging`Grenen slås samman till `live` varje veckodag på 3pm PST.
 - `staging`Grenen ska slås samman till `live` efter en betydande ändring.
   - Ändringar i 50 eller fler filer
   - Efter sammanslagning av en versions gren

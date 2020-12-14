@@ -1,16 +1,16 @@
 ---
-title: Så här skickar du ett problem med PowerShell-dok
+title: Så här arkiverar du ett PowerShell-Docs problem
 description: Den här artikeln förklarar hur du ger feedback om PowerShell-dokumentationen.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: a044f77d3529817ec063d4a26fc9d10cdfe873aa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078551"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090502"
 ---
-# <a name="how-to-file-a-powershell-docs-issue"></a>Så här skickar du ett problem med PowerShell-dok
+# <a name="how-to-file-a-powershell-docs-issue"></a>Så här arkiverar du ett PowerShell-Docs problem
 
 Det finns två sätt att skapa ett problem:
 
@@ -21,7 +21,8 @@ Det finns två sätt att skapa ett problem:
 
 En fullständig beskrivning av feedback-kontrollerna finns i Team bloggen för dokument som presenterar den här [funktionen][feedback].
 
-Längst ned på de flesta sidorna på `docs.microsoft.com`visas två knappar för feedback. En är en länk till produkt feedback och en är för feedback från dokumentation. Dokumentations feedback kräver ett GitHub-konto. Om du klickar på knappen autentiseras du i GitHub och sedan presenteras ett enkelt formulär där du kan ange dina synpunkter. När du skickar formuläret skapar feedback-kontrollen ett nytt GitHub-ärende och länkar det till den aktuella artikeln.
+Längst ned på de flesta sidorna på visas `docs.microsoft.com` två knappar för feedback. En är en länk till produkt feedback och en är för feedback från dokumentation. Dokumentations feedback kräver ett GitHub-konto. Om du klickar på knappen tas du in i GitHub och en förifylld Issue-mall presenteras.
+Ange din feedback och skicka formuläret.
 
 > [!NOTE]
 > Detta är inte en support kanal. Detta är ett sätt att ställa tydliga frågor om dokumentation eller rapportera fel och utelämnanden. Om du behöver teknisk support kan du läsa mer i [community-resurser](../community-support.md).

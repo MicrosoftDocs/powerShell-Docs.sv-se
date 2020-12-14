@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/08/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: 17c3ef3046ba8f0cca9a85cf41aaf683212a58e9
+ms.openlocfilehash: b0e889b95d2724dfa395b1b4a00b5c9ea878cc82
 ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913350"
+ms.locfileid: "96913193"
 ---
 # Export-Csv
 
@@ -23,17 +23,18 @@ Konverterar objekt till en serie med kommaavgränsade värde strängar (CSV) och
 ### Avgränsare (standard)
 
 ```
-Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
- [-Force] [-NoClobber] [-Encoding <string>] [-Append] [-NoTypeInformation] [-WhatIf] [-Confirm]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
- [-Encoding <string>] [-Append] [-UseCulture] [-NoTypeInformation] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
+ [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ## BESKRIVNING
@@ -125,7 +126,7 @@ Process objekt skickas ned pipelinen till `Export-Csv` cmdleten. `Export-Csv` ko
 Det här exemplet förklarar hur du inkluderar **#TYPE** rubrik information i en CSV-fil. **#TYPEs** huvudet är standardvärdet i tidigare versioner än PowerShell 6,0.
 
 ```powershell
-Get-Process | Export-Csv -Path .\Processes.csv
+Get-Process | Export-Csv -Path .\Processes.csv -IncludeTypeInformation
 Get-Content -Path .\Processes.csv
 ```
 
@@ -136,7 +137,7 @@ Get-Content -Path .\Processes.csv
 ```
 
 `Get-Process`Cmdleten **bearbetar** objekt. Process objekt skickas ned pipelinen till `Export-Csv` cmdleten. `Export-Csv` konverterar process objekt till en serie med CSV-strängar.
-Parametern **Path** anger att Processes.csv-filen sparas i den aktuella katalogen. `Get-Content`Cmdleten använder parametern **Path** för att visa filen som finns i den aktuella katalogen.
+Parametern **Path** anger att Processes.csv-filen sparas i den aktuella katalogen. **IncludeTypeInformation** innehåller **#TYPE** informations rubriken i CSV-utdata. `Get-Content`Cmdleten använder parametern **Path** för att visa filen som finns i den aktuella katalogen.
 
 ### Exempel 6: exportera och lägga till objekt i en CSV-fil
 
@@ -274,6 +275,34 @@ Ett annat uttryck skapar en **PSCustomObject** med egenskaperna **namn** och **u
 
 `Export-Csv`Parametern cmdlet **Force** används för att tvinga exporten att skriva till filen. Egenskapen **Edition** ignoreras. `Import-Csv`Cmdleten använder parametern **Path** för att visa filen som finns i den aktuella katalogen.
 
+### Exempel 10: exportera till CSV med citat runt två kolumner
+
+I det här exemplet konverteras ett **datetime** -objekt till en CSV-sträng.
+
+```powershell
+Get-Date | Export-Csv  -QuoteFields "DateTime","Date" -Path .\FTDateTime.csv
+Get-Content -Path .\FTDateTime.csv
+```
+
+```Output
+DisplayHint,"DateTime","Date",Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,Month,Second,Ticks,TimeOfDay,Year
+DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thursday,234,11,Local,569,27,8,34,637020700545699784,11:27:34.5699784,2019
+```
+
+### Exempel 11: exportera till CSV med enbart offerter vid behov
+
+I det här exemplet konverteras ett **datetime** -objekt till en CSV-sträng.
+
+```powershell
+Get-Date | Export-Csv  -UseQuotes AsNeeded -Path .\FTDateTime.csv
+Get-Content -Path .\FTDateTime.csv
+```
+
+```Output
+DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,Month,Second,Ticks,TimeOfDay,Year
+DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
+```
+
 ## PARAMETRAR
 
 ### -Lägg till
@@ -312,28 +341,35 @@ Accept wildcard characters: False
 
 ### -Encoding
 
-Anger typ av kodning för mål filen. Standardvärdet är `ASCII`.
+Anger kodningen för den exporterade CSV-filen. Standardvärdet är `utf8NoBOM`.
 
 De acceptabla värdena för den här parametern är följande:
 
-- `ASCII` Använder ASCII-teckenuppsättning (7-bitars).
-- `BigEndianUnicode` Använder UTF-16 med big-endian byte-ordningen.
-- `Default` Använder kodningen som motsvarar systemets aktiva tecken tabell (vanligt vis ANSI).
-- `OEM` Använder kodningen som motsvarar systemets aktuella OEM Code-sida.
-- `Unicode` Använder UTF-16 med en liten-endian-order.
-- `UTF7` Använder UTF-7.
-- `UTF8` Använder UTF-8.
-- `UTF32` Använder UTF-32 med en liten-endian-order.
+- `ascii`: Använder kodningen för ASCII-teckenuppsättningen (7 bitar).
+- `bigendianunicode`: Kodar i UTF-16-format med big-endian byte-ordning.
+- `bigendianutf32`: Kodar i UTF-32-format med big-endian-dataordningen.
+- `oem`: Använder standard kodning för MS-DOS-och-konsol program.
+- `unicode`: Kodar i UTF-16-format med lite-endian-dataordning.
+- `utf7`: Kodar i UTF-7-format.
+- `utf8`: Kodar i UTF-8-format.
+- `utf8BOM`: Kodar i UTF-8-format med byte ordnings tecken (BOM)
+- `utf8NoBOM`: Kodar i UTF-8-format utan byte ordnings tecken (BOM)
+- `utf32`: Kodar i UTF-32-format.
+
+Från och med PowerShell 6,2 tillåter **encoding** -parametern även numeriska ID: n för registrerade tecken tabeller (som `-Encoding 1251` ) eller sträng namn för registrerade tecken tabeller (som `-Encoding "windows-1251"` ). Mer information finns i .NET-dokumentationen för [encoding. codepage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+
+> [!NOTE]
+> **UTF-7** _ rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för parametern _ *encoding**.
 
 ```yaml
-Type: System.String
+Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, Default, OEM, Unicode, UTF7, UTF8, UTF32
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named
-Default value: ASCII
+Default value: UTF8NoBOM
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -352,6 +388,24 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncludeTypeInformation
+
+När den här parametern används, innehåller den första raden i CSV-utdata **#TYPE** följt av objekt typens fullständigt kvalificerade namn. Till exempel **#TYPE system. Diagnostics. process**.
+
+Den här parametern introducerades i PowerShell 6,0.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: ITI
+
+Required: False
+Position: Named
+Default value: #TYPE <Object>
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -379,7 +433,7 @@ Anger sökvägen till CSV-utdatafilen. Till skillnad från **sökväg** används
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: False
 Position: Named
@@ -484,6 +538,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -QuoteFields
+
+Anger namnen på de kolumner som ska vara citerade. När den här parametern används är bara de angivna kolumnerna citerade. Den här parametern lades till i PowerShell 7,0.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: QF
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseQuotes
+
+Anger när offerter används i CSV-filerna. Möjliga värden:
+
+- Aldrig – citera ingenting
+- Always quote all (standard beteende)
+- Endast fält med en avgränsning som innehåller ett avgränsnings tecken
+
+Den här parametern lades till i PowerShell 7,0.
+
+```yaml
+Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
+Parameter Sets: (All)
+Aliases: UQ
+
+Required: False
+Position: Named
+Default value: Always
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
@@ -502,15 +594,18 @@ CSV-listan skickas till den fil som anges i parametern Path.
 
 ## ANTECKNINGAR
 
-`Export-CSV`Cmdleten konverterar de objekt som du skickar till en serie med CSV-strängar och sparar dem i den angivna text filen. Du kan använda `Export-CSV` för att spara objekt i en CSV-fil och sedan använda `Import-Csv` cmdleten för att skapa objekt från CSV-filen.
+`Export-CSV`Cmdleten konverterar de objekt som du skickar till en serie med CSV-strängar och sparar dem i den angivna text filen. Du kan använda `Export-CSV -IncludeTypeInformation` för att spara objekt i en CSV-fil och sedan använda `Import-Csv` cmdleten för att skapa objekt från texten i CSV-filen.
 
-I CSV-filen representeras varje objekt av en kommaavgränsad lista med objektets egenskaps värden. Egenskaps värden konverteras till strängar med hjälp av metoden **toString ()** . Strängarna representeras av egenskaps värde namnet. ' Exportera-CSV exporterar inte objektets metoder.
+I CSV-filen representeras varje objekt av en kommaavgränsad lista med objektets egenskaps värden. Egenskaps värden konverteras till strängar med hjälp av metoden **toString ()** . Strängarna representeras av egenskaps värde namnet. `Export-CSV -IncludeTypeInformation` exporterar inte objektets metoder.
 
 CSV-strängarna matas ut enligt följande:
 
-- Den första strängen innehåller som standard den **#TYPE** informations rubriken följt av objekt typens fullständigt kvalificerade namn. Till exempel **#TYPE system. Diagnostics. process**.
-- Om **NoTypeInformation** används, innehåller den första strängen kolumn rubrikerna. Rubrikerna innehåller det första objektets egenskaps namn som en kommaavgränsad lista.
+- Om **IncludeTypeInformation** används, innehåller den första strängen **#TYPE** informations huvud följt av objekt typens fullständigt kvalificerade namn.
+  Till exempel **#TYPE system. Diagnostics. process**.
+- Om **IncludeTypeInformation** inte används, innehåller den första strängen kolumn rubrikerna. Rubrikerna innehåller det första objektets egenskaps namn som en kommaavgränsad lista.
 - De återstående strängarna innehåller kommaavgränsade listor över varje objekts egenskaps värden.
+
+Från och med PowerShell 6,0 är standard beteendet för `Export-CSV` att inte inkludera **#TYPE** information i CSV-och **NoTypeInformation** är underförstådd. **IncludeTypeInformation** kan användas för att inkludera **#TYPE** information och emulera standard beteendet för `Export-CSV` före PowerShell 6,0.
 
 När du skickar flera objekt till `Export-CSV` `Export-CSV` ordnas filen baserat på egenskaperna för det första objektet som du skickar. Om de återstående objekten inte har en av de angivna egenskaperna, är egenskap svärdet för objektet null, som representeras av två kommatecken i följd. Om de återstående objekten har ytterligare egenskaper inkluderas inte dessa egenskaps värden i filen.
 

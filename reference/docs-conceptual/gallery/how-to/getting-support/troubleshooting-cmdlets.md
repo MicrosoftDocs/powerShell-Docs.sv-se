@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: Felsöka cmdletar
 description: Den här artikeln innehåller information och anvisningar för fel sökning av fel med hjälp av PowerShell-galleriet
-ms.openlocfilehash: db9e58c185c6f3bca26ff3639af85fa2dba48909
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661068"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913326"
 ---
 # <a name="troubleshooting-cmdlets"></a>Felsöka cmdletar
 
@@ -21,12 +21,15 @@ Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
 
-### <a name="required-network-endpoints"></a>Nätverks slut punkter som krävs
+## <a name="required-network-endpoints"></a>Nätverks slut punkter som krävs
 
 Installations-och uppdaterings-cmdletarna kräver Internet åtkomst för att ansluta till de nätverks slut punkter som används av PowerShell-galleriet. Kontrol lera att nätverks åtkomst principerna tillåter att du ansluter till följande slut punkter.
 
-- oneget.org
-- go.microsoft.com
-- az818661.vo.msecnd.net
-- www.powershellgallery.com
-- devopsgallerystorage.blob.core.windows.net
+- `psg-prod-eastus.azureedge.net` -CDN-värdnamn
+- `az818661.vo.msecnd.net` -CDN-värdnamn
+- `devopsgallerystorage.blob.core.windows.net` -lagrings kontots värdnamn
+- `*.powershellgallery.com` – webbplats
+- `go.microsoft.com` – omdirigerings tjänst
+
+> [!NOTE]
+> Cmdletar som interagerar med PowerShell-galleriet kan inte utföras med oväntade fel när PowerShell-galleriet tjänsterna har avbrottit. Om du vill se PowerShell-gallerietens aktuella status går du till sidan [PowerShell-galleriet status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) på GitHub.

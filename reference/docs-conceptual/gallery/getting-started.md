@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: Kom igång med PowerShell-galleriet
 description: Den här artikeln förklarar hur du kommer igång med PowerShell-galleriet och PowerShellGet-cmdletar
-ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a5045e4ecee2eb8bc9aa373a6b8ec3a940b4de33
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661416"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913293"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Komma igång med PowerShell-galleriet
 
@@ -89,11 +89,15 @@ Om du vill ta reda på vilka skript som du har installerat från PowerShell-gall
 
 PowerShell-galleriet använder följande värdnamn.
 
-- `psg-prod-eastus.azureedge.net` – CDN-värdnamnet
-- `devopsgallerystorage.blob.core.windows.net` – lagrings kontots värdnamn
-- `*.powershellgallery.com` – webbplatsen
+- `psg-prod-eastus.azureedge.net` -CDN-värdnamn
+- `az818661.vo.msecnd.net` -CDN-värdnamn
+- `devopsgallerystorage.blob.core.windows.net` -lagrings kontots värdnamn
+- `*.powershellgallery.com` – webbplats
+- `go.microsoft.com` – omdirigerings tjänst
 
 Dessa värdnamn ska läggas till i listan över tillåtna som styr åtkomst från nätverket.
+
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 [Find-Dscresource Keyword Supports]: /powershell/module/powershellget/Find-DscResource
 [Sök-modul]: /powershell/module/powershellget/Find-Module

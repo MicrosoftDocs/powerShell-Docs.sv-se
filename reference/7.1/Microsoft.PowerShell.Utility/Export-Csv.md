@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2020
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: ad2b2a2b32fa1dfbf722ff0af25bfafaf57de84a
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f920130ec8354b61b0bb3617e061520271df0eed
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93269295"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913244"
 ---
 # Export-Csv
 
@@ -360,7 +359,7 @@ De acceptabla värdena för den här parametern är följande:
 Från och med PowerShell 6,2 tillåter **encoding** -parametern även numeriska ID: n för registrerade tecken tabeller (som `-Encoding 1251` ) eller sträng namn för registrerade tecken tabeller (som `-Encoding "windows-1251"` ). Mer information finns i .NET-dokumentationen för [encoding. codepage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 > [!NOTE]
-> **UTF-7** * rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för **kodnings** parametern.
+> **UTF-7** _ rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för parametern _ *encoding**.
 
 ```yaml
 Type: System.Text.Encoding
@@ -541,7 +540,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-Anger namnen på de kolumner som ska vara citerade. När den här parametern används är bara de angivna kolumnerna citerade.
+Anger namnen på de kolumner som ska vara citerade. När den här parametern används är bara de angivna kolumnerna citerade. Den här parametern lades till i PowerShell 7,0.
 
 ```yaml
 Type: System.String[]
@@ -562,6 +561,8 @@ Anger när offerter används i CSV-filerna. Möjliga värden:
 - Aldrig – citera ingenting
 - Always quote all (standard beteende)
 - Endast fält med en avgränsning som innehåller ett avgränsnings tecken
+
+Den här parametern lades till i PowerShell 7,0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -623,4 +624,3 @@ Du kan använda `Import-Csv` cmdleten för att återskapa objekt från CSV-strä
 [Import-Csv](Import-Csv.md)
 
 [Select-Object](Select-Object.md)
-

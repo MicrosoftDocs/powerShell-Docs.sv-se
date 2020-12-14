@@ -1,23 +1,22 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 5/15/2019
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
-ms.openlocfilehash: d3a2aae9318da7235070b68dd379081467fa611a
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 15a7d7e6488e4b3d11375649fdbc810e1aeb2b2f
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388713"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564364"
 ---
 # Get-Module
 
 ## SAMMANFATTNING
-Hämtar de moduler som har importer ATS eller som kan importeras till den aktuella sessionen.
+Lista de moduler som har importer ATS i den aktuella sessionen eller som kan importeras från PSModulePath.
 
 ## SYNTAX
 
@@ -27,7 +26,7 @@ Hämtar de moduler som har importer ATS eller som kan importeras till den aktuel
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [<CommonParameters>]
 ```
 
-### Tillgänglig
+### Tillgängligt
 
 ```
 Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-All] [-ListAvailable]
@@ -50,19 +49,18 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 
 ## BESKRIVNING
 
-Cmdlet: en `Get-Module` hämtar PowerShell-modulerna som har importer ATS, eller som kan importeras, till en PowerShell-session. Module-objektet som `Get-Module` returnerar innehåller värdefull information om modulen. Du kan också skicka modulens objekt till andra cmdletar, till exempel- `Import-Module` och- `Remove-Module` cmdlet: ar.
+`Get-Module`Cmdleten listar PowerShell-modulerna som har importer ATS, eller som kan importeras, i en PowerShell-session. Utan parametrar, `Get-Module` hämtar moduler som har importer ATS till den aktuella sessionen. Parametern **ListAvailable** används för att visa en lista över de moduler som är tillgängliga för import från Sök vägarna som anges i PSModulePath-miljövariabeln ( `$env:PSModulePath` ).
 
-Utan parametrar, `Get-Module` hämtar moduler som har importer ATS till den aktuella sessionen. Om du vill hämta alla installerade moduler anger du parametern **ListAvailable** .
+Module-objektet som `Get-Module` returnerar innehåller värdefull information om modulen. Du kan också skicka modulens objekt till andra cmdletar, till exempel- `Import-Module` och- `Remove-Module` cmdlet: ar.
 
-`Get-Module` hämtar moduler, men importerar dem inte. Från och med Windows PowerShell 3,0 importeras moduler automatiskt när du använder ett kommando i modulen, men ett `Get-Module` kommando utlöser inte en automatisk import. Du kan också importera modulerna till-sessionen med hjälp av `Import-Module` cmdleten.
+`Get-Module` visar en lista över moduler, men importerar dem inte. Från och med Windows PowerShell 3,0 importeras moduler automatiskt när du använder ett kommando i modulen, men ett `Get-Module` kommando utlöser inte en automatisk import. Du kan också importera modulerna till sessionen med hjälp av `Import-Module` cmdleten.
 
 Från och med Windows PowerShell 3,0 kan du hämta och importera moduler från fjärrsessioner till den lokala sessionen. Den här strategin använder funktionen implicit fjärr kommunikation i PowerShell och motsvarar att använda `Import-PSSession` cmdleten. När du använder kommandon i moduler som importer ATS från en annan session körs kommandona implicit i fjärrsessionen. Med den här funktionen kan du hantera fjärrdatorn från den lokala sessionen.
 
-Från och med Windows PowerShell 3,0 kan du också använda `Get-Module` och `Import-Module` för att hämta och importera common information Model-moduler (CIM), där cmdletarna definieras i CMDLET definition XML-filer (cdxlm). Med den här funktionen kan du använda cmdletar som implementeras i icke-hanterade kod sammansättningar, t. ex. sådana som skrivits i C++.
+Från och med Windows PowerShell 3,0 kan du också använda `Get-Module` och `Import-Module` för att hämta och importera common information Model-moduler (CIM). CIM-moduler definierar cmdletar i CDXLM-filer (cmdlet definition XML). Med den här funktionen kan du använda cmdletar som implementeras i icke-hanterade kod sammansättningar, t. ex. sådana som skrivits i C++.
 
-Med de här nya funktionerna `Get-Module` blir-och- `Import-Module` cmdletarna primära verktyg för att hantera heterogena företag som innehåller datorer som kör Windows-operativsystemet och datorer som kör andra operativ system.
-
-För att hantera fjärrdatorer som kör Windows-operativsystemet med PowerShell-och PowerShell-fjärrkommunikation aktive rad, skapar du en **PSSession** på fjärrdatorn och använder sedan **PSSession** -parametern för `Get-Module` för att hämta PowerShell-modulerna i **PSSession**. När du importerar modulerna och sedan använder de importerade kommandona i den aktuella sessionen, körs kommandona implicit i **PSSession** på fjärrdatorn. Du kan använda den här strategin för att hantera fjärrdatorn.
+Implicit fjärr kommunikation kan användas för att hantera fjärrdatorer som har PowerShell-fjärrkommunikation aktive rad.
+Skapa en **PSSession** på fjärrdatorn och Använd sedan **PSSession** -parametern för `Get-Module` för att hämta PowerShell-modulerna i fjärrsessionen. När du importerar en modul från fjärrsessionen körs de importerade kommandona i sessionen på fjärrdatorn.
 
 Du kan använda en liknande strategi för att hantera datorer som inte har PowerShell-fjärrkommunikation aktive rad.
 Detta inkluderar datorer som inte kör Windows-operativsystemet och datorer som har PowerShell men inte har PowerShell-fjärrkommunikation aktive rad.
@@ -165,7 +163,7 @@ Det här kommandot hämtar egenskaperna för det **PSModuleInfo** -objekt som `G
 
 Du kan använda egenskaperna för att formatera och filtrera modulens objekt. Mer information om egenskaperna finns i PSModuleInfo- [Egenskaper](/dotnet/api/system.management.automation.psmoduleinfo).
 
-Utdata innehåller de nya egenskaperna, till exempel **författare** och **företags namn** , som introducerades i Windows PowerShell 3,0.
+Utdata innehåller de nya egenskaperna, till exempel **författare** och **företags namn**, som introducerades i Windows PowerShell 3,0.
 
 ### Exempel 6: gruppera alla moduler efter namn
 
@@ -478,7 +476,7 @@ Accept wildcard characters: False
 
 ### – PSSession
 
-Hämtar modulerna i den angivna användar hanterade PowerShell-sessionen ( **PSSession** ). Ange en variabel som innehåller sessionen, ett kommando som hämtar sessionen, till exempel ett `Get-PSSession` kommando eller ett kommando som skapar sessionen, till exempel ett `New-PSSession` kommando.
+Hämtar modulerna i den angivna användar hanterade PowerShell-sessionen (**PSSession**). Ange en variabel som innehåller sessionen, ett kommando som hämtar sessionen, till exempel ett `Get-PSSession` kommando eller ett kommando som skapar sessionen, till exempel ett `New-PSSession` kommando.
 
 När sessionen är ansluten till en fjärrdator måste du ange parametern **ListAvailable** .
 
@@ -510,7 +508,7 @@ Den här parametern introducerades i Windows PowerShell 3,0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: PsSession, Available, CimSession
+Parameter Sets: Available, PsSession, CimSession
 Aliases:
 
 Required: False
@@ -539,24 +537,25 @@ När du anger parametern **ListAvailable** `Get-Module` returnerar ett **ModuleI
 
 ## ANTECKNINGAR
 
-- Från och med Windows PowerShell 3,0 paketeras kärn kommandona som ingår i PowerShell i moduler. Undantaget är **Microsoft. PowerShell. Core** , som är en snapin-modul ( **PSSnapin** ). Som standard läggs bara snapin-modulen **Microsoft. PowerShell. Core** till i sessionen.
-Moduler importeras automatiskt vid första användningen och du kan använda `Import-Module` cmdleten för att importera dem.
-- Från och med Windows PowerShell 3,0 paketeras de grundläggande kommandon som installeras med PowerShell i moduler. I Windows PowerShell 2,0 och i värd program som skapar äldre sessioner i senare versioner av PowerShell, paketeras huvud kommandona i snapin-moduler ( **PSSnapins** ). Undantaget är **Microsoft. PowerShell. Core** , som alltid är en snapin-modul. Fjärrsessioner, till exempel de som startas av `New-PSSession` cmdleten, är äldre sessioner som inkluderar grundläggande snapin-moduler.
+- Från och med Windows PowerShell 3,0 paketeras kärn kommandona som ingår i PowerShell i moduler. Undantaget är **Microsoft. PowerShell. Core**, som är en snapin-modul (**PSSnapin**). Som standard läggs bara snapin-modulen **Microsoft. PowerShell. Core** till i sessionen. Moduler importeras automatiskt vid första användningen och du kan använda `Import-Module` cmdleten för att importera dem.
+
+- I Windows PowerShell 2,0 och i värd program som skapar äldre sessioner i senare versioner av PowerShell, paketeras huvud kommandona i snapin-moduler (**PSSnapins**). Undantaget är **Microsoft. PowerShell. Core**, som alltid är en snapin-modul. Fjärrsessioner, till exempel de som startas av `New-PSSession` cmdleten, är äldre sessioner som inkluderar grundläggande snapin-moduler.
 
   Information om **CreateDefault2** -metoden som skapar nyare sessioner med Core-moduler finns i CreateDefault2- [metoden](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
-- `Get-Module` hämtar endast moduler i platser som lagras i värdet för **PSModulePath** -miljövariabeln ($env:P smodulepath). Du kan använda parametern **Path** för `Import-Module` cmdlet: en för att importera moduler på andra platser, men du kan inte använda `Get-Module` cmdleten för att hämta dem.
-- Från och med PowerShell 3,0 har nya egenskaper också lagts till i objektet som returnerar och `Get-Module` gör det lättare att lära sig om moduler, även innan de importeras. Alla egenskaper fylls i före importen. Dessa inkluderar **ExportedCommands** -, **ExportedCmdlets** -och **ExportedFunctions** -egenskaperna som visar de kommandon som modulen exporterar.
+- `Get-Module` hämtar endast moduler i platser som lagras i värdet för **PSModulePath** -miljövariabeln ($env:P smodulepath). `Import-Module`Cmdleten kan importera moduler på andra platser, men du kan inte använda `Get-Module` cmdleten för att hämta dem.
+
+- Från och med PowerShell 3,0 har nya egenskaper också lagts till i objektet som returnerar och `Get-Module` gör det lättare att lära sig om moduler, även innan de importeras. Alla egenskaper fylls i före importen. Dessa inkluderar **ExportedCommands**-, **ExportedCmdlets** -och **ExportedFunctions** -egenskaperna som visar de kommandon som modulen exporterar.
+
 - Parametern **ListAvailable** hämtar endast välformulerade moduler, det vill säga mappar som innehåller minst en fil vars bas namn är samma som namnet på mappen module. Bas namnet är namnet utan fil namns tillägget. Mappar som innehåller filer som har olika namn anses vara behållare, men inte moduler.
 
-  Om du vill hämta moduler som har implementerats som DLL-filer, men som inte är omslutna i en modul-mapp, anger du både **ListAvailable** och **alla** parametrar.
+  Om du vill hämta moduler som har implementerats som DLL-filer, men som inte är omslutna i en modul, anger du både **ListAvailable** och **alla** parametrar.
 
 - Om du vill använda funktionen CIM-sessionen måste fjärrdatorn ha WS-Management fjärr anslutning och Windows Management Instrumentation (WMI), som är Microsofts implementering av Common Information Model (CIM) standard. Datorn måste också ha WMI-providern för modul identifiering eller en alternativ WMI-provider som har samma grundläggande funktioner.
 
   Du kan använda funktionen för CIM-sessionen på datorer som inte kör Windows-operativsystemet och på Windows-datorer med PowerShell, men inte har PowerShell-fjärrkommunikation aktive rad.
 
-  Du kan också använda CIM-parametrarna för att hämta CIM-moduler från datorer där PowerShell-fjärrkommunikation är aktiverat. Detta inkluderar den lokala datorn.
-När du skapar en CIM-session på den lokala datorn använder PowerShell DCOM, i stället för WMI, för att skapa sessionen.
+  Du kan också använda CIM-parametrarna för att hämta CIM-moduler från datorer där PowerShell-fjärrkommunikation är aktiverat. Detta inkluderar den lokala datorn. När du skapar en CIM-session på den lokala datorn använder PowerShell DCOM, i stället för WMI, för att skapa sessionen.
 
 ## RELATERADE LÄNKAR
 

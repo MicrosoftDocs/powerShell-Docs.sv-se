@@ -3,12 +3,12 @@ ms.date: 07/06/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: Skydda MOF-filen
 description: Den här artikeln beskriver hur du ser till att målnoden har krypterat MOF-filen.
-ms.openlocfilehash: b8958c8cc9e2035aede87a855905b1a34707117d
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: ca94a901468626e5644880574457d899a012d311
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390877"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090355"
 ---
 # <a name="securing-the-mof-file"></a>Skydda MOF-filen
 
@@ -46,10 +46,10 @@ Kontrol lera att du har följande för att kunna kryptera de autentiseringsuppgi
 
 För att anta kryptering av autentiseringsuppgifter måste ett offentligt nyckel certifikat vara tillgängligt på den _målnod_ som är **betrodd** av den dator som används för att redigera DSC-konfigurationen. Det här certifikatet för den offentliga nyckeln har särskilda krav för att det ska kunna användas för kryptering av DSC-autentiseringsuppgifter:
 
-1. **Nyckel användning** :
+1. **Nyckel användning**:
    - Måste innehålla: ' KeyEncipherment ' och ' DataEncipherment '.
    - Får _inte_ innehålla: digital signatur.
-1. **Förbättrad nyckel användning** :
+1. **Förbättrad nyckel användning**:
    - Måste innehålla: dokument kryptering (1.3.6.1.4.1.311.80.1).
    - Får _inte_ innehålla: klientautentisering (1.3.6.1.5.5.7.3.2) och serverautentisering (1.3.6.1.5.5.7.3.1).
 1. Den privata nyckeln för certifikatet finns på * Target Node_.
@@ -93,7 +93,7 @@ När du har exporterat `DscPublicKey.cer` måste du kopiera den till **redigerin
 > Målnod: Windows Server 2012 R2/Windows 8,1 och tidigare
 
 > [!WARNING]
-> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. En alternativ metod är att ladda ned [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) -skriptet från Microsoft Script Center och använda det för att skapa certifikatet i stället:
+> Eftersom `New-SelfSignedCertificate` cmdleten på Windows-operativsystem före Windows 10 och Windows Server 2016 inte stöder **typ** parametern, krävs en alternativ metod för att skapa det här certifikatet på dessa operativ system. I det här fallet kan du använda `makecert.exe` eller `certutil.exe` för att skapa certifikatet. I det här exemplet används [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) -skriptet från Microsoft Script Center som ett annat sätt att skapa certifikatet. En uppdaterad version av det här skriptet finns i [PSPKI](https://www.powershellgallery.com/packages/PSPKI/) -modulen i PowerShell-galleriet.
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -130,11 +130,11 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>Skapa certifikatet på noden redigering
 
-Alternativt kan du skapa krypterings certifikatet på **noden redigering** , som exporteras med den **privata nyckeln** som en PFX-fil och sedan importeras på **målnoden**. Det här är den aktuella metoden för att implementera kryptering av DSC-autentiseringsuppgifter på _Nano Server_. Även om PFX är skyddat med ett lösen ord bör det hållas säkert under överföringen. Följande exempel:
+Alternativt kan du skapa krypterings certifikatet på **noden redigering**, som exporteras med den **privata nyckeln** som en PFX-fil och sedan importeras på **målnoden**. Det här är den aktuella metoden för att implementera kryptering av DSC-autentiseringsuppgifter på _Nano Server_. Även om PFX är skyddat med ett lösen ord bör det hållas säkert under överföringen. Följande exempel:
 
 1. skapar ett certifikat på **noden redigering**.
 1. exporterar certifikatet inklusive den privata nyckeln på **noden redigering**.
-1. tar bort den privata nyckeln från **redigerings noden** , men behåller certifikatet för den offentliga nyckeln i **My** Store.
+1. tar bort den privata nyckeln från **redigerings noden**, men behåller certifikatet för den offentliga nyckeln i **My** Store.
 1. importerar det privata nyckel certifikatet till certifikat arkivet My (personal) på **målnoden**.
    - den måste läggas till i rot arkivet så att den är betrodd av **målnoden**.
 

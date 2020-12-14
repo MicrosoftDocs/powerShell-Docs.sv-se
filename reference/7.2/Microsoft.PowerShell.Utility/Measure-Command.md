@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/09/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7&WT.mc_id=ps-gethelp
+ms.date: 01/24/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
-ms.openlocfilehash: a7aed986ccd94472fe2dc89a43cc6b4d054494ca
+ms.openlocfilehash: 0c2346dc7177e091c0921cd4775422938305e2be
 ms.sourcegitcommit: 165d10405d9db3a68c417a239d3181378fd02b9b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935926"
+ms.locfileid: "96935950"
 ---
 # Measure-Command
 
@@ -215,3 +214,4 @@ Du kan skicka vidare ett objekt till `Measure-Command` .
 [Invoke-kommando](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Spåra-kommando](Trace-Command.md)
+

@@ -3,15 +3,15 @@ external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
-ms.openlocfilehash: 218a4cb447c85a7362efebe9b50a917703cccc35
+ms.openlocfilehash: 1b8164be05f011e13945323a6288426bd2d41183
 ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96564453"
+ms.locfileid: "96564495"
 ---
 # Import-Module
 
@@ -706,7 +706,7 @@ Anger modulens fullständigt kvalificerade namn som en hash-tabell. Värdet kan 
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
-Parameter Sets: FullyQualifiedNameAndPSSession, FullyQualifiedName, FullyQualifiedNameAndWinCompat
+Parameter Sets: FullyQualifiedName, FullyQualifiedNameAndPSSession, FullyQualifiedNameAndWinCompat
 Aliases:
 
 Required: True
@@ -1006,7 +1006,7 @@ Mer information finns i [about_PowerShell_Editions](About/about_PowerShell_Editi
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Name, PSSession, CimSession, FullyQualifiedNameAndPSSession, FullyQualifiedName, Assembly, ModuleInfo
+Parameter Sets: Name, PSSession, CimSession, FullyQualifiedName, FullyQualifiedNameAndPSSession, Assembly, ModuleInfo
 Aliases:
 
 Required: False

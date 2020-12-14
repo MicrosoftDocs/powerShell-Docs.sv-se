@@ -3,15 +3,15 @@ external help file: Microsoft.PowerShell.ThreadJob.dll-Help.xml
 Locale: en-US
 Module Name: ThreadJob
 ms.date: 12/05/2020
-online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
-ms.openlocfilehash: bced2b87c3843833414ebfd189d003e83af9718f
+ms.openlocfilehash: d08f883b232abadeacb445e5ba542b4b1fae023b
 ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96777755"
+ms.locfileid: "96777710"
 ---
 # Start-ThreadJob
 

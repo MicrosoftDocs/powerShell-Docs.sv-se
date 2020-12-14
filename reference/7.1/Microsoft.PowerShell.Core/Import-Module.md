@@ -1,18 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
-ms.openlocfilehash: 70453f50e727f89012a3e2077557bff7a81ff000
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d041d63c7af185e62a902ebaa362809cddfb4659
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267800"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564586"
 ---
 # Import-Module
 
@@ -114,13 +113,13 @@ Du kan inaktivera automatisk modul import med hjälp av `$PSModuleAutoloadingPre
 
 En modul är ett paket som innehåller medlemmar som kan användas i PowerShell. Medlemmar inkluderar cmdlets, providrar, skript, funktioner, variabler och andra verktyg och filer. När en modul har importer ATS kan du använda-modulens medlemmar i sessionen. Mer information om moduler finns i [about_Modules](About/about_Modules.md).
 
-Som standard `Import-Module` importerar alla medlemmar som modulen exporterar, men du kan använda **alias** , **funktion** , **cmdlet** och **variabel** parametrar för att begränsa vilka medlemmar som importeras. Parametern **NoClobber** förhindrar `Import-Module` import av medlemmar som har samma namn som medlemmar i den aktuella sessionen.
+Som standard `Import-Module` importerar alla medlemmar som modulen exporterar, men du kan använda **alias**, **funktion**, **cmdlet** och **variabel** parametrar för att begränsa vilka medlemmar som importeras. Parametern **NoClobber** förhindrar `Import-Module` import av medlemmar som har samma namn som medlemmar i den aktuella sessionen.
 
 `Import-Module` importerar en modul endast till den aktuella sessionen. Om du vill importera modulen till varje ny session lägger du till ett `Import-Module` kommando i din PowerShell-profil. Mer information om profiler finns [about_Profiles](About/about_Profiles.md).
 
-Du kan hantera fjärranslutna Windows-datorer som har PowerShell-fjärrkommunikation aktive rad genom att skapa en **PSSession** på fjärrdatorn. Använd sedan **PSSession** -parametern för `Import-Module` för att importera de moduler som är installerade på fjärrdatorn. Nu kan du använda de importerade kommandona i den aktuella sessionen. Kommandona körs implicit på fjärrdatorn.
+Du kan hantera fjärranslutna Windows-datorer som har PowerShell-fjärrkommunikation aktive rad genom att skapa en **PSSession** på fjärrdatorn. Använd sedan **PSSession** -parametern för `Import-Module` för att importera de moduler som är installerade på fjärrdatorn. När du använder de importerade kommandona i den aktuella sessionen körs kommandona implicit på fjärrdatorn.
 
-Från och med Windows PowerShell 3,0 kan du använda `Import-Module` för att importera common information Model (CIM)-moduler, där cmdletarna definieras i cmdlet definition XML-filer (cdxlm). Med den här funktionen kan du använda cmdletar som implementeras i icke-hanterade kod sammansättningar, t. ex. sådana som skrivits i C++.
+Från och med Windows PowerShell 3,0 kan du använda `Import-Module` för att importera common information Model-moduler (CIM). CIM-moduler definierar cmdletar i CDXLM-filer (cmdlet definition XML). Med den här funktionen kan du använda cmdletar som implementeras i icke-hanterade kod sammansättningar, t. ex. sådana som skrivits i C++.
 
 För fjärrdatorer som inte har PowerShell-fjärrkommunikation aktive rad, inklusive datorer som inte kör Windows operativ system, kan du använda **CIMSession** -parametern för `Import-Module` för att importera CIM-moduler från fjärrdatorn. De importerade kommandona körs implicit på fjärrdatorn. En **CIMSession** är en anslutning till Windows Management INSTRUMENTATION (WMI) på fjärrdatorn.
 
@@ -172,11 +171,11 @@ VERBOSE: Exporting function 'Get-SpecDetails'.
 ```
 
 Med hjälp av parametern **verbose** `Import-Module` kan du rapportera förloppet när modulen läses in.
-Utan **verbose** -, **Passthru** -eller **AsCustomObject** -parametern `Import-Module` genererar inga utdata när en modul importeras.
+Utan **verbose**-, **Passthru**-eller **AsCustomObject** -parametern `Import-Module` genererar inga utdata när en modul importeras.
 
 ### Exempel 5: begränsa modul medlemmar som importeras till en session
 
-I det här exemplet visas hur du begränsar vilka modulblad som importeras till sessionen och kommandots effekter i sessionen. **Funktions** parametern begränsar de medlemmar som importeras från modulen. Du kan också använda parametrarna **alias** , **variabel** och **cmdlet** för att begränsa andra medlemmar som en modul importerar.
+I det här exemplet visas hur du begränsar vilka modulblad som importeras till sessionen och kommandots effekter i sessionen. **Funktions** parametern begränsar de medlemmar som importeras från modulen. Du kan också använda parametrarna **alias**, **variabel** och **cmdlet** för att begränsa andra medlemmar som en modul importerar.
 
 `Get-Module`Cmdlet: en hämtar det objekt som representerar **PSDiagnostics** -modulen. Egenskapen **ExportedCmdlets** visar alla cmdletar som modulen exporterar, även om de inte har importer ATS.
 
@@ -250,7 +249,7 @@ Function        Stop-xTrace                            6.1.0.0    PSDiagnostics
 
 ### Exempel 7: Hämta och använda ett anpassat objekt
 
-Det här exemplet visar hur du hämtar och använder det anpassade objektet som returnerades av **import-module**.
+Det här exemplet visar hur du hämtar och använder det anpassade objektet som returnerades av `Import-Module` .
 
 Anpassade objekt innehåller syntetiska medlemmar som representerar var och en av de importerade modulerna medlemmar. Till exempel konverteras cmdletarna och funktionerna i en modul till skript metoder för det anpassade objektet.
 
@@ -292,11 +291,11 @@ Show-Calendar ScriptMethod System.Object Show-Calendar();
 $a."Show-Calendar"()
 ```
 
-Skript modulen **show-Calendar** importeras med parametern **AsCustomObject** för att begära ett anpassat objekt och parametern **Passthru** för att returnera objektet. Det resulterande anpassade objektet sparas i `$a` variabeln.
+`Show-Calendar`Modulen skript importeras med parametern **AsCustomObject** för att begära ett anpassat objekt och parametern **Passthru** för att returnera objektet. Det resulterande anpassade objektet sparas i `$a` variabeln.
 
-`$a`Variabeln är skickas till `Get-Member` cmdleten för att visa egenskaper och metoder för det sparade objektet. Utdata visar skript metoden **show-Calendar** .
+`$a`Variabeln är skickas till `Get-Member` cmdleten för att visa egenskaper och metoder för det sparade objektet. Utdata visar en `Show-Calendar` skript metod.
 
-Om du vill anropa skript metoden **show-Calendar** måste metod namnet omges av citat tecken, eftersom namnet innehåller ett bindestreck.
+För att anropa `Show-Calendar` skript metoden måste metod namnet omges av citat tecken, eftersom namnet innehåller ett bindestreck.
 
 ### Exempel 8: importera en modul igen till samma session
 
@@ -455,7 +454,7 @@ Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP-PUBLI
 Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TCP
 ```
 
-`New-PSSession` skapar en fjärrsession ( **PSSession** ) till Server01-datorn. **PSSession** sparas i `$s` variabeln.
+`New-PSSession` skapar en fjärrsession (**PSSession**) till Server01-datorn. **PSSession** sparas i `$s` variabeln.
 
 `Get-Module`Om du kör med parametern **PSSession** ser du att **netsecurity** -modulen är installerad och tillgänglig på fjärrdatorn. Det här kommandot motsvarar att använda `Invoke-Command` cmdleten för att köra `Get-Module` kommandot i fjärrsessionen. Exempel: (`Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity`
 
@@ -821,6 +820,9 @@ Om du utelämnar en sökväg `Import-Module` söker du efter modulen i Sök väg
 
 Ange bara modulnamnet när det är möjligt. När du anger ett fil namn importeras bara de medlemmar som implementeras i den filen. Om modulen innehåller andra filer importeras de inte, och du kanske saknar viktiga medlemmar i modulen.
 
+> [!NOTE]
+> Även om det är möjligt att importera en skript `.ps1` fil () som en modul, är skriptfilerna vanligt vis inte strukturerat som script modules File ( `.psm1` )-fil. Att importera en skript fil garanterar inte att den kan användas som en modul. Mer information finns i [about_Modules](about/about_Modules.md).
+
 ```yaml
 Type: System.String[]
 Parameter Sets: Name, PSSession, CimSession, WinCompat
@@ -893,7 +895,7 @@ Accept wildcard characters: False
 
 ### – PSSession
 
-Anger en PowerShell- **PSSession** (User-Managed session) från vilken denna cmdlet importerar moduler till den aktuella sessionen. Ange en variabel som innehåller ett **PSSession** eller ett kommando som hämtar en **PSSession** , till exempel ett `Get-PSSession` kommando.
+Anger en PowerShell-**PSSession**(User-Managed session) från vilken denna cmdlet importerar moduler till den aktuella sessionen. Ange en variabel som innehåller ett **PSSession** eller ett kommando som hämtar en **PSSession**, till exempel ett `Get-PSSession` kommando.
 
 När du importerar en modul från en annan session till den aktuella sessionen kan du använda cmdletar från modulen i den aktuella sessionen, precis som du skulle använda cmdlets från en lokal modul. Kommandon som använder fjärrcmdlets körs i fjärrsessionen, men fjärrinformationen hanteras i bakgrunden av PowerShell.
 
@@ -948,11 +950,11 @@ De acceptabla värdena för den här parametern är:
 - **Global**. Tillgängligt för alla kommandon i sessionen. Motsvarar den **globala** parametern.
 - **Lokal**. Endast tillgängligt i det aktuella omfånget.
 
-Som standard, när `Import-Module` cmdlet anropas från kommando tolken, skript filen eller script block, importeras alla kommandon till det globala sessionstillståndet. Du kan använda parametern **-scope** med värdet **lokalt** för att importera modulens innehåll till skriptet eller script block-omfånget.
+Som standard, när `Import-Module` cmdlet anropas från kommando tolken, skript filen eller script block, importeras alla kommandon till det globala sessionstillståndet. Du kan använda- `-Scope Local` parametern för att importera modul innehåll till skriptet eller script block-omfånget.
 
 Vid anrop från en annan modul `Import-Module` importerar cmdlet kommandon i en modul, inklusive kommandon från kapslade moduler, till anroparens sessionstillstånd. Ange `-Scope Global` eller `-Global` anger att denna cmdlet importerar moduler till det globala sessionstillståndet så att de är tillgängliga för alla kommandon i sessionen.
 
-Den **globala** parametern motsvarar **omfattnings** parametern med värdet global.
+Den **globala** parametern motsvarar **omfattnings** parametern med värdet **Global**.
 
 Den här parametern introducerades i Windows PowerShell 3,0.
 
@@ -1056,19 +1058,17 @@ Du kan skicka vidare ett modulnamn, module-objekt eller Assembly-objekt till den
 
 - Använd cmdleten för att uppdatera formaterings data för kommandon som har importer ATS från en modul `Update-FormatData` . `Update-FormatData` uppdaterar också formaterings data för kommandon i sessionen som har importer ATS från moduler. Om format filen för en modul ändras kan du köra ett `Update-FormatData` kommando för att uppdatera formateringen för importerade kommandon. Du behöver inte importera modulen igen.
 
-- Från och med Windows PowerShell 3,0 paketeras de grundläggande kommandon som installeras med PowerShell i moduler. I Windows PowerShell 2,0 och i värd program som skapar äldre sessioner i senare versioner av PowerShell, paketeras huvud kommandona i snapin-moduler ( **PSSnapins** ). Undantaget är **Microsoft. PowerShell. Core** , som alltid är en snapin-modul. Fjärrsessioner, till exempel de som startas av `New-PSSession` cmdleten, är äldre sessioner som inkluderar grundläggande snapin-moduler.
+- Från och med Windows PowerShell 3,0 paketeras de grundläggande kommandon som installeras med PowerShell i moduler. I Windows PowerShell 2,0 och i värd program som skapar äldre sessioner i senare versioner av PowerShell, paketeras huvud kommandona i snapin-moduler (**PSSnapins**). Undantaget är **Microsoft. PowerShell. Core**, som alltid är en snapin-modul. Fjärrsessioner, till exempel de som startas av `New-PSSession` cmdleten, är äldre sessioner som inkluderar grundläggande snapin-moduler.
 
   Information om **CreateDefault2** -metoden som skapar nyare sessioner med Core-moduler finns i [CreateDefault2-metoden](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
-- `Import-Module` Det går inte att importera PowerShell Core-moduler från en annan session. PowerShell Core-modulerna har namn som börjar med `Microsoft.PowerShell` .
+- I Windows PowerShell 2,0 fylldes några av egenskapsvärdena för objektet modul, till exempel egenskapsvärdena **ExportedCmdlets** och **NestedModules** , inte förrän modulen importerades.
 
-- I Windows PowerShell 2,0 fylldes några av egenskapsvärdena för objektet modul, till exempel egenskapsvärdena **ExportedCmdlets** och **NestedModules** , inte förrän modulen importerades och var inte tillgänglig på det modul-objekt som parametern **Passthru** returnerar. I Windows PowerShell 3,0 fylls alla egenskaps värden i modulen.
-
-- Om du försöker importera en modul som innehåller sammansättningar med blandat läge som inte är kompatibla med Windows PowerShell 3,0 `Import-Module` returnerar ett fel meddelande som liknar följande.
+- Om du försöker importera en modul som innehåller sammansättningar med blandat läge som inte är kompatibla med Windows PowerShell 3.0 +, `Import-Module` returnerar ett fel meddelande som liknar följande.
 
   > Import-Module: blandad läges sammansättning har skapats mot version "v 2.0.50727" av körningen och kan inte läsas in i 4,0-körningsmiljön utan ytterligare konfigurations information.
 
-  Det här felet uppstår när en modul som är avsedd för Windows PowerShell 2,0 innehåller minst en sammansättning med blandade moduler, det vill säga en sammansättning som innehåller både hanterad och icke-hanterad kod, till exempel C++ och C#.
+  Felet uppstår när en modul som är avsedd för Windows PowerShell 2,0 innehåller minst en sammansättning med blandat moduler. En sammansättning med blandade moduler som innehåller både hanterad och icke-hanterad kod, till exempel C++ och C#.
 
   Om du vill importera en modul som innehåller sammansättningar med blandat läge startar du Windows PowerShell 2,0 med hjälp av följande kommando och försöker sedan `Import-Module` igen.
 
@@ -1087,9 +1087,11 @@ Du kan skicka vidare ett modulnamn, module-objekt eller Assembly-objekt till den
   > [!NOTE]
   > `Get-Module` visar alla moduler som lästs in i den aktuella sessionen. Detta inkluderar moduler som lästs in lokalt i ett underordnat omfång. Använd `Get-Command -Module modulename` för att se vilka medlemmar som läses in i det aktuella omfånget.
 
-  Om modulen innehåller klass-och uppräknings definitioner, använder du `using module` i början av skriptet. Detta importerar skripten, inklusive klass-och uppräknings definitioner. Mer information finns i [about_Using](About/about_Using.md).
+  `Import-Module` läser inte in definitioner av klass och Enum i modulen. Använd `using module` instruktionen i början av skriptet. Detta importerar modulen, inklusive klass-och uppräknings definitioner. Mer information finns i [about_Using](About/about_Using.md).
 
 ## RELATERADE LÄNKAR
+
+[about_Modules](about/about_Modules.md)
 
 [Exportera – ModuleMember](Export-ModuleMember.md)
 
@@ -1100,4 +1102,3 @@ Du kan skicka vidare ett modulnamn, module-objekt eller Assembly-objekt till den
 [Ta bort modul](Remove-Module.md)
 
 [about_PowerShell_Editions](About/about_PowerShell_Editions.md)
-

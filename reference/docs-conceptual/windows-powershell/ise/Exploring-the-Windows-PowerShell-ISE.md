@@ -2,14 +2,14 @@
 ms.date: 01/02/2020
 title: Utforska Windows PowerShell ISE
 description: Den här artikeln är en översikt över funktionerna i Windows PowerShell ISE
-ms.topic: landing-page
+ms.topic: conceptual
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 91faedfcda70228807cdab6690912e7ad0944303
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 91161763c817972a62b4da1558a7ca119d8c8616
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391263"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090454"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Utforska Windows PowerShell ISE
 
@@ -17,7 +17,7 @@ Du kan använda Windows PowerShell ISE (Integrated Scripting Environment) för a
 
 ## <a name="menu-bar"></a>Menyrad
 
-Meny raden innehåller **filen** , **Redigera** , **Visa** , **verktyg** , **Felsök** , **tillägg** och **Hjälp** menyer. Med knapparna på menyerna kan du utföra uppgifter som är relaterade till att skriva och köra skript och köra kommandon i Windows PowerShell ISE. Dessutom kan ett [tilläggs verktyg](object-model/The-ISEAddOnTool-Object.md) placeras på Meny raden genom att köra skript som använder- [hierarkin för objekt modellen ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
+Meny raden innehåller **filen**, **Redigera**, **Visa**, **verktyg**, **Felsök**, **tillägg** och **Hjälp** menyer. Med knapparna på menyerna kan du utföra uppgifter som är relaterade till att skriva och köra skript och köra kommandon i Windows PowerShell ISE. Dessutom kan ett [tilläggs verktyg](object-model/The-ISEAddOnTool-Object.md) placeras på Meny raden genom att köra skript som använder- [hierarkin för objekt modellen ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 ## <a name="windows-powershell-tabs"></a>Windows PowerShell-flikar
 

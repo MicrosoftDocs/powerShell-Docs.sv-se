@@ -1,16 +1,16 @@
 ---
-title: Funktioner
+title: Functions (Funktioner)
 description: Med PowerShell-funktioner kan du skapa verktyg som kan återanvändas i skript.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
-ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
+ms.openlocfilehash: 18566263f29b97834d78cb5572fa73b58c3a26bb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94589146"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96616020"
 ---
 # <a name="chapter-9---functions"></a>Kapitel 9 – funktioner
 
@@ -231,7 +231,7 @@ Remove-Module -Name <ModuleName>
 
 `Remove-Module`Cmdleten tar bort moduler från minnet i den aktuella PowerShell-sessionen, men den tas inte bort från systemet eller från disken.
 
-## <a name="parameters"></a>Parametrar
+## <a name="parameters"></a>Parameters (Parametrar)
 
 Tilldela inte värden statiskt! Använd parametrar och variabler. När det gäller att namnge parametrarna använder du samma namn som standard-cmdletarna för dina parameter namn när det är möjligt.
 
@@ -247,7 +247,7 @@ function Test-MrParameter {
 }
 ```
 
-Varför använde jag **computername** och inte **dator** , **Server namn** eller **värd** för mitt parameter namn? Det beror på att jag ville ha funktionen standard som standard-cmdletar.
+Varför använde jag **computername** och inte **dator**, **Server namn** eller **värd** för mitt parameter namn? Det beror på att jag ville ha funktionen standard som standard-cmdletar.
 
 Jag skapar en funktion för att fråga alla kommandon i ett system och returnera antalet som har vissa parameter namn.
 
@@ -268,7 +268,7 @@ function Get-MrParameterCount {
 }
 ```
 
-Som du ser i resultaten som visas nedan, kan du 39 kommandon som har en **computername** -parameter. Det finns inga cmdletar som har parametrar som **dator** , **servername** , **Host** eller **Machine**.
+Som du ser i resultaten som visas nedan, kan du 39 kommandon som har en **computername** -parameter. Det finns inga cmdletar som har parametrar som **dator**, **servername**, **Host** eller **Machine**.
 
 ```powershell
 Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
@@ -285,6 +285,8 @@ Machine                     0
 ```
 
 Jag rekommenderar också att du använder samma Skift läge för parameter namn som standard-cmdletar. Använd `ComputerName` , inte `computername` . Detta gör att funktionerna ser ut och fungerar som standard-cmdletar. Personer som redan är bekanta med PowerShell känner sig till höger hemma.
+
+Med `param` instruktionen kan du definiera en eller flera parametrar. Parameter definitionerna avgränsas med kommatecken ( `,` ). Mer information finns i [about_Functions_Advanced_Parameters][].
 
 ## <a name="advanced-functions"></a>Avancerade funktioner
 

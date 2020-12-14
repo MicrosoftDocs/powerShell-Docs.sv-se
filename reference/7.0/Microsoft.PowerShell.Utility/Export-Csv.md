@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: cb58276c8582f9cd1f88a114baae2ce5d0039f45
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bb2d077b3584d4501db00a927b83034d37dceaec
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262899"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913367"
 ---
 # Export-Csv
 
@@ -537,7 +536,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-Anger namnen på de kolumner som ska vara citerade. När den här parametern används är bara de angivna kolumnerna citerade.
+Anger namnen på de kolumner som ska vara citerade. När den här parametern används är bara de angivna kolumnerna citerade. Den här parametern lades till i PowerShell 7,0.
 
 ```yaml
 Type: System.String[]
@@ -558,6 +557,8 @@ Anger när offerter används i CSV-filerna. Möjliga värden:
 - Aldrig – citera ingenting
 - Always quote all (standard beteende)
 - Endast fält med en avgränsning som innehåller ett avgränsnings tecken
+
+Den här parametern lades till i PowerShell 7,0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind

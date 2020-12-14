@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: f3230c247296d5fd907d580e719cbbbc560183a9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c1cf126e41a5e918afffbc41d30f957e650efdf5
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265418"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564511"
 ---
 # Set-Clipboard
 
@@ -59,10 +58,18 @@ Set-Clipboard -Value "This is a test string"
 
 ### Exempel 2: kopiera innehållet i en katalog till Urklipp
 
-Det här kommandot kopierar innehållet i den angivna mappen till Urklipp.
+I det här exemplet kopieras innehållet i den angivna mappen till Urklipp.
 
 ```powershell
 Set-Clipboard -Path "C:\Staging\"
+```
+
+### Exempel 3: kopiera innehållet i en fil till Urklipp
+
+Det här exemplet rör innehållet i en fil till Urklipp. I det här exemplet hämtar vi en offentlig SSH-nyckel så att den kan klistras in i ett annat program, t. ex. GitHub.
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETRAR

@@ -3,12 +3,12 @@ title: Allt du ville veta om ShouldProcess
 description: ShouldProcess är en viktig funktion som ofta är påslagen. Parametrarna WhatIf och Confirm gör det enkelt att lägga till dina funktioner.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.openlocfilehash: 4f11ad84f5c89423fe56cfe438ed3cb1587ce59e
+ms.sourcegitcommit: be1df0bf757d734975a9aa021727608a396059ee
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86469743"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96616054"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>Allt du ville veta om ShouldProcess
 
@@ -128,7 +128,7 @@ Det finns viss risk för att lita på att allt du anropar ärver `-WhatIf` värd
 function Test-ShouldProcess {
     [CmdletBinding(SupportsShouldProcess)]
     param()
-    Remove-Item .\myfile1.txt -WhatIf:$WhatIf
+    Remove-Item .\myfile1.txt -WhatIf:$WhatIfPreference
 }
 ```
 
@@ -228,7 +228,7 @@ Jag brukar använda den med två parametrar.
 
 ### <a name="shouldprocessreason"></a>ShouldProcessReason
 
-Vi har en fjärde överlagring som är mer avancerad än de andra. Det gör att du kan få orsaken till att du `ShouldProcess` har körts. Jag lägger bara till detta för fullständighet eftersom vi bara kan kontrol lera om `$WhatIf` är `$true` i stället.
+Vi har en fjärde överlagring som är mer avancerad än de andra. Det gör att du kan få orsaken till att du `ShouldProcess` har körts. Jag lägger bara till detta för fullständighet eftersom vi bara kan kontrol lera om `$WhatIfPreference` är `$true` i stället.
 
 ```powershell
 $reason = ''
@@ -428,7 +428,7 @@ Om du återkallar från `ConfirmImpact` avsnittet måste du faktiskt anropa det 
 Test-ShouldProcess -Confirm:$false
 ```
 
-Alla inser att de inte behöver göra det och `-Confirm:$false` utelämna dem inte `ShouldContinue` .
+Alla inser att de inte behöver göra det och `-Force` utelämna dem inte `ShouldContinue` .
 Vi bör därför implementera `-Force` för Sanity av våra användare. Ta en titt på det här fullständiga exemplet här:
 
 ```powershell
@@ -441,7 +441,7 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
-    if ($Force -and -not $Confirm){
+    if ($Force){
         $ConfirmPreference = 'None'
     }
 
@@ -451,7 +451,7 @@ function Test-ShouldProcess {
 }
 ```
 
-Vi lägger till vår egna `-Force` växel som en parameter och använder den `$Confirm` automatiska parametern som är tillgänglig när `SupportsShouldProcess` du lägger till den i `CmdletBinding` .
+Vi lägger till vår egna `-Force` växel som en parameter. `-Confirm`Parametern läggs automatiskt till när du använder `SupportsShouldProcess` i `CmdletBinding` .
 
 ```powershell
 [CmdletBinding(
@@ -466,15 +466,15 @@ param(
 Fokusera på `-Force` logiken här:
 
 ```powershell
-if ($Force -and -not $Confirm){
+if ($Force){
     $ConfirmPreference = 'None'
 }
 ```
 
-Om användaren anger `-Force` vill vi ignorera bekräftelse uppmaningen om de inte också anges `-Confirm` . Detta gör att en användare kan tvinga fram en ändring men fortfarande bekräfta ändringen. Sedan ställer vi in `$ConfirmPreference` i det lokala omfånget där vi ringer till `ShouldProcess` identifierings funktionen.
+Om användaren anger `-Force` vill vi ignorera bekräftelse uppmaningen om de inte också anges `-Confirm` . Detta gör att en användare kan tvinga fram en ändring men fortfarande bekräfta ändringen. Sedan anger vi `$ConfirmPreference` i det lokala omfånget. Nu `-Force` ställer parametern `$ConfirmPreference` till none in på none, så att du inaktiverar frågan om bekräftelse.
 
 ```powershell
-if ($PSCmdlet.ShouldProcess('TARGET')){
+if ($Force -or $PSCmdlet.ShouldProcess('TARGET')){
         Write-Output "Some Action"
     }
 ```

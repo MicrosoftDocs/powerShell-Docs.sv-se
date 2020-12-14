@@ -2,15 +2,15 @@
 description: Beskriver de operatorer som jämför värden i PowerShell.
 Locale: en-US
 ms.date: 12/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: ea48d5928f71983f6d035f0e5e6074ce36754d80
+ms.openlocfilehash: 29c2e246efcfa4bfccd9c09bba51baa1d5269d10
 ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090519"
+ms.locfileid: "97090338"
 ---
 # <a name="about-comparison-operators"></a>Om jämförelse operatorer
 
@@ -566,7 +566,7 @@ Det går att referera till infångnings grupper med hjälp av **nummer** eller *
 > $5.72
 > ```
 
-Mer information finns i [about_Regular_Expressions](about_Regular_Expressions.md) och [ersättningar i reguljära uttryck](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+Läs mer i [about_Regular_Expressions](about_Regular_Expressions.md) och [ersättningar i reguljära uttryck](/dotnet/standard/base-types/substitutions-in-regular-expressions)
 
 ### <a name="substituting-in-a-collection"></a>Ersätta i en samling
 

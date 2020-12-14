@@ -1,17 +1,16 @@
 ---
 description: Förklarar hur du installerar, importerar och använder PowerShell-moduler.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/15/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
-ms.openlocfilehash: 8e7f91ca54c0d464e50432a958f006943f4c6caa
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: aebebc3f41a091151fbbecd9925a4ebc063e678e
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272612"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564610"
 ---
 # <a name="about-modules"></a>Om moduler
 
@@ -20,7 +19,7 @@ Förklarar hur du installerar, importerar och använder PowerShell-moduler.
 
 ## <a name="long-description"></a>Lång beskrivning
 
-En modul är ett paket som innehåller PowerShell-kommandon, till exempel cmdlets, providrar, funktioner, arbets flöden, variabler och alias.
+En modul är ett paket som innehåller PowerShell-medlemmar, till exempel cmdlets, providrar, funktioner, arbets flöden, variabler och alias.
 
 Personer som skriver kommandon kan använda moduler för att organisera sina kommandon och dela dem med andra. Personer som tar emot moduler kan lägga till kommandon i modulerna i sina PowerShell-sessioner och använda dem precis som de inbyggda kommandona.
 
@@ -28,13 +27,13 @@ I det här avsnittet beskrivs hur du använder PowerShell-moduler. Information o
 
 ## <a name="what-is-a-module"></a>Vad är en modul?
 
-En modul är ett paket med kommandon. Alla cmdlets och providers i din session läggs till av en modul eller en snapin-modul.
+En modul är ett paket som innehåller PowerShell-medlemmar, till exempel cmdlets, providrar, funktioner, arbets flöden, variabler och alias. Medlemmarna i det här paketet kan implementeras i ett PowerShell-skript, en kompilerad DLL-fil eller en kombination av båda. De här filerna grupperas vanligt vis i en enda katalog. Mer information finns i [förstå en Windows PowerShell-modul](/powershell/scripting/developer/module/understanding-a-windows-powershell-module) i SDK-dokumentationen.
 
 ## <a name="module-auto-loading"></a>Automatisk inläsning av modul
 
 Från och med PowerShell 3,0 importerar PowerShell moduler automatiskt första gången du kör ett kommando i en installerad modul. Du kan nu använda kommandona i en modul utan konfigurations konfiguration eller profil, så du behöver inte hantera moduler när du har installerat dem på din dator.
 
-Kommandona i en modul är också lättare att hitta. `Get-Command`Cmdleten hämtar nu alla kommandon i alla installerade moduler, även om de inte finns i sessionen än, så att du kan hitta ett kommando och använda det utan att importera.
+Kommandona i en modul är också lättare att hitta. `Get-Command`Cmdleten hämtar nu alla kommandon i alla installerade moduler, även om de inte är i sessionen än. Du kan hitta ett kommando och använda det utan att importera behöver importera modulen först.
 
 Vart och ett av följande exempel orsakar CimCmdlets-modulen, som innehåller, som ska `Get-CimInstance` importeras till sessionen.
 
@@ -279,7 +278,7 @@ $Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
 
 Kolon () i kommandot på Linux eller MacOS `:` separerar den nya sökvägen från den sökväg som föregår den i listan.
 
-När du lägger till en sökväg **PSModulePath** i PSModulePath `Get-Module` och `Import-Module` kommandon innehåller moduler i den sökvägen.
+När du lägger till en sökväg i PSModulePath `Get-Module` och `Import-Module` kommandon innehåller moduler i den sökvägen.
 
 Värdet som du anger påverkar endast den aktuella sessionen. Om du vill göra ändringen permanent lägger du till kommandot i din PowerShell-profil eller använder system på kontroll panelen för att ändra värdet för **PSModulePath** -miljövariabeln i registret.
 
@@ -307,7 +306,7 @@ Använd parametern **all** för cmdleten om du vill identifiera namn konflikter 
 
 Om du vill förhindra namn konflikter använder du **NoClobber** -eller **prefixvärde** -parametrarna för `Import-Module` cmdleten. Parametern **prefix** lägger till ett prefix till namnen på importerade kommandon så att de är unika i sessionen. **NoClobber** -parametern importerar inte några kommandon som döljer eller ersätter befintliga kommandon i sessionen.
 
-Du kan också använda **alias** -, **cmdlet** -, **Function** -och **Variable** -parametrarna för `Import-Module` för att välja de kommandon som du vill importera, och du kan utesluta kommandon som orsakar namn konflikter i sessionen.
+Du kan också använda **alias**-, **cmdlet**-, **Function**-och **Variable** -parametrarna för `Import-Module` för att välja de kommandon som du vill importera, och du kan utesluta kommandon som orsakar namn konflikter i sessionen.
 
 Modulens författare kan förhindra namn konflikter genom att använda **DefaultCommandPrefix** -egenskapen för modulens manifest för att lägga till ett standardprefix i alla kommando namn.
 Värdet för parametern **prefix** har företräde framför värdet för **DefaultCommandPrefix**.

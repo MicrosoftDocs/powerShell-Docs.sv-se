@@ -1,17 +1,16 @@
 ---
 description: Beskriver de operatorer som jämför värden i PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: d6096de14d0bb8c7ba86c0585806b86cf3bb921a
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+ms.openlocfilehash: dbda5371224345a2e22dd281c17ae0d7c928aad6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93272930"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090234"
 ---
 # <a name="about-comparison-operators"></a>Om jämförelse operatorer
 
@@ -26,7 +25,7 @@ PowerShell innehåller följande jämförelse operatorer:
 
 | Typ        | Operatorer    | Beskrivning                                 |
 | ----------- | ------------ | --------------------------------------------|
-| Likhet    | -EQ          | är lika med                                      |
+| Likhet    | -EQ          | lika med                                      |
 |             | -Ne          | inte lika med                                  |
 |             | -gt          | större än                                |
 |             | -ge          | större än eller lika med                       |
@@ -71,7 +70,7 @@ System.Object[]
 Undantagen är operatorerna för inne slutning, operatorerna och typ operatorerna, som alltid returnerar ett **booleskt** värde.
 
 > [!NOTE]
-> Om du behöver jämföra ett värde med till `$null` `$null` vänster i jämförelsen. När du jämför `$null` med ett **objekt []** är resultatet **falskt** eftersom jämförelse objektet är en matris. När du jämför en matris med `$null` filtrerar jämförelser alla `$null` värden som lagras i matrisen. Ett exempel:
+> Om du behöver jämföra ett värde med till `$null` `$null` vänster i jämförelsen. När du jämför `$null` med ett **objekt []** är resultatet **falskt** eftersom jämförelse objektet är en matris. När du jämför en matris med `$null` filtrerar jämförelser alla `$null` värden som lagras i matrisen. Exempel:
 >
 > ```powershell
 > PS> $null -ne $null, "hello"
@@ -80,13 +79,13 @@ Undantagen är operatorerna för inne slutning, operatorerna och typ operatorern
 > hello
 > ```
 
-### <a name="equality-operators"></a>Likhets operatorer
+## <a name="equality-operators"></a>Likhetsoperatorer
 
 Likhets operatorerna ( `-eq` , `-ne` ) returnerar värdet true eller matchar när ett eller flera indatavärden är identiska med det angivna mönstret. Hela mönstret måste matcha ett helt värde.
 
 Exempel:
 
-#### <a name="-eq"></a>-EQ
+### <a name="-eq"></a>-EQ
 
 Beskrivning: lika med. Innehåller ett identiskt värde.
 
@@ -111,7 +110,7 @@ PS> "abc", "def" -eq "abc"
 abc
 ```
 
-#### <a name="-ne"></a>-Ne
+### <a name="-ne"></a>-Ne
 
 Beskrivning: inte lika med. Innehåller ett annat värde.
 
@@ -131,7 +130,7 @@ PS> "abc", "def" -ne "abc"
 def
 ```
 
-#### <a name="-gt"></a>-gt
+### <a name="-gt"></a>-gt
 
 Beskrivning: större än.
 
@@ -148,7 +147,7 @@ PS> 7, 8, 9 -gt 8
 > [!NOTE]
 > Detta bör inte förväxlas med `>` operatorn större än i många andra programmeringsspråk. I PowerShell `>` används för omdirigering. Mer information finns i [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).
 
-#### <a name="-ge"></a>-ge
+### <a name="-ge"></a>-ge
 
 Beskrivning: större än eller lika med.
 
@@ -163,7 +162,7 @@ PS> 7, 8, 9 -ge 8
 9
 ```
 
-#### <a name="-lt"></a>-lt
+### <a name="-lt"></a>-lt
 
 Beskrivning: mindre än.
 
@@ -178,7 +177,7 @@ PS> 7, 8, 9 -lt 8
 7
 ```
 
-#### <a name="-le"></a>-Le
+### <a name="-le"></a>-Le
 
 Beskrivning: mindre än eller lika med.
 
@@ -193,7 +192,7 @@ PS> 7, 8, 9 -le 8
 8
 ```
 
-### <a name="matching-operators"></a>Matchande operatorer
+## <a name="matching-operators"></a>Matchande operatorer
 
 Operatorerna like ( `-like` och `-notlike` ) hittar element som matchar eller inte matchar ett angivet mönster med jokertecken.
 
@@ -215,7 +214,7 @@ Syntax:
 <string[]> -notmatch <regular-expression>
 ```
 
-#### <a name="-like"></a>– som
+### <a name="-like"></a>– som
 
 Beskrivning: matcha med jokertecknet ( \* ).
 
@@ -229,7 +228,7 @@ PS> "PowerShell", "Server" -like "*shell"
 PowerShell
 ```
 
-#### <a name="-notlike"></a>-notlike
+### <a name="-notlike"></a>-notlike
 
 Beskrivning: överensstämmer inte med jokertecknet ( \* ).
 
@@ -259,7 +258,7 @@ PS> $Matches
 PS>
 ```
 
-Följande kommando skickar däremot en enskild sträng till `-match` operatorn. `-match`Operatorn returnerar ett booleskt värde och fyller den `$Matches` automatiska variabeln. Den `$Matches` automatiska variabeln är en **hash** -variabel. Om ingen gruppering eller hämtning används, fylls bara en nyckel i.
+Följande kommando skickar däremot en enskild sträng till `-match` operatorn. `-match`Operatorn returnerar ett booleskt värde och fyller den `$Matches` automatiska variabeln. Den `$Matches` automatiska variabeln är en **hash**-variabel. Om ingen gruppering eller hämtning används, fylls bara en nyckel i.
 `0`Nyckeln representerar all text som matchades. Mer information om gruppering och insamling av reguljära uttryck finns [about_Regular_Expressions](about_Regular_Expressions.md).
 
 ```powershell
@@ -322,7 +321,7 @@ Name                           Value
 0                              day
 ```
 
-#### <a name="-notmatch"></a>-notmatch
+### <a name="-notmatch"></a>-notmatch
 
 Beskrivning: matchar inte en sträng. Använder reguljära uttryck. När indatatypen är skalär, fylls den `$Matches` automatiska variabeln i.
 
@@ -341,13 +340,13 @@ PS> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-### <a name="containment-operators"></a>Inne slutnings operatorer
+## <a name="containment-operators"></a>Inne slutnings operatorer
 
 Inne slutnings operatorerna ( `-contains` och `-notcontains` ) liknar likhets operatorerna. Däremot returnerar inne slutnings operatorer alltid ett booleskt värde, även om indatatypen är en samling.
 
 Till skillnad från likhets operatorerna returnerar inne slutnings operatorerna ett värde så fort de identifierar den första matchningen. Likhets operatorerna utvärderar alla indatatyper och returnerar sedan alla träffar i samlingen.
 
-#### <a name="-contains"></a>– innehåller
+### <a name="-contains"></a>– innehåller
 
 Beskrivning: inne slutnings operator. Anger om en samling med referens värden innehåller ett enda testvärde. Returnerar alltid ett booleskt värde. Returnerar sant endast om testvärdet exakt matchar minst ett av referensvärdena.
 
@@ -382,7 +381,7 @@ PS> $a, "ghi" -contains $a
 True
 ```
 
-#### <a name="-notcontains"></a>-notcontains
+### <a name="-notcontains"></a>-notcontains
 
 Beskrivning: inne slutnings operator. Anger om en samling med referens värden innehåller ett enda testvärde. Returnerar alltid ett booleskt värde. Returnerar sant när testvärdet inte är en exakt matchning för minst ett av referens värden.
 
@@ -421,7 +420,7 @@ Tee
 Where
 ```
 
-#### <a name="-in"></a>– in
+### <a name="-in"></a>– in
 
 Beskrivning: i-Operator. Anger om ett testvärde visas i en samling med referens värden. Returnera alltid som booleskt värde. Returnerar sant endast om testvärdet exakt matchar minst ett av referensvärdena.
 
@@ -458,7 +457,7 @@ PS> $thisComputer -in  $domainServers
 True
 ```
 
-#### <a name="-notin"></a>-notin
+### <a name="-notin"></a>-notin
 
 Beskrivning: anger om ett testvärde visas i en samling med referens värden. Returnerar alltid ett booleskt värde. Returnerar sant när testvärdet inte är en exakt matchning för minst ett av referens värden.
 
@@ -497,17 +496,21 @@ Tee
 Where
 ```
 
-### <a name="replacement-operator"></a>Ersättnings operatör
+## <a name="replacement-operator"></a>Ersättnings operatör
 
-`-replace`Operatorn ersätter hela eller delar av ett värde med det angivna värdet med hjälp av reguljära uttryck. Du kan använda `-replace` operatorn för många administrativa uppgifter, till exempel att byta namn på filer. Följande kommando ändrar till exempel fil namns tilläggen för alla txt-filer till. log:
+`-replace`Operatorn har följande syntax:
+
+`<input> -replace <original>, <substitute>`
+
+`<original>`Plats hållaren är ett reguljärt uttryck som matchar de tecken som ska ersättas. `<substitute>`Plats hållaren är en tecken sträng som ersätter dem.
+
+Operatorn ersätter hela eller delar av ett värde med det angivna värdet med hjälp av reguljära uttryck. Du kan använda operatorn för många administrativa uppgifter, till exempel att byta namn på filer. Följande kommando ändrar till exempel fil namns tilläggen för alla `.txt` filer till `.log` :
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-`-replace`Operatorns syntax är följande, där `<original>` plats hållaren representerar de tecken som ska ersättas och `<substitute>` plats hållaren representerar de tecken som ersätter dem:
-
-`<input> <operator> <original>, <substitute>`
+### <a name="case-sensitive-matches"></a>Skift läges känsliga matchningar
 
 Som standard `-replace` är operatorn Skift läges okänslig. Använd för att göra det Skift läges känsligt `-creplace` . Använd om du vill göra det uttryckligen Skift läges okänsligt `-ireplace` .
 
@@ -515,33 +518,72 @@ Som standard `-replace` är operatorn Skift läges okänslig. Använd för att g
 
 ```powershell
 PS> "book" -replace "B", "C"
-```
-
-```Output
 Cook
 ```
 
 ```powershell
-"book" -ireplace "B", "C"
-```
-
-```Output
+PS> "book" -ireplace "B", "C"
 Cook
 ```
 
 ```powershell
-"book" -creplace "B", "C"
-```
-
-```Output
+PS> "book" -creplace "B", "C"
 book
 ```
 
-Det går också att använda reguljära uttryck för att dynamiskt ersätta text med hjälp av insamlings grupper och ersättningar. Mer information finns i [about_Regular_Expressions](about_Regular_Expressions.md).
+### <a name="substitutions-in-regular-expressions"></a>Ersättningar i reguljära uttryck
+
+Det går också att använda reguljära uttryck för att dynamiskt ersätta text med hjälp av insamlings grupper och ersättningar. Det går att referera till infångnings grupper i `<substitute>` strängen med dollar tecknet ( `$` ) före grupp-ID: n.
+
+Det går att referera till infångnings grupper med hjälp av **nummer** eller **namn**
+
+- Per **nummer** – fångar grupper numreras från vänster till höger.
+
+  ```powershell
+  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  John.D.Smith@contoso.com
+  ```
+
+- Efter **namn** -hämtade grupper kan också refereras till med hjälp av namn.
+
+  ```powershell
+  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  FABRIKAM\Administrator
+  ```
+
+> [!WARNING]
+> Eftersom det `$` används i sträng expansion måste du använda literala strängar eller Escape- `$` tecken.
+>
+> ```powershell
+> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> Hello Universe
+> ```
+>
+> Eftersom ett `$` tecken används i ersättningen måste du dessutom undanta eventuella instanser i strängen.
+>
+> ```powershell
+> PS> '5.72' -replace '(.+)', '$$$1'
+> $5.72
+> ```
+
+Mer information finns i [about_Regular_Expressions](about_Regular_Expressions.md) och [ersättningar i reguljära uttryck](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+
+### <a name="substituting-in-a-collection"></a>Ersätta i en samling
+
+När `<input>` `-replace` operatorn till är en samling, tillämpar PowerShell ersättningen på alla värden i samlingen. Exempel:
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
 
 ### <a name="scriptblock-substitutions"></a>Script block ersättningar
 
-Från och med PowerShell 6 kan du använda ett **script block** -argument för *ersättnings* texten. **Script block** körs för varje matchning som hittades i *Indatasträngen* .
+Från och med PowerShell 6 kan du använda ett **script block** -argument för _ersättnings_ texten. **Script block** körs för varje matchning som hittades i _Indatasträngen_ .
 
 I **script block** använder du den `$_` automatiska variabeln för att referera till det aktuella **systemet. text. RegularExpressions. match** -objektet. **Match** -objektet ger dig åtkomst till den aktuella inmatade texten som ersätts samt annan användbar information.
 
@@ -552,11 +594,11 @@ PS> "072101108108111" -replace "\d{3}", {[char][int]$_.Value}
 Hello
 ```
 
-### <a name="type-comparison"></a>Typ jämförelse
+## <a name="type-comparison"></a>Typ jämförelse
 
 Typ jämförelse operatorer ( `-is` och `-isnot` ) används för att avgöra om ett objekt är en speciell typ.
 
-#### <a name="-is"></a>-är
+### <a name="-is"></a>-är
 
 Syntax:
 
@@ -573,7 +615,7 @@ PS> $a -is $b.GetType()
 False
 ```
 
-#### <a name="-isnot"></a>– IsNot
+### <a name="-isnot"></a>– IsNot
 
 Syntax:
 
@@ -590,7 +632,7 @@ PS> $b -isnot [int]
 True
 ```
 
-## <a name="see-also"></a>SE ÄVEN
+## <a name="see-also"></a>Se även
 
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)
