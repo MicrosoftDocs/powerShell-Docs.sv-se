@@ -2,28 +2,28 @@
 description: PSReadLine ger en förbättrad kommando rads redigerings upplevelse i PowerShell-konsolen.
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Om PSReadLine
-ms.openlocfilehash: 1188b8dc0b4099a7c1dcc472e3b02c2d4fa908bc
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6d52bb04118914a9ccca5d3442a9d1915c1c2818
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270129"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692283"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>KORT BESKRIVNING
+## <a name="short-description"></a>Kort beskrivning
 
 PSReadLine ger en förbättrad kommando rads redigerings upplevelse i PowerShell-konsolen.
 
-## <a name="long-description"></a>LÅNG BESKRIVNING
+## <a name="long-description"></a>Lång beskrivning
 
-PSReadLine 2,0 ger en kraftfull redigerings upplevelse för kommando tolken för PowerShell-konsolen. Den tillhandahåller:
+PSReadLine 2,1 ger en kraftfull redigerings upplevelse för kommando tolken för PowerShell-konsolen. Den tillhandahåller:
 
 - Syntax för kommando rads färg
 - En visuell indikation på syntaxfel
@@ -34,11 +34,41 @@ PSReadLine 2,0 ger en kraftfull redigerings upplevelse för kommando tolken för
 - Slut för ande av bash-format (valfritt i cmd-läge, standard i emacs-läge)
 - Emacs YANK/Kill-ring
 - PowerShell-token-baserad "Word"-förflyttning och stopp
+- Förutsäga IntelliSense
 
-Följande funktioner är tillgängliga i klassen **[Microsoft. PowerShell. PSConsoleReadLine]**.
+PSReadLine kräver PowerShell 3,0 eller senare och konsol värden. Den fungerar inte i PowerShell ISE. Den fungerar i-konsolen i Visual Studio Code.
+
+PSReadLine 2.1.0 levereras med PowerShell 7,1 och stöds i alla versioner av PowerShell som stöds. Den är tillgänglig för installation från PowerShell-galleriet.
+Kör följande kommando för att installera PSReadLine-2.1.0 i en version av PowerShell som stöds.
+
+```powershell
+Install-Module -Name PSReadLine -RequiredVersion 2.1.0
+```
 
 > [!NOTE]
 > Från och med PowerShell 7,0 hoppar PowerShell över automatisk inläsning av PSReadLine i Windows om ett skärm läsar program har identifierats. PSReadLine fungerar för närvarande inte bra med skärm läsare. Standard åter givningen och formateringen av PowerShell 7,0 i Windows fungerar korrekt. Du kan läsa in modulen manuellt om det behövs.
+
+## <a name="predictive-intellisense"></a>Förutsäga IntelliSense
+
+Förutsägelse IntelliSense är ett tillägg till begreppet TABB-slutförande som hjälper användaren att slutföra kommandon. Det gör det möjligt för användare att upptäcka, redigera och köra fullständiga kommandon baserat på matchande förutsägelser från användarens historik och ytterligare domänanslutna plugin-program.
+
+### <a name="enable-predictive-intellisense"></a>Aktivera förutsägelse IntelliSense
+
+Förutsägelse IntelliSense är inaktiverat som standard. Kör följande kommando för att aktivera förutsägelser:
+
+```powershell
+Set-PSReadLineOption -PredictionSource History
+```
+
+Parametern **PredictionSource** kan också ta emot plugin-program för domän särskilda och anpassade krav.
+
+För att inaktivera förutsägelse IntelliSense, kör du bara:
+
+```powershell
+Set-PSReadLineOption -PredictionSource None
+```
+
+Följande funktioner är tillgängliga i klassen **[Microsoft. PowerShell. PSConsoleReadLine]**.
 
 ## <a name="basic-editing-functions"></a>Grundläggande redigerings funktioner
 
@@ -1104,6 +1134,24 @@ Markera den aktuella platsen för markören som ska användas i ett efterföljan
 
 - Emacs: `<Ctrl+@>`
 
+## <a name="predictive-intellisense-functions"></a>Förutsägande IntelliSense-funktioner
+
+> [!NOTE]
+> Förutsägelse IntelliSense måste aktive ras för att använda dessa funktioner.
+
+### <a name="acceptnextwordsuggestion"></a>AcceptNextWordSuggestion
+
+Accepterar nästa ord i det infogade förslaget från förutsägande IntelliSense.
+Den här funktionen kan bindas till <kbd>CTRL</kbd> + <kbd>F</kbd> genom att köra följande kommando.
+
+```powershell
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+```
+
+### <a name="acceptsuggestion"></a>AcceptSuggestion
+
+Accepterar det aktuella infogade förslaget från förutsägande IntelliSense genom att trycka på <kbd>RightArrow</kbd> när markören är i slutet av den aktuella raden.
+
 ## <a name="search-functions"></a>Sök funktioner
 
 ### <a name="charactersearch"></a>CharacterSearch
@@ -1340,23 +1388,18 @@ Den här hjälp metoden används för anpassade bindningar som följer DigitArgu
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>NOTE
+## <a name="note"></a>Anteckning
 
-### <a name="powershell-compatibility"></a>POWERSHELL-KOMPATIBILITET
-
-PSReadLine kräver PowerShell 3,0 eller senare och konsol värden. Den fungerar inte i PowerShell ISE. Den fungerar i-konsolen i Visual Studio Code.
-
-### <a name="command-history"></a>KOMMANDO HISTORIK
+### <a name="command-history"></a>Kommando historik
 
 PSReadLine underhåller en historik fil som innehåller alla kommandon och data som du har angett från kommando raden. Detta kan innehålla känsliga data, inklusive lösen ord. Om du till exempel använder `ConvertTo-SecureString` cmdleten loggas lösen ordet i historik filen som oformaterad text. Historikfilerna är en fil med namnet `$($host.Name)_history.txt` . I Windows-system lagras historik filen på `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` . På andra datorer än Windows-system lagras historikfilerna i `$env:XDG_DATA_HOME/powershell/PSReadLine` eller `$env:HOME/.local/share/powershell/PSReadLine` .
 
-### <a name="feedback--contributing-to-psreadline"></a>FEEDBACK & som bidrar till PSReadLine
+### <a name="feedback--contributing-to-psreadline"></a>Feedback & som bidrar till PSReadLine
 
 [PSReadLine på GitHub](https://github.com/PowerShell/PSReadLine)
 
 Skicka gärna en pull-begäran eller skicka feedback på sidan GitHub.
 
-## <a name="see-also"></a>SE ÄVEN
+## <a name="see-also"></a>Se även
 
 PSReadLine påverkas kraftigt av GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) -biblioteket.
-

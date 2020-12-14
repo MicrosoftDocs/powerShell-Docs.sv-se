@@ -4,10 +4,10 @@ ms.topic: reference
 title: Skapa en Windows PowerShell-innehållsprovider
 description: Skapa en Windows PowerShell-innehållsprovider
 ms.openlocfilehash: 7890f0ab8d1cc7f29bdc077b342bae950cfa7827
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645358"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Skapa en Windows PowerShell-innehållsprovider

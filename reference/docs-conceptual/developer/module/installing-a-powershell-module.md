@@ -4,10 +4,10 @@ ms.topic: reference
 title: Installera en PowerShell-modul
 description: Installera en PowerShell-modul
 ms.openlocfilehash: 3c7a4413168934ca4de1912c9615a6ae0fc45788
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645344"
 ---
 # <a name="installing-a-powershell-module"></a>Installera en PowerShell-modul
@@ -57,7 +57,7 @@ Som standard innehåller variabeln **PSModulePath** följande kataloger för sys
   ```
 
   > [!IMPORTANT]
-  > När du har lagt till sökvägen till **PSModulePath** bör du sända ett miljö meddelande om ändringen. Genom att sända ändringen kan andra program, till exempel gränssnittet, Hämta ändringen. Om du vill sända ändringen ska du be din produkt installations kod att skicka ett **WM_SETTINGCHANGE** meddelande med `lParam` inställningen "miljö". Se till att skicka meddelandet efter att modulens installations kod har uppdaterats **PSModulePath** .
+  > När du har lagt till sökvägen till **PSModulePath** bör du sända ett miljö meddelande om ändringen. Genom att sända ändringen kan andra program, till exempel gränssnittet, Hämta ändringen. Om du vill sända ändringen ska du be din produkt installations kod att skicka ett **WM_SETTINGCHANGE** meddelande med `lParam` inställningen "miljö". Se till att skicka meddelandet efter att modulens installations kod har uppdaterats **PSModulePath**.
 
 ### <a name="use-the-correct-module-directory-name"></a>Använd rätt katalog namn för modul
 

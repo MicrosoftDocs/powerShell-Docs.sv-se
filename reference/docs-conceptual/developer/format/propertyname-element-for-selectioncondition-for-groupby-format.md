@@ -4,10 +4,10 @@ ms.topic: reference
 title: PropertyName-element för SelectionCondition för GroupBy (format)
 description: PropertyName-element för SelectionCondition för GroupBy (format)
 ms.openlocfilehash: b89fead6185c88ca03956dc265135833696b91d7
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665676"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-groupby-format"></a>PropertyName-element för SelectionCondition för GroupBy (format)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: PropertyName-element för SelectionCondition för EntrySelectedBy för ListControl (format)
 description: PropertyName-element för SelectionCondition för EntrySelectedBy för ListControl (format)
 ms.openlocfilehash: 1e318e3a29f07b157b9ae7343ba08759db8efbb5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665829"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>PropertyName-element för SelectionCondition för EntrySelectedBy för ListControl (format)
