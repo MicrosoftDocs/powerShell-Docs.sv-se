@@ -126,7 +126,7 @@
           href: whats-new/what-s-new-in-powershell-71.md
         - name: Nyheter i PowerShell 7.0
           href: whats-new/what-s-new-in-powershell-70.md
-    - name: Nyheter i PowerShell Core 6.x
+    - name: PowerShell Core 6.x viktig information
       items:
         - name: Nyheter i PowerShell Core 6.2
           href: whats-new/what-s-new-in-powershell-core-62.md
@@ -590,8 +590,6 @@
           href: community/contributing/pull-requests.md
         - name: Stilguide för PowerShell-Docs
           href: community/contributing/powershell-style-guide.md
-        - name: Redigera cmdlet-referens
-          href: community/contributing/editing-cmdlet-ref.md
         - name: Ytterligare resurser
           items:
             - name: Checklista för redigering
