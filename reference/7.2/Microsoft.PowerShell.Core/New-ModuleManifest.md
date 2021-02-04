@@ -6,12 +6,12 @@ ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 6705cc5a7fdd2e2db87d35d262b04d088237ff7d
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 713c35b2f9f651d455ac08401aa1f7eb48676174
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710884"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879158"
 ---
 # New-ModuleManifest
 
@@ -763,7 +763,7 @@ Accept wildcard characters: False
 
 ### – PowerShellVersion
 
-Anger den lägsta version av PowerShell som fungerar med den här modulen. Du kan till exempel ange 1,0, 2,0 eller 3,0 som parameter värde.
+Anger den lägsta version av PowerShell som fungerar med den här modulen. Du kan till exempel ange 1,0, 2,0 eller 3,0 som parameter värde. Det måste vara i formatet X. X. Om du till exempel skickar `5` , kommer PowerShell att utlösa ett fel.
 
 ```yaml
 Type: System.Version
@@ -1063,7 +1063,7 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## INDATA
 
-### Inga
+### Inget
 
 Du kan inte skicka pipe-ininformation till denna cmdlet.
 

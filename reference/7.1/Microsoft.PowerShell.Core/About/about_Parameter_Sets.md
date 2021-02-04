@@ -1,13 +1,13 @@
 ---
 description: Beskriver hur du definierar och använder parameter uppsättningar i avancerade funktioner.
 title: about_Parameter_Sets
-ms.date: 02/11/2020
-ms.openlocfilehash: e6f7d006551bdeee11b68951f96f3fa2251e73e3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.date: 01/05/2021
+ms.openlocfilehash: 876f6336dd344412b514ea22d413a97a98c9cd02
+ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272505"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917821"
 ---
 # <a name="about-parameter-sets"></a>Om parameter uppsättningar
 
@@ -22,7 +22,7 @@ PowerShell använder parameter uppsättningar för att ge dig möjlighet att skr
 
 Följande krav gäller för alla parameter uppsättningar.
 
-- Varje parameter uppsättning måste ha minst en unik parameter. Om möjligt ska du göra denna parameter till en obligatorisk parameter.
+- Varje parameter uppsättning måste ha en unik kombination av parametrar. Om möjligt måste minst en av de unika parametrarna vara en obligatorisk parameter.
 
 - En parameter uppsättning som innehåller flera positions parametrar måste definiera unika positioner för varje parameter. Det går inte att ange samma position med två positions parametrar.
 

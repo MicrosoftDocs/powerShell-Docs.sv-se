@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 060a53d4d08700e541fb6bcd388ffb4167a271a3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 147f591f48a63b538bb43f8cc05995240042a6af
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271281"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804178"
 ---
 # <a name="about-signing"></a>Om signering
 
@@ -38,7 +38,7 @@ Du hittar den effektiva körnings principen på datorn genom att skriva:
 Get-ExecutionPolicy
 ```
 
-Om du vill köra osignerade skript som du skriver på din lokala dator och signerade skript från andra användare, startar du PowerShell med alternativet Kör som administratör och använder sedan följande kommando för att ändra körnings principen på datorn till **RemoteSigned** :
+Om du vill köra osignerade skript som du skriver på din lokala dator och signerade skript från andra användare, startar du PowerShell med alternativet Kör som administratör och använder sedan följande kommando för att ändra körnings principen på datorn till **RemoteSigned**:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -104,7 +104,7 @@ Om du skapar ett självsignerat certifikat måste du Aktivera starkt skydd av de
 
 ## <a name="create-a-self-signed-certificate"></a>Skapa ett självsignerat certifikat
 
-Om du vill skapa ett självsignerat certifikat i använder du `New-SelfSignedCertificate` cmdleten i PKI-modulen. Den här modulen introduceras i PowerShell 3,0 och ingår i Windows 8 och Windows Server 2012. Mer information finns i hjälp avsnittet för `New-SelfSignedCertificate` cmdleten.
+Om du vill skapa ett självsignerat certifikat använder du `New-SelfSignedCertificate` cmdleten i PKI-modulen. Den här modulen introduceras i PowerShell 3,0 och ingår i Windows 8 och Windows Server 2012. Mer information finns i hjälp avsnittet för `New-SelfSignedCertificate` cmdleten.
 
 Om du vill skapa ett självsignerat certifikat i tidigare versioner av Windows använder du verktyget för att skapa certifikat `MakeCert.exe` . Det här verktyget ingår i Microsoft .NET SDK (version 1,1 och senare) och i Microsoft Windows SDK.
 

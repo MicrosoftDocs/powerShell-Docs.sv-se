@@ -1,16 +1,15 @@
 ---
 description: Förklarar hur du använder `pwsh` kommando rads gränssnittet. Visar kommando rads parametrarna och beskriver syntaxen.
-keywords: powershell,cmdlet
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: c71848e327822f7cbc659310d3fa47a5a46a37a2
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6f6e7ea66aa04eaeea2b9da7c07864180210131c
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271718"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692990"
 ---
 # <a name="about-pwsh"></a>Om pwsh
 
@@ -99,7 +98,7 @@ Om värdet för **kommandot** är en sträng måste **kommandot** vara den sista
 
 När de anropas i en befintlig PowerShell-session returneras resultatet till det överordnade gränssnittet som avserialiserade XML-objekt, inte aktiva objekt. För andra gränssnitt returneras resultaten som strängar.
 
-Om **kommandots** värde är `-` läses kommando texten in från standar din information. Du måste omdirigera standar din information när du använder **kommando** parametern med standar din information. Ett exempel:
+Om **kommandots** värde är `-` läses kommando texten in från standar din information. Du måste omdirigera standar din information när du använder **kommando** parametern med standar din information. Exempel:
 
 ```powershell
 @'
@@ -136,7 +135,7 @@ Anger det namn som ska användas för ytterligare en IPC-Server (namngiven pipe)
 
 Den här parametern introducerades i PowerShell 6,2.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 # PowerShell instance 1
@@ -147,9 +146,9 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand | -e | – EC
 
-Accepterar en Base64-kodad sträng version av ett kommando. Använd den här parametern för att skicka kommandon till PowerShell som kräver komplex, kapslad citat tecken. Den base64-representation måste vara en kodad UTF-16-sträng.
+Accepterar en Base64-kodad sträng version av ett kommando. Använd den här parametern för att skicka kommandon till PowerShell som kräver komplex, kapslad citat tecken. Base64-representationen måste vara en UTF-16LE-kodad sträng.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 $command = 'dir "c:\program files" '

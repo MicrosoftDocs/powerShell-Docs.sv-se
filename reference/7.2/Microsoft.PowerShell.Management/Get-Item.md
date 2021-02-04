@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 9607a8fc9528322eca52be1c5367078aff286382
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 67d9f351b8ef4936dcb4e9cff6583da0f464bc12
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709528"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693044"
 ---
 # Get-Item
 
@@ -159,10 +159,12 @@ De nya egenskaperna som nu är en del av utdata är:
 
 ### -Stream
 
-Hämtar den angivna alternativa NTFS-filströmmen från filen. Ange data ström namnet. Jokertecken stöds. Använd en asterisk () om du vill hämta alla strömmar `*` . Den här parametern är inte giltig i mapparna.
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
 
-**Stream** är en dynamisk parameter som **fil Systems** leverantören lägger till i `Get-Item` cmdleten.
-Den här parametern fungerar bara i fil system enheter.
+Hämtar den angivna alternativa data strömmen från filen. Ange data ström namnet. Jokertecken stöds. Använd en asterisk () om du vill hämta alla strömmar `*` . Den här parametern är giltig för kataloger, men Observera att kataloger inte har data strömmar som standard.
+
+Den här parametern introducerades i PowerShell 3,0.  Från och med PowerShell 7,2 `Get-Item` kan du hämta alternativa data strömmar från kataloger och filer.
 
 ```yaml
 Type: System.String[]
@@ -297,7 +299,7 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` . Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 

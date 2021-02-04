@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
-ms.openlocfilehash: 0140691bc0b01fff803f0efdf81980c621e1150d
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: b6a8d0f68717849711a794c9482e03d4ea081e1d
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93269283"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692646"
 ---
 # Get-Content
 
@@ -180,7 +179,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 **Stream** -parametern är en dynamisk parameter för [fil Systems leverantören](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-Som standard `Get-Content` hämtar endast data från den primära eller `$DATA` Stream. **Strömmar** kan användas för att lagra dolda data, till exempel attribut, säkerhets inställningar eller andra data.
+Som standard `Get-Content` hämtar endast data från standardvärdet eller `:$DATA` Stream. **Strömmar** kan användas för att lagra dolda data, till exempel attribut, säkerhets inställningar eller andra data. De kan också lagras på kataloger utan att vara underordnade objekt.
 
 ### Exempel 6: Hämta RAW-innehåll
 
@@ -417,7 +416,7 @@ Du kan använda den här parametern för att dela upp en stor fil i mindre filer
 **Avgränsaren** är en dynamisk parameter som **fil Systems** leverantören lägger till i `Get-Content` cmdleten. Den här parametern fungerar bara i fil system enheter.
 
 > [!NOTE]
-> När värdet för **avgränsare** -parametern är en tom sträng `Get-Content` returnerar inte något. Detta är ett känt fel. För att tvinga fram `Get-Content` att returnera hela filen som en enda, unavgränsad sträng. Ange ett värde som inte finns i filen.
+> När värdet för **avgränsare** -parametern är en tom sträng `Get-Content` returnerar inte något. Detta är ett känt problem. För att tvinga fram `Get-Content` att returnera hela filen som en enda, unavgränsad sträng. Ange ett värde som inte finns i filen.
 
 ```yaml
 Type: System.String
@@ -492,7 +491,7 @@ När du läser från och skriver till binära filer använder du parametern **As
 Från och med PowerShell 6,2 tillåter **encoding** -parametern även numeriska ID: n för registrerade tecken tabeller (som `-Encoding 1251` ) eller sträng namn för registrerade tecken tabeller (som `-Encoding "windows-1251"` ). Mer information finns i .NET-dokumentationen för [encoding. codepage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 > [!NOTE]
-> **UTF-7** * rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för **kodnings** parametern.
+> **UTF-7** _ rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för parametern _ *encoding**.
 
 ```yaml
 Type: System.Text.Encoding
@@ -508,6 +507,9 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
+
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
 
 Hämtar innehållet i den angivna alternativa NTFS-filströmen från filen. Ange data ström namnet.
 Jokertecken stöds inte.
@@ -547,7 +549,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` . Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
@@ -580,4 +582,3 @@ Du kan skicka vidare antalet läsningar, totalt antal, sökvägar eller autentis
 [Get-PSProvider](Get-PSProvider.md)
 
 [Ange innehåll](Set-Content.md)
-

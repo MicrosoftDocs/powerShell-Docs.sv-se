@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.openlocfilehash: d034baf42f064149696f54a198dc97d7ee4e8fe7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661366"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693086"
 ---
 # Get-Item
 
@@ -159,6 +159,9 @@ De nya egenskaperna som nu är en del av utdata är:
 ## PARAMETRAR
 
 ### -Stream
+
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
 
 Hämtar den angivna alternativa NTFS-filströmmen från filen. Ange data ström namnet. Jokertecken stöds. Använd en asterisk () om du vill hämta alla strömmar `*` . Den här parametern är inte giltig i mapparna.
 

@@ -6,12 +6,12 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 6044b27c0d339d62bd6e75fd2fee27eb65a89b79
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e98de608630a59ff77ca701876986ffb29780a4a
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709985"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490965"
 ---
 # Register-ArgumentCompleter
 
@@ -60,7 +60,7 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 Det första kommandot skapar ett-skript block som tar de nödvändiga parametrarna som skickas i när användaren trycker på <kbd>fliken</kbd>. Mer information finns i Beskrivning av **script block** -parametern.
 
-I-skript blocket hämtas de tillgängliga värdena för **ID** med hjälp av `Get-TimeZone` cmdleten. Egenskapen **ID** för varje tidszon är skickas till `Where-Object` cmdleten. `Where-Object`Cmdlet: en filtrerar bort alla ID: n som inte börjar med värdet som anges av `$wordToComplete` , som representerar texten som användaren skrev innan de tryckte på <kbd>fliken</kbd>. Filtrerade ID: n är skickas till `For-EachObject` cmdleten som innesluter varje värde i citationstecken, om värdet innehåller blank steg.
+I-skript blocket hämtas de tillgängliga värdena för **ID** med hjälp av `Get-TimeZone` cmdleten. Egenskapen **ID** för varje tidszon är skickas till `Where-Object` cmdleten. `Where-Object`Cmdlet: en filtrerar bort alla ID: n som inte börjar med värdet som anges av `$wordToComplete` , som representerar texten som användaren skrev innan de tryckte på <kbd>fliken</kbd>. Filtrerade ID: n är skickas till `ForEach-Object` cmdleten som innesluter varje värde i citationstecken, om värdet innehåller blank steg.
 
 Det andra kommandot registrerar argumentet completer genom att skicka script block, **ParameterName** **-ID** och **commandname** `Set-TimeZone` .
 
@@ -208,13 +208,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## INDATA
 
-### Inga
+### Inget
 
 Det går inte att skicka pipe-objekt till denna cmdlet.
 
 ## UTDATA
 
-### Inga
+### Inget
 
 Denna cmdlet returnerar inga utdata.
 

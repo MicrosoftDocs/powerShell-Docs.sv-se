@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 07f8da5e6101b1d9bb1971b3c77b9747c0080a23
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e848cc8c77e1d0dff6eb1f98d56c8ed37e44a653
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93262473"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692818"
 ---
 # Get-Item
 
@@ -156,6 +156,9 @@ De nya egenskaperna som nu är en del av utdata är:
 ## PARAMETRAR
 
 ### -Stream
+
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
 
 Hämtar den angivna alternativa NTFS-filströmmen från filen. Ange data ström namnet. Jokertecken stöds. Använd en asterisk () om du vill hämta alla strömmar `*` . Den här parametern är inte giltig i mapparna.
 
@@ -315,7 +318,7 @@ Denna cmdlet har ingen **rekursivt** -parameter, eftersom den bara får ett obje
 Använd om du vill hämta innehållet i ett objekt rekursivt `Get-ChildItem` .
 
 Använd denna cmdlet för att hämta register nycklar och `Get-ItemProperty` för att hämta register värden och data för att navigera i registret. Register värden anses vara egenskaper för register nyckeln.
-  
+
 Denna cmdlet är utformad för att fungera med data som exponeras av vilken provider som helst. Om du vill visa en lista över tillgängliga providers i din session skriver du `Get-PsProvider` . Mer information finns i [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATERADE LÄNKAR

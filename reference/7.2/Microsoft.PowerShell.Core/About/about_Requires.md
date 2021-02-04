@@ -1,16 +1,16 @@
 ---
 description: Förhindrar att ett skript körs utan de element som krävs.
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: efae9689a1abc96b04a7d8d5ac524c61b73152ca
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d340de615923437bb3e29c1984ef8849fe03a40e
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709246"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490893"
 ---
 # <a name="about-requires"></a>Om kräver
 
@@ -24,7 +24,6 @@ Förhindrar att ett skript körs utan de element som krävs.
 ### <a name="syntax"></a>Syntax
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -53,9 +52,12 @@ Get-Module AzureRM.Netcore | Remove-Module
 
 Du kanske tror att ovanstående kod inte ska köras eftersom modulen som krävs togs bort före `#Requires` instruktionen. Men `#Requires` läget var uppfyllt innan skriptet kan köras. Den första raden i skriptet har ogiltig status.
 
-### <a name="parameters"></a>Parameters (Parametrar)
+### <a name="parameters"></a>Parametrar
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>– Sammansättning \<Assembly path> |\<.NET assembly specification>
+
+> [!IMPORTANT]
+> `-Assembly`Syntaxen är föråldrad. Funktionen fungerar inte. Syntaxen lades till i PowerShell 5,1 men stöd koden har aldrig implementerats. Syntaxen accepteras fortfarande för bakåtkompatibilitet.
 
 Anger sökvägen till sammansättnings-DLL-filen eller ett .NET-sammansättnings namn. **Sammansättnings** parametern introducerades i PowerShell 5,0. Mer information om .NET-sammansättningar finns i [sammansättnings namn](/dotnet/standard/assembly/names).
 
@@ -211,4 +213,3 @@ Param
 [about_Automatic_Variables](about_Automatic_Variables.md)
 
 [about_Language_Keywords](about_Language_Keywords.md)
-

@@ -1,17 +1,16 @@
 ---
 description: Förhindrar att ett skript körs utan de element som krävs.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: c6b10137ca58da93caff365a50b125929fd4d11a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 73c225f493fb671b34925d0127cc0d5cff0ab33e
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272331"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490592"
 ---
 # <a name="about-requires"></a>Om kräver
 
@@ -25,7 +24,6 @@ Förhindrar att ett skript körs utan de element som krävs.
 ### <a name="syntax"></a>Syntax
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -58,9 +56,12 @@ Du kanske tror att ovanstående kod inte ska köras eftersom modulen som krävs 
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>– Sammansättning \<Assembly path> |\<.NET assembly specification>
 
+> [!IMPORTANT]
+> `-Assembly`Syntaxen är föråldrad. Funktionen fungerar inte. Syntaxen lades till i PowerShell 5,1 men stöd koden har aldrig implementerats. Syntaxen accepteras fortfarande för bakåtkompatibilitet.
+
 Anger sökvägen till sammansättnings-DLL-filen eller ett .NET-sammansättnings namn. **Sammansättnings** parametern introducerades i PowerShell 5,0. Mer information om .NET-sammansättningar finns i [sammansättnings namn](/dotnet/standard/assembly/names).
 
-Ett exempel:
+Exempel:
 
 ```
 #Requires -Assembly path\to\foo.dll
@@ -75,7 +76,7 @@ Ett exempel:
 
 Anger den lägsta version av PowerShell som skriptet kräver. Ange ett högre versions nummer och ett valfritt lägre versions nummer.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 #Requires -Version 6.0
@@ -85,7 +86,7 @@ Ett exempel:
 
 Anger en PowerShell-snapin-modul som skriptet kräver. Ange namnet på snapin-modulen och ett valfritt versions nummer.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 #Requires -PSSnapin DiskSnapin -Version 1.2
@@ -111,7 +112,7 @@ Ange modulnamnet ( \<String\> ) eller en hash-tabell för varje modul. Värdet k
 > `RequiredVersion` lades till i Windows PowerShell 5,0.
 > `MaximumVersion` lades till i Windows PowerShell 5,1.
 
-Ett exempel:
+Exempel:
 
 Kräv att `AzureRM.Netcore` (version `0.12.0` eller större) är installerad.
 
@@ -119,7 +120,7 @@ Kräv att `AzureRM.Netcore` (version `0.12.0` eller större) är installerad.
 #Requires -Modules @{ ModuleName="AzureRM.Netcore"; ModuleVersion="0.12.0" }
 ```
 
-Kräv att `AzureRM.Netcore` ( **endast** version `0.12.0` ) är installerat.
+Kräv att `AzureRM.Netcore` (**endast** version `0.12.0` ) är installerat.
 
 ```powershell
 #Requires -Modules @{ ModuleName="AzureRM.Netcore"; RequiredVersion="0.12.0" }
@@ -161,7 +162,7 @@ Följande exempel Miss lyckas eftersom **0,12** inte exakt matchar **0.12.0**.
 
 Anger en PowerShell-utgåva som skriptet kräver. Giltiga värden är **Core** för PowerShell-kärnan och **Desktop** för Windows PowerShell.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 #Requires -PSEdition Core
@@ -172,7 +173,7 @@ Ett exempel:
 Anger det gränssnitt som skriptet kräver. Ange gränssnitts-ID: t. Om du använder parametern **ShellId** måste du också ta med parametern **PSSnapin** .
 Du kan hitta den aktuella **ShellId** genom att fråga den `$ShellId` automatiska variabeln.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 #Requires -ShellId MyLocalShell -PSSnapin Microsoft.PowerShell.Core
@@ -185,7 +186,7 @@ Ett exempel:
 
 När den här växel parametern läggs till i din `#Requires` instruktion, anger den att den PowerShell-session där du kör skriptet måste startas med utökade användar rättigheter. Parametern **RunAsAdministrator** ignoreras på ett operativ system som inte är från Windows. **RunAsAdministrator** -parametern introducerades i PowerShell 4,0.
 
-Ett exempel:
+Exempel:
 
 ```powershell
 #Requires -RunAsAdministrator

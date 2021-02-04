@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: e05c9b5e44d26b1e16c82f734ec60ca4cc73ab4d
-ms.sourcegitcommit: e0f9fe6335be1e0f94bedaa0e8baec2acaeaa076
+ms.openlocfilehash: 1b1824db5c5c20698d551a6277890ce6c82c4e11
+ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "93269462"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725195"
 ---
 # ForEach-Object
 
@@ -42,7 +42,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 [-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Beskrivning
+## Description
 
 `ForEach-Object`Cmdleten utför en åtgärd på varje objekt i en samling inobjekt. Objekten kan skickas till cmdleten eller anges med parametern **InputObject** .
 
@@ -206,7 +206,7 @@ process
 
 ### Exempel 9: använda ForEach-Object med fler än två skript block
 
-I det här exemplet skickar vi två skript block i position. Alla skript block binder till **process** parametern. De behandlas dock som om de hade skickats till parametrarna **BEGIN** , **process** och **End** .
+I det här exemplet skickar vi två skript block i position. Alla skript block binder till **process** parametern. De behandlas dock som om de hade skickats till parametrarna **BEGIN**, **process** och **End** .
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
@@ -337,7 +337,7 @@ $threadSafeDictionary["pwsh"]
      82    82.87     130.85      15.55    2808   2 pwsh
 ```
 
-En enda instans av ett **ConcurrentDictionary** -objekt skickas till varje skript block för att samla in objekten. Eftersom **ConcurrentDictionary** är tråd säker, är det säkert att modifieras av varje parallellt skript. Ett icke-tråd säkert objekt, t. ex **. system. Collections. Generic. Dictionary** , är inte säkert att använda här.
+En enda instans av ett **ConcurrentDictionary** -objekt skickas till varje skript block för att samla in objekten. Eftersom **ConcurrentDictionary** är tråd säker, är det säkert att modifieras av varje parallellt skript. Ett icke-tråd säkert objekt, t. ex **. system. Collections. Generic. Dictionary**, är inte säkert att använda här.
 
 > [!NOTE]
 > Det här exemplet är en mycket ineffektiv användning av **parallell** parameter. Skriptet lägger bara till inobjektet i ett objekt i en samtidig ord lista. Det är enkelt och inte värt omkostnaderna för att anropa varje skript i en separat tråd. `ForEach-Object`Att köras normalt utan att den **parallella** växeln är mycket effektivare och snabbare. Det här exemplet är endast avsett för att visa hur du använder tråd säkra variabler.
@@ -542,7 +542,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -655,7 +655,7 @@ Denna cmdlet returnerar objekt som bestäms av indatamängden.
 
 - Med början i PowerShell 4,0 `Where` och `ForEach` metoder har lagts till för användning med samlingar. Du kan läsa mer om de här nya metoderna här [about_arrays](./About/about_Arrays.md)
 
-- `ForEach-Object -Parallel`Parameter uppsättningen använder PowerShell: s interna API för att köra varje skript block. Detta är betydligt mer arbete än att köra `ForEach-Object` normalt med sekventiell bearbetning. Det är viktigt att använda **parallellt** där behovet av att köra parallellt är litet jämfört med det arbete som skript blocket utför. Ett exempel:
+- `ForEach-Object -Parallel`Parameter uppsättningen använder PowerShell: s interna API för att köra varje skript block. Detta är betydligt mer arbete än att köra `ForEach-Object` normalt med sekventiell bearbetning. Det är viktigt att använda **parallellt** där behovet av att köra parallellt är litet jämfört med det arbete som skript blocket utför. Exempel:
 
   - Beräknings intensiva skript på datorer med flera kärnor
   - Skript som tillbringar tid i väntan på resultat eller utför fil åtgärder

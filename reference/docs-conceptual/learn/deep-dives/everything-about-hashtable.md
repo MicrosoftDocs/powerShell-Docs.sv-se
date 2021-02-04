@@ -3,12 +3,12 @@ title: Allt du ville veta om hash
 description: Hash är verkligen viktiga i PowerShell så det är bra att ha en solid förståelse för dem.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
+ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354430"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "97980509"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Allt du ville veta om hash
 
@@ -925,8 +925,7 @@ Så du kan se att även om jag har klonat en hash-tabellen `person` . Vi behöve
 
 ### <a name="deep-copies"></a>Djupgående kopior
 
-När jag skriver detta är jag inte medveten om några smarta sätt att bara skapa en djup kopia av en hash-enhet (och behålla den som en hash-enhet). Det är bara ett av de saker som någon behöver skriva.
-Här är en snabb metod för att göra det.
+Det finns ett par olika sätt att skapa en djup kopia av en hash-hash (och behålla den som en hash-hash). Här är en funktion som använder PowerShell för att rekursivt skapa en djup kopia:
 
 ```powershell
 function Get-DeepClone
@@ -952,6 +951,21 @@ function Get-DeepClone
 ```
 
 Den hanterar inte andra referens typer eller matriser, men det är en lämplig start punkt.
+
+Ett annat sätt är att använda .net för att deserialisera den med hjälp av **CliXml** som i den här funktionen:
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+För mycket stora hash är avserialiserings funktionen snabbare när den skalas ut. Det finns dock några saker att tänka på när du använder den här metoden. Eftersom den använder **CliXml** är det minnes intensivt och om du klonar enorma hash kan det vara ett problem. En annan begränsning av **CliXml** är att det finns en djup begränsning på 48. Om du har en hash-datahash med 48 lager av kapslade hash, kommer kloningen att Miss Miss och ingen hash-tabellen kommer att matas ut alls.
 
 ## <a name="anything-else"></a>Något mer?
 

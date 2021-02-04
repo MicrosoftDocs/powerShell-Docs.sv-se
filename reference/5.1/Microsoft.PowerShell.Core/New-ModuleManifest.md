@@ -7,12 +7,12 @@ ms.date: 04/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 50a3d85b3d598653a03bc6bf8e82c249bba42759
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ea0ebc0f742a9d815fbd76ea62e97fd92c4f9da8
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263570"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879294"
 ---
 # New-ModuleManifest
 
@@ -46,7 +46,7 @@ Module-författare kan använda denna cmdlet för att skapa ett manifest för si
 
 `New-ModuleManifest` skapar ett manifest som innehåller alla ofta använda manifest nycklar, så att du kan använda standardutdata som en manifest mall. Om du vill lägga till eller ändra värden eller lägga till Modulnamn som denna cmdlet inte lägger till, öppnar du den resulterande filen i en text redigerare.
 
-Varje parameter, förutom **sökväg** och **Passthru** , skapar en modul manifest nyckel och dess värde.
+Varje parameter, förutom **sökväg** och **Passthru**, skapar en modul manifest nyckel och dess värde.
 I ett modul manifest krävs bara nyckeln **ModuleVersion** . Om du utelämnar en parameter från kommandot, om du inte anger någon parameter från kommandot, `New-ModuleManifest` skapas en kommentar sträng för det associerade värdet som inte har någon påverkan.
 
 I PowerShell 2,0 `New-ModuleManifest` uppmanas du att ange värdena för de vanligaste parametrarna som inte anges i kommandot, förutom de parameter värden som krävs. Från och med PowerShell 3,0 visas `New-ModuleManifest` endast när obligatoriska parameter värden inte har angetts.
@@ -215,7 +215,7 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-Det här exemplet visar hur du använder tabell formaten sträng och hash för parametern **ModuleList** , **RequiredModules** och **NestedModules** . Du kan kombinera strängar och hash-tabeller i samma parameter värde.
+Det här exemplet visar hur du använder tabell formaten sträng och hash för parametern **ModuleList**, **RequiredModules** och **NestedModules** . Du kan kombinera strängar och hash-tabeller i samma parameter värde.
 
 ### Exempel 4 – skapa ett manifest som stöder uppdaterings bara hjälp
 
@@ -750,7 +750,7 @@ Accept wildcard characters: False
 
 ### – PowerShellVersion
 
-Anger den lägsta version av PowerShell som fungerar med den här modulen. Du kan till exempel ange 1,0, 2,0 eller 3,0 som parameter värde.
+Anger den lägsta version av PowerShell som fungerar med den här modulen. Du kan till exempel ange 1,0, 2,0 eller 3,0 som parameter värde. Det måste vara i formatet X. X. Om du till exempel skickar `5` , kommer PowerShell att utlösa ett fel.
 
 ```yaml
 Type: System.Version

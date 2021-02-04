@@ -1,16 +1,16 @@
 ---
 description: Beskriver variabler som lagrar Tillståndsinformation för PowerShell. Dessa variabler skapas och underhålls av PowerShell.
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 134649405c05e527039694d7c4fdf38d3c64b79e
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: a8959129cc72968ed6e7fcde3587de0d57dbc0e9
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710698"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577198"
 ---
 # <a name="about-automatic-variables"></a>Om automatiska variabler
 
@@ -137,6 +137,12 @@ Eftersom `$input` är en uppräknare kan åtkomst till någon av dess egenskaper
 
 Uppräknare innehåller egenskaper och metoder som du kan använda för att hämta loop-värden och ändra den aktuella loop-iterationen. Mer information finns i [använda uppräknare](#using-enumerators).
 
+`$input`Variabeln är också tillgänglig för kommandot som anges av `-Command` parametern för `pwsh` när den anropas från kommando raden. Följande exempel körs från Windows-kommando gränssnittet.
+
+```CMD
+echo Hello | pwsh -Command """$input World!"""
+```
+
 ### <a name="iscoreclr"></a>$IsCoreCLR
 
 Innehåller `$True` om den aktuella sessionen körs på .net Core Runtime (CoreCLR). Innehåller annars `$False` .
@@ -174,15 +180,8 @@ Innehåller information om det aktuella kommandot, till exempel namn, parametrar
 
 Från och med PowerShell 3,0, `MyInvocation` har följande nya egenskaper.
 
-| Egenskap      | Beskrivning                                         |
-| ------------- | --------------------------------------------------- |
-| **PSScriptRoot**  | Innehåller den fullständiga sökvägen till skriptet som anropades   |
-|               | det aktuella kommandot. Värdet för den här egenskapen är  |
-|               | fylls bara i när anroparen är ett skript.         |
-| **PSCommandPath** | Innehåller den fullständiga sökvägen till och fil namnet på skriptet  |
-|               | som anropade det aktuella kommandot. Värdet för det här |
-|               | Egenskapen fylls bara när anroparen är en     |
-|               | över.                                             |
+- **PSScriptRoot** – innehåller den fullständiga sökvägen till skriptet som anropade det aktuella kommandot. Värdet för den här egenskapen fylls bara när anroparen är ett skript.
+- **PSCommandPath** – innehåller den fullständiga sökvägen och fil namnet för skriptet som anropade det aktuella kommandot. Värdet för den här egenskapen fylls bara när anroparen är ett skript.
 
 Till skillnad från `$PSScriptRoot` de `$PSCommandPath` automatiska variablerna innehåller egenskaperna **PSScriptRoot** och **PSCommandPath** för den `$MyInvocation` automatiska variabeln information om anroparen eller anropet till skriptet, inte det aktuella skriptet.
 
@@ -354,6 +353,49 @@ Innehåller information om den användare som startade PSSession, inklusive anv�
 
 `$PSSenderInfo`Variabeln innehåller en egenskap som kan konfigureras av användaren, **ApplicationArguments**, som standard bara innehåller `$PSVersionTable` från den ursprungliga sessionen. Om du vill lägga till data i egenskapen **ApplicationArguments** använder du parametern **ApplicationArguments** för `New-PSSessionOption` cmdleten.
 
+### <a name="psstyle"></a>$PSStyle
+
+> [!NOTE]
+> Den här variabeln är endast tillgänglig när `PSAnsiRendering` experimentell funktion IA har Aktiver ATS. Mer information finns i [about_Experimental_Features](about_Experimental_Features.md) och [använda experimentella funktioner](/powershell/scripting/learn/experimental-features).
+
+Från och med PowerShell 7,2 kan du nu komma åt den `$PSStyle` automatiska variabeln för att visa och ändra åter givningen av ANSI-strängens utdata. Variabeln innehåller följande egenskaper:
+
+- **Återställ** – stänger av alla dekorationer
+- **Background** -kapslat objekt för att kontrol lera bakgrunds färg
+- **Blink** – aktiverar blinkande
+- **BlinkOff** – stänger av blinkning
+- **Fet** – aktiverar fetstil
+- **BoldOff** – Stäng av fetstil
+- **Förgrunds** -kapslat objekt för att kontrol lera förgrunds färger
+- **Formatering** – styr standardformateringen för utgående data strömmar
+- **Dold** – aktiverar dold
+- **HiddenOff** – stänger av dold
+- **OutputRendering** -styr när utrendering av utdata används
+- **Omvänd** – aktiverar omvänd
+- **ReverseOff** – inaktiverar omvänt
+- **Kursiv** – aktiverar kursiv stil
+- **ItalicOff** – stänger av kursiv stil
+- **Understrykning** – aktiverar understrykning
+- **UnderlineOff** – inaktiverar understrykning
+
+Bas medlemmarna returnerar strängar av ANSI escape-sekvenser som är mappade till deras namn.
+Värdena kan anges för att tillåta anpassning. Du kan till exempel ändra fetstil till understruken. Egenskaps namnen gör det enklare för dig att skapa dekorerade strängar med hjälp av tabb-slut för ande:
+
+```powershell
+"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
+```
+
+- `$PSStyle.Background` Och- `$PSStyle.Foreground` medlemmar är strängar som innehåller ANSI-escape-sekvenser för 16 standard-konsolens färger och en `Rgb()` metod för att ange 24-bitars färg. Värdena kan anges och kan innehålla valfritt antal ANSI-escape-sekvenser.
+
+`$PSStyle.Formatting` är ett kapslat objekt som kontrollerar standardformateringen av fel söknings-, fel-, utförliga och varnings meddelanden. Du kan också kontrol lera attribut som fetstil och understrykning. Den ersätter `$Host.PrivateData` som ett sätt att hantera färger för åter givning av format. `$Host.PrivateData` fortsätter att finnas för bakåtkompatibilitet, men är inte ansluten till `$PSStyle.Formatting` .
+
+`$PSStyle.OutputRendering` är en `System.Management.Automation.OutputRendering` uppräkning med värdena:
+
+- **Automatisk**: det här är standardinställningen. Om värden har stöd för VirtualTerminal skickas ANSI alltid som-är, annars i klartext
+- **ANSI**: ANSI skickas alltid till och med
+- **Klartext**: ANSI escape-sekvenser är alltid rensade så att det bara är oformaterad text
+- **HostOnly**: det här är MacOS-beteendet där ANSI escape-sekvenser tas bort i omdirigerade eller skickas utdata.
+
 ### <a name="psuiculture"></a>$PSUICulture
 
 Innehåller namnet på användar gränssnitts kulturen (UI) som används i operativ systemet. ANVÄNDAR gränssnittets kultur avgör vilka text strängar som används för gränssnitts element, till exempel menyer och meddelanden. Detta är värdet för systemets **system.Globalization.CultureInfo.CurrentUICulture.name** -egenskap. Använd cmdleten för att hämta objektet **system. globalisering. CultureInfo** för systemet `Get-UICulture` .
@@ -362,28 +404,15 @@ Innehåller namnet på användar gränssnitts kulturen (UI) som används i opera
 
 Innehåller en skrivskyddad hash-tabell som visar information om den version av PowerShell som körs i den aktuella sessionen. Tabellen innehåller följande objekt:
 
-| Egenskap                  | Beskrivning                                   |
-| ------------------------- | --------------------------------------------- |
-| **PSVersion**             | PowerShell-versions numret                 |
-| **PSEdition**             | Den här egenskapen har värdet ' Desktop ' för  |
-|                           | PowerShell 4 och lägre, samt PowerShell  |
-|                           | 5,1 på kompletta Windows-versioner.        |
-|                           | Den här egenskapen har värdet "Core" för     |
-|                           | PowerShell 6 och senare samt PowerShell  |
-|                           | PowerShell 5,1 på versioner med nedsatt storlek  |
-|                           | som Windows Nano Server eller Windows IoT.      |
-| **GitCommitId**           | Inchecknings-ID: t för källfilerna, i GitHub |
-| **Operativsystem**                    | Beskrivning av det operativ system som      |
-|                           | PowerShell körs på.                     |
-| **Plattform**              | Plattform som operativ systemet körs på |
-|                           | för. Värdet på Linux och macOS är **UNIX**. |
-|                           | Se `$IsMacOs` och `$IsLinux` .                |
-| **PSCompatibleVersions**  | Versioner av PowerShell som är kompatibla    |
-|                           | med den aktuella versionen                      |
-| **PSRemotingProtocolVersion** | Versionen av PowerShell-fjärrservern      |
-|                           | hanterings protokoll.                          |
-| **SerializationVersion**  | Versionen av serialiserings metoden       |
-| **WSManStackVersion**     | WS-Management stackens versions nummer |
+- **PSVersion** – PowerShell-versions numret
+- **PSEdition** – den här egenskapen har värdet "Desktop" för PowerShell 4 och tidigare samt PowerShell 5,1 på kompletta Windows-versioner. Den här egenskapen har värdet "Core" för PowerShell 6 och senare samt PowerShell PowerShell 5,1 på versioner med minskad version som Windows Nano Server eller Windows IoT.
+- **GitCommitId** – inchecknings-ID för källfilerna, i GitHub,
+- **OS** – Beskrivning av det operativ system som PowerShell körs på.
+- **Plattforms** plattform som operativ systemet körs på. Värdet på Linux och macOS är **UNIX**. Se `$IsMacOs` och `$IsLinux` .
+- **PSCompatibleVersions** – versioner av PowerShell som är kompatibla med den aktuella versionen
+- **PSRemotingProtocolVersion** – versionen av PowerShell Remote Management-protokollet.
+- **SerializationVersion** – versionen av serialiserings metoden
+- **WSManStackVersion** – versions numret för WS-Managements stacken
 
 ### <a name="pwd"></a>$PWD
 

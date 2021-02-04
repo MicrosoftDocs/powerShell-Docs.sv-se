@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
-ms.openlocfilehash: 8ad7df860533b9f394fd81199dd7213175cce213
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 078b7c8561bf5821e9cf2791caceaad8152c926a
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710837"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693051"
 ---
 # Get-Content
 
@@ -132,12 +132,30 @@ Length        : 44
 ```
 
 ```powershell
-# Retrieve the content of the primary, or $DATA stream.
-Get-Content -Path .\Stream.txt -Stream $DATA
+# Retrieve the content of the primary, or $DATA stream.    # Retrieve the content of the primary stream. Note the singlequotes to prevent variable substitution.
+Get-Content -Path .\Stream.txt -Stream $DATA    Get-Content -Path .\Stream.txt -Stream ':$DATA'
 ```
 
 ```Output
 This is the content of the Stream.txt file
+```
+
+```powershell
+# Alternative way to get the same content.
+Get-Content -Path .\Stream.txt -Stream ""
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
+```
+
+```Output
+This is the content of the Stream.txt file
+```
+
+```powershell
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
 ```
 
 ```powershell
@@ -179,7 +197,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 **Stream** -parametern är en dynamisk parameter för [fil Systems leverantören](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-Som standard `Get-Content` hämtar endast data från den primära eller `$DATA` Stream. **Strömmar** kan användas för att lagra dolda data, till exempel attribut, säkerhets inställningar eller andra data.
+Som standard `Get-Content` hämtar endast data från standardvärdet eller `:$DATA` Stream. **Strömmar** kan användas för att lagra dolda data, till exempel attribut, säkerhets inställningar eller andra data. De kan också lagras på kataloger utan att vara underordnade objekt.
 
 ### Exempel 6: Hämta RAW-innehåll
 
@@ -508,11 +526,16 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
+
 Hämtar innehållet i den angivna alternativa NTFS-filströmen från filen. Ange data ström namnet.
 Jokertecken stöds inte.
 
 **Stream** är en dynamisk parameter som **fil Systems** leverantören lägger till i `Get-Content` cmdleten.
-Den här parametern fungerar bara i fil system enheter på Windows-system. Den här parametern introducerades i Windows PowerShell 3,0.
+Den här parametern fungerar bara i fil system enheter på Windows-system.
+
+Den här parametern introducerades i Windows PowerShell 3,0. I PowerShell 7,2 kan Get-Content hämta innehållet i alternativa data strömmar från kataloger och filer.
 
 ```yaml
 Type: System.String
@@ -546,7 +569,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` . Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
@@ -579,4 +602,3 @@ Du kan skicka vidare antalet läsningar, totalt antal, sökvägar eller autentis
 [Get-PSProvider](Get-PSProvider.md)
 
 [Ange innehåll](Set-Content.md)
-

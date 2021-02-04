@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
-ms.openlocfilehash: dbc92015a4d48d74dd3f6c642dafbe06f4cb342c
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 1f2a0bae0721bc9adf5b3ba92d5be32d21306a46
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710644"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879151"
 ---
 # <a name="about-data-sections"></a>Om data avsnitt
 
@@ -71,7 +71,7 @@ Med `-SupportedCommand` parametern kan du ange att en cmdlet eller funktion bara
 
 Värdet för `-SupportedCommand` är en kommaavgränsad lista med en eller flera cmdlet-eller funktions namn.
 
-Följande data avsnitt innehåller till exempel en användardefinierad cmdlet, `Format-XML` som formaterar data i en XML-fil:
+Följande data avsnitt innehåller till exempel en användardefinierad cmdlet, `Format-Xml` som formaterar data i en XML-fil:
 
 ```powershell
 DATA -supportedCommand Format-Xml

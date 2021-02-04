@@ -7,12 +7,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
-ms.openlocfilehash: 969cb181758dc1ac40b9d8fca2c22fa97f87c693
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cbd1229721650823d9780517934c40a2287f4227
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93265407"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692658"
 ---
 # Set-ItemProperty
 
@@ -64,7 +64,7 @@ Du kan till exempel lägga till en ny register post i en nyckel och upprätta el
 
 ### Exempel 1: Ange en egenskap för en fil
 
-Det här kommandot anger värdet för egenskapen **IsReadOnly** för filen "final.doc" till "true". Den använder **sökvägen** för att ange filen, **namn** för att ange namnet på egenskapen och **värdet** pazrameter för att ange det nya värdet.
+Det här kommandot anger värdet för egenskapen **IsReadOnly** för filen "final.doc" till "true". Den använder **sökvägen** för att ange filen, **namn** för att ange namnet på egenskapen och **värdet** parameter för att ange det nya värdet.
 
 Filen är ett **system. io. fileinfo** -objekt och **IsReadOnly** är bara en av dess egenskaper.
 Om du vill se alla egenskaper skriver du `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property` .
@@ -336,14 +336,14 @@ Den här parametern fungerar bara i register enheterna.
 Anger vilken typ av egenskap som denna cmdlet lägger till.
 De acceptabla värdena för den här parametern är:
 
-- **Sträng** : anger en null-avslutad sträng. Motsvarar **REG_SZ**.
-- **ExpandString** : anger en null-avslutad sträng som innehåller expanderade referenser till miljövariabler som expanderas när värdet hämtas. Motsvarar **REG_EXPAND_SZ**.
-- **Binary** : anger binära data i alla former. Motsvarar **REG_BINARY**.
-- **DWORD** : anger ett 32-bitars binärt tal. Motsvarar **REG_DWORD**.
-- **Multisträng** : anger en matris med null-terminerade strängar som avslutas med två NULL-tecken.
+- **Sträng**: anger en null-avslutad sträng. Motsvarar **REG_SZ**.
+- **ExpandString**: anger en null-avslutad sträng som innehåller expanderade referenser till miljövariabler som expanderas när värdet hämtas. Motsvarar **REG_EXPAND_SZ**.
+- **Binary**: anger binära data i alla former. Motsvarar **REG_BINARY**.
+- **DWORD**: anger ett 32-bitars binärt tal. Motsvarar **REG_DWORD**.
+- **Multisträng**: anger en matris med null-terminerade strängar som avslutas med två NULL-tecken.
   Motsvarar **REG_MULTI_SZ**.
-- **QWORD** : anger ett 64-bitars binärt tal. Motsvarar **REG_QWORD**.
-- **Okänd** : anger en register data typ som inte stöds, till exempel **REG_RESOURCE_LIST**.
+- **QWORD**: anger ett 64-bitars binärt tal. Motsvarar **REG_QWORD**.
+- **Okänd**: anger en register data typ som inte stöds, till exempel **REG_RESOURCE_LIST**.
 
 ```yaml
 Type: RegistryValueKind

@@ -7,12 +7,12 @@ ms.date: 5/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 6ada7bd821632054649c3ccf377fea844d2ae0c8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5dc681e39a6d4991c4137d106879df8778d3c1fe
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267315"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490644"
 ---
 # Register-ArgumentCompleter
 
@@ -61,7 +61,7 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 Det första kommandot skapar ett-skript block som tar de nödvändiga parametrarna som skickas i när användaren trycker på <kbd>fliken</kbd>. Mer information finns i Beskrivning av **script block** -parametern.
 
-I-skript blocket hämtas de tillgängliga värdena för **ID** med hjälp av `Get-TimeZone` cmdleten. Egenskapen **ID** för varje tidszon är skickas till `Where-Object` cmdleten. `Where-Object`Cmdlet: en filtrerar bort alla ID: n som inte börjar med värdet som anges av `$wordToComplete` , som representerar texten som användaren skrev innan de tryckte på <kbd>fliken</kbd>. Filtrerade ID: n är skickas till `For-EachObject` cmdleten som innesluter varje värde i citationstecken, om värdet innehåller blank steg.
+I-skript blocket hämtas de tillgängliga värdena för **ID** med hjälp av `Get-TimeZone` cmdleten. Egenskapen **ID** för varje tidszon är skickas till `Where-Object` cmdleten. `Where-Object`Cmdlet: en filtrerar bort alla ID: n som inte börjar med värdet som anges av `$wordToComplete` , som representerar texten som användaren skrev innan de tryckte på <kbd>fliken</kbd>. Filtrerade ID: n är skickas till `ForEach-Object` cmdleten som innesluter varje värde i citationstecken, om värdet innehåller blank steg.
 
 Det andra kommandot registrerar argumentet completer genom att skicka script block, **ParameterName** **-ID** och **commandname** `Set-TimeZone` .
 
@@ -91,7 +91,7 @@ Med **CompletionResult** -objektet kan du ge ytterligare information till varje 
 
 - **completionText** (sträng) – den text som ska användas som resultat av automatisk komplettering. Detta är värdet som skickas till kommandot.
 - **listItemText** (sträng) – texten som ska visas i en lista, t. ex. när användaren trycker på <kbd>CTRL</kbd>- + <kbd>blank steg</kbd>. Detta används endast för visning och skickas inte till kommandot när det är markerat.
-- **resultType** ( [CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) – typen av slut för ande resultat.
+- **resultType** ([CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) – typen av slut för ande resultat.
 - **knapp Beskrivning** (sträng) – text för knapp beskrivningen med information som ska visas om objektet.
   Detta visas när användaren väljer ett objekt efter att ha tryckt på <kbd>CTRL</kbd>- + <kbd>ytan</kbd>.
 

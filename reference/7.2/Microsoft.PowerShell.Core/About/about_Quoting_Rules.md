@@ -1,33 +1,33 @@
 ---
 description: Beskriver regler för användning av enkla och dubbla citat tecken i PowerShell.
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
-ms.openlocfilehash: fcb4bff0ca27ad0bc4e3b4c74e58e9fefa8cac7b
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: ba4111937245939961689935181be5d547c8e112
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709690"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490900"
 ---
 # <a name="about-quoting-rules"></a>Om citat regler
 
-## <a name="short-description"></a>KORT BESKRIVNING
+## <a name="short-description"></a>Kort beskrivning
 Beskriver regler för användning av enkla och dubbla citat tecken i PowerShell.
 
-## <a name="long-description"></a>LÅNG BESKRIVNING
+## <a name="long-description"></a>Lång beskrivning
 
 Citat tecken används för att ange en tecken sträng. Du kan omge en sträng med enkla citat tecken ( `'` ) eller dubbla citat tecken ( `"` ).
 
-Citat tecken används också för att skapa en här-sträng. En här-sträng är en enciterad eller dubbels omgiven sträng där citat tecken tolkas bokstavligen. En här-sträng kan sträcka sig över flera rader. Alla rader i en här-sträng tolkas som strängar, även om de inte omges av citat tecken.
+Citat tecken används också för att skapa en _här-sträng_. En här-sträng är en enciterad eller dubbels omgiven sträng där citat tecken tolkas bokstavligen. En här-sträng kan sträcka sig över flera rader. Alla rader i en här-sträng tolkas som strängar, även om de inte omges av citat tecken.
 
 I kommandon till fjärrdatorer definierar citat tecken de delar av kommandot som körs på fjärrdatorn. I en fjärran sluten session avgör citat tecken också om variablerna i ett kommando tolkas först på den lokala datorn eller på fjärrdatorn.
 
-### <a name="single-and-double-quoted-strings"></a>STRÄNGAR MED ENKLA OCH DUBBLA CITAT TECKEN
+## <a name="single-and-double-quoted-strings"></a>Strängar med enkla och dubbla citat tecken
 
-När du omger en sträng med dubbla citat tecken (en dubbels omgiven sträng) ersätts variabel namn som föregås av ett dollar tecken ( `$` ) med variabelns värde innan strängen skickas till kommandot för bearbetning.
+En sträng som omges av dubbla citat tecken är en _expanderbar_ sträng. Variabel namn som föregås av ett dollar tecken ( `$` ) ersätts med variabelns värde innan strängen skickas till kommandot för bearbetning.
 
 Exempel:
 
@@ -54,7 +54,8 @@ Utdata från det här kommandot är:
 The value of 5 is 5.
 ```
 
-När du omger en sträng med enkla citat tecken (en sträng med en citat tecken) skickas strängen till kommandot exakt när du skriver den. Ingen ersättning utförs. Exempel:
+En sträng som omges av enkla citat tecken är en _orda Grant_ sträng. Strängen skickas till kommandot exakt när du skriver den. Ingen ersättning utförs.
+Exempel:
 
 ```powershell
 $i = 5
@@ -81,7 +82,7 @@ The value of $(2+3) is 5.
 
 För att förhindra att ett variabel värde byts ut i en dubbel-Citerad sträng, använder du bakticket ( `` ` `` ) (ASCII 96), som är PowerShell-escape-tecken.
 
-I följande exempel förhindrar det Baknings kort som föregår den första $i variabeln att PowerShell ersätter variabelns namn med värdet.
+I följande exempel hindrar det Baknings kort som föregår den första `$i` variabeln till att PowerShell ersätter variabelns namn med värdet.
 Exempel:
 
 ```powershell
@@ -154,7 +155,7 @@ Use a quotation mark (`") to begin a string.
 
 Eftersom innehållet i ensiffriga strängar tolkas bokstavligen, behandlas det som ett bokstavligt tecken och visas i utdata.
 
-### <a name="here-strings"></a>HÄR – STRÄNGAR
+## <a name="here-strings"></a>Här – strängar
 
 Offert reglerna för här – strängarna är något annorlunda.
 
@@ -276,7 +277,7 @@ xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 Här – strängarna är också ett bekvämt format för inmatade `ConvertFrom-StringData` cmdlet, som konverterar hit-strängar till hash-tabeller.
 Mer information finns i `ConvertFrom-StringData`.
 
-## <a name="see-also"></a>SE ÄVEN
+## <a name="see-also"></a>Se även
 
 [about_Special_Characters](about_Special_Characters.md)
 

@@ -6,12 +6,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 7de62dbdef9d31a100042bb5a037f0486acfaa71
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 0a990b1c0c46cda06c5239a4c8fde55b29296376
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709115"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490879"
 ---
 # Test-FileCatalog
 
@@ -50,7 +50,7 @@ Valid
 ### Exempel 2: verifiera en fil katalog med detaljerade utdata
 
 ```powershell
-Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+Test-FileCatalog -Detailed -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
 ```
 
 ```Output

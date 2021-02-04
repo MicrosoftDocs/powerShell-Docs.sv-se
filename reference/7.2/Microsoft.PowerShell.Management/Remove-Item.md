@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
-ms.openlocfilehash: 64bdbf9bbfe023c6cb909596e266201e2165e7a6
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e8112f4f3e20a2554a12ad09b6652b5cb1c0d228
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710170"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693020"
 ---
 # Remove-Item
 
@@ -173,7 +173,7 @@ At line:1 char:1
 
 ```
 
-**Stream** -parametern `Get-Item` hämtar filens **zon. Identifier** -dataström. `Copy-Script.ps1` `Remove-Item` använder **Stream** -parametern för att ta bort filens överordnade- **ID** . Slutligen `Get-Item` visar cmdleten att **zonen. identifierarens** data ström har tagits bort.
+**Stream** -parametern `Get-Item` hämtar `Zone.Identifier` filens data ström `Copy-Script.ps1` . `Remove-Item` använder **Stream** -parametern för att ta bort `Zone.Identifier` filens data ström. Slutligen `Get-Item` visar cmdleten att `Zone.Identifier` strömmen har tagits bort.
 
 ## PARAMETRAR
 
@@ -213,8 +213,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Anger ett filter för att kvalificera **Sök vägs** parametern. [Fil Systems](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) leverantören är den enda installerade PowerShell-providern som stöder användningen av filter. Du kan hitta syntaxen för filter språket för **fil systemet** i [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filter är mer effektiva än andra parametrar, eftersom providern tillämpar dem när cmdleten hämtar objekten i stället för att ha PowerShell filtrera objekten när de har hämtats.
+Anger ett filter för att kvalificera **Sök vägs** parametern. [Fil Systems](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) leverantören är den enda installerade PowerShell-providern som stöder användningen av filter. Du kan hitta syntaxen för filter språket för **fil systemet** i [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filter är mer effektiva än andra parametrar, eftersom providern tillämpar dem när cmdleten hämtar objekten i stället för att ha PowerShell filtrera objekten när de har hämtats.
 
 ```yaml
 Type: System.String
@@ -316,12 +315,16 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
+
 **Stream** -parametern är en dynamisk parameter som fil Systems leverantören lägger till i `Remove-Item` .
 Den här parametern fungerar bara i fil system enheter.
 
-Du kan använda `Remove-Item` för att ta bort en alternativ data ström. Det är dock inte det rekommenderade sättet att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
+Du kan använda `Remove-Item` för att ta bort en alternativ data ström, till exempel `Zone.Identifier` .
+Det är dock inte det rekommenderade sättet att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
 
-Den här parametern introducerades i Windows PowerShell 3,0.
+Den här parametern introducerades i Windows PowerShell 3,0. Från och med Windows PowerShell 7,2 `Remove-Item` kan alternativa data strömmar tas bort från kataloger och filer.
 
 ```yaml
 Type: System.String[]
@@ -372,7 +375,8 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` . Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
 
 ## INDATA
 
@@ -382,7 +386,7 @@ Du kan skicka vidare en sträng som innehåller en sökväg, men inte en literal
 
 ## UTDATA
 
-### Inga
+### Inget
 
 Denna cmdlet returnerar inga utdata.
 
@@ -417,4 +421,3 @@ När du försöker ta bort en mapp som innehåller objekt utan att använda para
 [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
 
 [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
-ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
+ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94625711"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879362"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -24,20 +24,21 @@ Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [ab
 
 Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen.
 
-|                            Namn                            |   6,2   |   7.0   |   7.1   |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
-| PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |         |
-| PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |         |
-| PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |
-| PSUnixFileStat (endast Windows-konventionellt i PS 7.1 +)  |         | &check; |         |
-| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
-| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
-| Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         | &check; |
-| PSCultureInvariantReplaceOperator                          |         |         | &check; |
-| PSNotApplyErrorActionToStderr                              |         |         | &check; |
-| PSSubsystemPluginModel                                     |         |         | &check; |
+|                            Name                            |   6,2   |   7.0   |   7.1   |   7.2   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
+| PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |         |         |
+| PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |         |         |
+| PSNullConditionalOperators (vanlig i PS 7.1 +)         |         | &check; |         |         |
+| PSUnixFileStat (endast Windows-konventionellt i PS 7.1 +)  |         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; | &check; |
+| Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; | &check; |
+| PSNativePSPathResolution                                   |         |         | &check; | &check; |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace
 
@@ -65,6 +66,56 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 ```
 
 I det här exemplet startas ett jobb och en Bryt punkt anges som Bryt när körs `Set-PSBreakPoint` . Körnings utrymme lagras i en variabel och skickas till `Get-PSBreakPoint` kommandot med parametern **körnings utrymme** . Sedan kan du kontrol lera Bryt punkten i `$breakpoint` variabeln.
+
+## <a name="psansirendering"></a>PSAnsiRendering
+
+Det här experimentet lades till i PowerShell 7,2. Funktionen gör det möjligt att ändra hur PowerShell-motorn matar ut text och lägger till den `$PSStyle` automatiska variabeln för att styra ANSI-åter givning av sträng utdata.
+
+```powershell
+PS> $PSStyle
+
+Name            MemberType Definition
+----            ---------- ----------
+Reset           Property   string AttributesOff {get;set;}
+Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
+Blink           Property   string Blink {get;set;}
+BlinkOff        Property   string BlinkOff {get;set;}
+Bold            Property   string Bold {get;set;}
+BoldOff         Property   string BoldOff {get;set;}
+Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
+Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
+Hidden          Property   string Hidden {get;set;}
+HiddenOff       Property   string HiddenOff {get;set;}
+OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Reverse         Property   string Reverse {get;set;}
+ReverseOff      Property   string ReverseOff {get;set;}
+Italic          Property   string Standout {get;set;}
+ItalicOff       Property   string StandoutOff {get;set;}
+Underline       Property   string Underlined {get;set;}
+Underline Off   Property   string UnderlinedOff {get;set;}
+```
+
+Bas medlemmarna returnerar strängar av ANSI escape-sekvenser som är mappade till deras namn. Värdena kan anges för att tillåta anpassning.
+
+Mer information finns i [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+> [!NOTE]
+> För C#-utvecklare kan du komma åt `PSStyle` som en singleton. Användningen kommer att se ut så här:
+>
+> ```csharp
+> string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
+> ```
+>
+> `PSStyle` finns i namn området system. Management. Automation.
+
+Tillsammans med åtkomst till `$PSStyle` , introducerar detta ändringar i PowerShell-motorn. PowerShell-formatsystemet uppdateras för att respektera `$PSStyle.OutputRendering` .
+
+- `StringDecorated` typen läggs till för att hantera ANSI-undantagna strängar.
+- `string IsDecorated` boolesk egenskap läggs till för att returnera om strängen innehåller ANSI escape-sekvenser baserat på om strängen innehåller ESC eller C1 CSI.
+- `Length`Egenskapen returnerar _bara_ längden för texten utan ANSI escape-sekvenser.
+- `StringDecorated Substring(int contentLength)` Metoden returnerar en under sträng som börjar vid indexet 0 upp till innehålls längden som inte är en del av ANSI escape-sekvenser. Detta krävs för tabellformatering för att trunkera strängar och bevara ANSI escape-sekvenser som inte tar upp ett utskrivbart tecken utrymme.
+- `string ToString()` metoden förblir densamma och returnerar strängens klartext-version.
+- `string ToString(bool Ansi)` Metoden returnerar rå ANSI Embedded-sträng om `Ansi` parametern är true. Annars returneras en klar text version med ANSI escape-sekvenser.
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
@@ -234,6 +285,6 @@ Detta fungerar bara för slut för ande av flikar (interaktiv användning), så 
 
 Den här funktionen aktiverar under Systems-plugin-modellen i PowerShell. Funktionen gör det möjligt att separera komponenter i `System.Management.Automation.dll` enskilda under system som finns i en egen sammansättning. Den här separationen minskar den grundläggande PowerShell-motorns disk utrymme och gör att dessa komponenter blir valfria funktioner för en minimal PowerShell-installation.
 
-För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb** , **CommandCompleter** , **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
+För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb**, **CommandCompleter**, **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
 
 Experiment funktionen innehåller en ny cmdlet, [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). Den här cmdleten är endast tillgänglig om funktionen är aktive rad. Denna cmdlet returnerar information om de del system som är tillgängliga i systemet.

@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
-ms.openlocfilehash: ddb3f8d1889887e01db8663e21cdb0323e6d4084
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 9b8d81c84a5dab8fa5f5e216c8c4eb5b5f6022b7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93261986"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692855"
 ---
 # Remove-Item
 
@@ -85,7 +84,7 @@ I `Get-ChildItem` kommandot har **sökvägen** värdet ( `*` ) som representerar
 
 ### Exempel 5: ta bort under nycklar rekursivt
 
-Det här kommandot tar bort register nyckeln "OldApp" och alla dess under nycklar och värden. Den används `Remove-Item` för att ta bort nyckeln. Sökvägen anges, men det valfria parameter namnet ( **sökväg** ) utelämnas.
+Det här kommandot tar bort register nyckeln "OldApp" och alla dess under nycklar och värden. Den används `Remove-Item` för att ta bort nyckeln. Sökvägen anges, men det valfria parameter namnet (**sökväg**) utelämnas.
 
 Parametern **rekursivt** tar bort allt innehåll i nyckeln "OldApp" rekursivt. Om nyckeln innehåller under nycklar och du utelämnar parametern **rekursivt** uppmanas du att bekräfta att du vill ta bort innehållet i nyckeln.
 
@@ -174,7 +173,7 @@ At line:1 char:1
 
 ```
 
-**Stream** -parametern `Get-Item` hämtar filens **zon. Identifier** -dataström. `Copy-Script.ps1` `Remove-Item` använder **Stream** -parametern för att ta bort filens överordnade- **ID** . Slutligen `Get-Item` visar cmdleten att **zonen. identifierarens** data ström har tagits bort.
+**Stream** -parametern `Get-Item` hämtar `Zone.Identifier` filens data ström `Copy-Script.ps1` . `Remove-Item` använder **Stream** -parametern för att ta bort `Zone.Identifier` filens data ström. Slutligen `Get-Item` visar cmdleten att `Zone.Identifier` strömmen har tagits bort.
 
 ## PARAMETRAR
 
@@ -214,8 +213,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Anger ett filter för att kvalificera **Sök vägs** parametern. [Fil Systems](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) leverantören är den enda installerade PowerShell-providern som stöder användningen av filter. Du kan hitta syntaxen för filter språket för **fil systemet** i [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filter är mer effektiva än andra parametrar, eftersom providern tillämpar dem när cmdleten hämtar objekten i stället för att ha PowerShell filtrera objekten när de har hämtats.
+Anger ett filter för att kvalificera **Sök vägs** parametern. [Fil Systems](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) leverantören är den enda installerade PowerShell-providern som stöder användningen av filter. Du kan hitta syntaxen för filter språket för **fil systemet** i [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filter är mer effektiva än andra parametrar, eftersom providern tillämpar dem när cmdleten hämtar objekten i stället för att ha PowerShell filtrera objekten när de har hämtats.
 
 ```yaml
 Type: System.String
@@ -301,7 +299,7 @@ Accept wildcard characters: True
 
 Anger att denna cmdlet tar bort objekten på de angivna platserna och i alla underordnade objekt på platserna.
 
-När den används med parametern **include** kanske **rekursivt** -parametern inte tar bort alla undermappar eller alla underordnade objekt. Detta är ett känt fel. Som en lösning kan `Get-ChildItem -Recurse` du prova att skicka kommandots resultat till `Remove-Item` , enligt beskrivningen i "exempel 4" i det här avsnittet.
+När den används med parametern **include** kanske **rekursivt** -parametern inte tar bort alla undermappar eller alla underordnade objekt. Detta är ett känt problem. Som en lösning kan `Get-ChildItem -Recurse` du prova att skicka kommandots resultat till `Remove-Item` , enligt beskrivningen i "exempel 4" i det här avsnittet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -317,10 +315,14 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
+
 **Stream** -parametern är en dynamisk parameter som fil Systems leverantören lägger till i `Remove-Item` .
 Den här parametern fungerar bara i fil system enheter.
 
-Du kan använda `Remove-Item` för att ta bort en alternativ data ström. Det är dock inte det rekommenderade sättet att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
+Du kan använda `Remove-Item` för att ta bort en alternativ data ström, till exempel `Zone.Identifier` .
+Det är dock inte det rekommenderade sättet att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
 
 Den här parametern introducerades i Windows PowerShell 3,0.
 
@@ -373,7 +375,8 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` . Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
 
 ## INDATA
 

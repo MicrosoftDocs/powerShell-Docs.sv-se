@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/18/2018
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Content
-ms.openlocfilehash: 34de280c8af71a268b9cd748c3ba4849f7d13705
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 89ac365524658612dd878cf8c2c462a40a278487
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267747"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692757"
 ---
 # Clear-Content
 
@@ -58,16 +57,13 @@ Filerna tas inte bort, men de är tomma.
 Clear-Content -Path "*" -Filter "*.log" -Force
 ```
 
-Det här kommandot tar bort innehållet i alla filer i den aktuella katalogen med fil namns tillägget ". log", inklusive filer med attributet skrivskyddad.
-Asterisken ( \* ) i sökvägen representerar alla objekt i den aktuella katalogen.
-**Force** -parametern gör kommandot effektivt på skrivskyddade filer.
-Om du använder ett filter för att begränsa kommandot till filer med fil namns tillägget. log i stället för att ange \* . log i sökvägen gör åtgärden snabbare.
+Det här kommandot tar bort innehållet i alla filer i den aktuella katalogen med fil namns tillägget ". log", inklusive filer med attributet skrivskyddad. Asterisken ( \* ) i sökvägen representerar alla objekt i den aktuella katalogen. **Force** -parametern gör kommandot effektivt på skrivskyddade filer. Om du använder ett filter för att begränsa kommandot till filer med fil namns tillägget. log i stället för att ange \* . log i sökvägen gör åtgärden snabbare.
 
 ### Exempel 3: Rensa alla data från en ström
 
 Det här exemplet visar hur `Clear-Content` cmdleten rensar innehållet från en alternativ data ström och låter strömmen vara intakt.
 
-Det första kommandot använder `Get-Content` cmdleten för att hämta innehållet i zonen. identifierarens data ström i den Copy-Script.ps1 filen som hämtades från Internet.
+Det första kommandot använder `Get-Content` cmdleten för att hämta innehållet i `Zone.Identifier` data strömmen i Copy-Script.ps1-filen, som hämtades från Internet.
 
 Det andra kommandot använder `Clear-Content` cmdleten för att rensa innehållet.
 
@@ -91,16 +87,16 @@ PS C:\>
 
 ### -Stream
 
-Anger en alternativ data ström för innehåll.
-Om data strömmen inte finns skapar den här cmdleten den.
-Jokertecken stöds inte.
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
 
-Stream är en dynamisk parameter som fil Systems leverantören lägger till i `Clear-Content` .
-Den här parametern fungerar bara i fil system enheter.
+Anger en alternativ data ström för innehåll. Om data strömmen inte finns skapar den här cmdleten den. Jokertecken stöds inte.
 
-Du kan använda `Clear-Content` cmdleten för att ändra innehållet i zonen. unik identifierare för den alternativa data strömmen.
-Vi rekommenderar dock inte detta som ett sätt att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet.
-Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
+**Stream** är en dynamisk parameter som fil Systems leverantören lägger till i `Clear-Content` . Den här parametern fungerar bara i fil system enheter och tar bort innehållet i alternativa data strömmar på både filer och kataloger.
+
+Du kan använda `Clear-Content` cmdleten för att ändra innehållet i Amy alternativa data strömmar, till exempel `Zone.Identifier` . Vi rekommenderar dock inte detta som ett sätt att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
+
+Den här parametern introducerades i PowerShell 3,0. Från och med PowerShell 7,2 `Clear-Content` kan ta bort innehållet i alternativa data strömmar från kataloger och filer.
 
 ```yaml
 Type: System.String
@@ -133,10 +129,7 @@ Accept wildcard characters: False
 
 ### -Undanta
 
-Anger, som en sträng mat ris, strängar som denna cmdlet utelämnar från sökvägen till innehållet.
-Värdet för den här parametern kvalificerar parametern **Path** .
-Ange ett Sök vägs element eller ett mönster, till exempel "*. txt".
-Jokertecken är tillåtna.
+Anger, som en sträng mat ris, strängar som denna cmdlet utelämnar från sökvägen till innehållet. Värdet för den här parametern kvalificerar parametern **Path** . Ange ett Sök vägs element eller ett mönster, till exempel "*. txt". Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -152,10 +145,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Anger ett filter i providerns format eller språk.
-Värdet för den här parametern kvalificerar parametern **Path** .
-Syntaxen för filtret, inklusive användning av jokertecken, beror på providern.
-Filter är mer effektiva än andra parametrar, eftersom providern tillämpar dem när objekten hämtas, i stället för att ha PowerShell filtrera objekten när de har hämtats.
+Anger ett filter i providerns format eller språk. Värdet för den här parametern kvalificerar parametern **Path** . Syntaxen för filtret, inklusive användning av jokertecken, beror på providern. Filter är mer effektiva än andra parametrar, eftersom providern tillämpar dem när objekten hämtas, i stället för att ha PowerShell filtrera objekten när de har hämtats.
 
 ```yaml
 Type: System.String
@@ -187,10 +177,7 @@ Accept wildcard characters: False
 
 ### -Inkludera
 
-Anger, som en sträng mat ris, innehåll som denna cmdlet rensar.
-Värdet för den här parametern kvalificerar parametern **Path** .
-Ange ett Sök vägs element eller ett mönster, till exempel "*. txt".
-Jokertecken är tillåtna.
+Anger, som en sträng mat ris, innehåll som denna cmdlet rensar. Värdet för den här parametern kvalificerar parametern **Path** . Ange ett Sök vägs element eller ett mönster, till exempel "*. txt". Jokertecken är tillåtna.
 
 ```yaml
 Type: System.String[]
@@ -206,11 +193,8 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Anger sökvägar till objekten som innehållet tas bort från.
-Till skillnad från parametern **Path** används värdet för **LiteralPath** exakt som det har angetts.
-Inga tecken tolkas som jokertecken.
-Om sökvägen innehåller escape-tecken omger du den med enkla citat tecken.
-Enkla citat tecken ser till att PowerShell inte tolkar några tecken som escape-sekvenser.
+Anger sökvägar till objekten som innehållet tas bort från. Till skillnad från parametern **Path** används värdet för **LiteralPath** exakt som det har angetts. Inga tecken tolkas som jokertecken.
+Om sökvägen innehåller escape-tecken omger du den med enkla citat tecken. Enkla citat tecken ser till att PowerShell inte tolkar några tecken som escape-sekvenser.
 
 ```yaml
 Type: System.String[]
@@ -226,12 +210,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Anger sökvägar till objekten som innehållet tas bort från.
-Jokertecken är tillåtna.
-Sök vägarna måste vara sökvägar till objekt, inte behållare.
-Du måste till exempel ange en sökväg till en eller flera filer, inte en sökväg till en katalog.
-Jokertecken är tillåtna.
-Den här parametern är obligatorisk, men parameter namnet (sökväg) är valfritt.
+Anger sökvägar till objekten som innehållet tas bort från. Jokertecken är tillåtna. Sök vägarna måste vara sökvägar till objekt, inte behållare. Du måste till exempel ange en sökväg till en eller flera filer, inte en sökväg till en katalog. Jokertecken är tillåtna. Den här parametern är obligatorisk, men parameter namnet (sökväg) är valfritt.
 
 ```yaml
 Type: System.String[]
@@ -263,8 +242,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Visar vad som skulle hända om cmdleten kördes.
-Cmdleten körs inte.
+Visar vad som skulle hända om cmdleten kördes. Cmdleten körs inte.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -280,7 +258,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` . Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
@@ -296,8 +274,7 @@ Denna cmdlet returnerar inga objekt.
 
 ## ANTECKNINGAR
 
-Du kan använda `Clear-Content` med PowerShell-filsystem-providern och med andra leverantörer som hanterar innehåll.
-Om du vill rensa objekt som inte anses vara innehåll, till exempel objekt som hanteras av PowerShell-certifikatet eller register leverantörer, använder du `Clear-Item` .
+Du kan använda `Clear-Content` med PowerShell-filsystem-providern och med andra leverantörer som hanterar innehåll. Om du vill rensa objekt som inte anses vara innehåll, till exempel objekt som hanteras av PowerShell-certifikatet eller register leverantörer, använder du `Clear-Item` .
 
 `Clear-Content`Cmdleten är utformad för att fungera med data som exponeras av vilken provider som helst.
 Om du vill visa en lista över tillgängliga providers i din session skriver du `Get-PsProvider` .

@@ -1,17 +1,16 @@
 ---
 description: Beskriver variabler som lagrar Tillståndsinformation för PowerShell. Dessa variabler skapas och underhålls av PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 5ce9e61113da2c781f5774866e827663a7c7ced4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272643"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577252"
 ---
 # <a name="about-automatic-variables"></a>Om automatiska variabler
 
@@ -33,7 +32,7 @@ Innehåller den sista token i den sista raden som togs emot av sessionen.
 
 Innehåller körnings status för det sista kommandot. Det innehåller **Sant** om det sista kommandot lyckades och **falskt** om det misslyckades.
 
-För cmdlets och avancerade funktioner som körs i flera steg i en pipeline, t. ex. i både `process` och `end` block, som anropar `this.WriteError()` eller `$PSCmdlet.WriteError()` på någon punkt, anges `$?` till **falskt** , som `this.ThrowTerminatingError()` och `$PSCmdlet.ThrowTerminatingError()` .
+För cmdlets och avancerade funktioner som körs i flera steg i en pipeline, t. ex. i både `process` och `end` block, som anropar `this.WriteError()` eller `$PSCmdlet.WriteError()` på någon punkt, anges `$?` till **falskt**, som `this.ThrowTerminatingError()` och `$PSCmdlet.ThrowTerminatingError()` .
 
 `Write-Error`Cmdleten anges alltid `$?` till **false** omedelbart efter att den körts, men är inte inställd `$?` på **false** för en funktion som anropar den:
 
@@ -53,7 +52,7 @@ För det senare ändamålet `$PSCmdlet.WriteError()` ska du i stället använda.
 För inbyggda kommandon (körbara filer) `$?` anges till **Sant** när `$LASTEXITCODE` är 0 och anges till **falskt** om `$LASTEXITCODE` är ett annat värde.
 
 > [!NOTE]
-> Fram till PowerShell 7, som innehåller en instruktion inom parentes `(...)` , återställs inte syntaxen för under uttryck `$(...)` eller mat ris uttryck `@(...)` `$?` till **True** , så att `(Write-Error)` visas `$?` som **Sant**.
+> Fram till PowerShell 7, som innehåller en instruktion inom parentes `(...)` , återställs inte syntaxen för under uttryck `$(...)` eller mat ris uttryck `@(...)` `$?` till **True**, så att `(Write-Error)` visas `$?` som **Sant**.
 > Detta har ändrats i PowerShell 7, så det `$?` visar alltid det faktiska resultatet för det sista kommandot som körs i dessa uttryck.
 
 ### <a name=""></a>$^
@@ -137,6 +136,12 @@ Innehåller en uppräknare som räknar upp alla indatatyper som skickas till en 
 Eftersom `$input` är en uppräknare kan åtkomst till någon av dess egenskaper `$input` inte längre vara tillgänglig. Du kan lagra `$input` i en annan variabel om du vill återanvända `$input` egenskaperna.
 
 Uppräknare innehåller egenskaper och metoder som du kan använda för att hämta loop-värden och ändra den aktuella loop-iterationen. Mer information finns i [använda uppräknare](#using-enumerators).
+
+`$input`Variabeln är också tillgänglig för kommandot som anges av `-Command` parametern för `pwsh` när den anropas från kommando raden. Följande exempel körs från Windows-kommando gränssnittet.
+
+```CMD
+echo Hello | pwsh -Command """$input World!"""
+```
 
 ### <a name="iscoreclr"></a>$IsCoreCLR
 
@@ -269,7 +274,7 @@ Eller så kan du använda den i ett kommando för att skapa en profil:
 New-Item -ItemType file -Path $PROFILE -Force
 ```
 
-Du kan använda den i ett kommando för att öppna profilen i **notepad.exe** :
+Du kan använda den i ett kommando för att öppna profilen i **notepad.exe**:
 
 ```powershell
 notepad.exe $PROFILE
@@ -353,7 +358,7 @@ Från och med PowerShell 3,0 är det giltigt i alla skript.
 
 Innehåller information om den användare som startade PSSession, inklusive användar identitet och tidszon på den ursprungliga datorn. Den här variabeln är endast tillgänglig i PSSessions.
 
-`$PSSenderInfo`Variabeln innehåller en egenskap som kan konfigureras av användaren, **ApplicationArguments** , som standard bara innehåller `$PSVersionTable` från den ursprungliga sessionen. Om du vill lägga till data i egenskapen **ApplicationArguments** använder du parametern **ApplicationArguments** för `New-PSSessionOption` cmdleten.
+`$PSSenderInfo`Variabeln innehåller en egenskap som kan konfigureras av användaren, **ApplicationArguments**, som standard bara innehåller `$PSVersionTable` från den ursprungliga sessionen. Om du vill lägga till data i egenskapen **ApplicationArguments** använder du parametern **ApplicationArguments** för `New-PSSessionOption` cmdleten.
 
 ### <a name="psuiculture"></a>$PSUICulture
 

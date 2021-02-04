@@ -7,12 +7,12 @@ ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 60b6d2e380685650a86f74056a992afb4051ddc1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5f2752f53fb5f74b6436548c3bd4fa731d2b02d5
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93267831"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879243"
 ---
 # Get-Command
 
@@ -105,7 +105,7 @@ Det här kommandot använder parametrarna **argument List** och **syntax** för 
 Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
-När du jämför den syntax som visas i utdata med den syntax som visas när du utelämnar parametern **args** ( **argument List** ) ser du att **certifikat leverantören** lägger till en dynamisk parameter, **CodeSigningCert** , till `Get-ChildItem` cmdleten.
+När du jämför den syntax som visas i utdata med den syntax som visas när du utelämnar parametern **args** (**argument List**) ser du att **certifikat leverantören** lägger till en dynamisk parameter, **CodeSigningCert**, till `Get-ChildItem` cmdleten.
 
 Mer information om certifikat leverantören finns [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
@@ -157,7 +157,7 @@ Parametern **ParameterType** särskiljer parametrar som tar ett **Authentication
 Det här exemplet visar hur du använder `Get-Command` cmdleten med ett alias.
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output

@@ -5,12 +5,12 @@ ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
-ms.openlocfilehash: 51dfd85044d240f1d1429580d6eeb98c662d62c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: fc0b84829a96fc6ba2cafa0c24a7585cc9944fe8
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272210"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614058"
 ---
 # <a name="about-continue"></a>Om Fortsätt
 
@@ -107,7 +107,7 @@ När `continue` används utanför en konstruktion som stöder den direkt (loopar
 
 Det innebär att funktioner och skript som oavsiktligt använder en `continue` utanför en omsluten konstruktion som stöder den, oavsiktligt kan avsluta sina _anropare_.
 
-`continue`Om du använder i en pipeline, t. ex. ett `ForEach-Object` skript block, avslutar inte bara pipelinen. tt avslutar eventuellt hela körnings utrymme.
+Om du använder `continue` inuti en pipeline, t. ex. ett `ForEach-Object` skript block, avslutar inte bara pipelinen, utan kan avsluta hela körnings utrymme.
 
 ## <a name="see-also"></a>Se även
 

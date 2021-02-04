@@ -4,12 +4,12 @@ ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 1bd0a92513ee38c901a1f3e535ce4d5d187357e1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b31563dd7058d85eb76f34c61d9bff5558a786b0
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94708856"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693108"
 ---
 # <a name="about-pwsh"></a>Om pwsh
 
@@ -146,7 +146,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand | -e | – EC
 
-Accepterar en Base64-kodad sträng version av ett kommando. Använd den här parametern för att skicka kommandon till PowerShell som kräver komplex, kapslad citat tecken. Den base64-representation måste vara en kodad UTF-16-sträng.
+Accepterar en Base64-kodad sträng version av ett kommando. Använd den här parametern för att skicka kommandon till PowerShell som kräver komplex, kapslad citat tecken. Base64-representationen måste vara en UTF-16LE-kodad sträng.
 
 Exempel:
 

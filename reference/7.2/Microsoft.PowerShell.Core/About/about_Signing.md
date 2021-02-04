@@ -5,12 +5,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: cc38d7421bb5523a93d4c07d0f0106658184cfc5
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 560ecc385e970224a23af7a1195c99d8423f503f
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710926"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804161"
 ---
 # <a name="about-signing"></a>Om signering
 
@@ -103,7 +103,7 @@ Om du skapar ett självsignerat certifikat måste du Aktivera starkt skydd av de
 
 ## <a name="create-a-self-signed-certificate"></a>Skapa ett självsignerat certifikat
 
-Om du vill skapa ett självsignerat certifikat i använder du `New-SelfSignedCertificate` cmdleten i PKI-modulen. Den här modulen introduceras i PowerShell 3,0 och ingår i Windows 8 och Windows Server 2012. Mer information finns i hjälp avsnittet för `New-SelfSignedCertificate` cmdleten.
+Om du vill skapa ett självsignerat certifikat använder du `New-SelfSignedCertificate` cmdleten i PKI-modulen. Den här modulen introduceras i PowerShell 3,0 och ingår i Windows 8 och Windows Server 2012. Mer information finns i hjälp avsnittet för `New-SelfSignedCertificate` cmdleten.
 
 Om du vill skapa ett självsignerat certifikat i tidigare versioner av Windows använder du verktyget för att skapa certifikat `MakeCert.exe` . Det här verktyget ingår i Microsoft .NET SDK (version 1,1 och senare) och i Microsoft Windows SDK.
 

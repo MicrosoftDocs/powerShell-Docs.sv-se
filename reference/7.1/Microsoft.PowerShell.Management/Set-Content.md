@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
-ms.openlocfilehash: bb9345470aa58dac7c14e1443c0fe4c12e7563a6
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: d21765541fb849aed8dc37895c167c0ea34486a3
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93269313"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692837"
 ---
 # Set-Content
 
@@ -194,7 +193,7 @@ De acceptabla värdena för den här parametern är följande:
 Från och med PowerShell 6,2 tillåter **encoding** -parametern även numeriska ID: n för registrerade tecken tabeller (som `-Encoding 1251` ) eller sträng namn för registrerade tecken tabeller (som `-Encoding "windows-1251"` ). Mer information finns i .NET-dokumentationen för [encoding. codepage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 > [!NOTE]
-> **UTF-7** * rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för **kodnings** parametern.
+> **UTF-7** _ rekommenderas inte längre att använda. I PowerShell 7,1 skrivs en varning om du anger `utf7` för parametern _ *encoding**.
 
 ```yaml
 Type: System.Text.Encoding
@@ -344,11 +343,14 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> Den här parametern är endast tillgänglig i Windows.
+
 Anger en alternativ data ström för innehåll. Om data strömmen inte finns skapar den här cmdleten den. Jokertecken stöds inte.
 
 **Stream** är en dynamisk parameter som **fil Systems** leverantören lägger till i `Set-Content` . Den här parametern fungerar bara i fil system enheter.
 
-Du kan använda `Set-Content` cmdleten för att ändra innehållet i **zonen. unik identifierare** för den alternativa data strömmen. Vi rekommenderar dock inte detta som ett sätt att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
+Du kan använda `Set-Content` cmdleten för att skapa eller uppdatera innehållet i valfri alternativ data ström, till exempel `Zone.Identifier` . Vi rekommenderar dock inte detta som ett sätt att eliminera säkerhets kontroller som blockerar filer som hämtas från Internet. Om du verifierar att en Hämtad fil är säker använder du `Unblock-File` cmdleten.
 
 Den här parametern introducerades i PowerShell 3,0.
 
@@ -414,8 +416,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Denna cmdlet stöder de gemensamma parametrarna:,,,,,,,, `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` , och `-WarningVariable` .
-Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INDATA
 
@@ -455,4 +456,3 @@ När du använder parametern **Passthru** `Set-Content` genererar ett **system. 
 [-Objekt](../Microsoft.PowerShell.Core/ForEach-Object.md)
 
 [Nytt objekt](New-Item.md)
-

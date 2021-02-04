@@ -1,14 +1,14 @@
 ---
-ms.date: 10/16/2019
+ms.date: 01/04/2021
 ms.topic: reference
 title: Skriva ett PowerShell-modulmanifest
 description: Skriva ett PowerShell-modulmanifest
-ms.openlocfilehash: 42db71968ccac1cc3c1c05c5be2e72327e5e28d9
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92647707"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879379"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Så här skriver du ett manifest för PowerShell-modul
 
@@ -54,7 +54,7 @@ För enkla moduler som bara innehåller en enda `.psm1` eller binär sammansätt
 
 I följande tabell beskrivs de element som du kan inkludera i ett modul manifest.
 
-|Element|Standardvärde|Beskrivning|
+|Element|Standardvärde|Description|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> Bastyp `String`|`<empty string>`|Skriptbaserad modul eller binär modul som är associerad med det här manifestet. Tidigare versioner av PowerShell anropade det här elementet som **ModuleToProcess**.<br /> Möjliga typer för rotnoden kan vara tomma, vilket skapar en **manifest** -modul, namnet på en skript-modul ( `.psm1` ) eller namnet på en binär modul ( `.exe` eller `.dll` ). Att placera namnet på ett modul manifest ( `.psd1` ) eller en skript fil ( `.ps1` ) i det här elementet orsakar ett fel. <br /> Exempel: `RootModule = 'ScriptModule.psm1'`|
 |**ModuleVersion**<br /> Bastyp `Version`|`'0.0.1'`|Versions nummer för den här modulen. Om ett värde inte anges används standardvärdet `New-ModuleManifest`   . Strängen måste kunna konvertera till typen till `Version` exempel `#.#.#.#.#` . `Import-Module` läser in den första modul som den hittar på den **$PSModulePath** som matchar namnet och har minst lika hög som en **ModuleVersion**, som **MinimumVersion** -parameter. Om du vill importera en version använder du `Import-Module` cmdlet: en **RequiredVersion** -parameter.<br /> Exempel: `ModuleVersion = '1.0'`|
@@ -63,7 +63,7 @@ I följande tabell beskrivs de element som du kan inkludera i ett modul manifest
 |**CompanyName**<br /> Bastyp `String`|`'Unknown'`|Företaget eller leverantören för den här modulen. Om ett värde inte anges används standardvärdet `New-ModuleManifest` .<br /> Exempel: `CompanyName = 'Fabrikam'`|
 |**Material**<br /> Bastyp `String`|`'(c) <Author>. All rights reserved.'`| Copyright-instruktion för den här modulen. Om ett värde inte anges används standardvärdet för `New-ModuleManifest` den aktuella användaren som `<Author>` . Om du vill ange en författare använder du parametern **Author** . <br /> Exempel: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Beskrivning**<br /> Bastyp `String`|`<empty string>`|Beskrivning av de funktioner som tillhandahålls av den här modulen.<br /> Exempel: `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> Bastyp `Version`|`<empty string>`|Lägsta version av PowerShell-motorn som krävs av den här modulen. Giltiga värden är 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6 och 7.<br /> Exempel: `PowerShellVersion = '5.0'`|
+|**PowerShellVersion**<br /> Bastyp `Version`|`<empty string>`|Lägsta version av PowerShell-motorn som krävs av den här modulen. Giltiga värden är 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6,0, 6,1, 6,2, 7,0 och 7,1.<br /> Exempel: `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> Bastyp `String`|`<empty string>`|Namnet på PowerShell-värden som krävs av den här modulen. Det här namnet tillhandahålls av PowerShell. Om du vill hitta namnet på ett värd program skriver du följande i programmet: `$host.name` .<br /> Exempel: `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> Bastyp `Version`|`<empty string>`|Lägsta version av PowerShell-värden som krävs av den här modulen.<br /> Exempel: `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> Bastyp `Version`|`<empty string>`|Lägsta version av Microsoft .NET Framework som krävs av den här modulen. Den här förutsättningen gäller endast för PowerShell Desktop Edition, till exempel PowerShell 5,1.<br /> Exempel: `DotNetFrameworkVersion = '3.5'`|
@@ -83,7 +83,7 @@ I följande tabell beskrivs de element som du kan inkludera i ett modul manifest
 |**ModuleList**<br /> Bastyp `Object[]`|`@()`|Anger alla moduler som paketeras med den här modulen. Dessa moduler kan anges med namn, med hjälp av en kommaavgränsad sträng eller som en hash-tabell med **Modulnamn** och **GUID** -nycklar. Hash-tabellen kan också ha en valfri **ModuleVersion** -nyckel. **ModuleList** -nyckeln är utformad för att fungera som en modul för inventering. De här modulerna bearbetas inte automatiskt. <br /> Exempel: `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**FileList**<br /> Bastyp `String[]`|`@()`|Lista över alla filer som paketeras med den här modulen. Precis som med **ModuleList** är **filelist** en inventerings lista och bearbetas inte på annat sätt. <br /> Exempel: `FileList = @("File1", "File2", "File3")`|
 |**PrivateData**<br /> Bastyp `Object`|`@{...}`|Anger eventuella privata data som måste skickas till den rotdomän som anges av nyckeln **RootModule** (alias: **ModuleToProcess**). **PrivateData** är en hash-tabell som består av flera element: **taggar**, **LicenseUri**, **ProjectURI**, **IconUri**, **releasenotes**, för **hands version**, **RequireLicenseAcceptance** och **ExternalModuleDependencies**. |
-|**Taggen** <br /> Bastyp `String[]` |`@()`| Taggar hjälp med modul identifiering i online-gallerier. <br /> Exempel: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
+|**Taggar** <br /> Bastyp `String[]` |`@()`| Taggar hjälp med modul identifiering i online-gallerier. <br /> Exempel: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> Bastyp `Uri` |`<empty string>`| En URL till licensen för den här modulen. <br /> Exempel: `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> Bastyp `Uri` |`<empty string>`| En URL till den huvudsakliga webbplatsen för projektet. <br /> Exempel: `ProjectUri = 'https://www.contoso.com/project'`|
 |**IconUri**<br /> Bastyp `Uri` |`<empty string>`| En URL till en ikon som representerar den här modulen. <br /> Exempel: `IconUri = 'https://www.contoso.com/icons/icon.png'`|
