@@ -3,45 +3,45 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: a64b11206a0755cedabad2894ecc330fac95a8d5
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: 719c65903592d7cec94621bbb293f09b82a0d934
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "93269625"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620205"
 ---
-# <span data-ttu-id="69214-103">Out-String</span><span class="sxs-lookup"><span data-stu-id="69214-103">Out-String</span></span>
+# <span data-ttu-id="d215d-103">Out-String</span><span class="sxs-lookup"><span data-stu-id="d215d-103">Out-String</span></span>
 
-## <span data-ttu-id="69214-104">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="69214-104">SYNOPSIS</span></span>
-<span data-ttu-id="69214-105">Matar in indata-objekt som en sträng.</span><span class="sxs-lookup"><span data-stu-id="69214-105">Outputs input objects as a strings.</span></span>
+## <span data-ttu-id="d215d-104">Sammanfattning</span><span class="sxs-lookup"><span data-stu-id="d215d-104">Synopsis</span></span>
+<span data-ttu-id="d215d-105">Matar in indata-objekt som en sträng.</span><span class="sxs-lookup"><span data-stu-id="d215d-105">Outputs input objects as a strings.</span></span>
 
-## <span data-ttu-id="69214-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="69214-106">SYNTAX</span></span>
+## <span data-ttu-id="d215d-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="d215d-106">Syntax</span></span>
 
-### <span data-ttu-id="69214-107">NoNewLineFormatting (standard)</span><span class="sxs-lookup"><span data-stu-id="69214-107">NoNewLineFormatting (Default)</span></span>
+### <span data-ttu-id="d215d-107">NoNewLineFormatting (standard)</span><span class="sxs-lookup"><span data-stu-id="d215d-107">NoNewLineFormatting (Default)</span></span>
 
 ```
 Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="69214-108">StreamFormatting</span><span class="sxs-lookup"><span data-stu-id="69214-108">StreamFormatting</span></span>
+### <span data-ttu-id="d215d-108">StreamFormatting</span><span class="sxs-lookup"><span data-stu-id="d215d-108">StreamFormatting</span></span>
 
 ```
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="69214-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="69214-109">DESCRIPTION</span></span>
+## <span data-ttu-id="d215d-109">Description</span><span class="sxs-lookup"><span data-stu-id="d215d-109">Description</span></span>
 
-<span data-ttu-id="69214-110">`Out-String`Cmdleten konverterar inmatade objekt till strängar.</span><span class="sxs-lookup"><span data-stu-id="69214-110">The `Out-String` cmdlet converts input objects into strings.</span></span> <span data-ttu-id="69214-111">Som standard `Out-String` ackumuleras strängarna och returneras som en enskild sträng, men du kan använda **Stream** -parametern för att dirigera `Out-String` för att returnera en rad i taget eller skapa en sträng mat ris.</span><span class="sxs-lookup"><span data-stu-id="69214-111">By default, `Out-String` accumulates the strings and returns them as a single string, but you can use the **Stream** parameter to direct `Out-String` to return one line at a time or create and array of strings.</span></span> <span data-ttu-id="69214-112">Med den här cmdleten kan du söka efter och manipulera sträng utdata som i traditionella skal när objekt manipulation är mindre användbart.</span><span class="sxs-lookup"><span data-stu-id="69214-112">This cmdlet lets you search and manipulate string output as you would in traditional shells when object manipulation is less convenient.</span></span>
+<span data-ttu-id="d215d-110">`Out-String`Cmdleten konverterar inmatade objekt till strängar.</span><span class="sxs-lookup"><span data-stu-id="d215d-110">The `Out-String` cmdlet converts input objects into strings.</span></span> <span data-ttu-id="d215d-111">Som standard `Out-String` ackumuleras strängarna och returneras som en enskild sträng, men du kan använda **Stream** -parametern för att dirigera `Out-String` för att returnera en rad i taget eller skapa en sträng mat ris.</span><span class="sxs-lookup"><span data-stu-id="d215d-111">By default, `Out-String` accumulates the strings and returns them as a single string, but you can use the **Stream** parameter to direct `Out-String` to return one line at a time or create and array of strings.</span></span> <span data-ttu-id="d215d-112">Med den här cmdleten kan du söka efter och manipulera sträng utdata som i traditionella skal när objekt manipulation är mindre användbart.</span><span class="sxs-lookup"><span data-stu-id="d215d-112">This cmdlet lets you search and manipulate string output as you would in traditional shells when object manipulation is less convenient.</span></span>
 
-## <span data-ttu-id="69214-113">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="69214-113">EXAMPLES</span></span>
+## <span data-ttu-id="d215d-113">Exempel</span><span class="sxs-lookup"><span data-stu-id="d215d-113">Examples</span></span>
 
-### <span data-ttu-id="69214-114">Exempel 1: hämta den aktuella kulturen och konvertera data till strängar</span><span class="sxs-lookup"><span data-stu-id="69214-114">Example 1: Get the current culture and convert the data to strings</span></span>
+### <span data-ttu-id="d215d-114">Exempel 1: hämta den aktuella kulturen och konvertera data till strängar</span><span class="sxs-lookup"><span data-stu-id="d215d-114">Example 1: Get the current culture and convert the data to strings</span></span>
 
-<span data-ttu-id="69214-115">Det här exemplet hämtar de nationella inställningarna för den aktuella användaren och konverterar objekt data till strängar.</span><span class="sxs-lookup"><span data-stu-id="69214-115">This example gets the regional settings for the current user and converts the object data to strings.</span></span>
+<span data-ttu-id="d215d-115">Det här exemplet hämtar de nationella inställningarna för den aktuella användaren och konverterar objekt data till strängar.</span><span class="sxs-lookup"><span data-stu-id="d215d-115">This example gets the regional settings for the current user and converts the object data to strings.</span></span>
 
 ```powershell
 $C = Get-Culture | Select-Object -Property *
@@ -73,18 +73,18 @@ UseUserOverride                : True
 IsReadOnly                     : False
 ```
 
-<span data-ttu-id="69214-116">`$C`Variabeln lagrar en **Selected.System. Globaliserings-. CultureInfo** -objekt.</span><span class="sxs-lookup"><span data-stu-id="69214-116">The `$C` variable stores a **Selected.System.Globalization.CultureInfo** object.</span></span> <span data-ttu-id="69214-117">Objektet är resultatet av `Get-Culture` att skicka utdata nedåt i pipeline till `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="69214-117">The object is the result of `Get-Culture` sending output down the pipeline to `Select-Object`.</span></span> <span data-ttu-id="69214-118">**Egenskaps** parametern använder en asterisk ( `*` ) som jokertecken för att ange alla egenskaper som finns i objektet.</span><span class="sxs-lookup"><span data-stu-id="69214-118">The **Property** parameter uses an asterisk (`*`) wildcard to specify all properties are contained in the object.</span></span>
+<span data-ttu-id="d215d-116">`$C`Variabeln lagrar en **Selected.System. Globaliserings-. CultureInfo** -objekt.</span><span class="sxs-lookup"><span data-stu-id="d215d-116">The `$C` variable stores a **Selected.System.Globalization.CultureInfo** object.</span></span> <span data-ttu-id="d215d-117">Objektet är resultatet av `Get-Culture` att skicka utdata nedåt i pipeline till `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="d215d-117">The object is the result of `Get-Culture` sending output down the pipeline to `Select-Object`.</span></span> <span data-ttu-id="d215d-118">**Egenskaps** parametern använder en asterisk ( `*` ) som jokertecken för att ange alla egenskaper som finns i objektet.</span><span class="sxs-lookup"><span data-stu-id="d215d-118">The **Property** parameter uses an asterisk (`*`) wildcard to specify all properties are contained in the object.</span></span>
 
-<span data-ttu-id="69214-119">`Out-String` använder parametern **InputObject** för att ange det **CultureInfo** -objekt som lagras i `$C` variabeln.</span><span class="sxs-lookup"><span data-stu-id="69214-119">`Out-String` uses the **InputObject** parameter to specify the **CultureInfo** object stored in the `$C` variable.</span></span> <span data-ttu-id="69214-120">Objekten i `$C` konverteras till en sträng.</span><span class="sxs-lookup"><span data-stu-id="69214-120">The objects in `$C` are converted to a string.</span></span>
+<span data-ttu-id="d215d-119">`Out-String` använder parametern **InputObject** för att ange det **CultureInfo** -objekt som lagras i `$C` variabeln.</span><span class="sxs-lookup"><span data-stu-id="d215d-119">`Out-String` uses the **InputObject** parameter to specify the **CultureInfo** object stored in the `$C` variable.</span></span> <span data-ttu-id="d215d-120">Objekten i `$C` konverteras till en sträng.</span><span class="sxs-lookup"><span data-stu-id="d215d-120">The objects in `$C` are converted to a string.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="69214-121">Om du vill visa `Out-String` matrisen lagrar du utdata till en variabel och använder ett mat ris index för att Visa elementen.</span><span class="sxs-lookup"><span data-stu-id="69214-121">To view the `Out-String` array, store the output to a variable and use an array index to view the elements.</span></span> <span data-ttu-id="69214-122">Mer information om mat ris index finns [about_Arrays](../microsoft.powershell.core/about/about_arrays.md).</span><span class="sxs-lookup"><span data-stu-id="69214-122">For more information about the array index, see [about_Arrays](../microsoft.powershell.core/about/about_arrays.md).</span></span>
+> <span data-ttu-id="d215d-121">Om du vill visa `Out-String` matrisen lagrar du utdata till en variabel och använder ett mat ris index för att Visa elementen.</span><span class="sxs-lookup"><span data-stu-id="d215d-121">To view the `Out-String` array, store the output to a variable and use an array index to view the elements.</span></span> <span data-ttu-id="d215d-122">Mer information om mat ris index finns [about_Arrays](../microsoft.powershell.core/about/about_arrays.md).</span><span class="sxs-lookup"><span data-stu-id="d215d-122">For more information about the array index, see [about_Arrays](../microsoft.powershell.core/about/about_arrays.md).</span></span>
 >
 > `$str = Out-String -InputObject $C -Width 100`
 
-### <span data-ttu-id="69214-123">Exempel 2: arbeta med objekt</span><span class="sxs-lookup"><span data-stu-id="69214-123">Example 2: Working with objects</span></span>
+### <span data-ttu-id="d215d-123">Exempel 2: arbeta med objekt</span><span class="sxs-lookup"><span data-stu-id="d215d-123">Example 2: Working with objects</span></span>
 
-<span data-ttu-id="69214-124">Det här exemplet visar skillnaden mellan att arbeta med objekt och att arbeta med strängar.</span><span class="sxs-lookup"><span data-stu-id="69214-124">This example demonstrates the difference between working with objects and working with strings.</span></span> <span data-ttu-id="69214-125">Kommandot visar ett alias som innehåller texten **GCM** , alias för `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="69214-125">The command displays an alias that includes the text **gcm** , the alias for `Get-Command`.</span></span>
+<span data-ttu-id="d215d-124">Det här exemplet visar skillnaden mellan att arbeta med objekt och att arbeta med strängar.</span><span class="sxs-lookup"><span data-stu-id="d215d-124">This example demonstrates the difference between working with objects and working with strings.</span></span> <span data-ttu-id="d215d-125">Kommandot visar ett alias som innehåller texten **GCM**, alias för `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="d215d-125">The command displays an alias that includes the text **gcm**, the alias for `Get-Command`.</span></span>
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -94,14 +94,14 @@ Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
 Alias           gcm -> Get-Command
 ```
 
-<span data-ttu-id="69214-126">`Get-Alias` hämtar objekten **system. Management. Automation. AliasInfo** , ett för varje alias och skickar objekten nedåt i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="69214-126">`Get-Alias` gets the **System.Management.Automation.AliasInfo** objects, one for each alias, and sends the objects down the pipeline.</span></span> <span data-ttu-id="69214-127">`Out-String` använder **Stream** -parametern för att konvertera varje objekt till en sträng, och sammanfogar alla objekt till en enda sträng.</span><span class="sxs-lookup"><span data-stu-id="69214-127">`Out-String` uses the **Stream** parameter to convert each object to a string rather concatenating all the objects into a single string.</span></span> <span data-ttu-id="69214-128">**System. String** -objekten skickas ned pipelinen och `Select-String` använder **mönster** parametern för att hitta matchningar för texten **GCM**.</span><span class="sxs-lookup"><span data-stu-id="69214-128">The **System.String** objects are sent down the pipeline and `Select-String` uses the **Pattern** parameter to find matches for the text **gcm**.</span></span>
+<span data-ttu-id="d215d-126">`Get-Alias` hämtar objekten **system. Management. Automation. AliasInfo** , ett för varje alias och skickar objekten nedåt i pipelinen.</span><span class="sxs-lookup"><span data-stu-id="d215d-126">`Get-Alias` gets the **System.Management.Automation.AliasInfo** objects, one for each alias, and sends the objects down the pipeline.</span></span> <span data-ttu-id="d215d-127">`Out-String` använder **Stream** -parametern för att konvertera varje objekt till en sträng, och sammanfogar alla objekt till en enda sträng.</span><span class="sxs-lookup"><span data-stu-id="d215d-127">`Out-String` uses the **Stream** parameter to convert each object to a string rather concatenating all the objects into a single string.</span></span> <span data-ttu-id="d215d-128">**System. String** -objekten skickas ned pipelinen och `Select-String` använder **mönster** parametern för att hitta matchningar för texten **GCM**.</span><span class="sxs-lookup"><span data-stu-id="d215d-128">The **System.String** objects are sent down the pipeline and `Select-String` uses the **Pattern** parameter to find matches for the text **gcm**.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="69214-129">Om du utelämnar parametern **Stream** visar kommandot alla alias eftersom `Select-String` söker efter texten **GCM** i den enskilda strängen som `Out-String` returnerar.</span><span class="sxs-lookup"><span data-stu-id="69214-129">If you omit the **Stream** parameter, the command displays all the aliases because `Select-String` finds the text **gcm** in the single string that `Out-String` returns.</span></span>
+> <span data-ttu-id="d215d-129">Om du utelämnar parametern **Stream** visar kommandot alla alias eftersom `Select-String` söker efter texten **GCM** i den enskilda strängen som `Out-String` returnerar.</span><span class="sxs-lookup"><span data-stu-id="d215d-129">If you omit the **Stream** parameter, the command displays all the aliases because `Select-String` finds the text **gcm** in the single string that `Out-String` returns.</span></span>
 
-### <span data-ttu-id="69214-130">Exempel 3: Använd parametern width för att förhindra trunkering.</span><span class="sxs-lookup"><span data-stu-id="69214-130">Example 3: Use the Width parameter to prevent truncation.</span></span>
+### <span data-ttu-id="d215d-130">Exempel 3: Använd parametern width för att förhindra trunkering.</span><span class="sxs-lookup"><span data-stu-id="d215d-130">Example 3: Use the Width parameter to prevent truncation.</span></span>
 
-<span data-ttu-id="69214-131">Medan de flesta utdata från `Out-String` radbryts till nästa rad finns det scenarier där utdata trunkeras av formaterings systemet innan de skickas till `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="69214-131">While most output from `Out-String` is wrapped to the next line, there are scenarios where the output is truncated by the formatting system before being passed to `Out-String`.</span></span> <span data-ttu-id="69214-132">Du kan undvika trunkering med parametern **width** .</span><span class="sxs-lookup"><span data-stu-id="69214-132">You can avoid truncation using the **Width** parameter.</span></span>
+<span data-ttu-id="d215d-131">Medan de flesta utdata från `Out-String` radbryts till nästa rad finns det scenarier där utdata trunkeras av formaterings systemet innan de skickas till `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="d215d-131">While most output from `Out-String` is wrapped to the next line, there are scenarios where the output is truncated by the formatting system before being passed to `Out-String`.</span></span> <span data-ttu-id="d215d-132">Du kan undvika trunkering med parametern **width** .</span><span class="sxs-lookup"><span data-stu-id="d215d-132">You can avoid truncation using the **Width** parameter.</span></span>
 
 ```powershell
 PS> @{TestKey = ('x' * 200)} | Out-String
@@ -118,11 +118,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## <span data-ttu-id="69214-133">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="69214-133">PARAMETERS</span></span>
+## <span data-ttu-id="d215d-133">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="d215d-133">PARAMETERS</span></span>
 
-### <span data-ttu-id="69214-134">– InputObject</span><span class="sxs-lookup"><span data-stu-id="69214-134">-InputObject</span></span>
+### <span data-ttu-id="d215d-134">– InputObject</span><span class="sxs-lookup"><span data-stu-id="d215d-134">-InputObject</span></span>
 
-<span data-ttu-id="69214-135">Anger de objekt som ska skrivas till en sträng.</span><span class="sxs-lookup"><span data-stu-id="69214-135">Specifies the objects to be written to a string.</span></span> <span data-ttu-id="69214-136">Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.</span><span class="sxs-lookup"><span data-stu-id="69214-136">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
+<span data-ttu-id="d215d-135">Anger de objekt som ska skrivas till en sträng.</span><span class="sxs-lookup"><span data-stu-id="d215d-135">Specifies the objects to be written to a string.</span></span> <span data-ttu-id="d215d-136">Ange en variabel som innehåller objekten eller Skriv ett kommando eller uttryck som hämtar objekten.</span><span class="sxs-lookup"><span data-stu-id="d215d-136">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -136,11 +136,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69214-137">– NoNewline</span><span class="sxs-lookup"><span data-stu-id="69214-137">-NoNewline</span></span>
+### <span data-ttu-id="d215d-137">– NoNewline</span><span class="sxs-lookup"><span data-stu-id="d215d-137">-NoNewline</span></span>
 
-<span data-ttu-id="69214-138">Tar bort alla newlines från utdata som genereras av PowerShell-formateraren.</span><span class="sxs-lookup"><span data-stu-id="69214-138">Removes all newlines from output generated by the PowerShell formatter.</span></span> <span data-ttu-id="69214-139">Newlines som är en del av String-objekten bevaras.</span><span class="sxs-lookup"><span data-stu-id="69214-139">Newlines that are part of the string objects are preserved.</span></span>
+<span data-ttu-id="d215d-138">Tar bort alla newlines från utdata som genereras av PowerShell-formateraren.</span><span class="sxs-lookup"><span data-stu-id="d215d-138">Removes all newlines from output generated by the PowerShell formatter.</span></span> <span data-ttu-id="d215d-139">Newlines som är en del av String-objekten bevaras.</span><span class="sxs-lookup"><span data-stu-id="d215d-139">Newlines that are part of the string objects are preserved.</span></span>
 
-<span data-ttu-id="69214-140">Den här parametern introducerades i PowerShell 6,0.</span><span class="sxs-lookup"><span data-stu-id="69214-140">This parameter was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="d215d-140">Den här parametern introducerades i PowerShell 6,0.</span><span class="sxs-lookup"><span data-stu-id="d215d-140">This parameter was introduced in PowerShell 6.0.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -154,9 +154,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69214-141">-Stream</span><span class="sxs-lookup"><span data-stu-id="69214-141">-Stream</span></span>
+### <span data-ttu-id="d215d-141">-Stream</span><span class="sxs-lookup"><span data-stu-id="d215d-141">-Stream</span></span>
 
-<span data-ttu-id="69214-142">Anger att cmdleten skickar en separat sträng för varje rad i ett indatamängds objekt.</span><span class="sxs-lookup"><span data-stu-id="69214-142">Indicates that the cmdlet sends a separate string for each line of an input object.</span></span> <span data-ttu-id="69214-143">Som standard samlas strängarna för varje objekt in och skickas som en enskild sträng.</span><span class="sxs-lookup"><span data-stu-id="69214-143">By default, the strings for each object are accumulated and sent as a single string.</span></span>
+<span data-ttu-id="d215d-142">Som standard utvärderar `Out-String` en enkel sträng formaterad som du ser den i-konsolen, inklusive tomma sidhuvuden eller efterföljande newlines.</span><span class="sxs-lookup"><span data-stu-id="d215d-142">By default, `Out-String` outputs a single string formatted as you would see it in the console including any blank headers or trailing newlines.</span></span> <span data-ttu-id="d215d-143">**Stream** -parametern gör det möjligt `Out-String` att mata ut varje rad en i taget.</span><span class="sxs-lookup"><span data-stu-id="d215d-143">The **Stream** parameter enables `Out-String` to output each line one by one.</span></span> <span data-ttu-id="d215d-144">Det enda undantaget är Multiline-strängar.</span><span class="sxs-lookup"><span data-stu-id="d215d-144">The only exception to this are multiline strings.</span></span> <span data-ttu-id="d215d-145">I så fall `Out-String` kommer fortfarande strängen att resultera i att strängen skapas som en enskild, flerradig sträng.</span><span class="sxs-lookup"><span data-stu-id="d215d-145">In that case, `Out-String` will still output the string as a single, multiline string.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -170,9 +170,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69214-144">-Bredd</span><span class="sxs-lookup"><span data-stu-id="69214-144">-Width</span></span>
+### <span data-ttu-id="d215d-146">-Bredd</span><span class="sxs-lookup"><span data-stu-id="d215d-146">-Width</span></span>
 
-<span data-ttu-id="69214-145">Anger antalet tecken i varje rad utdata.</span><span class="sxs-lookup"><span data-stu-id="69214-145">Specifies the number of characters in each line of output.</span></span> <span data-ttu-id="69214-146">Eventuella ytterligare tecken radbryts till nästa rad eller trunkeras beroende på vilken cmdlet som används.</span><span class="sxs-lookup"><span data-stu-id="69214-146">Any additional characters are wrapped to the next line or truncated depending on the formatter cmdlet used.</span></span> <span data-ttu-id="69214-147">Parametern **width** gäller bara för objekt som formateras.</span><span class="sxs-lookup"><span data-stu-id="69214-147">The **Width** parameter applies only to objects that are being formatted.</span></span> <span data-ttu-id="69214-148">Om du utelämnar den här parametern bestäms bredden av egenskaperna för värd programmet.</span><span class="sxs-lookup"><span data-stu-id="69214-148">If you omit this parameter, the width is determined by the characteristics of the host program.</span></span> <span data-ttu-id="69214-149">I Terminal-fönster (konsol) används den aktuella fönster bredden som standardvärdet.</span><span class="sxs-lookup"><span data-stu-id="69214-149">In terminal (console) windows, the current window width is used as the default value.</span></span> <span data-ttu-id="69214-150">PowerShell-konsolens fönster är standard bredden på 80 tecken vid installation.</span><span class="sxs-lookup"><span data-stu-id="69214-150">PowerShell console windows default to a width of 80 characters on installation.</span></span>
+<span data-ttu-id="d215d-147">Anger antalet tecken i varje rad utdata.</span><span class="sxs-lookup"><span data-stu-id="d215d-147">Specifies the number of characters in each line of output.</span></span> <span data-ttu-id="d215d-148">Eventuella ytterligare tecken radbryts till nästa rad eller trunkeras beroende på vilken cmdlet som används.</span><span class="sxs-lookup"><span data-stu-id="d215d-148">Any additional characters are wrapped to the next line or truncated depending on the formatter cmdlet used.</span></span> <span data-ttu-id="d215d-149">Parametern **width** gäller bara för objekt som formateras.</span><span class="sxs-lookup"><span data-stu-id="d215d-149">The **Width** parameter applies only to objects that are being formatted.</span></span> <span data-ttu-id="d215d-150">Om du utelämnar den här parametern bestäms bredden av egenskaperna för värd programmet.</span><span class="sxs-lookup"><span data-stu-id="d215d-150">If you omit this parameter, the width is determined by the characteristics of the host program.</span></span> <span data-ttu-id="d215d-151">I Terminal-fönster (konsol) används den aktuella fönster bredden som standardvärdet.</span><span class="sxs-lookup"><span data-stu-id="d215d-151">In terminal (console) windows, the current window width is used as the default value.</span></span> <span data-ttu-id="d215d-152">PowerShell-konsolens fönster är standard bredden på 80 tecken vid installation.</span><span class="sxs-lookup"><span data-stu-id="d215d-152">PowerShell console windows default to a width of 80 characters on installation.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -186,38 +186,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69214-151">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="69214-151">CommonParameters</span></span>
+### <span data-ttu-id="d215d-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d215d-153">CommonParameters</span></span>
 
-<span data-ttu-id="69214-152">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="69214-152">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="69214-153">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="69214-153">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="d215d-154">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d215d-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d215d-155">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="d215d-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="69214-154">INDATA</span><span class="sxs-lookup"><span data-stu-id="69214-154">INPUTS</span></span>
+## <span data-ttu-id="d215d-156">INDATA</span><span class="sxs-lookup"><span data-stu-id="d215d-156">INPUTS</span></span>
 
-### <span data-ttu-id="69214-155">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="69214-155">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="d215d-157">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="d215d-157">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="69214-156">Du kan skicka objekt nedåt i pipelinen till `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="69214-156">You can send objects down the pipeline to `Out-String`.</span></span>
+<span data-ttu-id="d215d-158">Du kan skicka objekt nedåt i pipelinen till `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="d215d-158">You can send objects down the pipeline to `Out-String`.</span></span>
 
-## <span data-ttu-id="69214-157">UTDATA</span><span class="sxs-lookup"><span data-stu-id="69214-157">OUTPUTS</span></span>
+## <span data-ttu-id="d215d-159">UTDATA</span><span class="sxs-lookup"><span data-stu-id="d215d-159">OUTPUTS</span></span>
 
-### <span data-ttu-id="69214-158">System. String</span><span class="sxs-lookup"><span data-stu-id="69214-158">System.String</span></span>
+### <span data-ttu-id="d215d-160">System. String</span><span class="sxs-lookup"><span data-stu-id="d215d-160">System.String</span></span>
 
-<span data-ttu-id="69214-159">`Out-String` Returnerar den sträng som skapas från det inmatade objektet.</span><span class="sxs-lookup"><span data-stu-id="69214-159">`Out-String` returns the string that it creates from the input object.</span></span>
+<span data-ttu-id="d215d-161">`Out-String` Returnerar den sträng som skapas från det inmatade objektet.</span><span class="sxs-lookup"><span data-stu-id="d215d-161">`Out-String` returns the string that it creates from the input object.</span></span>
 
-## <span data-ttu-id="69214-160">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="69214-160">NOTES</span></span>
+## <span data-ttu-id="d215d-162">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="d215d-162">NOTES</span></span>
 
-<span data-ttu-id="69214-161">De cmdletar som innehåller `Out` verbet formaterar inte objekt.</span><span class="sxs-lookup"><span data-stu-id="69214-161">The cmdlets that contain the `Out` verb don't format objects.</span></span> <span data-ttu-id="69214-162">`Out`Cmdletarna skickar objekt till Formatter för det angivna visnings målet.</span><span class="sxs-lookup"><span data-stu-id="69214-162">The `Out` cmdlets send objects to the formatter for the specified display destination.</span></span>
+<span data-ttu-id="d215d-163">De cmdletar som innehåller `Out` verbet formaterar inte objekt.</span><span class="sxs-lookup"><span data-stu-id="d215d-163">The cmdlets that contain the `Out` verb don't format objects.</span></span> <span data-ttu-id="d215d-164">`Out`Cmdletarna skickar objekt till Formatter för det angivna visnings målet.</span><span class="sxs-lookup"><span data-stu-id="d215d-164">The `Out` cmdlets send objects to the formatter for the specified display destination.</span></span>
 
-## <span data-ttu-id="69214-163">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="69214-163">RELATED LINKS</span></span>
+## <span data-ttu-id="d215d-165">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="d215d-165">RELATED LINKS</span></span>
 
-[<span data-ttu-id="69214-164">about_Formatting</span><span class="sxs-lookup"><span data-stu-id="69214-164">about_Formatting</span></span>](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
+[<span data-ttu-id="d215d-166">about_Formatting</span><span class="sxs-lookup"><span data-stu-id="d215d-166">about_Formatting</span></span>](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 
-[<span data-ttu-id="69214-165">Ut-standard</span><span class="sxs-lookup"><span data-stu-id="69214-165">Out-Default</span></span>](../Microsoft.PowerShell.Core/Out-Default.md)
+[<span data-ttu-id="d215d-167">Ut-standard</span><span class="sxs-lookup"><span data-stu-id="d215d-167">Out-Default</span></span>](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[<span data-ttu-id="69214-166">Ut-fil</span><span class="sxs-lookup"><span data-stu-id="69214-166">Out-File</span></span>](Out-File.md)
+[<span data-ttu-id="d215d-168">Ut-fil</span><span class="sxs-lookup"><span data-stu-id="d215d-168">Out-File</span></span>](Out-File.md)
 
-[<span data-ttu-id="69214-167">Ut-värd</span><span class="sxs-lookup"><span data-stu-id="69214-167">Out-Host</span></span>](../Microsoft.PowerShell.Core/Out-Host.md)
+[<span data-ttu-id="d215d-169">Ut-värd</span><span class="sxs-lookup"><span data-stu-id="d215d-169">Out-Host</span></span>](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[<span data-ttu-id="69214-168">Ut-null</span><span class="sxs-lookup"><span data-stu-id="69214-168">Out-Null</span></span>](../Microsoft.PowerShell.Core/Out-Null.md)
+[<span data-ttu-id="d215d-170">Ut-null</span><span class="sxs-lookup"><span data-stu-id="d215d-170">Out-Null</span></span>](../Microsoft.PowerShell.Core/Out-Null.md)
 
-[<span data-ttu-id="69214-169">Out-GridView</span><span class="sxs-lookup"><span data-stu-id="69214-169">Out-GridView</span></span>](Out-GridView.md)
+[<span data-ttu-id="d215d-171">Out-GridView</span><span class="sxs-lookup"><span data-stu-id="d215d-171">Out-GridView</span></span>](Out-GridView.md)
 
-[<span data-ttu-id="69214-170">Out-Printer</span><span class="sxs-lookup"><span data-stu-id="69214-170">Out-Printer</span></span>](Out-Printer.md)
+[<span data-ttu-id="d215d-172">Out-Printer</span><span class="sxs-lookup"><span data-stu-id="d215d-172">Out-Printer</span></span>](Out-Printer.md)
