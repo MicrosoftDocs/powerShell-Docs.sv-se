@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
-ms.date: 12/10/2020
-ms.openlocfilehash: 1bf96bc6bfb3f6544d8a4fd5b287dd6d659691ec
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.date: 02/02/2021
+ms.openlocfilehash: d02fa6e3828d539cf70d7bbcdb8ee7bd8ab35c1d
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97069877"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536515"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
@@ -95,12 +95,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation via direkt hämtning – Ubuntu 16,04
 
-Ladda ned Debian-paketet `powershell_7.1.0-1.ubuntu.16.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell_7.1.1-1.ubuntu.16.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.1.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_7.1.1-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -144,12 +144,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation via direkt hämtning – Ubuntu 18,04
 
-Ladda ned Debian-paketet `powershell_7.1.0-1.ubuntu.18.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell_7.1.1-1.ubuntu.18.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.1.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_7.1.1-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -193,12 +193,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---ubuntu-2004"></a>Installation via direkt hämtning – Ubuntu 20,04
 
-Ladda ned Debian-paketet `powershell_7.1.0-1.ubuntu.20.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
+Ladda ned Debian-paketet `powershell_7.1.1-1.ubuntu.20.04_amd64.deb` från sidan [releases][] på Ubuntu-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.1.0-1.ubuntu.20.04_amd64.deb
+sudo dpkg -i powershell_7.1.1-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -289,12 +289,12 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation via direkt hämtning – Debian 9
 
-Ladda ned Debian-paketet `powershell_7.1.0-1.debian.9_amd64.deb` från sidan [releases][] på Debian-datorn.
+Ladda ned Debian-paketet `powershell_7.1.1-1.debian.9_amd64.deb` från sidan [releases][] på Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo dpkg -i powershell_7.1.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell_7.1.1-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -334,7 +334,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>Installation via direkt hämtning – Debian 10
 
-Hämta paketet tar. gz `powershell-7.1.0-linux-x64.tar.gz` från sidan [utgåvor][] till Debian-datorn.
+Hämta paketet tar. gz `powershell-7.1.1-linux-x64.tar.gz` från sidan [utgåvor][] till Debian-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -356,7 +356,7 @@ sudo apt-get install -y \
         curl
 
 # Download the powershell '.tar.gz' archive
-curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L  https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -381,7 +381,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation via direkt hämtning – Alpine 3,9 och 3,10
 
-Hämta paketet tar. gz `powershell-7.1.0-linux-alpine-x64.tar.gz` från sidan [utgåvor][] till Alpine Machine.
+Hämta paketet tar. gz `powershell-7.1.1-linux-alpine-x64.tar.gz` från sidan [utgåvor][] till Alpine Machine.
 
 Kör sedan följande kommandon i terminalen:
 
@@ -406,7 +406,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -448,18 +448,18 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation via direkt hämtning – CentOS 7
 
-Med [CentOS 7][]laddar du ned rpm-paketet `powershell-7.1.0-1.rhel.7.x86_64.rpm` från sidan [utgåvor][] till CentOS-datorn.
+Med [CentOS 7][]laddar du ned rpm-paketet `powershell-7.1.1-1.rhel.7.x86_64.rpm` från sidan [utgåvor][] till CentOS-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo yum install powershell-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.1-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Avinstallation-CentOS 7
@@ -491,18 +491,18 @@ Som superanvändare registrerar du Microsoft-lagringsplatsen en gång. Efter reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation via direkt hämtning – Red Hat Enterprise Linux (RHEL) 7
 
-Hämta RPM-paketet `powershell-7.1.0-1.rhel.7.x86_64.rpm` från sidan [versioner][] till Red Hat Enterprise Linux datorn.
+Hämta RPM-paketet `powershell-7.1.1-1.rhel.7.x86_64.rpm` från sidan [versioner][] till Red Hat Enterprise Linux datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
-sudo yum install powershell-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.1-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Avinstallation-Red Hat Enterprise Linux (RHEL) 7
@@ -520,7 +520,7 @@ sudo yum remove powershell
 zypper update && zypper --non-interactive install curl tar libicu52_1
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 mkdir -p /opt/microsoft/powershell/7
@@ -545,7 +545,7 @@ pwsh
 zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 mkdir -p /opt/microsoft/powershell/7
@@ -603,20 +603,20 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installation via direkt hämtning-Fedora 28, 29 och 30
 
-Hämta RPM-paketet `powershell-7.1.0-1.rhel.7.x86_64.rpm` från sidan [releases][] på Fedora-datorn.
+Hämta RPM-paketet `powershell-7.1.1-1.rhel.7.x86_64.rpm` från sidan [releases][] på Fedora-datorn.
 
 Kör sedan följande kommandon i terminalen:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install powershell-7.1.0-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-7.1.1-1.rhel.7.x86_64.rpm
 ```
 
 Du kan installera RPM utan det mellanliggande steget i att ladda ned det:
 
 ```sh
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-28-29-and-30"></a>Avinstallation-Fedora 28, 29 och 30
@@ -739,13 +739,13 @@ sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
 # Download and extract PowerShell
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-7.1.0-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-7.1.1-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -825,7 +825,7 @@ Om du vill distribuera PowerShell-binärfiler på Linux-distributioner som inte 
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -865,7 +865,7 @@ PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] i Linux.
 Microsoft stöder installations metoderna i det här dokumentet. Det kan finnas andra installations metoder som är tillgängliga från andra källor. Dessa verktyg och metoder kan fungera, men Microsoft stöder inte dessa metoder.
 
 <!-- link references -->
-[exekutiv]: https://github.com/PowerShell/PowerShell/releases/latest
+[exekutiv]: https://aka.ms/PowerShell-Release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [distros]: https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md#linux
 [Distribution Support Request]: https://github.com/PowerShell/PowerShell/issues/new?assignees=&labels=Distribution-Request&template=Distribution_Request.md&title=Distribution+Support+Request

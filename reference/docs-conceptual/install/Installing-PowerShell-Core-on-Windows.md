@@ -1,13 +1,13 @@
 ---
 title: Installera PowerShell i Windows
 description: Information om hur du installerar PowerShell på Windows
-ms.date: 11/11/2020
-ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.date: 02/02/2021
+ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661434"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536498"
 ---
 # <a name="installing-powershell-on-windows"></a>Installera PowerShell i Windows
 
@@ -24,14 +24,14 @@ Om du vill aktivera PowerShell-fjärrkommunikation över WSMan måste följande 
 
 ## <a name="download-the-installer-package"></a>Ladda ned installations paketet
 
-Om du vill installera PowerShell på Windows laddar du ned det [senaste][] installations paketet från GitHub. Du kan också hitta den senaste för hands versionen på sidan [versioner][] . Rulla ned till **till gångar** -avsnittet på sidan version. Avsnittet **till gångar** kan vara minimerat, så du kan behöva klicka för att expandera det.
+Om du vill installera PowerShell på Windows laddar du ned det [senaste][] installations paketet från GitHub. Du kan också hitta den senaste för [hands][] versionen. Rulla ned till **till gångar** -avsnittet på sidan version. Avsnittet **till gångar** kan vara minimerat, så du kan behöva klicka för att expandera det.
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Installera MSI-paketet
 
 MSI-filen ser ut så här `PowerShell-<version>-win-<os-arch>.msi` . Exempel:
 
-- `PowerShell-7.1.0-win-x64.msi`
-- `PowerShell-7.1.0-win-x86.msi`
+- `PowerShell-7.1.1-win-x64.msi`
+- `PowerShell-7.1.1-win-x86.msi`
 
 När du har laddat ned dubbelklickar du på installations programmet och följer anvisningarna.
 
@@ -55,13 +55,14 @@ Installations programmet skapar en genväg på Start-menyn i Windows.
 MSI-paket kan installeras från kommando raden och gör det möjligt för administratörer att distribuera paket utan användar interaktion. MSI-paketet innehåller följande egenskaper för att kontrol lera installations alternativen:
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** – den här egenskapen styr alternativet för att lägga till det **Öppna PowerShell** -objektet i snabb menyn i Utforskaren.
+- **ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL** – den här egenskapen styr alternativet för att lägga till kommandot **Kör med PowerShell** på snabb menyn i Utforskaren i Windows.
 - **ENABLE_PSREMOTING** – den här egenskapen styr alternativet för att aktivera PowerShell-fjärrkommunikation under installationen.
 - **REGISTER_MANIFEST** – den här egenskapen styr alternativet för registrering av Windows händelse loggnings manifestet.
 
 I följande exempel visas hur du tyst installerar PowerShell med alla installations alternativ aktiverade.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 En fullständig lista över kommando rads alternativ för `Msiexec.exe` finns i [kommando rads alternativ](/windows/desktop/Msi/command-line-options).
@@ -81,12 +82,12 @@ Detta kan användas av administratörer och utvecklare för att hitta sökvägen
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installera ZIP-paketet
 
-Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Hämta något av följande ZIP-arkiv från sidan [release][releases] .
+Det finns PowerShell-Arkiv för att aktivera avancerade distributions scenarier. Ladda ned något av följande ZIP-arkiv från sidan [releases] [releases].
 
-- PowerShell-7.1.0-win-x64.zip
-- PowerShell-7.1.0-win-x86.zip
-- PowerShell-7.1.0-win-arm64.zip
-- PowerShell-7.1.0-win-arm32.zip
+- PowerShell-7.1.1-win-x64.zip
+- PowerShell-7.1.1-win-x86.zip
+- PowerShell-7.1.1-win-arm64.zip
+- PowerShell-7.1.1-win-arm32.zip
 
 Beroende på hur du laddar ned filen kan du behöva avblockera filen med hjälp av `Unblock-File` cmdleten. Zippa upp innehållet till valfri plats och kör `pwsh.exe` därifrån. Till skillnad från när du installerar MSI-paketen söker inte du efter krav i ZIP-arkivet. Se till att du uppfyller [kraven](#prerequisites)för fjärr kommunikation över WSMan för att fungera korrekt.
 
@@ -225,8 +226,8 @@ Följande kommandon kan användas för att installera PowerShell med de publicer
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.0
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.1
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
    ```
 
 1. Installera en version av PowerShell med `--exact` parametern
@@ -259,7 +260,7 @@ Mer information finns i [förstå hur paketerade skrivbordsappar körs i Windows
 > [!NOTE]
 > I för hands versioner av PowerShell ingår ett MSIX-paket. MSIX-paketet stöds inte officiellt. Paketet är konstruerat för test ändamål under för hands versions perioden.
 
-Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår versions[sida för] GitHub- [versioner]. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
+Om du vill installera MSIX-paketet manuellt på en Windows 10-klient laddar du ned MSIX-paketet från vår GitHub [Release] [releases]-sida. Rulla ned till **till gångar** -avsnittet i den version som du vill installera. Avsnittet till gångar kan vara minimerat, så du kan behöva klicka för att expandera det.
 
 MSIX-filen ser ut så här – `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -286,8 +287,8 @@ Microsoft stöder installations metoderna i det här dokumentet. Det kan finnas 
 
 <!-- link references -->
 
-[exekutiv]: https://github.com/PowerShell/PowerShell/releases
-[senaste]: https://github.com/PowerShell/PowerShell/releases/latest
+[förhandsgranskningsvyn]: https://aka.ms/powershell-release?tag=preview
+[senaste]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
