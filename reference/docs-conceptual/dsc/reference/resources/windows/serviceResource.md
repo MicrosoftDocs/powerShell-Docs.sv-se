@@ -1,14 +1,14 @@
 ---
-ms.date: 09/20/2019
+ms.date: 01/06/2021
 ms.topic: reference
 title: DSC-tjänst resurs
 description: DSC-tjänst resurs
-ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: bb151e11475c6e67f1fcb2d73336ff2e34b749b8
+ms.sourcegitcommit: afefb3636362857036648c2fe80215bc4e81f5ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142632"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957044"
 ---
 # <a name="dsc-service-resource"></a>DSC-tjänst resurs
 
@@ -27,7 +27,7 @@ Service [string] #ResourceName
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ State = [string] { Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
@@ -42,13 +42,13 @@ Service [string] #ResourceName
 
 |Egenskap |Beskrivning |
 |---|---|
-|Namn |Anger tjänstens namn. Observera att ibland skiljer det sig från visnings namnet. Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten. |
-|BuiltInAccount |Anger det inloggnings konto som ska användas för tjänsten. De värden som tillåts för den här egenskapen är: **LocalService** , **LocalSystem** och **NetworkService** . |
+|Name |Anger tjänstens namn. Observera att ibland skiljer det sig från visnings namnet. Du kan hämta en lista över tjänsterna och deras aktuella status med `Get-Service` cmdleten. |
+|BuiltInAccount |Anger det inloggnings konto som ska användas för tjänsten. De värden som tillåts för den här egenskapen är: **LocalService**, **LocalSystem** och **NetworkService**. |
 |Autentiseringsuppgift |Anger autentiseringsuppgifter för det konto som tjänsten ska köras under. Den här egenskapen och egenskapen **BuiltinAccount** kan inte användas tillsammans. |
-|Startuptype tjänst |Anger tjänstens starttyp. De värden som tillåts för den här egenskapen är: **Automatisk** , **inaktive rad** och **manuell** . |
-|Tillstånd |Anger det tillstånd som du vill säkerställa för tjänsten. Värdena är: **körs** eller **stoppas** . |
+|Startuptype tjänst |Anger tjänstens starttyp. De värden som tillåts för den här egenskapen är: **Automatisk**, **inaktive rad** och **manuell**. |
+|Stat |Anger det tillstånd som du vill säkerställa för tjänsten. Värdena är: **körs** eller **stoppas**. |
 |Beroenden | En matris med namnen på de beroenden som tjänsten ska ha. |
-|Beskrivning |Anger beskrivningen av mål tjänsten. |
+|Description |Anger beskrivningen av mål tjänsten. |
 |DisplayName |Anger visnings namnet för mål tjänsten. |
 |Sökväg |Anger sökvägen till den binära filen för en ny tjänst. |
 

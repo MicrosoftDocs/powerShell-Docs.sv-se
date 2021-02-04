@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 6/24/2019
+ms.date: 01/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.openlocfilehash: 9314aaf7c444f9a1159b301135d4130737daa439
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: f59cc9ff4e6d1b6579292c84f440bbbdd156b65c
+ms.sourcegitcommit: 81558c2adb9d109946a027e5b96e4d24b3b13747
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266223"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99098571"
 ---
 # Clear-RecycleBin
 
@@ -92,7 +91,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Anger att användaren inte behöver bekräfta att en pappers korgen ska rensas.
+Anger att användaren inte behöver bekräfta att en pappers korgen ska rensas. Parametern **Force** åsidosätter också parametrarna **whatIf** och **Confirm** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
