@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/20/2020
+ms.date: 02/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
-ms.openlocfilehash: 644663c8871233bae84288f83492b518405d14ff
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 842d4ea92f60a92fddcddea11bb8155c708ac192
+ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93264362"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99495969"
 ---
 # Get-Random
 
@@ -45,7 +44,14 @@ Get-Random [-SetSeed <Int32>] [-InputObject] <Object[]> [-Shuffle] [<CommonParam
 
 Utan parametrar eller Indatatyp `Get-Random` returnerar ett kommando ett slumpmässigt valt 32-bitars heltal utan tecken mellan 0 (noll) och **Int32. MaxValue** ( `0x7FFFFFFF` , `2,147,483,647` ).
 
-Du kan använda parametrarna för `Get-Random` för att ange ett start nummer, lägsta och högsta värde, antalet objekt som returneras från en inskickad samling och hela samlingen i en slumpmässig ordning.
+Som standard `Get-Random` genererar kryptografiskt säker slumpmässig het med klassen [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) .
+
+Du kan använda parametrarna för `Get-Random` för att ange lägsta och högsta värden, antalet objekt som returneras från en samling eller ett start nummer.
+
+> [!CAUTION]
+> Att ställa in startvärdet för ett avsiktligt resultat i icke-slumpmässig, repeterbar funktion. Den bör endast användas när du försöker återskapa beteende, till exempel vid fel sökning eller analys av ett skript som innehåller `Get-Random` kommandon.
+>
+> Det här dirigering svärdet används för det aktuella kommandot och för alla efterföljande `Get-Random` kommandon i den aktuella sessionen tills du använder **SetSeed** igen eller stänger sessionen. Du kan inte återställa startvärdet till dess standardvärde.
 
 ## EXEMPEL
 
@@ -208,7 +214,7 @@ $Sample = $Files | Get-Random -Count 50
 
 ### Exempel 11: sammanfatta verkliga tärningar
 
-Det här exemplet rullar en rättvis Die 1200 gånger och räknar resultatet. Det första kommandot `For-EachObject` upprepar anropet till `Get-Random` från skickas i siffror (1-6). Resultaten grupperas efter deras värde med `Group-Object` och formaterats som en tabell med `Select-Object` .
+Det här exemplet rullar en rättvis Die 1200 gånger och räknar resultatet. Det första kommandot `ForEach-Object` upprepar anropet till `Get-Random` från skickas i siffror (1-6). Resultaten grupperas efter deras värde med `Group-Object` och formaterats som en tabell med `Select-Object` .
 
 ```powershell
 1..1200 | ForEach-Object {
@@ -332,9 +338,12 @@ Accept wildcard characters: False
 
 ### -SetSeed
 
-Anger ett Seed-värde för slump tals generatorn. Det här dirigering svärdet används för det aktuella kommandot och för alla efterföljande `Get-Random` kommandon i den aktuella sessionen tills du använder **SetSeed** igen eller stänger sessionen. Du kan inte återställa startvärdet till dess standardvärde.
+Anger ett Seed-värde för slump tals generatorn. När du använder **SetSeed** använder cmdlet: en [system. Random](/dotnet/api/system.random) -metod för att generera pseudorandom-nummer som inte är kryptografiskt säkra.
 
-Parametern **SetSeed** är inte obligatorisk. Som standard `Get-Random` använder metoden [RandomNumberGenerator ()](/dotnet/api/system.security.cryptography.randomnumbergenerator) för att generera ett Seed-värde. Eftersom **SetSeed** resulterar i ett icke-slumpmässigt beteende används det vanligt vis bara när du försöker återskapa beteende, till exempel vid fel sökning eller analys av ett skript som innehåller `Get-Random` kommandon.
+> [!CAUTION]
+> Inställning av Dirigerings resultat i icke-slumpmässiga beteenden. Den bör endast användas när du försöker återskapa beteende, till exempel vid fel sökning eller analys av ett skript som innehåller `Get-Random` kommandon.
+>
+> Det här dirigering svärdet används för det aktuella kommandot och för alla efterföljande `Get-Random` kommandon i den aktuella sessionen tills du använder **SetSeed** igen eller stänger sessionen. Du kan inte återställa startvärdet till dess standardvärde.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -382,7 +391,7 @@ Du kan skicka ett eller flera objekt. `Get-Random` väljer värden slumpmässigt
 
 ## ANTECKNINGAR
 
-`Get-Random` ställer in ett standard-Seed för varje session baserat på system klockan när sessionen startar.
+Som standard `Get-Random` genererar kryptografiskt säker slumpmässig het med klassen [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) .
 
 `Get-Random` returnerar inte alltid samma datatyp som indatavärdet. I följande tabell visas utdatatypen för var och en av de numeriska inmatnings typerna.
 
@@ -405,3 +414,6 @@ Från och med PowerShell 7, **InputObject** -parametern i **RandomListItemParame
 
 ## RELATERADE LÄNKAR
 
+[System. Security. Cryptography. RandomNumberGenerator ()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+
+[System, slumpmässig](/dotnet/api/system.random)

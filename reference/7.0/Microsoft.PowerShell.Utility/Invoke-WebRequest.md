@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: b81074e14461b0bf481232553b614e06c23b90b6
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 07c10f33b0cffd56d84ddf6aab3553a0b71e4017
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93269102"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860719"
 ---
 # Invoke-WebRequest
 
@@ -227,7 +226,7 @@ När `Invoke-WebRequest` påträffar ett HTTP-meddelande som inte lyckades (404,
 ```powershell
 try
 {
-    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -242,7 +241,7 @@ $StatusCode
 404
 ```
 
-Kommandot anropar `Invoke-WebRequest` med en **ErrorAction** av **stopp** , som tvingar fram `Invoke-WebRequest` ett avslutande fel vid eventuella misslyckade förfrågningar. Det avslutande felet fångas av `catch` blocket som hämtar **StatusCode** från **Exception** -objektet.
+Det avslutande felet fångas av `catch` blocket, som hämtar **StatusCode** från **Exception** -objektet.
 
 ## PARAMETRAR
 
@@ -274,10 +273,10 @@ Det går inte att använda **autentisering** med **UseDefaultCredentials**.
 
 Tillgängliga autentiserings alternativ:
 
-- **Ingen** : det här är standard alternativet när **autentisering** inte anges. ingen explicit autentisering används.
-- **Basic** : kräver **autentiseringsuppgifter**. Autentiseringsuppgifterna skickas i ett RFC 7617 Basic Authentication-huvud i formatet `base64(user:password)` .
-- **Bearer** : kräver **token**. Skickar ett RFC 6750- `Authorization: Bearer` huvud med angiven token. Detta är ett alias för **OAuth**
-- **OAuth** : kräver **token**. Skickar ett RFC 6750- `Authorization: Bearer` huvud med angiven token. Detta är ett alias för **innehavare**
+- **Ingen**: det här är standard alternativet när **autentisering** inte anges. ingen explicit autentisering används.
+- **Basic**: kräver **autentiseringsuppgifter**. Autentiseringsuppgifterna skickas i ett RFC 7617 Basic Authentication-huvud i formatet `base64(user:password)` .
+- **Bearer**: kräver **token**. Skickar ett RFC 6750- `Authorization: Bearer` huvud med angiven token. Detta är ett alias för **OAuth**
+- **OAuth**: kräver **token**. Skickar ett RFC 6750- `Authorization: Bearer` huvud med angiven token. Detta är ett alias för **innehavare**
 
 Att tillhandahålla **autentisering** åsidosätter alla `Authorization` rubriker som har angetts för **sidhuvuden** eller ingår i **websession**.
 
@@ -305,7 +304,7 @@ Du kan använda **text** parametern för att ange en lista över frågeparametra
 
 När indatamängden är en GET-begäran och texten är en `IDictionary` (vanligt vis en hash-tabell) läggs bröd texten till i URI: n som frågeparametrar. För andra typer av begär Anden (till exempel POST) anges bröd texten som värde för begär ande texten i `name=value` standardformat.
 
-**Bröd text** parametern kan också acceptera ett `System.Net.Http.MultipartFormDataContent` objekt. Detta underlättar `multipart/form-data` förfrågningar. När ett **MultipartFormDataContent** -objekt anges för **brödtext** , åsidosätts alla innehåll relaterade rubriker som har angetts för egenskaperna **ContentType** , **headers** eller **websession** av **MultipartFormDataContent** -objektets innehålls rubriker. Den här funktionen har lagts till i PowerShell-6.0.0.
+**Bröd text** parametern kan också acceptera ett `System.Net.Http.MultipartFormDataContent` objekt. Detta underlättar `multipart/form-data` förfrågningar. När ett **MultipartFormDataContent** -objekt anges för **brödtext**, åsidosätts alla innehåll relaterade rubriker som har angetts för egenskaperna **ContentType**, **headers** eller **websession** av **MultipartFormDataContent** -objektets innehålls rubriker. Den här funktionen har lagts till i PowerShell-6.0.0.
 
 ```yaml
 Type: System.Object
@@ -384,7 +383,7 @@ Accept wildcard characters: False
 
 Anger ett användar konto som har behörighet att skicka begäran. Standard är den aktuella användaren.
 
-Ange ett användar namn, till exempel **user01** eller **Domain01\User01** , eller ange ett **PSCredential** -objekt som genererats av `Get-Credential` cmdleten.
+Ange ett användar namn, till exempel **user01** eller **Domain01\User01**, eller ange ett **PSCredential** -objekt som genererats av `Get-Credential` cmdleten.
 
 **Autentiseringsuppgifter** kan användas separat eller tillsammans med vissa parametrar för **autentiseringsprinciper** . När den används enbart, anger den bara autentiseringsuppgifter för fjärrservern om fjärrservern skickar en begäran om autentisering av begäran. När den används med **autentiseringsalternativ** skickas autentiseringsuppgifterna uttryckligen.
 
@@ -556,7 +555,7 @@ Accept wildcard characters: False
 
 Anger den metod som används för webb förfrågan. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standardvärde
 - Ta bort
 - Hämta
 - Head
@@ -674,7 +673,7 @@ Accept wildcard characters: False
 
 Anger ett användar konto som har behörighet att använda den proxyserver som anges av parametern **proxy** . Standard är den aktuella användaren.
 
-Ange ett användar namn, till exempel **user01** eller **Domain01\User01** , **User@Domain.Com** eller ange ett `PSCredential` objekt, till exempel en som genereras av `Get-Credential` cmdleten.
+Ange ett användar namn, till exempel **user01** eller **Domain01\User01**, **User@Domain.Com** eller ange ett `PSCredential` objekt, till exempel en som genereras av `Get-Credential` cmdleten.
 
 Den här parametern är endast giltig när parametern **proxy** också används i kommandot. Du kan inte använda parametrarna **ProxyCredential** och **ProxyUseDefaultCredentials** i samma kommando.
 
@@ -807,7 +806,7 @@ Anger att cmdleten ska lägga till huvuden i begäran utan verifiering.
 Den här växeln bör användas för platser som kräver rubrik värden som inte uppfyller standarder.
 Om du anger den här växeln inaktive ras verifieringen så att värdet inte kan skickas avmarkerat. När det här värdet anges läggs alla rubriker till utan verifiering.
 
-Den här växeln inaktiverar verifiering av värden som skickas till parametrarna **ContentType** , **headers** och **useragent** .
+Den här växeln inaktiverar verifiering av värden som skickas till parametrarna **ContentType**, **headers** och **useragent** .
 
 Den här funktionen har lagts till i PowerShell-6.0.0.
 
@@ -846,10 +845,10 @@ Accept wildcard characters: False
 
 Anger de SSL/TLS-protokoll som är tillåtna för webbegäran. Som standard är alla SSL/TLS-protokoll som stöds av systemet tillåtna. **SslProtocol** gör det möjligt att begränsa till vissa protokoll för efterlevnad.
 
-**SslProtocol** använder **WebSslProtocol** -flaggan Enum. Det går att ange mer än ett protokoll med hjälp av flagg notation eller kombinera flera **WebSslProtocol** -alternativ med **bor** , men det finns inte stöd för att tillhandahålla flera protokoll på alla plattformar.
+**SslProtocol** använder **WebSslProtocol** -flaggan Enum. Det går att ange mer än ett protokoll med hjälp av flagg notation eller kombinera flera **WebSslProtocol** -alternativ med **bor**, men det finns inte stöd för att tillhandahålla flera protokoll på alla plattformar.
 
 > [!NOTE]
-> På andra plattformar än Windows-plattformar kanske det inte går att ange `'Tls, Tls12'` som ett alternativ.
+> På andra plattformar än Windows-plattformar kanske det inte går att tillhandahålla `Tls` eller `Tls12` som ett alternativ.
 
 Den här funktionen har lagts till i PowerShell-6.0.0.
 
@@ -1053,9 +1052,9 @@ På grund av ändringar i .NET Core 3,1 använder PowerShell 7,0 och senare egen
 
 Värdet för den här egenskapen bestäms av din plattform:
 
-- **För Windows** : läser proxykonfigurationen från miljövariabler. Om dessa variabler inte är definierade härleds egenskapen från användarens proxyinställningar.
-- **För MacOS** : läser proxykonfigurationen från miljövariabler. Om dessa variabler inte är definierade härleds egenskapen från systemets proxyinställningar.
-- **För Linux** : läser proxykonfigurationen från miljövariabler. Om dessa variabler inte är definierade initierar egenskapen en icke-konfigurerad instans som kringgår alla adresser.
+- **För Windows**: läser proxykonfigurationen från miljövariabler. Om dessa variabler inte är definierade härleds egenskapen från användarens proxyinställningar.
+- **För MacOS**: läser proxykonfigurationen från miljövariabler. Om dessa variabler inte är definierade härleds egenskapen från systemets proxyinställningar.
+- **För Linux**: läser proxykonfigurationen från miljövariabler. Om dessa variabler inte är definierade initierar egenskapen en icke-konfigurerad instans som kringgår alla adresser.
 
 De miljövariabler som används för `DefaultProxy` initiering på Windows-och UNIX-baserade plattformar är:
 

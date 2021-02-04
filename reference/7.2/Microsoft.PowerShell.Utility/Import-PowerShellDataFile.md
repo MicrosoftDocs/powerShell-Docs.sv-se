@@ -6,12 +6,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-powershelldatafile?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PowerShellDataFile
-ms.openlocfilehash: 2853c5757b12e75e50948192e5a9e29889553b8e
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d7942abff2974064c52a8a9ac086a280959b3a63
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94708614"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860856"
 ---
 # Import-PowerShellDataFile
 
@@ -23,19 +23,19 @@ Importerar värden från en `.PSD1` fil utan att anropa dess innehåll.
 ### ByPath (standard)
 
 ```
-Import-PowerShellDataFile [-Path] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-Path] <String[]> [-SkipLimitCheck] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Import-PowerShellDataFile [-LiteralPath] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-LiteralPath] <String[]> [-SkipLimitCheck] [<CommonParameters>]
 ```
 
 ## BESKRIVNING
 
 Cmdlet: en på `Import-PowerShellDataFile` ett säkert sätt importerar nyckel/värde-par från hash som definierats i en `.PSD1` fil. Värdena kan importeras med hjälp av `Invoke-Expression` filens innehåll.
-Kör dock `Invoke-Expression` eventuell kod som finns i filen. Detta kan producera oönskade resultat eller köra osäker kod. `Import-PowerShellDataFile` importerar data utan att anropa koden.
+Kör dock `Invoke-Expression` eventuell kod som finns i filen. Detta kan producera oönskade resultat eller köra osäker kod. `Import-PowerShellDataFile` importerar data utan att anropa koden. Som standard finns det en nyckel gräns på 500 men kan kringgås med **SkipLimitCheck** -växeln.
 
 ## EXEMPEL
 
@@ -102,6 +102,22 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -SkipLimitCheck
+
+Som standard `Import-PowerShellDataFile` importeras bara 500 nycklar från en `.psd1` fil. Använd **SkipLimitCheck** för att importera fler än 500 nycklar.
+
+```yaml
+Type: Switch
+Parameter Sets: All
+Aliases:
+
+Required: False
+Position: 0
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
@@ -119,4 +135,3 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 [Invoke-uttryck](Invoke-Expression.md)
 
 [Importera – LocalizedData](Import-LocalizedData.md)
-

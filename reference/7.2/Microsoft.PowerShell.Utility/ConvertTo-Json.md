@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: 83a8cb444c20db8f7dd2181cac13e56d54d5d986
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d598fe2b1aefdae046b0f1a0893bf4fc407fa7a7
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709817"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860825"
 ---
 # ConvertTo-Json
 
@@ -33,6 +33,8 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 Du kan sedan använda `ConvertFrom-Json` cmdleten för att konvertera en JSON-formaterad sträng till ett JSON-objekt, som är enkelt att hantera i PowerShell.
 
 Många webbplatser använder JSON i stället för XML för att serialisera data för kommunikation mellan servrar och webbaserade appar.
+
+Från och med PowerShell 7,2 `ConvertTo-Json` avger en varning om djupet för indatamängden överskrider det angivna djupet för kommandot. Detta förhindrar oönskad data förlust när objekt konverteras.
 
 Den här cmdleten introducerades i Windows PowerShell 3,0.
 
@@ -199,7 +201,7 @@ Accept wildcard characters: False
 
 ### -Djup
 
-Anger hur många nivåer med objekt som ingår i JSON-representationen. Standardvärdet är 2.
+Anger hur många nivåer med objekt som ingår i JSON-representationen. Standardvärdet är 2. Från och med PowerShell 7,2 `ConvertTo-Json` avger en varning om antalet nivåer i ett inobjekt överskrider det här antalet.
 
 ```yaml
 Type: System.Int32

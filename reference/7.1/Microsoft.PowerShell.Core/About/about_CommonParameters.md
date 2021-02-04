@@ -2,16 +2,16 @@
 description: Beskriver de parametrar som kan användas med vilken cmdlet som helst.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
-ms.openlocfilehash: 3c1a26754baf9bdfa2a9d6d3cf5a68ddb657c3bf
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: b9fef14aac6394c7aa26cd8054ad4bea159620fd
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271124"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860695"
 ---
 # <a name="about-commonparameters"></a>Om CommonParameters
 
@@ -89,7 +89,7 @@ I interaktivt läge åsidosätter **fel söknings** parametern värdet för `$De
 
 I icke-interaktivt läge åsidosätter **fel söknings** parametern värdet för `$DebugPreference` variabeln för det aktuella kommandot och anger värdet för `$DebugPreference` att **fortsätta**.
 
-`-Debug:$true` har samma resultat som `-Debug` . Används `-Debug:$false` för att förhindra visning av fel söknings meddelanden när `$DebugPreference` inte är **SilentlyContinue** , vilket är standardvärdet.
+`-Debug:$true` har samma resultat som `-Debug` . Används `-Debug:$false` för att förhindra visning av fel söknings meddelanden när `$DebugPreference` inte är **SilentlyContinue**, vilket är standardvärdet.
 
 #### <a name="erroraction"></a>ErrorAction
 
@@ -169,7 +169,7 @@ Du kan använda den här parametern för att skapa en variabel som bara innehål
 
 #### <a name="informationaction"></a>InformationAction
 
-Introducerades i PowerShell 5,0. I det kommando eller skript där det används åsidosätter den gemensamma parametern **InformationAction** värdet för `$InformationPreference` variabeln Preference, vilket som standard är inställt på **SilentlyContinue**. När du använder `Write-Information` i ett skript med **InformationAction** , `Write-Information` visas värdena beroende på värdet för parametern **InformationAction** . Mer information om `$InformationPreference` finns i [about_Preference_Variables](./about_Preference_Variables.md).
+Introducerades i PowerShell 5,0. I det kommando eller skript där det används åsidosätter den gemensamma parametern **InformationAction** värdet för `$InformationPreference` variabeln Preference, vilket som standard är inställt på **SilentlyContinue**. När du använder `Write-Information` i ett skript med **InformationAction**, `Write-Information` visas värdena beroende på värdet för parametern **InformationAction** . Mer information om `$InformationPreference` finns i [about_Preference_Variables](./about_Preference_Variables.md).
 
 ```yaml
 Type: ActionPreference
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 #### <a name="informationvariable"></a>InformationVariable
 
-Introducerades i PowerShell 5,0. I det kommando eller skript där det används lagras den gemensamma **InformationVariable** -parametern i en variabel en sträng som du anger genom att lägga till `Write-Information` kommandot. `Write-Information`värdena visas beroende på värdet för den gemensamma parametern **InformationAction** . Om du inte lägger till **InformationAction** den gemensamma parametern InformationAction `Write-Information` visas strängarna beroende på värdet för `$InformationPreference` variabeln Preference. Mer information om `$InformationPreference` finns i [about_Preference_Variables](./about_Preference_Variables.md).
+Introducerades i PowerShell 5,0. I det kommando eller skript där det används lagras den gemensamma **InformationVariable** -parametern i en variabel en sträng som du anger genom att lägga till `Write-Information` kommandot. `Write-Information`värdena visas beroende på värdet för den gemensamma parametern **InformationAction** . Om du inte lägger till  den gemensamma parametern InformationAction `Write-Information` visas strängarna beroende på värdet för `$InformationPreference` variabeln Preference. Mer information om `$InformationPreference` finns i [about_Preference_Variables](./about_Preference_Variables.md).
 
 > [!NOTE]
 > Variabeln information innehåller alla informations meddelanden som genereras av kommandot, inklusive informations meddelanden från anrop till kapslade funktioner eller skript.
@@ -295,6 +295,10 @@ $out
 
 **PipelineVariable** lagrar värdet för det aktuella pipeline-elementet som en variabel, för alla namngivna kommandon som det flödar genom pipelinen.
 
+>[!NOTE]
+> Avancerade funktioner kan ha upp till tre skript block: `begin` , `process` och `end` . När du använder parametern **PipelineVariable** med avancerade funktioner, tilldelas endast värden från det första definierade skript blocket som funktionen kör. Mer information finns i [avancerade funktioner](./about_functions_advanced.md).
+> PowerShell 7,2 korrigerar det här beteendet.
+
 ```yaml
 Type: String
 Aliases: pv
@@ -312,7 +316,7 @@ Följande är ett exempel på hur **PipelineVariable** fungerar. I det här exem
 
 Resultatet från det första `Foreach-Object` kommandot är skickas i ett andra `Foreach-Object` kommando, som filtrerar objekten som returneras av det första `Foreach-Object` kommandot. Resultatet av det andra kommandot lagras i en variabel med namnet **Right**.
 
-I det tredje `Foreach-Object` kommandot bearbetas resultaten av de första två `Foreach-Object` skickas-kommandona som representeras av variablerna **Left** och **Right** , med hjälp av en multiplikation-operator. Kommandot instruerar objekt som lagras i de **vänstra** och **högra** variablerna att multipliceras och anger att resultaten ska visas som "medlemmar i vänster intervall * höger intervall medlem = produkt".
+I det tredje `Foreach-Object` kommandot bearbetas resultaten av de första två `Foreach-Object` skickas-kommandona som representeras av variablerna **Left** och **Right**, med hjälp av en multiplikation-operator. Kommandot instruerar objekt som lagras i de **vänstra** och **högra** variablerna att multipliceras och anger att resultaten ska visas som "medlemmar i vänster intervall * höger intervall medlem = produkt".
 
 ```powershell
 1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |

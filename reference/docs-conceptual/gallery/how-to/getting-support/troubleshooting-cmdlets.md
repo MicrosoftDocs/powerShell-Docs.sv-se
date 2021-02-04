@@ -1,13 +1,13 @@
 ---
-ms.date: 12/01/2020
+ms.date: 01/25/2021
 title: Felsöka cmdletar
 description: Den här artikeln innehåller information och anvisningar för fel sökning av fel med hjälp av PowerShell-galleriet
-ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: 8139147683b655b5f8532c3068387db6df12a98f
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913326"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771808"
 ---
 # <a name="troubleshooting-cmdlets"></a>Felsöka cmdletar
 
@@ -30,6 +30,7 @@ Installations-och uppdaterings-cmdletarna kräver Internet åtkomst för att ans
 - `devopsgallerystorage.blob.core.windows.net` -lagrings kontots värdnamn
 - `*.powershellgallery.com` – webbplats
 - `go.microsoft.com` – omdirigerings tjänst
+- `onegetcdn.azureedge.net` – Bootstrap NuGet-providern i `PowerShellGet/PackageManagement`
 
 > [!NOTE]
 > Cmdletar som interagerar med PowerShell-galleriet kan inte utföras med oväntade fel när PowerShell-galleriet tjänsterna har avbrottit. Om du vill se PowerShell-gallerietens aktuella status går du till sidan [PowerShell-galleriet status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) på GitHub.

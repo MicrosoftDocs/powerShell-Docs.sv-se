@@ -3,12 +3,12 @@ ms.date: 07/23/2020
 keywords: DSC, PowerShell, konfiguration, installation
 title: DSC-resurser
 description: DSC-resurser tillhandahåller Bygg stenar för en DSC-konfiguration. En resurs exponerar egenskaper som kan konfigureras (schema) och innehåller de PowerShell-skript funktioner som används av LCM för att tillämpa konfigurationen.
-ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 33268c68638bb581e0b2235a53aee9d186dff6be
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92658445"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771804"
 ---
 # <a name="dsc-resources"></a>DSC-resurser
 
@@ -112,13 +112,13 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du <kbd>TAB</kbd> använda TABB <kbd>-och</kbd> + <kbd>rymd utrymme</kbd> för att komplettera nyckel namn automatiskt.
+> Från och med PowerShell 5,0 lades IntelliSense till för DSC. Med den här nya funktionen kan du <kbd></kbd> använda TABB <kbd>-och</kbd> + <kbd>rymd utrymme</kbd> för att komplettera nyckel namn automatiskt.
 
 ![Resurs-IntelliSense med tabb-slutförande](media/resources/resource-tabcompletion.png)
 
 ## <a name="types-of-resources"></a>Typer av resurser
 
-Windows levereras med inbyggda resurser och Linux har leverantörsspecifika resurser. Det finns resurser för [över-nod-beroenden](../configurations/crossNodeDependencies.md), paket hanterings resurser samt[ägda och bevarade resurser](https://github.com/dsccommunity). Du kan använda ovanstående steg för att fastställa syntaxen för dessa resurser och hur du använder dem. De sidor som hanterar dessa resurser har arkiverats under **referens** .
+Windows levereras med inbyggda resurser och Linux har leverantörsspecifika resurser. Det finns resurser för [över-nod-beroenden](../configurations/crossNodeDependencies.md), paket hanterings resurser samt [ägda och bevarade resurser](https://github.com/dsccommunity). Du kan använda ovanstående steg för att fastställa syntaxen för dessa resurser och hur du använder dem. De sidor som hanterar dessa resurser har arkiverats under **referens**.
 
 ### <a name="windows-built-in-resources"></a>Inbyggda resurser i Windows
 

@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/03/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 74bc4fb9c6acf650c751e3e9d92bebcd9c4d50c3
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 0925bef2e7b0f5ad46f6dc1aabf96e0de604c08a
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710800"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860832"
 ---
 # Invoke-WebRequest
 
@@ -226,7 +226,7 @@ När `Invoke-WebRequest` påträffar ett HTTP-meddelande som inte lyckades (404,
 ```powershell
 try
 {
-    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -241,7 +241,7 @@ $StatusCode
 404
 ```
 
-Kommandot anropar `Invoke-WebRequest` med en **ErrorAction** av **stopp**, som tvingar fram `Invoke-WebRequest` ett avslutande fel vid eventuella misslyckade förfrågningar. Det avslutande felet fångas av `catch` blocket som hämtar **StatusCode** från **Exception** -objektet.
+Det avslutande felet fångas av `catch` blocket, som hämtar **StatusCode** från **Exception** -objektet.
 
 ## PARAMETRAR
 

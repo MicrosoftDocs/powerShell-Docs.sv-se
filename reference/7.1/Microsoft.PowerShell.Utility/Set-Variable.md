@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: c175fce3df41a3860a54ccb13a280955dce4a55c
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: c90a2f49c95333e45893e186d6e1f1da4b3fe41a
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93273548"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771835"
 ---
 # Set-Variable
 
@@ -53,13 +53,13 @@ desc                           A description
 I det här exemplet skapas en global, skrivskyddad variabel som innehåller alla processer i systemet och sedan visas alla egenskaper för variabeln.
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
 Kommandot använder `Set-Variable` cmdleten för att skapa variabeln. Parametern **Passthru** används för att skapa ett objekt som representerar den nya variabeln och använder pipelinen ( `|` ) för att skicka objektet till `Format-List` cmdleten. Den använder **egenskaps** parametern för `Format-List` med värdet all () för `*` att visa alla egenskaper för den nya variabeln.
 
-Värdet `(Get-Process)` omges av parenteser för att säkerställa att det körs innan det lagras i variabeln. Annars innehåller variabeln orden " **Get-process** ".
+Värdet `(Get-Process)` omges av parenteser för att säkerställa att det körs innan det lagras i variabeln. Annars innehåller variabeln orden "**Get-process**".
 
 ### Exempel 3: förstå offentliga eller privata variabler
 

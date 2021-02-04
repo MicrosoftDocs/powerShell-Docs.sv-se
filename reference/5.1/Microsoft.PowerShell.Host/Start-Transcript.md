@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 04/22/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
-ms.openlocfilehash: c7e95988c385a32802c93f92216710746d268e5e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4f90dd8e3080d393e50fb8f48133c74909ec2b80
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93263546"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860753"
 ---
 # Start-Transcript
 
-## SAMMANFATTNING
+## Sammanfattning
 Skapar en post med hela eller delar av en PowerShell-session till en textfil.
 
-## SYNTAX
+## Syntax
 
 ### ByPath (standard)
 
@@ -42,7 +42,7 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## BESKRIVNING
+## Description
 
 `Start-Transcript`Cmdleten skapar en post med hela eller delar av en PowerShell-session till en textfil. Avskriften innehåller alla kommandon som användaren skriver och alla utdata som visas i-konsolen.
 
@@ -50,7 +50,9 @@ Från och med Windows PowerShell 5,0 `Start-Transcript` innehåller värd namnet
 Filer som skapas av `Start-Transcript` cmdleten innehåller slumpmässiga tecken i namn för att förhindra eventuell överskrivning eller duplicering när två eller fler avskrifter startas samtidigt.
 Detta förhindrar även obehörig identifiering av avskrifter som lagras i en centraliserad fil resurs.
 
-## EXEMPEL
+När du använder parametern **APPEND** , om mål filen inte har en byte ordnings markering (BOM) `Start-Transcript` som standard `ASCII` kodning i målfilen. Det här beteendet kan resultera i felaktig kodning av mulitbyte tecken i avskriften.
+
+## Exempel
 
 ### Exempel 1: starta en avskrifts fil med standardinställningar
 
@@ -68,7 +70,7 @@ Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 
 Det här kommandot startar en avskrift i `Transcript0.txt` filen i `C:\transcripts` . Eftersom parametern **NoClobber** används förhindrar kommandot att eventuella befintliga filer skrivs över. `Transcript0.txt`Kommandot Miss lyckas om filen redan finns.
 
-## PARAMETRAR
+## Parametrar
 
 ### -Lägg till
 
@@ -223,24 +225,24 @@ Accept wildcard characters: False
 
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INDATA
+## Indata
 
 ### Inget
 
 Det går inte att skicka pipe-objekt till denna cmdlet.
 
-## UTDATA
+## Utdata
 
 ### System. String
 
 Denna cmdlet returnerar en sträng som innehåller ett bekräftelse meddelande och sökvägen till utdatafilen.
 
-## ANTECKNINGAR
+## Kommentarer
 
 Om du vill stoppa en avskrift använder du `Stop-Transcript` cmdleten.
 
 Om du vill spela in en hel session lägger du till `Start-Transcript` kommandot i din profil. Mer information finns i [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
-## RELATERADE LÄNKAR
+## Relaterade länkar
 
 [Stopp-avskrift](Stop-Transcript.md)

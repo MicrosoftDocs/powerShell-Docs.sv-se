@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 25da6262e93be3e3749aabaf4950e2fbcd91ff5c
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93268958"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860670"
 ---
 # Invoke-WebRequest
 
@@ -122,7 +121,7 @@ När `Invoke-WebRequest` påträffar ett HTTP-meddelande som inte lyckades (404,
 ```powershell
 try
 {
-    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -137,7 +136,7 @@ $StatusCode
 404
 ```
 
-Det första kommandot anropar `Invoke-WebRequest` med en **ErrorAction** av **stopp** , som tvingar fram `Invoke-WebRequest` ett avslutande fel vid eventuella misslyckade förfrågningar. Det avslutande felet fångas av `catch` blocket som hämtar **StatusCode** från **Exception** -objektet.
+Det avslutande felet fångas av `catch` blocket, som hämtar **StatusCode** från **Exception** -objektet.
 
 ## PARAMETRAR
 
@@ -152,7 +151,7 @@ Du kan använda **text** parametern för att ange en lista över frågeparametra
 När indatamängden är en GET-begäran och texten är en **IDictionary** (vanligt vis en hash-tabell), läggs bröd texten till i URI: n som frågeparametrar. För andra GET-begäranden anges bröd texten som värdet för begär ande texten i `name=value` standardformat.
 
 När bröd texten är ett formulär, eller om det är utdata från ett `Invoke-WebRequest` anrop, anger PowerShell innehållet i formulär fälten.
-Ett exempel:
+Exempel:
 
 `$r = Invoke-WebRequest https://website.com/login.aspx`
 `$r.Forms\[0\].Name = "MyName"`
@@ -233,7 +232,7 @@ Accept wildcard characters: False
 
 Anger ett användar konto som har behörighet att skicka begäran. Standard är den aktuella användaren.
 
-Ange ett användar namn, till exempel **user01** eller **Domain01\User01** , eller ange ett **PSCredential** -objekt som genererats av `Get-Credential` cmdleten.
+Ange ett användar namn, till exempel **user01** eller **Domain01\User01**, eller ange ett **PSCredential** -objekt som genererats av `Get-Credential` cmdleten.
 
 Autentiseringsuppgifterna lagras i ett [PSCredential](/dotnet/api/system.management.automation.pscredential) -objekt och lösen ordet lagras som en [SecureString](/dotnet/api/system.security.securestring).
 
@@ -324,7 +323,7 @@ Accept wildcard characters: False
 
 Anger den metod som används för webb förfrågan. De acceptabla värdena för den här parametern är:
 
-- Default
+- Standardvärde
 - Ta bort
 - Hämta
 - Head
