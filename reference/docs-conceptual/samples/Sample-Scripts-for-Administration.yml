@@ -8,12 +8,12 @@ metadata:
   author: sdwheeler
   ms.author: sewhee
   ms.date: 09/05/2019
-  ms.openlocfilehash: ec3cf42aa3b028cf46727066066bd6f2362587e8
-  ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+  ms.openlocfilehash: 52cf62ce5775846c7ff3e3a6c8047d5a2e23fc8b
+  ms.sourcegitcommit: afefb3636362857036648c2fe80215bc4e81f5ac
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 04/22/2020
-  ms.locfileid: "80296033"
+  ms.lasthandoff: 01/07/2021
+  ms.locfileid: "97956976"
 landingContent:
 - title: Arbeta med objekt
   linkLists:
@@ -27,8 +27,6 @@ landingContent:
       url: ./removing-objects-from-the-pipeline--where-object-.md
     - text: Sortera objekt
       url: ./sorting-objects.md
-    - text: Upprepa en uppgift för flera objekt
-      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
     - text: Skapa .NET-och COM-objekt
       url: ./creating-.net-and-com-objects--new-object-.md
     - text: Använd statiska klasser och metoder
