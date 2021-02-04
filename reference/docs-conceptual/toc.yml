@@ -570,14 +570,10 @@
       href: community/hall-of-fame.md
     - name: Nyheter i dokument
       items:
-        - name: Kvartal 4 2020
-          href: community/2020-Q4.md
-        - name: Kvartal 3 2020
-          href: community/2020-Q3.md
-        - name: 2020-Kv2
-          href: community/2020-Q2.md
-        - name: 2020-Kv1
-          href: community/2020-Q1.md
+        - name: 2021 uppdateringar
+          href: community/2021-updates.md
+        - name: 2020 uppdateringar
+          href: community/2020-updates.md
     - name: Deltagarguide
       items:
         - name: Översikt
@@ -775,7 +771,7 @@
         - name: GDPR-efterlevnad
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: Vanliga frågor och svar om galleriet
-      href: gallery/faqs.md
+      href: gallery/faqs.yml
 - name: Skript och utveckling
   items:
     - name: Visual Studio-koden
