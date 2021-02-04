@@ -1,16 +1,15 @@
 ---
 title: Formatering, alias, leverantörer, jämförelse
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: I det här kapitlet beskrivs begreppen utdata, kommando-alias, providers och jämförelse åtgärder.
-ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 5573ca58601af0c6af15736b772a9792d8d77a79
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92501617"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216167"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Kapitel 5 – formatering, alias, providers, jämförelse
 

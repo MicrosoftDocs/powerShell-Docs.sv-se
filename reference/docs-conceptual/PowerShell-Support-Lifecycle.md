@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Information om principerna som styr support för PowerShell
 ms.date: 11/11/2020
-ms.openlocfilehash: f2a1df0fabdfb624db666d240172930dc60f1bfe
-ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
+ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
+ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94810393"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98105187"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -143,11 +143,13 @@ Följande tabell innehåller en tids linje för de större versionerna av PowerS
 
 |         Version          | Utgivningsdatum |                                                                     Anteckning                                                                      |
 | ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7,1 (aktuell) |   Nov-2020   | Bygger på .NET Core 5,0 (aktuell)                                                                                                              |
-| PowerShell 7,0 (LTS)     |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS)                                                                                                                  |
-| PowerShell 6,0           |   Jan-2018   | Första versionen bygger på .NET Core 2,1. Kan installeras på Windows, Linux och macOS.                                                              |
-| PowerShell 5.1           |   Aug-2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016                                                                             |
-| PowerShell 5.0           |   Feb-2016   | Lanserad i Windows Management Framework (WMF) 5,0                                                                                            |
+| PowerShell 7,1 (aktuell) |   Nov-2020   | Bygger på .NET Core 5,0 (aktuell).                                                                                                             |
+| PowerShell 7,0 (LTS)     |   Mar – 2020   | Bygger på .NET Core 3,1 (LTS).                                                                                                                 |
+| PowerShell 6,2           |   Mar – 2019   |                                                                                                                                               |
+| PowerShell 6,1           |   Sep-2018   | Bygger på .NET Core 2,1.                                                                                                                       |
+| PowerShell 6,0           |   Jan-2018   | Första versionen bygger på .NET Core 2,0. Kan installeras på Windows, Linux och macOS.                                                              |
+| PowerShell 5.1           |   Aug-2016   | Lanseras i uppdatering för Windows 10-årsdag och Windows Server 2016.                                                                            |
+| PowerShell 5.0           |   Feb-2016   | Lanseras i Windows Management Framework (WMF) 5,0.                                                                                           |
 | PowerShell 4.0           |   Okt-2013   | Integrerad i Windows 8,1 och Windows Server 2012 R2. Kan installeras på Windows 7 SP1, Windows Server 2008 R2 SP1 och Windows Server 2012. |
 | PowerShell 3.0           |   Okt-2012   | Integrerad i Windows 8 och Windows Server 2012. Kan installeras på Windows 7 SP1, Windows Server 2008 SP1 och Windows Server 2008 R2 SP1.  |
 | PowerShell 2,0           |   Jul – 2009   | Integrerad i Windows 7 och Windows Server 2008 R2. Kan installeras på Windows XP SP3, Windows Server 2003 SP2 och Windows Vista SP1.            |

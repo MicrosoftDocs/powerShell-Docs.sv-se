@@ -2,15 +2,14 @@
 title: Flödeskontroll
 description: PowerShell innehåller metoder för att skapa slingor, fatta beslut och logiskt styra flödet av kod i skript.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 4f0d7b7f5f3c12bb9475af5aed42b2d32cfbc14d
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 74595f8c6a5d4a49b05e72dd6bde1441fd2b464e
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436311"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216146"
 ---
 # <a name="chapter-6---flow-control"></a>Kapitel 6 – flödes kontroll
 

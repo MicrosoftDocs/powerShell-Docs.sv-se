@@ -2,15 +2,14 @@
 title: PowerShell-fjärranvändning
 description: Det finns många olika sätt att köra kommandon mot fjärrdatorer i PowerShell.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ee83af41b53b254dd3dd993931333edac2f44f5a
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 0e467a41282b261c56a89578dbc841725f59a6e0
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436465"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216059"
 ---
 # <a name="chapter-8---powershell-remoting"></a>Kapitel 8 – PowerShell-fjärrkommunikation
 

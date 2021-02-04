@@ -1,17 +1,16 @@
 ---
 description: Förklarar hur du omdirigerar utdata från PowerShell till textfiler.
-keywords: PowerShell, cmdlet
 Locale: en-US
 ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: 1a532aeacf6347023c95905c82aa1f221835a729
-ms.sourcegitcommit: 16883bb67e34b3915798070f60f974bf85160bd3
+ms.openlocfilehash: 85b719b7af11cce2396e7d62fcc638007b55c834
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93272882"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040906"
 ---
 # <a name="about-redirection"></a>Om omdirigering
 
@@ -37,7 +36,7 @@ Mer information om strömmar finns [about_Output_Streams](about_Output_Streams.m
 
 PowerShell stöder omdirigering av följande utdata-strömmar.
 
-| Skicka # |      Beskrivning       | Infört i  |    Skriv cmdlet     |
+| Skicka # |      Description       | Infört i  |    Skriv cmdlet     |
 | -------- | ---------------------- | -------------- | ------------------- |
 | 1        | **Lyckades** Skicka     | PowerShell 2,0 | `Write-Output`      |
 | 2        | **Fel** Skicka       | PowerShell 2,0 | `Write-Error`       |
@@ -73,7 +72,7 @@ Det här exemplet körs `dir` på ett objekt som kommer att lyckas, och ett som 
 dir 'C:\', 'fakepath' 2>&1 > .\dir.log
 ```
 
-Den använder `2>&1` för att dirigera om **fel** strömmen till **Success** strömmen och `>` skicka den resulterande **framgångs** strömmen till en fil med namnet`dir.log`
+Den använder `2>&1` för att dirigera om **fel** strömmen till  strömmen och `>` skicka den resulterande **framgångs** strömmen till en fil med namnet`dir.log`
 
 ### <a name="example-2-send-all-success-stream-data-to-a-file"></a>Exempel 2: skicka alla lyckade Ströms data till en fil
 
@@ -92,7 +91,7 @@ Det här exemplet visar hur du kan kombinera omdirigerings operatörer för att 
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` omdirigerar **varnings** strömmen till den **framgångs rik** data strömmen.
@@ -196,7 +195,7 @@ När du skriver till filer använder omdirigerings operatörerna `UTF8NoBOM` enc
 
 ### <a name="potential-confusion-with-comparison-operators"></a>Potentiell förvirring med jämförelse operatörer
 
-`>`Operatorn är inte att förväxlas med [större än-](about_Comparison_Operators.md#-gt) jämförelse operatorn (ofta betecknad som `>` i andra programmeringsspråk).
+`>`Operatorn är inte att förväxlas med [större än-](about_Comparison_Operators.md#-gt--ge--lt-and--le) jämförelse operatorn (ofta betecknad som `>` i andra programmeringsspråk).
 
 Beroende på vilka objekt som jämförs kan utdata som används `>` vara korrekta (eftersom 36 inte är större än 42).
 
@@ -222,15 +221,14 @@ Försök att använda omvänd jämförelse `<` (mindre än) ger ett systemfel:
 
 ```powershell
 PS> if (36 < 42) { "true" } else { "false" }
-At line:1 char:8
-+ if (36 < 42) { "true" } else { "false" }
-+        ~
-The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+ParserError:
+Line |
+   1 |  if (36 < 42) { "true" } else { "false" }
+     |         ~
+     | The '<' operator is reserved for future use.
 ```
 
-Om en numerisk jämförelse är den nödvändiga åtgärden `-lt` och `-gt` ska användas. Se: [ `-gt` jämförelse operator](about_Comparison_Operators.md#-gt)
+Om en numerisk jämförelse är den nödvändiga åtgärden `-lt` och `-gt` ska användas. Mer information finns i `-gt` operatorn i [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le).
 
 ## <a name="see-also"></a>Se även
 

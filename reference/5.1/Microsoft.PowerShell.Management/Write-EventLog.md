@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 051f02b00144805569d5130686a51a0f42b64b00
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388254"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584638"
 ---
 # Write-EventLog
 
@@ -27,6 +27,7 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## BESKRIVNING
+
 `Write-EventLog`Cmdleten skriver en händelse till en händelse logg.
 
 Om du vill skriva en händelse i en händelse logg måste händelse loggen finnas på datorn och källan måste vara registrerad för händelse loggen.
@@ -196,16 +197,18 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 ## INDATA
 
 ### Inget
+
 Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 ## UTDATA
 
 ### System. Diagnostics. EventLogEntry
+
 Denna cmdlet returnerar objekt som representerar händelserna i loggarna.
 
 ## ANTECKNINGAR
 
-`Write-EventLog`Starta Windows PowerShell med alternativet Kör som administratör när du vill använda.
+För vissa Windows-händelseloggar kräver Skriv händelser administratörs behörighet. Du måste starta PowerShell med alternativet **Kör som administratör** .
 
 ## RELATERADE LÄNKAR
 

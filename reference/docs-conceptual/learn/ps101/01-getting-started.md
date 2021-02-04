@@ -2,15 +2,14 @@
 title: Komma igång med PowerShell
 description: Var du hittar och hur du startar PowerShell för nya användare.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8b9fee222347970df4e35f9ba0841232952a292d
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "87786755"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216181"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Kapitel 1 – Komma igång med PowerShell
 

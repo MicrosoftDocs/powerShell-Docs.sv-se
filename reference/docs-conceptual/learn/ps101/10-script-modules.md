@@ -2,15 +2,14 @@
 title: Skriptmoduler
 description: Skript moduler är ett enkelt sätt att paketera skript och funktioner i ett återanvändbart verktyg.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 661ba725764e1f31df628f6c5f2d58d760656e37
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: c557c071bc202a4216a77e7e5ae0bd73b4bc014b
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436514"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216104"
 ---
 # <a name="chapter-10---script-modules"></a>Kapitel 10 – skript moduler
 

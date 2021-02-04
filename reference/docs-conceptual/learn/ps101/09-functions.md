@@ -1,16 +1,15 @@
 ---
-title: Functions (Funktioner)
+title: Functions
 description: Med PowerShell-funktioner kan du skapa verktyg som kan återanvändas i skript.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 18566263f29b97834d78cb5572fa73b58c3a26bb
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96616020"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216153"
 ---
 # <a name="chapter-9---functions"></a>Kapitel 9 – funktioner
 
@@ -22,7 +21,7 @@ Du behöver inte göra några förkomplicerade saker. Håll det enkelt och Anvä
 
 ## <a name="naming"></a>Namngivning
 
-När du namnger dina funktioner i PowerShell använder du ett [Pascal-Case][] -namn med ett godkänt verb och ett singular substantiv. Jag rekommenderar också att du förkorrigerar substantiv. Till exempel: `<ApprovedVerb>-<Prefix><SingularNoun>`.
+När du namnger dina funktioner i PowerShell använder du ett [Pascal-Case][] -namn med ett godkänt verb och ett singular substantiv. Jag rekommenderar också att du förkorrigerar substantiv. Exempel: `<ApprovedVerb>-<Prefix><SingularNoun>`.
 
 I PowerShell finns det en detaljerad lista över godkända verb som kan hämtas genom att köra `Get-Verb` .
 
@@ -231,7 +230,7 @@ Remove-Module -Name <ModuleName>
 
 `Remove-Module`Cmdleten tar bort moduler från minnet i den aktuella PowerShell-sessionen, men den tas inte bort från systemet eller från disken.
 
-## <a name="parameters"></a>Parameters (Parametrar)
+## <a name="parameters"></a>Parametrar
 
 Tilldela inte värden statiskt! Använd parametrar och variabler. När det gäller att namnge parametrarna använder du samma namn som standard-cmdletarna för dina parameter namn när det är möjligt.
 

@@ -2,15 +2,14 @@
 title: Arbeta med WMI
 description: PowerShell har haft cmdletar för att arbeta med WMI sedan början.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 243685efa1f976ddb46a0d0efc4ed0635844606d
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 119bb3381ee55c70340da89d1c0690d84b3e70d2
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436521"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216132"
 ---
 # <a name="chapter-7---working-with-wmi"></a>Kapitel 7 – arbeta med WMI
 

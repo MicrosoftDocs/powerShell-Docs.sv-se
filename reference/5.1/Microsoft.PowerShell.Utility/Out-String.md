@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: 6bcda4d1796f2a2ccd61469523443f90ddde5e29
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: c0a9557c0139af5abbe24fade07c0d018c6bffc0
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "93269613"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620038"
 ---
 # Out-String
 
-## SAMMANFATTNING
+## Sammanfattning
 Matar in indata-objekt som en sträng.
 
-## SYNTAX
+## Syntax
 
 ### Alla
 
@@ -27,11 +27,11 @@ Matar in indata-objekt som en sträng.
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## BESKRIVNING
+## Beskrivning
 
 `Out-String`Cmdleten konverterar inmatade objekt till strängar. Som standard `Out-String` ackumuleras strängarna och returneras som en enskild sträng, men du kan använda **Stream** -parametern för att dirigera `Out-String` för att returnera en rad i taget eller skapa en sträng mat ris. Med den här cmdleten kan du söka efter och manipulera sträng utdata som i traditionella skal när objekt manipulation är mindre användbart.
 
-## EXEMPEL
+## Exempel
 
 ### Exempel 1: hämta den aktuella kulturen och konvertera data till strängar
 
@@ -78,7 +78,7 @@ IsReadOnly                     : False
 
 ### Exempel 2: arbeta med objekt
 
-Det här exemplet visar skillnaden mellan att arbeta med objekt och att arbeta med strängar. Kommandot visar ett alias som innehåller texten **GCM** , alias för `Get-Command` .
+Det här exemplet visar skillnaden mellan att arbeta med objekt och att arbeta med strängar. Kommandot visar ett alias som innehåller texten **GCM**, alias för `Get-Command` .
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Anger att cmdleten skickar en separat sträng för varje rad i ett indatamängds objekt. Som standard samlas strängarna för varje objekt in och skickas som en enskild sträng.
+Som standard utvärderar `Out-String` en enkel sträng formaterad som du ser den i-konsolen, inklusive tomma sidhuvuden eller efterföljande newlines. **Stream** -parametern gör det möjligt `Out-String` att mata ut varje rad en i taget. Det enda undantaget är Multiline-strängar. I så fall `Out-String` kommer fortfarande strängen att resultera i att strängen skapas som en enskild, flerradig sträng.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

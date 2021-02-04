@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: bb7f169e0c01c73bb4e834375f341bf795e37ce7
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514943"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584668"
 ---
 # Get-Date
 
@@ -445,7 +445,7 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 > [!IMPORTANT]
 > Ytterligare **UFormat** -specificerare läggs till i nyare versioner av PowerShell. Till exempel `%F` har lagts till i PowerShell 6,2, så den är inte tillgänglig i Windows PowerShell 5,1 eller äldre. Tänk på detta när du använder **UFormat** -specificerare i skript som har utformats för att köras på flera versioner av PowerShell.
 
-| Format specificerare |                                 Betydelse                     |         Exempel          |
+| Format specificerare |                                 Innebörd                     |         Exempel          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Veckodag-fullständigt namn                                             | Måndag                   |
 | `%a` | Veckodag-förkortat namn                                      | Mån                      |
@@ -461,7 +461,7 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 | `%H` | Timme i 24-timmarsformat                                                  | 17                       |
 | `%h` | Samma som "b"                                                             |                          |
 | `%I` | Timme i 12-timmarsformat                                                  | 05                       |
-| `%j` | Dag på året                                                         | 1-366                    |
+| `%j` | Dag på året (omfattar inte ledande `0` fasta i PowerShell 6 +) | 1-366                    |
 | `%k` | Samma som "H"                                                             |                          |
 | `%l` | Samma som "I" (versal I)                                              | 05                       |
 | `%M` | Minuter                                                                 | 35                       |

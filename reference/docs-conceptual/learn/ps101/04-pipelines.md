@@ -2,15 +2,14 @@
 title: Enkelriktade linjer och pipeline
 description: En PowerShell-liner är en kontinuerlig pipeline, som innehåller flera kommandon, för att utföra en enskild uppgift.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: b8fd45e5e5dc408754ebac015757ef4241428978
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1483ec6b76d17c3dd081356ecff85a929fc43e2c
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84633353"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216160"
 ---
 # <a name="chapter-4---one-liners-and-the-pipeline"></a>Kapitel 4 – en-liners och pipelinen
 

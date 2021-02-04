@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: c7710cb59785fbfd726ff0aabaf41c43a6966ee1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 59e5b728604ce37f27b56ebe62e1a22d6af8a966
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709756"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620130"
 ---
 # Out-String
 
-## SAMMANFATTNING
+## Sammanfattning
 Matar in indata-objekt som en sträng.
 
-## SYNTAX
+## Syntax
 
 ### NoNewLineFormatting (standard)
 
@@ -32,11 +32,11 @@ Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParam
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## BESKRIVNING
+## Description
 
 `Out-String`Cmdleten konverterar inmatade objekt till strängar. Som standard `Out-String` ackumuleras strängarna och returneras som en enskild sträng, men du kan använda **Stream** -parametern för att dirigera `Out-String` för att returnera en rad i taget eller skapa en sträng mat ris. Med den här cmdleten kan du söka efter och manipulera sträng utdata som i traditionella skal när objekt manipulation är mindre användbart.
 
-## EXEMPEL
+## Exempel
 
 ### Exempel 1: hämta den aktuella kulturen och konvertera data till strängar
 
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Anger att cmdleten skickar en separat sträng för varje rad i ett indatamängds objekt. Som standard samlas strängarna för varje objekt in och skickas som en enskild sträng.
+Som standard utvärderar `Out-String` en enkel sträng formaterad som du ser den i-konsolen, inklusive tomma sidhuvuden eller efterföljande newlines. **Stream** -parametern gör det möjligt `Out-String` att mata ut varje rad en i taget. Det enda undantaget är Multiline-strängar. I så fall `Out-String` kommer fortfarande strängen att resultera i att strängen skapas som en enskild, flerradig sträng.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -220,4 +220,3 @@ De cmdletar som innehåller `Out` verbet formaterar inte objekt. `Out`Cmdletarna
 [Out-GridView](Out-GridView.md)
 
 [Out-Printer](Out-Printer.md)
-

@@ -1,16 +1,15 @@
 ---
 title: Introduktion
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: Detta är introduktionen till boken PowerShell 101 av Mike F. Robbins.
-ms.openlocfilehash: d85590c2ef34c4e8b5cb7f2707bd9d6dd9b84b89
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: bb6ab1a95404b5d6d5595d62df136a937a1faee4
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92501515"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216174"
 ---
 # <a name="introduction"></a>Introduktion
 

@@ -2,15 +2,14 @@
 title: Upptäcka objekt, egenskaper och metoder
 description: Du behöver inte vara utvecklare för att förstå och använda objekt, egenskaper och metoder.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: f226221da7dd3b663f54cf23439dd7f945ed3a2a
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436367"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216097"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>Kapitel 3 – identifiera objekt, egenskaper och metoder
 

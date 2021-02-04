@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: fe8da80c6aa0aae3d8d175920283bc31de0c3386
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 91eb3f524ddeeb729ce53749c9b0ae922ce21f18
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710555"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040913"
 ---
 # <a name="about-redirection"></a>Om omdirigering
 
@@ -36,7 +36,7 @@ Mer information om strömmar finns [about_Output_Streams](about_Output_Streams.m
 
 PowerShell stöder omdirigering av följande utdata-strömmar.
 
-| Skicka # |      Beskrivning       | Infört i  |    Skriv cmdlet     |
+| Skicka # |      Description       | Infört i  |    Skriv cmdlet     |
 | -------- | ---------------------- | -------------- | ------------------- |
 | 1        | **Lyckades** Skicka     | PowerShell 2,0 | `Write-Output`      |
 | 2        | **Fel** Skicka       | PowerShell 2,0 | `Write-Error`       |
@@ -91,7 +91,7 @@ Det här exemplet visar hur du kan kombinera omdirigerings operatörer för att 
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` omdirigerar **varnings** strömmen till den **framgångs rik** data strömmen.
@@ -195,7 +195,7 @@ När du skriver till filer använder omdirigerings operatörerna `UTF8NoBOM` enc
 
 ### <a name="potential-confusion-with-comparison-operators"></a>Potentiell förvirring med jämförelse operatörer
 
-`>`Operatorn är inte att förväxlas med [större än-](about_Comparison_Operators.md#-gt) jämförelse operatorn (ofta betecknad som `>` i andra programmeringsspråk).
+`>`Operatorn är inte att förväxlas med [större än-](about_Comparison_Operators.md#-gt--ge--lt-and--le) jämförelse operatorn (ofta betecknad som `>` i andra programmeringsspråk).
 
 Beroende på vilka objekt som jämförs kan utdata som används `>` vara korrekta (eftersom 36 inte är större än 42).
 
@@ -225,11 +225,11 @@ At line:1 char:8
 + if (36 < 42) { "true" } else { "false" }
 +        ~
 The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-Om en numerisk jämförelse är den nödvändiga åtgärden `-lt` och `-gt` ska användas. Se: [ `-gt` jämförelse operator](about_Comparison_Operators.md#-gt)
+Om en numerisk jämförelse är den nödvändiga åtgärden `-lt` och `-gt` ska användas. Mer information finns i `-gt` operatorn i [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le).
 
 ## <a name="see-also"></a>Se även
 

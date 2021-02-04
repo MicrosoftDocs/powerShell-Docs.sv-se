@@ -6,12 +6,12 @@ ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
-ms.openlocfilehash: c954ee6e783b7926dbcd05a3e08b6b9b5cf9bc25
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4b5894822f4436f127ed4789fd8008a0e7f2f2df
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271077"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584643"
 ---
 # <a name="about-environment-variables"></a>Om miljövariabler
 
@@ -68,7 +68,7 @@ Om du till exempel vill lägga till `;c:\temp` värdet för `Path` miljövariabe
 $Env:Path += ";c:\temp"
 ```
 
-Kolon () i kommandot på Linux eller MacOS `:` separerar den nya sökvägen från den sökväg som föregår den i listan.
+Kolon () i kommandot på Linux eller macOS `:` separerar den nya sökvägen från den sökväg som föregår den i listan.
 
 ```powershell
 $Env:PATH += ":/usr/local/temp"

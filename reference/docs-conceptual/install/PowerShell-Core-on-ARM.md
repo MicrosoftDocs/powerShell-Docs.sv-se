@@ -2,18 +2,18 @@
 title: Installera PowerShell Core på arm
 description: Installera PowerShell Core på ARM-baserade system
 ms.date: 11/11/2020
-ms.openlocfilehash: 85a2cccb18341ffee8c81430bc8490e5d3e97b41
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: 1477b99767c19d24f8540714942f63c8347550e9
+ms.sourcegitcommit: ef25c8bc95df12697725958c9814f0e187cfc683
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892080"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98130147"
 ---
 # <a name="powershell-core-on-arm"></a>PowerShell Core på arm
 
 Stöd för PowerShell på arm baseras på de **.net Core-principer som stöds av OS-livscykeln**.
 
-PowerShell 7,1 baseras på den [operativ system livs cykel princip för .net Core 3,1 som stöds](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) och har stöd för följande plattformar:
+PowerShell 7,0 baseras på den [operativ system livs cykel princip för .net Core 3,1 som stöds](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) och har stöd för följande plattformar:
 
 |         Operativsystem          |          Version           | Arkitekturer |          Livscykel           |
 | ------------------- | -------------------------- | ------------- | ---------------------------- |
@@ -22,11 +22,11 @@ PowerShell 7,1 baseras på den [operativ system livs cykel princip för .net Cor
 | Debian              | 9 +                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
 | Ubuntu              | 20,10, 20,04, 18,04, 16,04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
 
-PowerShell 7,0 baseras på den [operativ system livs cykel princip för .net Core 5,0 som stöds](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) och har stöd för följande plattformar:
+PowerShell 7,1 baseras på principen för [OS-livscykel som stöds i .net 5,0](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) och stöder följande plattformar:
 
 |        Operativsystem         |          Version           | Arkitekturer |          Livscykel           |
 | ----------------- | -------------------------- | ------------- | ---------------------------- |
-| Windows 10-klient | Version 1607 +              | Arm64         | [Windows][Windows-lifecycle] |
+| Windows 10-klient | Version 1709 +              | Arm64         | [Windows][Windows-lifecycle] |
 | Alpine Linux      | 3.11 +                      | Arm64         | [Alpina][Alpine-lifecycle]   |
 | Debian            | 9 +                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
 | Ubuntu            | 20,10, 20,04, 18,04, 16,04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |

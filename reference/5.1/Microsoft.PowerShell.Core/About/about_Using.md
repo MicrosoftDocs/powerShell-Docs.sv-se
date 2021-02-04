@@ -1,16 +1,16 @@
 ---
 description: Gör att du kan ange vilka namn områden som används i sessionen.
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: b48cd85e200f44cdf9fdf278de78e07a918386c8
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: 2a02ff32b110d369c080dde695a8fc2369b1a5e2
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94891354"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619898"
 ---
 # <a name="about-using"></a>Om att använda
 
@@ -21,7 +21,9 @@ Gör att du kan ange vilka namn områden som används i sessionen.
 
 Med `using` instruktionen kan du ange vilka namn områden som används i sessionen. Genom att lägga till namn områden blir det enklare att använda .NET-klasser och-medlemmar och du kan importera klasser från skriptfiler och sammansättningar.
 
-`using`Instruktionerna måste komma före alla andra instruktioner i ett skript.
+`using`Instruktionerna måste komma före andra instruktioner i ett skript eller en modul. Ingen kommentars instruktion kan föregås, inklusive parametrar.
+
+`using`Instruktionen får inte innehålla några variabler.
 
 `using`Instruktionen ska inte förväxlas med `using:` omfångs modifieraren för variabler. Mer information finns i [about_Remote_Variables](about_Remote_Variables.md).
 
@@ -57,6 +59,12 @@ En modul specifikation är en hash-tabell som har följande nycklar.
   - `ModuleVersion` -Anger en minsta godtagbar version av modulen.
   - `RequiredVersion` -Anger en exakt, obligatorisk version av modulen.
   - `MaximumVersion` -Anger den högsta godkända versionen av modulen.
+
+`using module`Instruktionen importerar klasser från rotnoden ( `ModuleToProcess` ) i en skript-modul eller en binär modul. Det går inte alltid att importera klasser som definierats i kapslade moduler eller klasser som definierats i skript som är punkt-källor i modulen. Klasser som du vill ska vara tillgängliga för användare utanför modulen bör definieras i modulen root.
+
+Under utvecklingen av en-skript-modul är det vanligt att göra ändringar i koden och sedan läsa in den nya versionen av modulen med hjälp av `Import-Module` parametern **Force** . Detta fungerar endast för ändringar i modulen i rot-modulen. `Import-Module` laddar inte om några kapslade moduler. Det finns även inget sätt att läsa in några uppdaterade klasser.
+
+För att säkerställa att du kör den senaste versionen måste du ta bort modulen med `Remove-Module` cmdleten. `Remove-Module` tar bort modulen root, alla kapslade moduler och eventuella klasser som definierats i modulerna. Sedan kan du läsa in modulen igen och klasserna med hjälp av `Import-Module` och `using module` instruktionen.
 
 ## <a name="assembly-syntax"></a>Syntax för sammansättning
 

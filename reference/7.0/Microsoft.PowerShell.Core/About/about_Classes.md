@@ -1,17 +1,16 @@
 ---
 description: Beskriver hur du kan använda klasser för att skapa dina egna anpassade typer.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
-ms.openlocfilehash: 27950034806caf53b2cdbe50329709a8ab177aee
-ms.sourcegitcommit: 16d62a98449e3ddaf8d7c65bc1848ede1fd8a3e7
+ms.openlocfilehash: 7974ec49ebf27338da461cd57fb43cc0229b7323
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "93269522"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620055"
 ---
 # <a name="about-classes"></a>Om klasser
 
@@ -22,7 +21,7 @@ Beskriver hur du kan använda klasser för att skapa dina egna anpassade typer.
 
 PowerShell 5,0 lägger till en formell syntax för att definiera klasser och andra användardefinierade typer. Genom att lägga till klasser kan utvecklare och IT-proffs använda PowerShell för en större mängd användnings fall. Det fören klar utvecklingen av PowerShell-artefakter och påskyndar täckningen av hanterings ytor.
 
-En klass deklaration är en skiss som används för att skapa instanser av objekt vid körning. När du definierar en klass är klass namnet namnet på typen. Om du till exempel deklarerar en klass med namnet **Device** och initierar en variabel `$dev` till en ny instans av **enhet** , `$dev` är ett objekt eller en instans av typen **enhet**. Varje instans av **enheten** kan ha olika värden i egenskaperna.
+En klass deklaration är en skiss som används för att skapa instanser av objekt vid körning. När du definierar en klass är klass namnet namnet på typen. Om du till exempel deklarerar en klass med namnet **Device** och initierar en variabel `$dev` till en ny instans av **enhet**, `$dev` är ett objekt eller en instans av typen **enhet**. Varje instans av **enheten** kan ha olika värden i egenskaperna.
 
 ## <a name="supported-scenarios"></a>Scenarier som stöds
 
@@ -768,9 +767,19 @@ class MyComparableBar : bar, System.IComparable
 
 `Import-Module` och `#requires` instruktionen importerar bara modulens funktioner, alias och variabler, som definieras av modulen. Klasser importeras inte. `using module`Instruktionen importerar de klasser som definierats i modulen. Om modulen inte har lästs in i den aktuella sessionen, `using` Miss lyckas instruktionen. Mer information om `using` instruktionen finns i [about_Using](about_Using.md).
 
+`using module`Instruktionen importerar klasser från rotnoden ( `ModuleToProcess` ) i en skript-modul eller en binär modul. Det går inte alltid att importera klasser som definierats i kapslade moduler eller klasser som definierats i skript som är punkt-källor i modulen. Klasser som du vill ska vara tillgängliga för användare utanför modulen bör definieras i modulen root.
+
+## <a name="loading-newly-changed-code-during-development"></a>Läser in nyligen ändrad kod under utveckling
+
+Under utvecklingen av en-skript-modul är det vanligt att göra ändringar i koden och sedan läsa in den nya versionen av modulen med hjälp av `Import-Module` parametern **Force** . Detta fungerar endast för ändringar i modulen i rot-modulen. `Import-Module` laddar inte om några kapslade moduler. Det finns även inget sätt att läsa in några uppdaterade klasser.
+
+För att säkerställa att du kör den senaste versionen måste du ta bort modulen med `Remove-Module` cmdleten. `Remove-Module` tar bort modulen root, alla kapslade moduler och eventuella klasser som definierats i modulerna. Sedan kan du läsa in modulen igen och klasserna med hjälp av `Import-Module` och `using module` instruktionen.
+
+En annan vanlig utvecklings praxis är att separera koden till olika filer. Om du har en funktion i en fil som använder klasser som definierats i en annan modul bör du använda `using module` instruktionen för att se till att funktionerna har de klass definitioner som behövs.
+
 ## <a name="the-psreference-type-is-not-supported-with-class-members"></a>PSReference-typen stöds inte med klass medlemmar
 
-Det `[ref]` går inte att använda typen-Cast med en klass medlem tyst. Det går inte att använda API: er som använder `[ref]` parametrar med klass medlemmar. **PSReference** har utformats för att stödja com-objekt. COM-objekt har fall där du behöver skicka ett värde i som referens.
+Det `[ref]` går inte att använda typen-Cast med en klass medlem tyst. Det går inte att använda API: er som använder `[ref]` parametrar med klass medlemmar. **PSReference** -klassen har utformats för att stödja com-objekt. COM-objekt har fall där du behöver skicka ett värde i som referens.
 
 Mer information om `[ref]` typen finns i PSReference- [klass](/dotnet/api/system.management.automation.psreference).
 
