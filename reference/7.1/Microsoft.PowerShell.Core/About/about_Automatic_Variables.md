@@ -5,12 +5,12 @@ ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: 8a2410dd2adcc1679ab203293b4c4e712b960278
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577252"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975149"
 ---
 # <a name="about-automatic-variables"></a>Om automatiska variabler
 
@@ -67,7 +67,7 @@ Samma som `$PSItem` . Innehåller det aktuella objektet i pipeline-objektet. Du 
 
 Innehåller en matris med värden för parametrar som inte har deklarerats som skickas till en funktion, ett skript eller ett skript block. När du skapar en funktion kan du deklarera parametrarna med hjälp av `param` nyckelordet eller genom att lägga till en kommaavgränsad lista med parametrar inom parentes efter funktions namnet.
 
-I en händelse åtgärd `$Args` innehåller variabeln objekt som representerar händelse argumenten för den händelse som bearbetas. Den här variabeln fylls bara i `Action` blocket för ett händelse registrerings kommando.
+I en händelse åtgärd `$args` innehåller variabeln objekt som representerar händelse argumenten för den händelse som bearbetas. Den här variabeln fylls bara i `Action` blocket för ett händelse registrerings kommando.
 Värdet för den här variabeln finns också i egenskapen **SourceArgs** för **PSEventArgs** -objektet som `Get-Event` returnerar.
 
 ### <a name="consolefilename"></a>$ConsoleFileName

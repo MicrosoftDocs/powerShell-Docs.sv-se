@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514974"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975064"
 ---
 # Get-Date
 
@@ -513,7 +513,7 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ### Pipeline-inmatade
 
-`Get-Date` accepterar pipeline-ininformation. Ett exempel är `Get-ChildItem | Get-Date`.
+`Get-Date` accepterar pipeline-ininformation. Till exempel `Get-ChildItem | Get-Date`.
 
 ## UTDATA
 
@@ -526,7 +526,7 @@ När ett **datetime** -objekt skickas ned pipelinen till en-cmdlet, till exempel
 Metoden `(Get-Date).ToString()` konverterar ett **datetime** -objekt till **ett String** -objekt.
 
 Om du vill visa ett objekts egenskaper och metoder skickar du objektet nedåt i pipeline till `Get-Member` .
-Ett exempel är `Get-Date | Get-Member`.
+Till exempel `Get-Date | Get-Member`.
 
 ## ANTECKNINGAR
 
@@ -534,7 +534,7 @@ Ett exempel är `Get-Date | Get-Member`.
 
 Giltiga **UFormat-specificerare** visas i följande tabell:
 
-| Format specificerare |                                 Betydelse                     |         Exempel          |
+| Format specificerare |                                 Innebörd                     |         Exempel          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Veckodag-fullständigt namn                                             | Måndag                   |
 | `%a` | Veckodag-förkortat namn                                      | Mån                      |
@@ -565,9 +565,9 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 | `%t` | Vågrätt tabbtecken                                                |                          |
 | `%T` | Tid i 24-timmarsformat                                                  | 17:45:52                 |
 | `%U` | Samma som "W"                                                             |                          |
-| `%u` | Veckodag-nummer                                                | Söndag = 0               |
+| `%u` | Numerisk dag i veckan (1-7)                                           | Måndag = 1, söndag = 7   |
 | `%V` | Vecka på året                                                        | 01-53                    |
-| `%w` | Samma som u                                                             |                          |
+| `%w` | Numerisk dag i veckan (0-6)                                           | Söndag = 0, lördag = 6 |
 | `%W` | Vecka på året                                                        | 00-52                    |
 | `%X` | Samma som t '                                                             |                          |
 | `%x` | Datum i standardformat för språkvariant                                      | 06/27/19 för engelska – USA  |
