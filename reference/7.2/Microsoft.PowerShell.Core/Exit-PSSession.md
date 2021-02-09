@@ -2,20 +2,20 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSSession
-ms.openlocfilehash: b76f7dc87105318285c930b6cd2ae4ae10c2b0e7
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b1827929c53560cb261cd7b3ba1e5bd407c25700
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709228"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975098"
 ---
 # Exit-PSSession
 
-## SAMMANFATTNING
+## Sammanfattning
 Avslutar en interaktiv session med en fjärran sluten dator.
 
 ## SYNTAX
@@ -24,19 +24,18 @@ Avslutar en interaktiv session med en fjärran sluten dator.
 Exit-PSSession [<CommonParameters>]
 ```
 
-## BESKRIVNING
+## Description
 
-Cmdleten **exit-PSSession** avslutar interaktiva sessioner som du startade med hjälp av Enter-PSSession-cmdleten.
+`Exit-PSSession`Cmdleten avslutar interaktiva sessioner som du startade med `Enter-PSSession` cmdleten.
 
-Du kan också använda nyckelordet **exit** för att avsluta en interaktiv session.
-Resultatet är detsamma som att använda **exit-PSSession**.
+Du kan också använda `exit` nyckelordet för att avsluta en interaktiv session. Detta är detsamma som att använda `Exit-PSSession` .
 
-## EXEMPEL
+## Exempel
 
 ### Exempel 1: starta och stoppa en interaktiv session
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> Exit-PSSession
 PS>
 ```
@@ -45,7 +44,7 @@ Kommandona startar och stoppar sedan en interaktiv session med Server01-fjärrda
 
 ### Exempel 2: starta och stoppa en interaktiv session med hjälp av ett PSSession-objekt
 
-```
+```powershell
 PS> $s = New-PSSession -ComputerName Server01
 PS> Enter-PSSession -Session $s
 Server01\PS> Exit-PSSession
@@ -57,53 +56,47 @@ Id Name            ComputerName    State    ConfigurationName
 
 Kommandona startar och stoppar en interaktiv session med Server01-datorn som använder en PowerShell-session (**PSSession**).
 
-Eftersom den interaktiva sessionen startades med hjälp av en PowerShell-session är **PSSession** fortfarande tillgängligt när den interaktiva sessionen avslutas.
-Om du använder parametern *computername* kan du **Ange-PSSession** för att skapa en tillfällig session som stängs när den interaktiva sessionen avslutas.
+Eftersom den interaktiva sessionen startades med hjälp av en PowerShell-session är **PSSession** fortfarande tillgängligt när den interaktiva sessionen avslutas. Om du använder parametern _computername_ `Enter-PSSession` skapas en tillfällig session som stängs när den interaktiva sessionen avslutas.
 
-Det första kommandot använder cmdleten New-PSSession för att skapa en **PSSession** på Server01-datorn.
-Kommandot sparar **PSSession** i variabeln $s.
+Det första kommandot använder `New-PSSession` cmdleten för att skapa en **PSSession** på Server01-datorn. Kommandot sparar **PSSession** i `$s` variabeln.
 
-Det andra kommandot använder **RETUR-PSSession** för att starta en interaktiv session med hjälp av **PSSession** i $s.
+Det andra kommandot använder `Enter-PSSession` för att starta en interaktiv session med hjälp av **PSSession** i `$s` .
 
-Det tredje kommandot använder **exit-PSSession** för att stoppa den interaktiva sessionen.
+Det tredje kommandot använder `Exit-PSSession` för att stoppa den interaktiva sessionen.
 
-Det sista kommandot visar **PSSession** i variabeln $s.
-Egenskapen **State** visar att **PSSession** fortfarande är öppen och tillgänglig för användning.
+Det sista kommandot visar **PSSession** i `$s` variabeln. Egenskapen **State** visar att **PSSession** fortfarande är öppen och tillgänglig för användning.
 
 ### Exempel 3: Använd nyckelordet Exit för att stoppa en session
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> exit
 PS>
 ```
 
-I det här exemplet används nyckelordet **exit** för att stoppa en interaktiv session som har startats med hjälp av **Enter-PSSession**.
-Nyckelordet **exit** har samma resultat som när du använder **exit-PSSession**.
+I det här exemplet används `exit` nyckelordet för att stoppa en interaktiv session som har startats med hjälp av `Enter-PSSession` . `exit`Nyckelordet har samma resultat som när du använder `Exit-PSSession` .
 
-## PARAMETRAR
+## Parametrar
 
 ### CommonParameters
 
 Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable. Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INDATA
+## Indata
 
-### Inga
+### Inget
 
 Det går inte att skicka pipe-objekt till denna cmdlet.
 
-## UTDATA
+## Utdata
 
-### Inga
+### Inget
 
 Denna cmdlet returnerar inga utdata.
 
-## ANTECKNINGAR
+## Kommentarer
 
-* Denna cmdlet tar bara med de gemensamma parametrarna.
-
-*
+Denna cmdlet tar bara med de gemensamma parametrarna.
 
 ## RELATERADE LÄNKAR
 
@@ -122,4 +115,3 @@ Denna cmdlet returnerar inga utdata.
 [Ta emot – PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-
