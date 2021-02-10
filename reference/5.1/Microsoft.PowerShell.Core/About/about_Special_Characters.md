@@ -2,16 +2,16 @@
 description: Beskriver de teckenkombinationer som styr hur PowerShell tolkar nästa tecken i sekvensen.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: 875a1c3c63e759151c3c64b5396312b030955cb7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 7e0ea9298dd85627c08298917464cb005f4f37ff
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271413"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100741"
 ---
 # <a name="about-special-characters"></a>Om specialtecken
 
@@ -29,7 +29,7 @@ Escape-sekvenser tolkas bara när de finns i strängar med dubbla citat tecken (
 
 PowerShell känner igen följande escape-sekvenser:
 
-|  Sequence   |       Beskrivning       |
+|  Sequence   |       Description       |
 | ----------- | ----------------------- |
 | `` `0 ``    | Null                    |
 | `` `a ``    | Varning                   |
@@ -44,7 +44,7 @@ PowerShell har också en speciell token för att markera var du vill att parsnin
 
 Särskild tolknings-token:
 
-| Sequence |            Beskrivning             |
+| Sequence |            Description             |
 | -------- | ---------------------------------- |
 | `--%`    | Sluta parsa något som följer |
 
@@ -129,13 +129,28 @@ Column1         Column2         Column3
 
 ## <a name="vertical-tab-v"></a>Lodrät TABB (' v)
 
-Den vågräta tabben ( `` `v `` )-tecken går vidare till nästa lodräta TABB och skriver återstående utdata vid den punkten. Detta har ingen påverkan i standard konsolen för Windows.
+Den lodräta tabben ( `` `v `` )-tecken går vidare till nästa lodräta TABB och skriver återstående utdata vid den punkten. Åter givningen av den lodräta fliken är enhet och Terminal-beroende.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-I följande exempel visas de utdata som du skulle få på en skrivare eller en annan konsol värd.
+I följande exempel visas de återgivna utdata från den lodräta fliken i några vanliga miljöer.
+
+Windows konsol värd programmet tolkar ( `` `v `` ) som ett specialtecken utan extra mellanrum tillagda.
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+[Windows-terminalen](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701) återger det lodräta tabbtecknet som en vagn retur och rad matning. Resten av utdata skrivs ut i början av nästa rad.
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+På skrivare eller i en UNIX-baserad konsol, går den lodräta tabben vidare till nästa rad och skriver återstående utdata vid den tidpunkten.
 
 ```Output
 There is a vertical tab
