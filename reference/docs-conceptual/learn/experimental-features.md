@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879362"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500131"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -24,7 +24,7 @@ Mer information om hur du aktiverar eller inaktiverar dessa funktioner finns [ab
 
 Den här artikeln beskriver de experimentella funktioner som är tillgängliga och hur du använder funktionen.
 
-|                            Name                            |   6,2   |   7.0   |   7.1   |   7.2   |
+|                            Namn                            |   6,2   |   7.0   |   7.1   |   7.2   |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
 | PSTempDrive (vanlig i PS 7.0 +)                        | &check; |         |         |         |
 | PSUseAbbreviationExpansion (vanlig i PS 7.0 +)         | &check; |         |         |         |
@@ -38,6 +38,7 @@ Den här artikeln beskriver de experimentella funktioner som är tillgängliga o
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft. PowerShell. Utility. PSManageBreakpointsInRunspace
@@ -116,6 +117,24 @@ Tillsammans med åtkomst till `$PSStyle` , introducerar detta ändringar i Power
 - `StringDecorated Substring(int contentLength)` Metoden returnerar en under sträng som börjar vid indexet 0 upp till innehålls längden som inte är en del av ANSI escape-sekvenser. Detta krävs för tabellformatering för att trunkera strängar och bevara ANSI escape-sekvenser som inte tar upp ett utskrivbart tecken utrymme.
 - `string ToString()` metoden förblir densamma och returnerar strängens klartext-version.
 - `string ToString(bool Ansi)` Metoden returnerar rå ANSI Embedded-sträng om `Ansi` parametern är true. Annars returneras en klar text version med ANSI escape-sekvenser.
+
+## <a name="psansiprogress"></a>PSAnsiProgress
+
+Det här experimentet lades till i PowerShell 7,2. Funktionen lägger till `$PSStyle.Progress` medlemmen och gör att du kan kontrol lera visningen av förlopps visaren.
+
+- `$PSStyle.Progress.Style` – En ANSI-sträng anger åter givnings formatet.
+- `$PSStyle.Progress.MaxWidth` -Anger Max bredden för vyn. Ange som `0` konsol bredd.
+  Standardvärdet `120`
+- `$PSStyle.Progress.View` – En Enum med värden `Minimal` och `Classic` . `Classic` är den befintliga renderingen utan ändringar. `Minimal` är en enskild linje som är minimal åter givning. `Minimal` används som standard.
+
+I följande exempel uppdateras åter givnings formatet till en minimal förlopps indikator.
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> Du måste ha **PSAnsiRendering** experimentell funktion aktive rad för att använda den här funktionen.
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 

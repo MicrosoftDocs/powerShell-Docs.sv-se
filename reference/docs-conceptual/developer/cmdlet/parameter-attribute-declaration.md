@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Deklaration av attributet Parameter
 description: Deklaration av attributet Parameter
-ms.openlocfilehash: bab48a94cb4b1e8501fb79c2f3ef71393fa2ee68
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 24a49406b1493a7f8c23bca798ddb3e73a901111
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92650358"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500237"
 ---
 # <a name="parameter-attribute-declaration"></a>Deklaration av attributet Parameter
 
@@ -59,7 +59,7 @@ Attributet parameter identifierar en offentlig egenskap för cmdlet-klassen som 
 
   - Ingen parameter uppsättning måste innehålla mer än en positions parameter med samma position.
 
-  - Endast en parameter i en parameter uppsättning bör deklarera `ValueFromPipeline = true` . Flera parametrar kan definieras `ValueFromPipelineByPropertyName = true` .
+  - Endast en parameter i en parameter uppsättning bör deklarera `ValueFromPipeline = true` .
 
   - Flera parametrar kan definieras `ValueFromPipelineByPropertyName = true` .
 

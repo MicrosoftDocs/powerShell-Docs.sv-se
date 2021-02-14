@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 0ef3c68d73ae3e1d2040b3654e4f8ba45565717a
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: aa2d2d09fe0eb35c42c5ee84083c8ee29354cf8f
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98619915"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500184"
 ---
 # <a name="about-comparison-operators"></a>Om jämförelse operatorer
 
@@ -414,7 +414,7 @@ Det går också att använda reguljära uttryck för att dynamiskt ersätta text
 I följande exempel `-replace` accepterar operatorn ett användar namn i formatet `DomainName\Username` och konverteras till `Username@DomainName` formatet:
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,7 +429,7 @@ John.Doe@Contoso.local
 >
 > - I PowerShell, mellan dubbla citat tecken, anger den variabler och fungerar som en under Express operator.
 > - I regex Sök strängar betecknar det slutet av raden
-> - I uttryck för regex-substitution anger den fångade grupper som sådan, var noga med att antingen placera dina reguljära uttryck mellan enkla citat tecken eller infoga ett baktick ( `` ` `` )-tecken före.
+> - I regex-substitutions strängar anger den fångade grupper. Se till att antingen placera dina reguljära uttryck mellan enkla citat tecken eller infoga ett baktick ( `` ` `` )-tecken före.
 
 Exempel:
 
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` i regex anger en literal `$` . Detta `$$` i ersättnings strängen för att inkludera en litteral `$` i den resulterande ersättningen. Exempel:
+`$$` i regex anger en literal `$` . Detta `$$` i ersättnings strängen som innehåller en litteral `$` i den resulterande ersättningen. Exempel:
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72

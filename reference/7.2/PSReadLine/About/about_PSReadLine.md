@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Om PSReadLine
-ms.openlocfilehash: 4836abfec465ba7cdfb6800c1e60104fba19ce08
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913309"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500220"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -918,19 +918,39 @@ Avslutar den aktuella redigera-gruppen, om det behövs, och anropar TabCompleteP
 
 - Vi infognings läge: `<Shift+Tab>`
 
-## <a name="miscellaneous-functions"></a>Diverse-funktioner
+## <a name="prediction-functions"></a>Förutsägelse funktioner
 
 ### <a name="acceptnextsuggestionword"></a>AcceptNextSuggestionWord
 
-Godkänn nästa ord i det infogade eller markerade förslaget.
+När du använder `InlineView` som vyformat för förutsägelse accepterar du nästa ord för det infogade förslaget.
 
 - Funktionen är obunden.
 
 ### <a name="acceptsuggestion"></a>AcceptSuggestion
 
-Godkänn det aktuella infogade eller valda förslaget.
+När `InlineView` du använder som vyformat för förutsägelse godkänner du det aktuella infogade förslaget.
 
 - Funktionen är obunden.
+
+### <a name="nextsuggestion"></a>NextSuggestion
+
+När du använder `ListView` som vyformat för förutsägelse navigerar du till nästa förslag i listan.
+
+- Funktionen är obunden.
+
+### <a name="previoussuggestion"></a>PreviousSuggestion
+
+När du använder `ListView` som vyformat för förutsägelse navigerar du till föregående förslag i listan.
+
+- Funktionen är obunden.
+
+### <a name="switchpredictionview"></a>SwitchPredictionView
+
+Ändra visnings formatet för förutsägelse mellan `InlineView` och `ListView` .
+
+- Kommandot `<F2>`
+
+## <a name="miscellaneous-functions"></a>Diverse-funktioner
 
 ### <a name="capturescreen"></a>CaptureScreen
 
@@ -1007,6 +1027,15 @@ Infoga nyckeln.
 
 - Funktionen är obunden.
 
+### <a name="showcommandhelp"></a>ShowCommandHelp
+
+Innehåller en vy över fullständig cmdlet-hjälp på en alternativ skärmsläckare med hjälp av en pager från **Microsoft. PowerShell. pager**.
+
+- Kommandot `<F1>`
+- Emacs: `<F1>`
+- Vi infognings läge: `<F1>`
+- Kommando läge för vi: `<F1>`
+
 ### <a name="showkeybindings"></a>ShowKeyBindings
 
 Visa alla bindnings nycklar.
@@ -1014,6 +1043,15 @@ Visa alla bindnings nycklar.
 - Kommandot `<Ctrl+Alt+?>`
 - Emacs: `<Ctrl+Alt+?>`
 - Vi infognings läge: `<Ctrl+Alt+?>`
+
+### <a name="showparameterhelp"></a>ShowParameterHelp
+
+Ger dynamisk hjälp för parametrar genom att visa den under den aktuella kommando raden som `MenuComplete` .
+
+- Kommandot `<Alt+h>`
+- Emacs: `<Alt+h>`
+- Vi infognings läge: `<Alt+h>`
+- Kommando läge för vi: `<Alt+h>`
 
 ### <a name="vicommandmode"></a>ViCommandMode
 
