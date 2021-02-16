@@ -1,17 +1,16 @@
 ---
 description: Beskriver hur du använder jokertecken i PowerShell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 3/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
-ms.openlocfilehash: 4778de5022f35f354e7783cedc5019198d11604b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: bc2e92dc66b3c6a6a8f438e91d5d40924523f20e
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93272493"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529931"
 ---
 # <a name="about-wildcards"></a>Om jokertecken
 
@@ -21,13 +20,17 @@ Beskriver hur du använder jokertecken i PowerShell.
 
 ## <a name="long-description"></a>LÅNG BESKRIVNING
 
-Jokertecken representerar ett eller flera tecken. Du kan använda dem för att skapa ord mönster i kommandon. Om du till exempel vill hämta alla filer i `C:\Techdocs` katalogen med ett `.ppt` fil namns tillägg skriver du:
+Jokertecken representerar ett eller flera tecken. Du kan använda dem för att skapa ord mönster i kommandon. Jokertecken används med `-like` operatorn eller med en parameter som accepterar jokertecken.
+
+Om du till exempel vill matcha alla filer i `C:\Techdocs` katalogen med ett `.ppt` fil namns tillägg skriver du:
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
 ```
 
 I det här fallet representerar asterisken ( `*` ) jokertecknet alla tecken som visas före `.ppt` fil namns tillägget.
+
+Jokertecken är enklare än vanliga uttryck. Mer information finns i [about_Regular_Expressions](./about_Regular_Expressions.md).
 
 PowerShell har stöd för följande jokertecken:
 
@@ -38,7 +41,7 @@ PowerShell har stöd för följande jokertecken:
 |\[ \]   |Matcha ett tecken intervall | \[a-l- \] ook | bok, Cook, utseende | skrev |
 |\[ \]   |Matcha vissa tecken | \[BC- \] ook | bok, Cook | uttryckt |
 
-Du kan inkludera flera jokertecken i samma ord mönster. Om du till exempel vill söka efter textfiler med namn som börjar med bokstäverna **a** till **l** , skriver du:
+Du kan inkludera flera jokertecken i samma ord mönster. Om du till exempel vill söka efter textfiler med namn som börjar med bokstäverna **a** till **l**, skriver du:
 
 ```powershell
 Get-ChildItem C:\Techdocs\[a-l]*.txt
@@ -70,4 +73,3 @@ foreach ($point in $p) {
 [about_If](about_If.md)
 
 [about_Script_Blocks](about_Script_Blocks.md)
-

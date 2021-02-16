@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
-ms.openlocfilehash: 27a1d2994dee46b9e5bfd54132ff4a665330c2b4
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 1eade078765f93713da1f665e3ad6f062a1826d9
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93269097"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529948"
 ---
 # ConvertTo-Html
 
@@ -69,7 +69,7 @@ Kommandot använder `Get-Alias` cmdleten för att hämta alias. Den använder pi
 ### Exempel 3: skapa en webb sida för att Visa PowerShell-händelser
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 Det här kommandot skapar en HTML-sida `pslog.htm` med namnet som visar händelserna i händelse loggen för Windows PowerShell på den lokala datorn.
@@ -153,7 +153,7 @@ Det här kommandot använder `Get-EventLog` cmdleten för att hämta händelser 
 
 En pipeline-operator () används `|` för att skicka händelserna till `ConvertTo-Html` cmdleten, som konverterar händelserna till HTML-format.
 
-`ConvertTo-Html`Kommandot använder **egenskaps** parametern för att endast välja **ID** , **nivå** och **aktivitets** egenskaper för händelsen.
+`ConvertTo-Html`Kommandot använder **egenskaps** parametern för att endast välja **ID**, **nivå** och **aktivitets** egenskaper för händelsen.
 
 ### Exempel 9: skapa en webb sida för att Visa angivna tjänster
 
@@ -170,7 +170,7 @@ Get-Service A* |
 Invoke-Item Services.htm
 ```
 
-Det här kommandot skapar och öppnar en webb sida som visar de tjänster på datorn som börjar med en. I används **title** -, **Body** -, **precontent** -och **PostContent** -parametrarna för `ConvertTo-Html` för att anpassa utdata.
+Det här kommandot skapar och öppnar en webb sida som visar de tjänster på datorn som börjar med en. I används **title**-, **Body**-, **precontent**-och **PostContent** -parametrarna för `ConvertTo-Html` för att anpassa utdata.
 
 Den första delen av kommandot använder `Get-Service` cmdleten för att hämta tjänsterna på datorn som börjar med en. Kommandot använder en pipeline-operator ( `|` ) för att skicka resultaten till `ConvertTo-Html` cmdleten. Kommandot använder också `Out-File` cmdleten för att skicka utdata till Services.htm-filen.
 
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 
 ### – Över gång
 
-Ändrar **doctype** till **XHTML-över gångs-DTD** , standard- **doctype** är en **XHTML Strict DTD**.
+Ändrar **doctype** till **XHTML-över gångs-DTD**, standard- **doctype** är en **XHTML Strict DTD**.
 
 Den här parametern introducerades i PowerShell 6,0.
 
