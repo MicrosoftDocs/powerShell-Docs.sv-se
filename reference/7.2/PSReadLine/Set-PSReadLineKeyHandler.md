@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: 0ec3466aaaf6ed1ac78b62d88a5a6cce99153673
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 86386cb8d97e16ebdd869e2ec554fc947d788f67
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709018"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563275"
 ---
 # Set-PSReadLineKeyHandler
 
@@ -83,6 +83,9 @@ Accept wildcard characters: False
 Nyckeln eller sekvensen av nycklar som ska bindas till en funktion eller ett skript block. Använd en enkel sträng för att ange en enskild bindning. Om bindningen är en följd av nycklar separerar du nycklarna med kommatecken, som i följande exempel:
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> Från och med PSReadLine-2.0.0  är parametern ackord **SKIFT** läges känslig. Vilket innebär `Ctrl+X` `Ctrl+x` att olika bindningar skapas.
 
 Den här parametern accepterar en sträng mat ris. Varje sträng är en separat bindning, inte en sekvens med nycklar för en enskild bindning.
 
@@ -173,13 +176,13 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## INDATA
 
-### Inga
+### Inget
 
 Det går inte att skicka pipe-objekt till denna cmdlet.
 
 ## UTDATA
 
-### Inga
+### Inget
 
 Denna cmdlet genererar inga utdata.
 

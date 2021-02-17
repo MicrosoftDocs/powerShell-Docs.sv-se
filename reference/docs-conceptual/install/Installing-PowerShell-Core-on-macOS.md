@@ -2,12 +2,12 @@
 title: Installera PowerShell i macOS
 description: Information om hur du installerar PowerShell på macOS
 ms.date: 02/02/2021
-ms.openlocfilehash: 8132d88f4104696c5580a44b26247a24643f1b5b
-ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
+ms.openlocfilehash: 3ae1fe0eb29b4d826221a2c11db19bc18c3efba7
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536549"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563215"
 ---
 # <a name="installing-powershell-on-macos"></a>Installera PowerShell i macOS
 
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>Installation via direkt hämtning
 
-Hämta PKG-paketet `powershell-7.1.1-osx-x64.pkg` från sidan [versioner][] på din MacOS-dator.
+Hämta PKG-paketet `powershell-7.1.2-osx-x64.pkg` från sidan [versioner][] på din MacOS-dator.
 
 Du kan dubbelklicka på filen och följa anvisningarna eller installera den från terminalen:
 
 ```sh
-sudo installer -pkg powershell-7.1.1-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.2-osx-x64.pkg -target /
 ```
 
 Installera [openssl](#installing-dependencies). OpenSSL krävs för PowerShell-fjärrkommunikation och CIM-åtgärder.
@@ -144,19 +144,19 @@ Installera [openssl](#installing-dependencies). OpenSSL krävs för PowerShell-f
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.1.1
+sudo mkdir -p /usr/local/microsoft/powershell/7.1.2
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.1
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.2
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.1.1/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.1.2/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.1.1/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.1.2/pwsh /usr/local/bin/pwsh
 ```
 
 ## <a name="installing-dependencies"></a>Installerar beroenden
@@ -204,7 +204,7 @@ Om du vill ta bort ytterligare PowerShell-sökvägar läser du avsnittet [sökv�
 
 ## <a name="paths"></a>Sökvägar
 
-- `$PSHOME` är `/usr/local/microsoft/powershell/7.1.1/`
+- `$PSHOME` är `/usr/local/microsoft/powershell/7.1.2/`
 - Användar profilerna kommer att läsas från `~/.config/powershell/profile.ps1`
 - Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
 - Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
@@ -216,7 +216,7 @@ Profilerna respekterar PowerShell-konfigurationen per värd. Så att den standar
 
 PowerShell respekterar [xdg-bas katalog specifikationen][xdg-bds] på MacOS.
 
-Eftersom macOS är en härledning av BSD används prefixet `/usr/local` i stället för `/opt` . Så, `$PSHOME` är `/usr/local/microsoft/powershell/7.1.1/` och den symboliska länken placeras på `/usr/local/bin/pwsh` .
+Eftersom macOS är en härledning av BSD används prefixet `/usr/local` i stället för `/opt` . Så, `$PSHOME` är `/usr/local/microsoft/powershell/7.1.2/` och den symboliska länken placeras på `/usr/local/bin/pwsh` .
 
 ## <a name="installation-support"></a>Installations stöd
 

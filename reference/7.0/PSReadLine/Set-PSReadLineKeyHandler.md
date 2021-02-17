@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: b12b95cc46f6966c63fd8fd60c42d5417c4c7868
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 22ad8a33f80ad5f4d75fe23c0c8f6c845a40d748
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93273314"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563247"
 ---
 # Set-PSReadLineKeyHandler
 
@@ -84,6 +84,9 @@ Accept wildcard characters: False
 Nyckeln eller sekvensen av nycklar som ska bindas till en funktion eller ett skript block. Använd en enkel sträng för att ange en enskild bindning. Om bindningen är en följd av nycklar separerar du nycklarna med kommatecken, som i följande exempel:
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> Från och med PSReadLine-2.0.0  är parametern ackord **SKIFT** läges känslig. Vilket innebär `Ctrl+X` `Ctrl+x` att olika bindningar skapas.
 
 Den här parametern accepterar en sträng mat ris. Varje sträng är en separat bindning, inte en sekvens med nycklar för en enskild bindning.
 

@@ -3,12 +3,12 @@ ms.date: 01/04/2021
 ms.topic: reference
 title: Skriva ett PowerShell-modulmanifest
 description: Skriva ett PowerShell-modulmanifest
-ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 0270b9b3745b7ffd187f2089414ea7759515d96b
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879379"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563312"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Så här skriver du ett manifest för PowerShell-modul
 
@@ -57,7 +57,7 @@ I följande tabell beskrivs de element som du kan inkludera i ett modul manifest
 |Element|Standardvärde|Description|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> Bastyp `String`|`<empty string>`|Skriptbaserad modul eller binär modul som är associerad med det här manifestet. Tidigare versioner av PowerShell anropade det här elementet som **ModuleToProcess**.<br /> Möjliga typer för rotnoden kan vara tomma, vilket skapar en **manifest** -modul, namnet på en skript-modul ( `.psm1` ) eller namnet på en binär modul ( `.exe` eller `.dll` ). Att placera namnet på ett modul manifest ( `.psd1` ) eller en skript fil ( `.ps1` ) i det här elementet orsakar ett fel. <br /> Exempel: `RootModule = 'ScriptModule.psm1'`|
-|**ModuleVersion**<br /> Bastyp `Version`|`'0.0.1'`|Versions nummer för den här modulen. Om ett värde inte anges används standardvärdet `New-ModuleManifest`   . Strängen måste kunna konvertera till typen till `Version` exempel `#.#.#.#.#` . `Import-Module` läser in den första modul som den hittar på den **$PSModulePath** som matchar namnet och har minst lika hög som en **ModuleVersion**, som **MinimumVersion** -parameter. Om du vill importera en version använder du `Import-Module` cmdlet: en **RequiredVersion** -parameter.<br /> Exempel: `ModuleVersion = '1.0'`|
+|**ModuleVersion**<br /> Bastyp `Version`|`'0.0.1'`|Versions nummer för den här modulen. Om ett värde inte anges används standardvärdet `New-ModuleManifest`   . Strängen måste kunna konvertera till typen till `Version` exempel `#.#.#.#` . `Import-Module` läser in den första modul som den hittar på den **$PSModulePath** som matchar namnet och har minst lika hög som en **ModuleVersion**, som **MinimumVersion** -parameter. Om du vill importera en version använder du `Import-Module` cmdlet: en **RequiredVersion** -parameter.<br /> Exempel: `ModuleVersion = '1.0'`|
 |**LED**<br /> Bastyp `GUID`|`'<GUID>'`|ID som används för att identifiera den här modulen unikt. Om ett värde inte anges `New-ModuleManifest` genererar automatiskt värdet. Du kan för närvarande inte importera en modul efter **GUID**. <br /> Exempel: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**Författare**<br /> Bastyp `String`|`'<Current user>'`|Författare för den här modulen. Om ett värde inte anges `New-ModuleManifest` använder den aktuella användaren. <br /> Exempel: `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> Bastyp `String`|`'Unknown'`|Företaget eller leverantören för den här modulen. Om ett värde inte anges används standardvärdet `New-ModuleManifest` .<br /> Exempel: `CompanyName = 'Fabrikam'`|
