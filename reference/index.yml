@@ -9,12 +9,12 @@ metadata:
   author: sdwheeler
   ms.author: sewhee
   ms.date: 09/04/2019
-  ms.openlocfilehash: 14d9c28093ec91351048819e719ab80d5dd9c501
-  ms.sourcegitcommit: a073c7db07d765ab45f52345ab98c7660582bc98
-  ms.translationtype: HT
+  ms.openlocfilehash: f469ddb8179b1b2c937478e776fb0383c22357e1
+  ms.sourcegitcommit: 14f45157bb60db7ef4c321c1a525c836698cafa9
+  ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87377510"
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "101101295"
 highlightedContent:
   items:
   - title: Översikt
@@ -139,18 +139,18 @@ additionalContent:
   - title: PowerShell-teamet
     summary: Kommunicera med PowerShell-teamet
     items:
-    - title: Officiella PowerShell-bloggen
+    - title: PowerShell-teamets blogg
       summary: Officiella nyheter och meddelanden
       url: https://devblogs.microsoft.com/powershell/
+    - title: PowerShell-bloggen för samhället
+      summary: En plats för communityn för att lära sig PowerShell och dela insikter
+      url: https://devblogs.microsoft.com/powershell-community/
     - title: PowerShell-teamet på Twitter
       summary: Nyheter om PowerShell 280 tecken i taget
       url: https://twitter.com/PowerShell_Team
-    - title: PowerShell UserVoice
-      summary: Platsen för buggar i Windows PowerShell
-      url: https://windowsserver.uservoice.com/forums/301869-powershell
     - title: GitHub-problem
       summary: Platsen för buggar i den aktuella versionen
       url: https://github.com/powershell/powershell/issues
-    - title: Hejsan, Scripting Guy! Blogg
-      summary: En plats där du kan lära dig mer om PowerShell och automatisering
-      url: https://devblogs.microsoft.com/scripting/
+    - title: PowerShell UserVoice
+      summary: Platsen för buggar i Windows PowerShell
+      url: https://windowsserver.uservoice.com/forums/301869-powershell
