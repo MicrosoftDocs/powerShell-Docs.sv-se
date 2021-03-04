@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 2efe75730ef7d35618dc0d1fbf7a8d6f8a5db5ae
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 5563413400abd28ce376265970631ad1206ca518
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709750"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685266"
 ---
 # Read-Host
 
@@ -35,6 +35,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## BESKRIVNING
 
 `Read-Host`Cmdlet: en läser en rad med ininformation från-konsolen. Du kan använda den för att uppmana användaren att ange indata. Eftersom du kan spara indata som en säker sträng kan du använda denna cmdlet för att uppmana användarna att ange säkra data, till exempel lösen ord, samt delade data.
+
+> [!NOTE]
+> `Read-Host` har en gräns på 1022 tecken som kan accepteras som indata från en användare.
 
 ## EXEMPEL
 
@@ -99,10 +102,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-Anger texten i prompten.
-Skriv en sträng.
-Om strängen innehåller blank steg omger du den med citat tecken.
-PowerShell lägger till ett kolon ( `:` ) för den text som du anger.
+Anger texten i prompten. Skriv en sträng. Om strängen innehåller blank steg omger du den med citat tecken. PowerShell lägger till ett kolon ( `:` ) för den text som du anger.
 
 ```yaml
 Type: System.Object
@@ -122,7 +122,7 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## INDATA
 
-### Inga
+### Inget
 
 Du kan inte skicka pipe-ininformation till denna cmdlet.
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
-ms.openlocfilehash: 695a13d4fbbf60caadeed994c1aa9c36432be917
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: af1c808b22a812700857e756136fd570fa0acc35
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93266234"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685908"
 ---
 # Clear-EventLog
 
@@ -27,11 +27,9 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Co
 
 ## BESKRIVNING
 
-`Clear-EventLog`Cmdleten tar bort alla poster från de angivna händelse loggarna på den lokala datorn eller på fjärrdatorer.
-För att kunna använda `Clear-EventLog` måste du vara medlem i gruppen Administratörer på den berörda datorn.
+`Clear-EventLog`Cmdleten tar bort alla poster från de angivna händelse loggarna på den lokala datorn eller på fjärrdatorer. För att kunna använda `Clear-EventLog` måste du vara medlem i gruppen Administratörer på den berörda datorn.
 
-De cmdletar som innehåller **EventLog** -händelsen Substantiv (EventLog-cmdletar) fungerar bara på klassiska händelse loggar.
-Om du vill hämta händelser från loggar som använder Windows händelse logg teknik i Windows Vista och senare versioner av Windows, använder du Get-WinEvent-cmdleten.
+De cmdletar som innehåller **EventLog** -händelsen Substantiv (EventLog-cmdletar) fungerar bara på klassiska händelse loggar. Om du vill hämta händelser från loggar som använder Windows händelse logg teknik i Windows Vista och senare versioner av Windows, använder du Get-WinEvent-cmdleten.
 
 ## EXEMPEL
 
@@ -96,14 +94,11 @@ Observera att några poster har lagts till i systemet och säkerhets loggar när
 
 ### -ComputerName
 
-Anger en fjärrdator.
-Standard är den lokala datorn.
+Anger en fjärrdator. Standard är den lokala datorn.
 
-Ange NetBIOS-namnet, en Internet Protocol IP-adress eller ett fullständigt kvalificerat domän namn för en fjärrdator.
-Om du vill ange den lokala datorn skriver du datorns namn, en punkt (.) eller "localhost".
+Ange NetBIOS-namnet, en Internet Protocol IP-adress eller ett fullständigt kvalificerat domän namn för en fjärrdator. Om du vill ange den lokala datorn skriver du datorns namn, en punkt (.) eller "localhost".
 
-Den här parametern är inte beroende av Windows PowerShell-fjärrkommunikation.
-Du kan använda parametern **computername** för `Get-EventLog` även om datorn inte är konfigurerad för att köra fjärrkommandon.
+Den här parametern är inte beroende av Windows PowerShell-fjärrkommunikation. Du kan använda parametern **computername** för `Get-EventLog` även om datorn inte är konfigurerad för att köra fjärrkommandon.
 
 ```yaml
 Type: System.String[]
@@ -119,10 +114,10 @@ Accept wildcard characters: False
 
 ### -LogName
 
-Anger händelse loggarna.
-Ange logg namnet (värdet för logg egenskapen, inte LogDisplayName) för en eller flera händelse loggar, avgränsade med kommatecken.
-Jokertecken tillåts inte.
-Den här parametern är obligatorisk.
+Anger händelse loggarna. Ange logg namnet (värdet för **logg** egenskapen inte **LogDisplayName**) för en eller flera händelse loggar, avgränsade med kommatecken. Jokertecken tillåts inte. Den här parametern är obligatorisk.
+
+> [!IMPORTANT]
+> Den här parametern ska acceptera värden från pipelinen efter egenskaps namn. Det finns dock ett fel som förhindrar att detta fungerar. Du måste skicka ett värde med hjälp av parametern direkt.
 
 ```yaml
 Type: System.String[]

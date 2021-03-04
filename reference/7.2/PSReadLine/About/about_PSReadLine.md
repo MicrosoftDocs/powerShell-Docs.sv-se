@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Om PSReadLine
-ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: ddc88dda3514e4279b6d91b023e26da88f645af7
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500220"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685218"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -114,13 +114,19 @@ Ta bort det före markören.
 - Vi infognings läge: `<Backspace>`
 - Kommando läge för vi: `<X>` , `<d,h>`
 
+### <a name="backwarddeleteinput"></a>BackwardDeleteInput
+
+Som BackwardKillInput – tar bort text från punkten till början av indatamängden, men den borttagna texten tas inte med i stopp ringen.
+
+- Kommandot `<Ctrl+Home>`
+- Vi infognings läge: `<Ctrl+u>` , `<Ctrl+Home>`
+- Kommando läge för vi: `<Ctrl+u>` , `<Ctrl+Home>`
+
 ### <a name="backwarddeleteline"></a>BackwardDeleteLine
 
 Som BackwardKillLine – tar bort text från punkten till början av raden, men lägger inte till den borttagna texten i stopp ringen.
 
-- Kommandot `<Ctrl+Home>`
-- Vi infognings läge: `<Ctrl+u>` , `<Ctrl+Home>`
-- Vi kommando läge: `<Ctrl+u>` , `<Ctrl+Home>` , `<d,0>`
+- Kommando läge för vi: `<d,0>`
 
 ### <a name="backwarddeleteword"></a>BackwardDeleteWord
 
@@ -128,11 +134,17 @@ Tar bort föregående ord.
 
 - Kommando läge för vi: `<Ctrl+w>` , `<d,b>`
 
-### <a name="backwardkillline"></a>BackwardKillLine
+### <a name="backwardkillinput"></a>BackwardKillInput
 
-Ta bort indatamängden från början av inmatarna till markören. Den avmarkerade texten placeras i stopp ringen.
+Ta bort texten från början av inmatarna till markören. Den avmarkerade texten placeras i stopp ringen.
 
 - Emacs: `<Ctrl+u>` , `<Ctrl+x,Backspace>`
+
+### <a name="backwardkillline"></a>BackwardKillLine
+
+Ta bort texten från början av den aktuella logiska linjen till markören. Den avmarkerade texten placeras i stopp ringen.
+
+- Funktionen är obunden.
 
 ### <a name="backwardkillword"></a>BackwardKillWord
 
@@ -243,13 +255,19 @@ Ta bort nästa ord.
 
 - Kommando läge för vi: `<d,w>`
 
-### <a name="forwarddeleteline"></a>ForwardDeleteLine
+### <a name="forwarddeleteinput"></a>ForwardDeleteInput
 
-Som ForwardKillLine – tar bort text från punkten till slutet av raden, men lägger inte till den borttagna texten i stopp ringen.
+Som KillLine – tar bort text från punkten till slutet av indatamängden, men den borttagna texten tas inte med i stopp ringen.
 
 - Kommandot `<Ctrl+End>`
 - Vi infognings läge: `<Ctrl+End>`
 - Kommando läge för vi: `<Ctrl+End>`
+
+### <a name="forwarddeleteline"></a>ForwardDeleteLine
+
+Tar bort text från punkten till slutet av den aktuella logiska linjen, men lägger inte till den borttagna texten i stopp ringen.
+
+- Funktionen är obunden
 
 ### <a name="insertlineabove"></a>InsertLineAbove
 
@@ -1029,7 +1047,9 @@ Infoga nyckeln.
 
 ### <a name="showcommandhelp"></a>ShowCommandHelp
 
-Innehåller en vy över fullständig cmdlet-hjälp på en alternativ skärmsläckare med hjälp av en pager från **Microsoft. PowerShell. pager**.
+Innehåller en vy över fullständig cmdlet-hjälp. När markören är i slutet av en helt expanderad parameter, kan du trycka på `<F1>` nyckeln för att visa hjälp om den här parameterns placering.
+
+Hjälpen visas på en alternativ skärms buffert med hjälp av en pager från **Microsoft. PowerShell. pager**. När du avslutar pager-filen returneras den ursprungliga markören på den ursprungliga skärmen. Denna pager fungerar bara i moderna Terminal-program som [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701).
 
 - Kommandot `<F1>`
 - Emacs: `<F1>`
@@ -1046,7 +1066,7 @@ Visa alla bindnings nycklar.
 
 ### <a name="showparameterhelp"></a>ShowParameterHelp
 
-Ger dynamisk hjälp för parametrar genom att visa den under den aktuella kommando raden som `MenuComplete` .
+Ger dynamisk hjälp för parametrar genom att visa den under den aktuella kommando raden som `MenuComplete` . Markören måste vara i slutet av det helt utökade parameter namnet när du trycker på `<Alt+h>` nyckeln.
 
 - Kommandot `<Alt+h>`
 - Emacs: `<Alt+h>`
@@ -1125,6 +1145,15 @@ Justera det aktuella urvalet så att det innehåller föregående ord.
 
 - Kommandot `<Shift+Ctrl+LeftArrow>`
 - Emacs: `<Alt+B>`
+
+### <a name="selectcommandargument"></a>SelectCommandArgument
+
+Gör visuella urval av kommando argumenten. Val av argument är begränsade i ett-skript block. Baserat på markörens position söker den från det innersta skript blocket till det vanligaste skript blocket och stannar när eventuella argument i ett skript Blocks område hittas.
+
+Den här funktionen följer DigitArgument. Den behandlar positiva eller negativa argument värden som framåtriktade eller baklänges förskjutningar från det markerade argumentet eller från den aktuella markören när inget argument är markerat.
+
+- Kommandot `<Alt+a>`
+- Emacs: `<Alt+a>`
 
 ### <a name="selectforwardchar"></a>SelectForwardChar
 

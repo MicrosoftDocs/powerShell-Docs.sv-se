@@ -1,14 +1,14 @@
 ---
 title: Allt du ville veta om switch-instruktionen
 description: Switch-instruktionen i PowerShell erbjuder funktioner som inte finns på andra språk.
-ms.date: 05/23/2020
+ms.date: 03/01/2021
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c2e77aa5fb36d04fec1bc86f751291205120c729
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: f6baa624285557452a2b95150b2c4de1ab274f27
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93355127"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686003"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>Allt du ville veta om switch-instruktionen
 
@@ -169,7 +169,7 @@ Du kan använda `$PSItem` eller `$_` för att referera till det aktuella objekte
 
 ## <a name="parameters"></a>Parametrar
 
-En unik funktion i PowerShell `switch` är att den har ett antal [växel parametrar][] som ändrar hur det fungerar.
+En unik funktion i PowerShell `switch` är att den har ett antal växel parametrar som ändrar hur det fungerar.
 
 ### <a name="-casesensitive"></a>-CaseSensitive
 
@@ -738,6 +738,5 @@ Switch-instruktionen är enkel på ytan, men den erbjuder vissa avancerade funkt
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [byta]: /powershell/module/microsoft.powershell.core/about/about_switch
-[Växla parametrar]: https://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/
 [Många sätt att använda regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [hash]: everything-about-hashtable.md

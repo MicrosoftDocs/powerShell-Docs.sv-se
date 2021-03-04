@@ -2,14 +2,14 @@
 title: Nyheter i PowerShell-dokument för 2020 – Q4
 description: Lista över ändringar i PowerShell-dokumentationen för Q4 av 2020
 ms.date: 01/05/2021
-ms.openlocfilehash: 823338560adbfecd6e17ad6b2e82681f5db35405
-ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
+ms.openlocfilehash: 2ac4a2e23ebed7cf1d371c29ceada661bc9a9bc3
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99499948"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685538"
 ---
-# <a name="whats-new-in-powershell-docs-for-2020-q4"></a>Nyheter i PowerShell-dokument för 2020 – Q4
+# <a name="whats-new-in-powershell-docs-for-2020"></a>Nyheter i PowerShell-dokument för 2020
 
 Den här artikeln innehåller några av de större ändringarna i dokumenten under föregående månad och firar bidragen från communityn.
 
@@ -19,7 +19,7 @@ Hjälp oss att göra dokumentationen bättre. Läs [bidrags hand boken][contrib]
 [contrib]: contributing/overview.md
 <!-- --------------- -->
 
-## <a name="2020-december-highlights"></a>2020 – december – höjd punkter
+## <a name="2020-december"></a>2020 – december
 
 - Uppdaterad deltagar guide
   - har dokumenterat `&preserve_view=true` Frågeparametern för hyperlänkar
@@ -49,7 +49,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | Cwilson-dataselfcom |            |       5       |
 | bobbybatatina       |            |       2       |
 
-## <a name="2020-november-highlights"></a>2020 – november-höjder
+## <a name="2020-november"></a>2020 – november
 
 - PowerShell 7,1 GA-version
   - Nyheter i PowerShell 7,1
@@ -96,7 +96,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | stephenrgentry  |            |       2       |
 | Vixb1122        |            |       2       |
 
-## <a name="2020-october-highlights"></a>2020 – oktober-höjder
+## <a name="2020-october"></a>2020 – oktober
 
 - Nya artiklar
   - [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
@@ -129,7 +129,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | mklement0    |            |       3       |
 | Abdullah0820 |            |       2       |
 
-## <a name="2020-september-highlights"></a>2020 – september – september
+## <a name="2020-september"></a>2020 – september
 
 - Dokumentations underhåll
   - Uppdateringar för 7,1 – för hands versions innehåll
@@ -160,7 +160,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | mklement0        |            |      13       |
 | setpeetrike      |            |       2       |
 
-## <a name="2020-august-highlights"></a>2020 – augusti – höjd punkter
+## <a name="2020-august"></a>2020 – augusti
 
 - Ny PowerShell-dokumentation
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
@@ -190,7 +190,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | joshSi           |     1      |               |
 | kmoad            |     1      |               |
 
-## <a name="2020-july-highlights"></a>2020 – juli-höjd
+## <a name="2020-july"></a>2020 – juli
 
 - Ny PowerShell-dokumentation
   - Återuppstått gamla [ETS-dokument](/powershell/scripting/developer/ets/overview) – 7 artiklar har lagts till
@@ -227,7 +227,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | sharpninja     |            |       2       |
 | XuHeng1021     |            |       2       |
 
-## <a name="2020-june-highlights"></a>2020 – juni-höjd punkter
+## <a name="2020-june"></a>2020 – juni
 
 - Ny PowerShell-dokumentation
   - Publicerat nytt [PowerShell 101](../learn/ps101/00-introduction.md) -innehåll som har bidragit med Mike F. Robbins
@@ -269,7 +269,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | mklement0     |            |       2       |
 | Sagatboy33    |            |       4       |
 
-## <a name="2020-may-highlights"></a>2020 – maj-högdagrar
+## <a name="2020-may"></a>2020-maj
 
 - Ny PowerShell-dokumentation
   - Skapat ett nytt [djup dykningar](../learn/deep-dives/overview.md) -avsnitt som innehåller innehåll från community Contributor Kevin Marquette
@@ -322,7 +322,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 | JustinGrote    |            |       2       |
 | peetrike       |            |       2       |
 
-## <a name="2020-april-highlights"></a>2020 – april-höjd
+## <a name="2020-april"></a>2020 – april
 
 - Nya dokument
   - PowerShell-dokumentation
@@ -370,7 +370,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 
 ## <a name="2020-march"></a>2020 – mars
 
-### <a name="highlights"></a>Höjdpunkter
+###
 
 - Nya dokument
   - Community-sidorna för PowerShell-dokument
@@ -409,7 +409,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 
 ## <a name="2020-february"></a>2020 – februari
 
-### <a name="highlights"></a>Höjdpunkter
+###
 
 - Nya dokument
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
@@ -435,7 +435,7 @@ Följande personer har bidragit till PowerShell-dokument genom att skicka pull-f
 
 ## <a name="2020-january"></a>2020 – januari
 
-### <a name="highlights"></a>Höjdpunkter
+###
 
 - Nya dokument
   - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)

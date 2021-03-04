@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: aacc89001373ecc8ef75e630f965a8d807bd4ac3
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 4f5a5705c726aef7150b734a6265308a5915decb
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "93267975"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685591"
 ---
 # Read-Host
 
@@ -28,6 +28,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## BESKRIVNING
 
 `Read-Host`Cmdlet: en läser en rad med ininformation från-konsolen. Du kan använda den för att uppmana användaren att ange indata. Eftersom du kan spara indata som en säker sträng kan du använda denna cmdlet för att uppmana användarna att ange säkra data, till exempel lösen ord, samt delade data.
+
+> [!NOTE]
+> `Read-Host` har en gräns på 1022 tecken som kan accepteras som indata från en användare.
 
 ## EXEMPEL
 
@@ -51,7 +54,7 @@ $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 
 ### – AsSecureString
 
-Anger att cmdleten visar asterisker ( `*` ) i stället för de tecken som användaren skriver som indata. När du använder den här parametern är utdata från `Read-Host` cmdleten ett **SecureString** -objekt ( **system. Security. SecureString** ).
+Anger att cmdleten visar asterisker ( `*` ) i stället för de tecken som användaren skriver som indata. När du använder den här parametern är utdata från `Read-Host` cmdleten ett **SecureString** -objekt (**system. Security. SecureString**).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -67,10 +70,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-Anger texten i prompten.
-Skriv en sträng.
-Om strängen innehåller blank steg omger du den med citat tecken.
-PowerShell lägger till ett kolon ( `:` ) för den text som du anger.
+Anger texten i prompten. Skriv en sträng. Om strängen innehåller blank steg omger du den med citat tecken. PowerShell lägger till ett kolon ( `:` ) för den text som du anger.
 
 ```yaml
 Type: System.Object

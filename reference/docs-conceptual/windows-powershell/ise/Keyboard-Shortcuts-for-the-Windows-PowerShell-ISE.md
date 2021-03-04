@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Kortkommandon för Windows PowerShell ISE
 description: Den här artikeln är en lista över kortkommandon som används i PowerShell ISE.
-ms.openlocfilehash: 690997524ab90d7581bb03c802f189d1a4b79d3f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 6a55bb2e6046fbda1c8b7b83345138f294009ac8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500201"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685977"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Kortkommandon för Windows PowerShell ISE
 
@@ -20,7 +20,8 @@ Du kan använda följande kortkommandon när du redigerar text.
 |              Action              |              Kortkommandon               |                                                                                                                                           Använd i                                                                                                                                           |
 | -------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Hjälp**                         | <kbd>F1</kbd>                                 | Skript fönstret är **viktigt:** du kan ange att <kbd>F1</kbd> -hjälpen kommer från docs.Microsoft.com eller nedladdad hjälp (se `Update-Help` ). Välj genom att klicka på **verktyg**, **alternativ**, på fliken **allmänna inställningar** , ange eller avmarkera **Använd lokalt hjälp innehåll i stället för online-innehåll.** |
-| **Kopiera**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>                  | Skript fönstret, kommando fönstret, fönstret utdata                                                                                                                                                                                                                                                     |
+| **Markera alla**                   | <kbd>CTRL</kbd> + <kbd>En</kbd>                  | Skript fönster                                                                                                                                                                                                                                                                                |
+| **Exemplar**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>                  | Skript fönstret, kommando fönstret, fönstret utdata                                                                                                                                                                                                                                                     |
 | **Klipp ut**                          | <kbd>CTRL</kbd> + <kbd>X</kbd>                  | Skript fönster, kommando fönster                                                                                                                                                                                                                                                                  |
 | **Visa eller Dölj disposition** | <kbd>CTRL</kbd> + <kbd>M</kbd>                  | Skript fönster                                                                                                                                                                                                                                                                                |
 | **Sök i skript**               | <kbd>CTRL</kbd> + <kbd>F</kbd>                  | Skript fönster                                                                                                                                                                                                                                                                                |
@@ -36,6 +37,9 @@ Du kan använda följande kortkommandon när du redigerar text.
 | **Markera alla**                   | <kbd>CTRL</kbd> + <kbd>En</kbd>                  | Skript fönstret, kommando fönstret, fönstret utdata                                                                                                                                                                                                                                                     |
 | **Visa kodfragment**                | <kbd>CTRL</kbd> + <kbd>J</kbd>                  | Skript fönster, kommando fönster                                                                                                                                                                                                                                                                  |
 | **Ångra**                         | <kbd>CTRL</kbd> + <kbd>Z</kbd>                  | Skript fönster, kommando fönster                                                                                                                                                                                                                                                                  |
+| **Visa IntelliSense-hjälp**       | <kbd>CTRL</kbd> + <kbd>Utrymme</kbd>              | Skript fönster                                                                                                                                                                                                                                                                                |
+| **Ta bort ord till vänster**          | <kbd>CTRL</kbd> + <kbd>Backsteg</kbd>          | Skript fönster                                                                                                                                                                                                                                                                                |
+| **Ta bort ord till höger**         | <kbd>CTRL</kbd> + <kbd>Ta bort</kbd>             | Skript fönster                                                                                                                                                                                                                                                                                |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Kortkommandon för skript som körs
 

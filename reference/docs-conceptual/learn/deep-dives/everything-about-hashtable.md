@@ -3,12 +3,12 @@ title: Allt du ville veta om hash
 description: Hash är verkligen viktiga i PowerShell så det är bra att ha en solid förståelse för dem.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
-ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
+ms.openlocfilehash: a471c0fe2c48820d6c1d152e2850b1e431d28f23
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "97980509"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686072"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Allt du ville veta om hash
 
@@ -360,7 +360,7 @@ $property = @{
 
 ```powershell
 $drives = Get-PSDrive | Where Used
-$drives | Select-Object -Properties name, $property
+$drives | Select-Object -Property name, $property
 
 Name     totalSpaceGB
 ----     ------------
@@ -370,7 +370,7 @@ C    238.472652435303
 Jag placerade det i en variabel, men det kan enkelt definieras infogat och du kan förkorta `name` till `n` och `expression` `e` samtidigt när du befinner dig.
 
 ```powershell
-$drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
+$drives | Select-Object -property name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 ```
 
 Jag vill inte veta hur lång tid det tar för kommandon och ger ofta vissa dåliga beteenden som jag inte kan komma åt. Jag vill förmodligen skapa en ny hash-grupp eller `pscustomobject` med alla fält och egenskaper i stället för att använda den här metoden i skript. Men det finns en massa kod som gör det så att du kan vara medveten om det. Jag pratar om att skapa en `pscustomobject` senare version.

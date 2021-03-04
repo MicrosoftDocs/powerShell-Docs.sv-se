@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 02/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: c54efeb79f4129b55e078a1ccf9d46afc2e754ab
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: 584ca877cedfe1494f8386af75f9f1911a5b8f15
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725178"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685641"
 ---
 # ForEach-Object
 
@@ -42,7 +42,7 @@ ForEach-Object [-InputObject <PSObject>] -Parallel <ScriptBlock> [-ThrottleLimit
  [-TimeoutSeconds <Int32>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## Beskrivning
 
 `ForEach-Object`Cmdleten utför en åtgärd på varje objekt i en samling inobjekt. Objekten kan skickas till cmdleten eller anges med parametern **InputObject** .
 
@@ -382,6 +382,44 @@ Output: 5
 ```
 
 `Output: 3` skrivs aldrig eftersom parallellt script block för den iterationen avbröts.
+
+### Exempel 17: skicka variabler i kapslade parallella skript ScriptBlockSet
+
+Du kan skapa en variabel utanför en `Foreach-Object -Parallel` omfångs script block och använda den inuti script block med `$using` nyckelordet.
+
+```powershell
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+}
+```
+
+```Output
+TestA
+TestA
+```
+
+```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+    $test2 = 'TestB'
+    1..2 | Foreach-Object -Parallel {
+        $using:test2
+    }
+}
+```
+
+```Output
+Line |
+   2 |  1..2 | Foreach-Object -Parallel {
+     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+```
+
+Den kapslade script block kan inte komma åt `$test2` variabeln och ett fel genereras.
 
 ## Parametrar
 

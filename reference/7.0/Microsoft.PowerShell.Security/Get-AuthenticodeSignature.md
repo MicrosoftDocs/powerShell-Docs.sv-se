@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 6e205efe91f453d00f29a95f418eff89063acea8
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 9c626192deb992861c7b2fcddd06d90dd6f85ff7
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347150"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685606"
 ---
 # Get-AuthenticodeSignature
 
@@ -41,7 +41,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 
 ## BESKRIVNING
 
-`Get-AuthenticodeSignature`Cmdleten hämtar information om Authenticode-signaturen för en fil eller ett fil innehåll som en byte mat ris. Om filen inte är signerad hämtas informationen, men fälten är tomma.
+`Get-AuthenticodeSignature`Cmdleten hämtar information om Authenticode-signaturen för en fil eller ett fil innehåll som en byte mat ris.
+Om filen är både inbäddad signerad och Windows Catalog signerad, används Windows Catalog-signaturen.
+Om filen inte är signerad hämtas informationen, men fälten är tomma.
 
 ## EXEMPEL
 
@@ -119,7 +121,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Anger sökvägen till den fil som ska undersökas. Till skillnad från **sökväg** , används värdet för parametern **LiteralPath** exakt som det har angetts. Inga tecken tolkas som jokertecken. Om sökvägen innehåller ett escape-tecken omger du det med enkla citat tecken. Enkla citat tecken säger att PowerShell inte tolkar några tecken som escape-tecken.
+Anger sökvägen till den fil som ska undersökas. Till skillnad från **sökväg**, används värdet för parametern **LiteralPath** exakt som det har angetts. Inga tecken tolkas som jokertecken. Om sökvägen innehåller ett escape-tecken omger du det med enkla citat tecken. Enkla citat tecken säger att PowerShell inte tolkar några tecken som escape-tecken.
 
 ```yaml
 Type: System.String[]

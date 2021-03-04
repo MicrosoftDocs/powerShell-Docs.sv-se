@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: Använda experimentella funktioner i PowerShell
 description: Visar en lista över tillgängliga experimentella funktioner och hur du använder dem.
-ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: f97cea1dff4030da22be1efbe3cd5cbb7a9f3527
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500131"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685280"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Använda experimentella funktioner i PowerShell
 
@@ -73,27 +73,37 @@ I det här exemplet startas ett jobb och en Bryt punkt anges som Bryt när körs
 Det här experimentet lades till i PowerShell 7,2. Funktionen gör det möjligt att ändra hur PowerShell-motorn matar ut text och lägger till den `$PSStyle` automatiska variabeln för att styra ANSI-åter givning av sträng utdata.
 
 ```powershell
-PS> $PSStyle
+PS> $PSStyle | Get-Member
 
-Name            MemberType Definition
-----            ---------- ----------
-Reset           Property   string AttributesOff {get;set;}
-Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
-Blink           Property   string Blink {get;set;}
-BlinkOff        Property   string BlinkOff {get;set;}
-Bold            Property   string Bold {get;set;}
-BoldOff         Property   string BoldOff {get;set;}
-Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
-Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
-Hidden          Property   string Hidden {get;set;}
-HiddenOff       Property   string HiddenOff {get;set;}
-OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
-Reverse         Property   string Reverse {get;set;}
-ReverseOff      Property   string ReverseOff {get;set;}
-Italic          Property   string Standout {get;set;}
-ItalicOff       Property   string StandoutOff {get;set;}
-Underline       Property   string Underlined {get;set;}
-Underline Off   Property   string UnderlinedOff {get;set;}
+   TypeName: System.Management.Automation.PSStyle
+
+Name             MemberType Definition
+----             ---------- ----------
+Equals           Method     bool Equals(System.Object obj)
+FormatHyperlink  Method     string FormatHyperlink(string text, uri link)
+GetHashCode      Method     int GetHashCode()
+GetType          Method     type GetType()
+ToString         Method     string ToString()
+Background       Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;}
+Blink            Property   string Blink {get;}
+BlinkOff         Property   string BlinkOff {get;}
+Bold             Property   string Bold {get;}
+BoldOff          Property   string BoldOff {get;}
+Foreground       Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;}
+Formatting       Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;}
+Hidden           Property   string Hidden {get;}
+HiddenOff        Property   string HiddenOff {get;}
+Italic           Property   string Italic {get;}
+ItalicOff        Property   string ItalicOff {get;}
+OutputRendering  Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Progress         Property   System.Management.Automation.PSStyle+ProgressConfiguration Progress {get;}
+Reset            Property   string Reset {get;}
+Reverse          Property   string Reverse {get;}
+ReverseOff       Property   string ReverseOff {get;}
+Strikethrough    Property   string Strikethrough {get;}
+StrikethroughOff Property   string StrikethroughOff {get;}
+Underline        Property   string Underline {get;}
+UnderlineOff     Property   string UnderlineOff {get;}
 ```
 
 Bas medlemmarna returnerar strängar av ANSI escape-sekvenser som är mappade till deras namn. Värdena kan anges för att tillåta anpassning.
@@ -117,6 +127,8 @@ Tillsammans med åtkomst till `$PSStyle` , introducerar detta ändringar i Power
 - `StringDecorated Substring(int contentLength)` Metoden returnerar en under sträng som börjar vid indexet 0 upp till innehålls längden som inte är en del av ANSI escape-sekvenser. Detta krävs för tabellformatering för att trunkera strängar och bevara ANSI escape-sekvenser som inte tar upp ett utskrivbart tecken utrymme.
 - `string ToString()` metoden förblir densamma och returnerar strängens klartext-version.
 - `string ToString(bool Ansi)` Metoden returnerar rå ANSI Embedded-sträng om `Ansi` parametern är true. Annars returneras en klar text version med ANSI escape-sekvenser.
+
+`FormatHyperlink(string text, uri link)`Returnerar en sträng som innehåller ANSI escape-sekvens som används för att dekorera hyperlänkar. Vissa Terminal-värdar, t. ex. [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701), stöder den här markeringen, vilket gör att den återgivna texten går att klicka på i terminalen.
 
 ## <a name="psansiprogress"></a>PSAnsiProgress
 

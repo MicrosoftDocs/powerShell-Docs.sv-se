@@ -6,12 +6,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 16c61b1fd442eb68c458c3b524a8fc55d5eedcb6
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: de039877825a15f0ddf48ba7095b9cce710ec22b
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710818"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685564"
 ---
 # Get-AuthenticodeSignature
 
@@ -40,7 +40,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 
 ## BESKRIVNING
 
-`Get-AuthenticodeSignature`Cmdleten hämtar information om Authenticode-signaturen för en fil eller ett fil innehåll som en byte mat ris. Om filen inte är signerad hämtas informationen, men fälten är tomma.
+`Get-AuthenticodeSignature`Cmdleten hämtar information om Authenticode-signaturen för en fil eller ett fil innehåll som en byte mat ris.
+Om filen är både inbäddad signerad och Windows Catalog signerad, används Windows Catalog-signaturen.
+Om filen inte är signerad hämtas informationen, men fälten är tomma.
 
 ## EXEMPEL
 
