@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/09/2021
 ms.topic: reference
 title: Ge stöd för jobb
 description: Ge stöd för jobb
-ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1528f5d934605caa4009688845a6caa7b95b86a3
+ms.sourcegitcommit: e679533f966f4e97cddae24531a22436da13610c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92666985"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532126"
 ---
 # <a name="how-to-support-jobs"></a>Ge stöd för jobb
 
@@ -32,7 +32,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. Skapa ett objekt som härleds från klassen [system. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) . Det här objektet kan vara ett anpassat jobb objekt eller något av jobb objekt som tillhandahålls av Windows PowerShell, till exempel ett [system. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -objekt.
+1. Skapa ett objekt som härleds från klassen [system. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) . Det här objektet kan vara ett anpassat jobb objekt eller något av jobb objekt som tillhandahålls av Windows PowerShell, till exempel ett [system. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -objekt.
 
     I följande exempel visas ett anpassat jobb objekt.
 
@@ -42,7 +42,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. I en post bearbetnings metod lägger du till en `if` instruktion för att identifiera om cmdleten ska köras som ett jobb. I följande kod används metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
+1. I en post bearbetnings metod lägger du till en `if` instruktion för att identifiera om cmdleten ska köras som ett jobb. I följande kod används metoden [system. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
     ```csharp
     protected override void ProcessRecord()
@@ -69,7 +69,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. Implementera jobb klassen för anpassade jobb objekt.
+1. Implementera jobb klassen för anpassade jobb objekt.
 
     ```csharp
     private class SampleJob : Job
@@ -126,7 +126,7 @@ Det här exemplet visar hur du stöder jobb när du skriver-cmdletar. Om du vill
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. Om cmdleten utför arbetet anropar du metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) för att returnera ett process objekt till pipelinen. Om arbetet utförs som ett jobb lägger du till ett underordnat jobb i jobbet.
+1. Om cmdleten utför arbetet anropar du metoden [system. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) för att returnera ett process objekt till pipelinen. Om arbetet utförs som ett jobb lägger du till ett underordnat jobb i jobbet.
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -209,6 +209,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// Specify the AsJob parameter. This parameter indicates
     /// whether the cmdlet should retrieve the processes internally
     /// or return a Job object that retrieves the processes.
+    /// </summary>
     [Parameter()]
     public SwitchParameter AsJob
     {
