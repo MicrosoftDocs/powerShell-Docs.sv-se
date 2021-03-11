@@ -2,12 +2,12 @@
 title: Supportlängd för PowerShell Core
 description: Information om principerna som styr support för PowerShell
 ms.date: 11/11/2020
-ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
-ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
+ms.openlocfilehash: a11c4df1f105364307b8a99ffe9b0cc7e9c29122
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98105187"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771485"
 ---
 # <a name="powershell-support-lifecycle"></a>Support livs cykel för PowerShell
 
@@ -131,11 +131,15 @@ Mer information finns i den [about_Windows_Compatibility][] artikeln och i [list
 PowerShell följer [villkoren för Microsoft Security Servicing för Windows][].
 I tabellen nedan beskrivs de funktioner som uppfyller underhålls villkoren och de som inte gör det.
 
-| Funktion                          | Typ             |
-|----------------------------------|------------------|
-| Körnings princip                 | Skydd i djupet |
-| System låsning – med AppLocker | Skydd i djupet |
-| System låsning – med WDAC      | Säkerhetsfunktion |
+|                  Funktion                   |       Typ       |
+| ------------------------------------------ | ---------------- |
+| Körnings princip                           | Skydd i djupet |
+| System låsning – med AppLocker           | Skydd i djupet |
+| Begränsat språk läge – med AppLocker | Skydd i djupet |
+| System låsning – med WDAC                | Säkerhetsfunktion |
+| Begränsat språk läge – med WDAC      | Säkerhetsfunktion |
+
+Mer information om AppLocker och Windows Defender Application Control (WDAC) finns i [program kontroller för Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control).
 
 ## <a name="release-history"></a>Versions historik
 

@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: aea54dfa2ade8a9b7b67ca82fb0d6365e6eea3c4
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: bada911409d227a56ba53d44b0a64bcdf73c8959
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391348"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771451"
 ---
 # Set-StrictMode
 
@@ -139,7 +139,7 @@ Utan version 2,0 returnerar referensen till den icke-befintliga **månads** egen
 
 ### Exempel 3: Aktivera strikt läge som version 3,0
 
-Med strikt läge inställt på **av** , ogiltigt eller utanför intervall index resulterar resultatet av null-värden.
+Med strikt läge inställt på **av**, ogiltigt eller utanför intervall index resulterar resultatet av null-värden.
 
 ```powershell
 # Strict mode is off by default.
@@ -192,7 +192,7 @@ Anger de villkor som orsakar ett fel i strikt läge. Den här parametern accepte
 
 De effektiva värdena för den här parametern är:
 
-- 1,0
+- 1.0
   - Förhindrar referenser till oinitierade variabler, förutom oinitierade variabler i strängar.
 - 2.0
   - Förhindrar referenser till oinitierade variabler. Detta inkluderar oinitierade variabler i strängar.
@@ -238,6 +238,8 @@ Du kan inte skicka pipe-ininformation till denna cmdlet.
 Denna cmdlet returnerar inga utdata.
 
 ## ANTECKNINGAR
+
+Medan `Set-StrictMode` **versions** parametern accepterar värden som är större än `3.0` , finns det inga ytterligare regler definierade för något högre än `3.0` .
 
 `Set-StrictMode` är endast effektivt i det omfång där det har angetts och i dess underordnade omfång. Mer information om omfång i PowerShell finns [about_Scopes](about/about_Scopes.md).
 

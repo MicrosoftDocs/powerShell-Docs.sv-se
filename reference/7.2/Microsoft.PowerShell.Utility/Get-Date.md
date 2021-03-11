@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
-ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
+ms.openlocfilehash: bb3c3686310440d9f75d36ca1c83fb60066f5d6a
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99975064"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771504"
 ---
 # Get-Date
 
@@ -546,8 +546,8 @@ Giltiga **UFormat-specificerare** visas i följande tabell:
 | `%d` | Dag i månaden – 2 siffror                                             | 05                       |
 | `%e` | Dag i månaden – föregås av ett blank steg om bara en siffra           | \<space\>5               |
 | `%F` | Datum i åååå-mm-dd-format, motsvarar% Y-% m-% d (ISO 8601-datum format) | 2019-06-27               |
-| `%G` | Samma som "Y"                                                             |                          |
-| `%g` | Samma som "y"                                                             |                          |
+| `%G` | ISO-vecko datum år (år som innehåller torsdag i veckan)               |                          |
+| `%g` | Samma som "G"-2 siffror                                                  |                          |
 | `%H` | Timme i 24-timmarsformat                                                  | 17                       |
 | `%h` | Samma som "b"                                                             |                          |
 | `%I` | Timme i 12-timmarsformat                                                  | 05                       |

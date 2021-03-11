@@ -2,16 +2,16 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: 58261830ca65da295aeb85cda22d0a78762e2502
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 007c2cd044ac91a29b40f5a49e84482d7523d3ca
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710866"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771468"
 ---
 # Set-StrictMode
 
@@ -191,7 +191,7 @@ Anger de villkor som orsakar ett fel i strikt läge. Den här parametern accepte
 
 De effektiva värdena för den här parametern är:
 
-- 1,0
+- 1.0
   - Förhindrar referenser till oinitierade variabler, förutom oinitierade variabler i strängar.
 - 2.0
   - Förhindrar referenser till oinitierade variabler. Detta inkluderar oinitierade variabler i strängar.
@@ -226,17 +226,19 @@ Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -
 
 ## INDATA
 
-### Inga
+### Inget
 
 Du kan inte skicka pipe-ininformation till denna cmdlet.
 
 ## UTDATA
 
-### Inga
+### Inget
 
 Denna cmdlet returnerar inga utdata.
 
 ## ANTECKNINGAR
+
+Medan `Set-StrictMode` **versions** parametern accepterar värden som är större än `3.0` , finns det inga ytterligare regler definierade för något högre än `3.0` .
 
 `Set-StrictMode` är endast effektivt i det omfång där det har angetts och i dess underordnade omfång. Mer information om omfång i PowerShell finns [about_Scopes](about/about_Scopes.md).
 
