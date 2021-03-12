@@ -2,15 +2,15 @@
 description: Beskriver nyckelordet Throw, som genererar ett avslutande fel.
 Locale: en-US
 ms.date: 12/01/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Throw
-ms.openlocfilehash: 2984e0a9e5f470594dd1e5987b69b92f91ce4913
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: bef005f47583523f69a8b25651eb0ee5bfc5b224
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710920"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195855"
 ---
 # <a name="about-throw"></a>Om Throw
 

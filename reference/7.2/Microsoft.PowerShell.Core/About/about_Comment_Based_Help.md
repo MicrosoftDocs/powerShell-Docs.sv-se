@@ -1,15 +1,16 @@
 ---
 description: Beskriver hur du skriver kommentarer baserade hjälp avsnitt för funktioner och skript.
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 055f2358a8e9d3868c9fd1024be1f6adf5520356
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b676870c5d8879700b84339f9f0b74a18b079692
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709289"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195713"
 ---
 # <a name="about-comment-based-help"></a>Om kommenterings-baserad hjälp
 
@@ -288,7 +289,7 @@ Mer information om cmdlet Help XML-baserade hjälp fil format finns i [så här 
 
 Namn, syntax, parameter lista, parameter-Attribute tabell, vanliga parametrar och anmärkningar genereras automatiskt av `Get-Help` cmdleten.
 
-### <a name="name"></a>Namn
+### <a name="name"></a>Name
 
 Avsnittet **Name** i ett funktions hjälp avsnitt tas från funktions namnet i Function-syntaxen. **Namnet** på ett skript hjälp avsnitt tas från skript fil namnet. Om du vill ändra namnet eller dess versaler ändrar du syntaxen för funktionen eller skript fil namnet.
 

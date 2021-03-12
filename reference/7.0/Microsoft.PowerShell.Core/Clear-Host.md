@@ -2,17 +2,17 @@
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
-Module Name: ''
+Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
-ms.openlocfilehash: d4fd2908f5577765d4f453589c5ac325723e2e3a
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 592ae387737981c5b6510399d732b9037437257f
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93261583"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194825"
 ---
 # Clear-Host
 
@@ -93,7 +93,7 @@ Du kan inte skicka pipe-ininformation till `Clear-Host` .
 
 ## ANTECKNINGAR
 
-`Clear-Host` är en enkel funktion, inte en avancerad funktion. Därför kan du inte använda vanliga parametrar, t. ex. **fel sökning** , i ett `Clear-Host` kommando.
+`Clear-Host` är en enkel funktion, inte en avancerad funktion. Därför kan du inte använda vanliga parametrar, t. ex. **fel sökning**, i ett `Clear-Host` kommando.
 
 ## RELATERADE LÄNKAR
 

@@ -7,18 +7,18 @@ Module Name: PSReadLine
 ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
-ms.openlocfilehash: da71d4ef896befaadd7ed64f9a013dc19508a54c
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 9425f72ce4002fa871ef6b687d76f92ddf6b489e
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709043"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193896"
 ---
 # PSReadLine-modul
 
 ## Beskrivning
 
-Modulen PSReadLine innehåller cmdletar som gör att du kan anpassa redigerings miljön för kommando tolken i PowerShell. De här artiklarna dokumenten PSReadLine v 2.0. Den här versionen levereras i PowerShell V6 och Windows 10 oktober 2018-uppdateringen (build 1809).
+Modulen PSReadLine innehåller cmdletar som gör att du kan anpassa redigerings miljön för kommando tolken i PowerShell. De här artiklarna dokumenterar den aktuella Beta versionen av PSReadLine v-2.2.0.
 
 > [!NOTE]
 > Från och med PowerShell 7,0 hoppar PowerShell över automatisk inläsning av PSReadLine i Windows om ett skärm läsar program har identifierats. PSReadLine fungerar för närvarande inte bra med skärm läsare. Standard åter givningen och formateringen av PowerShell 7,0 i Windows fungerar korrekt. Du kan läsa in modulen manuellt om det behövs.

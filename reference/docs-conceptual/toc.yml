@@ -19,7 +19,7 @@
       href: install/installing-powershell-core-on-linux.md
     - name: Installera PowerShell i macOS
       href: install/installing-powershell-core-on-macos.md
-    - name: Installera PowerShell i ARM
+    - name: Installera PowerShell på arm
       href: install/powershell-core-on-arm.md
     - name: Använda PowerShell i Docker
       href: install/PowerShell-in-Docker.md
