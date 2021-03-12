@@ -1,32 +1,33 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-String
-ms.openlocfilehash: f737c8025f9fda3611a44177bd19e928f596d0aa
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 96f4385c899a50a361fb6df55b40d1ce77225a5b
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94708602"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196301"
 ---
-# <span data-ttu-id="b36e0-102">Join-String</span><span class="sxs-lookup"><span data-stu-id="b36e0-102">Join-String</span></span>
+# <span data-ttu-id="ed315-102">Join-String</span><span class="sxs-lookup"><span data-stu-id="ed315-102">Join-String</span></span>
 
-## <span data-ttu-id="b36e0-103">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="b36e0-103">SYNOPSIS</span></span>
-<span data-ttu-id="b36e0-104">Kombinerar objekt från pipelinen till en enda sträng.</span><span class="sxs-lookup"><span data-stu-id="b36e0-104">Combines objects from the pipeline into a single string.</span></span>
+## <span data-ttu-id="ed315-103">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="ed315-103">SYNOPSIS</span></span>
+<span data-ttu-id="ed315-104">Kombinerar objekt från pipelinen till en enda sträng.</span><span class="sxs-lookup"><span data-stu-id="ed315-104">Combines objects from the pipeline into a single string.</span></span>
 
-## <span data-ttu-id="b36e0-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="b36e0-105">SYNTAX</span></span>
+## <span data-ttu-id="ed315-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ed315-105">SYNTAX</span></span>
 
-### <span data-ttu-id="b36e0-106">Standard (standard)</span><span class="sxs-lookup"><span data-stu-id="b36e0-106">Default (Default)</span></span>
+### <span data-ttu-id="ed315-106">Standard (standard)</span><span class="sxs-lookup"><span data-stu-id="ed315-106">Default (Default)</span></span>
 
 ```
 Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
  [-OutputSuffix <String>] [-UseCulture] [-InputObject <PSObject[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b36e0-107">SingleQuote</span><span class="sxs-lookup"><span data-stu-id="b36e0-107">SingleQuote</span></span>
+### <span data-ttu-id="ed315-107">SingleQuote</span><span class="sxs-lookup"><span data-stu-id="ed315-107">SingleQuote</span></span>
 
 ```
 Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
@@ -34,7 +35,7 @@ Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-Outpu
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b36e0-108">DoubleQuote</span><span class="sxs-lookup"><span data-stu-id="b36e0-108">DoubleQuote</span></span>
+### <span data-ttu-id="ed315-108">DoubleQuote</span><span class="sxs-lookup"><span data-stu-id="ed315-108">DoubleQuote</span></span>
 
 ```
 Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
@@ -42,7 +43,7 @@ Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-Outpu
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b36e0-109">Format</span><span class="sxs-lookup"><span data-stu-id="b36e0-109">Format</span></span>
+### <span data-ttu-id="ed315-109">Format</span><span class="sxs-lookup"><span data-stu-id="ed315-109">Format</span></span>
 
 ```
 Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-OutputPrefix <String>]
@@ -50,24 +51,24 @@ Join-String [[-Property] <PSPropertyExpression>] [[-Separator] <String>] [-Outpu
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b36e0-110">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="b36e0-110">DESCRIPTION</span></span>
+## <span data-ttu-id="ed315-110">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="ed315-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="b36e0-111">`Join-String`Cmdleten ansluter till eller kombinerar text från pipeline-objekt till en enda sträng.</span><span class="sxs-lookup"><span data-stu-id="b36e0-111">The `Join-String` cmdlet joins, or combines, text from pipeline objects into a single string.</span></span>
+<span data-ttu-id="ed315-111">`Join-String`Cmdleten ansluter till eller kombinerar text från pipeline-objekt till en enda sträng.</span><span class="sxs-lookup"><span data-stu-id="ed315-111">The `Join-String` cmdlet joins, or combines, text from pipeline objects into a single string.</span></span>
 
-<span data-ttu-id="b36e0-112">Om inga parametrar anges, konverteras pipeliniska objekt till en sträng och kopplas till standard avgränsaren `$OFS` .</span><span class="sxs-lookup"><span data-stu-id="b36e0-112">If no parameters are specified, the pipeline objects are converted to a string and joined with the default separator `$OFS`.</span></span>
+<span data-ttu-id="ed315-112">Om inga parametrar anges, konverteras pipeliniska objekt till en sträng och kopplas till standard avgränsaren `$OFS` .</span><span class="sxs-lookup"><span data-stu-id="ed315-112">If no parameters are specified, the pipeline objects are converted to a string and joined with the default separator `$OFS`.</span></span>
 
-<span data-ttu-id="b36e0-113">Genom att ange ett egenskaps namn konverteras egenskapens värde till en sträng och sammanfogas till en sträng.</span><span class="sxs-lookup"><span data-stu-id="b36e0-113">By specifying a property name, the property's value is converted to a string and joined into a string.</span></span>
+<span data-ttu-id="ed315-113">Genom att ange ett egenskaps namn konverteras egenskapens värde till en sträng och sammanfogas till en sträng.</span><span class="sxs-lookup"><span data-stu-id="ed315-113">By specifying a property name, the property's value is converted to a string and joined into a string.</span></span>
 
-<span data-ttu-id="b36e0-114">I stället för ett egenskaps namn kan ett skript block användas.</span><span class="sxs-lookup"><span data-stu-id="b36e0-114">Instead of a property name, a script block can be used.</span></span> <span data-ttu-id="b36e0-115">Skript blockets resultat konverteras till en sträng innan det kopplas till resultatet.</span><span class="sxs-lookup"><span data-stu-id="b36e0-115">The script block's result is converted to a string before it's joined to form the result.</span></span> <span data-ttu-id="b36e0-116">Den kan antingen kombinera texten i ett objekts egenskap eller resultatet av det objekt som konverterats till en sträng.</span><span class="sxs-lookup"><span data-stu-id="b36e0-116">It can either combine the text of an object's property or the result of the object that was converted to a string.</span></span>
+<span data-ttu-id="ed315-114">I stället för ett egenskaps namn kan ett skript block användas.</span><span class="sxs-lookup"><span data-stu-id="ed315-114">Instead of a property name, a script block can be used.</span></span> <span data-ttu-id="ed315-115">Skript blockets resultat konverteras till en sträng innan det kopplas till resultatet.</span><span class="sxs-lookup"><span data-stu-id="ed315-115">The script block's result is converted to a string before it's joined to form the result.</span></span> <span data-ttu-id="ed315-116">Den kan antingen kombinera texten i ett objekts egenskap eller resultatet av det objekt som konverterats till en sträng.</span><span class="sxs-lookup"><span data-stu-id="ed315-116">It can either combine the text of an object's property or the result of the object that was converted to a string.</span></span>
 
-<span data-ttu-id="b36e0-117">Denna cmdlet introducerades i PowerShell 6,2.</span><span class="sxs-lookup"><span data-stu-id="b36e0-117">This cmdlet was introduced in PowerShell 6.2.</span></span>
+<span data-ttu-id="ed315-117">Denna cmdlet introducerades i PowerShell 6,2.</span><span class="sxs-lookup"><span data-stu-id="ed315-117">This cmdlet was introduced in PowerShell 6.2.</span></span>
 
-## <span data-ttu-id="b36e0-118">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="b36e0-118">EXAMPLES</span></span>
+## <span data-ttu-id="ed315-118">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="ed315-118">EXAMPLES</span></span>
 
-### <span data-ttu-id="b36e0-119">Exempel 1: Anslut till katalog namn</span><span class="sxs-lookup"><span data-stu-id="b36e0-119">Example 1: Join directory names</span></span>
+### <span data-ttu-id="ed315-119">Exempel 1: Anslut till katalog namn</span><span class="sxs-lookup"><span data-stu-id="ed315-119">Example 1: Join directory names</span></span>
 
 <!-- markdownlint-disable MD038 -->
-<span data-ttu-id="b36e0-120">Det här exemplet ansluter till katalog namn, omsluter utdata i dubbla citat tecken och avgränsar katalog namnen med kommatecken och blank steg ( `, ` ).</span><span class="sxs-lookup"><span data-stu-id="b36e0-120">This example joins directory names, wraps the output in double-quotes, and separates the directory names with a comma and space (`, `).</span></span> <span data-ttu-id="b36e0-121">Utdata är ett String-objekt.</span><span class="sxs-lookup"><span data-stu-id="b36e0-121">The output is a string object.</span></span>
+<span data-ttu-id="ed315-120">Det här exemplet ansluter till katalog namn, omsluter utdata i dubbla citat tecken och avgränsar katalog namnen med kommatecken och blank steg ( `, ` ).</span><span class="sxs-lookup"><span data-stu-id="ed315-120">This example joins directory names, wraps the output in double-quotes, and separates the directory names with a comma and space (`, `).</span></span> <span data-ttu-id="ed315-121">Utdata är ett String-objekt.</span><span class="sxs-lookup"><span data-stu-id="ed315-121">The output is a string object.</span></span>
 
 ```powershell
 Get-ChildItem -Directory C:\ | Join-String -Property Name -DoubleQuote -Separator ', '
@@ -77,15 +78,15 @@ Get-ChildItem -Directory C:\ | Join-String -Property Name -DoubleQuote -Separato
 "PerfLogs", "Program Files", "Program Files (x86)", "Users", "Windows"
 ```
 
-<span data-ttu-id="b36e0-122">`Get-ChildItem` använder **katalog** parametern för att hämta alla katalog namn för `C:\` enheten.</span><span class="sxs-lookup"><span data-stu-id="b36e0-122">`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.</span></span>
-<span data-ttu-id="b36e0-123">Objekten skickas ned pipelinen till `Join-String` .</span><span class="sxs-lookup"><span data-stu-id="b36e0-123">The objects are sent down the pipeline to `Join-String`.</span></span> <span data-ttu-id="b36e0-124">**Egenskaps** parametern anger katalog namnen.</span><span class="sxs-lookup"><span data-stu-id="b36e0-124">The **Property** parameter specifies the directory names.</span></span> <span data-ttu-id="b36e0-125">Parametern **DoubleQuote** radbryts katalog namnen med dubbla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="b36e0-125">The **DoubleQuote** parameter wraps the directory names with double-quote marks.</span></span>
-<span data-ttu-id="b36e0-126">**Avgränsnings** parametern anger att du vill använda ett kommatecken och blank steg ( `, ` ) för att avgränsa katalog namnen.</span><span class="sxs-lookup"><span data-stu-id="b36e0-126">The **Separator** parameter specifies to use a comma and space (`, `) to separate the directory names.</span></span>
+<span data-ttu-id="ed315-122">`Get-ChildItem` använder **katalog** parametern för att hämta alla katalog namn för `C:\` enheten.</span><span class="sxs-lookup"><span data-stu-id="ed315-122">`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.</span></span>
+<span data-ttu-id="ed315-123">Objekten skickas ned pipelinen till `Join-String` .</span><span class="sxs-lookup"><span data-stu-id="ed315-123">The objects are sent down the pipeline to `Join-String`.</span></span> <span data-ttu-id="ed315-124">**Egenskaps** parametern anger katalog namnen.</span><span class="sxs-lookup"><span data-stu-id="ed315-124">The **Property** parameter specifies the directory names.</span></span> <span data-ttu-id="ed315-125">Parametern **DoubleQuote** radbryts katalog namnen med dubbla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="ed315-125">The **DoubleQuote** parameter wraps the directory names with double-quote marks.</span></span>
+<span data-ttu-id="ed315-126">**Avgränsnings** parametern anger att du vill använda ett kommatecken och blank steg ( `, ` ) för att avgränsa katalog namnen.</span><span class="sxs-lookup"><span data-stu-id="ed315-126">The **Separator** parameter specifies to use a comma and space (`, `) to separate the directory names.</span></span>
 
-<span data-ttu-id="b36e0-127">`Get-ChildItem`Objekten är **system. io. DirectoryInfo** och `Join-String` konverterar objekten till **system. String**.</span><span class="sxs-lookup"><span data-stu-id="b36e0-127">The `Get-ChildItem` objects are **System.IO.DirectoryInfo** and `Join-String` converts the objects to **System.String**.</span></span>
+<span data-ttu-id="ed315-127">`Get-ChildItem`Objekten är **system. io. DirectoryInfo** och `Join-String` konverterar objekten till **system. String**.</span><span class="sxs-lookup"><span data-stu-id="ed315-127">The `Get-ChildItem` objects are **System.IO.DirectoryInfo** and `Join-String` converts the objects to **System.String**.</span></span>
 
-### <span data-ttu-id="b36e0-128">Exempel 2: Använd en egenskaps under sträng för att ansluta katalog namn</span><span class="sxs-lookup"><span data-stu-id="b36e0-128">Example 2: Use a property substring to join directory names</span></span>
+### <span data-ttu-id="ed315-128">Exempel 2: Använd en egenskaps under sträng för att ansluta katalog namn</span><span class="sxs-lookup"><span data-stu-id="ed315-128">Example 2: Use a property substring to join directory names</span></span>
 
-<span data-ttu-id="b36e0-129">I det här exemplet används en substring-metod för att hämta de första fyra bokstäverna i katalog namn, omsluter utdata i enkla citat tecken och avgränsar katalog namnen med semikolon ( `;` ).</span><span class="sxs-lookup"><span data-stu-id="b36e0-129">This example uses a substring method to get the first four letters of directory names, wraps the output in single-quotes, and separates the directory names with a semicolon (`;`).</span></span>
+<span data-ttu-id="ed315-129">I det här exemplet används en substring-metod för att hämta de första fyra bokstäverna i katalog namn, omsluter utdata i enkla citat tecken och avgränsar katalog namnen med semikolon ( `;` ).</span><span class="sxs-lookup"><span data-stu-id="ed315-129">This example uses a substring method to get the first four letters of directory names, wraps the output in single-quotes, and separates the directory names with a semicolon (`;`).</span></span>
 
 ```powershell
 Get-ChildItem -Directory C:\ | Join-String -Property {$_.Name.SubString(0,4)} -SingleQuote -Separator ';'
@@ -95,16 +96,16 @@ Get-ChildItem -Directory C:\ | Join-String -Property {$_.Name.SubString(0,4)} -S
 'Perf';'Prog';'Prog';'User';'Wind'
 ```
 
-<span data-ttu-id="b36e0-130">`Get-ChildItem` använder **katalog** parametern för att hämta alla katalog namn för `C:\` enheten.</span><span class="sxs-lookup"><span data-stu-id="b36e0-130">`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.</span></span>
-<span data-ttu-id="b36e0-131">Objekten skickas ned pipelinen till `Join-String` .</span><span class="sxs-lookup"><span data-stu-id="b36e0-131">The objects are sent down the pipeline to `Join-String`.</span></span>
+<span data-ttu-id="ed315-130">`Get-ChildItem` använder **katalog** parametern för att hämta alla katalog namn för `C:\` enheten.</span><span class="sxs-lookup"><span data-stu-id="ed315-130">`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.</span></span>
+<span data-ttu-id="ed315-131">Objekten skickas ned pipelinen till `Join-String` .</span><span class="sxs-lookup"><span data-stu-id="ed315-131">The objects are sent down the pipeline to `Join-String`.</span></span>
 
-<span data-ttu-id="b36e0-132">**Egenskaps** parameterns skript block använder automatisk variabel ( `$_` ) för att ange varje objekts **namn** egenskap under sträng.</span><span class="sxs-lookup"><span data-stu-id="b36e0-132">The **Property** parameter script block uses automatic variable (`$_`) to specify each object's **Name** property substring.</span></span> <span data-ttu-id="b36e0-133">Under strängen hämtar de fyra första bokstäverna i varje katalog namn.</span><span class="sxs-lookup"><span data-stu-id="b36e0-133">The substring gets the first four letters of each directory name.</span></span> <span data-ttu-id="b36e0-134">Under strängen anger tecken start-och slut position.</span><span class="sxs-lookup"><span data-stu-id="b36e0-134">The substring specifies the character start and end positions.</span></span> <span data-ttu-id="b36e0-135">Parametern **SingleQuote** radbryts katalog namnen med enkla tecken.</span><span class="sxs-lookup"><span data-stu-id="b36e0-135">The **SingleQuote** parameter wraps the directory names with single-quote marks.</span></span> <span data-ttu-id="b36e0-136">**Avgränsnings** parametern anger att ett semikolon ( `;` ) ska användas för att avgränsa katalog namnen.</span><span class="sxs-lookup"><span data-stu-id="b36e0-136">The **Separator** parameter specifies to use a semicolon (`;`) to separate the directory names.</span></span>
+<span data-ttu-id="ed315-132">**Egenskaps** parameterns skript block använder automatisk variabel ( `$_` ) för att ange varje objekts **namn** egenskap under sträng.</span><span class="sxs-lookup"><span data-stu-id="ed315-132">The **Property** parameter script block uses automatic variable (`$_`) to specify each object's **Name** property substring.</span></span> <span data-ttu-id="ed315-133">Under strängen hämtar de fyra första bokstäverna i varje katalog namn.</span><span class="sxs-lookup"><span data-stu-id="ed315-133">The substring gets the first four letters of each directory name.</span></span> <span data-ttu-id="ed315-134">Under strängen anger tecken start-och slut position.</span><span class="sxs-lookup"><span data-stu-id="ed315-134">The substring specifies the character start and end positions.</span></span> <span data-ttu-id="ed315-135">Parametern **SingleQuote** radbryts katalog namnen med enkla tecken.</span><span class="sxs-lookup"><span data-stu-id="ed315-135">The **SingleQuote** parameter wraps the directory names with single-quote marks.</span></span> <span data-ttu-id="ed315-136">**Avgränsnings** parametern anger att ett semikolon ( `;` ) ska användas för att avgränsa katalog namnen.</span><span class="sxs-lookup"><span data-stu-id="ed315-136">The **Separator** parameter specifies to use a semicolon (`;`) to separate the directory names.</span></span>
 
-<span data-ttu-id="b36e0-137">Mer information om automatiska variabler och del strängar finns i [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md) och under [sträng](/dotnet/api/system.string.substring).</span><span class="sxs-lookup"><span data-stu-id="b36e0-137">For more information about automatic variables and substrings, see [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md) and [Substring](/dotnet/api/system.string.substring).</span></span>
+<span data-ttu-id="ed315-137">Mer information om automatiska variabler och del strängar finns i [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md) och under [sträng](/dotnet/api/system.string.substring).</span><span class="sxs-lookup"><span data-stu-id="ed315-137">For more information about automatic variables and substrings, see [about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md) and [Substring](/dotnet/api/system.string.substring).</span></span>
 
-### <span data-ttu-id="b36e0-138">Exempel 3: Visa sammanfogning av utdata på en separat rad</span><span class="sxs-lookup"><span data-stu-id="b36e0-138">Example 3: Display join output on a separate line</span></span>
+### <span data-ttu-id="ed315-138">Exempel 3: Visa sammanfogning av utdata på en separat rad</span><span class="sxs-lookup"><span data-stu-id="ed315-138">Example 3: Display join output on a separate line</span></span>
 
-<span data-ttu-id="b36e0-139">Det här exemplet ansluter tjänst namn till varje tjänst på en separat rad och indragna av en flik.</span><span class="sxs-lookup"><span data-stu-id="b36e0-139">This example joins service names with each service on a separate line and indented by a tab.</span></span>
+<span data-ttu-id="ed315-139">Det här exemplet ansluter tjänst namn till varje tjänst på en separat rad och indragna av en flik.</span><span class="sxs-lookup"><span data-stu-id="ed315-139">This example joins service names with each service on a separate line and indented by a tab.</span></span>
 
 ```powershell
 Get-Service -Name se* | Join-String -Property Name -Separator "`r`n`t" -OutputPrefix "Services:`n`t"
@@ -123,17 +124,17 @@ Services:
     SessionEnv
 ```
 
-<span data-ttu-id="b36e0-140">`Get-Service` använder parametern **Name** med för att ange tjänster som börjar med `se*` .</span><span class="sxs-lookup"><span data-stu-id="b36e0-140">`Get-Service` uses the **Name** parameter with to specify services that begin with `se*`.</span></span> <span data-ttu-id="b36e0-141">Asterisken ( `*` ) är ett jokertecken för alla bokstäver.</span><span class="sxs-lookup"><span data-stu-id="b36e0-141">The asterisk (`*`) is a wildcard for any character.</span></span>
+<span data-ttu-id="ed315-140">`Get-Service` använder parametern **Name** med för att ange tjänster som börjar med `se*` .</span><span class="sxs-lookup"><span data-stu-id="ed315-140">`Get-Service` uses the **Name** parameter with to specify services that begin with `se*`.</span></span> <span data-ttu-id="ed315-141">Asterisken ( `*` ) är ett jokertecken för alla bokstäver.</span><span class="sxs-lookup"><span data-stu-id="ed315-141">The asterisk (`*`) is a wildcard for any character.</span></span>
 
-<span data-ttu-id="b36e0-142">Objekten skickas ned pipelinen till `Join-String` som använder **egenskaps** parametern för att ange tjänst namnen.</span><span class="sxs-lookup"><span data-stu-id="b36e0-142">The objects are sent down the pipeline to `Join-String` that uses the **Property** parameter to specify the service names.</span></span> <span data-ttu-id="b36e0-143">**Avgränsnings** parametern anger tre specialtecken som representerar en vagn retur ( `` `r `` ), ny rad ( `` `n `` ) och TABB ( `` `t `` ).</span><span class="sxs-lookup"><span data-stu-id="b36e0-143">The **Separator** parameter specifies three special characters that represent a carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).</span></span> <span data-ttu-id="b36e0-144">**OutputPrefix** infogar en etikett **tjänst:** med en ny rad och flik före den första raden i utdata.</span><span class="sxs-lookup"><span data-stu-id="b36e0-144">The **OutputPrefix** inserts a label **Services:** with a new line and tab before the first line of output.</span></span>
+<span data-ttu-id="ed315-142">Objekten skickas ned pipelinen till `Join-String` som använder **egenskaps** parametern för att ange tjänst namnen.</span><span class="sxs-lookup"><span data-stu-id="ed315-142">The objects are sent down the pipeline to `Join-String` that uses the **Property** parameter to specify the service names.</span></span> <span data-ttu-id="ed315-143">**Avgränsnings** parametern anger tre specialtecken som representerar en vagn retur ( `` `r `` ), ny rad ( `` `n `` ) och TABB ( `` `t `` ).</span><span class="sxs-lookup"><span data-stu-id="ed315-143">The **Separator** parameter specifies three special characters that represent a carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).</span></span> <span data-ttu-id="ed315-144">**OutputPrefix** infogar en etikett **tjänst:** med en ny rad och flik före den första raden i utdata.</span><span class="sxs-lookup"><span data-stu-id="ed315-144">The **OutputPrefix** inserts a label **Services:** with a new line and tab before the first line of output.</span></span>
 
-<span data-ttu-id="b36e0-145">Mer information om specialtecken finns [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).</span><span class="sxs-lookup"><span data-stu-id="b36e0-145">For more information about special characters, see [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).</span></span>
+<span data-ttu-id="ed315-145">Mer information om specialtecken finns [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).</span><span class="sxs-lookup"><span data-stu-id="ed315-145">For more information about special characters, see [about_Special_Characters](..//microsoft.powershell.core/about/about_special_characters.md).</span></span>
 
-### <span data-ttu-id="b36e0-146">Exempel 4: skapa en klass definition från ett objekt</span><span class="sxs-lookup"><span data-stu-id="b36e0-146">Example 4: Create a class definition from an object</span></span>
+### <span data-ttu-id="ed315-146">Exempel 4: skapa en klass definition från ett objekt</span><span class="sxs-lookup"><span data-stu-id="ed315-146">Example 4: Create a class definition from an object</span></span>
 
-<span data-ttu-id="b36e0-147">I det här exemplet skapas en PowerShell-klass definition med ett befintligt objekt som mall.</span><span class="sxs-lookup"><span data-stu-id="b36e0-147">This example generates a PowerShell class definition using an existing object as a template.</span></span>
+<span data-ttu-id="ed315-147">I det här exemplet skapas en PowerShell-klass definition med ett befintligt objekt som mall.</span><span class="sxs-lookup"><span data-stu-id="ed315-147">This example generates a PowerShell class definition using an existing object as a template.</span></span>
 
-<span data-ttu-id="b36e0-148">I det här kod exemplet används ihopbuntning för att minska rad längden och förbättra läsbarheten.</span><span class="sxs-lookup"><span data-stu-id="b36e0-148">This code sample uses splatting to reduce the line length and improve readability.</span></span> <span data-ttu-id="b36e0-149">Mer information finns i [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).</span><span class="sxs-lookup"><span data-stu-id="b36e0-149">For more information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).</span></span>
+<span data-ttu-id="ed315-148">I det här kod exemplet används ihopbuntning för att minska rad längden och förbättra läsbarheten.</span><span class="sxs-lookup"><span data-stu-id="ed315-148">This code sample uses splatting to reduce the line length and improve readability.</span></span> <span data-ttu-id="ed315-149">Mer information finns i [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).</span><span class="sxs-lookup"><span data-stu-id="ed315-149">For more information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).</span></span>
 
 ```powershell
 $obj = [pscustomobject] @{Name = "Joe"; Age = 42}
@@ -154,11 +155,11 @@ class {
 }
 ```
 
-## <span data-ttu-id="b36e0-150">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="b36e0-150">PARAMETERS</span></span>
+## <span data-ttu-id="ed315-150">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="ed315-150">PARAMETERS</span></span>
 
-### <span data-ttu-id="b36e0-151">-DoubleQuote</span><span class="sxs-lookup"><span data-stu-id="b36e0-151">-DoubleQuote</span></span>
+### <span data-ttu-id="ed315-151">-DoubleQuote</span><span class="sxs-lookup"><span data-stu-id="ed315-151">-DoubleQuote</span></span>
 
-<span data-ttu-id="b36e0-152">Omsluter strängvärdet för varje pipeline-objekt i dubbla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="b36e0-152">Wraps the string value of each pipeline object in double-quotes.</span></span>
+<span data-ttu-id="ed315-152">Omsluter strängvärdet för varje pipeline-objekt i dubbla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="ed315-152">Wraps the string value of each pipeline object in double-quotes.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,9 +173,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-153">– FormatString</span><span class="sxs-lookup"><span data-stu-id="b36e0-153">-FormatString</span></span>
+### <span data-ttu-id="ed315-153">– FormatString</span><span class="sxs-lookup"><span data-stu-id="ed315-153">-FormatString</span></span>
 
-<span data-ttu-id="b36e0-154">En format sträng som anger hur varje objekt ska formateras.</span><span class="sxs-lookup"><span data-stu-id="b36e0-154">A format string that specifies how each item should be formatted.</span></span>
+<span data-ttu-id="ed315-154">En format sträng som anger hur varje objekt ska formateras.</span><span class="sxs-lookup"><span data-stu-id="ed315-154">A format string that specifies how each item should be formatted.</span></span>
 
 ```yaml
 Type: System.String
@@ -188,9 +189,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-155">– InputObject</span><span class="sxs-lookup"><span data-stu-id="b36e0-155">-InputObject</span></span>
+### <span data-ttu-id="ed315-155">– InputObject</span><span class="sxs-lookup"><span data-stu-id="ed315-155">-InputObject</span></span>
 
-<span data-ttu-id="b36e0-156">Anger den text som ska sammanfogas.</span><span class="sxs-lookup"><span data-stu-id="b36e0-156">Specifies the text to be joined.</span></span> <span data-ttu-id="b36e0-157">Ange en variabel som innehåller texten eller Skriv ett kommando eller uttryck som hämtar objekten för att ansluta till strängar.</span><span class="sxs-lookup"><span data-stu-id="b36e0-157">Enter a variable that contains the text, or type a command or expression that gets the objects to join into strings.</span></span>
+<span data-ttu-id="ed315-156">Anger den text som ska sammanfogas.</span><span class="sxs-lookup"><span data-stu-id="ed315-156">Specifies the text to be joined.</span></span> <span data-ttu-id="ed315-157">Ange en variabel som innehåller texten eller Skriv ett kommando eller uttryck som hämtar objekten för att ansluta till strängar.</span><span class="sxs-lookup"><span data-stu-id="ed315-157">Enter a variable that contains the text, or type a command or expression that gets the objects to join into strings.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject[]
@@ -204,9 +205,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-158">-OutputPrefix</span><span class="sxs-lookup"><span data-stu-id="b36e0-158">-OutputPrefix</span></span>
+### <span data-ttu-id="ed315-158">-OutputPrefix</span><span class="sxs-lookup"><span data-stu-id="ed315-158">-OutputPrefix</span></span>
 
-<span data-ttu-id="b36e0-159">Text som infogas före den utgående strängen.</span><span class="sxs-lookup"><span data-stu-id="b36e0-159">Text that's inserted before the output string.</span></span> <span data-ttu-id="b36e0-160">Strängen kan innehålla specialtecken, till exempel vagn retur ( `` `r `` ), rad matning ( `` `n `` ) och TABB ( `` `t `` ).</span><span class="sxs-lookup"><span data-stu-id="b36e0-160">The string can contain special characters such as carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).</span></span>
+<span data-ttu-id="ed315-159">Text som infogas före den utgående strängen.</span><span class="sxs-lookup"><span data-stu-id="ed315-159">Text that's inserted before the output string.</span></span> <span data-ttu-id="ed315-160">Strängen kan innehålla specialtecken, till exempel vagn retur ( `` `r `` ), rad matning ( `` `n `` ) och TABB ( `` `t `` ).</span><span class="sxs-lookup"><span data-stu-id="ed315-160">The string can contain special characters such as carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).</span></span>
 
 ```yaml
 Type: System.String
@@ -220,9 +221,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-161">-OutputSuffix</span><span class="sxs-lookup"><span data-stu-id="b36e0-161">-OutputSuffix</span></span>
+### <span data-ttu-id="ed315-161">-OutputSuffix</span><span class="sxs-lookup"><span data-stu-id="ed315-161">-OutputSuffix</span></span>
 
-<span data-ttu-id="b36e0-162">Text som läggs till i den utgående strängen.</span><span class="sxs-lookup"><span data-stu-id="b36e0-162">Text that's appended to the output string.</span></span> <span data-ttu-id="b36e0-163">Strängen kan innehålla specialtecken, till exempel vagn retur ( `` `r `` ), rad matning ( `` `n `` ) och TABB ( `` `t `` ).</span><span class="sxs-lookup"><span data-stu-id="b36e0-163">The string can contain special characters such as carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).</span></span>
+<span data-ttu-id="ed315-162">Text som läggs till i den utgående strängen.</span><span class="sxs-lookup"><span data-stu-id="ed315-162">Text that's appended to the output string.</span></span> <span data-ttu-id="ed315-163">Strängen kan innehålla specialtecken, till exempel vagn retur ( `` `r `` ), rad matning ( `` `n `` ) och TABB ( `` `t `` ).</span><span class="sxs-lookup"><span data-stu-id="ed315-163">The string can contain special characters such as carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``).</span></span>
 
 ```yaml
 Type: System.String
@@ -236,9 +237,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-164">– Egenskap</span><span class="sxs-lookup"><span data-stu-id="b36e0-164">-Property</span></span>
+### <span data-ttu-id="ed315-164">– Egenskap</span><span class="sxs-lookup"><span data-stu-id="ed315-164">-Property</span></span>
 
-<span data-ttu-id="b36e0-165">Namnet på en egenskap, eller ett egenskaps uttryck, som kommer att projicera pipeline-objektet till text.</span><span class="sxs-lookup"><span data-stu-id="b36e0-165">The name of a property, or a property expression, that will project the pipeline object to text.</span></span>
+<span data-ttu-id="ed315-165">Namnet på en egenskap, eller ett egenskaps uttryck, som kommer att projicera pipeline-objektet till text.</span><span class="sxs-lookup"><span data-stu-id="ed315-165">The name of a property, or a property expression, that will project the pipeline object to text.</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.PSPropertyExpression
@@ -252,9 +253,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-166">-Avgränsare</span><span class="sxs-lookup"><span data-stu-id="b36e0-166">-Separator</span></span>
+### <span data-ttu-id="ed315-166">-Avgränsare</span><span class="sxs-lookup"><span data-stu-id="ed315-166">-Separator</span></span>
 
-<span data-ttu-id="b36e0-167">Text eller tecken, till exempel ett komma eller semikolon som infogas mellan texten för varje pipeline-objekt.</span><span class="sxs-lookup"><span data-stu-id="b36e0-167">Text or characters such as a comma or semicolon that's inserted between the text for each pipeline object.</span></span>
+<span data-ttu-id="ed315-167">Text eller tecken, till exempel ett komma eller semikolon som infogas mellan texten för varje pipeline-objekt.</span><span class="sxs-lookup"><span data-stu-id="ed315-167">Text or characters such as a comma or semicolon that's inserted between the text for each pipeline object.</span></span>
 
 ```yaml
 Type: System.String
@@ -268,9 +269,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-168">-SingleQuote</span><span class="sxs-lookup"><span data-stu-id="b36e0-168">-SingleQuote</span></span>
+### <span data-ttu-id="ed315-168">-SingleQuote</span><span class="sxs-lookup"><span data-stu-id="ed315-168">-SingleQuote</span></span>
 
-<span data-ttu-id="b36e0-169">Radbryter strängvärdet för varje pipeline-objekt i enkla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="b36e0-169">Wraps the string value of each pipeline object in single quotes.</span></span>
+<span data-ttu-id="ed315-169">Radbryter strängvärdet för varje pipeline-objekt i enkla citat tecken.</span><span class="sxs-lookup"><span data-stu-id="ed315-169">Wraps the string value of each pipeline object in single quotes.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -284,9 +285,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-170">-UseCulture</span><span class="sxs-lookup"><span data-stu-id="b36e0-170">-UseCulture</span></span>
+### <span data-ttu-id="ed315-170">-UseCulture</span><span class="sxs-lookup"><span data-stu-id="ed315-170">-UseCulture</span></span>
 
-<span data-ttu-id="b36e0-171">Använder list avgränsaren för den aktuella kulturen som objekt avgränsare.</span><span class="sxs-lookup"><span data-stu-id="b36e0-171">Uses the list separator for the current culture as the item delimiter.</span></span> <span data-ttu-id="b36e0-172">Använd följande kommando för att hitta List avgränsaren för en kultur: `(Get-Culture).TextInfo.ListSeparator` .</span><span class="sxs-lookup"><span data-stu-id="b36e0-172">To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.</span></span>
+<span data-ttu-id="ed315-171">Använder list avgränsaren för den aktuella kulturen som objekt avgränsare.</span><span class="sxs-lookup"><span data-stu-id="ed315-171">Uses the list separator for the current culture as the item delimiter.</span></span> <span data-ttu-id="ed315-172">Använd följande kommando för att hitta List avgränsaren för en kultur: `(Get-Culture).TextInfo.ListSeparator` .</span><span class="sxs-lookup"><span data-stu-id="ed315-172">To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -300,25 +301,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b36e0-173">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b36e0-173">CommonParameters</span></span>
+### <span data-ttu-id="ed315-173">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ed315-173">CommonParameters</span></span>
 
-<span data-ttu-id="b36e0-174">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b36e0-174">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b36e0-175">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="b36e0-175">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="ed315-174">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ed315-174">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ed315-175">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ed315-175">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b36e0-176">INDATA</span><span class="sxs-lookup"><span data-stu-id="b36e0-176">INPUTS</span></span>
+## <span data-ttu-id="ed315-176">INDATA</span><span class="sxs-lookup"><span data-stu-id="ed315-176">INPUTS</span></span>
 
-### <span data-ttu-id="b36e0-177">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="b36e0-177">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="ed315-177">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="ed315-177">System.Management.Automation.PSObject</span></span>
 
-## <span data-ttu-id="b36e0-178">UTDATA</span><span class="sxs-lookup"><span data-stu-id="b36e0-178">OUTPUTS</span></span>
+## <span data-ttu-id="ed315-178">UTDATA</span><span class="sxs-lookup"><span data-stu-id="ed315-178">OUTPUTS</span></span>
 
-### <span data-ttu-id="b36e0-179">System. String</span><span class="sxs-lookup"><span data-stu-id="b36e0-179">System.String</span></span>
+### <span data-ttu-id="ed315-179">System. String</span><span class="sxs-lookup"><span data-stu-id="ed315-179">System.String</span></span>
 
-## <span data-ttu-id="b36e0-180">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="b36e0-180">NOTES</span></span>
+## <span data-ttu-id="ed315-180">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="ed315-180">NOTES</span></span>
 
-## <span data-ttu-id="b36e0-181">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="b36e0-181">RELATED LINKS</span></span>
+## <span data-ttu-id="ed315-181">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="ed315-181">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b36e0-182">about_Automatic_Variables</span><span class="sxs-lookup"><span data-stu-id="b36e0-182">about_Automatic_Variables</span></span>](../microsoft.powershell.core/about/about_automatic_variables.md)
+[<span data-ttu-id="ed315-182">about_Automatic_Variables</span><span class="sxs-lookup"><span data-stu-id="ed315-182">about_Automatic_Variables</span></span>](../microsoft.powershell.core/about/about_automatic_variables.md)
 
-[<span data-ttu-id="b36e0-183">about_Special_Characters</span><span class="sxs-lookup"><span data-stu-id="b36e0-183">about_Special_Characters</span></span>](..//microsoft.powershell.core/about/about_special_characters.md)
+[<span data-ttu-id="ed315-183">about_Special_Characters</span><span class="sxs-lookup"><span data-stu-id="ed315-183">about_Special_Characters</span></span>](..//microsoft.powershell.core/about/about_special_characters.md)
 
-[<span data-ttu-id="b36e0-184">Under sträng</span><span class="sxs-lookup"><span data-stu-id="b36e0-184">Substring</span></span>](/dotnet/api/system.string.substring)
+[<span data-ttu-id="ed315-184">Under sträng</span><span class="sxs-lookup"><span data-stu-id="ed315-184">Substring</span></span>](/dotnet/api/system.string.substring)
 

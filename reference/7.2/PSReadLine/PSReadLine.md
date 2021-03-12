@@ -7,42 +7,42 @@ Module Name: PSReadLine
 ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
-ms.openlocfilehash: da71d4ef896befaadd7ed64f9a013dc19508a54c
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 9425f72ce4002fa871ef6b687d76f92ddf6b489e
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709043"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193896"
 ---
-# <span data-ttu-id="fb6ef-102">PSReadLine-modul</span><span class="sxs-lookup"><span data-stu-id="fb6ef-102">PSReadLine Module</span></span>
+# <span data-ttu-id="12ae1-102">PSReadLine-modul</span><span class="sxs-lookup"><span data-stu-id="12ae1-102">PSReadLine Module</span></span>
 
-## <span data-ttu-id="fb6ef-103">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="fb6ef-103">Description</span></span>
+## <span data-ttu-id="12ae1-103">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="12ae1-103">Description</span></span>
 
-<span data-ttu-id="fb6ef-104">Modulen PSReadLine innehåller cmdletar som gör att du kan anpassa redigerings miljön för kommando tolken i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-104">The PSReadLine module contains cmdlets that let you customize the command-line editing environment in PowerShell.</span></span> <span data-ttu-id="fb6ef-105">De här artiklarna dokumenten PSReadLine v 2.0.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-105">These articles documents PSReadLine v2.0.</span></span> <span data-ttu-id="fb6ef-106">Den här versionen levereras i PowerShell V6 och Windows 10 oktober 2018-uppdateringen (build 1809).</span><span class="sxs-lookup"><span data-stu-id="fb6ef-106">This version ships in PowerShell v6 and the Windows 10 October 2018 Update (Build 1809).</span></span>
+<span data-ttu-id="12ae1-104">Modulen PSReadLine innehåller cmdletar som gör att du kan anpassa redigerings miljön för kommando tolken i PowerShell.</span><span class="sxs-lookup"><span data-stu-id="12ae1-104">The PSReadLine module contains cmdlets that let you customize the command-line editing environment in PowerShell.</span></span> <span data-ttu-id="12ae1-105">De här artiklarna dokumenterar den aktuella Beta versionen av PSReadLine v-2.2.0.</span><span class="sxs-lookup"><span data-stu-id="12ae1-105">These articles document the current beta version of PSReadLine v2.2.0.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="fb6ef-107">Från och med PowerShell 7,0 hoppar PowerShell över automatisk inläsning av PSReadLine i Windows om ett skärm läsar program har identifierats.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-107">Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on Windows if a screen reader program is detected.</span></span> <span data-ttu-id="fb6ef-108">PSReadLine fungerar för närvarande inte bra med skärm läsare.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-108">Currently, PSReadLine doesn't work well with the screen readers.</span></span> <span data-ttu-id="fb6ef-109">Standard åter givningen och formateringen av PowerShell 7,0 i Windows fungerar korrekt.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-109">The default rendering and formatting of PowerShell 7.0 on Windows works properly.</span></span> <span data-ttu-id="fb6ef-110">Du kan läsa in modulen manuellt om det behövs.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-110">You can manually load the module if necessary.</span></span>
+> <span data-ttu-id="12ae1-106">Från och med PowerShell 7,0 hoppar PowerShell över automatisk inläsning av PSReadLine i Windows om ett skärm läsar program har identifierats.</span><span class="sxs-lookup"><span data-stu-id="12ae1-106">Beginning with PowerShell 7.0, PowerShell skips auto-loading PSReadLine on Windows if a screen reader program is detected.</span></span> <span data-ttu-id="12ae1-107">PSReadLine fungerar för närvarande inte bra med skärm läsare.</span><span class="sxs-lookup"><span data-stu-id="12ae1-107">Currently, PSReadLine doesn't work well with the screen readers.</span></span> <span data-ttu-id="12ae1-108">Standard åter givningen och formateringen av PowerShell 7,0 i Windows fungerar korrekt.</span><span class="sxs-lookup"><span data-stu-id="12ae1-108">The default rendering and formatting of PowerShell 7.0 on Windows works properly.</span></span> <span data-ttu-id="12ae1-109">Du kan läsa in modulen manuellt om det behövs.</span><span class="sxs-lookup"><span data-stu-id="12ae1-109">You can manually load the module if necessary.</span></span>
 
-## <span data-ttu-id="fb6ef-111">PSReadLine-cmdletar</span><span class="sxs-lookup"><span data-stu-id="fb6ef-111">PSReadLine Cmdlets</span></span>
+## <span data-ttu-id="12ae1-110">PSReadLine-cmdletar</span><span class="sxs-lookup"><span data-stu-id="12ae1-110">PSReadLine Cmdlets</span></span>
 
-### [<span data-ttu-id="fb6ef-112">PSConsoleHostReadLine</span><span class="sxs-lookup"><span data-stu-id="fb6ef-112">PSConsoleHostReadLine</span></span>](PSConsoleHostReadLine.md)
-<span data-ttu-id="fb6ef-113">Den huvudsakliga start punkten för PSReadLine.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-113">The main entry point for PSReadLine.</span></span>
+### [<span data-ttu-id="12ae1-111">PSConsoleHostReadLine</span><span class="sxs-lookup"><span data-stu-id="12ae1-111">PSConsoleHostReadLine</span></span>](PSConsoleHostReadLine.md)
+<span data-ttu-id="12ae1-112">Den huvudsakliga start punkten för PSReadLine.</span><span class="sxs-lookup"><span data-stu-id="12ae1-112">The main entry point for PSReadLine.</span></span>
 
-### [<span data-ttu-id="fb6ef-114">Get-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="fb6ef-114">Get-PSReadLineKeyHandler</span></span>](Get-PSReadLineKeyHandler.md)
-<span data-ttu-id="fb6ef-115">Hämtar de kopplade nyckel funktionerna för PSReadLine-modulen.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-115">Gets the bound key functions for the PSReadLine module.</span></span>
+### [<span data-ttu-id="12ae1-113">Get-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="12ae1-113">Get-PSReadLineKeyHandler</span></span>](Get-PSReadLineKeyHandler.md)
+<span data-ttu-id="12ae1-114">Hämtar de kopplade nyckel funktionerna för PSReadLine-modulen.</span><span class="sxs-lookup"><span data-stu-id="12ae1-114">Gets the bound key functions for the PSReadLine module.</span></span>
 
-### [<span data-ttu-id="fb6ef-116">Get-PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="fb6ef-116">Get-PSReadLineOption</span></span>](Get-PSReadLineOption.md)
-<span data-ttu-id="fb6ef-117">Hämtar värden för de alternativ som kan konfigureras.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-117">Gets values for the options that can be configured.</span></span>
+### [<span data-ttu-id="12ae1-115">Get-PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="12ae1-115">Get-PSReadLineOption</span></span>](Get-PSReadLineOption.md)
+<span data-ttu-id="12ae1-116">Hämtar värden för de alternativ som kan konfigureras.</span><span class="sxs-lookup"><span data-stu-id="12ae1-116">Gets values for the options that can be configured.</span></span>
 
-### [<span data-ttu-id="fb6ef-118">PSConsoleHostReadLine</span><span class="sxs-lookup"><span data-stu-id="fb6ef-118">PSConsoleHostReadLine</span></span>](PSConsoleHostReadLine.md)
-<span data-ttu-id="fb6ef-119">Den här funktionen är den viktigaste start punkten för PSReadLine.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-119">This function is the main entry point for PSReadLine.</span></span>
+### [<span data-ttu-id="12ae1-117">PSConsoleHostReadLine</span><span class="sxs-lookup"><span data-stu-id="12ae1-117">PSConsoleHostReadLine</span></span>](PSConsoleHostReadLine.md)
+<span data-ttu-id="12ae1-118">Den här funktionen är den viktigaste start punkten för PSReadLine.</span><span class="sxs-lookup"><span data-stu-id="12ae1-118">This function is the main entry point for PSReadLine.</span></span>
 
-### [<span data-ttu-id="fb6ef-120">Remove-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="fb6ef-120">Remove-PSReadLineKeyHandler</span></span>](Remove-PSReadLineKeyHandler.md)
-<span data-ttu-id="fb6ef-121">Tar bort en nyckel bindning.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-121">Removes a key binding.</span></span>
+### [<span data-ttu-id="12ae1-119">Remove-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="12ae1-119">Remove-PSReadLineKeyHandler</span></span>](Remove-PSReadLineKeyHandler.md)
+<span data-ttu-id="12ae1-120">Tar bort en nyckel bindning.</span><span class="sxs-lookup"><span data-stu-id="12ae1-120">Removes a key binding.</span></span>
 
-### [<span data-ttu-id="fb6ef-122">Set-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="fb6ef-122">Set-PSReadLineKeyHandler</span></span>](Set-PSReadLineKeyHandler.md)
-<span data-ttu-id="fb6ef-123">Binder nycklar till användardefinierade eller PSReadLine funktioner för nyckel hanterare.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-123">Binds keys to user-defined or PSReadLine key handler functions.</span></span>
+### [<span data-ttu-id="12ae1-121">Set-PSReadLineKeyHandler</span><span class="sxs-lookup"><span data-stu-id="12ae1-121">Set-PSReadLineKeyHandler</span></span>](Set-PSReadLineKeyHandler.md)
+<span data-ttu-id="12ae1-122">Binder nycklar till användardefinierade eller PSReadLine funktioner för nyckel hanterare.</span><span class="sxs-lookup"><span data-stu-id="12ae1-122">Binds keys to user-defined or PSReadLine key handler functions.</span></span>
 
-### [<span data-ttu-id="fb6ef-124">Set-PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="fb6ef-124">Set-PSReadLineOption</span></span>](Set-PSReadLineOption.md)
-<span data-ttu-id="fb6ef-125">Anpassar beteendet för kommando rads redigering i **PSReadLine**.</span><span class="sxs-lookup"><span data-stu-id="fb6ef-125">Customizes the behavior of command line editing in **PSReadLine**.</span></span>
+### [<span data-ttu-id="12ae1-123">Set-PSReadLineOption</span><span class="sxs-lookup"><span data-stu-id="12ae1-123">Set-PSReadLineOption</span></span>](Set-PSReadLineOption.md)
+<span data-ttu-id="12ae1-124">Anpassar beteendet för kommando rads redigering i **PSReadLine**.</span><span class="sxs-lookup"><span data-stu-id="12ae1-124">Customizes the behavior of command line editing in **PSReadLine**.</span></span>
 
