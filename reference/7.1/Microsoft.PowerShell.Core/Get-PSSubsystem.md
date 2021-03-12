@@ -1,15 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 10/15/2020
-online version: ''
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssubsystem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 34998e7c4a6876821df949019970dc1d87297397
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+title: Get-PSSubsystem
+ms.openlocfilehash: 1e08715562ab5a5b52193dacdd2c48cacb4540e8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93272919"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195518"
 ---
 # Get-PSSubsystem
 
@@ -45,7 +47,7 @@ Hämtar information om de under system som registrerats i PowerShell.
 
 Funktionen gör det möjligt att separera komponenter i `System.Management.Automation.dll` enskilda under system som finns i en egen sammansättning. Den här separationen minskar den grundläggande PowerShell-motorns disk utrymme och gör att dessa komponenter blir valfria funktioner för en minimal PowerShell-installation.
 
-För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb** , **CommandCompleter** , **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
+För närvarande stöds endast under systemet **CommandPredictor** . Det här del systemet används tillsammans med PSReadLine-modulen för att tillhandahålla anpassade förutsägelse-plugin-program. I framtiden kan **jobb**, **CommandCompleter**, **fjärr kommunikation** och andra komponenter delas upp i del system sammansättningar utanför `System.Management.Automation.dll` .
 
 ## EXEMPEL
 

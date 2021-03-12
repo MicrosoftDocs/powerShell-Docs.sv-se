@@ -1,16 +1,16 @@
 ---
 description: Beskriver hur du skapar och använder en PowerShell-profil.
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: 3fb6a67e160281f60f20c187bf37c6920a506705
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 3fe32a83ad1a63d64d293559c79f1465828d0a0a
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93270020"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194995"
 ---
 # <a name="about-profiles"></a>Om profiler
 
@@ -206,7 +206,7 @@ Mer information om PowerShell-prompten finns [about_Prompts](about_Prompts.md).
 
 ## <a name="the-noprofile-parameter"></a>Parametern noprofile
 
-Om du vill starta PowerShell utan profiler använder du parametern **noprofile** i **PowerShell.exe** , programmet som startar PowerShell.
+Om du vill starta PowerShell utan profiler använder du parametern **noprofile** i **PowerShell.exe**, programmet som startar PowerShell.
 
 Börja genom att öppna ett program som kan starta PowerShell, till exempel Cmd.exe eller PowerShell. Du kan också använda dialog rutan Kör i Windows.
 

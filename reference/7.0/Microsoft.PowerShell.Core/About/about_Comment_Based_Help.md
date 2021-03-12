@@ -1,16 +1,16 @@
 ---
 description: Beskriver hur du skriver kommentarer baserade hjälp avsnitt för funktioner och skript.
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 3ce86829d8cde21d3feb5f484dce75fcc5ebb775
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 2a5bdc4fef6891295a959cc72b78fe5aef9d3eb7
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94389087"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194960"
 ---
 # <a name="about-comment-based-help"></a>Om kommenterings-baserad hjälp
 
@@ -21,7 +21,7 @@ Beskriver hur du skriver kommentarer baserade hjälp avsnitt för funktioner och
 
 Du kan skriva kommentarer baserade hjälp avsnitt för funktioner och skript genom att använda särskilda nyckelord för hjälp kommentarer.
 
-Cmdleten [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) visar kommenterad hjälp i samma format som den visar cmdlet-hjälpen som genereras från XML-filer. Användarna kan använda alla parametrar i `Get-Help` , till exempel **detaljerade** , **fullständiga** , **exempel** och **online** , för att visa innehållet i den kommenterade hjälpen.
+Cmdleten [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) visar kommenterad hjälp i samma format som den visar cmdlet-hjälpen som genereras från XML-filer. Användarna kan använda alla parametrar i `Get-Help` , till exempel **detaljerade**, **fullständiga**, **exempel** och **online**, för att visa innehållet i den kommenterade hjälpen.
 
 Du kan också skriva XML-baserade hjälpfiler för funktioner och skript. Om du vill aktivera `Get-Help` cmdleten för att hitta den XML-baserade hjälp filen för en funktion eller ett skript, använder du `.ExternalHelp` nyckelordet. Utan det här nyckelordet kan du `Get-Help` inte hitta XML-baserade hjälp avsnitt för funktioner eller skript.
 
@@ -72,7 +72,7 @@ Den kommenterade hjälpen för en funktion kan visas på tre platser:
 - I slutet av funktions texten.
 - Före `function` nyckelordet. Det får inte finnas mer än en tom rad mellan den sista raden i funktions hjälpen och `function` nyckelordet.
 
-Till exempel:
+Exempel:
 
 ```powershell
 function Get-Function
@@ -120,7 +120,7 @@ Kommentera-baserad hjälp för ett skript kan visas på någon av följande två
 
 - I slutet av skript filen. Men om skriptet är signerat placerar du en kommenterings-baserad hjälp i början av skript filen. Slutet på skriptet används av signerings blocket.
 
-Till exempel:
+Exempel:
 
 ```powershell
 <#
@@ -307,7 +307,7 @@ De **gemensamma parametrarna** läggs till i syntax och parameter listan i hjäl
 
 ### <a name="parameter-attribute-table"></a>Parameter egenskaps tabell
 
-`Get-Help` genererar tabellen med parameter-attribut som visas när du använder parametern **fullständig** eller **parameter** i `Get-Help` . Värdet för attributen **required** , **position** och **Standardvärde** tas från funktionen eller syntaxen i skriptet.
+`Get-Help` genererar tabellen med parameter-attribut som visas när du använder parametern **fullständig** eller **parameter** i `Get-Help` . Värdet för attributen **required**, **position** och **Standardvärde** tas från funktionen eller syntaxen i skriptet.
 
 Standardvärden och ett värde för **acceptera jokertecken** visas inte i tabellen parameter attribut, även om de definieras i funktionen eller skriptet. För att hjälpa användarna att ange den här informationen i parameter beskrivningen.
 

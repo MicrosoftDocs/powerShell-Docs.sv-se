@@ -2,12 +2,12 @@
 title: Nyheter i PowerShell Core 6,2
 description: Nya funktioner och ändringar som lanseras i PowerShell Core 6,2
 ms.date: 03/28/2019
-ms.openlocfilehash: 98dd97b064e11509bf97e68e0a312e6b34b5d2bc
-ms.sourcegitcommit: f9d855dd73b916559a22e337672dea3fbb11c634
+ms.openlocfilehash: 068f345ee5174bceade2b85183646ede9ead1949
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96840147"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195576"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>Nyheter i PowerShell Core 6,2
 
@@ -121,7 +121,7 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 
 ## <a name="known-issues"></a>Kända problem
 
-- Det finns ett problem med att läsa in moduler för fjärr kommunikation på Windows IOT ARM-plattformar. Se (#8053)
+- Fjärr kommunikation på Windows IOT ARM-baserade plattformar har ett problem med inläsning av moduler. Se (#8053)
 
 ## <a name="general-updates-and-fixes"></a>Allmänna uppdateringar och korrigeringar
 

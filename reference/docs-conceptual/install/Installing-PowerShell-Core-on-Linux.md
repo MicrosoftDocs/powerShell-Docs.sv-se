@@ -2,12 +2,12 @@
 title: Installera PowerShell i Linux
 description: Information om hur du installerar PowerShell på olika Linux-distributioner
 ms.date: 02/02/2021
-ms.openlocfilehash: 1e7fabdc94ba70a91eb5c6425893bc5af640e584
-ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
+ms.openlocfilehash: ab075a3570695f5a58b7e7fbf968243a4ff45929
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563299"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195266"
 ---
 # <a name="installing-powershell-on-linux"></a>Installera PowerShell i Linux
 
@@ -711,6 +711,15 @@ pwsh
 apt -y remove powershell
 ```
 
+## <a name="support-for-arm-processors"></a>Stöd för ARM-processorer
+
+PowerShell kan installeras på vissa Linux-distributioner. PowerShell är beroende av .NET-stöd för arm. PowerShell stöds i följande distributioner:
+
+- Alpine Linux v 3.11 +-.NET stöder Arm64, men det finns inget installerbart paket för PowerShell för tillfället
+- Raspbian – se installations anvisningarna nedan
+- Debian v9 +-stöder Arm32 och Arm64 med hjälp av installations metoden för [binärt Arkiv](#binary-archives)
+- Ubuntu 20,10, 20,04, 18,04, 16,04 – stöder Arm32 och Arm64 med installations metoden för [binärt Arkiv](#binary-archives)
+
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
@@ -821,6 +830,12 @@ Om du vill distribuera PowerShell-binärfiler på Linux-distributioner som inte 
 
 ### <a name="installation---binary-archives"></a>Installation – binära Arkiv
 
+I följande exempel visas stegen för att installera det binära arkivet x64. Du måste välja rätt binärt arkiv som matchar processor typen för din plattform.
+
+- PowerShell-7.1.2-Linux-ARM32. tar. gz
+- PowerShell-7.1.2-Linux-arm64. tar. gz
+- PowerShell-7.1.2-linux-x64. tar. gz
+
 #### <a name="linux"></a>Linux
 
 ```sh
@@ -849,11 +864,11 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="paths"></a>Sökvägar
 
 - `$PSHOME` är `/opt/microsoft/powershell/7/`
-- Användar profilerna kommer att läsas från `~/.config/powershell/profile.ps1`
-- Standard profiler kommer att läsas från `$PSHOME/profile.ps1`
-- Användarens moduler kommer att läsas från `~/.local/share/powershell/Modules`
-- Delade moduler kommer att läsas från `/usr/local/share/powershell/Modules`
-- Standardmoduler kommer att läsas från `$PSHOME/Modules`
+- Användar profiler läses från `~/.config/powershell/profile.ps1`
+- Standard profiler läses från `$PSHOME/profile.ps1`
+- Användarens moduler läses från `~/.local/share/powershell/Modules`
+- Delade moduler läses från `/usr/local/share/powershell/Modules`
+- Standardmodulerna läses från `$PSHOME/Modules`
 - PSReadLine historik registreras i `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Profilerna respekterar PowerShell: s konfiguration per värd, så att de standardinställda värdbaserade profilerna finns på `Microsoft.PowerShell_profile.ps1` samma platser.
