@@ -1,24 +1,26 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/30/2020
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7.x.0&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 73f08cd40c243a1b1a4bfc93ecbfe7dc1facb00a
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+title: Set-MarkdownOption
+ms.openlocfilehash: b8353bf6eb9669676d72f533bffb25748e4e2827
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710794"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195211"
 ---
-# <span data-ttu-id="936f0-101">Set-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="936f0-101">Set-MarkdownOption</span></span>
+# <span data-ttu-id="5ee86-102">Set-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="5ee86-102">Set-MarkdownOption</span></span>
 
-## <span data-ttu-id="936f0-102">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="936f0-102">SYNOPSIS</span></span>
-<span data-ttu-id="936f0-103">Anger de färger och format som används för att återge markdown-innehåll i-konsolen.</span><span class="sxs-lookup"><span data-stu-id="936f0-103">Sets the colors and styles used for rendering Markdown content in the console.</span></span>
+## <span data-ttu-id="5ee86-103">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="5ee86-103">SYNOPSIS</span></span>
+<span data-ttu-id="5ee86-104">Anger de färger och format som används för att återge markdown-innehåll i-konsolen.</span><span class="sxs-lookup"><span data-stu-id="5ee86-104">Sets the colors and styles used for rendering Markdown content in the console.</span></span>
 
-## <span data-ttu-id="936f0-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="936f0-104">SYNTAX</span></span>
+## <span data-ttu-id="5ee86-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="5ee86-105">SYNTAX</span></span>
 
-### <span data-ttu-id="936f0-105">IndividualSetting (standard)</span><span class="sxs-lookup"><span data-stu-id="936f0-105">IndividualSetting (Default)</span></span>
+### <span data-ttu-id="5ee86-106">IndividualSetting (standard)</span><span class="sxs-lookup"><span data-stu-id="5ee86-106">IndividualSetting (Default)</span></span>
 
 ```
 Set-MarkdownOption [-Header1Color <String>] [-Header2Color <String>] [-Header3Color <String>]
@@ -28,32 +30,32 @@ Set-MarkdownOption [-Header1Color <String>] [-Header2Color <String>] [-Header3Co
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="936f0-106">Tema</span><span class="sxs-lookup"><span data-stu-id="936f0-106">Theme</span></span>
+### <span data-ttu-id="5ee86-107">Tema</span><span class="sxs-lookup"><span data-stu-id="5ee86-107">Theme</span></span>
 
 ```
 Set-MarkdownOption [-PassThru] -Theme <String> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="936f0-107">InputObject</span><span class="sxs-lookup"><span data-stu-id="936f0-107">InputObject</span></span>
+### <span data-ttu-id="5ee86-108">InputObject</span><span class="sxs-lookup"><span data-stu-id="5ee86-108">InputObject</span></span>
 
 ```
 Set-MarkdownOption [-PassThru] [-InputObject] <PSObject> [<CommonParameters>]
 ```
 
-## <span data-ttu-id="936f0-108">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="936f0-108">DESCRIPTION</span></span>
+## <span data-ttu-id="5ee86-109">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="5ee86-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="936f0-109">Anger de färger och format som används för att återge markdown-innehåll i-konsolen.</span><span class="sxs-lookup"><span data-stu-id="936f0-109">Sets the colors and styles used for rendering Markdown content in the console.</span></span> <span data-ttu-id="936f0-110">Dessa format definieras med ANSI Escape-koder som ändrar färg och format på den markdown text som återges.</span><span class="sxs-lookup"><span data-stu-id="936f0-110">These styles are defined using ANSI escape codes that change the color and style of the Markdown text being rendered.</span></span>
+<span data-ttu-id="5ee86-110">Anger de färger och format som används för att återge markdown-innehåll i-konsolen.</span><span class="sxs-lookup"><span data-stu-id="5ee86-110">Sets the colors and styles used for rendering Markdown content in the console.</span></span> <span data-ttu-id="5ee86-111">Dessa format definieras med ANSI Escape-koder som ändrar färg och format på den markdown text som återges.</span><span class="sxs-lookup"><span data-stu-id="5ee86-111">These styles are defined using ANSI escape codes that change the color and style of the Markdown text being rendered.</span></span>
 
-<span data-ttu-id="936f0-111">Mer information om markdown finns på [CommonMark](https://commonmark.org/) -webbplatsen.</span><span class="sxs-lookup"><span data-stu-id="936f0-111">For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.</span></span>
+<span data-ttu-id="5ee86-112">Mer information om markdown finns på [CommonMark](https://commonmark.org/) -webbplatsen.</span><span class="sxs-lookup"><span data-stu-id="5ee86-112">For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="936f0-112">Sträng värden som används i inställningarna är de tecken som följer **Escape** -tecknet ( `[char]0x1B` ) för ANSI Escape-sekvensen.</span><span class="sxs-lookup"><span data-stu-id="936f0-112">The string values used in the settings are the characters that follow the **Escape** character (`[char]0x1B`) for the ANSI escape sequence.</span></span> <span data-ttu-id="936f0-113">Inkludera inte **Escape** -tecken i strängen.</span><span class="sxs-lookup"><span data-stu-id="936f0-113">Do not include the **Escape** character in the string.</span></span> <span data-ttu-id="936f0-114">Mer information om hur ANSI Escape-koder fungerar finns i [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span><span class="sxs-lookup"><span data-stu-id="936f0-114">For more information about ANSI escape codes work, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span></span>
+> <span data-ttu-id="5ee86-113">Sträng värden som används i inställningarna är de tecken som följer **Escape** -tecknet ( `[char]0x1B` ) för ANSI Escape-sekvensen.</span><span class="sxs-lookup"><span data-stu-id="5ee86-113">The string values used in the settings are the characters that follow the **Escape** character (`[char]0x1B`) for the ANSI escape sequence.</span></span> <span data-ttu-id="5ee86-114">Inkludera inte **Escape** -tecken i strängen.</span><span class="sxs-lookup"><span data-stu-id="5ee86-114">Do not include the **Escape** character in the string.</span></span> <span data-ttu-id="5ee86-115">Mer information om hur ANSI Escape-koder fungerar finns i [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span><span class="sxs-lookup"><span data-stu-id="5ee86-115">For more information about ANSI escape codes work, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span></span>
 
-## <span data-ttu-id="936f0-115">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="936f0-115">EXAMPLES</span></span>
+## <span data-ttu-id="5ee86-116">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="5ee86-116">EXAMPLES</span></span>
 
-### <span data-ttu-id="936f0-116">Exempel 1 – växla till det ljusa temat</span><span class="sxs-lookup"><span data-stu-id="936f0-116">Example 1 - Switch to the Light Theme</span></span>
+### <span data-ttu-id="5ee86-117">Exempel 1 – växla till det ljusa temat</span><span class="sxs-lookup"><span data-stu-id="5ee86-117">Example 1 - Switch to the Light Theme</span></span>
 
-<span data-ttu-id="936f0-117">I det här exemplet väljer du det **ljusa** temat och visar den nya konfigurationen med hjälp av parametern **Passthru** .</span><span class="sxs-lookup"><span data-stu-id="936f0-117">This example selects the **Light** theme and displays the new configuration using the **PassThru** parameter.</span></span>
+<span data-ttu-id="5ee86-118">I det här exemplet väljer du det **ljusa** temat och visar den nya konfigurationen med hjälp av parametern **Passthru** .</span><span class="sxs-lookup"><span data-stu-id="5ee86-118">This example selects the **Light** theme and displays the new configuration using the **PassThru** parameter.</span></span>
 
 ```powershell
 Set-MarkdownOption -Theme Light -PassThru
@@ -73,9 +75,9 @@ EmphasisBold    : [1m
 EmphasisItalics : [36m
 ```
 
-### <span data-ttu-id="936f0-118">Exempel 2 – anpassa inställningarna för färg och stil</span><span class="sxs-lookup"><span data-stu-id="936f0-118">Example 2 - Customize the color and style settings</span></span>
+### <span data-ttu-id="5ee86-119">Exempel 2 – anpassa inställningarna för färg och stil</span><span class="sxs-lookup"><span data-stu-id="5ee86-119">Example 2 - Customize the color and style settings</span></span>
 
-<span data-ttu-id="936f0-119">I det här exemplet ändras Escape-koden för markdown-huvudena.</span><span class="sxs-lookup"><span data-stu-id="936f0-119">This example changes the escape code for the Markdown headers.</span></span> <span data-ttu-id="936f0-120">Standard konfigurationen för huvuden återges som understruken text i olika färger.</span><span class="sxs-lookup"><span data-stu-id="936f0-120">The default configuration for headers renders them as underlined text of various colors.</span></span> <span data-ttu-id="936f0-121">Den här ändringen tar bort understryknings formatet.</span><span class="sxs-lookup"><span data-stu-id="936f0-121">This change removes the underline style.</span></span>
+<span data-ttu-id="5ee86-120">I det här exemplet ändras Escape-koden för markdown-huvudena.</span><span class="sxs-lookup"><span data-stu-id="5ee86-120">This example changes the escape code for the Markdown headers.</span></span> <span data-ttu-id="5ee86-121">Standard konfigurationen för huvuden återges som understruken text i olika färger.</span><span class="sxs-lookup"><span data-stu-id="5ee86-121">The default configuration for headers renders them as underlined text of various colors.</span></span> <span data-ttu-id="5ee86-122">Den här ändringen tar bort understryknings formatet.</span><span class="sxs-lookup"><span data-stu-id="5ee86-122">This change removes the underline style.</span></span>
 
 ```powershell
 $mdOptions = Get-MarkdownOption
@@ -101,27 +103,11 @@ EmphasisBold    : [1m
 EmphasisItalics : [36m
 ```
 
-## <span data-ttu-id="936f0-122">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="936f0-122">PARAMETERS</span></span>
+## <span data-ttu-id="5ee86-123">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="5ee86-123">PARAMETERS</span></span>
 
-### <span data-ttu-id="936f0-123">-BoldForegroundColor</span><span class="sxs-lookup"><span data-stu-id="936f0-123">-BoldForegroundColor</span></span>
+### <span data-ttu-id="5ee86-124">-BoldForegroundColor</span><span class="sxs-lookup"><span data-stu-id="5ee86-124">-BoldForegroundColor</span></span>
 
-<span data-ttu-id="936f0-124">Anger förgrunds färgen för rendering av fet markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-124">Sets the foreground color for rendering bold Markdown text.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: IndividualSetting
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="936f0-125">-Kod</span><span class="sxs-lookup"><span data-stu-id="936f0-125">-Code</span></span>
-
-<span data-ttu-id="936f0-126">Anger färgen för åter givning av kod block och intervall i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-126">Sets the color for rendering code blocks and spans in Markdown text.</span></span>
+<span data-ttu-id="5ee86-125">Anger förgrunds färgen för rendering av fet markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-125">Sets the foreground color for rendering bold Markdown text.</span></span>
 
 ```yaml
 Type: System.String
@@ -135,25 +121,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-127">-Header1Color</span><span class="sxs-lookup"><span data-stu-id="936f0-127">-Header1Color</span></span>
+### <span data-ttu-id="5ee86-126">-Kod</span><span class="sxs-lookup"><span data-stu-id="5ee86-126">-Code</span></span>
 
-<span data-ttu-id="936f0-128">Anger färgen för åter givning av Header1-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-128">Sets the color for rendering Header1 blocks in Markdown text.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: IndividualSetting
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="936f0-129">-Header2Color</span><span class="sxs-lookup"><span data-stu-id="936f0-129">-Header2Color</span></span>
-
-<span data-ttu-id="936f0-130">Anger färgen för åter givning av Header2-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-130">Sets the color for rendering Header2 blocks in Markdown text.</span></span>
+<span data-ttu-id="5ee86-127">Anger färgen för åter givning av kod block och intervall i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-127">Sets the color for rendering code blocks and spans in Markdown text.</span></span>
 
 ```yaml
 Type: System.String
@@ -167,25 +137,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-131">-Header3Color</span><span class="sxs-lookup"><span data-stu-id="936f0-131">-Header3Color</span></span>
+### <span data-ttu-id="5ee86-128">-Header1Color</span><span class="sxs-lookup"><span data-stu-id="5ee86-128">-Header1Color</span></span>
 
-<span data-ttu-id="936f0-132">Anger färgen för åter givning av Header3-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-132">Sets the color for rendering Header3 blocks in Markdown text.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: IndividualSetting
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="936f0-133">-Header4Color</span><span class="sxs-lookup"><span data-stu-id="936f0-133">-Header4Color</span></span>
-
-<span data-ttu-id="936f0-134">Anger färgen för åter givning av Header4-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-134">Sets the color for rendering Header4 blocks in Markdown text.</span></span>
+<span data-ttu-id="5ee86-129">Anger färgen för åter givning av Header1-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-129">Sets the color for rendering Header1 blocks in Markdown text.</span></span>
 
 ```yaml
 Type: System.String
@@ -199,25 +153,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-135">-Header5Color</span><span class="sxs-lookup"><span data-stu-id="936f0-135">-Header5Color</span></span>
+### <span data-ttu-id="5ee86-130">-Header2Color</span><span class="sxs-lookup"><span data-stu-id="5ee86-130">-Header2Color</span></span>
 
-<span data-ttu-id="936f0-136">Anger färgen för åter givning av Header5-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-136">Sets the color for rendering Header5 blocks in Markdown text.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: IndividualSetting
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="936f0-137">-Header6Color</span><span class="sxs-lookup"><span data-stu-id="936f0-137">-Header6Color</span></span>
-
-<span data-ttu-id="936f0-138">Anger färgen för åter givning av Header6-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-138">Sets the color for rendering Header6 blocks in Markdown text.</span></span>
+<span data-ttu-id="5ee86-131">Anger färgen för åter givning av Header2-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-131">Sets the color for rendering Header2 blocks in Markdown text.</span></span>
 
 ```yaml
 Type: System.String
@@ -231,9 +169,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-139">-ImageAltTextForegroundColor</span><span class="sxs-lookup"><span data-stu-id="936f0-139">-ImageAltTextForegroundColor</span></span>
+### <span data-ttu-id="5ee86-132">-Header3Color</span><span class="sxs-lookup"><span data-stu-id="5ee86-132">-Header3Color</span></span>
 
-<span data-ttu-id="936f0-140">Anger förgrunds färgen för åter givning av alternativ text för ett bild element i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-140">Sets the foreground color for rendering the alternate text of an image element in Markdown text.</span></span>
+<span data-ttu-id="5ee86-133">Anger färgen för åter givning av Header3-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-133">Sets the color for rendering Header3 blocks in Markdown text.</span></span>
 
 ```yaml
 Type: System.String
@@ -247,9 +185,73 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-141">– InputObject</span><span class="sxs-lookup"><span data-stu-id="936f0-141">-InputObject</span></span>
+### <span data-ttu-id="5ee86-134">-Header4Color</span><span class="sxs-lookup"><span data-stu-id="5ee86-134">-Header4Color</span></span>
 
-<span data-ttu-id="936f0-142">Ett **PSMarkdownOptionInfo** -objekt som innehåller den konfiguration som ska ställas in.</span><span class="sxs-lookup"><span data-stu-id="936f0-142">A **PSMarkdownOptionInfo** object containing the configuration to be set.</span></span>
+<span data-ttu-id="5ee86-135">Anger färgen för åter givning av Header4-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-135">Sets the color for rendering Header4 blocks in Markdown text.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: IndividualSetting
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5ee86-136">-Header5Color</span><span class="sxs-lookup"><span data-stu-id="5ee86-136">-Header5Color</span></span>
+
+<span data-ttu-id="5ee86-137">Anger färgen för åter givning av Header5-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-137">Sets the color for rendering Header5 blocks in Markdown text.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: IndividualSetting
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5ee86-138">-Header6Color</span><span class="sxs-lookup"><span data-stu-id="5ee86-138">-Header6Color</span></span>
+
+<span data-ttu-id="5ee86-139">Anger färgen för åter givning av Header6-block i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-139">Sets the color for rendering Header6 blocks in Markdown text.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: IndividualSetting
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5ee86-140">-ImageAltTextForegroundColor</span><span class="sxs-lookup"><span data-stu-id="5ee86-140">-ImageAltTextForegroundColor</span></span>
+
+<span data-ttu-id="5ee86-141">Anger förgrunds färgen för åter givning av alternativ text för ett bild element i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-141">Sets the foreground color for rendering the alternate text of an image element in Markdown text.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: IndividualSetting
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5ee86-142">– InputObject</span><span class="sxs-lookup"><span data-stu-id="5ee86-142">-InputObject</span></span>
+
+<span data-ttu-id="5ee86-143">Ett **PSMarkdownOptionInfo** -objekt som innehåller den konfiguration som ska ställas in.</span><span class="sxs-lookup"><span data-stu-id="5ee86-143">A **PSMarkdownOptionInfo** object containing the configuration to be set.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -263,25 +265,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-143">-ItalicsForegroundColor</span><span class="sxs-lookup"><span data-stu-id="936f0-143">-ItalicsForegroundColor</span></span>
+### <span data-ttu-id="5ee86-144">-ItalicsForegroundColor</span><span class="sxs-lookup"><span data-stu-id="5ee86-144">-ItalicsForegroundColor</span></span>
 
-<span data-ttu-id="936f0-144">Anger förgrunds färgen för att återge kursiv stilarna i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-144">Sets the foreground color for rendering the italics in Markdown text.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: IndividualSetting
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="936f0-145">-LinkForegroundColor</span><span class="sxs-lookup"><span data-stu-id="936f0-145">-LinkForegroundColor</span></span>
-
-<span data-ttu-id="936f0-146">Anger förgrunds färgen för åter givning av hyperlänkar i markdown text.</span><span class="sxs-lookup"><span data-stu-id="936f0-146">Sets the foreground color for rendering hyperlinks in Markdown text.</span></span>
+<span data-ttu-id="5ee86-145">Anger förgrunds färgen för att återge kursiv stilarna i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-145">Sets the foreground color for rendering the italics in Markdown text.</span></span>
 
 ```yaml
 Type: System.String
@@ -295,9 +281,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-147">– PassThru</span><span class="sxs-lookup"><span data-stu-id="936f0-147">-PassThru</span></span>
+### <span data-ttu-id="5ee86-146">-LinkForegroundColor</span><span class="sxs-lookup"><span data-stu-id="5ee86-146">-LinkForegroundColor</span></span>
 
-<span data-ttu-id="936f0-148">Gör att cmdleten genererar ett **PSMarkdownOptionInfo** -objekt som innehåller den nya konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="936f0-148">Causes the cmdlet to output a **PSMarkdownOptionInfo** object containing the new configuration.</span></span>
+<span data-ttu-id="5ee86-147">Anger förgrunds färgen för åter givning av hyperlänkar i markdown text.</span><span class="sxs-lookup"><span data-stu-id="5ee86-147">Sets the foreground color for rendering hyperlinks in Markdown text.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: IndividualSetting
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5ee86-148">– PassThru</span><span class="sxs-lookup"><span data-stu-id="5ee86-148">-PassThru</span></span>
+
+<span data-ttu-id="5ee86-149">Gör att cmdleten genererar ett **PSMarkdownOptionInfo** -objekt som innehåller den nya konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="5ee86-149">Causes the cmdlet to output a **PSMarkdownOptionInfo** object containing the new configuration.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -311,9 +313,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-149">– Tema</span><span class="sxs-lookup"><span data-stu-id="936f0-149">-Theme</span></span>
+### <span data-ttu-id="5ee86-150">– Tema</span><span class="sxs-lookup"><span data-stu-id="5ee86-150">-Theme</span></span>
 
-<span data-ttu-id="936f0-150">Väljer ett tema som innehåller fördefinierade färg inställningar.</span><span class="sxs-lookup"><span data-stu-id="936f0-150">Selects a theme containing predefined color settings.</span></span> <span data-ttu-id="936f0-151">De möjliga värdena är **mörka** och **ljusa**.</span><span class="sxs-lookup"><span data-stu-id="936f0-151">The possible values are **Dark** and **Light**.</span></span>
+<span data-ttu-id="5ee86-151">Väljer ett tema som innehåller fördefinierade färg inställningar.</span><span class="sxs-lookup"><span data-stu-id="5ee86-151">Selects a theme containing predefined color settings.</span></span> <span data-ttu-id="5ee86-152">De möjliga värdena är **mörka** och **ljusa**.</span><span class="sxs-lookup"><span data-stu-id="5ee86-152">The possible values are **Dark** and **Light**.</span></span>
 
 ```yaml
 Type: System.String
@@ -328,31 +330,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="936f0-152">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="936f0-152">CommonParameters</span></span>
+### <span data-ttu-id="5ee86-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5ee86-153">CommonParameters</span></span>
 
-<span data-ttu-id="936f0-153">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="936f0-153">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="936f0-154">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="936f0-154">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="5ee86-154">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5ee86-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5ee86-155">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="5ee86-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="936f0-155">INDATA</span><span class="sxs-lookup"><span data-stu-id="936f0-155">INPUTS</span></span>
+## <span data-ttu-id="5ee86-156">INDATA</span><span class="sxs-lookup"><span data-stu-id="5ee86-156">INPUTS</span></span>
 
-### <span data-ttu-id="936f0-156">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="936f0-156">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="5ee86-157">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="5ee86-157">System.Management.Automation.PSObject</span></span>
 
-## <span data-ttu-id="936f0-157">UTDATA</span><span class="sxs-lookup"><span data-stu-id="936f0-157">OUTPUTS</span></span>
+## <span data-ttu-id="5ee86-158">UTDATA</span><span class="sxs-lookup"><span data-stu-id="5ee86-158">OUTPUTS</span></span>
 
-### <span data-ttu-id="936f0-158">Microsoft. PowerShell. MarkdownRender. PSMarkdownOptionInfo</span><span class="sxs-lookup"><span data-stu-id="936f0-158">Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo</span></span>
+### <span data-ttu-id="5ee86-159">Microsoft. PowerShell. MarkdownRender. PSMarkdownOptionInfo</span><span class="sxs-lookup"><span data-stu-id="5ee86-159">Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo</span></span>
 
-## <span data-ttu-id="936f0-159">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="936f0-159">NOTES</span></span>
+## <span data-ttu-id="5ee86-160">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="5ee86-160">NOTES</span></span>
 
-<span data-ttu-id="936f0-160">De sträng värden som används för att definiera färgen och formatet måste matcha det reguljära uttrycket `^\[*[0-9;]*?m{1}` .</span><span class="sxs-lookup"><span data-stu-id="936f0-160">The string values used to define the color and style must match the regular expression `^\[*[0-9;]*?m{1}`.</span></span>
+<span data-ttu-id="5ee86-161">De sträng värden som används för att definiera färgen och formatet måste matcha det reguljära uttrycket `^\[*[0-9;]*?m{1}` .</span><span class="sxs-lookup"><span data-stu-id="5ee86-161">The string values used to define the color and style must match the regular expression `^\[*[0-9;]*?m{1}`.</span></span>
 
-## <span data-ttu-id="936f0-161">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="936f0-161">RELATED LINKS</span></span>
+## <span data-ttu-id="5ee86-162">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="5ee86-162">RELATED LINKS</span></span>
 
-[<span data-ttu-id="936f0-162">Get-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="936f0-162">Get-MarkdownOption</span></span>](Get-MarkdownOption.md)
+[<span data-ttu-id="5ee86-163">Get-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="5ee86-163">Get-MarkdownOption</span></span>](Get-MarkdownOption.md)
 
-[<span data-ttu-id="936f0-163">ConvertFrom – markdown</span><span class="sxs-lookup"><span data-stu-id="936f0-163">ConvertFrom-Markdown</span></span>](ConvertFrom-Markdown.md)
+[<span data-ttu-id="5ee86-164">ConvertFrom – markdown</span><span class="sxs-lookup"><span data-stu-id="5ee86-164">ConvertFrom-Markdown</span></span>](ConvertFrom-Markdown.md)
 
-[<span data-ttu-id="936f0-164">Visa markdown</span><span class="sxs-lookup"><span data-stu-id="936f0-164">Show-Markdown</span></span>](Show-Markdown.md)
+[<span data-ttu-id="5ee86-165">Visa markdown</span><span class="sxs-lookup"><span data-stu-id="5ee86-165">Show-Markdown</span></span>](Show-Markdown.md)
 
-[<span data-ttu-id="936f0-165">ANSI_escape_code</span><span class="sxs-lookup"><span data-stu-id="936f0-165">ANSI_escape_code</span></span>](https://en.wikipedia.org/wiki/ANSI_escape_code)
+[<span data-ttu-id="5ee86-166">ANSI_escape_code</span><span class="sxs-lookup"><span data-stu-id="5ee86-166">ANSI_escape_code</span></span>](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
-[<span data-ttu-id="936f0-166">CommonMark</span><span class="sxs-lookup"><span data-stu-id="936f0-166">CommonMark</span></span>](https://commonmark.org/)
+[<span data-ttu-id="5ee86-167">CommonMark</span><span class="sxs-lookup"><span data-stu-id="5ee86-167">CommonMark</span></span>](https://commonmark.org/)
 

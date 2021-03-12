@@ -1,40 +1,41 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
+Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
-ms.openlocfilehash: de7dc6027653db063311bd34e1282e3cb5294e92
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 6b7541fba77c4160cf8d5c2dd36a4bad0bf99c5f
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94709648"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195174"
 ---
-# <span data-ttu-id="96294-102">Clear-Host</span><span class="sxs-lookup"><span data-stu-id="96294-102">Clear-Host</span></span>
+# <span data-ttu-id="cc2fc-102">Clear-Host</span><span class="sxs-lookup"><span data-stu-id="cc2fc-102">Clear-Host</span></span>
 
-## <span data-ttu-id="96294-103">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="96294-103">SYNOPSIS</span></span>
+## <span data-ttu-id="cc2fc-103">SAMMANFATTNING</span><span class="sxs-lookup"><span data-stu-id="cc2fc-103">SYNOPSIS</span></span>
 
-<span data-ttu-id="96294-104">Tar bort visningen i värd programmet.</span><span class="sxs-lookup"><span data-stu-id="96294-104">Clears the display in the host program.</span></span>
+<span data-ttu-id="cc2fc-104">Tar bort visningen i värd programmet.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-104">Clears the display in the host program.</span></span>
 
-## <span data-ttu-id="96294-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="96294-105">SYNTAX</span></span>
+## <span data-ttu-id="cc2fc-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="cc2fc-105">SYNTAX</span></span>
 
 ```
 Clear-Host [<CommonParameters>]
 ```
 
-## <span data-ttu-id="96294-106">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="96294-106">DESCRIPTION</span></span>
+## <span data-ttu-id="cc2fc-106">BESKRIVNING</span><span class="sxs-lookup"><span data-stu-id="cc2fc-106">DESCRIPTION</span></span>
 
-<span data-ttu-id="96294-107">`Clear-Host`Funktionen tar bort all text från den aktuella visningen, inklusive kommandon och utdata som kan ha samlats.</span><span class="sxs-lookup"><span data-stu-id="96294-107">The `Clear-Host` function removes all text from the current display, including commands and output that might have accumulated.</span></span> <span data-ttu-id="96294-108">När du är klar visas kommando tolken.</span><span class="sxs-lookup"><span data-stu-id="96294-108">When complete, it displays the command prompt.</span></span> <span data-ttu-id="96294-109">Du kan använda funktions namnet eller dess alias `cls` .</span><span class="sxs-lookup"><span data-stu-id="96294-109">You can use the function name or its alias, `cls`.</span></span>
+<span data-ttu-id="cc2fc-107">`Clear-Host`Funktionen tar bort all text från den aktuella visningen, inklusive kommandon och utdata som kan ha samlats.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-107">The `Clear-Host` function removes all text from the current display, including commands and output that might have accumulated.</span></span> <span data-ttu-id="cc2fc-108">När du är klar visas kommando tolken.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-108">When complete, it displays the command prompt.</span></span> <span data-ttu-id="cc2fc-109">Du kan använda funktions namnet eller dess alias `cls` .</span><span class="sxs-lookup"><span data-stu-id="cc2fc-109">You can use the function name or its alias, `cls`.</span></span>
 
-<span data-ttu-id="96294-110">`Clear-Host` påverkar endast den aktuella visningen.</span><span class="sxs-lookup"><span data-stu-id="96294-110">`Clear-Host` affects only the current display.</span></span> <span data-ttu-id="96294-111">Det tar inte bort sparade resultat eller tar bort objekt från sessionen.</span><span class="sxs-lookup"><span data-stu-id="96294-111">It does not delete saved results or remove any items from the session.</span></span> <span data-ttu-id="96294-112">Sessionsbaserade objekt, till exempel variabler och funktioner, påverkas inte av den här funktionen.</span><span class="sxs-lookup"><span data-stu-id="96294-112">Session-specific items, such as variables and functions, are not affected by this function.</span></span>
+<span data-ttu-id="cc2fc-110">`Clear-Host` påverkar endast den aktuella visningen.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-110">`Clear-Host` affects only the current display.</span></span> <span data-ttu-id="cc2fc-111">Det tar inte bort sparade resultat eller tar bort objekt från sessionen.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-111">It does not delete saved results or remove any items from the session.</span></span> <span data-ttu-id="cc2fc-112">Sessionsbaserade objekt, till exempel variabler och funktioner, påverkas inte av den här funktionen.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-112">Session-specific items, such as variables and functions, are not affected by this function.</span></span>
 
-<span data-ttu-id="96294-113">Eftersom `Clear-Host` funktionens funktion bestäms av värd programmet `Clear-Host` kan fungera annorlunda i olika värd program.</span><span class="sxs-lookup"><span data-stu-id="96294-113">Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host` might work differently in different host programs.</span></span>
+<span data-ttu-id="cc2fc-113">Eftersom `Clear-Host` funktionens funktion bestäms av värd programmet `Clear-Host` kan fungera annorlunda i olika värd program.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-113">Because the behavior of the `Clear-Host` function is determined by the host program, `Clear-Host` might work differently in different host programs.</span></span>
 
-## <span data-ttu-id="96294-114">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="96294-114">EXAMPLES</span></span>
+## <span data-ttu-id="cc2fc-114">EXEMPEL</span><span class="sxs-lookup"><span data-stu-id="cc2fc-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="96294-115">Exempel 1</span><span class="sxs-lookup"><span data-stu-id="96294-115">Example 1</span></span>
+### <span data-ttu-id="cc2fc-115">Exempel 1</span><span class="sxs-lookup"><span data-stu-id="cc2fc-115">Example 1</span></span>
 
 ```
 # Before
@@ -70,36 +71,36 @@ PS C:\> cls
 PS C:>
 ```
 
-<span data-ttu-id="96294-116">Det här kommandot använder `cls` aliaset för `Clear-Host` för att ta bort den aktuella visningen.</span><span class="sxs-lookup"><span data-stu-id="96294-116">This command uses the `cls` alias of `Clear-Host` to clear the current display.</span></span>
+<span data-ttu-id="cc2fc-116">Det här kommandot använder `cls` aliaset för `Clear-Host` för att ta bort den aktuella visningen.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-116">This command uses the `cls` alias of `Clear-Host` to clear the current display.</span></span>
 
-## <span data-ttu-id="96294-117">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="96294-117">PARAMETERS</span></span>
+## <span data-ttu-id="cc2fc-117">PARAMETRAR</span><span class="sxs-lookup"><span data-stu-id="cc2fc-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="96294-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="96294-118">CommonParameters</span></span>
-<span data-ttu-id="96294-119">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="96294-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="96294-120">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="96294-120">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="cc2fc-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cc2fc-118">CommonParameters</span></span>
+<span data-ttu-id="cc2fc-119">Denna cmdlet har stöd för parametrarna -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction och -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cc2fc-120">Mer information finns i [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="cc2fc-120">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="96294-121">INDATA</span><span class="sxs-lookup"><span data-stu-id="96294-121">INPUTS</span></span>
+## <span data-ttu-id="cc2fc-121">INDATA</span><span class="sxs-lookup"><span data-stu-id="cc2fc-121">INPUTS</span></span>
 
-### <span data-ttu-id="96294-122">Inga</span><span class="sxs-lookup"><span data-stu-id="96294-122">None</span></span>
+### <span data-ttu-id="cc2fc-122">Inget</span><span class="sxs-lookup"><span data-stu-id="cc2fc-122">None</span></span>
 
-<span data-ttu-id="96294-123">Du kan inte skicka pipe-ininformation till `Clear-Host` .</span><span class="sxs-lookup"><span data-stu-id="96294-123">You cannot pipe input to `Clear-Host`.</span></span>
+<span data-ttu-id="cc2fc-123">Du kan inte skicka pipe-ininformation till `Clear-Host` .</span><span class="sxs-lookup"><span data-stu-id="cc2fc-123">You cannot pipe input to `Clear-Host`.</span></span>
 
-## <span data-ttu-id="96294-124">UTDATA</span><span class="sxs-lookup"><span data-stu-id="96294-124">OUTPUTS</span></span>
+## <span data-ttu-id="cc2fc-124">UTDATA</span><span class="sxs-lookup"><span data-stu-id="cc2fc-124">OUTPUTS</span></span>
 
-### <span data-ttu-id="96294-125">Inga</span><span class="sxs-lookup"><span data-stu-id="96294-125">None</span></span>
+### <span data-ttu-id="cc2fc-125">Inget</span><span class="sxs-lookup"><span data-stu-id="cc2fc-125">None</span></span>
 
-<span data-ttu-id="96294-126">`Clear-Host` genererar inga utdata</span><span class="sxs-lookup"><span data-stu-id="96294-126">`Clear-Host` does not generate any output</span></span>
+<span data-ttu-id="cc2fc-126">`Clear-Host` genererar inga utdata</span><span class="sxs-lookup"><span data-stu-id="cc2fc-126">`Clear-Host` does not generate any output</span></span>
 
-## <span data-ttu-id="96294-127">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="96294-127">NOTES</span></span>
+## <span data-ttu-id="cc2fc-127">ANTECKNINGAR</span><span class="sxs-lookup"><span data-stu-id="cc2fc-127">NOTES</span></span>
 
-<span data-ttu-id="96294-128">`Clear-Host` är en enkel funktion, inte en avancerad funktion.</span><span class="sxs-lookup"><span data-stu-id="96294-128">`Clear-Host` is a simple function, not an advanced function.</span></span> <span data-ttu-id="96294-129">Därför kan du inte använda vanliga parametrar, t. ex. **fel sökning**, i ett `Clear-Host` kommando.</span><span class="sxs-lookup"><span data-stu-id="96294-129">As such, you cannot use common parameters, such as **Debug**, in a `Clear-Host` command.</span></span>
+<span data-ttu-id="cc2fc-128">`Clear-Host` är en enkel funktion, inte en avancerad funktion.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-128">`Clear-Host` is a simple function, not an advanced function.</span></span> <span data-ttu-id="cc2fc-129">Därför kan du inte använda vanliga parametrar, t. ex. **fel sökning**, i ett `Clear-Host` kommando.</span><span class="sxs-lookup"><span data-stu-id="cc2fc-129">As such, you cannot use common parameters, such as **Debug**, in a `Clear-Host` command.</span></span>
 
-## <span data-ttu-id="96294-130">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="96294-130">RELATED LINKS</span></span>
+## <span data-ttu-id="cc2fc-130">RELATERADE LÄNKAR</span><span class="sxs-lookup"><span data-stu-id="cc2fc-130">RELATED LINKS</span></span>
 
-[<span data-ttu-id="96294-131">Hämta värd</span><span class="sxs-lookup"><span data-stu-id="96294-131">Get-Host</span></span>](../Microsoft.PowerShell.Utility/Get-Host.md)
+[<span data-ttu-id="cc2fc-131">Hämta värd</span><span class="sxs-lookup"><span data-stu-id="cc2fc-131">Get-Host</span></span>](../Microsoft.PowerShell.Utility/Get-Host.md)
 
-[<span data-ttu-id="96294-132">Ut-värd</span><span class="sxs-lookup"><span data-stu-id="96294-132">Out-Host</span></span>](Out-Host.md)
+[<span data-ttu-id="cc2fc-132">Ut-värd</span><span class="sxs-lookup"><span data-stu-id="cc2fc-132">Out-Host</span></span>](Out-Host.md)
 
-[<span data-ttu-id="96294-133">Read-Host</span><span class="sxs-lookup"><span data-stu-id="96294-133">Read-Host</span></span>](../Microsoft.PowerShell.Utility/Read-Host.md)
+[<span data-ttu-id="cc2fc-133">Read-Host</span><span class="sxs-lookup"><span data-stu-id="cc2fc-133">Read-Host</span></span>](../Microsoft.PowerShell.Utility/Read-Host.md)
 
-[<span data-ttu-id="96294-134">Skriv värd</span><span class="sxs-lookup"><span data-stu-id="96294-134">Write-Host</span></span>](../Microsoft.PowerShell.Utility/Write-Host.md)
+[<span data-ttu-id="cc2fc-134">Skriv värd</span><span class="sxs-lookup"><span data-stu-id="cc2fc-134">Write-Host</span></span>](../Microsoft.PowerShell.Utility/Write-Host.md)
 
