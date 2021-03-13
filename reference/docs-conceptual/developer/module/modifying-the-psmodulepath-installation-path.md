@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/12/2021
 ms.topic: reference
 title: Ändra installationssökvägen för PSModulePath
 description: Ändra installationssökvägen för PSModulePath
-ms.openlocfilehash: b802492bf9b49e8165e296817e3f80b9ae8265a6
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1bea1e8ed20f55352cc9b4270e95cf7f0f7e2faa
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92661946"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412911"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Ändra installationssökvägen för PSModulePath
 
@@ -47,9 +47,12 @@ Använd någon av följande metoder för att lägga till sökvägar till den hä
 
   ```
 
+Du kan också ange `PSModulePath` värdena i `powershell.config.json` konfigurations filen. Mer information finns i [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath).
+
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>Ta bort platser från PSModulePath
 
-Du kan ta bort sökvägar från variabeln med liknande metoder: om du till exempel tar `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` bort **c:\ModulePath** -sökvägen från den aktuella sessionen.
+Du kan ta bort sökvägar från variabeln med liknande metoder: till exempel `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+tar bort **c:\ModulePath** -sökvägen från den aktuella sessionen.
 
 ## <a name="see-also"></a>Se även
 

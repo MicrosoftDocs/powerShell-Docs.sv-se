@@ -1,17 +1,16 @@
 ---
 description: Beskriver matriser, som är data strukturer som är utformade för att lagra samlings objekt.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 96e3798d4ff0a737421bb6211b809b192afa96f0
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 15ab7bb28fc9dd9262ba71b5cc1347a609837d9c
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93271737"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412989"
 ---
 # <a name="about-arrays"></a>Om matriser
 
@@ -52,13 +51,13 @@ $C = 5..8
 
 Därför `$C` innehåller fyra värden: 5, 6, 7 och 8.
 
-När ingen datatyp anges skapar PowerShell varje matris som en objekt mat ris ( **system. Object []** ). Om du vill fastställa data typen för en matris använder du **gettype ()** -metoden. Om du till exempel vill fastställa data typen för `$A` matrisen skriver du:
+När ingen datatyp anges skapar PowerShell varje matris som en objekt mat ris (**system. Object []**). Om du vill fastställa data typen för en matris använder du **gettype ()** -metoden. Om du till exempel vill fastställa data typen för `$A` matrisen skriver du:
 
 ```powershell
 $A.GetType()
 ```
 
-För att skapa en starkt angiven matris, det vill säga en matris som bara kan innehålla värden av en viss typ, omvandla variabeln som en mat ris typ, till exempel **string []** , **lång []** eller **Int32 []**. Om du vill omvandla en matris måste du före variabel namnet med en mat ris typ inom hakparenteser. Om du till exempel vill skapa en 32-bitars heltals mat ris med namnet `$ia` som innehåller fyra heltal (1500, 2230, 3350 och 4000) skriver du:
+För att skapa en starkt angiven matris, det vill säga en matris som bara kan innehålla värden av en viss typ, omvandla variabeln som en mat ris typ, till exempel **string []**, **lång []** eller **Int32 []**. Om du vill omvandla en matris måste du före variabel namnet med en mat ris typ inom hakparenteser. Om du till exempel vill skapa en 32-bitars heltals mat ris med namnet `$ia` som innehåller fyra heltal (1500, 2230, 3350 och 4000) skriver du:
 
 ```powershell
 [int32[]]$ia = 1500,2230,3350,4000
@@ -82,7 +81,7 @@ Mat ris operatorns syntax är följande:
 @( ... )
 ```
 
-Du kan använda array-operatorn för att skapa en matris med noll eller ett objekt. Ett exempel:
+Du kan använda array-operatorn för att skapa en matris med noll eller ett objekt. Exempel:
 
 ```powershell
 $a = @("Hello World")
@@ -102,7 +101,7 @@ $b.Count
 0
 ```
 
-Mat ris operatorn är användbar i skript när du hämtar objekt, men vet inte hur många objekt du får. Ett exempel:
+Mat ris operatorn är användbar i skript när du hämtar objekt, men vet inte hur många objekt du får. Exempel:
 
 ```powershell
 $p = @(Get-Process Notepad)
@@ -321,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>Rangordning
 
-Returnerar antalet dimensioner i matrisen. De flesta matriser i PowerShell har en dimension. Även om du tror att du bygger en flerdimensionell matris. som i följande exempel:
+Returnerar antalet dimensioner i matrisen. De flesta matriser i PowerShell har en dimension. Även om du tror att du bygger en flerdimensionell matris som i följande exempel:
 
 ```powershell
 $a = @(
@@ -330,28 +329,77 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+I det här exemplet skapar du en endimensionell matris som innehåller andra matriser. Detta kallas även för en _Taggad matris_. Egenskapen **rang** visar att det är en enkel dimension. För att få åtkomst till objekt i en taggad matris måste indexen vara i separata hakparenteser ( `[]` ).
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-I följande exempel visas hur du skapar en faktiskt flerdimensionell matris med .NET Framework.
+Flerdimensionella matriser lagras i [rad huvud ordning](https://wikipedia.org/wiki/Row-_and_column-major_order). I följande exempel visas hur du skapar en faktiskt flerdimensionell matris.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+För att få åtkomst till objekt i en flerdimensionell matris, separera indexen med kommatecken ( `,` ) inom en enda uppsättning hakparenteser ( `[]` ).
+
+Vissa åtgärder på en flerdimensionell matris, till exempel replikering och sammanfogning, kräver att matrisen är tilldelad. Förenkling vänder matrisen till en endimensionell matris av en obegränsad typ. Den resulterande matrisen tar på alla element i rad-huvud ordningen. Se följande exempel:
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+Utdata visar att `$c` är en endimensionell matris som innehåller objekten från `$a` och `$b` i rad-huvud ordning.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>Metoder för matriser
 
-### <a name="clear"></a>Clear
+### <a name="clear"></a>Rensa
 
 Anger alla element värden till _standardvärdet_ för matrisens element typ.
 Metoden clear () återställer inte storleken på matrisen.
@@ -532,7 +580,7 @@ hi
 there
 ```
 
-#### <a name="default"></a>Default
+#### <a name="default"></a>Standardvärde
 
 `Default`Läget filtrerar objekt med hjälp av `Expression` script block.
 
@@ -754,7 +802,7 @@ $a[-1]
 ## <a name="indexing-support-for-systemtuple-objects"></a>Indexerings stöd för system. tuple-objekt
 
 PowerShell 6,1 har lagt till stöd för indexerad åtkomst till **tuple** -objekt, ungefär som matriser.
-Ett exempel:
+Exempel:
 
 ```powershell
 PS> $tuple = [Tuple]::Create(1, 'test')

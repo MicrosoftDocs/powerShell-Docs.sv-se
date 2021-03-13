@@ -1,16 +1,16 @@
 ---
-description: Konfigurationsfiler för PowerShell Core, och ersätter register konfiguration.
+description: Konfigurationsfiler för PowerShell, och ersätter register konfigurationen.
 Locale: en-US
-ms.date: 11/02/2018
+ms.date: 03/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
-ms.openlocfilehash: 7190484832958e778a21e6d2cc91771587bffdbf
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e6688e91f0cf14ae54a0585ae199f098e98e1146
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710560"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412973"
 ---
 # <a name="about-powershell-config"></a>Om PowerShell-konfiguration
 
@@ -22,11 +22,7 @@ Konfigurationsfiler för PowerShell Core, och ersätter register konfiguration.
 `powershell.config.json`Filen innehåller konfigurations inställningar för PowerShell Core. PowerShell läser in den här konfigurationen vid start. Inställningarna kan också ändras vid körning. Tidigare lagrades dessa inställningar i Windows-registret för PowerShell, men ingår nu i en fil för att aktivera konfiguration på macOS och Linux.
 
 > [!WARNING]
-> Om `powershell.config.json` filen innehåller ogiltig JSON PowerShell kan inte starta en interaktiv session.
-> Om detta inträffar måste du åtgärda konfigurations filen.
-
-> [!NOTE]
-> Okända nycklar eller ogiltiga värden i konfigurations filen ignoreras tyst.
+> Okända nycklar eller ogiltiga värden i konfigurations filen ignoreras tyst. Om `powershell.config.json` filen innehåller ogiltig JSON kan PowerShell inte starta en interaktiv session. Om detta inträffar måste du åtgärda konfigurations filen.
 
 ### <a name="allusers-shared-configuration"></a>AllUsers (delad) konfiguration
 
@@ -60,9 +56,7 @@ För CurrentUser-konfigurationer ställer detta in principen för **CurrentUser*
 
 Plats:
 
-- `<shell-id>` refererar till ID: t för den aktuella PowerShell-värden.
-  För normal PowerShell-kärna är detta `Microsoft.PowerShell` .
-  I en PowerShell-session kan du identifiera den med `$ShellId` .
+- `<shell-id>` refererar till ID: t för den aktuella PowerShell-värden. För normal PowerShell-kärna är detta `Microsoft.PowerShell` . I en PowerShell-session kan du identifiera den med `$ShellId` .
 - `<execution-policy>` refererar till ett giltigt körnings princip namn.
 
 I följande exempel anges körnings principen för PowerShell till `RemoteSigned` .
@@ -77,15 +71,14 @@ I Windows kan du hitta motsvarande register nycklar `\SOFTWARE\Microsoft\PowerSh
 
 ### <a name="psmodulepath"></a>PSModulePath
 
-Åsidosätter en PSModulePath-komponent för den här PowerShell-sessionen. Om konfigurationen gäller för den aktuella användaren anger du sökvägen till CurrentUser-modulen. Om konfigurationen är för alla användare anger sökvägen till AllUser-modulen.
+Åsidosätter `PSModulePath` inställningarna för den här PowerShell-sessionen. Om konfigurationen gäller för den aktuella användaren anger du sökvägen till **CurrentUser** -modulen. Om konfigurationen är för alla användare anger sökvägen till **allusers** -modulen.
 
 > [!WARNING]
-> Om du konfigurerar en sökväg för en AllUsers-eller CurrentUser-modul så ändras inte den omfångs installations platsen för PowerShellGet-moduler som [install-module](/powershell/module/powershellget/install-module).
-> Dessa cmdletar använder alltid *standard* Sök vägarna.
+> Om du konfigurerar en sökväg för en **allusers** -eller **CurrentUser** -modul här ändras inte den omfångs installations platsen för PowerShellGet-cmdletar som [install-module](/powershell/module/powershellget/install-module). Dessa cmdletar använder alltid _standard_ Sök vägarna.
 
-Om inget värde anges används standardvärdet för respektive modul Sök vägs komponent. Se [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath) för mer information om dessa standardvärden.
+Om inget värde har angetts använder PowerShell standardvärdet för respektive modul Sök vägs inställning. Mer information om dessa standardvärden finns i [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath).
 
-Den här inställningen gör att miljövariabler kan användas genom att bädda in dem mellan `%` tecken, t `"%HOME%\Documents\PowerShell\Modules"` . ex. på samma sätt som cmd tillåter. Den här syntaxen gäller även för Linux och macOS. Se nedan för exempel.
+Med den här inställningen kan miljövariabler användas genom att bädda in dem mellan `%` tecken, t `"%HOME%\Documents\PowerShell\Modules"` . ex. på samma sätt som cmd tillåter. Den här syntaxen gäller även för Linux och macOS. Se nedan för exempel.
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
@@ -95,7 +88,7 @@ Plats:
 
 - `<ps-module-path>` är den absoluta sökvägen till en modul-katalog. För alla användarkonfigurationer är detta den AllUsers delade modul katalogen. För aktuella användarkonfigurationer är detta CurrentUser-modulens katalog.
 
-I det här exemplet visas en PSModulePath-konfiguration för en Windows-miljö:
+I det här exemplet visas en `PSModulePath` konfiguration för en Windows-miljö:
 
 ```json
 {
@@ -103,7 +96,7 @@ I det här exemplet visas en PSModulePath-konfiguration för en Windows-miljö:
 }
 ```
 
-I det här exemplet visas en PSModulePath-konfiguration för en macOS-eller Linux-miljö:
+I det här exemplet visas en `PSModulePath` konfiguration för en MacOS-eller Linux-miljö:
 
 ```json
 {
@@ -111,7 +104,7 @@ I det här exemplet visas en PSModulePath-konfiguration för en macOS-eller Linu
 }
 ```
 
-I det här exemplet visas hur du bäddar in en miljö variabel i en PSModulePath-konfiguration. Observera att om du använder `HOME` miljövariabeln och `/` katalog avgränsaren fungerar detta på Windows, MacOS och Linux.
+I det här exemplet visas hur du bäddar in en miljö variabel i en `PSModulePath` konfiguration. Observera att om du använder `HOME` miljövariabeln och `/` katalog avgränsaren fungerar detta på Windows, MacOS och Linux.
 
 ```json
 {
@@ -119,7 +112,7 @@ I det här exemplet visas hur du bäddar in en miljö variabel i en PSModulePath
 }
 ```
 
-I det här exemplet visas hur du bäddar in en miljö variabel i en PSModulePath-konfiguration som bara fungerar på macOS och Linux:
+I det här exemplet visas hur du bäddar in en miljö variabel i en `PSModulePath` konfiguration som bara fungerar på MacOS och Linux:
 
 ```json
 {
@@ -128,14 +121,12 @@ I det här exemplet visas hur du bäddar in en miljö variabel i en PSModulePath
 ```
 
 > [!NOTE]
-> PowerShell-variabler kan inte bäddas in i PSModulePath-konfigurationer.
-> PSModulePath-konfigurationer på Linux och macOS är Skift läges känsliga. En PSModulePath-konfiguration måste använda giltiga katalog avgränsare för plattformen. På macOS och Linux innebär det här `/` . I Windows fungerar både `/` och `\` .
+> PowerShell-variabler kan inte bäddas in i `PSModulePath` konfigurationer.
+> `PSModulePath` konfigurationer på Linux och macOS är Skift läges känsliga. En `PSModulePath` konfiguration måste använda giltiga katalog avgränsare för plattformen. På macOS och Linux innebär det här `/` . I Windows fungerar både `/` och `\` .
 
 ### <a name="experimentalfeatures"></a>ExperimentalFeatures
 
-Namnen på de experimentella funktioner som ska aktive ras i PowerShell.
-Som standard är inga experimentella funktioner aktiverade.
-Standardvärdet är en tom matris.
+Namnen på de experimentella funktioner som ska aktive ras i PowerShell. Som standard är inga experimentella funktioner aktiverade. Standardvärdet är en tom matris.
 
 ```Schema
 "ExperimentalFeatures": ["<experimental-feature-name>", ...]
@@ -156,7 +147,7 @@ I följande exempel aktive ras **PSImplicitRemoting** -och **PSUseAbbreviationEx
 }
 ```
 
-Mer information om experimentella funktioner finns i [POWERSHELL RFC 29][RFC0029].
+Mer information om experimentella funktioner finns i [använda experimentella funktioner](/powershell/scripting/learn/experimental-features).
 
 ## <a name="non-windows-logging-configuration"></a>Konfiguration för icke-Windows-loggning
 
@@ -205,7 +196,7 @@ Anger den lägsta allvarlighets grad som PowerShell ska logga.
 
 Plats:
 
-- `<log-level>` är en av:
+- `<log-level>` är något av:
   - Always
   - Kritiskt
   - Fel
@@ -241,7 +232,7 @@ Bestämmer vilka loggnings kanaler som är aktiverade.
 
 Plats:
 
-- `<log-channel>` är en av:
+- `<log-channel>` är något av:
   - Drift – loggar grundläggande information om PowerShell-aktiviteter
   - Analytiskt loggar mer detaljerad diagnostikinformation
 
@@ -266,7 +257,7 @@ Anger vilka delar av PowerShell som loggas. Som standard är alla logg nyckelord
 
 Plats:
 
-- `<log-keyword>` är en av:
+- `<log-keyword>` är något av:
   - Hantering av körnings utrymme-körnings utrymme
   - Pipeline – pipeline-åtgärder
   - Protokoll hantering av protokoll, till exempel PSRP
@@ -278,8 +269,7 @@ Plats:
   - ManagedPlugin – WSMan-plugin
 
 > [!NOTE]
-> Det rekommenderas vanligt vis att lämna det här värdet unset om du inte försöker diagnostisera ett visst beteende i en känd del av PowerShell.
-> Om du ändrar det här värdet minskar bara mängden information som loggas.
+> Det rekommenderas vanligt vis att lämna det här värdet unset om du inte försöker diagnostisera ett visst beteende i en känd del av PowerShell. Om du ändrar det här värdet minskar bara mängden information som loggas.
 
 Det här exemplet begränsar loggningen till körnings utrymme-åtgärder, pipeline-logik och cmdlet-användning. All annan loggning kommer att utelämnas.
 
@@ -349,6 +339,3 @@ Den här konfigurationen anger ett antal alternativ som bara fungerar i macOS el
 [Om körnings principer](./about_Execution_Policies.md)
 
 [Om automatiska variabler](./about_Automatic_Variables.md)
-
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
-

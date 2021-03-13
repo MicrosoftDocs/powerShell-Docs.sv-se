@@ -5,12 +5,12 @@ ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2e7cf9c8f7d4e6f1d5bc66310f56d3de9461e592
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 4ec216a502f0031bc35cc7b04aacf5d262fd696d
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94710693"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412853"
 ---
 # <a name="about-arrays"></a>Om matriser
 
@@ -320,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>Rangordning
 
-Returnerar antalet dimensioner i matrisen. De flesta matriser i PowerShell har en dimension. Även om du tror att du bygger en flerdimensionell matris. som i följande exempel:
+Returnerar antalet dimensioner i matrisen. De flesta matriser i PowerShell har en dimension. Även om du tror att du bygger en flerdimensionell matris som i följande exempel:
 
 ```powershell
 $a = @(
@@ -329,23 +329,72 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+I det här exemplet skapar du en endimensionell matris som innehåller andra matriser. Detta kallas även för en _Taggad matris_. Egenskapen **rang** visar att det är en enkel dimension. För att få åtkomst till objekt i en taggad matris måste indexen vara i separata hakparenteser ( `[]` ).
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-I följande exempel visas hur du skapar en faktiskt flerdimensionell matris med .NET Framework.
+Flerdimensionella matriser lagras i [rad huvud ordning](https://wikipedia.org/wiki/Row-_and_column-major_order). I följande exempel visas hur du skapar en faktiskt flerdimensionell matris.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+För att få åtkomst till objekt i en flerdimensionell matris, separera indexen med kommatecken ( `,` ) inom en enda uppsättning hakparenteser ( `[]` ).
+
+Vissa åtgärder på en flerdimensionell matris, till exempel replikering och sammanfogning, kräver att matrisen är tilldelad. Förenkling vänder matrisen till en endimensionell matris av en obegränsad typ. Den resulterande matrisen tar på alla element i rad-huvud ordningen. Se följande exempel:
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+Utdata visar att `$c` är en endimensionell matris som innehåller objekten från `$a` och `$b` i rad-huvud ordning.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>Metoder för matriser
